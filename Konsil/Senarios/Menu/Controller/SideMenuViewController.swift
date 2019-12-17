@@ -19,6 +19,7 @@ class SideMenuViewController: UIViewController {
             mainView.layer.maskedCorners = [.layerMaxXMinYCorner , .layerMaxXMaxYCorner]
         }
     }
+    @IBOutlet var sideMenuBut: [UIButton]!
     @IBOutlet weak var ProfileImage: UIImageView!{
         didSet{
             ProfileImage.layer.cornerRadius = ProfileImage.frame.width/2
@@ -34,11 +35,16 @@ class SideMenuViewController: UIViewController {
     
     @IBOutlet weak var name: UILabel!
     
+    var segue = ["Personal Info" , "" , "FAQ" , "My Complaints" , "Policy" ,"Be A Doctor"]
+    //MARK:- viewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-    
-
-
+    @IBAction func sideMenuButtonPressed(_ sender: UIButton) {
+        guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
 }

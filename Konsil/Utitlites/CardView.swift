@@ -44,7 +44,7 @@ class ProfileImageView: UIImageView {
     }
     
 }
-struct SingleCorneredView {
+struct Rounded {
     static func topLeft(view: UIView){
         view.layer.cornerRadius = 20
         view.clipsToBounds = true
@@ -78,10 +78,6 @@ struct SingleCorneredView {
         view.layer.borderWidth = 2
         view.layer.borderColor = UIColor.lightGray.cgColor
     }
-}
-
-
-struct RoundedButton {
     static func roundedCornerButton(button: UIButton) {
         button.layer.cornerRadius = button.frame.height / 2
         button.layer.shadowRadius = 2
@@ -99,11 +95,14 @@ struct RoundedButton {
         button.layer.shadowOffset = CGSize(width: 0, height: 2.5)
         button.layer.shadowOpacity = 0.4
     }
-}
-
-
-
-struct RoundedImage {
+    
+    static func roundedCornerTextField(textField: UITextField){
+        textField.layer.cornerRadius = textField.frame.height/2
+        textField.layer.borderColor = UIColor.darkGray.cgColor
+        textField.layer.borderWidth = 2
+        textField.clipsToBounds = true
+    }
+    
     static func roundedImage(imageView: UIImageView){
         imageView.layer.cornerRadius = imageView.frame.width / 2
         imageView.layer.masksToBounds = true
@@ -112,6 +111,8 @@ struct RoundedImage {
         imageView.layer.borderColor = #colorLiteral(red: 0.1999711692, green: 0.2000181675, blue: 0.1999708116, alpha: 1)
     }
 }
+
+
 
 struct EmptyTableView {
     static func emptyDataWithImage(TabelView: UITableView , Image: UIImage ,View: UIView ,MessageText: String) {

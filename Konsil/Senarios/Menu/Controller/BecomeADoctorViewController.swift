@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SideMenu
 class BecomeADoctorViewController: UIViewController {
     @IBOutlet weak var imageBackView: UIView!{
         didSet{
@@ -42,5 +42,13 @@ class BecomeADoctorViewController: UIViewController {
     }
     
     @IBAction func requestButPressed(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func showMenu(_ sender: UIBarButtonItem) {
+        let vc = storyboard?.instantiateViewController(identifier: "SideMenu") as! SideMenuNavigationController
+        vc.modalPresentationStyle = .overFullScreen
+        vc.settings = Shared.settings(view: self.view)
+        self.present(vc, animated: true, completion: nil)
     }
 }

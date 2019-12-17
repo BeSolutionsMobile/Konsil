@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		04F1A60E23A641B200293AA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1A60D23A641B200293AA2 /* AppDelegate.swift */; };
 		04F1A61023A641B200293AA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1A60F23A641B200293AA2 /* SceneDelegate.swift */; };
-		04F1A61223A641B200293AA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1A61123A641B200293AA2 /* ViewController.swift */; };
 		04F1A61523A641B200293AA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F1A61323A641B200293AA2 /* Main.storyboard */; };
 		04F1A61723A641B300293AA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F1A61623A641B300293AA2 /* Assets.xcassets */; };
 		04F1A61A23A641B300293AA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F1A61823A641B300293AA2 /* LaunchScreen.storyboard */; };
 		04F1A62523A641B300293AA2 /* KonsilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1A62423A641B300293AA2 /* KonsilTests.swift */; };
 		04F1A63023A641B300293AA2 /* KonsilUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1A62F23A641B300293AA2 /* KonsilUITests.swift */; };
+		810DAAFD23A7829400B8AF20 /* DoctorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DAAFC23A7829400B8AF20 /* DoctorsViewController.swift */; };
+		810DAAFF23A782A700B8AF20 /* DoctorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DAAFE23A782A700B8AF20 /* DoctorsTableViewCell.swift */; };
+		810DAB0223A7A86C00B8AF20 /* DoctorsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DAB0123A7A86C00B8AF20 /* DoctorsInfoViewController.swift */; };
+		810DAB0823A7BC8F00B8AF20 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DAB0723A7BC8F00B8AF20 /* LogInViewController.swift */; };
+		810DAB0D23A7C71F00B8AF20 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DAB0C23A7C71F00B8AF20 /* RegisterViewController.swift */; };
 		815A17C023A658F7001DDBEE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17BF23A658F7001DDBEE /* MainViewController.swift */; };
 		815A17CA23A6596F001DDBEE /* MainCategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17C923A6596F001DDBEE /* MainCategoriesCollectionViewCell.swift */; };
 		815A17CC23A65981001DDBEE /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17CB23A65981001DDBEE /* Categories.swift */; };
@@ -26,6 +30,8 @@
 		815A17DE23A67C80001DDBEE /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17DD23A67C80001DDBEE /* SideMenuViewController.swift */; };
 		815A17E023A682B8001DDBEE /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17DF23A682B8001DDBEE /* Shared.swift */; };
 		815A17E223A68D3C001DDBEE /* BecomeADoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17E123A68D3C001DDBEE /* BecomeADoctorViewController.swift */; };
+		81D8FB1D23A82A5100585CA8 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8FB1C23A82A5100585CA8 /* MainNavigationController.swift */; };
+		81D8FB1F23A8301A00585CA8 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8FB1E23A8301A00585CA8 /* FilterViewController.swift */; };
 		81EED28423A693CC00A4C4DB /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EED28323A693CC00A4C4DB /* FAQViewController.swift */; };
 		81EED28623A69A7B00A4C4DB /* MakeComplaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EED28523A69A7B00A4C4DB /* MakeComplaintViewController.swift */; };
 		86F76E2B6E4AAAC00731A7DD /* Pods_Konsil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5498410C12A18BA165BBD8 /* Pods_Konsil.framework */; };
@@ -54,7 +60,6 @@
 		04F1A60A23A641B200293AA2 /* Konsil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Konsil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F1A60D23A641B200293AA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F1A60F23A641B200293AA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		04F1A61123A641B200293AA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		04F1A61423A641B200293AA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04F1A61623A641B300293AA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04F1A61923A641B300293AA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,6 +74,11 @@
 		4B17A8B8875BF43C008499FF /* Pods_Konsil_KonsilUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Konsil_KonsilUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ABFC6927A6C4E48E90D8C84 /* Pods-Konsil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Konsil.release.xcconfig"; path = "Target Support Files/Pods-Konsil/Pods-Konsil.release.xcconfig"; sourceTree = "<group>"; };
 		777D5F7FC7D620E22EB7E0FC /* Pods-KonsilTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KonsilTests.release.xcconfig"; path = "Target Support Files/Pods-KonsilTests/Pods-KonsilTests.release.xcconfig"; sourceTree = "<group>"; };
+		810DAAFC23A7829400B8AF20 /* DoctorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsViewController.swift; sourceTree = "<group>"; };
+		810DAAFE23A782A700B8AF20 /* DoctorsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsTableViewCell.swift; sourceTree = "<group>"; };
+		810DAB0123A7A86C00B8AF20 /* DoctorsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsInfoViewController.swift; sourceTree = "<group>"; };
+		810DAB0723A7BC8F00B8AF20 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		810DAB0C23A7C71F00B8AF20 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		815A17BF23A658F7001DDBEE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		815A17C923A6596F001DDBEE /* MainCategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		815A17CB23A65981001DDBEE /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
@@ -80,6 +90,8 @@
 		815A17DD23A67C80001DDBEE /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		815A17DF23A682B8001DDBEE /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		815A17E123A68D3C001DDBEE /* BecomeADoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BecomeADoctorViewController.swift; sourceTree = "<group>"; };
+		81D8FB1C23A82A5100585CA8 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		81D8FB1E23A8301A00585CA8 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		81EED28323A693CC00A4C4DB /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		81EED28523A69A7B00A4C4DB /* MakeComplaintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeComplaintViewController.swift; sourceTree = "<group>"; };
 		9660C97503DD3F09A20047CD /* Pods-Konsil-KonsilUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Konsil-KonsilUITests.debug.xcconfig"; path = "Target Support Files/Pods-Konsil-KonsilUITests/Pods-Konsil-KonsilUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,7 +156,6 @@
 			children = (
 				04F1A60D23A641B200293AA2 /* AppDelegate.swift */,
 				04F1A60F23A641B200293AA2 /* SceneDelegate.swift */,
-				04F1A61123A641B200293AA2 /* ViewController.swift */,
 				815A17CD23A65A26001DDBEE /* Utitlites */,
 				815A17C123A658FC001DDBEE /* Senarios */,
 				04F1A61323A641B200293AA2 /* Main.storyboard */,
@@ -184,9 +195,60 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		810DAB0023A7A84E00B8AF20 /* Doctors */ = {
+			isa = PBXGroup;
+			children = (
+				810DAB0423A7BC5100B8AF20 /* Controller */,
+			);
+			path = Doctors;
+			sourceTree = "<group>";
+		};
+		810DAB0423A7BC5100B8AF20 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				810DAB0123A7A86C00B8AF20 /* DoctorsInfoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		810DAB0523A7BC6400B8AF20 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				810DAB0623A7BC7200B8AF20 /* Controller */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		810DAB0623A7BC7200B8AF20 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				810DAB0723A7BC8F00B8AF20 /* LogInViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		810DAB0923A7C6F900B8AF20 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				810DAB0A23A7C70400B8AF20 /* Controller */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		810DAB0A23A7C70400B8AF20 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				810DAB0C23A7C71F00B8AF20 /* RegisterViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		815A17C123A658FC001DDBEE /* Senarios */ = {
 			isa = PBXGroup;
 			children = (
+				810DAB0923A7C6F900B8AF20 /* Register */,
+				810DAB0523A7BC6400B8AF20 /* Login */,
+				810DAB0023A7A84E00B8AF20 /* Doctors */,
 				815A17DA23A67C4D001DDBEE /* Menu */,
 				815A17C323A6590D001DDBEE /* Main */,
 			);
@@ -206,7 +268,10 @@
 		815A17C423A6591B001DDBEE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				81D8FB1C23A82A5100585CA8 /* MainNavigationController.swift */,
 				815A17BF23A658F7001DDBEE /* MainViewController.swift */,
+				810DAAFC23A7829400B8AF20 /* DoctorsViewController.swift */,
+				81D8FB1E23A8301A00585CA8 /* FilterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -215,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				815A17C923A6596F001DDBEE /* MainCategoriesCollectionViewCell.swift */,
+				810DAAFE23A782A700B8AF20 /* DoctorsTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -513,17 +579,23 @@
 				81EED28623A69A7B00A4C4DB /* MakeComplaintViewController.swift in Sources */,
 				815A17E023A682B8001DDBEE /* Shared.swift in Sources */,
 				815A17D623A65A26001DDBEE /* DesignableUITextField.swift in Sources */,
-				04F1A61223A641B200293AA2 /* ViewController.swift in Sources */,
+				810DAB0223A7A86C00B8AF20 /* DoctorsInfoViewController.swift in Sources */,
 				81EED28423A693CC00A4C4DB /* FAQViewController.swift in Sources */,
 				04F1A60E23A641B200293AA2 /* AppDelegate.swift in Sources */,
 				04F1A61023A641B200293AA2 /* SceneDelegate.swift in Sources */,
+				810DAB0823A7BC8F00B8AF20 /* LogInViewController.swift in Sources */,
+				810DAB0D23A7C71F00B8AF20 /* RegisterViewController.swift in Sources */,
 				815A17DE23A67C80001DDBEE /* SideMenuViewController.swift in Sources */,
+				810DAAFD23A7829400B8AF20 /* DoctorsViewController.swift in Sources */,
 				815A17D723A65A26001DDBEE /* Maps.swift in Sources */,
 				815A17C023A658F7001DDBEE /* MainViewController.swift in Sources */,
 				815A17CA23A6596F001DDBEE /* MainCategoriesCollectionViewCell.swift in Sources */,
+				810DAAFF23A782A700B8AF20 /* DoctorsTableViewCell.swift in Sources */,
 				815A17CC23A65981001DDBEE /* Categories.swift in Sources */,
+				81D8FB1F23A8301A00585CA8 /* FilterViewController.swift in Sources */,
 				815A17D523A65A26001DDBEE /* CardView.swift in Sources */,
 				815A17D823A65A26001DDBEE /* Colortext.swift in Sources */,
+				81D8FB1D23A82A5100585CA8 /* MainNavigationController.swift in Sources */,
 				815A17E223A68D3C001DDBEE /* BecomeADoctorViewController.swift in Sources */,
 				815A17D423A65A26001DDBEE /* Alert.swift in Sources */,
 			);

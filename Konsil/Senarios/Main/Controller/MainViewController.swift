@@ -9,6 +9,7 @@
 import UIKit
 import SDWebImage
 import SideMenu
+import BiometricAuthentication
 class MainViewController: UIViewController {
     
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
@@ -18,8 +19,28 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         model = Categories.catName
+        auth()
     }
-    
+    func auth(){
+        if Shared.BiometricAuthEnabled == true {
+            if BioMetricAuthenticator.canAuthenticate() {
+                BioMetricAuthenticator.authenticateWithBioMetrics(reason: "") { (Response) in
+                    switch Response {
+                    case .success(let res):
+                        if res == true {
+                            print("Auth Done")
+                        } else {
+                            print("Wrong")
+                        }
+                    case .failure(let error ):
+                        print(error.localizedDescription)
+                        print("error")
+                    }
+                }
+            }
+        }
+    }
+ 
     
     @IBAction func showMenu(_ sender: UIBarButtonItem) {
         
@@ -28,8 +49,6 @@ class MainViewController: UIViewController {
         vc.settings = Shared.settings(view: self.view)
         self.present(vc, animated: true, completion: nil)
     }
-    
-    
 }
 
 //MARK:- CollectionView SetUp
@@ -46,18 +65,18 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
             cell.catImage.sd_setImage(with: URL(string: cat), placeholderImage: UIImage(named: "Surgery"))
             cell.catName.text = cat
             if indexPath.row == 0 {
-                SingleCorneredView.topLeft(view: cell.backView)
+                Rounded.topLeft(view: cell.backView)
             } else {
-                SingleCorneredView.normalView(view: cell.backView)
+                Rounded.normalView(view: cell.backView)
             }
             if indexPath.row == 1 {
-                SingleCorneredView.topRight(view: cell.backView)
+                Rounded.topRight(view: cell.backView)
             }
             if indexPath.row == (model?.count ?? 1000)-1{
-                SingleCorneredView.botRight(view: cell.backView)
+                Rounded.botRight(view: cell.backView)
             }
             if indexPath.row == (model?.count ?? 1000)-2{
-                SingleCorneredView.botLeft(view: cell.backView)
+                Rounded.botLeft(view: cell.backView)
             }
             
             
@@ -65,10 +84,13 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: "Doctors List") as! DoctorsViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellSize = CGSize(width: self.view.frame.width/2 - 35, height: self.view.frame.width/2)
         return cellSize
     }
-    
-    
 }
