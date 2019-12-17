@@ -44,6 +44,8 @@ class DoctorsInfoViewController: UIViewController {
     }
     
     @IBAction func requestConsultationPressed(_ sender: UIButton) {
+        let vc = storyboard?.instantiateViewController(identifier: "ConsultationRequest")
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     @IBAction func requestOnlineConversationPressed(_ sender: UIButton) {
     }

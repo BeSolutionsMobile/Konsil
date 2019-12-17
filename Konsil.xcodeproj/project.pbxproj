@@ -30,6 +30,12 @@
 		815A17DE23A67C80001DDBEE /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17DD23A67C80001DDBEE /* SideMenuViewController.swift */; };
 		815A17E023A682B8001DDBEE /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17DF23A682B8001DDBEE /* Shared.swift */; };
 		815A17E223A68D3C001DDBEE /* BecomeADoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17E123A68D3C001DDBEE /* BecomeADoctorViewController.swift */; };
+		81849F1D23A8DC26004A59D8 /* RequestConsultationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F1C23A8DC26004A59D8 /* RequestConsultationViewController.swift */; };
+		81849F1F23A8EE6E004A59D8 /* RequestPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F1E23A8EE6E004A59D8 /* RequestPopupViewController.swift */; };
+		81849F2123A906C1004A59D8 /* ConsultationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F2023A906C1004A59D8 /* ConsultationDetailsViewController.swift */; };
+		81849F2523A929C3004A59D8 /* ConsultationFinalReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F2423A929C3004A59D8 /* ConsultationFinalReportViewController.swift */; };
+		81849F2723A929DD004A59D8 /* ConsultationMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F2623A929DD004A59D8 /* ConsultationMessagesViewController.swift */; };
+		81849F2A23A92EDB004A59D8 /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F2923A92EDB004A59D8 /* MessagesTableViewCell.swift */; };
 		81D8FB1D23A82A5100585CA8 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8FB1C23A82A5100585CA8 /* MainNavigationController.swift */; };
 		81D8FB1F23A8301A00585CA8 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8FB1E23A8301A00585CA8 /* FilterViewController.swift */; };
 		81EED28423A693CC00A4C4DB /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EED28323A693CC00A4C4DB /* FAQViewController.swift */; };
@@ -90,6 +96,12 @@
 		815A17DD23A67C80001DDBEE /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		815A17DF23A682B8001DDBEE /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		815A17E123A68D3C001DDBEE /* BecomeADoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BecomeADoctorViewController.swift; sourceTree = "<group>"; };
+		81849F1C23A8DC26004A59D8 /* RequestConsultationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConsultationViewController.swift; sourceTree = "<group>"; };
+		81849F1E23A8EE6E004A59D8 /* RequestPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPopupViewController.swift; sourceTree = "<group>"; };
+		81849F2023A906C1004A59D8 /* ConsultationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationDetailsViewController.swift; sourceTree = "<group>"; };
+		81849F2423A929C3004A59D8 /* ConsultationFinalReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationFinalReportViewController.swift; sourceTree = "<group>"; };
+		81849F2623A929DD004A59D8 /* ConsultationMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationMessagesViewController.swift; sourceTree = "<group>"; };
+		81849F2923A92EDB004A59D8 /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
 		81D8FB1C23A82A5100585CA8 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		81D8FB1E23A8301A00585CA8 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		81EED28323A693CC00A4C4DB /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +258,7 @@
 		815A17C123A658FC001DDBEE /* Senarios */ = {
 			isa = PBXGroup;
 			children = (
+				81849F1A23A8DBEC004A59D8 /* Consultation */,
 				810DAB0923A7C6F900B8AF20 /* Register */,
 				810DAB0523A7BC6400B8AF20 /* Login */,
 				810DAB0023A7A84E00B8AF20 /* Doctors */,
@@ -322,6 +335,35 @@
 				81EED28523A69A7B00A4C4DB /* MakeComplaintViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		81849F1A23A8DBEC004A59D8 /* Consultation */ = {
+			isa = PBXGroup;
+			children = (
+				81849F2823A92E50004A59D8 /* View */,
+				81849F1B23A8DC06004A59D8 /* Controller */,
+			);
+			path = Consultation;
+			sourceTree = "<group>";
+		};
+		81849F1B23A8DC06004A59D8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				81849F1C23A8DC26004A59D8 /* RequestConsultationViewController.swift */,
+				81849F1E23A8EE6E004A59D8 /* RequestPopupViewController.swift */,
+				81849F2023A906C1004A59D8 /* ConsultationDetailsViewController.swift */,
+				81849F2423A929C3004A59D8 /* ConsultationFinalReportViewController.swift */,
+				81849F2623A929DD004A59D8 /* ConsultationMessagesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		81849F2823A92E50004A59D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				81849F2923A92EDB004A59D8 /* MessagesTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		83F1D4D0EBB35EECC0C2F1F6 /* Pods */ = {
@@ -581,14 +623,19 @@
 				815A17D623A65A26001DDBEE /* DesignableUITextField.swift in Sources */,
 				810DAB0223A7A86C00B8AF20 /* DoctorsInfoViewController.swift in Sources */,
 				81EED28423A693CC00A4C4DB /* FAQViewController.swift in Sources */,
+				81849F2A23A92EDB004A59D8 /* MessagesTableViewCell.swift in Sources */,
 				04F1A60E23A641B200293AA2 /* AppDelegate.swift in Sources */,
 				04F1A61023A641B200293AA2 /* SceneDelegate.swift in Sources */,
 				810DAB0823A7BC8F00B8AF20 /* LogInViewController.swift in Sources */,
 				810DAB0D23A7C71F00B8AF20 /* RegisterViewController.swift in Sources */,
 				815A17DE23A67C80001DDBEE /* SideMenuViewController.swift in Sources */,
+				81849F2523A929C3004A59D8 /* ConsultationFinalReportViewController.swift in Sources */,
 				810DAAFD23A7829400B8AF20 /* DoctorsViewController.swift in Sources */,
 				815A17D723A65A26001DDBEE /* Maps.swift in Sources */,
+				81849F2723A929DD004A59D8 /* ConsultationMessagesViewController.swift in Sources */,
 				815A17C023A658F7001DDBEE /* MainViewController.swift in Sources */,
+				81849F2123A906C1004A59D8 /* ConsultationDetailsViewController.swift in Sources */,
+				81849F1D23A8DC26004A59D8 /* RequestConsultationViewController.swift in Sources */,
 				815A17CA23A6596F001DDBEE /* MainCategoriesCollectionViewCell.swift in Sources */,
 				810DAAFF23A782A700B8AF20 /* DoctorsTableViewCell.swift in Sources */,
 				815A17CC23A65981001DDBEE /* Categories.swift in Sources */,
@@ -597,6 +644,7 @@
 				815A17D823A65A26001DDBEE /* Colortext.swift in Sources */,
 				81D8FB1D23A82A5100585CA8 /* MainNavigationController.swift in Sources */,
 				815A17E223A68D3C001DDBEE /* BecomeADoctorViewController.swift in Sources */,
+				81849F1F23A8EE6E004A59D8 /* RequestPopupViewController.swift in Sources */,
 				815A17D423A65A26001DDBEE /* Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

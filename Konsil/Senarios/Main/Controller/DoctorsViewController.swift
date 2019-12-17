@@ -25,8 +25,9 @@ class DoctorsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        rightBackBut()
     }
+    
     @IBAction func filterButPressed(_ sender: UIButton) {
         let vc = storyboard?.instantiateViewController(identifier: "Filter") as! FilterViewController
         vc.modalPresentationStyle = .overFullScreen
