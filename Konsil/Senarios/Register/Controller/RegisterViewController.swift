@@ -46,7 +46,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        redDot()
+        roundDots()
     }
     func roundDots(){
         for i in redDot.indices {
