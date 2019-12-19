@@ -26,6 +26,7 @@ class DoctorsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
+        
     }
     
     @IBAction func filterButPressed(_ sender: UIButton) {
@@ -33,15 +34,6 @@ class DoctorsViewController: UIViewController {
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true, completion: nil)
     }
-    
-    
-    @IBAction func showMenu(_ sender: UIBarButtonItem) {
-        let vc = storyboard?.instantiateViewController(identifier: "SideMenu") as! SideMenuNavigationController
-        vc.modalPresentationStyle = .overFullScreen
-        vc.settings = Shared.settings(view: self.view)
-        self.present(vc, animated: true, completion: nil)
-    }
-    
 }
 
 extension DoctorsViewController: UITableViewDelegate , UITableViewDataSource {

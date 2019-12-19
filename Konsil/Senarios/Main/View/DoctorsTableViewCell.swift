@@ -21,7 +21,15 @@ class DoctorsTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        contentView.backgroundColor = .none
+        if selected {
+            contentView.backgroundColor = .clear
+            let bgColorView = UIView()
+            bgColorView.backgroundColor = .clear
+            
+            self.selectedBackgroundView = bgColorView
+        } else {
+            contentView.backgroundColor = .clear
+        }
     }
 
 }

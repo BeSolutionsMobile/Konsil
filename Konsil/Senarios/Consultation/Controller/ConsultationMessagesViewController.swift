@@ -38,13 +38,15 @@ class ConsultationMessagesViewController: UIViewController {
         }
     }
     
+    //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        rightBackBut()
     }
     
     @IBAction func requestOnlineConversationPressed(_ sender: UIButton) {
+        let vc = storyboard?.instantiateViewController(identifier: "DoctorConversation") as! DoctorConversationViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func sendMessagePressed(_ sender: UIButton) {

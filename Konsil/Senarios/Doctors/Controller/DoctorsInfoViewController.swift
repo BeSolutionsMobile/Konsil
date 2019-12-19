@@ -40,20 +40,17 @@ class DoctorsInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+       rightBackBut()
     }
     
     @IBAction func requestConsultationPressed(_ sender: UIButton) {
-        let vc = storyboard?.instantiateViewController(identifier: "ConsultationRequest")
-        self.navigationController?.pushViewController(vc!, animated: true)
+        let vc = storyboard?.instantiateViewController(identifier: "ConsultationRequest") as! RequestConsultationViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func requestOnlineConversationPressed(_ sender: UIButton) {
+        let vc = storyboard?.instantiateViewController(identifier: "DoctorConversation") as! DoctorConversationViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBAction func showMenu(_ sender: UIBarButtonItem) {
-        let vc = storyboard?.instantiateViewController(identifier: "SideMenu") as! SideMenuNavigationController
-        vc.modalPresentationStyle = .overFullScreen
-        vc.settings = Shared.settings(view: self.view)
-        self.present(vc, animated: true, completion: nil)
-    }
+    
 }

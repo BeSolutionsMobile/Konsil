@@ -41,11 +41,17 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    @IBOutlet var redDot: [UIView]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        redDot()
+    }
+    func roundDots(){
+        for i in redDot.indices {
+            redDot[i].layer.cornerRadius = redDot[i].frame.width/2
+        }
     }
     @IBAction func registerWithTwitter(_ sender: UIButton) {
     }

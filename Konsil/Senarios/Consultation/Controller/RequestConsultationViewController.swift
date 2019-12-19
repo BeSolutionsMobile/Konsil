@@ -19,16 +19,16 @@ class RequestConsultationViewController: UIViewController {
     @IBOutlet weak var titleTF: UITextField!{
         didSet{
             self.titleTF.layer.cornerRadius = 10
-            self.titleTF.layer.borderColor = #colorLiteral(red: 0.1999711692, green: 0.2000181675, blue: 0.1999708116, alpha: 1)
-            self.titleTF.layer.borderWidth = 2
+            self.titleTF.layer.borderColor = #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1)
+            self.titleTF.layer.borderWidth = 1.5
             self.titleTF.clipsToBounds = true
         }
     }
     @IBOutlet weak var detailsTV: UITextView!{
         didSet{
             self.detailsTV.layer.cornerRadius = 10
-            self.detailsTV.layer.borderWidth = 2
-            self.detailsTV.layer.borderColor = #colorLiteral(red: 0.1999711692, green: 0.2000181675, blue: 0.1999708116, alpha: 1)
+            self.detailsTV.layer.borderWidth = 1.5
+            self.detailsTV.layer.borderColor = #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1)
         }
     }
     @IBOutlet weak var textViewHieghtConstraint: NSLayoutConstraint!
@@ -36,6 +36,7 @@ class RequestConsultationViewController: UIViewController {
     var imagePicker = UIImagePickerController()
     override func viewDidLoad() {
         super.viewDidLoad()
+        rightBackBut()
         textViewHieghtConstraint.constant = self.view.frame.height/5
     }
     
@@ -52,13 +53,6 @@ class RequestConsultationViewController: UIViewController {
     }
     
     @IBAction func uploadFiles(_ sender: UIButton) {
-    }
-    
-    @IBAction func showMenu(_ sender: UIBarButtonItem) {
-        let vc = storyboard?.instantiateViewController(identifier: "SideMenu") as! SideMenuNavigationController
-        vc.modalPresentationStyle = .overFullScreen
-        vc.settings = Shared.settings(view: self.view)
-        self.present(vc, animated: true, completion: nil)
     }
 }
 

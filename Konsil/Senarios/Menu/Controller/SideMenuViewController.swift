@@ -35,7 +35,7 @@ class SideMenuViewController: UIViewController {
     
     @IBOutlet weak var name: UILabel!
     
-    var segue = ["Personal Info" , "" , "FAQ" , "My Complaints" , "Policy" ,"Be A Doctor"]
+    var segue = ["PersonalInfo" , "MyConsultation" , "FAQView" , "MyComplaints" , "Policy" ,"Be A Doctor"]
     //MARK:- viewDidLoad
     
     override func viewDidLoad() {
@@ -46,5 +46,8 @@ class SideMenuViewController: UIViewController {
         guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
         self.navigationController?.pushViewController(vc, animated: true)
         
+    }
+    @IBAction func logOut(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

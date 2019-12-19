@@ -33,11 +33,13 @@ class LogInViewController: UIViewController {
             Rounded.roundedCornerTextField(textField: self.emailTF)
         }
     }
+    @IBOutlet var redDot: [UIView]!
+    
     
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        roundDots()
     }
     
     //MARK:- IBActions
@@ -55,11 +57,18 @@ class LogInViewController: UIViewController {
         Shared.BiometricAuthEnabled = sender.on
     }
     
+    func roundDots(){
+        for i in redDot.indices {
+            redDot[i].layer.cornerRadius = redDot[i].frame.width/2
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GoToMain" {
             let vc = segue.destination as! MainNavigationController
             vc.modalPresentationStyle = .fullScreen
         }
     }
+    
     
 }

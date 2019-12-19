@@ -27,19 +27,13 @@ class MakeComplaintViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        rightBackBut()
     }
     
     @IBAction func submitPressed(_ sender: UIButton) {
+        let vc = storyboard?.instantiateViewController(identifier: "ComplaintDetails") as! ComplaintDetailsViewController
         
-        
-    }
-    
-    @IBAction func showMenu(_ sender: UIBarButtonItem) {
-        let vc = storyboard?.instantiateViewController(identifier: "SideMenu") as! SideMenuNavigationController
-        vc.modalPresentationStyle = .overFullScreen
-        vc.settings = Shared.settings(view: self.view)
-        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     

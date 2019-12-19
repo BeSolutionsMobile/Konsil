@@ -26,34 +26,20 @@ class ConsultationFinalReportViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        rightBackBut()
     }
     
     @IBAction func downloadFilesPressed(_ sender: UIButton) {
     }
     
     @IBAction func requestOnlineChatPressed(_ sender: UIButton) {
-        
+        let vc = storyboard?.instantiateViewController(identifier: "DoctorConversation") as! DoctorConversationViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
+    
     @IBAction func makeComplaintPressed(_ sender: UIButton) {
         let vc = storyboard?.instantiateViewController(identifier: "Make A Complaint") as! MakeComplaintViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-}
-
-class MyBarButtonItem:UINavigationItem {
-    
-    
-    func s(){
-        
-        
-        self.hidesBackButton = true
-        self.rightBarButtonItem = UIBarButtonItem(title: ">", style: .done, target: nil, action: #selector(rightBackBut))
-    }
-    
-    @objc func rightBackBut(){
-        
-    }
 }

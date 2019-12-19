@@ -10,7 +10,7 @@ import UIKit
 
 class MessagesTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var name: UILabel!
+    
     @IBOutlet weak var cellImage: UIImageView!{
         didSet{
             cellImage.layer.cornerRadius = cellImage.frame.height / 2
@@ -20,11 +20,6 @@ class MessagesTableViewCell: UITableViewCell {
         }
     }
     @IBOutlet weak var message: UILabel!
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        
-    }
+    @IBOutlet weak var name: UILabel!
 
 }

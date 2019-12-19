@@ -16,7 +16,8 @@ class Shared {
         presentationStyle.backgroundColor = .white
         var settings = SideMenuSettings()
         settings.presentationStyle = presentationStyle
-        settings.menuWidth = view.frame.width-view.frame.width*(1/5)
+        settings.statusBarEndAlpha = 0
+        settings.menuWidth = view.frame.width-view.frame.width*(1/3)
         
         return settings
     }
