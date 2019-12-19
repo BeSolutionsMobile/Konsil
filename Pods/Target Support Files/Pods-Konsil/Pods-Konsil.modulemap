@@ -1,0 +1,6 @@
+framework module Pods_Konsil {
+  umbrella header "Pods-Konsil-umbrella.h"
+
+  export *
+  module * { export * }
+}
