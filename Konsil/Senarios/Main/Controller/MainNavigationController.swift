@@ -9,11 +9,11 @@
 import UIKit
 import SideMenu
 class MainNavigationController: UINavigationController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
 }
 
 extension UIViewController {
@@ -28,7 +28,7 @@ extension UIViewController {
     }
     
     @objc func addTapped(){
-        navigationController?.popToRootViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     @objc func showMenu(){

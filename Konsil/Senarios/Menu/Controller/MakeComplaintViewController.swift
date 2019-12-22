@@ -11,12 +11,18 @@ import SideMenu
 
 class MakeComplaintViewController: UIViewController {
     
-    @IBOutlet weak var selectTybeTF: UITextField!
+    @IBOutlet weak var selectTybeTF: UITextField!{
+        didSet{
+            complaintMessageTV.layer.cornerRadius = 7
+            complaintMessageTV.layer.borderColor = #colorLiteral(red: 0.1999711692, green: 0.2000181675, blue: 0.1999708116, alpha: 1)
+            complaintMessageTV.layer.borderWidth = 1.5
+        }
+    }
     @IBOutlet weak var complaintMessageTV: UITextView!{
         didSet{
-            complaintMessageTV.layer.cornerRadius = 10
-            complaintMessageTV.layer.borderColor = UIColor.darkGray.cgColor
-            complaintMessageTV.layer.borderWidth = 2
+            complaintMessageTV.layer.cornerRadius = 7
+            complaintMessageTV.layer.borderColor = #colorLiteral(red: 0.1999711692, green: 0.2000181675, blue: 0.1999708116, alpha: 1)
+                complaintMessageTV.layer.borderWidth = 1.5
         }
     }
     @IBOutlet weak var submitBut: UIButton!{

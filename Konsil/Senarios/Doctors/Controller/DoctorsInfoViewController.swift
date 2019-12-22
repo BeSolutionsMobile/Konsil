@@ -12,6 +12,14 @@ import SideMenu
 
 class DoctorsInfoViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UIView!{
+        didSet{
+            self.tableView.layer.cornerRadius = 10
+            self.tableView.clipsToBounds = true
+            self.tableView.layer.borderColor = UIColor.darkGray.cgColor
+            self.tableView.layer.borderWidth = 2
+        }
+    }
     @IBOutlet weak var doctorImage: UIImageView!{
         didSet{
             self.doctorImage.layer.cornerRadius = self.doctorImage.frame.width/2
@@ -38,6 +46,7 @@ class DoctorsInfoViewController: UIViewController {
     }
     @IBOutlet weak var doctorRate: CosmosView!
     
+    //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
        rightBackBut()

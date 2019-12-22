@@ -34,7 +34,8 @@ class ConsultationMessagesViewController: UIViewController {
     }
     @IBOutlet weak var messagesTableView: UITableView!{
         didSet{
-            self.messagesTableView.rowHeight = 110
+            self.messagesTableView.estimatedRowHeight = 130
+            self.messagesTableView.rowHeight = UITableView.automaticDimension
         }
     }
     
@@ -60,6 +61,7 @@ extension ConsultationMessagesViewController: UITableViewDelegate , UITableViewD
         return 10
     }
     
+    //MARK:- cellForRowAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessagesTableViewCell
         

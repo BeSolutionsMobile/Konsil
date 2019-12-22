@@ -13,7 +13,7 @@ class MyConsultationsViewController: UIViewController {
     @IBOutlet weak var myConsultationTableView: UITableView!{
         didSet {
             self.myConsultationTableView.rowHeight = UITableView.automaticDimension
-            self.myConsultationTableView.estimatedRowHeight = 120
+            self.myConsultationTableView.estimatedRowHeight = 110
         }
     }
     
@@ -32,7 +32,7 @@ extension MyConsultationsViewController: UITableViewDelegate , UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath) as! MyConsultationsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyConsultationsCell", for: indexPath) as! MyConsultationsTableViewCell
         
         return cell
     }

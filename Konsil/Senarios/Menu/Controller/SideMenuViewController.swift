@@ -9,7 +9,7 @@
 import UIKit
 
 class SideMenuViewController: UIViewController {
-
+    
     @IBOutlet weak var mainView: UIView!{
         didSet{
             mainView.layer.cornerRadius = 30
@@ -42,12 +42,39 @@ class SideMenuViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    
     @IBAction func sideMenuButtonPressed(_ sender: UIButton) {
-        guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
-        self.navigationController?.pushViewController(vc, animated: true)
         
+        switch sender.tag {
+        case 0:
+            guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
+            self.navigationController?.pushViewController(vc, animated: true)
+        case 1:
+            guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
+            self.navigationController?.pushViewController(vc, animated: true)
+        case 2:
+            guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
+            self.navigationController?.pushViewController(vc, animated: true)
+        case 3:
+//            guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
+//            self.navigationController?.pushViewController(vc, animated: true)
+            break
+        case 4:
+//            guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
+//            self.navigationController?.pushViewController(vc, animated: true)
+            break
+        case 5:
+            guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
+            self.navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
+        }
     }
+    
     @IBAction func logOut(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        if let vc = storyboard?.instantiateViewController(identifier: "LogIn") as? LogInViewController {
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
     }
 }

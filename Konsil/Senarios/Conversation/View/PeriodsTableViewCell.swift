@@ -24,6 +24,9 @@ class PeriodsTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        if selected {
+            contentView.backgroundColor = .clear
+        }
         
     }
     @IBAction func checkAndUncheck(_ sender: BEMCheckBox) {

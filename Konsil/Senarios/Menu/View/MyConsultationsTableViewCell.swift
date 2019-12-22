@@ -15,7 +15,7 @@ class MyConsultationsTableViewCell: UITableViewCell {
     @IBOutlet weak var doctorImage: UIImageView!{
         didSet{
             self.doctorImage.layer.cornerRadius = self.doctorImage.frame.width/2
-            self.doctorImage.layer.borderColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
+            self.doctorImage.layer.borderColor = #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1)
             self.doctorImage.layer.borderWidth = 1.5
         }
     }

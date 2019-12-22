@@ -31,6 +31,9 @@ class DoctorConversationViewController: UIViewController {
         }
     }
     
+    var currentIndex:IndexPath?
+    var previousIndex:IndexPath?
+    
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +65,26 @@ extension DoctorConversationViewController: UITableViewDataSource , UITableViewD
         cell.delegate = self
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        currentIndex = indexPath
+        print(currentIndex , previousIndex)
+        
+        if previousIndex == nil{
+            previousIndex = currentIndex
+            let cell = tableView.cellForRow(at: currentIndex!) as! PeriodsTableViewCell
+            cell.checkBox.on = true
+            
+        } else if previousIndex != currentIndex , previousIndex != nil{
+            
+            print(currentIndex, previousIndex)
+            let cell = tableView.cellForRow(at: currentIndex!) as! PeriodsTableViewCell
+            cell.checkBox.on = true
+            let pastCell = tableView.cellForRow(at: previousIndex!) as! PeriodsTableViewCell
+            pastCell.checkBox.on = false
+            previousIndex = currentIndex
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
