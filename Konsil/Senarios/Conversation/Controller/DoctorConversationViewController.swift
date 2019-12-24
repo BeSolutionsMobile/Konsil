@@ -11,7 +11,7 @@ import Cosmos
 import BEMCheckBox
 
 class DoctorConversationViewController: UIViewController {
-
+    
     @IBOutlet weak var doctorImage: UIImageView!{
         didSet{
             self.doctorImage.layer.cornerRadius = self.doctorImage.frame.width/2
@@ -37,23 +37,18 @@ class DoctorConversationViewController: UIViewController {
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-       rightBackBut()
+        rightBackBut()
     }
     
     @IBAction func completeRequestPressed(_ sender: UIButton) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ConversationDetails") as! ConversationDetailsViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
 
 //MARK:- tableView SetUp
-extension DoctorConversationViewController: UITableViewDataSource , UITableViewDelegate , CheckBoxDelegate {
-    func choosePeriod(checkBox: BEMCheckBox, cell: UITableViewCell) {
-        let myCell = cell as! PeriodsTableViewCell
-        let indexPath = periodesTableView.indexPath(for: myCell)
-        checkBox.on = true
-        periodesTableView.reloadData()
-        print("Reload")
-    }
+extension DoctorConversationViewController: UITableViewDataSource , UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
@@ -62,23 +57,18 @@ extension DoctorConversationViewController: UITableViewDataSource , UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "periodCell", for: indexPath) as! PeriodsTableViewCell
         cell.period.text = "new Period"
-        cell.delegate = self
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         currentIndex = indexPath
-        print(currentIndex , previousIndex)
-        
         if previousIndex == nil{
             previousIndex = currentIndex
             let cell = tableView.cellForRow(at: currentIndex!) as! PeriodsTableViewCell
             cell.checkBox.on = true
             
         } else if previousIndex != currentIndex , previousIndex != nil{
-            
-            print(currentIndex, previousIndex)
             let cell = tableView.cellForRow(at: currentIndex!) as! PeriodsTableViewCell
             cell.checkBox.on = true
             let pastCell = tableView.cellForRow(at: previousIndex!) as! PeriodsTableViewCell

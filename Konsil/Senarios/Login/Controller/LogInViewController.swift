@@ -12,7 +12,6 @@ import BiometricAuthentication
 class LogInViewController: UIViewController {
 
     //MARK:- IBOutlets
-    
     @IBOutlet weak var allowBiometricAuth: BEMCheckBox!{
         didSet{
             self.allowBiometricAuth.boxType = .square
@@ -25,12 +24,12 @@ class LogInViewController: UIViewController {
     }
     @IBOutlet weak var passwordTF: UITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.passwordTF)
+            Rounded.roundedCornerTextField(textField: self.passwordTF, color: UIColor.darkGray.cgColor, radius: self.passwordTF.frame.height/2)
         }
     }
     @IBOutlet weak var emailTF: UITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.emailTF)
+            Rounded.roundedCornerTextField(textField: self.emailTF, color: UIColor.darkGray.cgColor, radius: self.emailTF.frame.height/2)
         }
     }
     @IBOutlet var redDot: [UIView]!
@@ -39,7 +38,12 @@ class LogInViewController: UIViewController {
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        roundDots()
+        Rounded.roundedDots(Dots: redDot)
+    }
+    
+    //MARK:- Chaneg Status Bar To Dark
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
     }
     
     //MARK:- IBActions
@@ -55,12 +59,6 @@ class LogInViewController: UIViewController {
     }
     @IBAction func biometricAuthChecked(_ sender: BEMCheckBox) {
         Shared.BiometricAuthEnabled = sender.on
-    }
-    
-    func roundDots(){
-        for i in redDot.indices {
-            redDot[i].layer.cornerRadius = redDot[i].frame.width/2
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

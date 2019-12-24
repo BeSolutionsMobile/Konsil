@@ -20,11 +20,18 @@ class DoctorsInfoViewController: UIViewController {
             self.tableView.layer.borderWidth = 2
         }
     }
+    
+    @IBOutlet weak var imageBackGroundView: UIView!{
+        didSet{
+            self.imageBackGroundView.layer.cornerRadius = self.imageBackGroundView.frame.height/2
+            self.imageBackGroundView.layer.borderWidth = 2
+            self.imageBackGroundView.layer.borderColor = UIColor.gray.cgColor
+            self.imageBackGroundView.clipsToBounds = true
+        }
+    }
     @IBOutlet weak var doctorImage: UIImageView!{
         didSet{
             self.doctorImage.layer.cornerRadius = self.doctorImage.frame.width/2
-            self.doctorImage.layer.borderColor = #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1)
-            self.doctorImage.layer.borderWidth = 3
         }
     }
     @IBOutlet weak var doctorName: UILabel!

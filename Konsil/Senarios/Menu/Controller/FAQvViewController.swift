@@ -46,7 +46,7 @@ extension FAQvViewController : UITableViewDataSource , UITableViewDelegate {
     }
 }
 
-//MARK:- DropDown Delegate
+//MARK:- DropDown Delegate , open FAQ item and show it's details
 extension FAQvViewController: DropDownDelegate {
     func updateView(label: UILabel, textField: DesignableUITextField) {
         if label.text == "" {
@@ -59,7 +59,6 @@ extension FAQvViewController: DropDownDelegate {
             textField.rightImage = #imageLiteral(resourceName: "plus")
             label.text = ""
         }
-        
         faqTableView.estimatedRowHeight = 60
         faqTableView.rowHeight = UITableView.automaticDimension
         faqTableView.reloadData()

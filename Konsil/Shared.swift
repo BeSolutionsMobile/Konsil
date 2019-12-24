@@ -10,7 +10,6 @@ class Shared {
         }
     }
     
-    
     static func settings(view: UIView) -> SideMenuSettings {
         let presentationStyle = SideMenuPresentationStyle.menuSlideIn
         presentationStyle.backgroundColor = .white

@@ -12,7 +12,7 @@
         <!--Log In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LogInViewController" customModule="Konsil" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogIn" id="BYZ-38-t0r" customClass="LogInViewController" customModule="Konsil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ls1-72-ed8">
                                                 <rect key="frame" x="132" y="486" width="150" height="35"/>
-                                                <color key="backgroundColor" red="0.80109888315200806" green="0.18780103325843811" blue="0.14355763792991638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="KonsilRed"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="IYW-fj-K8s"/>
                                                     <constraint firstAttribute="width" constant="150" id="sc5-Ow-JPr"/>
@@ -178,7 +178,7 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOd-bX-f7p">
                                                         <rect key="frame" x="0.0" y="0.0" width="12" height="12"/>
-                                                        <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="KonsilRed"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="12" id="s9x-Px-33v"/>
                                                             <constraint firstAttribute="height" constant="12" id="vyp-Dc-GCf"/>
@@ -186,7 +186,7 @@
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKg-yV-nmm">
                                                         <rect key="frame" x="24" y="1" width="10" height="10"/>
-                                                        <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="KonsilRed"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="10" id="BhV-yc-trJ"/>
                                                             <constraint firstAttribute="width" constant="10" id="fsQ-aG-Ddq"/>
@@ -194,7 +194,7 @@
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aj-d4-VXe">
                                                         <rect key="frame" x="46" y="2" width="8" height="8"/>
-                                                        <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="KonsilRed"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="8" id="B5b-Wu-cLZ"/>
                                                             <constraint firstAttribute="height" constant="8" id="sUa-my-ohz"/>
@@ -207,7 +207,7 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LiW-pB-nFv">
                                                         <rect key="frame" x="0.0" y="2" width="8" height="8"/>
-                                                        <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="KonsilRed"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="8" id="ZRt-Ai-eDa"/>
                                                             <constraint firstAttribute="height" constant="8" id="gWH-Oe-199"/>
@@ -215,7 +215,7 @@
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jph-RB-yHB">
                                                         <rect key="frame" x="20" y="1" width="10" height="10"/>
-                                                        <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="KonsilRed"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="10" id="3VO-th-oBd"/>
                                                             <constraint firstAttribute="height" constant="10" id="hJd-cE-jeE"/>
@@ -223,7 +223,7 @@
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4c-J1-xUa">
                                                         <rect key="frame" x="42" y="0.0" width="12" height="12"/>
-                                                        <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="KonsilRed"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="12" id="AAp-NP-Vhy"/>
                                                             <constraint firstAttribute="width" constant="12" id="vuF-AY-w2K"/>
@@ -367,7 +367,7 @@
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdR-C3-hLX">
                                                 <rect key="frame" x="132" y="422" width="150" height="35"/>
-                                                <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="KonsilRed"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="XrS-zR-X2I"/>
                                                     <constraint firstAttribute="width" constant="150" id="cZB-Ok-Nn1"/>
@@ -475,7 +475,7 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xIR-QB-Yeq">
                                                         <rect key="frame" x="0.0" y="2" width="8" height="8"/>
-                                                        <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="KonsilRed"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="8" id="JZQ-4H-K9w"/>
                                                             <constraint firstAttribute="width" constant="8" id="Nuj-Am-mtC"/>
@@ -483,7 +483,7 @@
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sp-QJ-g08">
                                                         <rect key="frame" x="20" y="1" width="10" height="10"/>
-                                                        <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="KonsilRed"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="10" id="wZb-rK-4ZO"/>
                                                             <constraint firstAttribute="width" constant="10" id="xgg-Ej-XXf"/>
@@ -491,7 +491,7 @@
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czo-W0-p1g">
                                                         <rect key="frame" x="42" y="0.0" width="12" height="12"/>
-                                                        <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="KonsilRed"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="12" id="gNG-12-r0x"/>
                                                             <constraint firstAttribute="height" constant="12" id="vbK-EF-kSQ"/>
@@ -504,7 +504,7 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JgC-QI-3dl">
                                                         <rect key="frame" x="0.0" y="0.0" width="12" height="12"/>
-                                                        <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="KonsilRed"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="12" id="BIO-Ik-kR7"/>
                                                             <constraint firstAttribute="width" constant="12" id="gQk-ua-TsQ"/>
@@ -512,7 +512,7 @@
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kca-BX-5zf">
                                                         <rect key="frame" x="24" y="1" width="10" height="10"/>
-                                                        <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="KonsilRed"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="10" id="EDZ-3n-fhp"/>
                                                             <constraint firstAttribute="height" constant="10" id="fq3-gu-Plq"/>
@@ -520,7 +520,7 @@
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ic-yL-U13">
                                                         <rect key="frame" x="46" y="2" width="8" height="8"/>
-                                                        <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="KonsilRed"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="8" id="jMc-4Y-eql"/>
                                                             <constraint firstAttribute="height" constant="8" id="vP4-lX-rQn"/>
@@ -619,7 +619,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="2Nv-c7-fkw"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -678,7 +677,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7SR-pl-IdH">
                                 <rect key="frame" x="30" y="753" width="354" height="35"/>
-                                <color key="backgroundColor" red="0.80109888315200806" green="0.18780103325843811" blue="0.14355763792991638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="KonsilRed"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="VHe-MN-34d"/>
                                 </constraints>
@@ -736,7 +735,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ph-Yp-de5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3008.6956521739135" y="799.55357142857144"/>
+            <point key="canvasLocation" x="3016" y="1313"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bU9-mR-lt9">
@@ -818,7 +817,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAk-0O-rtC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3656.521739130435" y="799.55357142857144"/>
+            <point key="canvasLocation" x="3016" y="1987"/>
         </scene>
         <!--Request Popup View Controller-->
         <scene sceneID="bkB-uu-9Yk">
@@ -892,7 +891,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zga-VF-Hqo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4358" y="801"/>
+            <point key="canvasLocation" x="3462" y="-832"/>
         </scene>
         <!--Consultation Details View Controller-->
         <scene sceneID="HZv-d9-rZ9">
@@ -908,7 +907,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8lK-5H-udj">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 428" translatesAutoresizingMaskIntoConstraints="NO" id="fwj-Lz-97g">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 428" translatesAutoresizingMaskIntoConstraints="NO" id="fwj-Lz-97g">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                             </imageView>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OgV-Jf-SzV">
@@ -920,7 +919,7 @@
                                                     <segment title="Files"/>
                                                 </segments>
                                                 <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="selectedSegmentTintColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="selectedSegmentTintColor" name="KonsilRed"/>
                                                 <connections>
                                                     <action selector="changeView:" destination="9fO-yn-xZ7" eventType="valueChanged" id="zyb-t4-do1"/>
                                                 </connections>
@@ -974,7 +973,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KoZ-iC-OCs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5095.652173913044" y="801.5625"/>
+            <point key="canvasLocation" x="3016" y="2634"/>
         </scene>
         <!--Consultation Messages View Controller-->
         <scene sceneID="xgF-Ui-hGM">
@@ -1030,15 +1029,15 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNA-Cr-8yZ">
                                 <rect key="frame" x="30" y="798" width="354" height="34"/>
-                                <color key="backgroundColor" red="0.79724293947219849" green="0.18670743703842163" blue="0.14266330003738403" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="KonsilRed"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Request online conversation"/>
                                 <connections>
                                     <action selector="requestOnlineConversationPressed:" destination="2Fc-xn-yCW" eventType="touchUpInside" id="4JI-HV-MeU"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gps-ya-tP7">
-                                <rect key="frame" x="30" y="44" width="354" height="632.5"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gps-ya-tP7">
+                                <rect key="frame" x="30" y="44" width="354" height="642.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessageCell" rowHeight="110" id="E0c-Sq-Q9h" customClass="MessagesTableViewCell" customModule="Konsil" customModuleProvider="target">
@@ -1115,7 +1114,7 @@
                             <constraint firstItem="o9t-xP-PR4" firstAttribute="trailing" secondItem="gps-ya-tP7" secondAttribute="trailing" constant="30" id="ZBv-8g-1mD"/>
                             <constraint firstItem="yVu-xP-Ma3" firstAttribute="centerX" secondItem="z8q-ua-OXH" secondAttribute="centerX" id="bYj-g8-RXW"/>
                             <constraint firstItem="gps-ya-tP7" firstAttribute="leading" secondItem="o9t-xP-PR4" secondAttribute="leading" constant="30" id="fUa-JN-LoF"/>
-                            <constraint firstItem="FMS-Ri-wCp" firstAttribute="top" secondItem="gps-ya-tP7" secondAttribute="bottom" constant="10" id="fcB-sx-7Yt"/>
+                            <constraint firstItem="FMS-Ri-wCp" firstAttribute="top" secondItem="gps-ya-tP7" secondAttribute="bottom" id="fcB-sx-7Yt"/>
                             <constraint firstItem="YNA-Cr-8yZ" firstAttribute="top" secondItem="yVu-xP-Ma3" secondAttribute="bottom" constant="20" id="kdm-RM-KwE"/>
                             <constraint firstAttribute="trailing" secondItem="YNA-Cr-8yZ" secondAttribute="trailing" constant="30" id="tBL-La-bBX"/>
                             <constraint firstItem="FMS-Ri-wCp" firstAttribute="leading" secondItem="z8q-ua-OXH" secondAttribute="leading" constant="30" id="ug6-70-WoG"/>
@@ -1133,7 +1132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Un-Es-uzM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5802.898550724638" y="799.55357142857144"/>
+            <point key="canvasLocation" x="3016" y="3283"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="1WE-1N-lGy">
@@ -1192,7 +1191,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Sj-9x-fnb">
                                 <rect key="frame" x="30" y="797" width="354" height="35"/>
-                                <color key="backgroundColor" red="0.80109888315200806" green="0.18780103325843811" blue="0.14355763792991638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="KonsilRed"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="mn9-Z1-vEg"/>
                                 </constraints>
@@ -1252,7 +1251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z7a-df-9S2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7067" y="802"/>
+            <point key="canvasLocation" x="1675" y="3283"/>
         </scene>
         <!--Consultation Final Report View Controller-->
         <scene sceneID="X5m-4G-69B">
@@ -1310,7 +1309,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mr-MJ-giv">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="35"/>
-                                        <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="KonsilRed"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="3Ot-hP-QBA"/>
                                         </constraints>
@@ -1371,7 +1370,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="92G-mm-3UG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6440.579710144928" y="801.5625"/>
+            <point key="canvasLocation" x="2341" y="3283"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="pNx-2K-DLf">
@@ -1590,7 +1589,7 @@
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phx-sd-Qsw">
                                                 <rect key="frame" x="132" y="545.5" width="150" height="35"/>
-                                                <color key="backgroundColor" red="0.79724293950000003" green="0.186707437" blue="0.14266329999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="KonsilRed"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="UzN-kY-dF7"/>
                                                     <constraint firstAttribute="width" constant="150" id="zFB-xG-hdZ"/>
@@ -1656,6 +1655,7 @@
                     <connections>
                         <outlet property="ProfileImage" destination="xQP-kt-QMf" id="USj-Lx-bgb"/>
                         <outlet property="imageBackView" destination="xpj-7e-gB7" id="CvA-m1-4i5"/>
+                        <outlet property="logOut" destination="phx-sd-Qsw" id="6e9-j5-qPb"/>
                         <outlet property="mainView" destination="Byo-lT-d8o" id="RBK-h4-W8M"/>
                         <outlet property="name" destination="0wA-bZ-pLR" id="ove-Rn-dxG"/>
                         <outletCollection property="sideMenuBut" destination="QLu-zl-ygc" collectionClass="NSMutableArray" id="HeZ-0S-gdY"/>
@@ -1668,7 +1668,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MEM-PE-rEW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-926.08695652173924" y="957.58928571428567"/>
+            <point key="canvasLocation" x="297" y="-832"/>
         </scene>
         <!--Make A Complaint-->
         <scene sceneID="ott-rz-6LX">
@@ -1712,7 +1712,7 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8b-je-bP4">
                                 <rect key="frame" x="132" y="482" width="150" height="35"/>
-                                <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="KonsilRed"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="4BM-j8-8zT"/>
                                     <constraint firstAttribute="height" constant="35" id="KZh-i9-rvl"/>
@@ -1754,7 +1754,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Na-42-9iJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="678" y="1734"/>
+            <point key="canvasLocation" x="4162" y="-832"/>
         </scene>
         <!--Request Online Conversation-->
         <scene sceneID="Mib-wF-VTf">
@@ -1770,15 +1770,29 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TxD-Ff-OsK">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jxi-aN-Fsq">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K3G-L2-2iv">
                                                 <rect key="frame" x="132" y="20" width="150" height="150"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="Jxi-aN-Fsq">
+                                                        <rect key="frame" x="2.5" y="2.5" width="145" height="145"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="145" id="2ZA-f1-8LC"/>
+                                                            <constraint firstAttribute="width" constant="145" id="IJU-Qo-psz"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="2ZA-f1-8LC"/>
-                                                    <constraint firstAttribute="width" constant="150" id="IJU-Qo-psz"/>
+                                                    <constraint firstItem="Jxi-aN-Fsq" firstAttribute="centerX" secondItem="K3G-L2-2iv" secondAttribute="centerX" id="6LD-bo-96r"/>
+                                                    <constraint firstItem="Jxi-aN-Fsq" firstAttribute="centerX" secondItem="K3G-L2-2iv" secondAttribute="centerX" id="8tp-GI-jbv"/>
+                                                    <constraint firstItem="Jxi-aN-Fsq" firstAttribute="centerY" secondItem="K3G-L2-2iv" secondAttribute="centerY" id="9Us-tj-bun"/>
+                                                    <constraint firstAttribute="height" constant="150" id="ade-qi-ZRL"/>
+                                                    <constraint firstAttribute="width" constant="150" id="e8e-A7-hda"/>
                                                 </constraints>
-                                            </imageView>
+                                            </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Cc4-eN-Guj">
-                                                <rect key="frame" x="20" y="178" width="374" height="73.5"/>
+                                                <rect key="frame" x="20" y="173" width="374" height="73.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ali Mohamed " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cay-ff-Ivd">
                                                         <rect key="frame" x="125" y="0.0" width="124.5" height="24"/>
@@ -1812,7 +1826,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NVg-RX-Xs9">
-                                                <rect key="frame" x="83.5" y="281.5" width="247" height="21.5"/>
+                                                <rect key="frame" x="83.5" y="276.5" width="247" height="21.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversation hour rate :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1F-lM-nwb">
                                                         <rect key="frame" x="0.0" y="0.0" width="203" height="21.5"/>
@@ -1829,7 +1843,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2z8-eK-w4C">
-                                                <rect key="frame" x="20" y="333" width="374" height="48"/>
+                                                <rect key="frame" x="20" y="328" width="374" height="48"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appointments available for doctor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acY-Wl-M3v">
                                                         <rect key="frame" x="0.0" y="0.0" width="286" height="21.5"/>
@@ -1846,7 +1860,7 @@
                                                 </subviews>
                                             </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gi4-cd-DHw">
-                                                <rect key="frame" x="30" y="401" width="354" height="327"/>
+                                                <rect key="frame" x="30" y="396" width="354" height="332"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="periodCell" id="r2P-VO-Pro" customClass="PeriodsTableViewCell" customModule="Konsil" customModuleProvider="target">
@@ -1920,7 +1934,7 @@
                                             </tableView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHi-gn-4IZ">
                                                 <rect key="frame" x="30" y="748" width="354" height="30"/>
-                                                <color key="backgroundColor" red="0.80109888315200806" green="0.18780103325843811" blue="0.14355763792991638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="KonsilRed"/>
                                                 <state key="normal" title="Complete the request"/>
                                                 <connections>
                                                     <action selector="completeRequestPressed:" destination="fjF-b0-y0J" eventType="touchUpInside" id="XXb-1M-rjk"/>
@@ -1929,22 +1943,22 @@
                                         </subviews>
                                         <color key="backgroundColor" name="KosilBackGround"/>
                                         <constraints>
+                                            <constraint firstItem="Cc4-eN-Guj" firstAttribute="top" secondItem="K3G-L2-2iv" secondAttribute="bottom" constant="3" id="5ve-M9-6xb"/>
                                             <constraint firstItem="NVg-RX-Xs9" firstAttribute="centerX" secondItem="TxD-Ff-OsK" secondAttribute="centerX" id="7MA-tX-HFf"/>
                                             <constraint firstAttribute="trailing" secondItem="Cc4-eN-Guj" secondAttribute="trailing" constant="20" id="91r-bi-w6o"/>
                                             <constraint firstItem="Cc4-eN-Guj" firstAttribute="leading" secondItem="TxD-Ff-OsK" secondAttribute="leading" constant="20" id="EvQ-w0-qou"/>
                                             <constraint firstItem="gi4-cd-DHw" firstAttribute="leading" secondItem="TxD-Ff-OsK" secondAttribute="leading" constant="30" id="HYT-dE-yo8"/>
+                                            <constraint firstItem="K3G-L2-2iv" firstAttribute="centerX" secondItem="TxD-Ff-OsK" secondAttribute="centerX" id="Icv-RG-aNN"/>
                                             <constraint firstItem="YHi-gn-4IZ" firstAttribute="top" secondItem="gi4-cd-DHw" secondAttribute="bottom" constant="20" id="Ink-kw-bdX"/>
                                             <constraint firstItem="2z8-eK-w4C" firstAttribute="top" secondItem="NVg-RX-Xs9" secondAttribute="bottom" constant="30" id="NCX-ub-gkH"/>
                                             <constraint firstItem="2z8-eK-w4C" firstAttribute="leading" secondItem="TxD-Ff-OsK" secondAttribute="leading" constant="20" id="TXv-0B-Oc3"/>
                                             <constraint firstAttribute="trailing" secondItem="gi4-cd-DHw" secondAttribute="trailing" constant="30" id="ZBC-Dh-f9O"/>
                                             <constraint firstItem="gi4-cd-DHw" firstAttribute="top" secondItem="2z8-eK-w4C" secondAttribute="bottom" constant="20" id="akJ-nO-DtA"/>
+                                            <constraint firstItem="K3G-L2-2iv" firstAttribute="top" secondItem="TxD-Ff-OsK" secondAttribute="top" constant="20" id="eQ2-WB-SGB"/>
                                             <constraint firstAttribute="trailing" secondItem="2z8-eK-w4C" secondAttribute="trailing" constant="20" id="fQx-YU-ggm"/>
                                             <constraint firstAttribute="trailing" secondItem="YHi-gn-4IZ" secondAttribute="trailing" constant="30" id="fUC-2L-Eha"/>
                                             <constraint firstItem="NVg-RX-Xs9" firstAttribute="top" secondItem="Cc4-eN-Guj" secondAttribute="bottom" constant="30" id="kXp-bF-Z0X"/>
-                                            <constraint firstItem="Jxi-aN-Fsq" firstAttribute="centerX" secondItem="TxD-Ff-OsK" secondAttribute="centerX" id="qsk-55-dbG"/>
                                             <constraint firstAttribute="bottom" secondItem="YHi-gn-4IZ" secondAttribute="bottom" constant="40" id="sPC-0q-b7S"/>
-                                            <constraint firstItem="Jxi-aN-Fsq" firstAttribute="top" secondItem="TxD-Ff-OsK" secondAttribute="top" constant="20" id="wW8-Hz-5Nx"/>
-                                            <constraint firstItem="Cc4-eN-Guj" firstAttribute="top" secondItem="Jxi-aN-Fsq" secondAttribute="bottom" constant="8" id="wnW-QC-TtX"/>
                                             <constraint firstItem="YHi-gn-4IZ" firstAttribute="leading" secondItem="TxD-Ff-OsK" secondAttribute="leading" constant="30" id="x8S-bx-wVY"/>
                                         </constraints>
                                     </view>
@@ -1983,7 +1997,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BqY-0U-k7L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1376.8115942028987" y="1740.4017857142856"/>
+            <point key="canvasLocation" x="3854" y="1312"/>
         </scene>
         <!--Online Conversation Details-->
         <scene sceneID="xsC-hU-h3R">
@@ -2002,7 +2016,7 @@
                                     <segment title="Info"/>
                                     <segment title="Report"/>
                                 </segments>
-                                <color key="selectedSegmentTintColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedSegmentTintColor" name="KonsilRed"/>
                                 <connections>
                                     <action selector="changeView:" destination="CrD-5U-RxJ" eventType="valueChanged" id="Bsd-Qd-AB3"/>
                                 </connections>
@@ -2036,7 +2050,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psF-Dg-pWK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2034.7826086956522" y="1739.7321428571429"/>
+            <point key="canvasLocation" x="3854" y="2634"/>
         </scene>
         <!--Conversation Info View Controller-->
         <scene sceneID="cm1-Tf-A6Z">
@@ -2122,7 +2136,7 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wnz-c9-4qK">
                                                 <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
-                                                <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="KonsilRed"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="10" id="5Zb-6B-A1q"/>
                                                     <constraint firstAttribute="height" constant="10" id="csI-M0-bEL"/>
@@ -2130,7 +2144,7 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tV6-kF-LVX">
                                                 <rect key="frame" x="40" y="0.0" width="10" height="10"/>
-                                                <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="KonsilRed"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="10" id="5Wx-x7-Qts"/>
                                                     <constraint firstAttribute="height" constant="10" id="Gis-dL-1LM"/>
@@ -2138,7 +2152,7 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bt7-MB-pM1">
                                                 <rect key="frame" x="80" y="0.0" width="10" height="10"/>
-                                                <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="KonsilRed"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="10" id="S2D-6r-cyk"/>
                                                     <constraint firstAttribute="height" constant="10" id="kpt-8E-bHH"/>
@@ -2208,7 +2222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAZ-uX-ss7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2715.9420289855075" y="1739.7321428571429"/>
+            <point key="canvasLocation" x="3854" y="3283"/>
         </scene>
         <!--Conversation Report View Controller-->
         <scene sceneID="tIp-GI-oed">
@@ -2258,7 +2272,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="InA-gM-ifh">
                                 <rect key="frame" x="30" y="787" width="354" height="35"/>
-                                <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="KonsilRed"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="kNF-wg-8jg"/>
                                 </constraints>
@@ -2311,7 +2325,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="htz-3y-U0d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3366.666666666667" y="1736.3839285714284"/>
+            <point key="canvasLocation" x="4561" y="3283"/>
         </scene>
         <!--My Consultations-->
         <scene sceneID="YpA-kV-07R">
@@ -2353,7 +2367,7 @@
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSr-i4-Smy">
                                                             <rect key="frame" x="0.0" y="24.5" width="55" height="30"/>
-                                                            <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" name="KonsilRed"/>
                                                             <state key="normal" title="View"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="open" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmI-u3-CRf">
@@ -2442,7 +2456,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdv-fj-Bl6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4276.811594202899" y="1739.7321428571429"/>
+            <point key="canvasLocation" x="297" y="476"/>
         </scene>
         <!--Personal Info-->
         <scene sceneID="lCr-hO-gYc">
@@ -2561,7 +2575,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhA-2X-cuN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6051" y="1707"/>
+            <point key="canvasLocation" x="297" y="-177"/>
         </scene>
         <!--Be A Doctor-->
         <scene sceneID="eLI-d1-lbu">
@@ -2602,21 +2616,25 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FkR-Dc-cKc">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="34"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mQm-wh-tLS">
                                         <rect key="frame" x="0.0" y="54" width="354" height="34"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MU7-aD-TRi">
                                         <rect key="frame" x="0.0" y="108" width="354" height="34"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vQw-Xc-nJ1">
                                         <rect key="frame" x="0.0" y="162" width="354" height="34"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -2624,7 +2642,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMk-c7-mk0">
                                 <rect key="frame" x="30" y="556.5" width="354" height="35"/>
-                                <color key="backgroundColor" red="0.80109888315200806" green="0.18780103325843811" blue="0.14355763792991638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="KonsilRed"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="R5m-Nc-EHu"/>
                                 </constraints>
@@ -2674,7 +2692,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0p-XP-YUa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="57" y="1011"/>
+            <point key="canvasLocation" x="296" y="1822"/>
         </scene>
         <!--FAQ-->
         <scene sceneID="tR8-uU-zZJ">
@@ -2847,7 +2865,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcl-FG-h7l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="776.81159420289862" y="1009.8214285714286"/>
+            <point key="canvasLocation" x="-2046" y="1066"/>
         </scene>
         <!--FAQ-->
         <scene sceneID="w8E-I8-CaF">
@@ -2943,7 +2961,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0yg-yo-Sjy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1512" y="1010"/>
+            <point key="canvasLocation" x="297" y="1140"/>
         </scene>
         <!--Specialities List-->
         <scene sceneID="FKw-bx-WjN">
@@ -3049,7 +3067,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e7U-Z7-4f1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2336" y="92"/>
+            <point key="canvasLocation" x="2341" y="-98"/>
         </scene>
         <!--Doctors Filters-->
         <scene sceneID="Nvh-M9-vFQ">
@@ -3201,7 +3219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shR-Li-Gd5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3068" y="92"/>
+            <point key="canvasLocation" x="1983" y="619"/>
         </scene>
         <!--Complaint Details-->
         <scene sceneID="EFS-Kv-J8J">
@@ -3310,7 +3328,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edi-KE-bhx">
                                         <rect key="frame" x="289" y="0.0" width="65" height="45"/>
-                                        <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="KonsilRed"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="65" id="XFI-5s-iOp"/>
                                             <constraint firstAttribute="height" constant="45" id="ucP-dh-svy"/>
@@ -3354,7 +3372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pca-vN-cG6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-659.4202898550725" y="1740.4017857142856"/>
+            <point key="canvasLocation" x="4875" y="-832"/>
         </scene>
         <!--Filter View Controller-->
         <scene sceneID="ww3-xq-5Bh">
@@ -3511,7 +3529,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcm-9K-GbW">
                                         <rect key="frame" x="102" y="348.5" width="150" height="35"/>
-                                        <color key="backgroundColor" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="KonsilRed"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="7fj-Ei-8YI"/>
                                             <constraint firstAttribute="height" constant="35" id="Bh0-4w-uYi"/>
@@ -3605,7 +3623,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yia-3Q-mWs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="1734"/>
+            <point key="canvasLocation" x="1983" y="1286"/>
         </scene>
         <!--Doctor Info-->
         <scene sceneID="3sM-xA-I5t">
@@ -3618,13 +3636,26 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainBackGround" translatesAutoresizingMaskIntoConstraints="NO" id="vk1-tE-wRk">
                                 <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Surgery" translatesAutoresizingMaskIntoConstraints="NO" id="8h0-yl-TRE">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CET-kK-ljL">
                                 <rect key="frame" x="132" y="86" width="150" height="150"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Surgery" translatesAutoresizingMaskIntoConstraints="NO" id="8h0-yl-TRE">
+                                        <rect key="frame" x="5" y="5" width="140" height="140"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="140" id="7mP-6Z-6l4"/>
+                                            <constraint firstAttribute="width" constant="140" id="hRo-5H-e1u"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="7mP-6Z-6l4"/>
-                                    <constraint firstAttribute="width" constant="150" id="hRo-5H-e1u"/>
+                                    <constraint firstAttribute="height" constant="150" id="2C5-cp-PQu"/>
+                                    <constraint firstAttribute="width" constant="150" id="39a-Vt-qfh"/>
+                                    <constraint firstItem="8h0-yl-TRE" firstAttribute="centerX" secondItem="CET-kK-ljL" secondAttribute="centerX" id="ODl-8i-vLr"/>
+                                    <constraint firstItem="8h0-yl-TRE" firstAttribute="centerX" secondItem="CET-kK-ljL" secondAttribute="centerX" id="OUz-hp-UOX"/>
+                                    <constraint firstItem="8h0-yl-TRE" firstAttribute="centerY" secondItem="CET-kK-ljL" secondAttribute="centerY" id="zgV-k7-m6E"/>
                                 </constraints>
-                            </imageView>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ahmed Mohamed Ali" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CE1-OJ-oIq">
                                 <rect key="frame" x="112" y="246" width="190" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
@@ -3857,19 +3888,19 @@
                             <constraint firstItem="aZP-ou-N0A" firstAttribute="top" secondItem="CE1-OJ-oIq" secondAttribute="bottom" constant="10" id="F9r-AR-gHg"/>
                             <constraint firstItem="e0v-mu-XNk" firstAttribute="top" secondItem="z8t-3x-pmF" secondAttribute="bottom" constant="20" id="GQt-a8-UuO"/>
                             <constraint firstItem="5mk-bP-jAZ" firstAttribute="leading" secondItem="TbQ-C1-2DU" secondAttribute="leading" constant="30" id="HJw-NG-fbD"/>
+                            <constraint firstItem="CET-kK-ljL" firstAttribute="centerX" secondItem="GBd-rO-Z2x" secondAttribute="centerX" id="K9P-8a-xF7"/>
+                            <constraint firstItem="CET-kK-ljL" firstAttribute="top" secondItem="TbQ-C1-2DU" secondAttribute="top" constant="30" id="NGY-xv-oeb"/>
+                            <constraint firstItem="CE1-OJ-oIq" firstAttribute="top" secondItem="CET-kK-ljL" secondAttribute="bottom" constant="10" id="NpJ-5h-LhK"/>
                             <constraint firstItem="TbQ-C1-2DU" firstAttribute="trailing" secondItem="z8t-3x-pmF" secondAttribute="trailing" constant="50" id="T61-of-qOR"/>
                             <constraint firstItem="z8t-3x-pmF" firstAttribute="leading" secondItem="TbQ-C1-2DU" secondAttribute="leading" constant="50" id="Ujd-bc-YDR"/>
-                            <constraint firstItem="8h0-yl-TRE" firstAttribute="top" secondItem="TbQ-C1-2DU" secondAttribute="top" constant="30" id="XE8-Eg-xgu"/>
                             <constraint firstItem="e0v-mu-XNk" firstAttribute="leading" secondItem="TbQ-C1-2DU" secondAttribute="leading" constant="30" id="XoS-q1-PDW"/>
                             <constraint firstItem="gnX-q5-4rT" firstAttribute="leading" secondItem="TbQ-C1-2DU" secondAttribute="leading" constant="30" id="ZF2-zP-29a"/>
                             <constraint firstItem="z8t-3x-pmF" firstAttribute="top" secondItem="5mk-bP-jAZ" secondAttribute="bottom" constant="20" id="b8k-Wj-ppt"/>
-                            <constraint firstItem="CE1-OJ-oIq" firstAttribute="top" secondItem="8h0-yl-TRE" secondAttribute="bottom" constant="10" id="bfA-ZC-zj4"/>
                             <constraint firstItem="vk1-tE-wRk" firstAttribute="bottom" secondItem="TbQ-C1-2DU" secondAttribute="bottom" id="dRZ-mr-4W1"/>
                             <constraint firstItem="tLF-Xm-Lqh" firstAttribute="centerX" secondItem="GBd-rO-Z2x" secondAttribute="centerX" id="e89-4U-XN1"/>
                             <constraint firstItem="gnX-q5-4rT" firstAttribute="top" secondItem="z8t-3x-pmF" secondAttribute="bottom" constant="20" id="fmn-Ol-Whm"/>
                             <constraint firstItem="vk1-tE-wRk" firstAttribute="trailing" secondItem="TbQ-C1-2DU" secondAttribute="trailing" id="hph-nm-86a"/>
                             <constraint firstItem="TbQ-C1-2DU" firstAttribute="trailing" secondItem="gnX-q5-4rT" secondAttribute="trailing" constant="30" id="kdc-dH-dJ0"/>
-                            <constraint firstItem="8h0-yl-TRE" firstAttribute="centerX" secondItem="GBd-rO-Z2x" secondAttribute="centerX" id="lN4-8Y-X4K"/>
                             <constraint firstItem="TbQ-C1-2DU" firstAttribute="trailing" secondItem="5mk-bP-jAZ" secondAttribute="trailing" constant="30" id="rjy-fV-dzH"/>
                             <constraint firstItem="CE1-OJ-oIq" firstAttribute="centerX" secondItem="GBd-rO-Z2x" secondAttribute="centerX" id="tMP-SM-hQh"/>
                             <constraint firstItem="TbQ-C1-2DU" firstAttribute="trailing" secondItem="e0v-mu-XNk" secondAttribute="trailing" constant="30" id="uwD-oF-g1X"/>
@@ -3884,6 +3915,7 @@
                         <outlet property="doctorName" destination="CE1-OJ-oIq" id="zWK-6W-h0F"/>
                         <outlet property="doctorRate" destination="MdN-Vw-U4u" id="43n-dD-eAq"/>
                         <outlet property="doctorSpeciality" destination="aZP-ou-N0A" id="YBR-lU-Yb5"/>
+                        <outlet property="imageBackGroundView" destination="CET-kK-ljL" id="R1N-pj-UP2"/>
                         <outlet property="requestConsultarionBack" destination="pb9-SL-NfX" id="n4j-bv-vdc"/>
                         <outlet property="requestConversationBack" destination="3ap-3v-FnW" id="qcT-dN-HBB"/>
                         <outlet property="tableView" destination="5mk-bP-jAZ" id="Att-Lm-dxD"/>
@@ -3892,7 +3924,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="khm-wf-dqd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3782.608695652174" y="91.741071428571431"/>
+            <point key="canvasLocation" x="3017" y="619"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="gDg-Jv-Ozi">
@@ -3915,7 +3947,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98L-L9-7P0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1626" y="92"/>
+            <point key="canvasLocation" x="1625" y="-98"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="T1C-uR-Y09">
@@ -3937,7 +3969,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSq-6A-Hib" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1646" y="958"/>
+            <point key="canvasLocation" x="-423" y="-832"/>
         </scene>
     </scenes>
     <resources>
@@ -3963,10 +3995,13 @@
         <image name="menuButton" width="31" height="17"/>
         <image name="plus" width="32" height="32"/>
         <namedColor name="IconsColor">
-            <color red="0.019999999552965164" green="0.45500001311302185" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.019607843137254902" green="0.45490196078431372" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="KonsilDrakGray">
-            <color red="0.19599999487400055" green="0.19599999487400055" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="KonsilRed">
+            <color red="0.86664861440658569" green="0.20639178156852722" blue="0.15876078605651855" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="KosilBackGround">
             <color red="0.87800002098083496" green="0.92199999094009399" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

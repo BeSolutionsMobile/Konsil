@@ -52,6 +52,7 @@ struct Rounded {
         view.layer.borderColor = UIColor.lightGray.cgColor
         view.layer.maskedCorners = .layerMinXMinYCorner
     }
+    
     static func topRight(view: UIView){
         view.layer.cornerRadius = 20
         view.clipsToBounds = true
@@ -59,6 +60,7 @@ struct Rounded {
         view.layer.borderColor = UIColor.lightGray.cgColor
         view.layer.maskedCorners = .layerMaxXMinYCorner
     }
+    
     static func botLeft(view: UIView){
         view.layer.cornerRadius = 20
         view.clipsToBounds = true
@@ -66,6 +68,7 @@ struct Rounded {
         view.layer.borderColor = UIColor.lightGray.cgColor
         view.layer.maskedCorners = .layerMinXMaxYCorner
     }
+    
     static func botRight(view: UIView){
         view.layer.cornerRadius = 20
         view.clipsToBounds = true
@@ -73,49 +76,40 @@ struct Rounded {
         view.layer.borderColor = UIColor.lightGray.cgColor
         view.layer.maskedCorners = .layerMaxXMaxYCorner
     }
+    
     static func normalView(view: UIView){
         view.clipsToBounds = true
         view.layer.borderWidth = 2
         view.layer.borderColor = UIColor.lightGray.cgColor
     }
-    static func roundedCornerButton(button: UIButton) {
-        button.layer.cornerRadius = button.frame.height / 2
-        button.layer.shadowRadius = 2
-        
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 1.5)
-        button.layer.shadowOpacity = 0.3
-    }
     
-    static func roundButton(button: UIButton) {
-        button.layer.cornerRadius = button.frame.height / 2
+    static func roundButton(button: UIButton ,radius: CGFloat) {
+        button.layer.cornerRadius = radius
         button.layer.shadowRadius = 3
-        
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOffset = CGSize(width: 0, height: 2.5)
         button.layer.shadowOpacity = 0.4
     }
     
-    static func roundedCornerTextField(textField: UITextField){
-        textField.layer.cornerRadius = textField.frame.height/2
-        textField.layer.borderColor = UIColor.darkGray.cgColor
+    static func roundedCornerTextField(textField: UITextField ,color: CGColor ,radius: CGFloat){
+        textField.layer.cornerRadius = radius
+        textField.layer.borderColor = color
         textField.layer.borderWidth = 1.5
         textField.clipsToBounds = true
     }
     
-    static func profileRoundedCornerTextField(textField: UITextField){
-        textField.layer.cornerRadius = textField.frame.height/2
-        textField.layer.borderColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
-        textField.layer.borderWidth = 1.5
-        textField.clipsToBounds = true
-    }
-    
-    static func roundedImage(imageView: UIImageView){
-        imageView.layer.cornerRadius = imageView.frame.width / 2
+    static func roundedImage(imageView: UIImageView ,radius: CGFloat ,borderColor: CGColor ,borderWidth: CGFloat){
+        imageView.layer.cornerRadius = radius
         imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFill
-        imageView.layer.borderWidth = 2
-        imageView.layer.borderColor = #colorLiteral(red: 0.1999711692, green: 0.2000181675, blue: 0.1999708116, alpha: 1)
+        imageView.layer.borderWidth = borderWidth
+        imageView.layer.borderColor = borderColor
+    }
+    
+    static func roundedDots(Dots: [UIView]){
+        for i in Dots.indices {
+            Dots[i].layer.cornerRadius = Dots[i].frame.width/2
+        }
     }
 }
 

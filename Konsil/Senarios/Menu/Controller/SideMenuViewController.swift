@@ -10,6 +10,11 @@ import UIKit
 
 class SideMenuViewController: UIViewController {
     
+    @IBOutlet weak var logOut: UIButton!{
+        didSet{
+            Rounded.roundButton(button: self.logOut, radius: self.logOut.frame.height/2)
+        }
+    }
     @IBOutlet weak var mainView: UIView!{
         didSet{
             mainView.layer.cornerRadius = 30
@@ -35,7 +40,7 @@ class SideMenuViewController: UIViewController {
     
     @IBOutlet weak var name: UILabel!
     
-    var segue = ["PersonalInfo" , "MyConsultation" , "FAQView" , "MyComplaints" , "Policy" ,"Be A Doctor"]
+    var segue = ["PersonalInfo" , "MyConsultation" , "FAQView" , "MyComplaints" , "Policy" ,"Become A Doctor"]
     //MARK:- viewDidLoad
     
     override func viewDidLoad() {

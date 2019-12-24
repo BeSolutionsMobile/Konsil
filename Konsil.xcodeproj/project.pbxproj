@@ -19,6 +19,7 @@
 		810DAB0223A7A86C00B8AF20 /* DoctorsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DAB0123A7A86C00B8AF20 /* DoctorsInfoViewController.swift */; };
 		810DAB0823A7BC8F00B8AF20 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DAB0723A7BC8F00B8AF20 /* LogInViewController.swift */; };
 		810DAB0D23A7C71F00B8AF20 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DAB0C23A7C71F00B8AF20 /* RegisterViewController.swift */; };
+		8122162423B0D56D009E111B /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8122162323B0D56D009E111B /* Extentions.swift */; };
 		815A17C023A658F7001DDBEE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17BF23A658F7001DDBEE /* MainViewController.swift */; };
 		815A17CA23A6596F001DDBEE /* MainCategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17C923A6596F001DDBEE /* MainCategoriesCollectionViewCell.swift */; };
 		815A17CC23A65981001DDBEE /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17CB23A65981001DDBEE /* Categories.swift */; };
@@ -99,6 +100,7 @@
 		810DAB0123A7A86C00B8AF20 /* DoctorsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsInfoViewController.swift; sourceTree = "<group>"; };
 		810DAB0723A7BC8F00B8AF20 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		810DAB0C23A7C71F00B8AF20 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		8122162323B0D56D009E111B /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		815A17BF23A658F7001DDBEE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		815A17C923A6596F001DDBEE /* MainCategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		815A17CB23A65981001DDBEE /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				04F1A61623A641B300293AA2 /* Assets.xcassets */,
 				04F1A61823A641B300293AA2 /* LaunchScreen.storyboard */,
 				815A17DF23A682B8001DDBEE /* Shared.swift */,
+				8122162323B0D56D009E111B /* Extentions.swift */,
 				04F1A61B23A641B300293AA2 /* Info.plist */,
 			);
 			path = Konsil;
@@ -713,6 +716,7 @@
 				815A17D723A65A26001DDBEE /* Maps.swift in Sources */,
 				81849F2723A929DD004A59D8 /* ConsultationMessagesViewController.swift in Sources */,
 				81ECE9A923AB9AA000E63105 /* MyConsultationsViewController.swift in Sources */,
+				8122162423B0D56D009E111B /* Extentions.swift in Sources */,
 				815A17C023A658F7001DDBEE /* MainViewController.swift in Sources */,
 				81ECE99A23AA6D8800E63105 /* FAQvViewController.swift in Sources */,
 				81849F2123A906C1004A59D8 /* ConsultationDetailsViewController.swift in Sources */,

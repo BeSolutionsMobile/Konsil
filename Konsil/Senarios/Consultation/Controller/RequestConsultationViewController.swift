@@ -18,9 +18,7 @@ class RequestConsultationViewController: UIViewController {
     }
     @IBOutlet weak var titleTF: UITextField!{
         didSet{
-            self.titleTF.layer.cornerRadius = 10
-            self.titleTF.layer.borderColor = #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1)
-            self.titleTF.layer.borderWidth = 1.5
+            Rounded.roundedCornerTextField(textField: self.titleTF, color: #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1), radius: 10)
             self.titleTF.clipsToBounds = true
         }
     }
@@ -55,7 +53,6 @@ class RequestConsultationViewController: UIViewController {
     @IBAction func uploadFiles(_ sender: UIButton) {
     }
 }
-
 
 
 //MARK:- ImagePicker SetUp

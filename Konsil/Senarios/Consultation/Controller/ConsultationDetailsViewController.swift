@@ -11,32 +11,21 @@ import UIKit
 class ConsultationDetailsViewController: UIViewController {
     @IBOutlet weak var segmantController: UISegmentedControl!{
         didSet{
-            let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white , NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .semibold)]
-            let selectedTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white , NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .semibold)]
-            segmantController.setTitleTextAttributes(titleTextAttributes, for: .normal)
-            segmantController.setTitleTextAttributes(selectedTitleTextAttributes, for: .selected)
-            let divider = UIImage(named: "de")
-            segmantController.setDividerImage(divider, forLeftSegmentState: [.normal , .selected], rightSegmentState: [.normal , .selected], barMetrics: .default)
+            self.customizeSigmanted(for: self.segmantController)
         }
     }
+    
     @IBOutlet weak var backGroundView: UIView!
-    
     weak var currentViewController : UIViewController?
-    
     
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
-        
-        self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ConsultationMessages")
-        self.currentViewController?.view.translatesAutoresizingMaskIntoConstraints = false
-        self.addChild(self.currentViewController!)
-        self.addSubview(subView: self.currentViewController!.view, toView: self.backGroundView)
-        
-        
+        setDefaultView()
     }
     
+    //MARK:- change viewController's view by adding other viewController's view
     @IBAction func changeView(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "ConsultationMessages")
@@ -50,10 +39,7 @@ class ConsultationDetailsViewController: UIViewController {
             
             self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController!)
             self.currentViewController = newViewController
-            print("1")
-            
         } else {
-            print("2")
             let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "ConsultationFiles")
             newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
             
@@ -63,6 +49,7 @@ class ConsultationDetailsViewController: UIViewController {
         }
     }
     
+    //MARK:- add other viewContoller's view
     func addSubview(subView:UIView, toView parentView:UIView) {
         parentView.addSubview(subView)
         var viewBindingsDict = [String: AnyObject]()
@@ -72,7 +59,6 @@ class ConsultationDetailsViewController: UIViewController {
         parentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[subView]|",
                                                                  options: [], metrics: nil, views: viewBindingsDict))
     }
-    
     func cycleFromViewController(oldViewController: UIViewController, toViewController newViewController: UIViewController) {
         oldViewController.willMove(toParent: nil)
         self.addChild(newViewController)
@@ -88,6 +74,28 @@ class ConsultationDetailsViewController: UIViewController {
             newViewController.didMove(toParent: self)
         }
         )
+    }
+    
+    
+    //MARK:- Default segmant view
+    func setDefaultView(){
+        self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ConsultationMessages")
+        self.currentViewController?.view.translatesAutoresizingMaskIntoConstraints = false
+        self.addChild(self.currentViewController!)
+        self.addSubview(subView: self.currentViewController!.view, toView: self.backGroundView)
+    }
+    
+    //MARK:- customize segmant controller
+    func customizeSigmanted(for segmantController: UISegmentedControl) {
+        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white , NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .semibold)]
+        
+        let selectedTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white , NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .semibold)]
+        
+        segmantController.setTitleTextAttributes(titleTextAttributes, for: .normal)
+        segmantController.setTitleTextAttributes(selectedTitleTextAttributes, for: .selected)
+        
+        let divider = UIImage(named: "SegmantSeparator")
+        segmantController.setDividerImage(divider, forLeftSegmentState: [.normal , .selected], rightSegmentState: [.normal , .selected], barMetrics: .default)
     }
     
 }

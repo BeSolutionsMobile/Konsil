@@ -9,25 +9,26 @@
 import UIKit
 import BEMCheckBox
 class RegisterViewController: UIViewController {
-
+    
+    //MARK:- IBOutlets
     @IBOutlet weak var name: DesignableUITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.name)
+            Rounded.roundedCornerTextField(textField: self.name, color: UIColor.darkGray.cgColor, radius: self.name.frame.height/2)
         }
     }
     @IBOutlet weak var phone: DesignableUITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.phone)
+            Rounded.roundedCornerTextField(textField: self.phone, color: UIColor.darkGray.cgColor, radius: self.phone.frame.height/2)
         }
     }
     @IBOutlet weak var email: DesignableUITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.email)
+            Rounded.roundedCornerTextField(textField: self.email, color: UIColor.darkGray.cgColor, radius: self.email.frame.height/2)
         }
     }
     @IBOutlet weak var password: DesignableUITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.password)
+            Rounded.roundedCornerTextField(textField: self.password, color: UIColor.darkGray.cgColor, radius: self.password.frame.height/2)
         }
     }
     @IBOutlet weak var registerButton: UIButton!{
@@ -40,33 +41,33 @@ class RegisterViewController: UIViewController {
             self.checkBox.boxType = .square
         }
     }
-    
     @IBOutlet var redDot: [UIView]!
     
+    //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        roundDots()
+        Rounded.roundedDots(Dots: redDot)
     }
-    func roundDots(){
-        for i in redDot.indices {
-            redDot[i].layer.cornerRadius = redDot[i].frame.width/2
-        }
+    
+    //MARK:- Change Status Bar To Dark
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
     }
+    
+    //MARK:- IBActions
     @IBAction func registerWithTwitter(_ sender: UIButton) {
     }
     @IBAction func registerWithGoogle(_ sender: UIButton) {
     }
     @IBAction func registerWithFacebook(_ sender: UIButton) {
     }
-    
     @IBAction func registerPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "GoToMain", sender: self)
     }
-    
     @IBAction func acceptAllTermsAndConditions(_ sender: BEMCheckBox) {
     }
     
+    //MARK:- Prepare For Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GoToMain" {
             let vc = segue.destination as! MainNavigationController

@@ -43,6 +43,7 @@ class ConsultationMessagesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
+        messagesTableView.setContentOffset(CGPoint(x: 0, y: CGFloat.greatestFiniteMagnitude + 30), animated: false)
     }
     
     @IBAction func requestOnlineConversationPressed(_ sender: UIButton) {
