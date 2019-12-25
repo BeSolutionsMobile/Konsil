@@ -56,7 +56,7 @@ extension FAQvViewController: DropDownDelegate {
                 self.view.layoutIfNeeded()
             }
         } else {
-            textField.rightImage = #imageLiteral(resourceName: "plus")
+            textField.rightImage = #imageLiteral(resourceName: "StarFilled")
             label.text = ""
         }
         faqTableView.estimatedRowHeight = 60

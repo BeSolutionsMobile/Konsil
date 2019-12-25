@@ -25,7 +25,7 @@ class ConversationReportViewController: UIViewController {
     @IBAction func downloadPressed(_ sender: UIButton) {
     }
     @IBAction func makeComplaintPressed(_ sender: UIButton) {
-        let vc = storyboard?.instantiateViewController(identifier: "DoctorConversation") as! DoctorConversationViewController
+        let vc = storyboard?.instantiateViewController(identifier: "Make A Complaint") as! MakeComplaintViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

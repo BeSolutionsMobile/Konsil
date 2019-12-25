@@ -21,7 +21,7 @@ class ComplaintDetailsViewController: UIViewController {
         didSet{
             self.messageTF.layer.cornerRadius = 10
             self.messageTF.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
-            self.messageTF.layer.borderColor = UIColor.darkGray.cgColor
+            self.messageTF.layer.borderColor = UIColor.gray.cgColor
             self.messageTF.layer.borderWidth = 1.5
             self.messageTF.clipsToBounds = true
         }

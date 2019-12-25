@@ -24,12 +24,12 @@ class LogInViewController: UIViewController {
     }
     @IBOutlet weak var passwordTF: UITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.passwordTF, color: UIColor.darkGray.cgColor, radius: self.passwordTF.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.passwordTF, color: UIColor.gray.cgColor, radius: self.passwordTF.frame.height/2)
         }
     }
     @IBOutlet weak var emailTF: UITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.emailTF, color: UIColor.darkGray.cgColor, radius: self.emailTF.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.emailTF, color: UIColor.gray.cgColor, radius: self.emailTF.frame.height/2)
         }
     }
     @IBOutlet var redDot: [UIView]!

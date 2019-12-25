@@ -14,4 +14,9 @@ class MainNavigationController: UINavigationController {
         super.viewDidLoad()
     }
     
+    //MARK:- Change Status Bar To Dark
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 }

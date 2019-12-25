@@ -12,14 +12,7 @@ import BEMCheckBox
 
 class DoctorConversationViewController: UIViewController {
     
-    @IBOutlet weak var doctorImage: UIImageView!{
-        didSet{
-            self.doctorImage.layer.cornerRadius = self.doctorImage.frame.width/2
-            self.doctorImage.layer.borderColor = UIColor.darkGray.cgColor
-            self.doctorImage.layer.borderWidth = 2
-        }
-    }
-    
+    //MARK:- IBOutlets
     @IBOutlet weak var doctorName: UILabel!
     @IBOutlet weak var doctorSpeciality: UILabel!
     @IBOutlet weak var doctorRate: CosmosView!
@@ -28,6 +21,18 @@ class DoctorConversationViewController: UIViewController {
     @IBOutlet weak var submitBut: UIButton!{
         didSet{
             self.submitBut.layer.cornerRadius = self.submitBut.frame.height/2
+        }
+    }
+    @IBOutlet weak var doctorImage: UIImageView!{
+        didSet{
+            self.doctorImage.layer.cornerRadius = self.doctorImage.frame.width/2
+        }
+    }
+    @IBOutlet weak var imageBackView: UIView!{
+        didSet{
+            self.imageBackView.layer.cornerRadius = self.imageBackView.frame.height/2
+            self.imageBackView.layer.borderColor = UIColor.gray.cgColor
+            self.imageBackView.layer.borderWidth = 2
         }
     }
     
@@ -40,6 +45,7 @@ class DoctorConversationViewController: UIViewController {
         rightBackBut()
     }
     
+    //MARK:- Complete Request
     @IBAction func completeRequestPressed(_ sender: UIButton) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "ConversationDetails") as! ConversationDetailsViewController
         self.navigationController?.pushViewController(vc, animated: true)
@@ -54,14 +60,15 @@ extension DoctorConversationViewController: UITableViewDataSource , UITableViewD
         return 4
     }
     
+    //MARK:- cellForRowAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "periodCell", for: indexPath) as! PeriodsTableViewCell
-        cell.period.text = "new Period"
+        cell.period.text = "new Period new Period new Period new Period new Period new Period new Period"
         return cell
     }
     
+    //MARK:- Check And Uncheck Period Boxs
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         currentIndex = indexPath
         if previousIndex == nil{
             previousIndex = currentIndex
@@ -76,5 +83,11 @@ extension DoctorConversationViewController: UITableViewDataSource , UITableViewD
             previousIndex = currentIndex
         }
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    //MARK:- Set Dynamic Hieght For Row
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        self.periodesTableView.estimatedRowHeight = 50
+        return UITableView.automaticDimension
     }
 }

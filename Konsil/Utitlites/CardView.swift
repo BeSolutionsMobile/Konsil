@@ -49,7 +49,7 @@ struct Rounded {
         view.layer.cornerRadius = 20
         view.clipsToBounds = true
         view.layer.borderWidth = 2
-        view.layer.borderColor = UIColor.lightGray.cgColor
+        view.layer.borderColor = UIColor.gray.cgColor
         view.layer.maskedCorners = .layerMinXMinYCorner
     }
     
@@ -57,7 +57,7 @@ struct Rounded {
         view.layer.cornerRadius = 20
         view.clipsToBounds = true
         view.layer.borderWidth = 2
-        view.layer.borderColor = UIColor.lightGray.cgColor
+        view.layer.borderColor = UIColor.gray.cgColor
         view.layer.maskedCorners = .layerMaxXMinYCorner
     }
     
@@ -65,7 +65,7 @@ struct Rounded {
         view.layer.cornerRadius = 20
         view.clipsToBounds = true
         view.layer.borderWidth = 2
-        view.layer.borderColor = UIColor.lightGray.cgColor
+        view.layer.borderColor = UIColor.gray.cgColor
         view.layer.maskedCorners = .layerMinXMaxYCorner
     }
     
@@ -73,14 +73,14 @@ struct Rounded {
         view.layer.cornerRadius = 20
         view.clipsToBounds = true
         view.layer.borderWidth = 2
-        view.layer.borderColor = UIColor.lightGray.cgColor
+        view.layer.borderColor = UIColor.gray.cgColor
         view.layer.maskedCorners = .layerMaxXMaxYCorner
     }
     
     static func normalView(view: UIView){
         view.clipsToBounds = true
         view.layer.borderWidth = 2
-        view.layer.borderColor = UIColor.lightGray.cgColor
+        view.layer.borderColor = UIColor.gray.cgColor
     }
     
     static func roundButton(button: UIButton ,radius: CGFloat) {

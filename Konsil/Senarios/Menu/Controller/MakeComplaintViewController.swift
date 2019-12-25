@@ -13,16 +13,16 @@ class MakeComplaintViewController: UIViewController {
     
     @IBOutlet weak var selectTybeTF: UITextField!{
         didSet{
-            complaintMessageTV.layer.cornerRadius = 7
-            complaintMessageTV.layer.borderColor = #colorLiteral(red: 0.1999711692, green: 0.2000181675, blue: 0.1999708116, alpha: 1)
-            complaintMessageTV.layer.borderWidth = 1.5
+            Rounded.roundedCornerTextField(textField: self.selectTybeTF, color: UIColor.gray.cgColor , radius: 7)
+            self.selectTybeTF.layer.borderWidth = 1.5
+            self.selectTybeTF.clipsToBounds = true
         }
     }
     @IBOutlet weak var complaintMessageTV: UITextView!{
         didSet{
             complaintMessageTV.layer.cornerRadius = 7
-            complaintMessageTV.layer.borderColor = #colorLiteral(red: 0.1999711692, green: 0.2000181675, blue: 0.1999708116, alpha: 1)
-                complaintMessageTV.layer.borderWidth = 1.5
+            complaintMessageTV.layer.borderColor = UIColor.gray.cgColor
+            complaintMessageTV.layer.borderWidth = 1.5
         }
     }
     @IBOutlet weak var submitBut: UIButton!{
@@ -31,6 +31,7 @@ class MakeComplaintViewController: UIViewController {
         }
     }
     
+    //MARK:- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
@@ -38,7 +39,6 @@ class MakeComplaintViewController: UIViewController {
     
     @IBAction func submitPressed(_ sender: UIButton) {
         let vc = storyboard?.instantiateViewController(identifier: "ComplaintDetails") as! ComplaintDetailsViewController
-        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

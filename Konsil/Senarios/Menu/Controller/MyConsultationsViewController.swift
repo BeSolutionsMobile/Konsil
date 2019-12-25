@@ -19,8 +19,7 @@ class MyConsultationsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        rightBackBut()
     }
 
 }

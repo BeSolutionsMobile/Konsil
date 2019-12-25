@@ -14,14 +14,14 @@ class RequestPopupViewController: UIViewController {
         didSet{
             self.backgroundImage.layer.cornerRadius = 10
             self.backgroundImage.layer.borderWidth = 2
-            self.backgroundImage.layer.borderColor = #colorLiteral(red: 0.1999711692, green: 0.2000181675, blue: 0.1999708116, alpha: 1)
+            self.backgroundImage.layer.borderColor = UIColor.gray.cgColor
         }
     }
     @IBOutlet weak var logoImg: UIImageView!{
         didSet{
             self.logoImg.layer.cornerRadius = self.logoImg.frame.height/2
             self.logoImg.layer.borderWidth = 2
-            self.logoImg.layer.borderColor = #colorLiteral(red: 0.1999711692, green: 0.2000181675, blue: 0.1999708116, alpha: 1)
+            self.logoImg.layer.borderColor = UIColor.gray.cgColor
         }
     }
     @IBOutlet weak var popUpTitle: UILabel!

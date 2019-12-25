@@ -13,22 +13,22 @@ class RegisterViewController: UIViewController {
     //MARK:- IBOutlets
     @IBOutlet weak var name: DesignableUITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.name, color: UIColor.darkGray.cgColor, radius: self.name.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.name, color: UIColor.gray.cgColor, radius: self.name.frame.height/2)
         }
     }
     @IBOutlet weak var phone: DesignableUITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.phone, color: UIColor.darkGray.cgColor, radius: self.phone.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.phone, color: UIColor.gray.cgColor, radius: self.phone.frame.height/2)
         }
     }
     @IBOutlet weak var email: DesignableUITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.email, color: UIColor.darkGray.cgColor, radius: self.email.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.email, color: UIColor.gray.cgColor, radius: self.email.frame.height/2)
         }
     }
     @IBOutlet weak var password: DesignableUITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.password, color: UIColor.darkGray.cgColor, radius: self.password.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.password, color: UIColor.gray.cgColor, radius: self.password.frame.height/2)
         }
     }
     @IBOutlet weak var registerButton: UIButton!{

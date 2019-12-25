@@ -16,7 +16,7 @@ class DoctorsInfoViewController: UIViewController {
         didSet{
             self.tableView.layer.cornerRadius = 10
             self.tableView.clipsToBounds = true
-            self.tableView.layer.borderColor = UIColor.darkGray.cgColor
+            self.tableView.layer.borderColor = UIColor.gray.cgColor
             self.tableView.layer.borderWidth = 2
         }
     }

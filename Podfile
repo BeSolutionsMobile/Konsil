@@ -13,6 +13,12 @@ target 'Konsil' do
   pod 'SideMenu'
   pod 'BEMCheckBox'
   pod 'BiometricAuthentication'
+  pod 'OpalImagePicker'
+  pod 'Firebase/Core'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Firestore'
+  pod 'NVActivityIndicatorView'
+
   
   target 'KonsilTests' do
     inherit! :search_paths
