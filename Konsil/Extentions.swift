@@ -64,5 +64,17 @@ extension UIViewController {
         view.window!.layer.add(transition, forKey: kCATransition)
         present(viewController, animated: animated, completion: nil)
     }
-    
+    func checkTableViewData(tableView: UITableView , view: UIView , animationWidth: CGFloat , animationHeight: CGFloat , animationName: String){
+        let animationView = UIView()
+        animationView.frame = CGRect(x: (view.frame.width/2) - (animationWidth/2), y: (view.frame.height/2) - (animationHeight/2), width: animationWidth, height: animationHeight)
+        animationView.tag = 999
+        if tableView.numberOfRows(inSection: 0) == 0 {
+            let animation = Shared.showLottie(view: animationView, fileName: animationName, contentMode: .scaleAspectFill)
+            animationView.addSubview(animation)
+            view.addSubview(animationView)
+            animation.play()
+        } else {
+            view.viewWithTag(999)?.removeFromSuperview()
+        }
+    }
 }

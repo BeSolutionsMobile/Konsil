@@ -13,8 +13,7 @@ class MakeComplaintViewController: UIViewController {
     
     @IBOutlet weak var selectTybeTF: UITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.selectTybeTF, color: UIColor.gray.cgColor , radius: 7)
-            self.selectTybeTF.layer.borderWidth = 1.5
+            Rounded.roundedCornerTextField(textField: self.selectTybeTF, borderColor: UIColor.gray.cgColor , radius: 7)
             self.selectTybeTF.clipsToBounds = true
         }
     }

@@ -13,16 +13,12 @@ import Cosmos
 class FilterViewController: UIViewController {
     @IBOutlet weak var filterBackGround: UIImageView!{
         didSet{
-            self.filterBackGround.layer.cornerRadius = 15
-            self.filterBackGround.layer.borderWidth = 2
-            self.filterBackGround.layer.borderColor = #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1)
+            Rounded.roundedImage(imageView: self.filterBackGround, radius: 15, borderColor: UIColor.gray.cgColor, borderWidth: 2)
         }
     }
     @IBOutlet weak var logoBackGround: UIImageView!{
         didSet{
-            self.logoBackGround.layer.cornerRadius = self.logoBackGround.frame.width/2
-            self.logoBackGround.layer.borderWidth = 2
-            self.logoBackGround.layer.borderColor = #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1)
+            Rounded.roundedImage(imageView: self.logoBackGround, radius: self.logoBackGround.frame.width/2, borderColor: UIColor.gray.cgColor, borderWidth: 2)
         }
     }
     @IBOutlet var filterOptions: [BEMCheckBox]!{
@@ -41,10 +37,17 @@ class FilterViewController: UIViewController {
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        addTapRecognizer()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.4006849315)
     }
     
     @IBAction func submitPressed(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        self.view.backgroundColor = .clear
+        self.dismiss(animated: false, completion: nil)
     }
     
     func checkStyle(BECheckBoxItmeArray: [BEMCheckBox]){
@@ -52,6 +55,18 @@ class FilterViewController: UIViewController {
             BECheckBoxItmeArray[i].onAnimationType = .bounce
             BECheckBoxItmeArray[i].offAnimationType = .bounce
         }
+    }
+    
+    func addTapRecognizer() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissOnTap))
+        tapGestureRecognizer.numberOfTapsRequired = 1
+        self.view.addGestureRecognizer(tapGestureRecognizer)
+        
+    }
+    
+    @objc func dismissOnTap(){
+        self.view.backgroundColor = .clear
+        self.dismiss(animated: false, completion: nil)
     }
     
 }

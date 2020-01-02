@@ -21,7 +21,7 @@ class RequestConsultationViewController: UIViewController {
     }
     @IBOutlet weak var titleTF: UITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.titleTF, color: UIColor.gray.cgColor, radius: 10)
+            Rounded.roundedCornerTextField(textField: self.titleTF, borderColor: UIColor.gray.cgColor, radius: 10)
             self.titleTF.clipsToBounds = true
         }
     }

@@ -14,10 +14,9 @@ class FAQvViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        faqTableView.estimatedRowHeight = 60
-        faqTableView.rowHeight = UITableView.automaticDimension
+        rightBackBut()
     }
-
+    
 }
 
 //MARK:- tableview SetUp
@@ -44,6 +43,10 @@ extension FAQvViewController : UITableViewDataSource , UITableViewDelegate {
         sectionHeader.headerLabel.text = "Group \(section+1)"
         return sectionHeader
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        tableView.estimatedRowHeight = 60
+        return UITableView.automaticDimension
+    }
 }
 
 //MARK:- DropDown Delegate , open FAQ item and show it's details
@@ -51,12 +54,11 @@ extension FAQvViewController: DropDownDelegate {
     func updateView(label: UILabel, textField: DesignableUITextField) {
         if label.text == "" {
             textField.rightImage = #imageLiteral(resourceName: "Minus")
+            textField.textColor = #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1)
             label.text = "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. E"
-            UIView.animate(withDuration: 0.9) {
-                self.view.layoutIfNeeded()
-            }
         } else {
             textField.rightImage = #imageLiteral(resourceName: "Plus")
+            textField.textColor = #colorLiteral(red: 0.1960784314, green: 0.1960784314, blue: 0.1960784314, alpha: 1)
             label.text = ""
         }
         faqTableView.estimatedRowHeight = 60

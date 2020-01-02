@@ -13,22 +13,22 @@ class RegisterViewController: UIViewController {
     //MARK:- IBOutlets
     @IBOutlet weak var name: DesignableUITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.name, color: UIColor.gray.cgColor, radius: self.name.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.name, borderColor: UIColor.gray.cgColor, radius: self.name.frame.height/2)
         }
     }
     @IBOutlet weak var phone: DesignableUITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.phone, color: UIColor.gray.cgColor, radius: self.phone.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.phone, borderColor: UIColor.gray.cgColor, radius: self.phone.frame.height/2)
         }
     }
     @IBOutlet weak var email: DesignableUITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.email, color: UIColor.gray.cgColor, radius: self.email.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.email, borderColor: UIColor.gray.cgColor, radius: self.email.frame.height/2)
         }
     }
     @IBOutlet weak var password: DesignableUITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.password, color: UIColor.gray.cgColor, radius: self.password.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.password, borderColor: UIColor.gray.cgColor, radius: self.password.frame.height/2)
         }
     }
     @IBOutlet weak var registerButton: UIButton!{
@@ -41,12 +41,23 @@ class RegisterViewController: UIViewController {
             self.checkBox.boxType = .square
         }
     }
-    @IBOutlet var redDot: [UIView]!
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var animationView: UIView!{
+        didSet{
+            self.animationView.layer.cornerRadius = 10
+            self.animationView.clipsToBounds = true
+        }
+    }
+    @IBOutlet var redDot: [UIView]!{
+        didSet{
+            Rounded.roundedDots(Dots: redDot)
+        }
+    }
     
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        Rounded.roundedDots(Dots: redDot)
+        
     }
     
     //MARK:- Change Status Bar To Dark
@@ -57,14 +68,28 @@ class RegisterViewController: UIViewController {
     //MARK:- IBActions
     @IBAction func registerWithTwitter(_ sender: UIButton) {
     }
+    
     @IBAction func registerWithGoogle(_ sender: UIButton) {
     }
+    
     @IBAction func registerWithFacebook(_ sender: UIButton) {
     }
+    
+    @IBAction func backButPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func registerPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "GoToMain", sender: self)
+        if checkBox.on == true {
+            backView.isHidden = false
+            backView.isUserInteractionEnabled = true
+            BlurView(view: animationView)
+        } else {
+            Alert.show("Error", massege: "Pleas accept our terms and conditions then try again", context: self)
+        }
     }
     @IBAction func acceptAllTermsAndConditions(_ sender: BEMCheckBox) {
+        
     }
     
     //MARK:- Prepare For Segue
@@ -74,4 +99,22 @@ class RegisterViewController: UIViewController {
             vc.modalPresentationStyle = .fullScreen
         }
     }
+    
+    func BlurView(view: UIView){
+        let blur = UIBlurEffect(style: .light)
+        let blurView = UIVisualEffectView(effect: blur)
+        blurView.frame = view.bounds
+        view.addSubview(blurView)
+        view.isHidden = false
+        let animation = Shared.showLottie(view: blurView.contentView, fileName: "success", contentMode: .scaleAspectFit)
+        blurView.contentView.addSubview(animation)
+        view.addSubview(blurView)
+        animation.play { (finished) in
+            if finished == true {
+                self.performSegue(withIdentifier: "GoToMain", sender: self)
+            }
+        }
+        
+    }
+
 }

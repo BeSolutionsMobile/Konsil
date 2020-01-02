@@ -9,7 +9,7 @@
 import UIKit
 
 class ConsultationMessagesViewController: UIViewController {
-
+    
     @IBOutlet weak var requestChat: UIButton!{
         didSet{
             self.requestChat.layer.cornerRadius = self.requestChat.frame.height/2
@@ -24,26 +24,26 @@ class ConsultationMessagesViewController: UIViewController {
     }
     @IBOutlet weak var messageTF: UITextField!{
         didSet{
-            self.messageTF.layer.cornerRadius = self.messageTF.frame.height/2
+            Rounded.roundedCornerTextField(textField: self.messageTF, borderColor: UIColor.gray.cgColor, radius: self.messageTF.frame.height/2 , borderWidth: 1.5)
             self.messageTF.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
-            self.messageTF.layer.borderColor = UIColor.gray.cgColor
-            self.messageTF.layer.borderWidth = 1.5
-            self.messageTF.clipsToBounds = true
-            
         }
     }
-    @IBOutlet weak var messagesTableView: UITableView!{
-        didSet{
-            self.messagesTableView.estimatedRowHeight = 130
-            self.messagesTableView.rowHeight = UITableView.automaticDimension
-        }
-    }
+    @IBOutlet weak var messagesTableView: UITableView!
+    @IBOutlet weak var backView: UIView!
+    var Chats = 0
     
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
+        
         messagesTableView.setContentOffset(CGPoint(x: 0, y: CGFloat.greatestFiniteMagnitude + 30), animated: false)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.asyncAfter(deadline: .now()+2) { [weak self] in
+            self?.checkTable()
+        }
     }
     
     @IBAction func requestOnlineConversationPressed(_ sender: UIButton) {
@@ -52,6 +52,12 @@ class ConsultationMessagesViewController: UIViewController {
     }
     
     @IBAction func sendMessagePressed(_ sender: UIButton) {
+        if messageTF.text != "" && messageTF.text != nil {
+            
+            Chats += 1
+            messagesTableView.reloadData()
+            checkTable()
+        }
     }
 }
 
@@ -59,15 +65,23 @@ class ConsultationMessagesViewController: UIViewController {
 extension ConsultationMessagesViewController: UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return Chats
     }
     
     //MARK:- cellForRowAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessagesTableViewCell
         
+        cell.message.text = "chat"
+        cell.name.text = "chat"
         return cell
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        tableView.estimatedRowHeight = 130
+        return UITableView.automaticDimension
+    }
     
-    
+    func checkTable(){
+        checkTableViewData(tableView: messagesTableView, view:backView, animationWidth: 300, animationHeight: 300, animationName: "Chat")
+    }
 }

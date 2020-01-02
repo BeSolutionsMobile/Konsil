@@ -45,11 +45,11 @@ class DoctorConversationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
-        emptyTableView()
-        DispatchQueue.main.asyncAfter(deadline: .now()+4) {
+        checkTableViewData(tableView: periodesTableView, view: backView, animationWidth: 250, animationHeight: 250, animationName: "NoData")
+        DispatchQueue.main.asyncAfter(deadline: .now()+6) {
             self.new = 4
             self.periodesTableView.reloadData()
-            self.emptyTableView()
+            self.checkTableViewData(tableView: self.periodesTableView, view: self.backView, animationWidth: 250, animationHeight: 250, animationName: "NoData")
         }
     }
     
@@ -99,17 +99,4 @@ extension DoctorConversationViewController: UITableViewDataSource , UITableViewD
         return UITableView.automaticDimension
     }
     
-    func emptyTableView(){
-        let view = UIView()
-        view.frame = backView.bounds
-        view.tag = 999
-        if periodesTableView.numberOfRows(inSection: 0) == 0 {
-            let animation = Shared.showLottie(view: view, fileName: "lf30_editor_oj5Gth", contentMode: .center)
-            view.addSubview(animation)
-            backView.addSubview(view)
-            animation.play()
-        } else {
-            backView.viewWithTag(999)?.removeFromSuperview()
-        }
-    }
 }

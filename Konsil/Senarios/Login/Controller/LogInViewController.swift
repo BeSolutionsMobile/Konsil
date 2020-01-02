@@ -24,12 +24,12 @@ class LogInViewController: UIViewController {
     }
     @IBOutlet weak var passwordTF: UITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.passwordTF, color: UIColor.gray.cgColor, radius: self.passwordTF.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.passwordTF, borderColor: UIColor.gray.cgColor, radius: self.passwordTF.frame.height/2)
         }
     }
     @IBOutlet weak var emailTF: UITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.emailTF, color: UIColor.gray.cgColor, radius: self.emailTF.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.emailTF, borderColor: UIColor.gray.cgColor, radius: self.emailTF.frame.height/2)
         }
     }
     @IBOutlet var redDot: [UIView]!
@@ -59,9 +59,16 @@ class LogInViewController: UIViewController {
     }
     @IBAction func logInWithFacebook(_ sender: UIButton) {
     }
+    @IBAction func registerPressed(_ sender: UIButton) {
+        let vc = storyboard?.instantiateViewController(identifier: "Register") as! RegisterViewController
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true, completion: nil)
+    }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        new(view: animationView)
+        backView.isHidden = false
+        backView.isUserInteractionEnabled = true
+        BlurView(view: animationView)
     }
     @IBAction func biometricAuthChecked(_ sender: BEMCheckBox) {
         Shared.BiometricAuthEnabled = sender.on
@@ -74,7 +81,7 @@ class LogInViewController: UIViewController {
         }
     }
     
-    func new(view: UIView){
+    func BlurView(view: UIView){
         let blur = UIBlurEffect(style: .light)
         let blurView = UIVisualEffectView(effect: blur)
         blurView.frame = view.bounds

@@ -89,10 +89,10 @@ struct Rounded {
         button.layer.borderWidth = borderWidth ?? 0
     }
     
-    static func roundedCornerTextField(textField: UITextField ,color: CGColor ,radius: CGFloat){
+    static func roundedCornerTextField(textField: UITextField ,borderColor: CGColor ,radius: CGFloat ,borderWidth: CGFloat? = 1.5){
         textField.layer.cornerRadius = radius
-        textField.layer.borderColor = color
-        textField.layer.borderWidth = 1.5
+        textField.layer.borderColor = borderColor
+        textField.layer.borderWidth = borderWidth ?? 1.5
         textField.clipsToBounds = true
     }
     

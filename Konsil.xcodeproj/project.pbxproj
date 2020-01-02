@@ -27,7 +27,7 @@
 		8114568A23BCEC03005A4B93 /* FingureAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 8114568523BCEC02005A4B93 /* FingureAnimation.json */; };
 		8114568B23BCEC03005A4B93 /* FingureSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 8114568623BCEC03005A4B93 /* FingureSuccess.json */; };
 		8114569023BCEC21005A4B93 /* RedLifeline.json in Resources */ = {isa = PBXBuildFile; fileRef = 8114568C23BCEC1E005A4B93 /* RedLifeline.json */; };
-		8114569123BCEC21005A4B93 /* lf30_editor_oj5Gth.json in Resources */ = {isa = PBXBuildFile; fileRef = 8114568D23BCEC1F005A4B93 /* lf30_editor_oj5Gth.json */; };
+		8114569123BCEC21005A4B93 /* NoData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8114568D23BCEC1F005A4B93 /* NoData.json */; };
 		8114569223BCEC21005A4B93 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 8114568E23BCEC20005A4B93 /* success.json */; };
 		8114569323BCEC21005A4B93 /* lf30_editor_X1S7Ss.json in Resources */ = {isa = PBXBuildFile; fileRef = 8114568F23BCEC21005A4B93 /* lf30_editor_X1S7Ss.json */; };
 		8122162423B0D56D009E111B /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8122162323B0D56D009E111B /* Extentions.swift */; };
@@ -53,6 +53,8 @@
 		81D8FB1D23A82A5100585CA8 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8FB1C23A82A5100585CA8 /* MainNavigationController.swift */; };
 		81D8FB1F23A8301A00585CA8 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8FB1E23A8301A00585CA8 /* FilterViewController.swift */; };
 		81ECE8C023BCF4970048C0D9 /* Report.json in Resources */ = {isa = PBXBuildFile; fileRef = 81ECE8BF23BCF4970048C0D9 /* Report.json */; };
+		81ECE8C423BE35CE0048C0D9 /* Chat.json in Resources */ = {isa = PBXBuildFile; fileRef = 81ECE8C323BE35CE0048C0D9 /* Chat.json */; };
+		81ECE8C623BE36BF0048C0D9 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECE8C523BE36BF0048C0D9 /* Chat.swift */; };
 		81ECE99423AA650500E63105 /* ConversationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECE99323AA650500E63105 /* ConversationDetailsViewController.swift */; };
 		81ECE99623AA652100E63105 /* conversationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECE99523AA652100E63105 /* conversationInfoViewController.swift */; };
 		81ECE99823AA652C00E63105 /* ConversationReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECE99723AA652C00E63105 /* ConversationReportViewController.swift */; };
@@ -120,7 +122,7 @@
 		8114568523BCEC02005A4B93 /* FingureAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FingureAnimation.json; sourceTree = "<group>"; };
 		8114568623BCEC03005A4B93 /* FingureSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FingureSuccess.json; sourceTree = "<group>"; };
 		8114568C23BCEC1E005A4B93 /* RedLifeline.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RedLifeline.json; sourceTree = "<group>"; };
-		8114568D23BCEC1F005A4B93 /* lf30_editor_oj5Gth.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_oj5Gth.json; sourceTree = "<group>"; };
+		8114568D23BCEC1F005A4B93 /* NoData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NoData.json; sourceTree = "<group>"; };
 		8114568E23BCEC20005A4B93 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		8114568F23BCEC21005A4B93 /* lf30_editor_X1S7Ss.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_X1S7Ss.json; sourceTree = "<group>"; };
 		8122162323B0D56D009E111B /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
@@ -146,6 +148,8 @@
 		81D8FB1C23A82A5100585CA8 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		81D8FB1E23A8301A00585CA8 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		81ECE8BF23BCF4970048C0D9 /* Report.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Report.json; sourceTree = "<group>"; };
+		81ECE8C323BE35CE0048C0D9 /* Chat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Chat.json; sourceTree = "<group>"; };
+		81ECE8C523BE36BF0048C0D9 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		81ECE99323AA650500E63105 /* ConversationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationDetailsViewController.swift; sourceTree = "<group>"; };
 		81ECE99523AA652100E63105 /* conversationInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = conversationInfoViewController.swift; sourceTree = "<group>"; };
 		81ECE99723AA652C00E63105 /* ConversationReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationReportViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +234,7 @@
 				8114568123BCEBD3005A4B93 /* Animations */,
 				815A17DF23A682B8001DDBEE /* Shared.swift */,
 				8122162323B0D56D009E111B /* Extentions.swift */,
+				81ECE8C523BE36BF0048C0D9 /* Chat.swift */,
 				04F1A61B23A641B300293AA2 /* Info.plist */,
 			);
 			path = Konsil;
@@ -336,7 +341,8 @@
 				8114568223BCEC00005A4B93 /* Consultation2.json */,
 				8114568423BCEC01005A4B93 /* Doctor.json */,
 				8114568C23BCEC1E005A4B93 /* RedLifeline.json */,
-				8114568D23BCEC1F005A4B93 /* lf30_editor_oj5Gth.json */,
+				81ECE8C323BE35CE0048C0D9 /* Chat.json */,
+				8114568D23BCEC1F005A4B93 /* NoData.json */,
 				8114568F23BCEC21005A4B93 /* lf30_editor_X1S7Ss.json */,
 				8114568E23BCEC20005A4B93 /* success.json */,
 				8114568523BCEC02005A4B93 /* FingureAnimation.json */,
@@ -354,8 +360,8 @@
 				810DAB0923A7C6F900B8AF20 /* Register */,
 				810DAB0523A7BC6400B8AF20 /* Login */,
 				810DAB0023A7A84E00B8AF20 /* Doctors */,
-				815A17DA23A67C4D001DDBEE /* Menu */,
 				815A17C323A6590D001DDBEE /* Main */,
+				815A17DA23A67C4D001DDBEE /* Menu */,
 			);
 			path = Senarios;
 			sourceTree = "<group>";
@@ -626,6 +632,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F1A61A23A641B300293AA2 /* LaunchScreen.storyboard in Resources */,
+				81ECE8C423BE35CE0048C0D9 /* Chat.json in Resources */,
 				04F1A61723A641B300293AA2 /* Assets.xcassets in Resources */,
 				81ECE8C023BCF4970048C0D9 /* Report.json in Resources */,
 				8114568723BCEC03005A4B93 /* Consultation2.json in Resources */,
@@ -635,7 +642,7 @@
 				8114569223BCEC21005A4B93 /* success.json in Resources */,
 				04F1A61523A641B200293AA2 /* Main.storyboard in Resources */,
 				8114568A23BCEC03005A4B93 /* FingureAnimation.json in Resources */,
-				8114569123BCEC21005A4B93 /* lf30_editor_oj5Gth.json in Resources */,
+				8114569123BCEC21005A4B93 /* NoData.json in Resources */,
 				8114569023BCEC21005A4B93 /* RedLifeline.json in Resources */,
 				81ECE9A123AB6C8400E63105 /* SectionHeaderView.xib in Resources */,
 			);
@@ -778,6 +785,7 @@
 				810DAB0D23A7C71F00B8AF20 /* RegisterViewController.swift in Sources */,
 				81ECE9A323AB7D4E00E63105 /* ComplaintTableViewCell.swift in Sources */,
 				815A17DE23A67C80001DDBEE /* SideMenuViewController.swift in Sources */,
+				81ECE8C623BE36BF0048C0D9 /* Chat.swift in Sources */,
 				81849F3223AA3FFA004A59D8 /* DoctorConversationViewController.swift in Sources */,
 				81ECE9AD23ABB1D700E63105 /* ProfileInfoViewController.swift in Sources */,
 				81849F2523A929C3004A59D8 /* ConsultationFinalReportViewController.swift in Sources */,
