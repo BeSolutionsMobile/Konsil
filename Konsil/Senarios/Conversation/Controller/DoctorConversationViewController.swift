@@ -35,14 +35,22 @@ class DoctorConversationViewController: UIViewController {
             self.imageBackView.layer.borderWidth = 2
         }
     }
+    @IBOutlet weak var backView: UIView!
+    
     
     var currentIndex:IndexPath?
     var previousIndex:IndexPath?
-    
+    var new = 0
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
+        emptyTableView()
+        DispatchQueue.main.asyncAfter(deadline: .now()+4) {
+            self.new = 4
+            self.periodesTableView.reloadData()
+            self.emptyTableView()
+        }
     }
     
     //MARK:- Complete Request
@@ -57,7 +65,7 @@ class DoctorConversationViewController: UIViewController {
 extension DoctorConversationViewController: UITableViewDataSource , UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return new
     }
     
     //MARK:- cellForRowAt
@@ -89,5 +97,19 @@ extension DoctorConversationViewController: UITableViewDataSource , UITableViewD
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         self.periodesTableView.estimatedRowHeight = 50
         return UITableView.automaticDimension
+    }
+    
+    func emptyTableView(){
+        let view = UIView()
+        view.frame = backView.bounds
+        view.tag = 999
+        if periodesTableView.numberOfRows(inSection: 0) == 0 {
+            let animation = Shared.showLottie(view: view, fileName: "lf30_editor_oj5Gth", contentMode: .center)
+            view.addSubview(animation)
+            backView.addSubview(view)
+            animation.play()
+        } else {
+            backView.viewWithTag(999)?.removeFromSuperview()
+        }
     }
 }

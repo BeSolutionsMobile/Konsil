@@ -18,6 +18,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+          let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+          if launchedBefore  {
+              print("This is not first launch.")
+          } else {
+              print("This is first launch.")
+              UserDefaults.standard.set(true, forKey: "launchedBefore")
+              UserDefaults.standard.synchronize()
+              let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+              let vc = mainStoryboard.instantiateViewController(withIdentifier: "Walkthrough1") as! Walkthrough1ViewController
+            self.window!.rootViewController = vc
+            self.window!.makeKeyAndVisible()
+
+          }
 //        UIApplication.shared.statusBarUIView?.backgroundColor = #colorLiteral(red: 0.1960784314, green: 0.1960784314, blue: 0.1960784314, alpha: 1)
 
     }

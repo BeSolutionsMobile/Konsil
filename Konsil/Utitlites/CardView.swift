@@ -83,12 +83,10 @@ struct Rounded {
         view.layer.borderColor = UIColor.gray.cgColor
     }
     
-    static func roundButton(button: UIButton ,radius: CGFloat) {
+    static func roundButton(button: UIButton ,radius: CGFloat ,borderColor: CGColor? = nil , borderWidth: CGFloat? = 0 ) {
         button.layer.cornerRadius = radius
-        button.layer.shadowRadius = 3
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 2.5)
-        button.layer.shadowOpacity = 0.4
+        button.layer.borderColor = borderColor
+        button.layer.borderWidth = borderWidth ?? 0
     }
     
     static func roundedCornerTextField(textField: UITextField ,color: CGColor ,radius: CGFloat){

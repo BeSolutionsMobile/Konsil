@@ -1,4 +1,5 @@
 import SideMenu
+import Lottie
 class Shared {
     static var BiometricAuthEnabled:Bool = false{
         didSet{
@@ -20,4 +21,21 @@ class Shared {
         
         return settings
     }
+    
+    static func showLottie(view: UIView ,fileName: String ,contentMode: UIView.ContentMode? = .scaleAspectFill) -> AnimationView {
+        let animation = Animation.named(fileName)
+        let lotView = AnimationView()
+        lotView.animation = animation
+        lotView.contentMode = contentMode ?? .scaleAspectFill
+        lotView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(lotView)
+        
+        NSLayoutConstraint.activate([
+            lotView.heightAnchor.constraint(equalTo: view.heightAnchor) ,
+            lotView.widthAnchor.constraint(equalTo: view.widthAnchor)
+        ])
+        return lotView
+    }
+    
+    
 }

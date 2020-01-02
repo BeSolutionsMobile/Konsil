@@ -50,13 +50,13 @@ extension FAQvViewController : UITableViewDataSource , UITableViewDelegate {
 extension FAQvViewController: DropDownDelegate {
     func updateView(label: UILabel, textField: DesignableUITextField) {
         if label.text == "" {
-            textField.rightImage = #imageLiteral(resourceName: "minus")
+            textField.rightImage = #imageLiteral(resourceName: "Minus")
             label.text = "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. E"
             UIView.animate(withDuration: 0.9) {
                 self.view.layoutIfNeeded()
             }
         } else {
-            textField.rightImage = #imageLiteral(resourceName: "StarFilled")
+            textField.rightImage = #imageLiteral(resourceName: "Plus")
             label.text = ""
         }
         faqTableView.estimatedRowHeight = 60

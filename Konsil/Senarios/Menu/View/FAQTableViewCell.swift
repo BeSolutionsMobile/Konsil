@@ -21,7 +21,7 @@ class FAQTableViewCell: UITableViewCell {
             self.dropDown.layer.borderWidth = 2
             
             self.dropDown.clipsToBounds = true
-            self.dropDown.rightImage = #imageLiteral(resourceName: "Path 30")
+            self.dropDown.rightImage = #imageLiteral(resourceName: "Plus")
         }
     }
    

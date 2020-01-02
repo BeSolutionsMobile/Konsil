@@ -10,7 +10,7 @@ import UIKit
 import BEMCheckBox
 import BiometricAuthentication
 class LogInViewController: UIViewController {
-
+    
     //MARK:- IBOutlets
     @IBOutlet weak var allowBiometricAuth: BEMCheckBox!{
         didSet{
@@ -33,7 +33,13 @@ class LogInViewController: UIViewController {
         }
     }
     @IBOutlet var redDot: [UIView]!
-    
+    @IBOutlet weak var animationView: UIView!{
+        didSet{
+            self.animationView.layer.cornerRadius = 10
+            self.animationView.clipsToBounds = true
+        }
+    }
+    @IBOutlet weak var backView: UIView!
     
     //MARK:- viewDidLoad
     override func viewDidLoad() {
@@ -55,7 +61,7 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "GoToMain", sender: self)
+        new(view: animationView)
     }
     @IBAction func biometricAuthChecked(_ sender: BEMCheckBox) {
         Shared.BiometricAuthEnabled = sender.on
@@ -68,5 +74,21 @@ class LogInViewController: UIViewController {
         }
     }
     
+    func new(view: UIView){
+        let blur = UIBlurEffect(style: .light)
+        let blurView = UIVisualEffectView(effect: blur)
+        blurView.frame = view.bounds
+        view.addSubview(blurView)
+        view.isHidden = false
+        let animation = Shared.showLottie(view: blurView.contentView, fileName: "success", contentMode: .scaleAspectFit)
+        blurView.contentView.addSubview(animation)
+        view.addSubview(blurView)
+        animation.play { (finished) in
+            if finished == true {
+                self.performSegue(withIdentifier: "GoToMain", sender: self)
+            }
+        }
+        
+    }
     
 }

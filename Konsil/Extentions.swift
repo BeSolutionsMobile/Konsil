@@ -1,6 +1,6 @@
 import UIKit
 import SideMenu
-
+import Lottie
 ////MARK:- StatusBar background view to change statusBar background color
 //extension UIApplication {
 //var statusBarUIView: UIView? {
@@ -53,4 +53,16 @@ extension UIViewController {
         vc.settings = Shared.settings(view: self.view)
         self.present(vc, animated: true, completion: nil)
     }
+    
+    func presentViewControllerWithTransition(viewController: UIViewController ,animated: Bool ,direction: CATransitionSubtype ){
+        
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.fade
+        transition.subtype = direction
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        present(viewController, animated: animated, completion: nil)
+    }
+    
 }
