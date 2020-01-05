@@ -19,14 +19,16 @@ class ComplaintDetailsViewController: UIViewController {
     }
     @IBOutlet weak var messageTF: UITextField!{
         didSet{
-            self.messageTF.layer.cornerRadius = 10
+            Rounded.roundedCornerTextField(textField: self.messageTF, borderColor: UIColor.gray.cgColor, radius: 10  , borderWidth: 1.5)
             self.messageTF.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
-            self.messageTF.layer.borderColor = UIColor.gray.cgColor
-            self.messageTF.layer.borderWidth = 1.5
-            self.messageTF.clipsToBounds = true
         }
     }
-    @IBOutlet weak var complaintTableView: UITableView!
+    @IBOutlet weak var complaintTableView: UITableView!{
+        didSet{
+            complaintTableView.estimatedRowHeight = 130
+            complaintTableView.rowHeight = UITableView.automaticDimension
+        }
+    }
     @IBOutlet weak var backView: UIView!
     
     
@@ -56,8 +58,8 @@ extension ComplaintDetailsViewController: UITableViewDataSource , UITableViewDel
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ComplaintCell", for: indexPath) as! ComplaintTableViewCell
-        cell.message.text = "sssss"
-        cell.name.text = "aaaa"
+        cell.message.text = "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+        cell.name.text = "aaaasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
         return cell
     }
     

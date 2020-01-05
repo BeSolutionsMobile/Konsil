@@ -106,7 +106,7 @@ struct Rounded {
     
     static func roundedDots(Dots: [UIView]){
         for i in Dots.indices {
-            Dots[i].layer.cornerRadius = Dots[i].frame.width/2
+            Dots[i].layer.cornerRadius = Dots[i].frame.height/2
         }
     }
 }

@@ -67,7 +67,6 @@
 		81ECE9A923AB9AA000E63105 /* MyConsultationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECE9A823AB9AA000E63105 /* MyConsultationsViewController.swift */; };
 		81ECE9AB23AB9AC000E63105 /* MyConsultationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECE9AA23AB9AC000E63105 /* MyConsultationsTableViewCell.swift */; };
 		81ECE9AD23ABB1D700E63105 /* ProfileInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECE9AC23ABB1D700E63105 /* ProfileInfoViewController.swift */; };
-		81EED28423A693CC00A4C4DB /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EED28323A693CC00A4C4DB /* FAQViewController.swift */; };
 		81EED28623A69A7B00A4C4DB /* MakeComplaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EED28523A69A7B00A4C4DB /* MakeComplaintViewController.swift */; };
 		86F76E2B6E4AAAC00731A7DD /* Pods_Konsil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5498410C12A18BA165BBD8 /* Pods_Konsil.framework */; };
 		A24C53A55E89008207606FE2 /* Pods_KonsilTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF321DEC7C3E10728BC0195 /* Pods_KonsilTests.framework */; };
@@ -162,7 +161,6 @@
 		81ECE9A823AB9AA000E63105 /* MyConsultationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultationsViewController.swift; sourceTree = "<group>"; };
 		81ECE9AA23AB9AC000E63105 /* MyConsultationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultationsTableViewCell.swift; sourceTree = "<group>"; };
 		81ECE9AC23ABB1D700E63105 /* ProfileInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoViewController.swift; sourceTree = "<group>"; };
-		81EED28323A693CC00A4C4DB /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		81EED28523A69A7B00A4C4DB /* MakeComplaintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeComplaintViewController.swift; sourceTree = "<group>"; };
 		9660C97503DD3F09A20047CD /* Pods-Konsil-KonsilUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Konsil-KonsilUITests.debug.xcconfig"; path = "Target Support Files/Pods-Konsil-KonsilUITests/Pods-Konsil-KonsilUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ACF321DEC7C3E10728BC0195 /* Pods_KonsilTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KonsilTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -431,7 +429,6 @@
 				815A17DD23A67C80001DDBEE /* SideMenuViewController.swift */,
 				815A17E123A68D3C001DDBEE /* BecomeADoctorViewController.swift */,
 				81ECE99923AA6D8800E63105 /* FAQvViewController.swift */,
-				81EED28323A693CC00A4C4DB /* FAQViewController.swift */,
 				81EED28523A69A7B00A4C4DB /* MakeComplaintViewController.swift */,
 				81ECE9A623AB7DD500E63105 /* ComplaintDetailsViewController.swift */,
 				81ECE9A823AB9AA000E63105 /* MyConsultationsViewController.swift */,
@@ -776,7 +773,6 @@
 				815A17E023A682B8001DDBEE /* Shared.swift in Sources */,
 				815A17D623A65A26001DDBEE /* DesignableUITextField.swift in Sources */,
 				810DAB0223A7A86C00B8AF20 /* DoctorsInfoViewController.swift in Sources */,
-				81EED28423A693CC00A4C4DB /* FAQViewController.swift in Sources */,
 				81849F2A23A92EDB004A59D8 /* MessagesTableViewCell.swift in Sources */,
 				04F1A60E23A641B200293AA2 /* AppDelegate.swift in Sources */,
 				04F1A61023A641B200293AA2 /* SceneDelegate.swift in Sources */,
