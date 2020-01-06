@@ -27,9 +27,7 @@ class SideMenuViewController: UIViewController {
     @IBOutlet var sideMenuBut: [UIButton]!
     @IBOutlet weak var ProfileImage: UIImageView!{
         didSet{
-            ProfileImage.layer.cornerRadius = ProfileImage.frame.width/2
-            ProfileImage.layer.borderWidth = 4
-            ProfileImage.layer.borderColor = #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1)
+            Rounded.roundedImage(imageView: ProfileImage, radius: ProfileImage.frame.width/2, borderColor: #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1), borderWidth: 3)
         }
     }
     @IBOutlet weak var imageBackView: UIView!{
@@ -41,6 +39,7 @@ class SideMenuViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     
     var segue = ["PersonalInfo" , "MyConsultation" , "FAQView" , "MyComplaints" , "Policy" ,"Become A Doctor"]
+    
     //MARK:- viewDidLoad
     
     override func viewDidLoad() {

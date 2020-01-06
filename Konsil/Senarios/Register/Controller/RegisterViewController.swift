@@ -14,21 +14,25 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var name: DesignableUITextField!{
         didSet{
             Rounded.roundedCornerTextField(textField: self.name, borderColor: UIColor.gray.cgColor, radius: self.name.frame.height/2)
+            self.name.delegate = self
         }
     }
     @IBOutlet weak var phone: DesignableUITextField!{
         didSet{
             Rounded.roundedCornerTextField(textField: self.phone, borderColor: UIColor.gray.cgColor, radius: self.phone.frame.height/2)
+            self.phone.delegate = self
         }
     }
     @IBOutlet weak var email: DesignableUITextField!{
         didSet{
             Rounded.roundedCornerTextField(textField: self.email, borderColor: UIColor.gray.cgColor, radius: self.email.frame.height/2)
+            self.email.delegate = self
         }
     }
     @IBOutlet weak var password: DesignableUITextField!{
         didSet{
             Rounded.roundedCornerTextField(textField: self.password, borderColor: UIColor.gray.cgColor, radius: self.password.frame.height/2)
+            self.password.delegate = self
         }
     }
     @IBOutlet weak var registerButton: UIButton!{
@@ -41,7 +45,6 @@ class RegisterViewController: UIViewController {
             self.checkBox.boxType = .square
         }
     }
-    @IBOutlet weak var backView: UIView!
     @IBOutlet weak var animationView: UIView!{
         didSet{
             self.animationView.layer.cornerRadius = 10
@@ -53,6 +56,8 @@ class RegisterViewController: UIViewController {
             Rounded.roundedDots(Dots: redDot)
         }
     }
+    @IBOutlet weak var backView: UIView!
+    
     
     //MARK:- viewDidLoad
     override func viewDidLoad() {
@@ -76,7 +81,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func backButPressed(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "BackToLogin", sender: self)
     }
     
     @IBAction func registerPressed(_ sender: UIButton) {
@@ -89,13 +94,16 @@ class RegisterViewController: UIViewController {
         }
     }
     @IBAction func acceptAllTermsAndConditions(_ sender: BEMCheckBox) {
-        
+        print("T & C Accepted")
     }
     
     //MARK:- Prepare For Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GoToMain" {
             let vc = segue.destination as! MainNavigationController
+            vc.modalPresentationStyle = .fullScreen
+        } else if segue.identifier == "BackToLogin" {
+            let vc = segue.destination as! LogInViewController
             vc.modalPresentationStyle = .fullScreen
         }
     }
@@ -116,5 +124,5 @@ class RegisterViewController: UIViewController {
         }
         
     }
-
+    
 }

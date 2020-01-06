@@ -21,6 +21,7 @@ class ComplaintDetailsViewController: UIViewController {
         didSet{
             Rounded.roundedCornerTextField(textField: self.messageTF, borderColor: UIColor.gray.cgColor, radius: 10  , borderWidth: 1.5)
             self.messageTF.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+            self.messageTF.delegate = self
         }
     }
     @IBOutlet weak var complaintTableView: UITableView!{
@@ -58,18 +59,15 @@ extension ComplaintDetailsViewController: UITableViewDataSource , UITableViewDel
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ComplaintCell", for: indexPath) as! ComplaintTableViewCell
-        cell.message.text = "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
-        cell.name.text = "aaaasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+        cell.message.text = "Messages aaaaaaaaaaaaaaaa aaaaaaaaaaaaaaa"
+        cell.name.text = "Doctor"
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        tableView.estimatedRowHeight = 130
-        return UITableView.automaticDimension
-    }
-    
     func checkTableView(){
-        checkTableViewData(tableView: complaintTableView , view: backView, animationWidth: 300, animationHeight: 300, animationName: "Chat")
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) { [weak self] in
+            self?.checkTableViewData(tableView: self!.complaintTableView , view: self!.backView, animationWidth: 300, animationHeight: 300, animationName: "Chat")
+        }
     }
     
     

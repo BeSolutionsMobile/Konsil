@@ -37,19 +37,19 @@ class DoctorConversationViewController: UIViewController {
     }
     @IBOutlet weak var backView: UIView!
     
-    
     var currentIndex:IndexPath?
     var previousIndex:IndexPath?
     var new = 0
+    
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
-        checkTableViewData(tableView: periodesTableView, view: backView, animationWidth: 250, animationHeight: 250, animationName: "NoData")
-        DispatchQueue.main.asyncAfter(deadline: .now()+6) {
-            self.new = 4
-            self.periodesTableView.reloadData()
-            self.checkTableViewData(tableView: self.periodesTableView, view: self.backView, animationWidth: 250, animationHeight: 250, animationName: "NoData")
+        checkData()
+        DispatchQueue.main.asyncAfter(deadline: .now()+6) { [weak self] in
+            self?.new = 4
+            self?.periodesTableView.reloadData()
+            self?.checkData()
         }
     }
     
@@ -57,6 +57,12 @@ class DoctorConversationViewController: UIViewController {
     @IBAction func completeRequestPressed(_ sender: UIButton) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "ConversationDetails") as! ConversationDetailsViewController
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    func checkData(){
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            [weak self] in
+            self?.checkTableViewData(tableView: self!.periodesTableView, view: self!.backView, animationWidth: self!.backView.bounds.width+50, animationHeight: self!.backView.bounds.height+50, animationName: "NoData" , scale: .scaleAspectFit)
+        }
     }
     
 }
@@ -92,6 +98,7 @@ extension DoctorConversationViewController: UITableViewDataSource , UITableViewD
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
     
     //MARK:- Set Dynamic Hieght For Row
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

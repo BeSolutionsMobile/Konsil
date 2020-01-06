@@ -25,14 +25,20 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var passwordTF: UITextField!{
         didSet{
             Rounded.roundedCornerTextField(textField: self.passwordTF, borderColor: UIColor.gray.cgColor, radius: self.passwordTF.frame.height/2)
+            self.passwordTF.delegate = self
         }
     }
     @IBOutlet weak var emailTF: UITextField!{
         didSet{
             Rounded.roundedCornerTextField(textField: self.emailTF, borderColor: UIColor.gray.cgColor, radius: self.emailTF.frame.height/2)
+            self.emailTF.delegate = self
         }
     }
-    @IBOutlet var redDot: [UIView]!
+    @IBOutlet var redDot: [UIView]!{
+        didSet{
+            Rounded.roundedDots(Dots: redDot)
+        }
+    }
     @IBOutlet weak var animationView: UIView!{
         didSet{
             self.animationView.layer.cornerRadius = 10
@@ -44,7 +50,7 @@ class LogInViewController: UIViewController {
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        Rounded.roundedDots(Dots: redDot)
+        
     }
     
     //MARK:- Chaneg Status Bar To Dark
@@ -61,7 +67,7 @@ class LogInViewController: UIViewController {
     }
     @IBAction func registerPressed(_ sender: UIButton) {
         let vc = storyboard?.instantiateViewController(identifier: "Register") as! RegisterViewController
-        vc.modalPresentationStyle = .overFullScreen
+        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
     
@@ -71,7 +77,7 @@ class LogInViewController: UIViewController {
         BlurView(view: animationView)
     }
     @IBAction func biometricAuthChecked(_ sender: BEMCheckBox) {
-        Shared.BiometricAuthEnabled = sender.on
+        print("Auth Enabled")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -95,7 +101,5 @@ class LogInViewController: UIViewController {
                 self.performSegue(withIdentifier: "GoToMain", sender: self)
             }
         }
-        
     }
-    
 }

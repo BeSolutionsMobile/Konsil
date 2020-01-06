@@ -18,7 +18,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walkthrough" translatesAutoresizingMaskIntoConstraints="NO" id="jdM-1x-x47">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="konsil" translatesAutoresizingMaskIntoConstraints="NO" id="ZV7-zD-M2v">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="konsil" translatesAutoresizingMaskIntoConstraints="NO" id="ZV7-zD-M2v">
                                 <rect key="frame" x="50" y="171" width="314" height="314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZV7-zD-M2v" secondAttribute="height" id="MmD-PB-6tp"/>
@@ -45,7 +45,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="konsil" width="169" height="169"/>
+        <image name="konsil" width="1708" height="1825"/>
         <image name="walkthrough" width="360" height="640"/>
     </resources>
 </document>
