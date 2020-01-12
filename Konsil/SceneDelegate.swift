@@ -70,8 +70,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
-        
-        print("Active")
+        let biometricAuth = UserDefaults.standard.bool(forKey: Key.prefereBiometricAuth)
+
+        if biometricAuth {
+            let topController = self.window?.rootViewController?.topViewController()
+            
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let fingerPrintVC = storyBoard.instantiateViewController(identifier: "Lock") as! FingerPrintViewController
+
+            fingerPrintVC.modalPresentationStyle = .overFullScreen
+            topController?.present(fingerPrintVC, animated: true, completion: nil)
+        }
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
@@ -79,6 +88,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
+    
 }
-

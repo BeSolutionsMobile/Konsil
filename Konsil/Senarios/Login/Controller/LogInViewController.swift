@@ -76,8 +76,10 @@ class LogInViewController: UIViewController {
         backView.isUserInteractionEnabled = true
         BlurView(view: animationView)
     }
+    
     @IBAction func biometricAuthChecked(_ sender: BEMCheckBox) {
-        print("Auth Enabled")
+        let isBiometricAuthEnabled = allowBiometricAuth.on ? true : false
+        UserDefaults.standard.set(isBiometricAuthEnabled, forKey: Key.prefereBiometricAuth)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -102,4 +104,5 @@ class LogInViewController: UIViewController {
             }
         }
     }
+    
 }

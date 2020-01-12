@@ -31,6 +31,9 @@
 		8114569223BCEC21005A4B93 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 8114568E23BCEC20005A4B93 /* success.json */; };
 		8114569323BCEC21005A4B93 /* lf30_editor_X1S7Ss.json in Resources */ = {isa = PBXBuildFile; fileRef = 8114568F23BCEC21005A4B93 /* lf30_editor_X1S7Ss.json */; };
 		8122162423B0D56D009E111B /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8122162323B0D56D009E111B /* Extentions.swift */; };
+		813761D423CB24D300BC90B1 /* FingerPrintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813761D323CB24D300BC90B1 /* FingerPrintViewController.swift */; };
+		813761D623CB2DCF00BC90B1 /* Unlock.json in Resources */ = {isa = PBXBuildFile; fileRef = 813761D523CB2DCF00BC90B1 /* Unlock.json */; };
+		813761FC23CB551200BC90B1 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813761FB23CB551200BC90B1 /* File.swift */; };
 		815A17C023A658F7001DDBEE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17BF23A658F7001DDBEE /* MainViewController.swift */; };
 		815A17CA23A6596F001DDBEE /* MainCategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17C923A6596F001DDBEE /* MainCategoriesCollectionViewCell.swift */; };
 		815A17CC23A65981001DDBEE /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17CB23A65981001DDBEE /* Categories.swift */; };
@@ -125,6 +128,9 @@
 		8114568E23BCEC20005A4B93 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		8114568F23BCEC21005A4B93 /* lf30_editor_X1S7Ss.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_X1S7Ss.json; sourceTree = "<group>"; };
 		8122162323B0D56D009E111B /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		813761D323CB24D300BC90B1 /* FingerPrintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerPrintViewController.swift; sourceTree = "<group>"; };
+		813761D523CB2DCF00BC90B1 /* Unlock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Unlock.json; sourceTree = "<group>"; };
+		813761FB23CB551200BC90B1 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		815A17BF23A658F7001DDBEE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		815A17C923A6596F001DDBEE /* MainCategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		815A17CB23A65981001DDBEE /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
@@ -233,6 +239,7 @@
 				815A17DF23A682B8001DDBEE /* Shared.swift */,
 				8122162323B0D56D009E111B /* Extentions.swift */,
 				81ECE8C523BE36BF0048C0D9 /* Chat.swift */,
+				813761FB23CB551200BC90B1 /* File.swift */,
 				04F1A61B23A641B300293AA2 /* Info.plist */,
 			);
 			path = Konsil;
@@ -335,6 +342,7 @@
 		8114568123BCEBD3005A4B93 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				813761D523CB2DCF00BC90B1 /* Unlock.json */,
 				81ECE8BF23BCF4970048C0D9 /* Report.json */,
 				8114568223BCEC00005A4B93 /* Consultation2.json */,
 				8114568423BCEC01005A4B93 /* Doctor.json */,
@@ -349,9 +357,26 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		813761D123CB247E00BC90B1 /* BiometricAuth */ = {
+			isa = PBXGroup;
+			children = (
+				813761D223CB249E00BC90B1 /* Controller */,
+			);
+			path = BiometricAuth;
+			sourceTree = "<group>";
+		};
+		813761D223CB249E00BC90B1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				813761D323CB24D300BC90B1 /* FingerPrintViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		815A17C123A658FC001DDBEE /* Senarios */ = {
 			isa = PBXGroup;
 			children = (
+				813761D123CB247E00BC90B1 /* BiometricAuth */,
 				8114567923BCE899005A4B93 /* Walkthrough */,
 				81849F2B23AA3F0D004A59D8 /* Conversation */,
 				81849F1A23A8DBEC004A59D8 /* Consultation */,
@@ -637,6 +662,7 @@
 				8114568B23BCEC03005A4B93 /* FingureSuccess.json in Resources */,
 				8114568923BCEC03005A4B93 /* Doctor.json in Resources */,
 				8114569223BCEC21005A4B93 /* success.json in Resources */,
+				813761D623CB2DCF00BC90B1 /* Unlock.json in Resources */,
 				04F1A61523A641B200293AA2 /* Main.storyboard in Resources */,
 				8114568A23BCEC03005A4B93 /* FingureAnimation.json in Resources */,
 				8114569123BCEC21005A4B93 /* NoData.json in Resources */,
@@ -791,6 +817,7 @@
 				81ECE9A923AB9AA000E63105 /* MyConsultationsViewController.swift in Sources */,
 				8122162423B0D56D009E111B /* Extentions.swift in Sources */,
 				815A17C023A658F7001DDBEE /* MainViewController.swift in Sources */,
+				813761FC23CB551200BC90B1 /* File.swift in Sources */,
 				81ECE99A23AA6D8800E63105 /* FAQvViewController.swift in Sources */,
 				81849F2123A906C1004A59D8 /* ConsultationDetailsViewController.swift in Sources */,
 				81849F1D23A8DC26004A59D8 /* RequestConsultationViewController.swift in Sources */,
@@ -804,6 +831,7 @@
 				81D8FB1F23A8301A00585CA8 /* FilterViewController.swift in Sources */,
 				815A17D523A65A26001DDBEE /* CardView.swift in Sources */,
 				81ECE99D23AA6DC800E63105 /* FAQTableViewCell.swift in Sources */,
+				813761D423CB24D300BC90B1 /* FingerPrintViewController.swift in Sources */,
 				815A17D823A65A26001DDBEE /* Colortext.swift in Sources */,
 				8114567E23BCE904005A4B93 /* Walkthrough2ViewController.swift in Sources */,
 				81D8FB1D23A82A5100585CA8 /* MainNavigationController.swift in Sources */,
