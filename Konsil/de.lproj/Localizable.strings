@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Ali Mohamed on 1/16/20.
+  
+*/
+"Lang" = "DU"
+"Surgery" = "Chirurgie";
+"Dental" = "Dental";
+"Bones" = "Knochen";
+"Heart and blood vesselss" = "Herz und Blutgefäße";
+"Pediatrics" = "Pädiatrie";
+"Neurology" = "Neurologie":
+"Open" = "öffnen";
+"Closed" = "geschlossen";
+"Please accept our terms and conditions then try again" = "Bitte akzeptieren Sie unsere Allgemeinen Geschäftsbedingungen und versuchen Sie es erneut"

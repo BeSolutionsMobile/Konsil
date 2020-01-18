@@ -18,7 +18,8 @@ target 'Konsil' do
   pod 'Firebase/Storage'
   pod 'Firebase/Firestore'
   pod 'NVActivityIndicatorView'
-  pod 'lottie-ios' 
+  pod 'lottie-ios'
+  pod 'MOLH'
   
   target 'KonsilTests' do
     inherit! :search_paths

@@ -21,6 +21,8 @@ class MainViewController: UIViewController {
         model = Categories.catName
         auth()
     }
+    
+    
     func auth(){
         if Shared.BiometricAuthEnabled == true {
             if BioMetricAuthenticator.canAuthenticate() {
@@ -63,6 +65,7 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
 //            cell.catImage.sd_setImage(with: URL(string: cat), placeholderImage: UIImage(named: cat))
             cell.catImage.image = UIImage(named: cat)
             cell.catName.text = cat
+            cell.imageSize.constant = self.view.frame.width/2 - 60
             if indexPath.row == 0 {
                 Rounded.topLeft(view: cell.backView)
             } else {

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MOLH
 class SideMenuViewController: UIViewController {
     
     @IBOutlet weak var logOut: UIButton!{
@@ -35,6 +35,7 @@ class SideMenuViewController: UIViewController {
             imageBackView.layer.cornerRadius = imageBackView.frame.width/2
         }
     }
+    @IBOutlet weak var language: UILabel!
     
     @IBOutlet weak var name: UILabel!
     
@@ -45,6 +46,11 @@ class SideMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    @IBAction func changeLanguage(_ sender: UIButton) {
+//        MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "de" : "en" )
+//        MOLH.reset()
     }
     
     @IBAction func sideMenuButtonPressed(_ sender: UIButton) {

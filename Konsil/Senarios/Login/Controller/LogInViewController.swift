@@ -34,6 +34,17 @@ class LogInViewController: UIViewController {
             self.emailTF.delegate = self
         }
     }
+    @IBOutlet weak var socialStackView: UIStackView!{
+        didSet{
+            if Shared.currentDevice == .pad {
+                NSLayoutConstraint.deactivate(constraints)
+                let widthConstraint = self.socialStackView.widthAnchor.constraint(equalToConstant: 400)
+                NSLayoutConstraint.activate([widthConstraint])
+                
+            }
+        }
+    }
+    @IBOutlet var constraints: [NSLayoutConstraint]!
     @IBOutlet var redDot: [UIView]!{
         didSet{
             Rounded.roundedDots(Dots: redDot)
@@ -72,6 +83,8 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
+        let isBiometricAuthEnabled = allowBiometricAuth.on ? true : false
+        UserDefaults.standard.set(isBiometricAuthEnabled, forKey: Key.prefereBiometricAuth)
         backView.isHidden = false
         backView.isUserInteractionEnabled = true
         BlurView(view: animationView)

@@ -48,14 +48,11 @@ class Walkthrough2ViewController: UIViewController {
     }
     
     @objc func swipeAction(_ sender: UISwipeGestureRecognizer){
-        print("yes")
         if sender.direction == .right {
-            print("R")
             let vc = storyboard?.instantiateViewController(identifier: "Walkthrough1") as! Walkthrough1ViewController
             vc.modalPresentationStyle = .fullScreen
             presentViewControllerWithTransition(viewController: vc, animated: true, direction: .fromRight)
         } else if sender.direction == .left {
-            print("L")
             let vc = storyboard?.instantiateViewController(identifier: "Walkthrough3") as! Walkthrough3ViewController
             vc.modalPresentationStyle = .fullScreen
             presentViewControllerWithTransition(viewController: vc, animated: true, direction: .fromLeft)

@@ -56,7 +56,17 @@ class RegisterViewController: UIViewController {
             Rounded.roundedDots(Dots: redDot)
         }
     }
+    @IBOutlet weak var socialStackView: UIStackView!{
+        didSet{
+            if Shared.currentDevice == .pad {
+                NSLayoutConstraint.deactivate(constraints)
+                let widthConstraint = self.socialStackView.widthAnchor.constraint(equalToConstant: 400)
+                NSLayoutConstraint.activate([widthConstraint])
+            }
+        }
+    }
     @IBOutlet weak var backView: UIView!
+    @IBOutlet var constraints: [NSLayoutConstraint]!
     
     
     //MARK:- viewDidLoad
@@ -90,11 +100,11 @@ class RegisterViewController: UIViewController {
             backView.isUserInteractionEnabled = true
             BlurView(view: animationView)
         } else {
-            Alert.show("Error", massege: "Pleas accept our terms and conditions then try again", context: self)
+            Alert.show("Error", massege: "Please accept our terms and conditions then try again".localized, context: self)
         }
     }
     @IBAction func acceptAllTermsAndConditions(_ sender: BEMCheckBox) {
-        print("T & C Accepted")
+        
     }
     
     //MARK:- Prepare For Segue
