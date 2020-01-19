@@ -20,6 +20,10 @@ extension UIViewController: UITextFieldDelegate{
         }
     }
     
+    // MARK:- check Connection Status
+    
+    
+    
     
     //MARK:- Navigation Bar Buttonsa
     func rightBackBut() {

@@ -2085,7 +2085,7 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Cc4-eN-Guj">
-                                                <rect key="frame" x="20" y="173" width="374" height="103.33333333333331"/>
+                                                <rect key="frame" x="20" y="173" width="374" height="73.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ali Mohamed " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cay-ff-Ivd">
                                                         <rect key="frame" x="125" y="0.0" width="124.33333333333331" height="24"/>
@@ -2100,7 +2100,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T2B-6k-pBk" customClass="CosmosView" customModule="Cosmos">
-                                                        <rect key="frame" x="127" y="53.333333333333314" width="120" height="50"/>
+                                                        <rect key="frame" x="127" y="53.333333333333314" width="120" height="20"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="StarFilled"/>
@@ -2119,7 +2119,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NVg-RX-Xs9">
-                                                <rect key="frame" x="83.666666666666686" y="306.33333333333331" width="247" height="21.666666666666686"/>
+                                                <rect key="frame" x="83.666666666666686" y="276.33333333333331" width="247" height="21.666666666666686"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversation hour rate :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1F-lM-nwb">
                                                         <rect key="frame" x="0.0" y="0.0" width="203" height="21.666666666666668"/>
@@ -2136,7 +2136,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2z8-eK-w4C">
-                                                <rect key="frame" x="20" y="358" width="374" height="48.333333333333314"/>
+                                                <rect key="frame" x="20" y="328" width="374" height="48.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appointments available for doctor" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acY-Wl-M3v">
                                                         <rect key="frame" x="0.0" y="0.0" width="286" height="21.666666666666668"/>
@@ -2164,10 +2164,10 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BB1-BD-9ZO">
-                                                <rect key="frame" x="20" y="416.33333333333326" width="374" height="316.66666666666674"/>
+                                                <rect key="frame" x="20" y="386.33333333333326" width="374" height="346.66666666666674"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gi4-cd-DHw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="316.66666666666669"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="346.66666666666669"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="periodCell" id="r2P-VO-Pro" customClass="PeriodsTableViewCell" customModule="Konsil" customModuleProvider="target">
@@ -3888,7 +3888,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5mk-bP-jAZ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mk-bP-jAZ">
                                 <rect key="frame" x="30" y="334.66666666666669" width="354" height="70"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="x8N-55-b46">
@@ -3980,7 +3980,7 @@
                                     <constraint firstItem="ulH-AO-MiC" firstAttribute="leading" secondItem="5mk-bP-jAZ" secondAttribute="leading" id="y3E-VC-gmz"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tLF-Xm-Lqh" customClass="CosmosView" customModule="Cosmos">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLF-Xm-Lqh" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="134.66666666666666" y="289.66666666666669" width="144.99999999999997" height="25"/>
                                 <subviews>
                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MdN-Vw-U4u" customClass="CosmosView" customModule="Cosmos">
@@ -4040,14 +4040,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8t-3x-pmF">
-                                <rect key="frame" x="50" y="424.66666666666663" width="314" height="40.666666666666686"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8t-3x-pmF">
+                                <rect key="frame" x="50" y="424.66666666666669" width="314" height="40.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="e0v-mu-XNk">
-                                <rect key="frame" x="30" y="485.33333333333326" width="354" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="e0v-mu-XNk">
+                                <rect key="frame" x="30" y="485.33333333333331" width="354" height="49.999999999999943"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request  Consultation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pb9-SL-NfX">
                                         <rect key="frame" x="0.0" y="0.0" width="172" height="50"/>
@@ -4080,8 +4080,8 @@
                                     <constraint firstAttribute="width" secondItem="vgJ-CX-mjC" secondAttribute="height" multiplier="69:22" id="MXM-gU-6QO"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gnX-q5-4rT">
-                                <rect key="frame" x="30" y="485.33333333333326" width="354" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gnX-q5-4rT">
+                                <rect key="frame" x="30" y="485.33333333333331" width="354" height="49.999999999999943"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KP4-4p-Tth">
                                         <rect key="frame" x="0.0" y="0.0" width="172" height="50"/>
@@ -4154,7 +4154,7 @@
         <!--Main Navigation Controller-->
         <scene sceneID="gDg-Jv-Ozi">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kWt-8Y-H1z" customClass="MainNavigationController" customModule="Konsil" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigation" automaticallyAdjustsScrollViewInsets="NO" id="kWt-8Y-H1z" customClass="MainNavigationController" customModule="Konsil" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="DiM-d8-vKP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zb1-1m-5an">

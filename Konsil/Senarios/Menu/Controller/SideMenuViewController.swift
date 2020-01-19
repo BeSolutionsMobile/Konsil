@@ -49,8 +49,14 @@ class SideMenuViewController: UIViewController {
     }
     
     @IBAction func changeLanguage(_ sender: UIButton) {
-//        MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "de" : "en" )
-//        MOLH.reset()
+        MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "de" : "en" )
+        if #available(iOS 13.0, *) {
+                let delegate = UIApplication.shared.delegate as? AppDelegate
+                delegate!.swichRoot()
+        } else {
+               // Fallback on earlier versions
+               MOLH.reset()
+        }
     }
     
     @IBAction func sideMenuButtonPressed(_ sender: UIButton) {
