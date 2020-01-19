@@ -9,6 +9,7 @@
 import UIKit
 import BEMCheckBox
 import BiometricAuthentication
+import Network
 class LogInViewController: UIViewController {
     
     //MARK:- IBOutlets
@@ -40,7 +41,6 @@ class LogInViewController: UIViewController {
                 NSLayoutConstraint.deactivate(constraints)
                 let widthConstraint = self.socialStackView.widthAnchor.constraint(equalToConstant: 400)
                 NSLayoutConstraint.activate([widthConstraint])
-                
             }
         }
     }
@@ -61,13 +61,8 @@ class LogInViewController: UIViewController {
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
-    //MARK:- Chaneg Status Bar To Dark
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .darkContent
-    }
     
     //MARK:- IBActions
     @IBAction func logInWithTwitter(_ sender: UIButton) {
@@ -102,6 +97,7 @@ class LogInViewController: UIViewController {
         }
     }
     
+    //MARK:- Make Blur View For Animation
     func BlurView(view: UIView){
         let blur = UIBlurEffect(style: .light)
         let blurView = UIVisualEffectView(effect: blur)
@@ -116,6 +112,11 @@ class LogInViewController: UIViewController {
                 self.performSegue(withIdentifier: "GoToMain", sender: self)
             }
         }
+    }
+    
+    //MARK:- Chaneg Status Bar To Dark
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
     }
     
 }

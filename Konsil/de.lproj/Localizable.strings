@@ -5,8 +5,8 @@
   Created by Ali Mohamed on 1/16/20.
   
 */
-"Lang" = "DU"
-"Surgery" = "Chirurgie";
+"Lang" = "De";
+"Surgeries" = "Chirurgie";
 "Dental" = "Dental";
 "Bones" = "Knochen";
 "Heart and blood vesselss" = "Herz und Blutgefäße";
@@ -14,4 +14,6 @@
 "Neurology" = "Neurologie":
 "Open" = "öffnen";
 "Closed" = "geschlossen";
-"Please accept our terms and conditions then try again" = "Bitte akzeptieren Sie unsere Allgemeinen Geschäftsbedingungen und versuchen Sie es erneut"
+"Please accept our terms and conditions then try again" = "Bitte akzeptieren Sie unsere Allgemeinen Geschäftsbedingungen und versuchen Sie es erneut";
+
+["Chirurgie","Dental","Knochen","Herz und Blutgefäße","Pädiatrie","Neurologie"]

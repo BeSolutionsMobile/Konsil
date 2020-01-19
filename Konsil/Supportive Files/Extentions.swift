@@ -1,7 +1,7 @@
 import UIKit
 import SideMenu
 import Lottie
-
+import Network
 
 //MARK:- navigationBar Buttons
 extension UIViewController: UITextFieldDelegate{
@@ -22,7 +22,81 @@ extension UIViewController: UITextFieldDelegate{
     
     // MARK:- check Connection Status
     
+    func checkConnection(view: UIView) {
+        let monitor = NWPathMonitor()
+        
+        let rect = CGRect(x: 0, y: 20 , width: view.frame.width, height: 20)
+        let connectionView = UIView(frame: rect)
+        view.addSubview(connectionView)
+        
+        var connectionLabel : UILabel!
+        connectionLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 20))
+        connectionLabel.text = ""
+        connectionLabel.textColor = UIColor.white
+        connectionLabel.textAlignment = .center
+        connectionLabel.font = .boldSystemFont(ofSize: 15)
+        
+        connectionView.addSubview(connectionLabel)
+        
+        
+        monitor.pathUpdateHandler = { path in
+            sleep(1)
+            if path.status == .satisfied {
+                DispatchQueue.main.sync(){ [weak self] in
+                    print("Con")
+                    self?.updateLabel(label: connectionLabel, text: "Connected")
+                    self?.updateColor(color: .green, subView: connectionView)
+                    
+                }
+            } else if path.status == .requiresConnection {
+                DispatchQueue.main.sync(){ [weak self] in
+                    print("Reco")
+                    self?.updateLabel(label: connectionLabel, text: "Reconnecting")
+                    self?.updateColor(color: UIColor(displayP3Red: 106/255, green: 27/255, blue: 221/255, alpha: 1), subView: connectionView)
+                }
+            } else  {
+                DispatchQueue.main.sync(){ [weak self] in
+                    print("Dis")
+                    self?.updateLabel(label: connectionLabel, text: "Disconnected")
+                    self?.updateColor(color: .red, subView:  connectionView)
+                }
+            }
+            self.hideSubView(sview: connectionView)
+        }
+        
+        
+        let networkQueue = DispatchQueue(label: "newtwotkQueue99")
+        monitor.start(queue: networkQueue)
+    }
     
+    // Update Label Text
+    func updateLabel(label: UILabel, text: String) {
+        
+        label.text = text
+        UIView.animate(withDuration: 0.5, animations: {
+            label.alpha = 1
+        })
+    }
+    
+    //Hide Super View
+    func hideSubView(sview: UIView) {
+        
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 2, animations: {
+                sview.alpha = 0
+            })
+        }
+        
+    }
+    
+    //Update Super View Color
+    func updateColor(color: UIColor, subView: UIView){
+        
+        subView.layer.backgroundColor = color.cgColor
+        UIView.animate(withDuration: 1.5, animations: {
+            subView.alpha = 1
+        })
+    }
     
     
     //MARK:- Navigation Bar Buttonsa
@@ -80,7 +154,7 @@ extension UIViewController: UITextFieldDelegate{
     }
     
     //MARK:- StatusBar background view to change statusBar background color
-
+    
     //extension UIApplication {
     //var statusBarUIView: UIView? {
     //    if #available(iOS 13.0, *) {

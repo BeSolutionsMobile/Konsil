@@ -62,9 +62,13 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
         
         if let cat = model?[indexPath.row] {
             
-//            cell.catImage.sd_setImage(with: URL(string: cat), placeholderImage: UIImage(named: cat))
             cell.catImage.image = UIImage(named: cat)
             cell.catName.text = cat
+
+            
+            let cats = ["Chirurgie","Dental","Knochen","Herz und Blutgefäße","Pädiatrie","Neurologie"]
+
+            
             cell.imageSize.constant = self.view.frame.width/2 - 60
             if indexPath.row == 0 {
                 Rounded.topLeft(view: cell.backView)
