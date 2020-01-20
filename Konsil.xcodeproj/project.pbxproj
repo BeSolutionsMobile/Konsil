@@ -53,6 +53,7 @@
 		81849F2A23A92EDB004A59D8 /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F2923A92EDB004A59D8 /* MessagesTableViewCell.swift */; };
 		81849F3023AA3FCA004A59D8 /* PeriodsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F2F23AA3FCA004A59D8 /* PeriodsTableViewCell.swift */; };
 		81849F3223AA3FFA004A59D8 /* DoctorConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F3123AA3FFA004A59D8 /* DoctorConversationViewController.swift */; };
+		81B7615523D49E4C00859320 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81B7615723D49E4C00859320 /* Localizable.strings */; };
 		81D8FB1D23A82A5100585CA8 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8FB1C23A82A5100585CA8 /* MainNavigationController.swift */; };
 		81D8FB1F23A8301A00585CA8 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8FB1E23A8301A00585CA8 /* FilterViewController.swift */; };
 		81ECE8C023BCF4970048C0D9 /* Report.json in Resources */ = {isa = PBXBuildFile; fileRef = 81ECE8BF23BCF4970048C0D9 /* Report.json */; };
@@ -131,8 +132,6 @@
 		813761D323CB24D300BC90B1 /* FingerPrintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerPrintViewController.swift; sourceTree = "<group>"; };
 		813761D523CB2DCF00BC90B1 /* Unlock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Unlock.json; sourceTree = "<group>"; };
 		813761FB23CB551200BC90B1 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
-		813D444223D0838100330645 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		813D444423D0838600330645 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		815A17BF23A658F7001DDBEE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		815A17C923A6596F001DDBEE /* MainCategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		815A17CB23A65981001DDBEE /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
@@ -152,6 +151,8 @@
 		81849F2923A92EDB004A59D8 /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
 		81849F2F23AA3FCA004A59D8 /* PeriodsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodsTableViewCell.swift; sourceTree = "<group>"; };
 		81849F3123AA3FFA004A59D8 /* DoctorConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorConversationViewController.swift; sourceTree = "<group>"; };
+		81B7615623D49E4C00859320 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		81B7615823D49E5500859320 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		81CC1BF623CF140C00B92D68 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		81CC1BF723CF140D00B92D68 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		81D8FB1C23A82A5100585CA8 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
@@ -236,6 +237,7 @@
 				815A17C123A658FC001DDBEE /* Senarios */,
 				813D444623D0869200330645 /* Supportive Files */,
 				04F1A61B23A641B300293AA2 /* Info.plist */,
+				81B7615723D49E4C00859320 /* Localizable.strings */,
 			);
 			path = Konsil;
 			sourceTree = "<group>";
@@ -368,18 +370,9 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		813D444123D0837000330645 /* Localization */ = {
-			isa = PBXGroup;
-			children = (
-				813D444323D0838100330645 /* Localizable.strings */,
-			);
-			path = Localization;
-			sourceTree = "<group>";
-		};
 		813D444623D0869200330645 /* Supportive Files */ = {
 			isa = PBXGroup;
 			children = (
-				813D444123D0837000330645 /* Localization */,
 				8114568123BCEBD3005A4B93 /* Animations */,
 				04F1A61323A641B200293AA2 /* Main.storyboard */,
 				04F1A61823A641B300293AA2 /* LaunchScreen.storyboard */,
@@ -688,6 +681,7 @@
 				04F1A61523A641B200293AA2 /* Main.storyboard in Resources */,
 				8114568A23BCEC03005A4B93 /* FingureAnimation.json in Resources */,
 				8114569123BCEC21005A4B93 /* NoData.json in Resources */,
+				81B7615523D49E4C00859320 /* Localizable.strings in Resources */,
 				8114569023BCEC21005A4B93 /* RedLifeline.json in Resources */,
 				81ECE9A123AB6C8400E63105 /* SectionHeaderView.xib in Resources */,
 			);
@@ -917,15 +911,14 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		813D444323D0838100330645 /* Localizable.strings */ = {
+		81B7615723D49E4C00859320 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				813D444223D0838100330645 /* en */,
-				813D444423D0838600330645 /* de */,
+				81B7615623D49E4C00859320 /* en */,
+				81B7615823D49E5500859320 /* de */,
 			);
 			name = Localizable.strings;
-			path = /Users/ios/Downloads/Konsil/Konsil;
-			sourceTree = "<absolute>";
+			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 

@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Konsil
+
+  Created by Ali Mohamed on 1/19/20.
+  Copyright © 2020 begroup. All rights reserved.
+*/
+"Lang" = "en";
+"Surgery" = "Surgery";
+"Dental" = "Dental";
+"Bones" = "Bones";
+"Heart and blood vesselss" = "Heart and blood vesselss";
+"Pediatrics" = "Pediatrics";
+"Neurology" = "Neurology";
+"Open" = "Open";
+"Closed" = "Closed";
+"Please accept our terms and conditions then try again" = "Please accept our terms and conditions then try again";

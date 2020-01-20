@@ -14,6 +14,10 @@ class DoctorsViewController: UIViewController {
     
     @IBOutlet weak var doctorTableView: UITableView!
     
+    var name = ["Ahmed Khalil" , "Mahmoud Saber" , "Nour" , "Wael Mansour" , "Mahmoud Samir" , "Nermeen Fouad" , "Ramy El Badry" , "Naser Ali" , "Ali Essa" , "Adham Samir"]
+    var deg = ["Specialist" , "Advisory" , "Professor" , "Specialist"  , "Professor" , "Advisory" , "Specialist" , "Advisory" , "Professor" , "Advisory"]
+    var images = ["1" , "2" , "3" , "4"  , "5" , "6" , "7" , "8" , "9" , "10"]
+    var rate = [4 , 3.5 , 4.5 ,2.5 ,4 , 3 , 4 , 3.5 , 3, 2.5]
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,13 +38,16 @@ class DoctorsViewController: UIViewController {
 //MARK:- TableView SetUp
 extension DoctorsViewController: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return name.count
     }
     
     //MARK:- cellForRow
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DoctorsCell", for: indexPath) as! DoctorsTableViewCell
-        
+        cell.drName.text = name[indexPath.row]
+        cell.drDegree.text = deg[indexPath.row]
+        cell.drRating.rating = rate[indexPath.row]
+        cell.drImage.image = UIImage(named: images[indexPath.row])
         return cell
     }
     

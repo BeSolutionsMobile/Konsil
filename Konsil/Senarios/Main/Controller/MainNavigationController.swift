@@ -12,7 +12,7 @@ class MainNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkConnection(view: self.view)
+//        checkConnection(view: self.view)
     }
     
     //MARK:- Change Status Bar To Dark
