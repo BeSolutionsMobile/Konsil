@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileInfoViewController: UIViewController {
+class ProfileInfoViewController: UIViewController , UITextViewDelegate {
     
     @IBOutlet weak var name: DesignableUITextField!{
         didSet{
@@ -35,6 +35,14 @@ class ProfileInfoViewController: UIViewController {
             Rounded.roundedCornerTextField(textField: self.photo, borderColor: #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1), radius: self.photo.frame.height/2)
         }
     }
+    @IBOutlet weak var patientHistoryTV: UITextView!{
+        didSet{
+            patientHistoryTV.layer.cornerRadius = 10
+            patientHistoryTV.layer.borderColor = #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1)
+            patientHistoryTV.layer.borderWidth = 1.5
+            patientHistoryTV.delegate = self
+        }
+    }
     @IBOutlet weak var submit: UIButton!{
         didSet{
             self.submit.layer.cornerRadius = self.submit.frame.height/2
@@ -58,5 +66,7 @@ class ProfileInfoViewController: UIViewController {
         rightBackBut()
     }
     
-    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        self.patientHistoryTV.text = ""
+    }
 }

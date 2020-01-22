@@ -10,7 +10,7 @@ import UIKit
 import SideMenu
 import OpalImagePicker
 
-class RequestConsultationViewController: UIViewController {
+class RequestConsultationViewController: UIViewController{
     
     //MAKR:- IBOutlet
     @IBOutlet weak var consultationImage: UIImageView!
@@ -30,6 +30,7 @@ class RequestConsultationViewController: UIViewController {
             self.detailsTV.layer.cornerRadius = 10
             self.detailsTV.layer.borderWidth = 1.5
             self.detailsTV.layer.borderColor = UIColor.gray.cgColor
+            self.detailsTV.delegate = self
         }
     }
     @IBOutlet weak var textViewHieghtConstraint: NSLayoutConstraint!
@@ -69,13 +70,18 @@ class RequestConsultationViewController: UIViewController {
         imagePicker.selectionImageTintColor = UIColor.white.withAlphaComponent(0.7)
         imagePicker.configuration = configuratations
     }
+    
 }
 
 
 //MARK:- ImagePicker SetUp
-extension RequestConsultationViewController: OpalImagePickerControllerDelegate {
+extension RequestConsultationViewController: OpalImagePickerControllerDelegate , UITextViewDelegate {
     
     func imagePicker(_ picker: OpalImagePickerController, didFinishPickingImages images: [UIImage]) {
         print(images.count)
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        detailsTV.text = ""
     }
 }

@@ -102,7 +102,7 @@
                                                         <color key="tintColor" name="KonsilDrakGray"/>
                                                         <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="LockLogin"/>
                                                         </userDefinedRuntimeAttributes>
@@ -699,24 +699,25 @@
                                 <color key="textColor" name="IconsColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XEE-QJ-0nC">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Complaint Title " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XEE-QJ-0nC">
                                 <rect key="frame" x="30" y="56" width="354" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="KonsilDrakGray"/>
+                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="8hA-eK-F0X" id="yGW-mS-Ih6"/>
                                 </connections>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cAj-N3-OSd">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter Complaint Details Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cAj-N3-OSd">
                                 <rect key="frame" x="30" y="157" width="354" height="180"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="KonsilDrakGray"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="2Nv-c7-fkw"/>
                                 </constraints>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -733,7 +734,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload files of the medical consultation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J7x-B1-Qiz">
-                                <rect key="frame" x="30" y="463.66666666666669" width="354" height="21.666666666666686"/>
+                                <rect key="frame" x="30" y="463.66666666666669" width="354" height="22"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <color key="textColor" name="IconsColor"/>
                                 <nil key="highlightedColor"/>
@@ -750,7 +751,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="knm-xg-OeF">
-                                <rect key="frame" x="177" y="495.33333333333326" width="60" height="70"/>
+                                <rect key="frame" x="177" y="495.66666666666674" width="60" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="7e2-Vd-79f"/>
                                     <constraint firstAttribute="width" constant="60" id="gMa-au-wEU"/>
@@ -1626,14 +1627,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="nbU-9K-svT">
-                                                <rect key="frame" x="0.0" y="200" width="414" height="652"/>
+                                                <rect key="frame" x="0.0" y="180" width="414" height="672"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ife-dd-WUi">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpj-7e-gB7">
-                                                        <rect key="frame" x="162" y="55" width="90" height="90"/>
+                                                        <rect key="frame" x="162" y="45" width="90" height="90"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="90" id="FAi-Jv-Tje"/>
@@ -1641,7 +1642,7 @@
                                                         </constraints>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Surgery" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xQP-kt-QMf">
-                                                        <rect key="frame" x="163.66666666666666" y="56.666666666666671" width="87" height="87.000000000000014"/>
+                                                        <rect key="frame" x="163.66666666666666" y="46.666666666666671" width="87" height="87.000000000000014"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="87" id="eby-ze-JCJ"/>
@@ -1649,7 +1650,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ahmed Fathi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wA-bZ-pLR">
-                                                        <rect key="frame" x="138.33333333333337" y="150" width="137.66666666666663" height="28.666666666666657"/>
+                                                        <rect key="frame" x="138.33333333333337" y="140" width="137.66666666666663" height="28.666666666666657"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -1661,13 +1662,13 @@
                                                     <constraint firstItem="xpj-7e-gB7" firstAttribute="centerX" secondItem="Ife-dd-WUi" secondAttribute="centerX" id="Hgy-gS-rWg"/>
                                                     <constraint firstItem="xQP-kt-QMf" firstAttribute="centerY" secondItem="Ife-dd-WUi" secondAttribute="centerY" id="MpC-c4-Bq0"/>
                                                     <constraint firstItem="xpj-7e-gB7" firstAttribute="centerY" secondItem="Ife-dd-WUi" secondAttribute="centerY" id="RCq-pb-fvK"/>
-                                                    <constraint firstAttribute="height" constant="200" id="h6x-Ye-Z4d"/>
+                                                    <constraint firstAttribute="height" constant="180" id="h6x-Ye-Z4d"/>
                                                     <constraint firstItem="0wA-bZ-pLR" firstAttribute="top" secondItem="xpj-7e-gB7" secondAttribute="bottom" constant="5" id="xij-0f-hU8"/>
                                                     <constraint firstItem="xQP-kt-QMf" firstAttribute="centerX" secondItem="Ife-dd-WUi" secondAttribute="centerX" id="zev-uI-1kQ"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="v4n-uD-EdE">
-                                                <rect key="frame" x="20" y="230" width="209" height="144"/>
+                                                <rect key="frame" x="20" y="210" width="209" height="144"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="bE6-Ve-hdy">
                                                         <rect key="frame" x="0.0" y="0.0" width="34" height="144"/>
@@ -1709,7 +1710,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" tag="1" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SwV-3U-0A0">
-                                                <rect key="frame" x="20" y="385.33333333333331" width="186.33333333333334" height="143.99999999999994"/>
+                                                <rect key="frame" x="20" y="365.33333333333331" width="186.33333333333334" height="144"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mqf-k3-IUD">
                                                         <rect key="frame" x="0.0" y="0.0" width="34" height="144"/>
@@ -1751,13 +1752,13 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="...................................................................................." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IaL-5f-HlO">
-                                                <rect key="frame" x="20" y="350" width="374" height="20.333333333333314"/>
+                                                <rect key="frame" x="20" y="330" width="374" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" name="IconsColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SMZ-b9-9E3">
-                                                <rect key="frame" x="20" y="230" width="374" height="110"/>
+                                                <rect key="frame" x="20" y="210" width="374" height="110"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzT-Uv-cBf">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -1792,7 +1793,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="v6f-y1-rwS">
-                                                <rect key="frame" x="20" y="385.33333333333331" width="374" height="110"/>
+                                                <rect key="frame" x="20" y="365.33333333333331" width="374" height="110"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zf-8y-z7T">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -1827,7 +1828,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phx-sd-Qsw">
-                                                <rect key="frame" x="132" y="505.33333333333337" width="150" height="35"/>
+                                                <rect key="frame" x="132" y="485.33333333333337" width="150" height="35"/>
                                                 <color key="backgroundColor" name="KonsilRed"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="UzN-kY-dF7"/>
@@ -1857,7 +1858,7 @@
                                                             <constraint firstAttribute="width" constant="40" id="XGf-2g-23k"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chnage Language :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mp5-4j-Rv1">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Language :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mp5-4j-Rv1">
                                                         <rect key="frame" x="47" y="0.0" width="135.66666666666666" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                         <nil key="textColor"/>
@@ -1965,13 +1966,13 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 357" translatesAutoresizingMaskIntoConstraints="NO" id="9SP-rO-Nck">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complaint Tybe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJE-Z7-NQy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complaint Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJE-Z7-NQy">
                                 <rect key="frame" x="30" y="84" width="133" height="22"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <color key="textColor" name="IconsColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Tybe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sVx-WN-ZVq" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sVx-WN-ZVq" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
                                 <rect key="frame" x="30" y="136" width="354" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="KonsilDrakGray"/>
@@ -1985,13 +1986,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complaint Tybe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGN-Mc-ei2">
-                                <rect key="frame" x="30" y="200" width="133" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complaint Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGN-Mc-ei2">
+                                <rect key="frame" x="30" y="200" width="167" height="22"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <color key="textColor" name="IconsColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="haH-UK-ChF">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter Complaint Message Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="haH-UK-ChF">
                                 <rect key="frame" x="30" y="252" width="354" height="180"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="KonsilDrakGray"/>
@@ -2782,134 +2783,170 @@
             <objects>
                 <viewController storyboardIdentifier="PersonalInfo" id="chV-OY-X0v" customClass="ProfileInfoViewController" customModule="Konsil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wxe-zq-nJf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2k-oB-xLa">
-                                <rect key="frame" x="-10" y="44" width="434" height="852"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2K-BN-ilx">
+                                <rect key="frame" x="0.0" y="44" width="414" height="956"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGv-qc-Wdp">
-                                        <rect key="frame" x="0.0" y="0.0" width="434" height="584"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2k-oB-xLa">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="956"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Uoq-tq-oY0">
-                                                <rect key="frame" x="50" y="162" width="334" height="260"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGv-qc-Wdp">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="590"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Change name" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aex-c3-nEp" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="36"/>
-                                                        <color key="backgroundColor" name="KosilBackGround"/>
-                                                        <color key="tintColor" name="KonsilDrakGray"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Uoq-tq-oY0">
+                                                        <rect key="frame" x="50" y="50" width="314" height="260"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Change name" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aex-c3-nEp" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="314" height="36"/>
+                                                                <color key="backgroundColor" name="KosilBackGround"/>
+                                                                <color key="tintColor" name="KonsilDrakGray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="36" id="Vor-ow-4i8"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="PersonIcon"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="chV-OY-X0v" id="tUm-mr-2g7"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Change e-mail" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YRQ-3I-hbr" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="56" width="314" height="36"/>
+                                                                <color key="backgroundColor" name="KosilBackGround"/>
+                                                                <color key="tintColor" name="KonsilDrakGray"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="MailIcon"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Change Password" borderStyle="roundedRect" placeholder="Change" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HwV-La-9qL" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="112" width="314" height="36"/>
+                                                                <color key="backgroundColor" name="KosilBackGround"/>
+                                                                <color key="tintColor" name="KonsilDrakGray"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="LockIcon"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add Phone" borderStyle="roundedRect" placeholder="Add phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zmj-ws-KSJ" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="168" width="314" height="36"/>
+                                                                <color key="backgroundColor" name="KosilBackGround"/>
+                                                                <color key="tintColor" name="KonsilDrakGray"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="PhoneIcon"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add photo" borderStyle="roundedRect" placeholder="Add photo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GbI-Sj-YYR" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="224" width="314" height="36"/>
+                                                                <color key="backgroundColor" name="KosilBackGround"/>
+                                                                <color key="tintColor" name="KonsilDrakGray"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="ImagesIcon"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                        </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="36" id="Vor-ow-4i8"/>
+                                                            <constraint firstAttribute="height" constant="260" id="6oX-N1-AZB"/>
                                                         </constraints>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Its-Z2-Iyp">
+                                                        <rect key="frame" x="132" y="525" width="150" height="35"/>
+                                                        <color key="backgroundColor" name="IconsColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="Ln1-8R-IZM"/>
+                                                            <constraint firstAttribute="width" constant="150" id="ua8-G4-frj"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                        <state key="normal" title="Submit"/>
+                                                    </button>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter Patient History Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fYK-Fu-adJ">
+                                                        <rect key="frame" x="50" y="368.33333333333331" width="314" height="126.66666666666669"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="PersonIcon"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="chV-OY-X0v" id="tUm-mr-2g7"/>
-                                                        </connections>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Change e-mail" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YRQ-3I-hbr" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="56" width="334" height="36"/>
-                                                        <color key="backgroundColor" name="KosilBackGround"/>
-                                                        <color key="tintColor" name="KonsilDrakGray"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="MailIcon"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Change password" borderStyle="roundedRect" placeholder="Change password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HwV-La-9qL" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="112" width="334" height="36"/>
-                                                        <color key="backgroundColor" name="KosilBackGround"/>
-                                                        <color key="tintColor" name="KonsilDrakGray"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="LockIcon"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add Phone" borderStyle="roundedRect" placeholder="Add phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zmj-ws-KSJ" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="168" width="334" height="36"/>
-                                                        <color key="backgroundColor" name="KosilBackGround"/>
-                                                        <color key="tintColor" name="KonsilDrakGray"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="PhoneIcon"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add photo" borderStyle="roundedRect" placeholder="Add photo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GbI-Sj-YYR" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="224" width="334" height="36"/>
-                                                        <color key="backgroundColor" name="KosilBackGround"/>
-                                                        <color key="tintColor" name="KonsilDrakGray"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="ImagesIcon"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textField>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patient History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgt-Kl-gbn">
+                                                        <rect key="frame" x="50.000000000000007" y="340" width="112.66666666666669" height="20.333333333333314"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
+                                                <color key="backgroundColor" name="KosilBackGround"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="260" id="ehe-rS-tZc"/>
+                                                    <constraint firstItem="fYK-Fu-adJ" firstAttribute="top" secondItem="Jgt-Kl-gbn" secondAttribute="bottom" constant="8" id="4K8-Ep-AWF"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Uoq-tq-oY0" secondAttribute="trailing" constant="50" id="4Yj-1g-54v"/>
+                                                    <constraint firstItem="Uoq-tq-oY0" firstAttribute="centerX" secondItem="sGv-qc-Wdp" secondAttribute="centerX" id="BJq-j9-ItX"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Its-Z2-Iyp" secondAttribute="bottom" constant="30" id="IJg-hb-lZa"/>
+                                                    <constraint firstItem="Jgt-Kl-gbn" firstAttribute="top" secondItem="Uoq-tq-oY0" secondAttribute="bottom" constant="30" id="JQ4-0u-Onw"/>
+                                                    <constraint firstAttribute="trailing" secondItem="fYK-Fu-adJ" secondAttribute="trailing" constant="50" id="PWk-Vv-HVT"/>
+                                                    <constraint firstItem="Its-Z2-Iyp" firstAttribute="centerX" secondItem="sGv-qc-Wdp" secondAttribute="centerX" id="TC3-hi-m4p"/>
+                                                    <constraint firstItem="Its-Z2-Iyp" firstAttribute="top" secondItem="fYK-Fu-adJ" secondAttribute="bottom" constant="30" id="VX8-PB-LJm"/>
+                                                    <constraint firstItem="Uoq-tq-oY0" firstAttribute="top" secondItem="sGv-qc-Wdp" secondAttribute="top" constant="50" id="Wu2-7I-fdd"/>
+                                                    <constraint firstItem="Jgt-Kl-gbn" firstAttribute="leading" secondItem="sGv-qc-Wdp" secondAttribute="leading" constant="50" id="ld3-AI-reg"/>
+                                                    <constraint firstAttribute="height" constant="590" id="oGb-9Y-OLj"/>
+                                                    <constraint firstItem="fYK-Fu-adJ" firstAttribute="leading" secondItem="sGv-qc-Wdp" secondAttribute="leading" constant="50" id="u1X-7n-Qi5"/>
+                                                    <constraint firstItem="Uoq-tq-oY0" firstAttribute="leading" secondItem="sGv-qc-Wdp" secondAttribute="leading" constant="50" id="ycQ-un-5aT"/>
                                                 </constraints>
-                                            </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Its-Z2-Iyp">
-                                                <rect key="frame" x="142" y="442" width="150" height="35"/>
-                                                <color key="backgroundColor" name="IconsColor"/>
+                                            </view>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="250" image="Group 352" translatesAutoresizingMaskIntoConstraints="NO" id="uS1-3b-9yd">
+                                                <rect key="frame" x="0.0" y="590" width="414" height="255.66666666666663"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="35" id="Ln1-8R-IZM"/>
-                                                    <constraint firstAttribute="width" constant="150" id="ua8-G4-frj"/>
+                                                    <constraint firstAttribute="width" secondItem="uS1-3b-9yd" secondAttribute="height" multiplier="217:134" id="Zau-l5-THZ"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                <state key="normal" title="Submit"/>
-                                            </button>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" name="KosilBackGround"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Uoq-tq-oY0" secondAttribute="trailing" constant="50" id="4Yj-1g-54v"/>
-                                            <constraint firstItem="Uoq-tq-oY0" firstAttribute="centerX" secondItem="sGv-qc-Wdp" secondAttribute="centerX" id="BJq-j9-ItX"/>
-                                            <constraint firstItem="Its-Z2-Iyp" firstAttribute="centerX" secondItem="sGv-qc-Wdp" secondAttribute="centerX" id="TC3-hi-m4p"/>
-                                            <constraint firstItem="Uoq-tq-oY0" firstAttribute="centerY" secondItem="sGv-qc-Wdp" secondAttribute="centerY" id="n8c-6T-aiu"/>
-                                            <constraint firstItem="Its-Z2-Iyp" firstAttribute="top" secondItem="Uoq-tq-oY0" secondAttribute="bottom" constant="20" id="pse-lW-Zs0"/>
-                                            <constraint firstItem="Uoq-tq-oY0" firstAttribute="leading" secondItem="sGv-qc-Wdp" secondAttribute="leading" constant="50" id="ycQ-un-5aT"/>
+                                            <constraint firstItem="uS1-3b-9yd" firstAttribute="leading" secondItem="s2k-oB-xLa" secondAttribute="leading" id="0ti-CB-vOD"/>
+                                            <constraint firstItem="sGv-qc-Wdp" firstAttribute="top" secondItem="s2k-oB-xLa" secondAttribute="top" id="Bml-Dp-bwD"/>
+                                            <constraint firstItem="sGv-qc-Wdp" firstAttribute="leading" secondItem="s2k-oB-xLa" secondAttribute="leading" id="H8U-62-Rp6"/>
+                                            <constraint firstItem="uS1-3b-9yd" firstAttribute="top" secondItem="sGv-qc-Wdp" secondAttribute="bottom" id="NeZ-ET-jJ8"/>
+                                            <constraint firstAttribute="trailing" secondItem="sGv-qc-Wdp" secondAttribute="trailing" id="s7m-Bf-p55"/>
+                                            <constraint firstAttribute="trailing" secondItem="uS1-3b-9yd" secondAttribute="trailing" id="x72-ny-dV2"/>
                                         </constraints>
                                     </view>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="250" image="Group 352" translatesAutoresizingMaskIntoConstraints="NO" id="uS1-3b-9yd">
-                                        <rect key="frame" x="0.0" y="584" width="434" height="268"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="uS1-3b-9yd" secondAttribute="height" multiplier="217:134" id="Zau-l5-THZ"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" name="KosilBackGround"/>
                                 <constraints>
-                                    <constraint firstItem="uS1-3b-9yd" firstAttribute="leading" secondItem="s2k-oB-xLa" secondAttribute="leading" id="0ti-CB-vOD"/>
-                                    <constraint firstItem="sGv-qc-Wdp" firstAttribute="top" secondItem="s2k-oB-xLa" secondAttribute="top" id="Bml-Dp-bwD"/>
-                                    <constraint firstAttribute="bottom" secondItem="uS1-3b-9yd" secondAttribute="bottom" id="E5k-ps-9b2"/>
-                                    <constraint firstItem="sGv-qc-Wdp" firstAttribute="leading" secondItem="s2k-oB-xLa" secondAttribute="leading" id="H8U-62-Rp6"/>
-                                    <constraint firstItem="uS1-3b-9yd" firstAttribute="top" secondItem="sGv-qc-Wdp" secondAttribute="bottom" id="NeZ-ET-jJ8"/>
-                                    <constraint firstAttribute="trailing" secondItem="sGv-qc-Wdp" secondAttribute="trailing" id="s7m-Bf-p55"/>
-                                    <constraint firstAttribute="trailing" secondItem="uS1-3b-9yd" secondAttribute="trailing" id="x72-ny-dV2"/>
+                                    <constraint firstItem="s2k-oB-xLa" firstAttribute="width" secondItem="C2K-BN-ilx" secondAttribute="width" id="1uN-wS-xsH"/>
+                                    <constraint firstItem="s2k-oB-xLa" firstAttribute="trailing" secondItem="C2K-BN-ilx" secondAttribute="trailing" id="3zH-bT-prK"/>
+                                    <constraint firstItem="s2k-oB-xLa" firstAttribute="height" secondItem="C2K-BN-ilx" secondAttribute="height" id="609-qr-Et4"/>
+                                    <constraint firstItem="s2k-oB-xLa" firstAttribute="top" secondItem="C2K-BN-ilx" secondAttribute="top" id="79f-O0-mda"/>
+                                    <constraint firstItem="s2k-oB-xLa" firstAttribute="leading" secondItem="C2K-BN-ilx" secondAttribute="leading" id="tXX-ci-fXD"/>
+                                    <constraint firstItem="s2k-oB-xLa" firstAttribute="bottom" secondItem="C2K-BN-ilx" secondAttribute="bottom" id="xlA-yW-6KN"/>
                                 </constraints>
-                            </view>
+                                <viewLayoutGuide key="contentLayoutGuide" id="QDO-13-Ubz"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="nKa-9J-Bfe"/>
+                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="KosilBackGround"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="s2k-oB-xLa" secondAttribute="bottom" id="J7J-aS-8KJ"/>
-                            <constraint firstItem="s2k-oB-xLa" firstAttribute="top" secondItem="ccI-gW-Tse" secondAttribute="top" id="Otu-j5-eFZ"/>
-                            <constraint firstItem="s2k-oB-xLa" firstAttribute="leading" secondItem="ccI-gW-Tse" secondAttribute="leading" constant="-10" id="YwQ-mr-uEg"/>
-                            <constraint firstItem="s2k-oB-xLa" firstAttribute="trailing" secondItem="ccI-gW-Tse" secondAttribute="trailing" constant="10" id="abB-Kf-c8P"/>
+                            <constraint firstAttribute="bottom" secondItem="C2K-BN-ilx" secondAttribute="bottom" id="7kA-zV-uGx"/>
+                            <constraint firstItem="C2K-BN-ilx" firstAttribute="leading" secondItem="Wxe-zq-nJf" secondAttribute="leading" id="DVM-Q2-nJL"/>
+                            <constraint firstItem="C2K-BN-ilx" firstAttribute="top" secondItem="ccI-gW-Tse" secondAttribute="top" id="LnP-a9-ahM"/>
+                            <constraint firstAttribute="trailing" secondItem="C2K-BN-ilx" secondAttribute="trailing" id="tHR-mN-0dA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ccI-gW-Tse"/>
                     </view>
                     <navigationItem key="navigationItem" title="Personal Info" id="5VC-zC-gcZ"/>
+                    <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="blueView" destination="sGv-qc-Wdp" id="g7f-oW-Fkb"/>
                         <outlet property="email" destination="YRQ-3I-hbr" id="KhI-S1-pQA"/>
                         <outlet property="name" destination="aex-c3-nEp" id="5Zg-jJ-HTj"/>
                         <outlet property="password" destination="HwV-La-9qL" id="90o-yb-sVy"/>
+                        <outlet property="patientHistoryTV" destination="fYK-Fu-adJ" id="3fC-gJ-iY6"/>
                         <outlet property="phone" destination="Zmj-ws-KSJ" id="POy-Tb-nTW"/>
                         <outlet property="photo" destination="GbI-Sj-YYR" id="8kY-cU-5N1"/>
                         <outlet property="redView" destination="s2k-oB-xLa" id="t2j-v0-mIh"/>
@@ -3319,13 +3356,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Degree :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80i-5c-i8N">
-                                                    <rect key="frame" x="126" y="49.666666666666664" width="66.666666666666686" height="20.666666666666664"/>
+                                                    <rect key="frame" x="126" y="49.666666666666664" width="66.666666666666686" height="20.999999999999993"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh7-Er-6Tc">
-                                                    <rect key="frame" x="126" y="78.333333333333329" width="45" height="20.333333333333329"/>
+                                                    <rect key="frame" x="126" y="78.666666666666671" width="45" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
@@ -3343,7 +3380,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OMp-LU-bpf" customClass="CosmosView" customModule="Cosmos">
-                                                    <rect key="frame" x="179" y="78.333333333333329" width="120" height="30.666666666666671"/>
+                                                    <rect key="frame" x="179" y="78.666666666666671" width="120" height="30.333333333333329"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="rating">
@@ -4415,9 +4452,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walkthrough" translatesAutoresizingMaskIntoConstraints="NO" id="QQa-8U-ovM">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAv-am-fiU">
-                                <rect key="frame" x="141" y="801" width="137" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAv-am-fiU">
+                                <rect key="frame" x="141" y="788" width="137" height="34"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Did Accept Print">
                                     <color key="titleColor" red="0.1058823529" green="0.16078431369999999" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4453,6 +4489,7 @@
                             <constraint firstItem="QQa-8U-ovM" firstAttribute="top" secondItem="Rek-5f-dv6" secondAttribute="top" id="er4-oq-bZO"/>
                             <constraint firstItem="kha-le-WIo" firstAttribute="centerY" secondItem="Rek-5f-dv6" secondAttribute="centerY" constant="-100" id="gUO-BE-CLl"/>
                             <constraint firstItem="b66-lh-LNA" firstAttribute="trailing" secondItem="QQa-8U-ovM" secondAttribute="trailing" id="oRY-8Q-mzb"/>
+                            <constraint firstItem="b66-lh-LNA" firstAttribute="bottom" secondItem="qAv-am-fiU" secondAttribute="bottom" constant="40" id="qV4-Hf-Uaq"/>
                             <constraint firstItem="kha-le-WIo" firstAttribute="centerX" secondItem="Rek-5f-dv6" secondAttribute="centerX" id="vKd-T4-3eJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b66-lh-LNA"/>
