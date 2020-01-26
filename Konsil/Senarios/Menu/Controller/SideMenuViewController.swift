@@ -36,7 +36,6 @@ class SideMenuViewController: UIViewController {
         }
     }
     @IBOutlet weak var language: UILabel!
-    
     @IBOutlet weak var name: UILabel!
     
     var segue = ["PersonalInfo" , "MyConsultation" , "FAQView" , "MyComplaints" , "Policy" ,"Become A Doctor"]
@@ -48,49 +47,64 @@ class SideMenuViewController: UIViewController {
         
     }
     
+    //MARK:- IB Actions
     @IBAction func changeLanguage(_ sender: UIButton) {
         MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "de" : "en" )
-        if #available(iOS 13.0, *) {
-                let delegate = UIApplication.shared.delegate as? AppDelegate
-                delegate!.swichRoot()
-        } else {
-               // Fallback on earlier versions
-               MOLH.reset()
-        }
+        MOLH.reset()
+//        if #available(iOS 13.0, *) {
+//            let delegate = UIApplication.shared.delegate as? AppDelegate
+////            delegate!.swichRoot()
+//        } else {
+//            MOLH.reset()
+//        }
     }
     
     @IBAction func sideMenuButtonPressed(_ sender: UIButton) {
         
         switch sender.tag {
         case 0:
-            guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
-            self.navigationController?.pushViewController(vc, animated: true)
+            if #available(iOS 13.0, *) {
+                guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
         case 1:
-            guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
-            self.navigationController?.pushViewController(vc, animated: true)
+            if #available(iOS 13.0, *) {
+                guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
         case 2:
-            guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
-            self.navigationController?.pushViewController(vc, animated: true)
+            if #available(iOS 13.0, *) {
+                guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         case 3:
-//            guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
-//            self.navigationController?.pushViewController(vc, animated: true)
+            //            guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
+            //            self.navigationController?.pushViewController(vc, animated: true)
             break
         case 4:
-//            guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
-//            self.navigationController?.pushViewController(vc, animated: true)
+            //            guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
+            //            self.navigationController?.pushViewController(vc, animated: true)
             break
         case 5:
-            guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
-            self.navigationController?.pushViewController(vc, animated: true)
+            if #available(iOS 13.0, *) {
+                guard let vc = storyboard?.instantiateViewController(identifier: segue[sender.tag]) else { return }
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
         default:
             break
         }
     }
     
+    //MARK:- Log Out
     @IBAction func logOut(_ sender: UIButton) {
-        if let vc = storyboard?.instantiateViewController(identifier: "LogIn") as? LogInViewController {
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true, completion: nil)
+        if #available(iOS 13.0, *) {
+            if let vc = storyboard?.instantiateViewController(identifier: "LogIn") as? LogInViewController {
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
+            }
         }
     }
 }

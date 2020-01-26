@@ -72,9 +72,12 @@ class LogInViewController: UIViewController {
     @IBAction func logInWithFacebook(_ sender: UIButton) {
     }
     @IBAction func registerPressed(_ sender: UIButton) {
-        let vc = storyboard?.instantiateViewController(identifier: "Register") as! RegisterViewController
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
+        if #available(iOS 13.0, *) {
+            if let vc = storyboard?.instantiateViewController(identifier: "Register") as? RegisterViewController {
+                vc.modalPresentationStyle = .fullScreen
+                present(vc, animated: true, completion: nil)
+            }
+        }
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
@@ -104,7 +107,7 @@ class LogInViewController: UIViewController {
         blurView.frame = view.bounds
         view.addSubview(blurView)
         view.isHidden = false
-        let animation = Shared.showLottie(view: blurView.contentView, fileName: "success", contentMode: .scaleAspectFit)
+        let animation = Shared.showLottie(view: blurView.contentView, fileName: Animations.success , contentMode: .scaleAspectFit)
         blurView.contentView.addSubview(animation)
         view.addSubview(blurView)
         animation.play { (finished) in
@@ -115,8 +118,12 @@ class LogInViewController: UIViewController {
     }
     
     //MARK:- Chaneg Status Bar To Dark
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .darkContent
-    }
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        if #available(iOS 13.0, *) {
+//            return .darkContent
+//        } else {
+//            
+//        }
+//    }
     
 }

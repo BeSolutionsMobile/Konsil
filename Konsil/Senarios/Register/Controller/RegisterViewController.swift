@@ -76,9 +76,9 @@ class RegisterViewController: UIViewController {
     }
     
     //MARK:- Change Status Bar To Dark
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .darkContent
-    }
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .darkContent
+//    }
     
     //MARK:- IBActions
     @IBAction func registerWithTwitter(_ sender: UIButton) {
@@ -103,6 +103,7 @@ class RegisterViewController: UIViewController {
             Alert.show("Error", massege: "Please accept our terms and conditions then try again".localized, context: self)
         }
     }
+    
     @IBAction func acceptAllTermsAndConditions(_ sender: BEMCheckBox) {
         
     }
@@ -118,6 +119,7 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    //MARK:- Make Blury Background For The Animation
     func BlurView(view: UIView){
         let blur = UIBlurEffect(style: .light)
         let blurView = UIVisualEffectView(effect: blur)

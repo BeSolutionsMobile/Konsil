@@ -45,6 +45,11 @@ class Shared {
         ])
         return lotView
     }
-    
-    
+}
+
+struct Animations {
+    static let success = "success"
+    static let doctor = "Doctor"
+    static let lifeLine = "RedLifeline"
+    static let report = "Report"
 }

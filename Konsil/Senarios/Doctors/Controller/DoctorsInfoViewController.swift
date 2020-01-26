@@ -60,13 +60,17 @@ class DoctorsInfoViewController: UIViewController {
     }
     
     @IBAction func requestConsultationPressed(_ sender: UIButton) {
-        let vc = storyboard?.instantiateViewController(identifier: "ConsultationRequest") as! RequestConsultationViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+        if #available(iOS 13.0, *) {
+            if let vc = storyboard?.instantiateViewController(identifier: "ConsultationRequest") as? RequestConsultationViewController {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
     @IBAction func requestOnlineConversationPressed(_ sender: UIButton) {
-        let vc = storyboard?.instantiateViewController(identifier: "DoctorConversation") as! DoctorConversationViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+        if #available(iOS 13.0, *) {
+            if let vc = storyboard?.instantiateViewController(identifier: "DoctorConversation") as? DoctorConversationViewController {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
-    
-    
 }

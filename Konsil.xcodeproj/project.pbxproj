@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04F1A60E23A641B200293AA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1A60D23A641B200293AA2 /* AppDelegate.swift */; };
-		04F1A61023A641B200293AA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1A60F23A641B200293AA2 /* SceneDelegate.swift */; };
 		04F1A61523A641B200293AA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F1A61323A641B200293AA2 /* Main.storyboard */; };
 		04F1A61723A641B300293AA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F1A61623A641B300293AA2 /* Assets.xcassets */; };
 		04F1A61A23A641B300293AA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F1A61823A641B300293AA2 /* LaunchScreen.storyboard */; };
@@ -45,6 +43,8 @@
 		815A17DE23A67C80001DDBEE /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17DD23A67C80001DDBEE /* SideMenuViewController.swift */; };
 		815A17E023A682B8001DDBEE /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17DF23A682B8001DDBEE /* Shared.swift */; };
 		815A17E223A68D3C001DDBEE /* BecomeADoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17E123A68D3C001DDBEE /* BecomeADoctorViewController.swift */; };
+		8166544F23D9CECC00739768 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166544E23D9CECB00739768 /* Upload.swift */; };
+		8166545123D9E19F00739768 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8166545023D9E19F00739768 /* GoogleService-Info.plist */; };
 		81849F1D23A8DC26004A59D8 /* RequestConsultationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F1C23A8DC26004A59D8 /* RequestConsultationViewController.swift */; };
 		81849F1F23A8EE6E004A59D8 /* RequestPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F1E23A8EE6E004A59D8 /* RequestPopupViewController.swift */; };
 		81849F2123A906C1004A59D8 /* ConsultationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F2023A906C1004A59D8 /* ConsultationDetailsViewController.swift */; };
@@ -54,6 +54,7 @@
 		81849F3023AA3FCA004A59D8 /* PeriodsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F2F23AA3FCA004A59D8 /* PeriodsTableViewCell.swift */; };
 		81849F3223AA3FFA004A59D8 /* DoctorConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F3123AA3FFA004A59D8 /* DoctorConversationViewController.swift */; };
 		81B7615523D49E4C00859320 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81B7615723D49E4C00859320 /* Localizable.strings */; };
+		81BB8ADB23D99C3D00C57648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB8ADA23D99C3D00C57648 /* AppDelegate.swift */; };
 		81D8FB1D23A82A5100585CA8 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8FB1C23A82A5100585CA8 /* MainNavigationController.swift */; };
 		81D8FB1F23A8301A00585CA8 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8FB1E23A8301A00585CA8 /* FilterViewController.swift */; };
 		81ECE8C023BCF4970048C0D9 /* Report.json in Resources */ = {isa = PBXBuildFile; fileRef = 81ECE8BF23BCF4970048C0D9 /* Report.json */; };
@@ -96,8 +97,6 @@
 
 /* Begin PBXFileReference section */
 		04F1A60A23A641B200293AA2 /* Konsil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Konsil.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		04F1A60D23A641B200293AA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04F1A60F23A641B200293AA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		04F1A61423A641B200293AA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04F1A61623A641B300293AA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04F1A61923A641B300293AA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -143,6 +142,8 @@
 		815A17DD23A67C80001DDBEE /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		815A17DF23A682B8001DDBEE /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		815A17E123A68D3C001DDBEE /* BecomeADoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BecomeADoctorViewController.swift; sourceTree = "<group>"; };
+		8166544E23D9CECB00739768 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
+		8166545023D9E19F00739768 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81849F1C23A8DC26004A59D8 /* RequestConsultationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConsultationViewController.swift; sourceTree = "<group>"; };
 		81849F1E23A8EE6E004A59D8 /* RequestPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPopupViewController.swift; sourceTree = "<group>"; };
 		81849F2023A906C1004A59D8 /* ConsultationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationDetailsViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +154,7 @@
 		81849F3123AA3FFA004A59D8 /* DoctorConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorConversationViewController.swift; sourceTree = "<group>"; };
 		81B7615623D49E4C00859320 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		81B7615823D49E5500859320 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		81BB8ADA23D99C3D00C57648 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81CC1BF623CF140C00B92D68 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		81CC1BF723CF140D00B92D68 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		81D8FB1C23A82A5100585CA8 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				815A17C123A658FC001DDBEE /* Senarios */,
 				813D444623D0869200330645 /* Supportive Files */,
 				04F1A61B23A641B300293AA2 /* Info.plist */,
+				8166545023D9E19F00739768 /* GoogleService-Info.plist */,
 				81B7615723D49E4C00859320 /* Localizable.strings */,
 			);
 			path = Konsil;
@@ -381,8 +384,7 @@
 				81ECE8C523BE36BF0048C0D9 /* Chat.swift */,
 				815A17DF23A682B8001DDBEE /* Shared.swift */,
 				8122162323B0D56D009E111B /* Extentions.swift */,
-				04F1A60D23A641B200293AA2 /* AppDelegate.swift */,
-				04F1A60F23A641B200293AA2 /* SceneDelegate.swift */,
+				81BB8ADA23D99C3D00C57648 /* AppDelegate.swift */,
 			);
 			path = "Supportive Files";
 			sourceTree = "<group>";
@@ -444,6 +446,7 @@
 		815A17CD23A65A26001DDBEE /* Utitlites */ = {
 			isa = PBXGroup;
 			children = (
+				8166544E23D9CECB00739768 /* Upload.swift */,
 				815A17CE23A65A26001DDBEE /* Alert.swift */,
 				815A17CF23A65A26001DDBEE /* CardView.swift */,
 				815A17D023A65A26001DDBEE /* DesignableUITextField.swift */,
@@ -682,6 +685,7 @@
 				8114568A23BCEC03005A4B93 /* FingureAnimation.json in Resources */,
 				8114569123BCEC21005A4B93 /* NoData.json in Resources */,
 				81B7615523D49E4C00859320 /* Localizable.strings in Resources */,
+				8166545123D9E19F00739768 /* GoogleService-Info.plist in Resources */,
 				8114569023BCEC21005A4B93 /* RedLifeline.json in Resources */,
 				81ECE9A123AB6C8400E63105 /* SectionHeaderView.xib in Resources */,
 			);
@@ -816,8 +820,7 @@
 				815A17D623A65A26001DDBEE /* DesignableUITextField.swift in Sources */,
 				810DAB0223A7A86C00B8AF20 /* DoctorsInfoViewController.swift in Sources */,
 				81849F2A23A92EDB004A59D8 /* MessagesTableViewCell.swift in Sources */,
-				04F1A60E23A641B200293AA2 /* AppDelegate.swift in Sources */,
-				04F1A61023A641B200293AA2 /* SceneDelegate.swift in Sources */,
+				8166544F23D9CECC00739768 /* Upload.swift in Sources */,
 				81849F3023AA3FCA004A59D8 /* PeriodsTableViewCell.swift in Sources */,
 				810DAB0823A7BC8F00B8AF20 /* LogInViewController.swift in Sources */,
 				810DAB0D23A7C71F00B8AF20 /* RegisterViewController.swift in Sources */,
@@ -835,6 +838,7 @@
 				815A17C023A658F7001DDBEE /* MainViewController.swift in Sources */,
 				813761FC23CB551200BC90B1 /* Keys.swift in Sources */,
 				81ECE99A23AA6D8800E63105 /* FAQvViewController.swift in Sources */,
+				81BB8ADB23D99C3D00C57648 /* AppDelegate.swift in Sources */,
 				81849F2123A906C1004A59D8 /* ConsultationDetailsViewController.swift in Sources */,
 				81849F1D23A8DC26004A59D8 /* RequestConsultationViewController.swift in Sources */,
 				81ECE99423AA650500E63105 /* ConversationDetailsViewController.swift in Sources */,
@@ -974,7 +978,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1029,7 +1033,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

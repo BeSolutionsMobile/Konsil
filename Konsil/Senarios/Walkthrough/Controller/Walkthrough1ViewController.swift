@@ -25,11 +25,10 @@ class Walkthrough1ViewController: UIViewController {
     
     func setUpAnimations(){
         DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
-            let animation = Shared.showLottie(view: self.animationView, fileName: "RedLifeline")
+            let animation = Shared.showLottie(view: self.animationView, fileName: Animations.lifeLine)
             animation.animationSpeed = 0.7
             animation.play()
         }
-        
     }
     
     func swipToSigue(){
@@ -40,9 +39,12 @@ class Walkthrough1ViewController: UIViewController {
     }
 
     @objc func swipeAction(){
-        let vc = storyboard?.instantiateViewController(identifier: "Walkthrough2") as! Walkthrough2ViewController
-        vc.modalPresentationStyle = .fullScreen
-        presentViewControllerWithTransition(viewController: vc, animated: true, direction: .fromRight)
+        if #available(iOS 13.0, *) {
+            if let vc = storyboard?.instantiateViewController(identifier: "Walkthrough2") as? Walkthrough2ViewController {
+                vc.modalPresentationStyle = .fullScreen
+                presentViewControllerWithTransition(viewController: vc, animated: true, direction: .fromRight)
+            }
+        }
     }
 }
 

@@ -47,8 +47,12 @@ class ConsultationMessagesViewController: UIViewController {
     }
     
     @IBAction func requestOnlineConversationPressed(_ sender: UIButton) {
-        let vc = storyboard?.instantiateViewController(identifier: "DoctorConversation") as! DoctorConversationViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+        if #available(iOS 13.0, *) {
+            if let vc = storyboard?.instantiateViewController(identifier: "DoctorConversation") as? DoctorConversationViewController {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+        
     }
     
     @IBAction func sendMessagePressed(_ sender: UIButton) {

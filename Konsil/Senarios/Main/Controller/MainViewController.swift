@@ -45,10 +45,13 @@ class MainViewController: UIViewController {
         }
     }
     @IBAction func showMenu(_ sender: UIBarButtonItem) {
-        let vc = storyboard?.instantiateViewController(identifier: "SideMenu") as! SideMenuNavigationController
-        vc.modalPresentationStyle = .overFullScreen
-        vc.settings = Shared.settings(view: self.view)
-        self.present(vc, animated: true, completion: nil)
+        if #available(iOS 13.0, *) {
+            if let vc = storyboard?.instantiateViewController(identifier: "SideMenu") as? SideMenuNavigationController {
+                vc.modalPresentationStyle = .overFullScreen
+                vc.settings = Shared.settings(view: self.view)
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
     }
     
 }
@@ -85,8 +88,12 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(identifier: "Doctors List") as! DoctorsViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+        if #available(iOS 13.0, *) {
+            if let vc = storyboard?.instantiateViewController(identifier: "Doctors List") as? DoctorsViewController {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

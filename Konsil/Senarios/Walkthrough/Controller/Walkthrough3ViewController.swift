@@ -29,23 +29,26 @@ class Walkthrough3ViewController: UIViewController {
     }
     
     @IBAction func skipPressed(_ sender: UIButton) {
-        let vc = storyboard?.instantiateViewController(identifier: "LogIn") as! LogInViewController
-        vc.modalPresentationStyle = .fullScreen
-        
-        present(vc, animated: true, completion: nil)
+        if #available(iOS 13.0, *) {
+            if let vc = storyboard?.instantiateViewController(identifier: "LogIn") as? LogInViewController {
+                vc.modalPresentationStyle = .fullScreen
+                present(vc, animated: true, completion: nil)
+            }
+        }
     }
     
     @IBAction func startPressed(_ sender: UIButton) {
-        let vc = storyboard?.instantiateViewController(identifier: "LogIn") as! LogInViewController
-        vc.modalPresentationStyle = .fullScreen
+        if #available(iOS 13.0, *) {
+            if let vc = storyboard?.instantiateViewController(identifier: "LogIn") as? LogInViewController {
+                vc.modalPresentationStyle = .fullScreen
+                present(vc, animated: true, completion: nil)
+            }
+        }
         
-        present(vc, animated: true, completion: nil)
     }
     func setUpAnimations(){
-        
-        let animation = Shared.showLottie(view: self.animationView, fileName: "Doctor")
+        let animation = Shared.showLottie(view: self.animationView, fileName: Animations.doctor)
         animation.play()
-        
     }
     
     func swipToSigue(){
@@ -59,19 +62,21 @@ class Walkthrough3ViewController: UIViewController {
     }
     
     @objc func swipeAction(_ sender: UISwipeGestureRecognizer){
-        print("yes")
         if sender.direction == .right {
-            print("R")
-            let vc = storyboard?.instantiateViewController(identifier: "Walkthrough2") as! Walkthrough2ViewController
-            vc.modalPresentationStyle = .fullScreen
-            presentViewControllerWithTransition(viewController: vc, animated: true, direction: .fromRight)
+            if #available(iOS 13.0, *) {
+                if let vc = storyboard?.instantiateViewController(identifier: "Walkthrough2") as? Walkthrough2ViewController {
+                    vc.modalPresentationStyle = .fullScreen
+                    presentViewControllerWithTransition(viewController: vc, animated: true, direction: .fromRight)
+                }
+            }
         } else if sender.direction == .left {
-            print("L")
-            let vc = storyboard?.instantiateViewController(identifier: "LogIn") as! LogInViewController
-            vc.modalPresentationStyle = .fullScreen
-            
-            present(vc, animated: true, completion: nil)
-            
+            if #available(iOS 13.0, *) {
+                if let vc = storyboard?.instantiateViewController(identifier: "LogIn") as? LogInViewController {
+                    vc.modalPresentationStyle = .fullScreen
+                    
+                    present(vc, animated: true, completion: nil)
+                }
+            }
         }
     }
 }

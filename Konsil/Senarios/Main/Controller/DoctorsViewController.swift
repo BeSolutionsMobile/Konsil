@@ -28,9 +28,12 @@ class DoctorsViewController: UIViewController {
     
     //MARK:- Filter Button
     @IBAction func filterButPressed(_ sender: UIButton) {
-        let vc = storyboard?.instantiateViewController(identifier: "Filter") as! FilterViewController
-        vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: false, completion: nil)
+        if #available(iOS 13.0, *) {
+            if let vc = storyboard?.instantiateViewController(identifier: "Filter") as? FilterViewController {
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: false, completion: nil)
+            }
+        }
     }
 }
 
@@ -53,8 +56,12 @@ extension DoctorsViewController: UITableViewDelegate , UITableViewDataSource {
     
     //MARK:- didSelectRow
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(identifier: "DoctorInfo") as! DoctorsInfoViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+        if #available(iOS 13.0, *) {
+            if let vc = storyboard?.instantiateViewController(identifier: "DoctorInfo") as? DoctorsInfoViewController {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+        
     }
     
     //MARK:- heightForRow
