@@ -7,6 +7,8 @@
 //
 import Foundation
 import Firebase
+import OpalImagePicker
+
 class FirebaseUploader
 {
     static var imageURl: String?
@@ -25,72 +27,119 @@ class FirebaseUploader
         
         return randomString
     }
-    
-    static func uploadToFirebase(viewController:UIViewController,imagePicker:UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) -> String
+    static func uploadToFirebase(viewController:UIViewController ,imagePicker:UIImagePickerController , didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any], completion: ((_ success: Bool) -> Void)?)
     {
         
         //to upload image to firebase storage
         
-        var final: String?
+        if let image = info[.originalImage] as? UIImage{
             
-            if let image = info[.originalImage] as? UIImage{
-                
-                var imageData = Data()
-                imageData = image.jpegData(compressionQuality: 0.5)!
-                
-                
-                let storeRef = Storage.storage().reference().child("images/" + randomString(length: 20))
-                
-                let uploadImageTask = storeRef.putData(imageData, metadata: nil) { metadata, error in
-                    if (error != nil) {
-                        
-                        print("error")
-                        
-                    } else {
-                        
-                        storeRef.downloadURL { url, error in
-                            if let error = error {
-                                
-                                print(error)
-                                
-                            } else {
-                                // Here you can get the download URL for 'simpleImage.jpg'
-                                print(url?.absoluteString ?? "link")
-                                final = url?.absoluteString ?? "link"
-                            }
+            var imageData = Data()
+            imageData = image.jpegData(compressionQuality: 0.3)!
+            
+            
+            let storeRef = Storage.storage().reference().child("images/" + randomString(length: 20))
+            
+            let uploadImageTask = storeRef.putData(imageData, metadata: nil) { metadata, error in
+                if (error != nil) {
+                    
+                    print("errorrrrrr")
+                    
+                } else {
+                    
+                    storeRef.downloadURL { url, error in
+                        if let error = error {
+                            print(error)
+                        } else {
+                            // Here you can get the download URL for 'simpleImage.jpg'
+                            print(url?.absoluteString ?? "link")
+                            imageURl = url?.absoluteString ?? "link"
+                            completion?(true) ?? nil
                         }
-                        
                     }
                 }
+            }
+            
+            var alert:UIAlertController?
+            
+            uploadImageTask.observe(.progress) { snapshot in
+                let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
+                    / Double(snapshot.progress!.totalUnitCount)
                 
-                var alert:UIAlertController?
+                alert = UIAlertController(title: "uploading", message: "please wait", preferredStyle: UIAlertController.Style.alert)
                 
-                uploadImageTask.observe(.progress) { snapshot in
-                    let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
-                        / Double(snapshot.progress!.totalUnitCount)
-                    
-                    alert = UIAlertController(title: "Upliading", message: "Please Wait", preferredStyle: UIAlertController.Style.alert)
-                    
-                    viewController.present(alert!, animated: true, completion: nil)
-                    
-                    print(percentComplete)
-                }
+                viewController.present(alert!, animated: true, completion: nil)
                 
-                uploadImageTask.observe(.success) { snapshot in
-                    
-                    print("done")
-                    viewController.dismiss(animated: true, completion: nil)
-                }
+                print(percentComplete)
+            }
+            
+            uploadImageTask.observe(.success) { snapshot in
+                
+                print("done")
+                viewController.dismiss(animated: true, completion: nil)
+            }
             
             //dismiss(animated: true, completion: nil)
             imagePicker.dismiss(animated: true, completion: nil)
         }
         
-        return final ?? ""
-        
     }
     
-    static func uploadFileToFirebase(viewController: UIViewController , documentPicker: UIDocumentPickerViewController , urls: [URL] , uid: String)
+    //MARK:- Upload Using Opal ImagePicker
+    static func uploadImagesToFirebase(viewController:UIViewController ,imagePicker: OpalImagePickerController , pickedImage: UIImage , completion: ((_ success: Bool) -> Void)?)
+    {
+        
+        //to upload image to firebase storage
+        let image = pickedImage
+        
+        var imageData = Data()
+        imageData = image.jpegData(compressionQuality: 0.3)!
+        
+        let storeRef = Storage.storage().reference().child("images/" + randomString(length: 20))
+        
+        let uploadImageTask = storeRef.putData(imageData, metadata: nil) { metadata, error in
+            if (error != nil) {
+                print("errorrrrrr")
+            } else {
+                
+                storeRef.downloadURL { url, error in
+                    if let error = error {
+                        print(error)
+                    } else {
+                        print(url?.absoluteString ?? "link")
+                        imageURl = url?.absoluteString ?? "link"
+                        completion?(true) ?? nil
+                    }
+                }
+            }
+        }
+        
+        var alert:UIAlertController?
+        
+        uploadImageTask.observe(.progress) { snapshot in
+            let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
+                / Double(snapshot.progress!.totalUnitCount)
+            
+            alert = UIAlertController(title: "uploading", message: "please wait", preferredStyle: UIAlertController.Style.alert)
+            
+            viewController.present(alert!, animated: true, completion: nil)
+            
+            print(percentComplete)
+        }
+        
+        uploadImageTask.observe(.success) { snapshot in
+            
+            print("done")
+            viewController.dismiss(animated: true, completion: nil)
+        }
+        
+        //dismiss(animated: true, completion: nil)
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    //MARK:- File Upload
+    static func uploadFileToFirebase(viewController: UIViewController , documentPicker: UIDocumentPickerViewController , urls: [URL] , uid: String , completion: ((_ success: Bool) -> Void)?)
     {
         
         //to upload image to firebase storage
@@ -110,6 +159,7 @@ class FirebaseUploader
                             print("Download Link Error \(error?.localizedDescription ?? "er")")
                         } else {
                             print(url?.absoluteString ?? "url")
+                            completion?(true) ?? nil
                         }
                     }
                 }

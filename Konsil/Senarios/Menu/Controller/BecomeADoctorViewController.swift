@@ -8,7 +8,7 @@
 
 import UIKit
 import SideMenu
-class BecomeADoctorViewController: UIViewController {
+class BecomeADoctorViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate{
     @IBOutlet weak var imageBackView: UIView!{
         didSet{
             imageBackView.layer.cornerRadius = imageBackView.frame.width/2
@@ -18,9 +18,7 @@ class BecomeADoctorViewController: UIViewController {
     }
     @IBOutlet weak var addImage: UIImageView!{
         didSet{
-            addImage.layer.cornerRadius = addImage.frame.width/2
-            addImage.layer.borderColor = #colorLiteral(red: 0.8985823989, green: 0.9336386919, blue: 0.9438558221, alpha: 1)
-            addImage.layer.borderWidth = 4
+            Rounded.roundedImage(imageView: addImage, radius: addImage.frame.width/2, borderColor: #colorLiteral(red: 0.8985823989, green: 0.9336386919, blue: 0.9438558221, alpha: 1), borderWidth: 4)
         }
     }
     @IBOutlet weak var addName: UITextField!{
@@ -49,16 +47,29 @@ class BecomeADoctorViewController: UIViewController {
         }
     }
     
+    let imagePicker = UIImagePickerController()
+    //MARK:- ViewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
     }
     
     @IBAction func addImage(_ sender: UIButton) {
+        imagePicker.delegate = self
+        self.present(imagePicker, animated: true, completion: nil)
+        
     }
     
     @IBAction func requestButPressed(_ sender: UIButton) {
+        
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            addImage.image = image
+        }
+        _ = FirebaseUploader.uploadToFirebase(viewController: self, imagePicker: imagePicker, didFinishPickingMediaWithInfo: info , completion: nil)
+    }
     
 }

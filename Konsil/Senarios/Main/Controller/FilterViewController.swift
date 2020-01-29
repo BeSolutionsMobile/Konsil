@@ -59,9 +59,10 @@ class FilterViewController: UIViewController {
     
     func addTapRecognizer() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissOnTap))
+        let viewGestureRecognizer = UITapGestureRecognizer(target: self, action: nil)
         tapGestureRecognizer.numberOfTapsRequired = 1
         self.view.addGestureRecognizer(tapGestureRecognizer)
-        
+        filterBackView.addGestureRecognizer(viewGestureRecognizer)
     }
     
     @objc func dismissOnTap(){

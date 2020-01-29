@@ -10,10 +10,12 @@ import UIKit
 import SideMenu
 import OpalImagePicker
 import MobileCoreServices
+
 class RequestConsultationViewController: UIViewController {
     
     //MAKR:- IBOutlet
-    @IBOutlet weak var consultationImage: UIImageView!
+    @IBOutlet weak var imageCheckView: UIView!
+    @IBOutlet weak var fileCheckView: UIView!
     @IBOutlet weak var submitBut: UIButton!{
         didSet{
             self.submitBut.layer.cornerRadius = self.submitBut.frame.height/2
@@ -43,7 +45,7 @@ class RequestConsultationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
-        textViewHieghtConstraint.constant = self.view.frame.height/5
+//        textViewHieghtConstraint.constant = self.view.frame.height/5
     }
     
     @IBAction func completeRequestPressed(_ sender: UIButton) {
@@ -70,7 +72,7 @@ class RequestConsultationViewController: UIViewController {
     
     func imagePickerSettings() {
         let configuratations = OpalImagePickerConfiguration()
-        configuratations.maximumSelectionsAllowedMessage = NSLocalizedString("You Can Select Up To 5 Photos",comment: "")
+        configuratations.maximumSelectionsAllowedMessage = "You Can Select Up To 5 Photos".localized
         imagePicker.maximumSelectionsAllowed = 5
         imagePicker.allowedMediaTypes = Set([.image])
         imagePicker.selectionTintColor = UIColor.black.withAlphaComponent(0.7)
@@ -84,18 +86,29 @@ extension RequestConsultationViewController: OpalImagePickerControllerDelegate ,
     
     //MARK:- Image Picker
     func imagePicker(_ picker: OpalImagePickerController, didFinishPickingImages images: [UIImage]) {
-        print(images.count)
-    }
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        detailsTV.text = ""
+        for i in images.indices {
+            FirebaseUploader.uploadImagesToFirebase(viewController: self, imagePicker: imagePicker, pickedImage: images[i]) { (uploaded) in
+                if uploaded == true {
+                    let animation = Shared.showLottie(view: self.imageCheckView, fileName: "CheckMark", contentMode: .scaleAspectFit)
+                    animation.play()
+                }
+            }
+        }
+        
     }
     
     //MARK:- Document Picker
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        FirebaseUploader.uploadFileToFirebase(viewController: self, documentPicker: documentPicker, urls: urls, uid: "Ali")
+        FirebaseUploader.uploadFileToFirebase(viewController: self, documentPicker: documentPicker, urls: urls, uid: "Ali") { (uploaded) in
+            if uploaded == true {
+                let animation = Shared.showLottie(view: self.fileCheckView, fileName: "CheckMark", contentMode: .scaleAspectFit)
+                animation.play()
+            }
+        }
     }
     
-    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        detailsTV.text = ""
+    }
 }

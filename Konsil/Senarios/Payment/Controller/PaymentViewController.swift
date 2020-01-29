@@ -7,10 +7,16 @@
 //
 
 import UIKit
-
 class PaymentViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     
     //MARK:- IBOutlets
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var animationView: UIView!{
+        didSet{
+            self.animationView.layer.cornerRadius = 10
+            self.animationView.clipsToBounds = true
+        }
+    }
     @IBOutlet weak var Price: UILabel!
     @IBOutlet weak var bankDetailsView: UIView!{
         didSet{
@@ -48,11 +54,11 @@ class PaymentViewController: UIViewController , UIImagePickerControllerDelegate 
     
     let imagePicker = UIImagePickerController()
     
-    
     //MARK:- viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        rightBackBut()
     }
     
     //MARK:- IBActions
@@ -63,19 +69,44 @@ class PaymentViewController: UIViewController , UIImagePickerControllerDelegate 
     }
     
     @IBAction func completeRequest(_ sender: UIButton) {
-        if #available(iOS 13.0, *) {
-            if let vc = storyboard?.instantiateViewController(identifier: "Main") as? MainViewController {
-                vc.modalPresentationStyle = .fullScreen
-                navigationController?.pushViewController(vc, animated: true)
+        backView.isUserInteractionEnabled = true
+        backView.isHidden = false
+        BlurView(view: animationView)
+    }
+    
+    func BlurView(view: UIView){
+        let blur = UIBlurEffect(style: .light)
+        let blurView = UIVisualEffectView(effect: blur)
+        blurView.frame = view.bounds
+        view.addSubview(blurView)
+        view.isHidden = false
+        let animation = Shared.showLottie(view: blurView.contentView, fileName: Animations.success , contentMode: .scaleAspectFit)
+        blurView.contentView.addSubview(animation)
+        view.addSubview(blurView)
+        animation.play { (finished) in
+            if finished == true {
+                if #available(iOS 13.0, *) {
+                    if let vc = self.storyboard?.instantiateViewController(identifier: "Main") as? MainViewController {
+                        vc.modalPresentationStyle = .fullScreen
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                } else {
+                    // Fallback on earlier versions
+                }
             }
-        } else {
-            // Fallback on earlier versions
         }
     }
     
     //MARK:- ImagePicker
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        _ = FirebaseUploader.uploadToFirebase(viewController: self, imagePicker: imagePicker, didFinishPickingMediaWithInfo: info)
+        
+        FirebaseUploader.uploadToFirebase(viewController: self, imagePicker: imagePicker, didFinishPickingMediaWithInfo: info) { (uploaded) in
+            if uploaded == true {
+                Alert.show("", massege: "Image Uploaded Successfully".localized, context: self)
+            } else {
+                Alert.show("", massege: "Failed To Upload Image", context: self)
+            }
+        }
     }
     
 }

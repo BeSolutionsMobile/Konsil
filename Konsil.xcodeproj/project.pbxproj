@@ -27,7 +27,6 @@
 		8114569023BCEC21005A4B93 /* RedLifeline.json in Resources */ = {isa = PBXBuildFile; fileRef = 8114568C23BCEC1E005A4B93 /* RedLifeline.json */; };
 		8114569123BCEC21005A4B93 /* NoData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8114568D23BCEC1F005A4B93 /* NoData.json */; };
 		8114569223BCEC21005A4B93 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 8114568E23BCEC20005A4B93 /* success.json */; };
-		8114569323BCEC21005A4B93 /* lf30_editor_X1S7Ss.json in Resources */ = {isa = PBXBuildFile; fileRef = 8114568F23BCEC21005A4B93 /* lf30_editor_X1S7Ss.json */; };
 		8122162423B0D56D009E111B /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8122162323B0D56D009E111B /* Extentions.swift */; };
 		813761D423CB24D300BC90B1 /* FingerPrintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813761D323CB24D300BC90B1 /* FingerPrintViewController.swift */; };
 		813761D623CB2DCF00BC90B1 /* Unlock.json in Resources */ = {isa = PBXBuildFile; fileRef = 813761D523CB2DCF00BC90B1 /* Unlock.json */; };
@@ -76,6 +75,7 @@
 		81ECE9AB23AB9AC000E63105 /* MyConsultationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECE9AA23AB9AC000E63105 /* MyConsultationsTableViewCell.swift */; };
 		81ECE9AD23ABB1D700E63105 /* ProfileInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECE9AC23ABB1D700E63105 /* ProfileInfoViewController.swift */; };
 		81EED28623A69A7B00A4C4DB /* MakeComplaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EED28523A69A7B00A4C4DB /* MakeComplaintViewController.swift */; };
+		81FD1A2123E1D1C900CED21A /* CheckMark.json in Resources */ = {isa = PBXBuildFile; fileRef = 81FD1A2023E1D1C900CED21A /* CheckMark.json */; };
 		86F76E2B6E4AAAC00731A7DD /* Pods_Konsil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5498410C12A18BA165BBD8 /* Pods_Konsil.framework */; };
 		A24C53A55E89008207606FE2 /* Pods_KonsilTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF321DEC7C3E10728BC0195 /* Pods_KonsilTests.framework */; };
 		B85953F1A050BDE9518485A9 /* Pods_Konsil_KonsilUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B17A8B8875BF43C008499FF /* Pods_Konsil_KonsilUITests.framework */; };
@@ -129,7 +129,6 @@
 		8114568C23BCEC1E005A4B93 /* RedLifeline.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RedLifeline.json; sourceTree = "<group>"; };
 		8114568D23BCEC1F005A4B93 /* NoData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NoData.json; sourceTree = "<group>"; };
 		8114568E23BCEC20005A4B93 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
-		8114568F23BCEC21005A4B93 /* lf30_editor_X1S7Ss.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_X1S7Ss.json; sourceTree = "<group>"; };
 		8122162323B0D56D009E111B /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		813761D323CB24D300BC90B1 /* FingerPrintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerPrintViewController.swift; sourceTree = "<group>"; };
 		813761D523CB2DCF00BC90B1 /* Unlock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Unlock.json; sourceTree = "<group>"; };
@@ -181,6 +180,7 @@
 		81ECE9AA23AB9AC000E63105 /* MyConsultationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultationsTableViewCell.swift; sourceTree = "<group>"; };
 		81ECE9AC23ABB1D700E63105 /* ProfileInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoViewController.swift; sourceTree = "<group>"; };
 		81EED28523A69A7B00A4C4DB /* MakeComplaintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeComplaintViewController.swift; sourceTree = "<group>"; };
+		81FD1A2023E1D1C900CED21A /* CheckMark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CheckMark.json; sourceTree = "<group>"; };
 		9660C97503DD3F09A20047CD /* Pods-Konsil-KonsilUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Konsil-KonsilUITests.debug.xcconfig"; path = "Target Support Files/Pods-Konsil-KonsilUITests/Pods-Konsil-KonsilUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ACF321DEC7C3E10728BC0195 /* Pods_KonsilTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KonsilTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F019C292EC07B795C82655 /* Pods-KonsilTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KonsilTests.debug.xcconfig"; path = "Target Support Files/Pods-KonsilTests/Pods-KonsilTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -355,7 +355,7 @@
 				8114568C23BCEC1E005A4B93 /* RedLifeline.json */,
 				81ECE8C323BE35CE0048C0D9 /* Chat.json */,
 				8114568D23BCEC1F005A4B93 /* NoData.json */,
-				8114568F23BCEC21005A4B93 /* lf30_editor_X1S7Ss.json */,
+				81FD1A2023E1D1C900CED21A /* CheckMark.json */,
 				8114568E23BCEC20005A4B93 /* success.json */,
 				8114568523BCEC02005A4B93 /* FingureAnimation.json */,
 				8114568623BCEC03005A4B93 /* FingureSuccess.json */,
@@ -701,7 +701,6 @@
 				04F1A61723A641B300293AA2 /* Assets.xcassets in Resources */,
 				81ECE8C023BCF4970048C0D9 /* Report.json in Resources */,
 				8114568723BCEC03005A4B93 /* Consultation2.json in Resources */,
-				8114569323BCEC21005A4B93 /* lf30_editor_X1S7Ss.json in Resources */,
 				8114568B23BCEC03005A4B93 /* FingureSuccess.json in Resources */,
 				8114568923BCEC03005A4B93 /* Doctor.json in Resources */,
 				8114569223BCEC21005A4B93 /* success.json in Resources */,
@@ -711,6 +710,7 @@
 				8114569123BCEC21005A4B93 /* NoData.json in Resources */,
 				81B7615523D49E4C00859320 /* Localizable.strings in Resources */,
 				8166545123D9E19F00739768 /* GoogleService-Info.plist in Resources */,
+				81FD1A2123E1D1C900CED21A /* CheckMark.json in Resources */,
 				8114569023BCEC21005A4B93 /* RedLifeline.json in Resources */,
 				81ECE9A123AB6C8400E63105 /* SectionHeaderView.xib in Resources */,
 			);

@@ -8,15 +8,18 @@
 
 import UIKit
 
+protocol ConsultationDelegate {
+    func viewDidPressed()
+}
+
 class MyConsultationsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var tybe: UILabel!
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var doctorImage: UIImageView!{
         didSet{
-            self.doctorImage.layer.cornerRadius = self.doctorImage.frame.width/2
-            self.doctorImage.layer.borderColor = #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1)
-            self.doctorImage.layer.borderWidth = 1.5
+            Rounded.roundedImage(imageView: doctorImage, radius: self.doctorImage.frame.width/2, borderColor: #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1), borderWidth: 1.5)
         }
     }
     @IBOutlet weak var doctorName: UILabel!
@@ -35,5 +38,10 @@ class MyConsultationsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
-
+    var delegate: ConsultationDelegate?
+    
+    @IBAction func view(_ sender: UIButton) {
+        delegate?.viewDidPressed()
+    }
+    
 }

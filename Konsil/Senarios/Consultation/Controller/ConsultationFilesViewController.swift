@@ -92,6 +92,6 @@ extension ConsultationFilesViewController: UITableViewDelegate , UITableViewData
 //MARK:- DocumentPicker SetUp
 extension ConsultationFilesViewController: UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        FirebaseUploader.uploadFileToFirebase(viewController: self, documentPicker: documentPicker, urls: urls, uid: "Ali")
+        FirebaseUploader.uploadFileToFirebase(viewController: self, documentPicker: documentPicker, urls: urls, uid: "Ali", completion: nil)
     }
 }
