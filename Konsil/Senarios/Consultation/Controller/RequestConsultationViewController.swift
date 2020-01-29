@@ -10,7 +10,7 @@ import UIKit
 import SideMenu
 import OpalImagePicker
 import MobileCoreServices
-class RequestConsultationViewController: UIViewController , UIDocumentPickerDelegate{
+class RequestConsultationViewController: UIViewController {
     
     //MAKR:- IBOutlet
     @IBOutlet weak var consultationImage: UIImageView!
@@ -46,10 +46,9 @@ class RequestConsultationViewController: UIViewController , UIDocumentPickerDele
         textViewHieghtConstraint.constant = self.view.frame.height/5
     }
     
-    
     @IBAction func completeRequestPressed(_ sender: UIButton) {
         if #available(iOS 13.0, *) {
-            if let vc = storyboard?.instantiateViewController(identifier: "consultationDetails") as? ConsultationDetailsViewController {
+            if let vc = storyboard?.instantiateViewController(identifier: "Payment") as? PaymentViewController {
                 vc.modalPresentationStyle = .fullScreen
                 self.navigationController?.pushViewController(vc, animated: true)
             }
@@ -63,15 +62,10 @@ class RequestConsultationViewController: UIViewController , UIDocumentPickerDele
     }
     
     @IBAction func uploadFiles(_ sender: UIButton) {
-        let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypeText as String , kUTTypePDF as String], in: .import)
         documentPicker.delegate = self
         documentPicker.allowsMultipleSelection = false
         documentPicker.modalPresentationStyle = .overFullScreen
         self.present(documentPicker, animated: true, completion: nil)
-    }
-    
-    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        FirebaseUploader.uploadFileToFirebase(viewController: self, documentPicker: documentPicker, urls: urls, uid: "Ali")
     }
     
     func imagePickerSettings() {
@@ -83,13 +77,12 @@ class RequestConsultationViewController: UIViewController , UIDocumentPickerDele
         imagePicker.selectionImageTintColor = UIColor.white.withAlphaComponent(0.7)
         imagePicker.configuration = configuratations
     }
-    
 }
 
-
-//MARK:- ImagePicker SetUp
-extension RequestConsultationViewController: OpalImagePickerControllerDelegate , UITextViewDelegate {
+//MARK:- ImagePicker / DocumnetPicker SetUp
+extension RequestConsultationViewController: OpalImagePickerControllerDelegate , UITextViewDelegate , UIDocumentPickerDelegate{
     
+    //MARK:- Image Picker
     func imagePicker(_ picker: OpalImagePickerController, didFinishPickingImages images: [UIImage]) {
         print(images.count)
     }
@@ -98,33 +91,11 @@ extension RequestConsultationViewController: OpalImagePickerControllerDelegate ,
         detailsTV.text = ""
     }
     
-//    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-//        if let documentPath = urls.first?.path {
-//            print(documentPath)
-//        }
-//
-//        guard let selectedFileURL = urls.first else {
-//            return
-//        }
-//
-//        let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-//        let sandboxFileURL = dir.appendingPathComponent(selectedFileURL.lastPathComponent)
-//
-//        if FileManager.default.fileExists(atPath: sandboxFileURL.path) {
-//            print("Already exists! Do nothing")
-//        }
-//        else {
-//
-//            do {
-//                try FileManager.default.copyItem(at: selectedFileURL, to: sandboxFileURL)
-//
-//                print("Copied file!")
-//            }
-//            catch {
-//                print("Error: \(error)")
-//            }
-//        }
-//    }
+    //MARK:- Document Picker
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        FirebaseUploader.uploadFileToFirebase(viewController: self, documentPicker: documentPicker, urls: urls, uid: "Ali")
+    }
     
     
 }

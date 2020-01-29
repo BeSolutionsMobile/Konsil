@@ -40,5 +40,15 @@ extension MyConsultationsViewController: UITableViewDelegate , UITableViewDataSo
         cell.doctorImage.image = UIImage(named: images[indexPath.row])
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if #available(iOS 13.0, *) {
+            if let vc = storyboard?.instantiateViewController(identifier: "consultationDetails") as? ConsultationDetailsViewController {
+                vc.modalPresentationStyle = .fullScreen
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+    }
     
 }

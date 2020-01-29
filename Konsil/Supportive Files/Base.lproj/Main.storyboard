@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9fO-yn-xZ7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -89,7 +89,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cs9-9a-7VH" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="34"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="tintColor" name="KonsilDrakGray"/>
+                                                        <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                         <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -100,7 +100,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MOF-NQ-Uea" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="44" width="354" height="34"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="tintColor" name="KonsilDrakGray"/>
+                                                        <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                         <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -132,7 +132,7 @@
                                                 </subviews>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="konsil" translatesAutoresizingMaskIntoConstraints="NO" id="rfb-Bt-ORM">
-                                                <rect key="frame" x="132" y="10" width="150" height="150"/>
+                                                <rect key="frame" x="132" y="10" width="150" height="150.00000000000045"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="Pf8-DH-ALy"/>
                                                     <constraint firstAttribute="width" constant="150" id="h82-XQ-rVH"/>
@@ -367,7 +367,7 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="konsil" translatesAutoresizingMaskIntoConstraints="NO" id="M7P-M4-nQK">
-                                                <rect key="frame" x="132" y="10" width="150" height="150"/>
+                                                <rect key="frame" x="132" y="10" width="150" height="150.00000000000045"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="w61-fF-run"/>
                                                     <constraint firstAttribute="width" constant="150" id="x6f-gx-Tmw"/>
@@ -376,32 +376,32 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="x23-aN-W00">
                                                 <rect key="frame" x="30" y="180" width="354" height="166"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kkr-KY-kSr" customClass="RegisterTextField" customModule="Konsil" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kkr-KY-kSr" customClass="RegisterTextField" customModule="Konsil" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="34"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="tintColor" name="KonsilDrakGray"/>
-                                                        <color key="textColor" red="0.46615869058580461" green="0.60623917692521645" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="tintColor" name="IconsColor"/>
+                                                        <color key="textColor" name="IconsColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mLf-D6-QBs" customClass="RegisterTextField" customModule="Konsil" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mLf-D6-QBs" customClass="RegisterTextField" customModule="Konsil" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="44" width="354" height="34"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="tintColor" name="KonsilDrakGray"/>
-                                                        <color key="textColor" red="0.46615869058580461" green="0.60623917692521645" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="tintColor" name="IconsColor"/>
+                                                        <color key="textColor" name="IconsColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
                                                                 <real key="value" value="30"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="crY-pX-NIp" customClass="RegisterTextField" customModule="Konsil" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="crY-pX-NIp" customClass="RegisterTextField" customModule="Konsil" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="88" width="354" height="34"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="tintColor" name="KonsilDrakGray"/>
-                                                        <color key="textColor" red="0.46615869058580461" green="0.60623917692521645" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="tintColor" name="IconsColor"/>
+                                                        <color key="textColor" name="IconsColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <userDefinedRuntimeAttributes>
@@ -410,13 +410,13 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHr-3J-Ll2" customClass="RegisterTextField" customModule="Konsil" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHr-3J-Ll2" customClass="RegisterTextField" customModule="Konsil" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="132" width="354" height="34"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="tintColor" name="KonsilDrakGray"/>
-                                                        <color key="textColor" red="0.46615869058580461" green="0.60623917692521645" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="tintColor" name="IconsColor"/>
+                                                        <color key="textColor" name="IconsColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
                                                                 <real key="value" value="30"/>
@@ -700,10 +700,10 @@
                                 <color key="textColor" name="IconsColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Complaint Title " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XEE-QJ-0nC">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Complaint Title " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XEE-QJ-0nC">
                                 <rect key="frame" x="30" y="56" width="354" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" name="KonsilDrakGray"/>
+                                <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -711,10 +711,10 @@
                                     <outlet property="delegate" destination="8hA-eK-F0X" id="yGW-mS-Ih6"/>
                                 </connections>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter Complaint Details Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cAj-N3-OSd">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter Complaint Details Here" translatesAutoresizingMaskIntoConstraints="NO" id="cAj-N3-OSd">
                                 <rect key="frame" x="30" y="157" width="354" height="180"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" name="KonsilDrakGray"/>
+                                <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="2Nv-c7-fkw"/>
                                 </constraints>
@@ -815,29 +815,28 @@
                         <outlet property="submitBut" destination="7SR-pl-IdH" id="pP2-SG-5JY"/>
                         <outlet property="textViewHieghtConstraint" destination="2Nv-c7-fkw" id="f0L-te-9SF"/>
                         <outlet property="titleTF" destination="XEE-QJ-0nC" id="Qt2-8x-WHD"/>
-                        <segue destination="LT3-vV-D15" kind="show" id="Uhy-xn-hzg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ph-Yp-de5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3016" y="1313"/>
         </scene>
-        <!--View Controller-->
+        <!--Payment View Controller-->
         <scene sceneID="bU9-mR-lt9">
             <objects>
-                <viewController id="LT3-vV-D15" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Payment" id="LT3-vV-D15" customClass="PaymentViewController" customModule="Konsil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CJ6-aE-KgS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2JN-Qu-f47">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROz-96-iQW">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ef5-g0-zgU">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                                 <color key="backgroundColor" name="KosilBackGround"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="f0H-Jy-xp9">
@@ -863,27 +862,30 @@
                                                 <color key="textColor" name="IconsColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bank Transfer" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Inl-62-6Gb">
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bank Transfer" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Inl-62-6Gb">
                                                 <rect key="frame" x="30" y="133.33333333333334" width="354" height="34"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Master Card" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SB3-Oy-DQc">
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Master Card" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SB3-Oy-DQc">
                                                 <rect key="frame" x="30" y="531.33333333333337" width="354" height="34"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAF-ao-DpH">
-                                                <rect key="frame" x="50" y="707" width="314" height="35"/>
+                                                <rect key="frame" x="50" y="717" width="314" height="35"/>
                                                 <color key="backgroundColor" name="KonsilRed"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="ZK6-wm-BY3"/>
                                                 </constraints>
                                                 <state key="normal" title="Complete The Request "/>
+                                                <connections>
+                                                    <action selector="completeRequest:" destination="LT3-vV-D15" eventType="touchUpInside" id="mUR-Ub-Sa5"/>
+                                                </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Visa" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jtp-G9-Cua">
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Visa" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jtp-G9-Cua">
                                                 <rect key="frame" x="30" y="467.33333333333331" width="354" height="34"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -893,7 +895,7 @@
                                                 <rect key="frame" x="30" y="197.33333333333337" width="354" height="240"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HQP-ME-i7E">
-                                                        <rect key="frame" x="10" y="20" width="334" height="81"/>
+                                                        <rect key="frame" x="10" y="19.999999999999972" width="334" height="81"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EH9-61-wKP">
                                                                 <rect key="frame" x="0.0" y="0.0" width="242" height="20.333333333333332"/>
@@ -913,7 +915,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bF1-Tg-DVo">
-                                                                <rect key="frame" x="0.0" y="30.333333333333314" width="267.33333333333331" height="20.333333333333329"/>
+                                                                <rect key="frame" x="0.0" y="30.333333333333371" width="267.33333333333331" height="20.333333333333329"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Name : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2g-1Q-0VQ">
                                                                         <rect key="frame" x="0.0" y="0.0" width="128.66666666666666" height="20.333333333333332"/>
@@ -930,7 +932,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efF-c1-Tvi">
-                                                                <rect key="frame" x="0.0" y="60.666666666666664" width="149.33333333333334" height="20.333333333333336"/>
+                                                                <rect key="frame" x="0.0" y="60.666666666666693" width="149.33333333333334" height="20.333333333333336"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bank Name : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNO-mx-4mR">
                                                                         <rect key="frame" x="0.0" y="0.0" width="103" height="20.333333333333332"/>
@@ -955,18 +957,21 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obQ-JQ-fCC">
-                                                        <rect key="frame" x="139.66666666666666" y="171.33333333333334" width="75" height="50"/>
+                                                        <rect key="frame" x="139.66666666666666" y="161.33333333333334" width="75" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="DAp-Ya-rxY"/>
                                                             <constraint firstAttribute="width" constant="75" id="tx1-rM-IU1"/>
                                                         </constraints>
                                                         <state key="normal" backgroundImage="uplado"/>
+                                                        <connections>
+                                                            <action selector="uploadReceipt:" destination="LT3-vV-D15" eventType="touchUpInside" id="UGs-aQ-hBW"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="obQ-JQ-fCC" firstAttribute="centerX" secondItem="Lwb-mq-r3J" secondAttribute="centerX" id="324-2t-swa"/>
-                                                    <constraint firstItem="obQ-JQ-fCC" firstAttribute="top" secondItem="ME5-gl-hw5" secondAttribute="bottom" constant="30" id="9T4-Cp-ods"/>
+                                                    <constraint firstItem="obQ-JQ-fCC" firstAttribute="top" secondItem="ME5-gl-hw5" secondAttribute="bottom" constant="20" id="9T4-Cp-ods"/>
                                                     <constraint firstItem="ME5-gl-hw5" firstAttribute="top" secondItem="HQP-ME-i7E" secondAttribute="bottom" constant="20" id="BeH-W5-SbY"/>
                                                     <constraint firstItem="ME5-gl-hw5" firstAttribute="leading" secondItem="Lwb-mq-r3J" secondAttribute="leading" constant="20" id="GGj-gU-R8U"/>
                                                     <constraint firstAttribute="trailing" secondItem="ME5-gl-hw5" secondAttribute="trailing" constant="20" id="GaF-Mi-q8G"/>
@@ -1027,10 +1032,21 @@
                         <viewLayoutGuide key="safeArea" id="s4X-4d-X7F"/>
                     </view>
                     <navigationItem key="navigationItem" id="ufi-h1-IDm"/>
+                    <connections>
+                        <outlet property="Price" destination="4pw-Pc-z4a" id="0Yy-rr-I3n"/>
+                        <outlet property="accountName" destination="ndm-Ao-V54" id="uPo-ge-1hW"/>
+                        <outlet property="accountNumber" destination="Fil-0Y-S0P" id="MG8-S2-wzw"/>
+                        <outlet property="bankDetailsView" destination="Lwb-mq-r3J" id="A4P-XO-eBL"/>
+                        <outlet property="bankName" destination="PeT-74-5w3" id="F7m-6Q-opP"/>
+                        <outlet property="bankTransfer" destination="Inl-62-6Gb" id="A86-Fi-GBK"/>
+                        <outlet property="completeBut" destination="bAF-ao-DpH" id="rQa-TD-CCy"/>
+                        <outlet property="masterCard" destination="SB3-Oy-DQc" id="RTZ-KZ-lY2"/>
+                        <outlet property="visa" destination="Jtp-G9-Cua" id="HNG-D3-4O1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAk-0O-rtC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3015.9420289855075" y="1986.8303571428571"/>
+            <point key="canvasLocation" x="3378" y="1981"/>
         </scene>
         <!--Request Popup View Controller-->
         <scene sceneID="bkB-uu-9Yk">
@@ -1193,7 +1209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KoZ-iC-OCs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2257" y="2030"/>
+            <point key="canvasLocation" x="3012" y="2664"/>
         </scene>
         <!--Consultation Messages View Controller-->
         <scene sceneID="xgF-Ui-hGM">
@@ -1227,6 +1243,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="289" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -1368,12 +1385,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Un-Es-uzM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3015.9420289855075" y="3282.5892857142858"/>
+            <point key="canvasLocation" x="3012" y="3362"/>
         </scene>
-        <!--View Controller-->
+        <!--Consultation Files View Controller-->
         <scene sceneID="1WE-1N-lGy">
             <objects>
-                <viewController storyboardIdentifier="ConsultationFiles" id="KZY-72-nuJ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConsultationFiles" id="KZY-72-nuJ" customClass="ConsultationFilesViewController" customModule="Konsil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oeA-4y-4xi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1388,7 +1405,7 @@
                                 <rect key="frame" x="30" y="135.66666666666666" width="354" height="489.33333333333337"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="NDj-0I-d8f">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FilesCell" rowHeight="50" id="NDj-0I-d8f" customClass="FilesTableViewCell" customModule="Konsil" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="354" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NDj-0I-d8f" id="eqB-Vz-Ydm">
@@ -1412,6 +1429,12 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="ZC5-lk-aeO" secondAttribute="trailing" id="VG4-Za-Wwo"/>
+                                                        <constraint firstItem="ZC5-lk-aeO" firstAttribute="top" secondItem="Qeb-X2-3S2" secondAttribute="top" id="eDx-SH-o20"/>
+                                                        <constraint firstItem="ZC5-lk-aeO" firstAttribute="leading" secondItem="1WJ-VJ-hqq" secondAttribute="trailing" constant="10" id="hrv-sQ-NZe"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ZC5-lk-aeO" secondAttribute="bottom" id="uF0-tQ-iIL"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1422,6 +1445,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="fileImage" destination="1WJ-VJ-hqq" id="5lt-k0-smd"/>
+                                            <outlet property="fileName" destination="ZC5-lk-aeO" id="QGo-dp-09W"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1463,6 +1490,9 @@
                                     <constraint firstAttribute="width" constant="80" id="tzo-HP-s1C"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="uplado"/>
+                                <connections>
+                                    <action selector="UploadFile:" destination="KZY-72-nuJ" eventType="touchUpInside" id="auY-Ti-r34"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1485,10 +1515,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UHW-sv-8pr"/>
                     </view>
+                    <connections>
+                        <outlet property="ConsultationStatus" destination="FXa-U1-R7U" id="lEA-R2-m6c"/>
+                        <outlet property="filesTableView" destination="hr8-4T-K04" id="AlR-de-PcU"/>
+                        <outlet property="requestConversation" destination="3Sj-9x-fnb" id="G8o-YC-GSG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z7a-df-9S2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1675" y="3283"/>
+            <point key="canvasLocation" x="1670" y="3362"/>
         </scene>
         <!--Consultation Final Report View Controller-->
         <scene sceneID="X5m-4G-69B">
@@ -1611,7 +1646,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="92G-mm-3UG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2341" y="3283"/>
+            <point key="canvasLocation" x="2335" y="3361"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="pNx-2K-DLf">
@@ -1669,24 +1704,24 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="v4n-uD-EdE">
-                                                <rect key="frame" x="20" y="210" width="209" height="144"/>
+                                                <rect key="frame" x="20" y="210" width="192" height="102"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="bE6-Ve-hdy">
-                                                        <rect key="frame" x="0.0" y="0.0" width="34" height="144"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="17" height="102"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SideMenuImg" translatesAutoresizingMaskIntoConstraints="NO" id="HAA-sb-NR6">
-                                                                <rect key="frame" x="0.0" y="0.0" width="34" height="38"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="17" height="24"/>
                                                             </imageView>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SideMenuImg" translatesAutoresizingMaskIntoConstraints="NO" id="X8p-om-gTO">
-                                                                <rect key="frame" x="0.0" y="53" width="34" height="38"/>
+                                                                <rect key="frame" x="0.0" y="39" width="17" height="24"/>
                                                             </imageView>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SideMenuImg" translatesAutoresizingMaskIntoConstraints="NO" id="0HW-Xi-iDC">
-                                                                <rect key="frame" x="0.0" y="106" width="34" height="38"/>
+                                                                <rect key="frame" x="0.0" y="78" width="17" height="24"/>
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2ho-07-dP6">
-                                                        <rect key="frame" x="49" y="0.0" width="160" height="144"/>
+                                                        <rect key="frame" x="32" y="0.0" width="160" height="102"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaF-yM-6ak">
                                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="24"/>
@@ -1701,7 +1736,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="FAQ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="se3-bx-iGo">
-                                                                <rect key="frame" x="0.0" y="78" width="160" height="66"/>
+                                                                <rect key="frame" x="0.0" y="78" width="160" height="24"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -1711,24 +1746,24 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" tag="1" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SwV-3U-0A0">
-                                                <rect key="frame" x="20" y="365.33333333333331" width="186.33333333333334" height="144"/>
+                                                <rect key="frame" x="20" y="365.33333333333331" width="169.33333333333334" height="102"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mqf-k3-IUD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="34" height="144"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="17" height="102"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SideMenuImg" translatesAutoresizingMaskIntoConstraints="NO" id="jUm-Mi-eEE">
-                                                                <rect key="frame" x="0.0" y="0.0" width="34" height="38"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="17" height="24"/>
                                                             </imageView>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SideMenuImg" translatesAutoresizingMaskIntoConstraints="NO" id="5jf-x0-Ghc">
-                                                                <rect key="frame" x="0.0" y="53" width="34" height="38"/>
+                                                                <rect key="frame" x="0.0" y="39" width="17" height="24"/>
                                                             </imageView>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SideMenuImg" translatesAutoresizingMaskIntoConstraints="NO" id="Ujh-h9-s17">
-                                                                <rect key="frame" x="0.0" y="106.00000000000006" width="34" height="38"/>
+                                                                <rect key="frame" x="0.0" y="78" width="17" height="24"/>
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Tck-6Z-Efk">
-                                                        <rect key="frame" x="49" y="0.0" width="137.33333333333334" height="144"/>
+                                                        <rect key="frame" x="32" y="0.0" width="137.33333333333334" height="102"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Complaints" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaf-WH-Nb2">
                                                                 <rect key="frame" x="0.0" y="0.0" width="137.33333333333334" height="24"/>
@@ -1743,7 +1778,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Be A Doctor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjQ-aa-kXn">
-                                                                <rect key="frame" x="0.0" y="78" width="137.33333333333334" height="66"/>
+                                                                <rect key="frame" x="0.0" y="78" width="137.33333333333334" height="24"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -1973,10 +2008,10 @@
                                 <color key="textColor" name="IconsColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sVx-WN-ZVq" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Type" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sVx-WN-ZVq" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
                                 <rect key="frame" x="30" y="136" width="354" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" name="KonsilDrakGray"/>
+                                <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1993,14 +2028,14 @@
                                 <color key="textColor" name="IconsColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter Complaint Message Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="haH-UK-ChF">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter Complaint Message Here" translatesAutoresizingMaskIntoConstraints="NO" id="haH-UK-ChF">
                                 <rect key="frame" x="30" y="252" width="354" height="180"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" name="KonsilDrakGray"/>
+                                <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="cgP-Rc-ThR"/>
                                 </constraints>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -2308,7 +2343,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BqY-0U-k7L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3853.6231884057975" y="1311.8303571428571"/>
+            <point key="canvasLocation" x="3819" y="1313"/>
         </scene>
         <!--Online Conversation Details-->
         <scene sceneID="xsC-hU-h3R">
@@ -2361,7 +2396,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psF-Dg-pWK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3854" y="2634"/>
+            <point key="canvasLocation" x="3790" y="2664"/>
         </scene>
         <!--Conversation Info View Controller-->
         <scene sceneID="cm1-Tf-A6Z">
@@ -2533,7 +2568,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAZ-uX-ss7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3854" y="3283"/>
+            <point key="canvasLocation" x="3819" y="3362"/>
         </scene>
         <!--Conversation Report View Controller-->
         <scene sceneID="tIp-GI-oed">
@@ -2644,7 +2679,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="htz-3y-U0d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4561" y="3283"/>
+            <point key="canvasLocation" x="4526" y="3362"/>
         </scene>
         <!--My Consultations-->
         <scene sceneID="YpA-kV-07R">
@@ -2777,7 +2812,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdv-fj-Bl6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="297" y="476"/>
+            <point key="canvasLocation" x="291" y="525"/>
         </scene>
         <!--Personal Info-->
         <scene sceneID="lCr-hO-gYc">
@@ -2799,13 +2834,14 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Uoq-tq-oY0">
                                                         <rect key="frame" x="50" y="50" width="314" height="260"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Change name" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aex-c3-nEp" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Change name" borderStyle="roundedRect" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aex-c3-nEp" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="36"/>
                                                                 <color key="backgroundColor" name="KosilBackGround"/>
-                                                                <color key="tintColor" name="KonsilDrakGray"/>
+                                                                <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="36" id="Vor-ow-4i8"/>
                                                                 </constraints>
+                                                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -2815,40 +2851,44 @@
                                                                     <outlet property="delegate" destination="chV-OY-X0v" id="tUm-mr-2g7"/>
                                                                 </connections>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Change e-mail" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YRQ-3I-hbr" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Change e-mail" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YRQ-3I-hbr" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="56" width="314" height="36"/>
                                                                 <color key="backgroundColor" name="KosilBackGround"/>
-                                                                <color key="tintColor" name="KonsilDrakGray"/>
+                                                                <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="MailIcon"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Change Password" borderStyle="roundedRect" placeholder="Change" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HwV-La-9qL" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Change Password" borderStyle="roundedRect" placeholder="Change" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HwV-La-9qL" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="112" width="314" height="36"/>
                                                                 <color key="backgroundColor" name="KosilBackGround"/>
-                                                                <color key="tintColor" name="KonsilDrakGray"/>
+                                                                <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="LockIcon"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add Phone" borderStyle="roundedRect" placeholder="Add phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zmj-ws-KSJ" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add Phone" borderStyle="roundedRect" placeholder="Add phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zmj-ws-KSJ" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="168" width="314" height="36"/>
                                                                 <color key="backgroundColor" name="KosilBackGround"/>
-                                                                <color key="tintColor" name="KonsilDrakGray"/>
+                                                                <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="PhoneIcon"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add photo" borderStyle="roundedRect" placeholder="Add photo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GbI-Sj-YYR" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add photo" borderStyle="roundedRect" placeholder="Add photo" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GbI-Sj-YYR" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="224" width="314" height="36"/>
                                                                 <color key="backgroundColor" name="KosilBackGround"/>
-                                                                <color key="tintColor" name="KonsilDrakGray"/>
+                                                                <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -2870,17 +2910,18 @@
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                         <state key="normal" title="Submit"/>
                                                     </button>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter Patient History Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fYK-Fu-adJ">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter Patient History Here" translatesAutoresizingMaskIntoConstraints="NO" id="fYK-Fu-adJ">
                                                         <rect key="frame" x="50" y="368.33333333333331" width="314" height="126.66666666666669"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patient History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgt-Kl-gbn">
-                                                        <rect key="frame" x="50.000000000000007" y="340" width="112.66666666666669" height="20.333333333333314"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <rect key="frame" x="50" y="340" width="119" height="20.333333333333314"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -2947,6 +2988,7 @@
                         <outlet property="email" destination="YRQ-3I-hbr" id="KhI-S1-pQA"/>
                         <outlet property="name" destination="aex-c3-nEp" id="5Zg-jJ-HTj"/>
                         <outlet property="password" destination="HwV-La-9qL" id="90o-yb-sVy"/>
+                        <outlet property="patientHistoryLabel" destination="Jgt-Kl-gbn" id="D7I-nm-3R4"/>
                         <outlet property="patientHistoryTV" destination="fYK-Fu-adJ" id="3fC-gJ-iY6"/>
                         <outlet property="phone" destination="Zmj-ws-KSJ" id="POy-Tb-nTW"/>
                         <outlet property="photo" destination="GbI-Sj-YYR" id="8kY-cU-5N1"/>
@@ -2956,7 +2998,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhA-2X-cuN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="295.6521739130435" y="-177.45535714285714"/>
+            <point key="canvasLocation" x="294" y="-154"/>
         </scene>
         <!--Be A Doctor-->
         <scene sceneID="eLI-d1-lbu">
@@ -2995,12 +3037,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RNG-B5-LQR">
                                 <rect key="frame" x="30" y="310.66666666666669" width="354" height="204.00000000000006"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FkR-Dc-cKc" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FkR-Dc-cKc" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="36"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="rYE-7A-iBH"/>
                                         </constraints>
+                                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -3010,27 +3054,33 @@
                                             <outlet property="delegate" destination="c1V-Nn-lkn" id="Uxq-Ai-Qg3"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mQm-wh-tLS" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mQm-wh-tLS" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="56" width="354" height="36"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="MailIcon"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MU7-aD-TRi" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MU7-aD-TRi" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="112" width="354" height="36"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="LockIcon"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vQw-Xc-nJ1" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your mobile number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vQw-Xc-nJ1" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="168" width="354" height="36"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -3318,13 +3368,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5u-q9-LKf">
-                                <rect key="frame" x="30" y="76" width="137" height="26"/>
+                                <rect key="frame" x="30" y="76" width="122" height="22"/>
                                 <state key="normal" title="  Doctors List" image="files">
                                     <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eM-ec-uwy">
-                                <rect key="frame" x="300" y="76" width="84" height="30"/>
+                                <rect key="frame" x="317" y="76" width="67" height="22"/>
                                 <state key="normal" title="  Filter" image="filter">
                                     <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 </state>
@@ -3333,7 +3383,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mUS-7w-C0b">
-                                <rect key="frame" x="10" y="122" width="394" height="686"/>
+                                <rect key="frame" x="10" y="118" width="394" height="690"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DoctorsCell" rowHeight="120" id="aON-sm-kRC" customClass="DoctorsTableViewCell" customModule="Konsil" customModuleProvider="target">
@@ -3576,10 +3626,11 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter message here " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="03m-8h-Ogu">
                                         <rect key="frame" x="0.0" y="0.0" width="279" height="45"/>
-                                        <color key="tintColor" name="KonsilDrakGray"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="YnZ-ZA-uWD"/>
                                         </constraints>
+                                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -3882,7 +3933,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yia-3Q-mWs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1983" y="1286"/>
+            <point key="canvasLocation" x="1983" y="1264"/>
         </scene>
         <!--Doctor Info-->
         <scene sceneID="3sM-xA-I5t">
@@ -4189,7 +4240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="khm-wf-dqd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3015.9420289855075" y="618.75"/>
+            <point key="canvasLocation" x="3016" y="619"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="gDg-Jv-Ozi">
@@ -4517,7 +4568,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="konsil" translatesAutoresizingMaskIntoConstraints="NO" id="vzG-Xw-7th">
-                                <rect key="frame" x="57" y="178" width="300" height="300"/>
+                                <rect key="frame" x="57" y="178" width="300" height="300.00000000000045"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="5gs-Fr-p8a"/>
                                     <constraint firstAttribute="width" constant="300" id="y43-kt-6if"/>

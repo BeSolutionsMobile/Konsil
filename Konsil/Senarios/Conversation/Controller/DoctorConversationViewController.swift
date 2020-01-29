@@ -55,7 +55,7 @@ class DoctorConversationViewController: UIViewController {
     
     //MARK:- Complete Request
     @IBAction func completeRequestPressed(_ sender: UIButton) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ConversationDetails") as! ConversationDetailsViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: "Payment") as! PaymentViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     func checkData(){

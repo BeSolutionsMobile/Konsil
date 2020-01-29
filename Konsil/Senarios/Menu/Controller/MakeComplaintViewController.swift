@@ -23,6 +23,7 @@ class MakeComplaintViewController: UIViewController , UITextViewDelegate {
             complaintMessageTV.layer.borderColor = UIColor.gray.cgColor
             complaintMessageTV.layer.borderWidth = 1.5
             complaintMessageTV.delegate = self
+            complaintMessageTV.text = "Enter Complaint Details Here".localized
         }
     }
     @IBOutlet weak var submitBut: UIButton!{
@@ -31,7 +32,7 @@ class MakeComplaintViewController: UIViewController , UITextViewDelegate {
         }
     }
     
-    let complaintTypes = ["Disruptive behavior" , "Prescriping Wrong Medicine" , "Wrong Diagonise" , "No Response From Doctor" ]
+    let complaintTypes = ["Disruptive behavior" , "Prescribing Wrong Medicine" , "Wrong Diagnosis" , "No Response From Doctor" ]
     //MARK:- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +75,7 @@ extension MakeComplaintViewController: UIPickerViewDataSource , UIPickerViewDele
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return complaintTypes[row]
+        return complaintTypes[row].localized
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

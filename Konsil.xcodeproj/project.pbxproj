@@ -53,6 +53,9 @@
 		81849F2A23A92EDB004A59D8 /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F2923A92EDB004A59D8 /* MessagesTableViewCell.swift */; };
 		81849F3023AA3FCA004A59D8 /* PeriodsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F2F23AA3FCA004A59D8 /* PeriodsTableViewCell.swift */; };
 		81849F3223AA3FFA004A59D8 /* DoctorConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F3123AA3FFA004A59D8 /* DoctorConversationViewController.swift */; };
+		8189E68523E09646009DA8E0 /* ConsultationFilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8189E68423E09646009DA8E0 /* ConsultationFilesViewController.swift */; };
+		8189E68723E097D8009DA8E0 /* FilesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8189E68623E097D8009DA8E0 /* FilesTableViewCell.swift */; };
+		8189E68B23E18D01009DA8E0 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8189E68A23E18D01009DA8E0 /* PaymentViewController.swift */; };
 		81B7615523D49E4C00859320 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81B7615723D49E4C00859320 /* Localizable.strings */; };
 		81BB8ADB23D99C3D00C57648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB8ADA23D99C3D00C57648 /* AppDelegate.swift */; };
 		81D8FB1D23A82A5100585CA8 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8FB1C23A82A5100585CA8 /* MainNavigationController.swift */; };
@@ -152,6 +155,9 @@
 		81849F2923A92EDB004A59D8 /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
 		81849F2F23AA3FCA004A59D8 /* PeriodsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodsTableViewCell.swift; sourceTree = "<group>"; };
 		81849F3123AA3FFA004A59D8 /* DoctorConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorConversationViewController.swift; sourceTree = "<group>"; };
+		8189E68423E09646009DA8E0 /* ConsultationFilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationFilesViewController.swift; sourceTree = "<group>"; };
+		8189E68623E097D8009DA8E0 /* FilesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesTableViewCell.swift; sourceTree = "<group>"; };
+		8189E68A23E18D01009DA8E0 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		81B7615623D49E4C00859320 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		81B7615823D49E5500859320 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		81BB8ADA23D99C3D00C57648 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -392,6 +398,7 @@
 		815A17C123A658FC001DDBEE /* Senarios */ = {
 			isa = PBXGroup;
 			children = (
+				8189E68823E18CDF009DA8E0 /* Payment */,
 				813761D123CB247E00BC90B1 /* BiometricAuth */,
 				8114567923BCE899005A4B93 /* Walkthrough */,
 				81849F2B23AA3F0D004A59D8 /* Conversation */,
@@ -496,6 +503,7 @@
 				81849F2023A906C1004A59D8 /* ConsultationDetailsViewController.swift */,
 				81849F2423A929C3004A59D8 /* ConsultationFinalReportViewController.swift */,
 				81849F2623A929DD004A59D8 /* ConsultationMessagesViewController.swift */,
+				8189E68423E09646009DA8E0 /* ConsultationFilesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -504,6 +512,7 @@
 			isa = PBXGroup;
 			children = (
 				81849F2923A92EDB004A59D8 /* MessagesTableViewCell.swift */,
+				8189E68623E097D8009DA8E0 /* FilesTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -534,6 +543,22 @@
 				81849F2F23AA3FCA004A59D8 /* PeriodsTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8189E68823E18CDF009DA8E0 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				8189E68923E18CE5009DA8E0 /* Controller */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		8189E68923E18CE5009DA8E0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8189E68A23E18D01009DA8E0 /* PaymentViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		81ECE99B23AA6DB500E63105 /* View */ = {
@@ -820,6 +845,7 @@
 				815A17D623A65A26001DDBEE /* DesignableUITextField.swift in Sources */,
 				810DAB0223A7A86C00B8AF20 /* DoctorsInfoViewController.swift in Sources */,
 				81849F2A23A92EDB004A59D8 /* MessagesTableViewCell.swift in Sources */,
+				8189E68523E09646009DA8E0 /* ConsultationFilesViewController.swift in Sources */,
 				8166544F23D9CECC00739768 /* Upload.swift in Sources */,
 				81849F3023AA3FCA004A59D8 /* PeriodsTableViewCell.swift in Sources */,
 				810DAB0823A7BC8F00B8AF20 /* LogInViewController.swift in Sources */,
@@ -831,6 +857,7 @@
 				81ECE9AD23ABB1D700E63105 /* ProfileInfoViewController.swift in Sources */,
 				81849F2523A929C3004A59D8 /* ConsultationFinalReportViewController.swift in Sources */,
 				810DAAFD23A7829400B8AF20 /* DoctorsViewController.swift in Sources */,
+				8189E68B23E18D01009DA8E0 /* PaymentViewController.swift in Sources */,
 				815A17D723A65A26001DDBEE /* Maps.swift in Sources */,
 				81849F2723A929DD004A59D8 /* ConsultationMessagesViewController.swift in Sources */,
 				81ECE9A923AB9AA000E63105 /* MyConsultationsViewController.swift in Sources */,
@@ -851,6 +878,7 @@
 				81D8FB1F23A8301A00585CA8 /* FilterViewController.swift in Sources */,
 				815A17D523A65A26001DDBEE /* CardView.swift in Sources */,
 				81ECE99D23AA6DC800E63105 /* FAQTableViewCell.swift in Sources */,
+				8189E68723E097D8009DA8E0 /* FilesTableViewCell.swift in Sources */,
 				813761D423CB24D300BC90B1 /* FingerPrintViewController.swift in Sources */,
 				815A17D823A65A26001DDBEE /* Colortext.swift in Sources */,
 				8114567E23BCE904005A4B93 /* Walkthrough2ViewController.swift in Sources */,

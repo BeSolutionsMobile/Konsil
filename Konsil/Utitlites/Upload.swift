@@ -26,63 +26,67 @@ class FirebaseUploader
         return randomString
     }
     
-    static func uploadToFirebase(viewController:UIViewController ,imagePicker:UIImagePickerController , didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any], completion: ((_ success: Bool) -> Void)?)
+    static func uploadToFirebase(viewController:UIViewController,imagePicker:UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) -> String
     {
         
         //to upload image to firebase storage
         
-        var _: String?
-        
-        if let image = info[.originalImage] as? UIImage{
+        var final: String?
             
-            var imageData = Data()
-            imageData = image.jpegData(compressionQuality: 0.3)!
-            
-            
-            let storeRef = Storage.storage().reference().child("images/" + randomString(length: 20))
-            
-            let uploadImageTask = storeRef.putData(imageData, metadata: nil) { metadata, error in
-                if (error != nil) {
-                    
-                    print("errorrrrrr")
-                    
-                } else {
-                    
-                    storeRef.downloadURL { url, error in
-                        if let error = error {
-                            print(error)
-                        } else {
-                            // Here you can get the download URL for 'simpleImage.jpg'
-                            print(url?.absoluteString ?? "link")
-                            imageURl = url?.absoluteString ?? "link"
-                            completion?(true) ?? nil
+            if let image = info[.originalImage] as? UIImage{
+                
+                var imageData = Data()
+                imageData = image.jpegData(compressionQuality: 0.5)!
+                
+                
+                let storeRef = Storage.storage().reference().child("images/" + randomString(length: 20))
+                
+                let uploadImageTask = storeRef.putData(imageData, metadata: nil) { metadata, error in
+                    if (error != nil) {
+                        
+                        print("error")
+                        
+                    } else {
+                        
+                        storeRef.downloadURL { url, error in
+                            if let error = error {
+                                
+                                print(error)
+                                
+                            } else {
+                                // Here you can get the download URL for 'simpleImage.jpg'
+                                print(url?.absoluteString ?? "link")
+                                final = url?.absoluteString ?? "link"
+                            }
                         }
+                        
                     }
                 }
-            }
-            
-            var alert:UIAlertController?
-            
-            uploadImageTask.observe(.progress) { snapshot in
-                let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
-                    / Double(snapshot.progress!.totalUnitCount)
                 
-                alert = UIAlertController(title: "uploading", message: "please wait", preferredStyle: UIAlertController.Style.alert)
+                var alert:UIAlertController?
                 
-                viewController.present(alert!, animated: true, completion: nil)
+                uploadImageTask.observe(.progress) { snapshot in
+                    let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
+                        / Double(snapshot.progress!.totalUnitCount)
+                    
+                    alert = UIAlertController(title: "Upliading", message: "Please Wait", preferredStyle: UIAlertController.Style.alert)
+                    
+                    viewController.present(alert!, animated: true, completion: nil)
+                    
+                    print(percentComplete)
+                }
                 
-                print(percentComplete)
-            }
-            
-            uploadImageTask.observe(.success) { snapshot in
-                
-                print("done")
-                viewController.dismiss(animated: true, completion: nil)
-            }
+                uploadImageTask.observe(.success) { snapshot in
+                    
+                    print("done")
+                    viewController.dismiss(animated: true, completion: nil)
+                }
             
             //dismiss(animated: true, completion: nil)
             imagePicker.dismiss(animated: true, completion: nil)
         }
+        
+        return final ?? ""
         
     }
     

@@ -41,6 +41,12 @@ class ProfileInfoViewController: UIViewController , UITextViewDelegate {
             patientHistoryTV.layer.borderColor = #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1)
             patientHistoryTV.layer.borderWidth = 1.5
             patientHistoryTV.delegate = self
+            patientHistoryTV.text = "Enter Patient History Here".localized
+        }
+    }
+    @IBOutlet weak var patientHistoryLabel: UILabel!{
+        didSet{
+            patientHistoryLabel.text = "Patient History".localized
         }
     }
     @IBOutlet weak var submit: UIButton!{

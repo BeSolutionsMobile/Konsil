@@ -15,3 +15,10 @@
 "Open" = "öffnen";
 "Closed" = "geschlossen";
 "Please accept our terms and conditions then try again" = "Bitte akzeptieren Sie unsere Allgemeinen Geschäftsbedingungen und versuchen Sie es erneut";
+"Patient History" = "Anamnese";
+"Enter Patient History Here" = "Geben Sie hier die Anamnese ein";
+"Enter Complaint Details Here" = "Geben Sie hier die Beschwerdedetails ein"; 
+"Disruptive behavior"  = "Störendes Verhalten";
+"Prescribing Wrong Medicine" = "Prescriping Wrong Medicine";
+"Wrong Diagnosis" =  "Falsche Diagnose";
+"No Response From Doctor" = "Keine Antwort vom Arzt";
