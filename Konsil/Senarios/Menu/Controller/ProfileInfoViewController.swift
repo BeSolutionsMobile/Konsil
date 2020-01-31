@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Photos
 
-class ProfileInfoViewController: UIViewController , UITextViewDelegate {
-    
+class ProfileInfoViewController: UIViewController {
+    //MARK:- IBOutlets
     @IBOutlet weak var name: DesignableUITextField!{
         didSet{
             Rounded.roundedCornerTextField(textField: self.name, borderColor: #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1), radius: self.name.frame.height/2)
@@ -66,13 +67,43 @@ class ProfileInfoViewController: UIViewController , UITextViewDelegate {
         }
     }
     
+    //MARK:- Variables
+    
+    let imagePicker = UIImagePickerController()
+    
+    //MARK:- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         rightBackBut()
     }
     
+    @IBAction func uploadProfileImage(_ sender: UIButton) {
+        imagePicker.delegate = self
+        self.present(imagePicker, animated: true, completion: nil)
+        
+    }
+    
+    //MARK:- Methodes
     func textViewDidBeginEditing(_ textView: UITextView) {
         self.patientHistoryTV.text = ""
     }
+    
+    
+}
+
+//MARK:- Image Picker Delegates
+extension ProfileInfoViewController: UIImagePickerControllerDelegate , UINavigationControllerDelegate, UITextViewDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        FirebaseUploader.uploadToFirebase(viewController: self, imagePicker: imagePicker, didFinishPickingMediaWithInfo: info) { (uploaded) in
+            if uploaded {
+                if let asset = info[UIImagePickerController.InfoKey.phAsset] as? PHAsset{
+                    if let fileName = asset.value(forKey: "filename") as? String{
+                        self.photo.text = fileName
+                    }
+                }
+            }
+        }
+    }
+    
 }

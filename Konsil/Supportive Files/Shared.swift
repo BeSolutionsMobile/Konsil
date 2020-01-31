@@ -18,7 +18,8 @@ class Shared {
         var settings = SideMenuSettings()
         settings.presentationStyle = presentationStyle
         settings.statusBarEndAlpha = 0
-        
+        settings.allowPushOfSameClassTwice = false
+        settings.blurEffectStyle = .prominent
         switch currentDevice {
         case .pad:
             settings.menuWidth = 350

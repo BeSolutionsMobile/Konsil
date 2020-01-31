@@ -2973,11 +2973,22 @@
                                                         <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zz2-Qi-9qb">
+                                                        <rect key="frame" x="50" y="275" width="314" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="314" id="1LX-Z6-LSN"/>
+                                                            <constraint firstAttribute="height" constant="35" id="VCQ-ir-peB"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <action selector="uploadProfileImage:" destination="chV-OY-X0v" eventType="touchUpInside" id="tfl-5t-MWc"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" name="KosilBackGround"/>
                                                 <constraints>
                                                     <constraint firstItem="fYK-Fu-adJ" firstAttribute="top" secondItem="Jgt-Kl-gbn" secondAttribute="bottom" constant="8" id="4K8-Ep-AWF"/>
                                                     <constraint firstAttribute="trailing" secondItem="Uoq-tq-oY0" secondAttribute="trailing" constant="50" id="4Yj-1g-54v"/>
+                                                    <constraint firstItem="zz2-Qi-9qb" firstAttribute="centerX" secondItem="sGv-qc-Wdp" secondAttribute="centerX" id="5yV-U4-iJp"/>
                                                     <constraint firstItem="Uoq-tq-oY0" firstAttribute="centerX" secondItem="sGv-qc-Wdp" secondAttribute="centerX" id="BJq-j9-ItX"/>
                                                     <constraint firstAttribute="bottom" secondItem="Its-Z2-Iyp" secondAttribute="bottom" constant="30" id="IJg-hb-lZa"/>
                                                     <constraint firstItem="Jgt-Kl-gbn" firstAttribute="top" secondItem="Uoq-tq-oY0" secondAttribute="bottom" constant="30" id="JQ4-0u-Onw"/>
@@ -2985,6 +2996,7 @@
                                                     <constraint firstItem="Its-Z2-Iyp" firstAttribute="centerX" secondItem="sGv-qc-Wdp" secondAttribute="centerX" id="TC3-hi-m4p"/>
                                                     <constraint firstItem="Its-Z2-Iyp" firstAttribute="top" secondItem="fYK-Fu-adJ" secondAttribute="bottom" constant="30" id="VX8-PB-LJm"/>
                                                     <constraint firstItem="Uoq-tq-oY0" firstAttribute="top" secondItem="sGv-qc-Wdp" secondAttribute="top" constant="50" id="Wu2-7I-fdd"/>
+                                                    <constraint firstItem="zz2-Qi-9qb" firstAttribute="top" secondItem="sGv-qc-Wdp" secondAttribute="top" constant="275" id="frQ-mT-IFU"/>
                                                     <constraint firstItem="Jgt-Kl-gbn" firstAttribute="leading" secondItem="sGv-qc-Wdp" secondAttribute="leading" constant="50" id="ld3-AI-reg"/>
                                                     <constraint firstAttribute="height" constant="590" id="oGb-9Y-OLj"/>
                                                     <constraint firstItem="fYK-Fu-adJ" firstAttribute="leading" secondItem="sGv-qc-Wdp" secondAttribute="leading" constant="50" id="u1X-7n-Qi5"/>
@@ -3047,7 +3059,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhA-2X-cuN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="294" y="-154"/>
+            <point key="canvasLocation" x="292.75362318840581" y="-154.01785714285714"/>
         </scene>
         <!--Be A Doctor-->
         <scene sceneID="eLI-d1-lbu">
@@ -4118,66 +4130,6 @@
                                     <constraint firstItem="ulH-AO-MiC" firstAttribute="leading" secondItem="5mk-bP-jAZ" secondAttribute="leading" id="y3E-VC-gmz"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLF-Xm-Lqh" customClass="CosmosView" customModule="Cosmos">
-                                <rect key="frame" x="134.66666666666666" y="289.66666666666669" width="144.99999999999997" height="25"/>
-                                <subviews>
-                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MdN-Vw-U4u" customClass="CosmosView" customModule="Cosmos">
-                                        <rect key="frame" x="0.0" y="0.0" width="145" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="starSize">
-                                                <real key="value" value="25"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
-                                                <color key="value" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
-                                                <color key="value" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
-                                                <color key="value" red="0.8668405414" green="0.51080870629999997" blue="0.50341314079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
-                                                <color key="value" red="0.76470588240000004" green="0.50196078430000002" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="tLF-Xm-Lqh" secondAttribute="centerX" id="fH5-0k-2je"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
-                                        <real key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
-                                        <color key="value" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
-                                        <color key="value" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
-                                        <color key="value" red="0.86684054136276245" green="0.51080870628356934" blue="0.50341314077377319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
-                                        <color key="value" red="0.76470588240000004" green="0.50196078430000002" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8t-3x-pmF">
                                 <rect key="frame" x="50" y="424.66666666666669" width="314" height="81.333333333333314"/>
                                 <string key="text">Orem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever</string>
@@ -4239,6 +4191,36 @@
                                     <constraint firstAttribute="height" constant="50" id="ntv-Ln-CGk"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLF-Xm-Lqh" customClass="CosmosView" customModule="Cosmos">
+                                <rect key="frame" x="134.66666666666666" y="289.66666666666669" width="144.99999999999997" height="25"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="tLF-Xm-Lqh" secondAttribute="centerX" id="fH5-0k-2je"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                        <color key="value" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                        <color key="value" red="0.8010988832" green="0.1878010333" blue="0.14355763790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                        <color key="value" red="0.86684054136276245" green="0.51080870628356934" blue="0.50341314077377319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                        <color key="value" red="0.76470588240000004" green="0.50196078430000002" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -4277,7 +4259,7 @@
                         <outlet property="details" destination="z8t-3x-pmF" id="BYI-Vk-0aI"/>
                         <outlet property="doctorImage" destination="8h0-yl-TRE" id="lBQ-uj-SVu"/>
                         <outlet property="doctorName" destination="CE1-OJ-oIq" id="zWK-6W-h0F"/>
-                        <outlet property="doctorRate" destination="MdN-Vw-U4u" id="43n-dD-eAq"/>
+                        <outlet property="doctorRate" destination="tLF-Xm-Lqh" id="WMC-cQ-sVO"/>
                         <outlet property="doctorSpeciality" destination="aZP-ou-N0A" id="YBR-lU-Yb5"/>
                         <outlet property="imageBackGroundView" destination="CET-kK-ljL" id="R1N-pj-UP2"/>
                         <outlet property="requestConsultarionBack" destination="pb9-SL-NfX" id="n4j-bv-vdc"/>

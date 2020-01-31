@@ -36,8 +36,6 @@ extension UIViewController: UITextFieldDelegate{
     }
     //MARK:- Menu Button Action
     @objc func showMenu(){
-        print("sss")
-        
             if let vc = storyboard?.instantiateViewController(withIdentifier: "SideMenu") as? SideMenuNavigationController {
                 vc.modalPresentationStyle = .overFullScreen
                 vc.settings = Shared.settings(view: self.view)
