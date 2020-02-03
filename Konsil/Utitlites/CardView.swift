@@ -96,6 +96,13 @@ struct Rounded {
         textField.clipsToBounds = true
     }
     
+    static func roundedCornerTextView(textView: UITextView ,borderColor: CGColor ,radius: CGFloat ,borderWidth: CGFloat? = 1.5){
+        textView.layer.cornerRadius = radius
+        textView.layer.borderColor = borderColor
+        textView.layer.borderWidth = borderWidth ?? 1.5
+        textView.clipsToBounds = true
+    }
+    
     static func roundedImage(imageView: UIImageView ,radius: CGFloat ,borderColor: CGColor ,borderWidth: CGFloat){
         imageView.layer.cornerRadius = radius
         imageView.layer.masksToBounds = true

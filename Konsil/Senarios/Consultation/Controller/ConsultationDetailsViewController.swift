@@ -27,6 +27,7 @@ class ConsultationDetailsViewController: UIViewController {
     
     //MARK:- change viewController's view by adding other viewController's view
     @IBAction func changeView(_ sender: UISegmentedControl) {
+        
         if sender.selectedSegmentIndex == 0 {
             let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "ConsultationMessages")
             newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
@@ -59,6 +60,7 @@ class ConsultationDetailsViewController: UIViewController {
         parentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[subView]|",
                                                                  options: [], metrics: nil, views: viewBindingsDict))
     }
+    
     func cycleFromViewController(oldViewController: UIViewController, toViewController newViewController: UIViewController) {
         oldViewController.willMove(toParent: nil)
         self.addChild(newViewController)
@@ -85,9 +87,9 @@ class ConsultationDetailsViewController: UIViewController {
         self.addSubview(subView: self.currentViewController!.view, toView: self.backGroundView)
     }
     
-    //MARK:- customize segmant controller
+    //MARK:- Customize Segmant Controller
     func customizeSigmanted(for segmantController: UISegmentedControl) {
-        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white , NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .semibold)]
+        let titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .semibold)]
         
         let selectedTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white , NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .semibold)]
         

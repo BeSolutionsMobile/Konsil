@@ -25,12 +25,10 @@ class Walkthrough2ViewController: UIViewController {
     }
     
     @IBAction func skipPressed(_ sender: UIButton) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "LogIn") as! LogInViewController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "LogIn") as? LogInViewController {
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)
         }
-        
     }
     func setUpAnimations(){
         
@@ -51,20 +49,15 @@ class Walkthrough2ViewController: UIViewController {
     
     @objc func swipeAction(_ sender: UISwipeGestureRecognizer){
         if sender.direction == .right {
-            if #available(iOS 13.0, *) {
-                if let vc = storyboard?.instantiateViewController(identifier: "Walkthrough1") as? Walkthrough1ViewController {
-                    vc.modalPresentationStyle = .fullScreen
-                    presentViewControllerWithTransition(viewController: vc, animated: true, direction: .fromRight)
-                }
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "Walkthrough1") as? Walkthrough1ViewController {
+                vc.modalPresentationStyle = .fullScreen
+                presentViewControllerWithTransition(viewController: vc, animated: true, direction: .fromRight)
             }
         } else if sender.direction == .left {
-            if #available(iOS 13.0, *) {
-                if let vc = storyboard?.instantiateViewController(identifier: "Walkthrough3") as? Walkthrough3ViewController {
-                    vc.modalPresentationStyle = .fullScreen
-                    presentViewControllerWithTransition(viewController: vc, animated: true, direction: .fromLeft)
-                }
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "Walkthrough3") as? Walkthrough3ViewController {
+                vc.modalPresentationStyle = .fullScreen
+                presentViewControllerWithTransition(viewController: vc, animated: true, direction: .fromLeft)
             }
-            
         }
     }
 }

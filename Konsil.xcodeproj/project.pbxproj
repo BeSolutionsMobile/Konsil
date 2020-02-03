@@ -20,9 +20,7 @@
 		8114567C23BCE8F3005A4B93 /* Walkthrough1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8114567B23BCE8F3005A4B93 /* Walkthrough1ViewController.swift */; };
 		8114567E23BCE904005A4B93 /* Walkthrough2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8114567D23BCE904005A4B93 /* Walkthrough2ViewController.swift */; };
 		8114568023BCE915005A4B93 /* Walkthrough3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8114567F23BCE915005A4B93 /* Walkthrough3ViewController.swift */; };
-		8114568723BCEC03005A4B93 /* Consultation2.json in Resources */ = {isa = PBXBuildFile; fileRef = 8114568223BCEC00005A4B93 /* Consultation2.json */; };
 		8114568923BCEC03005A4B93 /* Doctor.json in Resources */ = {isa = PBXBuildFile; fileRef = 8114568423BCEC01005A4B93 /* Doctor.json */; };
-		8114568A23BCEC03005A4B93 /* FingureAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 8114568523BCEC02005A4B93 /* FingureAnimation.json */; };
 		8114568B23BCEC03005A4B93 /* FingureSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 8114568623BCEC03005A4B93 /* FingureSuccess.json */; };
 		8114569023BCEC21005A4B93 /* RedLifeline.json in Resources */ = {isa = PBXBuildFile; fileRef = 8114568C23BCEC1E005A4B93 /* RedLifeline.json */; };
 		8114569123BCEC21005A4B93 /* NoData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8114568D23BCEC1F005A4B93 /* NoData.json */; };
@@ -122,9 +120,7 @@
 		8114567B23BCE8F3005A4B93 /* Walkthrough1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walkthrough1ViewController.swift; sourceTree = "<group>"; };
 		8114567D23BCE904005A4B93 /* Walkthrough2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walkthrough2ViewController.swift; sourceTree = "<group>"; };
 		8114567F23BCE915005A4B93 /* Walkthrough3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walkthrough3ViewController.swift; sourceTree = "<group>"; };
-		8114568223BCEC00005A4B93 /* Consultation2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Consultation2.json; sourceTree = "<group>"; };
 		8114568423BCEC01005A4B93 /* Doctor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Doctor.json; sourceTree = "<group>"; };
-		8114568523BCEC02005A4B93 /* FingureAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FingureAnimation.json; sourceTree = "<group>"; };
 		8114568623BCEC03005A4B93 /* FingureSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FingureSuccess.json; sourceTree = "<group>"; };
 		8114568C23BCEC1E005A4B93 /* RedLifeline.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RedLifeline.json; sourceTree = "<group>"; };
 		8114568D23BCEC1F005A4B93 /* NoData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NoData.json; sourceTree = "<group>"; };
@@ -350,14 +346,12 @@
 			children = (
 				813761D523CB2DCF00BC90B1 /* Unlock.json */,
 				81ECE8BF23BCF4970048C0D9 /* Report.json */,
-				8114568223BCEC00005A4B93 /* Consultation2.json */,
 				8114568423BCEC01005A4B93 /* Doctor.json */,
 				8114568C23BCEC1E005A4B93 /* RedLifeline.json */,
 				81ECE8C323BE35CE0048C0D9 /* Chat.json */,
 				8114568D23BCEC1F005A4B93 /* NoData.json */,
 				81FD1A2023E1D1C900CED21A /* CheckMark.json */,
 				8114568E23BCEC20005A4B93 /* success.json */,
-				8114568523BCEC02005A4B93 /* FingureAnimation.json */,
 				8114568623BCEC03005A4B93 /* FingureSuccess.json */,
 			);
 			path = Animations;
@@ -700,13 +694,11 @@
 				81ECE8C423BE35CE0048C0D9 /* Chat.json in Resources */,
 				04F1A61723A641B300293AA2 /* Assets.xcassets in Resources */,
 				81ECE8C023BCF4970048C0D9 /* Report.json in Resources */,
-				8114568723BCEC03005A4B93 /* Consultation2.json in Resources */,
 				8114568B23BCEC03005A4B93 /* FingureSuccess.json in Resources */,
 				8114568923BCEC03005A4B93 /* Doctor.json in Resources */,
 				8114569223BCEC21005A4B93 /* success.json in Resources */,
 				813761D623CB2DCF00BC90B1 /* Unlock.json in Resources */,
 				04F1A61523A641B200293AA2 /* Main.storyboard in Resources */,
-				8114568A23BCEC03005A4B93 /* FingureAnimation.json in Resources */,
 				8114569123BCEC21005A4B93 /* NoData.json in Resources */,
 				81B7615523D49E4C00859320 /* Localizable.strings in Resources */,
 				8166545123D9E19F00739768 /* GoogleService-Info.plist in Resources */,

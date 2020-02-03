@@ -39,7 +39,9 @@ class ConsultationFilesViewController: UIViewController {
     //MARK:- IBActions
     
     @IBAction func UploadFile(_ sender: UIButton) {
-        
+        documentPicker.delegate = self
+        documentPicker.allowsMultipleSelection = false
+        self.present(documentPicker, animated: true, completion: nil)
     }
     
 

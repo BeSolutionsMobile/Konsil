@@ -85,13 +85,9 @@ class PaymentViewController: UIViewController , UIImagePickerControllerDelegate 
         view.addSubview(blurView)
         animation.play { (finished) in
             if finished == true {
-                if #available(iOS 13.0, *) {
-                    if let vc = self.storyboard?.instantiateViewController(identifier: "Main") as? MainViewController {
-                        vc.modalPresentationStyle = .fullScreen
-                        self.navigationController?.pushViewController(vc, animated: true)
-                    }
-                } else {
-                    // Fallback on earlier versions
+                if let vc = self.storyboard?.instantiateViewController(withIdentifier: "Main") as? MainViewController {
+                    vc.modalPresentationStyle = .fullScreen
+                    self.navigationController?.pushViewController(vc, animated: true)
                 }
             }
         }

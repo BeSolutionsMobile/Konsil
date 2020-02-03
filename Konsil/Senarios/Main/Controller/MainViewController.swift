@@ -12,10 +12,13 @@ import SideMenu
 import BiometricAuthentication
 class MainViewController: UIViewController {
     
+    //MARK:- IBOutlets
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     
+    //MARK:- Variables
     var catImage: [String]?
     var catName: [String]?
+    
     //MARK:- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +26,6 @@ class MainViewController: UIViewController {
         catName = Categories.catName
         auth()
     }
-    
     
     func auth(){
         if Shared.BiometricAuthEnabled == true {
@@ -44,13 +46,12 @@ class MainViewController: UIViewController {
             }
         }
     }
+    
     @IBAction func showMenu(_ sender: UIBarButtonItem) {
-        if #available(iOS 13.0, *) {
-            if let vc = storyboard?.instantiateViewController(identifier: "SideMenu") as? SideMenuNavigationController {
-                vc.modalPresentationStyle = .overFullScreen
-                vc.settings = Shared.settings(view: self.view)
-                self.present(vc, animated: true, completion: nil)
-            }
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "SideMenu") as? SideMenuNavigationController {
+            vc.modalPresentationStyle = .overFullScreen
+            vc.settings = Shared.settings(view: self.view)
+            self.present(vc, animated: true, completion: nil)
         }
     }
     
@@ -88,12 +89,9 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if #available(iOS 13.0, *) {
-            if let vc = storyboard?.instantiateViewController(identifier: "Doctors List") as? DoctorsViewController {
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Doctors List") as? DoctorsViewController {
+            self.navigationController?.pushViewController(vc, animated: true)
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

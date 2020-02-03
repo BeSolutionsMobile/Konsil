@@ -11,7 +11,7 @@ import Cosmos
 import SideMenu
 
 class DoctorsInfoViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UIView!{
         didSet{
             self.tableView.layer.cornerRadius = 10
@@ -56,21 +56,17 @@ class DoctorsInfoViewController: UIViewController {
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-       rightBackBut()
+        rightBackBut()
     }
     
     @IBAction func requestConsultationPressed(_ sender: UIButton) {
-        if #available(iOS 13.0, *) {
-            if let vc = storyboard?.instantiateViewController(identifier: "ConsultationRequest") as? RequestConsultationViewController {
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "ConsultationRequest") as? RequestConsultationViewController {
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     @IBAction func requestOnlineConversationPressed(_ sender: UIButton) {
-        if #available(iOS 13.0, *) {
-            if let vc = storyboard?.instantiateViewController(identifier: "DoctorConversation") as? DoctorConversationViewController {
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "DoctorConversation") as? DoctorConversationViewController {
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

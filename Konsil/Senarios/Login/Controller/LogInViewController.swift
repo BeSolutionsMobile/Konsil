@@ -72,11 +72,9 @@ class LogInViewController: UIViewController {
     @IBAction func logInWithFacebook(_ sender: UIButton) {
     }
     @IBAction func registerPressed(_ sender: UIButton) {
-        if #available(iOS 13.0, *) {
-            if let vc = storyboard?.instantiateViewController(identifier: "Register") as? RegisterViewController {
-                vc.modalPresentationStyle = .fullScreen
-                present(vc, animated: true, completion: nil)
-            }
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Register") as? RegisterViewController {
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
         }
     }
     
@@ -118,12 +116,12 @@ class LogInViewController: UIViewController {
     }
     
     //MARK:- Chaneg Status Bar To Dark
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        if #available(iOS 13.0, *) {
-//            return .darkContent
-//        } else {
-//            
-//        }
-//    }
+    //    override var preferredStatusBarStyle: UIStatusBarStyle {
+    //        if #available(iOS 13.0, *) {
+    //            return .darkContent
+    //        } else {
+    //
+    //        }
+    //    }
     
 }

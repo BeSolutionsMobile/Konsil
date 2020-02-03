@@ -41,12 +41,10 @@ class MakeComplaintViewController: UIViewController , UITextViewDelegate {
     }
     
     @IBAction func submitPressed(_ sender: UIButton) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "ComplaintDetails") as! ComplaintDetailsViewController
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ComplaintDetails") as! ComplaintDetailsViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
+    
     func textViewDidBeginEditing(_ textView: UITextView) {
         complaintMessageTV.text = ""
     }
@@ -56,11 +54,6 @@ class MakeComplaintViewController: UIViewController , UITextViewDelegate {
         pickerView.delegate = self
         pickerView.dataSource = self
         selectTybeTF.inputView = pickerView
-    }
-    
-    @objc func donePressed(){
-        
-        
     }
     
 }

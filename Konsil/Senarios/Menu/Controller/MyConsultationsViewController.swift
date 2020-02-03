@@ -9,7 +9,7 @@
 import UIKit
 
 class MyConsultationsViewController: UIViewController {
-
+    
     @IBOutlet weak var myConsultationTableView: UITableView!{
         didSet {
             self.myConsultationTableView.rowHeight = UITableView.automaticDimension
@@ -26,7 +26,7 @@ class MyConsultationsViewController: UIViewController {
         super.viewDidLoad()
         rightBackBut()
     }
-
+    
 }
 
 //MARK:- tableView Setup
@@ -46,35 +46,23 @@ extension MyConsultationsViewController: UITableViewDelegate , UITableViewDataSo
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tybes[indexPath.row] == "Consultation" {
-            if #available(iOS 13.0, *) {
-                if let vc = storyboard?.instantiateViewController(identifier: "consultationDetails") as? ConsultationDetailsViewController {
-                    vc.modalPresentationStyle = .fullScreen
-                    self.navigationController?.pushViewController(vc, animated: true)
-                }
-            } else {
-                // Fallback on earlier versions
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "consultationDetails") as? ConsultationDetailsViewController {
+                vc.modalPresentationStyle = .fullScreen
+                self.navigationController?.pushViewController(vc, animated: true)
             }
         } else {
-            if #available(iOS 13.0, *) {
-                if let vc = storyboard?.instantiateViewController(identifier: "ConversationDetails") as? ConversationDetailsViewController {
-                    vc.modalPresentationStyle = .fullScreen
-                    self.navigationController?.pushViewController(vc, animated: true)
-                }
-            } else {
-                // Fallback on earlier versions
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "ConversationDetails") as? ConversationDetailsViewController {
+                vc.modalPresentationStyle = .fullScreen
+                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
         
     }
     
     func viewDidPressed() {
-        if #available(iOS 13.0, *) {
-            if let vc = storyboard?.instantiateViewController(identifier: "consultationDetails") as? ConsultationDetailsViewController {
-                vc.modalPresentationStyle = .fullScreen
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-        } else {
-            // Fallback on earlier versions
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "consultationDetails") as? ConsultationDetailsViewController {
+            vc.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

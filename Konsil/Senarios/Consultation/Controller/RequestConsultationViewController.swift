@@ -29,9 +29,7 @@ class RequestConsultationViewController: UIViewController {
     }
     @IBOutlet weak var detailsTV: UITextView!{
         didSet{
-            self.detailsTV.layer.cornerRadius = 10
-            self.detailsTV.layer.borderWidth = 1.5
-            self.detailsTV.layer.borderColor = UIColor.gray.cgColor
+            Rounded.roundedCornerTextView(textView: detailsTV, borderColor: UIColor.gray.cgColor, radius: 10, borderWidth: 1.5)
             self.detailsTV.delegate = self
         }
     }
@@ -45,15 +43,13 @@ class RequestConsultationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
-//        textViewHieghtConstraint.constant = self.view.frame.height/5
+        //        textViewHieghtConstraint.constant = self.view.frame.height/5
     }
     
     @IBAction func completeRequestPressed(_ sender: UIButton) {
-        if #available(iOS 13.0, *) {
-            if let vc = storyboard?.instantiateViewController(identifier: "Payment") as? PaymentViewController {
-                vc.modalPresentationStyle = .fullScreen
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Payment") as? PaymentViewController {
+            vc.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -66,7 +62,6 @@ class RequestConsultationViewController: UIViewController {
     @IBAction func uploadFiles(_ sender: UIButton) {
         documentPicker.delegate = self
         documentPicker.allowsMultipleSelection = false
-        documentPicker.modalPresentationStyle = .overFullScreen
         self.present(documentPicker, animated: true, completion: nil)
     }
     
@@ -94,11 +89,9 @@ extension RequestConsultationViewController: OpalImagePickerControllerDelegate ,
                 }
             }
         }
-        
     }
     
     //MARK:- Document Picker
-    
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         FirebaseUploader.uploadFileToFirebase(viewController: self, documentPicker: documentPicker, urls: urls, uid: "Ali") { (uploaded) in
             if uploaded == true {
@@ -108,6 +101,7 @@ extension RequestConsultationViewController: OpalImagePickerControllerDelegate ,
         }
     }
     
+    // Clear TextView Text at Start
     func textViewDidBeginEditing(_ textView: UITextView) {
         detailsTV.text = ""
     }

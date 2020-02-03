@@ -37,13 +37,11 @@ class Walkthrough1ViewController: UIViewController {
         self.view.addGestureRecognizer(swipeToLeft)
         
     }
-
+    
     @objc func swipeAction(){
-        if #available(iOS 13.0, *) {
-            if let vc = storyboard?.instantiateViewController(identifier: "Walkthrough2") as? Walkthrough2ViewController {
-                vc.modalPresentationStyle = .fullScreen
-                presentViewControllerWithTransition(viewController: vc, animated: true, direction: .fromRight)
-            }
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Walkthrough2") as? Walkthrough2ViewController {
+            vc.modalPresentationStyle = .fullScreen
+            presentViewControllerWithTransition(viewController: vc, animated: true, direction: .fromRight)
         }
     }
 }

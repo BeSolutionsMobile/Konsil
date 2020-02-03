@@ -38,6 +38,7 @@ class ConversationDetailsViewController: UIViewController {
             self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController!)
             self.currentViewController = newViewController
         } else if sender.selectedSegmentIndex == 1 {
+            
             let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "ConversattionReport")
             newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
             
