@@ -15,7 +15,7 @@ class Alert {
        
       let alert = UIAlertController(title: title, message: massege, preferredStyle: .alert)
       // alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
-      alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK".localized, style: .cancel, handler: nil))
       context.present(alert, animated: true)
    }
 

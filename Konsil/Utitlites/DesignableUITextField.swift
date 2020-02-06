@@ -92,7 +92,7 @@ class DesignableUITextField: UITextField {
 
 class RegisterTextField: UITextField {
         
-    let padding = UIEdgeInsets(top: 0, left: 30 , bottom: 0, right: 5)
+    let padding = UIEdgeInsets(top: 0, left: 30 , bottom: 0, right: 30 )
 
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: padding)
@@ -108,7 +108,7 @@ class RegisterTextField: UITextField {
 }
 class MessageTextField: UITextField {
         
-    let padding = UIEdgeInsets(top: 0, left: 10 , bottom: 0, right: 5)
+    let padding = UIEdgeInsets(top: 0, left: 10 , bottom: 0, right: 10)
 
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: padding)

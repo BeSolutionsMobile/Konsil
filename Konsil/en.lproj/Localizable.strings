@@ -18,9 +18,17 @@
 "Patient History" = "Patient History";
 "Enter Patient History Here" = "Enter Patient History Here";
 "Enter Complaint Details Here" = "Enter Complaint Details Here";
+"Enter Consultation Details Here" = "Enter Consultation Details Here";
 "Disruptive behavior"  = "Disruptive behavior";
 "Prescribing Wrong Medicine" = "Prescribing Wrong Medicine";
 "Wrong Diagnosis" =  "Wrong Diagnosis";
 "No Response From Doctor" = "No Response From Doctor";
 "Image Uploaded Successfully" = "Image Uploaded Successfully";
 "Failed To Upload Image" = "Failed To Upload Image";
+"Done" = "Done";
+"OK" = "OK";
+"Error" = "Error";
+"rightArrow" = "rightArrow";
+"leftArrow" = "leftArrow";
+"Online Conversation" = "Online Conversation";
+"Consultation" = "Consultation";

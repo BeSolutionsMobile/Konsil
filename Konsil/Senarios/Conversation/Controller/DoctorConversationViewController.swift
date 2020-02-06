@@ -30,9 +30,7 @@ class DoctorConversationViewController: UIViewController {
     }
     @IBOutlet weak var imageBackView: UIView!{
         didSet{
-            self.imageBackView.layer.cornerRadius = self.imageBackView.frame.height/2
-            self.imageBackView.layer.borderColor = UIColor.gray.cgColor
-            self.imageBackView.layer.borderWidth = 2
+            Rounded.roundedCornerView(view: imageBackView, borderColor: UIColor.gray.cgColor, radius: self.imageBackView.frame.height/2, borderWidth: 2)
         }
     }
     @IBOutlet weak var backView: UIView!

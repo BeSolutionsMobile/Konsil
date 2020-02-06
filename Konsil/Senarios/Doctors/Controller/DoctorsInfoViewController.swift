@@ -14,19 +14,13 @@ class DoctorsInfoViewController: UIViewController {
     
     @IBOutlet weak var tableView: UIView!{
         didSet{
-            self.tableView.layer.cornerRadius = 10
-            self.tableView.clipsToBounds = true
-            self.tableView.layer.borderColor = UIColor.gray.cgColor
-            self.tableView.layer.borderWidth = 2
+            Rounded.roundedCornerView(view: tableView, borderColor: UIColor.gray.cgColor, radius: 10, borderWidth: 2)
         }
     }
     
     @IBOutlet weak var imageBackGroundView: UIView!{
         didSet{
-            self.imageBackGroundView.layer.cornerRadius = self.imageBackGroundView.frame.height/2
-            self.imageBackGroundView.layer.borderWidth = 2
-            self.imageBackGroundView.layer.borderColor = UIColor.gray.cgColor
-            self.imageBackGroundView.clipsToBounds = true
+            Rounded.roundedCornerView(view: imageBackGroundView, borderColor: UIColor.gray.cgColor, radius: imageBackGroundView.frame.height/2, borderWidth: 2)
         }
     }
     @IBOutlet weak var doctorImage: UIImageView!{
@@ -40,14 +34,23 @@ class DoctorsInfoViewController: UIViewController {
     @IBOutlet weak var requestConsultarionBack: UILabel!{
         didSet{
             self.requestConsultarionBack.layer.cornerRadius = 15
-            self.requestConsultarionBack.layer.maskedCorners = [ .layerMinXMaxYCorner, .layerMinXMinYCorner ]
+            if "Lang".localized == "ar" {
+                self.requestConsultarionBack.layer.maskedCorners = [.layerMaxXMaxYCorner , .layerMaxXMinYCorner]
+            } else {
+                self.requestConsultarionBack.layer.maskedCorners = [ .layerMinXMaxYCorner, .layerMinXMinYCorner ]
+            }
             self.requestConsultarionBack.clipsToBounds = true
         }
     }
+    
     @IBOutlet weak var requestConversationBack: UILabel!{
         didSet{
             self.requestConversationBack.layer.cornerRadius = 15
-            self.requestConversationBack.layer.maskedCorners = [.layerMaxXMaxYCorner , .layerMaxXMinYCorner]
+            if "Lang".localized == "ar"{
+                self.requestConversationBack.layer.maskedCorners = [ .layerMinXMaxYCorner, .layerMinXMinYCorner ]
+            } else {
+                self.requestConversationBack.layer.maskedCorners = [.layerMaxXMaxYCorner , .layerMaxXMinYCorner]
+            }
             self.requestConversationBack.clipsToBounds = true
         }
     }

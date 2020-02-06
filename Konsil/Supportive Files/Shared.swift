@@ -19,7 +19,6 @@ class Shared {
         settings.presentationStyle = presentationStyle
         settings.statusBarEndAlpha = 0
         settings.allowPushOfSameClassTwice = false
-        settings.blurEffectStyle = .regular
         switch currentDevice {
         case .pad:
             settings.menuWidth = 350

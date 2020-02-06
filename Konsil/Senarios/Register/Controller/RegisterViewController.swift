@@ -11,6 +11,11 @@ import BEMCheckBox
 class RegisterViewController: UIViewController {
     
     //MARK:- IBOutlets
+    @IBOutlet weak var backButton: UIButton!{
+        didSet{
+            backButton.setImage(UIImage(named: "leftArrow".localized), for: .normal)
+        }
+    }
     @IBOutlet weak var name: DesignableUITextField!{
         didSet{
             Rounded.roundedCornerTextField(textField: self.name, borderColor: UIColor.gray.cgColor, radius: self.name.frame.height/2)
@@ -76,11 +81,89 @@ class RegisterViewController: UIViewController {
     }
     
     //MARK:- Change Status Bar To Dark
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        return .darkContent
-//    }
+    //    override var preferredStatusBarStyle: UIStatusBarStyle {
+    //        return .darkContent
+    //    }
     
     //MARK:- IBActions
+    
+    @IBAction func backButPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "BackToLogin", sender: self)
+    }
+    
+    @IBAction func registerPressed(_ sender: UIButton) {
+        
+        //        if checkBox.on == true {
+        //            DispatchQueue.main.async { [weak self] in
+        //                APIClient.register(name: self?.name.text ?? "", email: self?.email.text ?? "", password: self?.password.text ?? "", phone: self?.phone.text ?? "", image_url: "", platform: 3, lang: "Lang".localized, mobile_tokken: "NNNNN") { (Result) in
+        //                    switch Result {
+        //                    case.success(let response):
+        //                        print(response)
+        //                    case .failure(let error):
+        //                        print("error duo")
+        //                        print(error.localizedDescription)
+        //                    }
+        //                }
+        //            }
+        //        } else {
+        //            Alert.show("Error", massege: "Please accept our terms and conditions then try again".localized, context: self)
+        //        }
+        
+        if checkBox.on == true {
+            let validate = validateAllFields()
+            if validate == true {
+                print("good")
+            } else {
+                print("No")
+            }
+        } else {
+            Alert.show("Error".localized, massege: "Please accept our terms and conditions then try again".localized, context: self)
+        }
+        
+    }
+    
+    // Check All TextFields
+    func validateAllFields() ->Bool {
+        if name.text!.count < 3 || email.text!.isEmpty || phone.text!.count < 10 || password.text!.count < 6 {
+            if name.text!.count < 3  {
+                name.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
+            }
+            if phone.text!.count < 10 {
+                phone.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
+            }
+            if password.text!.count < 6 {
+                password.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
+            }
+            if let mail = email.text {
+                let valied = isValidEmail(mail)
+                if valied == false {
+                    email.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
+                }
+            }
+            if email.text!.count < 5 {
+                email.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
+            }
+            return false
+            
+        } else {
+            name.layer.borderColor = UIColor.gray.cgColor
+            phone.layer.borderColor = UIColor.gray.cgColor
+            password.layer.borderColor = UIColor.gray.cgColor
+            email.layer.borderColor = UIColor.gray.cgColor
+            return true
+        }
+    }
+    
+    // Check Email Validation
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
+    
+    @IBAction func acceptAllTermsAndConditions(_ sender: BEMCheckBox) {
+        
+    }
     @IBAction func registerWithTwitter(_ sender: UIButton) {
     }
     
@@ -90,23 +173,19 @@ class RegisterViewController: UIViewController {
     @IBAction func registerWithFacebook(_ sender: UIButton) {
     }
     
-    @IBAction func backButPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "BackToLogin", sender: self)
-    }
-    
-    @IBAction func registerPressed(_ sender: UIButton) {
-        if checkBox.on == true {
-            backView.isHidden = false
-            backView.isUserInteractionEnabled = true
-            BlurView(view: animationView)
-        } else {
-            Alert.show("Error", massege: "Please accept our terms and conditions then try again".localized, context: self)
+    // MARK:- Revert TextField's Border Color To Normal When Selected Or Text Changed
+    @IBAction func textDidChange(_ sender: UITextField) {
+        if sender.layer.borderColor != UIColor.gray.cgColor {
+            sender.layer.borderColor = UIColor.gray.cgColor
         }
     }
     
-    @IBAction func acceptAllTermsAndConditions(_ sender: BEMCheckBox) {
-        
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.layer.borderColor != UIColor.gray.cgColor {
+            textField.layer.borderColor = UIColor.gray.cgColor
+        }
     }
+    
     
     //MARK:- Prepare For Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

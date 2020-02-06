@@ -1,15 +1,15 @@
 
 /* Class = "UINavigationItem"; title = "Doctor Info"; ObjectID = "02c-N2-GFV"; */
-"02c-N2-GFV.title" = "Arzt Info";
+"02c-N2-GFV.title" = "تفاصيل الطبيب";
 
 /* Class = "UITextField"; placeholder = "Enter message here "; ObjectID = "03m-8h-Ogu"; */
-"03m-8h-Ogu.placeholder" = "Nachricht hier eingeben ";
+"03m-8h-Ogu.placeholder" = " ارسل رساله";
 
 /* Class = "UILabel"; text = "Degree"; ObjectID = "0EA-Rb-dqm"; */
-"0EA-Rb-dqm.text" = "Grad";
+"0EA-Rb-dqm.text" = "الدرجه";
 
 /* Class = "UILabel"; text = "Consultation Amount :"; ObjectID = "0Td-18-pOd"; */
-"0Td-18-pOd.text" = "Beratungsbetrag :";
+"0Td-18-pOd.text" = "تكلفة الاستشارة :";
 
 /* Class = "UILabel"; text = "Ahmed Fathi"; ObjectID = "0wA-bZ-pLR"; */
 "0wA-bZ-pLR.text" = "Ahmed Fathi";
@@ -17,26 +17,26 @@
 /* Class = "UILabel"; text = "messs"; ObjectID = "2MZ-pO-idE"; */
 "2MZ-pO-idE.text" = "messs";
 
-/* Class = "UILabel"; text = "Newroasdllaaa ddsdsdh asdsd"; ObjectID = "2mY-F3-awu"; */
-"2mY-F3-awu.text" = "Newroasdllaaa ddsdsdh asdsd";
+/* Class = "UILabel"; text = "Newroasdllaaa "; ObjectID = "2mY-F3-awu"; */
+"2mY-F3-awu.text" = "Newroasdllaaa ";
 
 /* Class = "UIButton"; normalTitle = "Request online conversation"; ObjectID = "2mr-MJ-giv"; */
-"2mr-MJ-giv.normalTitle" = "Online-Gespräch anfordern";
+"2mr-MJ-giv.normalTitle" = "طلب محادثه اون لاين";
 
 /* Class = "UINavigationItem"; title = "Request Online Conversation"; ObjectID = "2vG-wT-t2h"; */
-"2vG-wT-t2h.title" = "Online-Gespräch anfordern";
+"2vG-wT-t2h.title" = "طلب محادثه اون لاين";
 
 /* Class = "UIButton"; normalTitle = "Request online conversation"; ObjectID = "3Sj-9x-fnb"; */
-"3Sj-9x-fnb.normalTitle" = "Online-Gespräch anfordern";
+"3Sj-9x-fnb.normalTitle" = "طلب محادثه اون لاين";
 
 /* Class = "UILabel"; text = "Reqeust Online Conversation"; ObjectID = "3ap-3v-FnW"; */
-"3ap-3v-FnW.text" = "Online-Gespräch anfordern";
+"3ap-3v-FnW.text" = "طلب محادثه اون لاين";
 
 /* Class = "UILabel"; text = "open"; ObjectID = "3es-GT-6XA"; */
-"3es-GT-6XA.text" = "öffnen";
+"3es-GT-6XA.text" = "فتح";
 
 /* Class = "UILabel"; text = "Acconut Number : "; ObjectID = "3v2-eA-tpp"; */
-"3v2-eA-tpp.text" = "Kontonummer : ";
+"3v2-eA-tpp.text" = "رقم الحساب : ";
 
 /* Class = "UILabel"; text = "30 $"; ObjectID = "4pw-Pc-z4a"; */
 "4pw-Pc-z4a.text" = "30 $";
@@ -48,7 +48,7 @@
 "51H-ty-5r6.text" = "Dental Specialist";
 
 /* Class = "UINavigationItem"; title = "Personal Info"; ObjectID = "5VC-zC-gcZ"; */
-"5VC-zC-gcZ.title" = "persönliche Informationen";
+"5VC-zC-gcZ.title" = "البيانات الشخصيه";
 
 /* Class = "UILabel"; text = "Label Label Label Label Label "; ObjectID = "5aV-6j-45q"; */
 "5aV-6j-45q.text" = "Label Label Label Label Label ";
@@ -57,52 +57,52 @@
 "5bc-J5-awr.text" = "Ibrahiem Mohamed";
 
 /* Class = "UILabel"; text = "Consultation title"; ObjectID = "63G-uh-qT7"; */
-"63G-uh-qT7.text" = "Beratungstitel";
+"63G-uh-qT7.text" = "عنوان الاستشاره";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "6Kq-ZE-LkE"; */
-"6Kq-ZE-LkE.text" = "Label";
+/* Class = "UILabel"; text = "25"; ObjectID = "6Kq-ZE-LkE"; */
+"6Kq-ZE-LkE.text" = "25";
 
 /* Class = "UILabel"; text = "1pm to 12am"; ObjectID = "6QG-x7-naz"; */
 "6QG-x7-naz.text" = "1pm to 12am";
 
 /* Class = "UIButton"; normalTitle = "  Filter"; ObjectID = "6eM-ec-uwy"; */
-"6eM-ec-uwy.normalTitle" = "  Filter";
+"6eM-ec-uwy.normalTitle" = "تصنيف  ";
 
 /* Class = "UIButton"; normalTitle = "Complete the request"; ObjectID = "7SR-pl-IdH"; */
-"7SR-pl-IdH.normalTitle" = "Ergänzen Sie die Anfrage";
+"7SR-pl-IdH.normalTitle" = "اكمال الطلب";
 
 /* Class = "UILabel"; text = " Allow Biometric Authentication      "; ObjectID = "7zG-Xc-eOc"; */
-"7zG-Xc-eOc.text" = " Erlaube biometrische Authentifizierung";
+"7zG-Xc-eOc.text" = " Allow Biometric Authentication      ";
 
 /* Class = "UILabel"; text = "Degree :"; ObjectID = "80i-5c-i8N"; */
-"80i-5c-i8N.text" = "Grad :";
+"80i-5c-i8N.text" = "الدرجه :";
 
 /* Class = "UINavigationItem"; title = "Consultation Request"; ObjectID = "9wQ-Az-Uk8"; */
-"9wQ-Az-Uk8.title" = "Rückfrage";
+"9wQ-Az-Uk8.title" = "طلب استشار";
 
 /* Class = "UILabel"; text = "date of report :"; ObjectID = "AEm-pa-hsO"; */
-"AEm-pa-hsO.text" = "Datum des Berichts :";
+"AEm-pa-hsO.text" = "تاريخ التقرير :";
 
 /* Class = "UILabel"; text = "Filter Data Based on"; ObjectID = "AGC-IS-0s5"; */
-"AGC-IS-0s5.text" = "Daten filtern basierend auf";
+"AGC-IS-0s5.text" = "التصنيف حسب";
 
 /* Class = "UILabel"; text = "Complaint title"; ObjectID = "AN7-7t-vA5"; */
-"AN7-7t-vA5.text" = "Complaint title";
+"AN7-7t-vA5.text" = "عنوان الشكوي";
 
 /* Class = "UINavigationItem"; title = "Specialities List"; ObjectID = "Abq-dy-sib"; */
-"Abq-dy-sib.title" = "Spezialitätenliste";
+"Abq-dy-sib.title" = "قائمة التخصصات";
 
 /* Class = "UINavigationItem"; title = "Make A Complaint"; ObjectID = "B1O-e7-DNe"; */
-"B1O-e7-DNe.title" = "Eine Beschwerde einreichen";
+"B1O-e7-DNe.title" = "ارسال شكوى";
 
 /* Class = "UILabel"; text = "Account Name : "; ObjectID = "B2g-1Q-0VQ"; */
-"B2g-1Q-0VQ.text" = "Kontobezeichnung : ";
+"B2g-1Q-0VQ.text" = "اسم الحساب : ";
 
 /* Class = "UILabel"; text = "Ahmed Mohamed Ali"; ObjectID = "CE1-OJ-oIq"; */
 "CE1-OJ-oIq.text" = "Ahmed Mohamed Ali";
 
 /* Class = "UIButton"; normalTitle = "Complete the request"; ObjectID = "CMk-c7-mk0"; */
-"CMk-c7-mk0.normalTitle" = "Ergänzen Sie die Anfrage";
+"CMk-c7-mk0.normalTitle" = "اكمال الطلب";
 
 /* Class = "UILabel"; text = "Ali Mohamed "; ObjectID = "Cay-ff-Ivd"; */
 "Cay-ff-Ivd.text" = "Ali Mohamed ";
@@ -111,55 +111,55 @@
 "Csh-Ec-haE.text" = "Dr Ibrahiem asdasdasd asdasdasdasd";
 
 /* Class = "UILabel"; text = "Welcome to Konsil"; ObjectID = "Cx0-PD-hNv"; */
-"Cx0-PD-hNv.text" = "Willkommen Bei Konzilmed";
+"Cx0-PD-hNv.text" = "مرحبا فى كونسيل";
 
 /* Class = "UILabel"; text = "Complaint status :"; ObjectID = "D36-iM-lYz"; */
-"D36-iM-lYz.text" = "Reklamationsstatus :";
+"D36-iM-lYz.text" = "حالة الشكوي :";
 
 /* Class = "UILabel"; text = "Prof"; ObjectID = "Die-hv-Aff"; */
-"Die-hv-Aff.text" = "Prof";
+"Die-hv-Aff.text" = "بروفيسور";
 
 /* Class = "UILabel"; text = "Consultation details"; ObjectID = "DsO-Dm-1L8"; */
-"DsO-Dm-1L8.text" = "Einzelheiten zur Konsultation";
+"DsO-Dm-1L8.text" = "تقاصيل الاستشاره";
 
 /* Class = "UIButton"; normalTitle = "Send"; ObjectID = "Edi-KE-bhx"; */
-"Edi-KE-bhx.normalTitle" = "Senden";
+"Edi-KE-bhx.normalTitle" = "ارسال";
 
 /* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "FRs-fD-I0B"; */
-"FRs-fD-I0B.normalTitle" = "überspringen";
+"FRs-fD-I0B.normalTitle" = "تخطى";
 
 /* Class = "UIButton"; normalTitle = "Start!"; ObjectID = "FVp-tt-UxM"; */
-"FVp-tt-UxM.normalTitle" = "Start!";
+"FVp-tt-UxM.normalTitle" = "بدأ";
 
 /* Class = "UILabel"; text = "open"; ObjectID = "FXa-U1-R7U"; */
-"FXa-U1-R7U.text" = "öffnen";
+"FXa-U1-R7U.text" = "فتح";
 
 /* Class = "UILabel"; text = "123-456-78"; ObjectID = "Fil-0Y-S0P"; */
 "Fil-0Y-S0P.text" = "123-456-78";
 
 /* Class = "UITextField"; placeholder = "Enter your name"; ObjectID = "FkR-Dc-cKc"; */
-"FkR-Dc-cKc.placeholder" = "Füge deinen Namen hinzu";
+"FkR-Dc-cKc.placeholder" = "الاسم";
 
 /* Class = "UILabel"; text = "No Account ?"; ObjectID = "GFF-jO-xWf"; */
-"GFF-jO-xWf.text" = "kein Account ?";
+"GFF-jO-xWf.text" = "ليس لديك حساب ؟";
 
 /* Class = "UITextField"; placeholder = "Add photo"; ObjectID = "GbI-Sj-YYR"; */
-"GbI-Sj-YYR.placeholder" = "Foto hinzufügen";
+"GbI-Sj-YYR.placeholder" = "اضافة صوره";
 
 /* Class = "UITextField"; text = "Add photo"; ObjectID = "GbI-Sj-YYR"; */
-"GbI-Sj-YYR.text" = "Foto hinzufügen";
+"GbI-Sj-YYR.text" = "اضافة صوره";
 
 /* Class = "UILabel"; text = "date of report :"; ObjectID = "GwV-kY-A6X"; */
-"GwV-kY-A6X.text" = "Datum des Berichts :";
+"GwV-kY-A6X.text" = "تاريخ التقرير :";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "HfP-Ql-oio"; */
 "HfP-Ql-oio.text" = "Label";
 
-/* Class = "UITextField"; placeholder = "Change password"; ObjectID = "HwV-La-9qL"; */
-"HwV-La-9qL.placeholder" = "Passwort ändern";
+/* Class = "UITextField"; placeholder = "Change"; ObjectID = "HwV-La-9qL"; */
+"HwV-La-9qL.placeholder" = "تغيير كلمة المرور";
 
-/* Class = "UITextField"; text = "Change password"; ObjectID = "HwV-La-9qL"; */
-"HwV-La-9qL.text" = "Passwort ändern";
+/* Class = "UITextField"; text = "Change Password"; ObjectID = "HwV-La-9qL"; */
+"HwV-La-9qL.text" = "تغيير كلمة المرور";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "I6L-4y-YV0"; */
 "I6L-4y-YV0.text" = "Label";
@@ -168,108 +168,115 @@
 "IRC-Mb-icZ.text" = "123456";
 
 /* Class = "UILabel"; text = "ended"; ObjectID = "IYd-VZ-oda"; */
-"IYd-VZ-oda.text" = "beendet";
+"IYd-VZ-oda.text" = "ended";
 
 /* Class = "UILabel"; text = "...................................................................................."; ObjectID = "IaL-5f-HlO"; */
 "IaL-5f-HlO.text" = "....................................................................................";
 
 /* Class = "UIButton"; normalTitle = "Make a complaint"; ObjectID = "InA-gM-ifh"; */
-"InA-gM-ifh.normalTitle" = "Eine Beschwerde einreichen";
+"InA-gM-ifh.normalTitle" = "ارسال شكوى";
 
 /* Class = "UITextField"; text = "Bank Transfer"; ObjectID = "Inl-62-6Gb"; */
 "Inl-62-6Gb.text" = "Bank Transfer";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "Its-Z2-Iyp"; */
-"Its-Z2-Iyp.normalTitle" = "Einreichen";
+"Its-Z2-Iyp.normalTitle" = "تم";
 
 /* Class = "UILabel"; text = "Dr. Samir"; ObjectID = "IvR-OO-NFe"; */
 "IvR-OO-NFe.text" = "Dr. Samir";
 
 /* Class = "UILabel"; text = "Upload files of the medical consultation"; ObjectID = "J7x-B1-Qiz"; */
-"J7x-B1-Qiz.text" = "Dateien der ärztlichen Konsultation hochladen";
+"J7x-B1-Qiz.text" = "اختيار ملفات الاستشاره الطبيه";
+
+/* Class = "UILabel"; text = "Patient History"; ObjectID = "Jgt-Kl-gbn"; */
+"Jgt-Kl-gbn.text" = "تاريخ المريض";
 
 /* Class = "UITextField"; text = "Visa"; ObjectID = "Jtp-G9-Cua"; */
 "Jtp-G9-Cua.text" = "Visa";
 
 /* Class = "UILabel"; text = "OR"; ObjectID = "K0G-ti-CC9"; */
-"K0G-ti-CC9.text" = "Oder";
+"K0G-ti-CC9.text" = "او";
 
 /* Class = "UITextField"; placeholder = "Full Name"; ObjectID = "Kkr-KY-kSr"; */
-"Kkr-KY-kSr.placeholder" = "Vollständiger Name";
+"Kkr-KY-kSr.placeholder" = "الاسم بالكامل";
 
-/* Class = "UILabel"; text = "open"; ObjectID = "KmI-u3-CRf"; */
-"KmI-u3-CRf.text" = "öffnen";
+/* Class = "UILabel"; text = "closed"; ObjectID = "KmI-u3-CRf"; */
+"KmI-u3-CRf.text" = "مغلق";
 
 /* Class = "UILabel"; text = "notes kindly open the  link at the time and talk with doctor"; ObjectID = "KxF-eJ-yqE"; */
-"KxF-eJ-yqE.text" = "Bitte öffnen Sie den Link zu der Zeit, um mit dem Arzt zu sprechen
+"KxF-eJ-yqE.text" = "ملاحظه: رجاء الضغط على الرابط فى الميعاد المحدد للتحدث الى الطبيب";
 
-";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "LAc-bc-9XR"; */
-"LAc-bc-9XR.text" = "Label";
+/* Class = "UILabel"; text = "40"; ObjectID = "LAc-bc-9XR"; */
+"LAc-bc-9XR.text" = "40";
 
 /* Class = "UILabel"; text = "...................................................................................."; ObjectID = "LJz-I6-Tak"; */
 "LJz-I6-Tak.text" = "....................................................................................";
 
 /* Class = "UILabel"; text = "Deg"; ObjectID = "LnZ-iJ-coU"; */
-"LnZ-iJ-coU.text" = "Deg";
+"LnZ-iJ-coU.text" = "الدرجة";
 
 /* Class = "UIButton"; normalTitle = "Log In"; ObjectID = "Ls1-72-ed8"; */
-"Ls1-72-ed8.normalTitle" = "Anmeldung";
+"Ls1-72-ed8.normalTitle" = "تسجيل الدخول";
 
 /* Class = "UILabel"; text = "Please Upload Receipt"; ObjectID = "ME5-gl-hw5"; */
-"ME5-gl-hw5.text" = "Bitte laden Sie die Quittung hoch";
+"ME5-gl-hw5.text" = "Please Upload Receipt";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "MOF-NQ-Uea"; */
-"MOF-NQ-Uea.placeholder" = "Passwort";
+"MOF-NQ-Uea.placeholder" = "كلمة المرور";
 
 /* Class = "UITextField"; placeholder = "Enter your password"; ObjectID = "MU7-aD-TRi"; */
-"MU7-aD-TRi.placeholder" = "Fügen Sie Ihr Passwort hinzu";
+"MU7-aD-TRi.placeholder" = " كلمة المرور";
 
 /* Class = "UILabel"; text = "Download"; ObjectID = "Nys-xS-44C"; */
-"Nys-xS-44C.text" = "Herunterladen";
+"Nys-xS-44C.text" = "تحميل";
 
 /* Class = "UISegmentedControl"; OgV-Jf-SzV.segmentTitles[0] = "Messages"; ObjectID = "OgV-Jf-SzV"; */
-"OgV-Jf-SzV.segmentTitles[0]" = "Mitteilungen";
+"OgV-Jf-SzV.segmentTitles[0]" = "الرسائل";
 
 /* Class = "UISegmentedControl"; OgV-Jf-SzV.segmentTitles[1] = "Final report"; ObjectID = "OgV-Jf-SzV"; */
-"OgV-Jf-SzV.segmentTitles[1]" = "Bericht";
+"OgV-Jf-SzV.segmentTitles[1]" = "التقرير النهائى";
 
 /* Class = "UISegmentedControl"; OgV-Jf-SzV.segmentTitles[2] = "Files"; ObjectID = "OgV-Jf-SzV"; */
-"OgV-Jf-SzV.segmentTitles[2]" = "Dateien";
+"OgV-Jf-SzV.segmentTitles[2]" = "الملفات";
 
 /* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "Ozb-34-Jrp"; */
-"Ozb-34-Jrp.normalTitle" = "überspringen";
+"Ozb-34-Jrp.normalTitle" = "تخطى";
 
-/* Class = "UILabel"; text = "Complaint Tybe"; ObjectID = "PJE-Z7-NQy"; */
-"PJE-Z7-NQy.text" = "Beschwerde Typ";
+/* Class = "UILabel"; text = "Complaint Type"; ObjectID = "PJE-Z7-NQy"; */
+"PJE-Z7-NQy.text" = "نوع الشكوى";
 
 /* Class = "UILabel"; text = "HSBC"; ObjectID = "PeT-74-5w3"; */
 "PeT-74-5w3.text" = "HSBC";
 
 /* Class = "UILabel"; text = "Counseling status :"; ObjectID = "QFo-GH-t1x"; */
-"QFo-GH-t1x.text" = "Beratungsstatus :";
+"QFo-GH-t1x.text" = "حالة الاستشارة :";
 
 /* Class = "UILabel"; text = "Chat & Consult"; ObjectID = "QN3-Mz-z18"; */
-"QN3-Mz-z18.text" = "Beraten & Chatten";
+"QN3-Mz-z18.text" = "استشر و تحدث الى طبيبك";
 
 /* Class = "UILabel"; text = "Conversation status :"; ObjectID = "RA1-Yt-7h4"; */
-"RA1-Yt-7h4.text" = "Erhaltungsstatus :";
+"RA1-Yt-7h4.text" = "حاله المحادثه :";
 
 /* Class = "UITextField"; text = "Master Card"; ObjectID = "SB3-Oy-DQc"; */
 "SB3-Oy-DQc.text" = "Master Card";
 
 /* Class = "UILabel"; text = "Patients"; ObjectID = "T5V-P9-Zpy"; */
-"T5V-P9-Zpy.text" = "Patienten";
+"T5V-P9-Zpy.text" = "المرضى";
 
 /* Class = "UILabel"; text = "Policy"; ObjectID = "TLn-lG-aeg"; */
-"TLn-lG-aeg.text" = "Politik";
+"TLn-lG-aeg.text" = "السياسه";
 
 /* Class = "UINavigationItem"; title = "Online Conversation Details"; ObjectID = "TlA-TU-dmx"; */
-"TlA-TU-dmx.title" = "Online-Konversationsdetails";
+"TlA-TU-dmx.title" = "تفاصيل المحادثه";
 
 /* Class = "UINavigationItem"; title = "Doctors Filters"; ObjectID = "Vte-H0-vYm"; */
-"Vte-H0-vYm.title" = "Ärzte Filter";
+"Vte-H0-vYm.title" = "تصنيف الاطباء";
+
+/* Class = "UINavigationItem"; title = "Consultation Details"; ObjectID = "Wl8-ix-O5h"; */
+"Wl8-ix-O5h.title" = "تقاصيل الاستشاره";
+
+/* Class = "UITextField"; placeholder = "Enter Complaint Title "; ObjectID = "XEE-QJ-0nC"; */
+"XEE-QJ-0nC.placeholder" = "ادخل عنوان الشكوي ";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "YBe-aD-Z0K"; */
 "YBe-aD-Z0K.text" = "Label";
@@ -278,256 +285,265 @@
 "YDL-nL-ess.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "Complete the request"; ObjectID = "YHi-gn-4IZ"; */
-"YHi-gn-4IZ.normalTitle" = "Ergänzen Sie die Anfrage";
+"YHi-gn-4IZ.normalTitle" = "اكمال الطلب";
 
 /* Class = "UIButton"; normalTitle = "Request online conversation"; ObjectID = "YNA-Cr-8yZ"; */
-"YNA-Cr-8yZ.normalTitle" = "Online-Gespräch anfordern";
+"YNA-Cr-8yZ.normalTitle" = "طلب محادثه اون لاين";
 
 /* Class = "UITextField"; placeholder = "E-mail"; ObjectID = "YRQ-3I-hbr"; */
-"YRQ-3I-hbr.placeholder" = "E-mail";
+"YRQ-3I-hbr.placeholder" = "البريد الالكترونى";
 
 /* Class = "UITextField"; text = "Change e-mail"; ObjectID = "YRQ-3I-hbr"; */
-"YRQ-3I-hbr.text" = "Ändern Sie die E-Mail";
+"YRQ-3I-hbr.text" = "تغيير البريد الالكنرونى";
 
 /* Class = "UIButton"; normalTitle = "View"; ObjectID = "YSr-i4-Smy"; */
-"YSr-i4-Smy.normalTitle" = "Aussicht";
+"YSr-i4-Smy.normalTitle" = "عرض";
 
 /* Class = "UILabel"; text = "Personal info"; ObjectID = "YaF-yM-6ak"; */
-"YaF-yM-6ak.text" = "Persönliche Angaben";
+"YaF-yM-6ak.text" = "البيانات الشخصيه";
 
-/* Class = "UILabel"; text = "Cpc - analysis"; ObjectID = "ZC5-lk-aeO"; */
+/* Class = "UILabel"; text = "Cpc - analydois"; ObjectID = "ZC5-lk-aeO"; */
 "ZC5-lk-aeO.text" = "Cpc - analysis";
 
 /* Class = "UILabel"; text = "Specialist"; ObjectID = "ZXL-Wg-x5d"; */
-"ZXL-Wg-x5d.text" = "Spezialist";
+"ZXL-Wg-x5d.text" = "متخصص";
 
 /* Class = "UITextField"; placeholder = "Add phone"; ObjectID = "Zmj-ws-KSJ"; */
-"Zmj-ws-KSJ.placeholder" = "Telefon hinzufügen";
+"Zmj-ws-KSJ.placeholder" = "اضافة رقم الهاتف";
 
-/* Class = "UITextField"; text = "Add Phone"; ObjectID = "Zmj-ws-KSJ"; */
-"Zmj-ws-KSJ.text" = "Telefon hinzufügen";
+/* Class = "UITextField"; text = "0123456789"; ObjectID = "Zmj-ws-KSJ"; */
+"Zmj-ws-KSJ.text" = "0123456789";
 
 /* Class = "UILabel"; text = "These are all the uploaded Files"; ObjectID = "aMC-zk-dKz"; */
-"aMC-zk-dKz.text" = "Dies sind alles hochgeladene Dateien";
+"aMC-zk-dKz.text" = "الملفات المرفوعه";
 
 /* Class = "UILabel"; text = "Dental Specialist"; ObjectID = "aZP-ou-N0A"; */
-"aZP-ou-N0A.text" = "Dental Specialist";
+"aZP-ou-N0A.text" = "طبيب اسنان";
 
 /* Class = "UILabel"; text = "Appointments available for doctor"; ObjectID = "acY-Wl-M3v"; */
-"acY-Wl-M3v.text" = "Termine für den Arzt zur Verfügung";
+"acY-Wl-M3v.text" = "المواعيد المتاحه";
 
 /* Class = "UITextField"; placeholder = "Full Name"; ObjectID = "aex-c3-nEp"; */
-"aex-c3-nEp.placeholder" = "Vollständiger Name";
+"aex-c3-nEp.placeholder" = "تعديل الاسم";
 
 /* Class = "UITextField"; text = "Change name"; ObjectID = "aex-c3-nEp"; */
-"aex-c3-nEp.text" = "Namen ändern";
+"aex-c3-nEp.text" = "تغيير الاسم";
 
 /* Class = "UILabel"; text = "Counseling status :"; ObjectID = "ajS-nc-4fv"; */
-"ajS-nc-4fv.text" = "Beratungsstatus :";
+"ajS-nc-4fv.text" = "حالة الاستشارة";
 
 /* Class = "UILabel"; text = "Surgery"; ObjectID = "b6H-vw-5AY"; */
-"b6H-vw-5AY.text" = "Surgery";
+"b6H-vw-5AY.text" = "جراحه";
 
 /* Class = "UIButton"; normalTitle = "Complete The Request "; ObjectID = "bAF-ao-DpH"; */
-"bAF-ao-DpH.normalTitle" = "Ergänzen Sie die Anfrage ";
+"bAF-ao-DpH.normalTitle" = " اكمال الطلب";
 
 /* Class = "UILabel"; text = "chat message asdasdasdasdasd"; ObjectID = "bJk-Bz-lzm"; */
 "bJk-Bz-lzm.text" = "chat message asdasdasdasdasd";
 
 /* Class = "UILabel"; text = "Dr :"; ObjectID = "bhN-UB-oAO"; */
-"bhN-UB-oAO.text" = "Dr :";
+"bhN-UB-oAO.text" = "د :";
 
 /* Class = "UISegmentedControl"; btv-Lp-dQI.segmentTitles[0] = "Info"; ObjectID = "btv-Lp-dQI"; */
-"btv-Lp-dQI.segmentTitles[0]" = "Die Info";
+"btv-Lp-dQI.segmentTitles[0]" = "معلومات";
 
 /* Class = "UISegmentedControl"; btv-Lp-dQI.segmentTitles[1] = "Report"; ObjectID = "btv-Lp-dQI"; */
-"btv-Lp-dQI.segmentTitles[1]" = "Bericht";
+"btv-Lp-dQI.segmentTitles[1]" = "تقرير";
 
 /* Class = "UIButton"; normalTitle = "  Doctors List"; ObjectID = "c5u-q9-LKf"; */
-"c5u-q9-LKf.normalTitle" = "  Ärzte Liste";
+"c5u-q9-LKf.normalTitle" = "قائمة الاطباء ";
+
+/* Class = "UITextView"; text = "Enter Complaint Details Here"; ObjectID = "cAj-N3-OSd"; */
+"cAj-N3-OSd.text" = "تفاصيل الشكوي";
 
 /* Class = "UITextField"; placeholder = "E-mail"; ObjectID = "crY-pX-NIp"; */
-"crY-pX-NIp.placeholder" = "E-mail";
+"crY-pX-NIp.placeholder" = "البريد الالكترونى";
 
 /* Class = "UITextField"; placeholder = "E-mail Address"; ObjectID = "cs9-9a-7VH"; */
-"cs9-9a-7VH.placeholder" = "E-Mail-Addresse";
+"cs9-9a-7VH.placeholder" = "البريد الالكترونى";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "d5J-iS-DZU"; */
 "d5J-iS-DZU.text" = "Label";
 
 /* Class = "UILabel"; text = "Choose file to upload "; ObjectID = "d9e-or-EzU"; */
-"d9e-or-EzU.text" = "Wählen Sie eine Datei aus, um sie hochzuladen ";
+"d9e-or-EzU.text" = "اختر الملف";
 
 /* Class = "UILabel"; text = "Please select from the available periods"; ObjectID = "dGM-rE-iFv"; */
-"dGM-rE-iFv.text" = "Bitte wählen Sie aus den verfügbaren Zeiträumen";
+"dGM-rE-iFv.text" = "رجاء الاختيار من المواعيد المتاحه";
 
 /* Class = "UILabel"; text = "Duration :"; ObjectID = "doo-bb-h5y"; */
-"doo-bb-h5y.text" = "Dauer :";
+"doo-bb-h5y.text" = "المده :";
 
 /* Class = "UILabel"; text = "Advisory"; ObjectID = "eC6-Vr-YcD"; */
-"eC6-Vr-YcD.text" = "Beratend";
+"eC6-Vr-YcD.text" = "استشارى";
 
 /* Class = "UINavigationItem"; title = "My Consultations"; ObjectID = "eOP-mp-hdF"; */
-"eOP-mp-hdF.title" = "Konsultationen";
+"eOP-mp-hdF.title" = "استشاراتى";
 
 /* Class = "UILabel"; text = "open"; ObjectID = "efV-ld-tCc"; */
-"efV-ld-tCc.text" = "öffnen";
+"efV-ld-tCc.text" = "فتح";
 
 /* Class = "UILabel"; text = "30 $"; ObjectID = "fTJ-CT-GOz"; */
 "fTJ-CT-GOz.text" = "30 $";
 
+/* Class = "UITextView"; text = "Enter Patient History Here"; ObjectID = "fYK-Fu-adJ"; */
+"fYK-Fu-adJ.text" = "ادخل تاريخ المريض";
+
 /* Class = "UILabel"; text = "Degree"; ObjectID = "ft8-NH-siY"; */
-"ft8-NH-siY.text" = "Grad";
+"ft8-NH-siY.text" = "الدرجه";
 
 /* Class = "UILabel"; text = "My Consultations"; ObjectID = "fyb-A0-Lt1"; */
-"fyb-A0-Lt1.text" = "Konsultationen";
+"fyb-A0-Lt1.text" = "استشاراتى";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "gHr-3J-Ll2"; */
-"gHr-3J-Ll2.placeholder" = "Passwort";
+"gHr-3J-Ll2.placeholder" = "كلمة المرور";
 
 /* Class = "UILabel"; text = "My Complaints"; ObjectID = "gaf-WH-Nb2"; */
-"gaf-WH-Nb2.text" = "Beschwerden";
+"gaf-WH-Nb2.text" = "الشكاوى";
 
 /* Class = "UINavigationItem"; title = "Be A Doctor"; ObjectID = "gpk-x9-suS"; */
-"gpk-x9-suS.title" = "Sei ein Arzt";
+"gpk-x9-suS.title" = "كن طبيب";
 
 /* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "hHg-4f-JC7"; */
-"hHg-4f-JC7.text" = "Akzeptieren Sie alle Geschäftsbedingungen";
+"hHg-4f-JC7.text" = "قبول الشروط والاحكام";
 
 /* Class = "UILabel"; text = "Counseling status :"; ObjectID = "hTW-la-ZLz"; */
-"hTW-la-ZLz.text" = "Beratungsstatus :";
+"hTW-la-ZLz.text" = "حالة الاستشارة";
+
+/* Class = "UITextView"; text = "Enter Complaint Message Here"; ObjectID = "haH-UK-ChF"; */
+"haH-UK-ChF.text" = "ادخل تفاصيل الشكوي";
 
 /* Class = "UILabel"; text = "Choose Your Payment Method"; ObjectID = "hsW-pG-auT"; */
 "hsW-pG-auT.text" = "Choose Your Payment Method";
 
 /* Class = "UILabel"; text = "Conversation status :"; ObjectID = "isS-Iu-n7T"; */
-"isS-Iu-n7T.text" = "Conversation status :";
+"isS-Iu-n7T.text" = "حاله المحادثه :";
 
 /* Class = "UITextField"; placeholder = "Enter message here"; ObjectID = "jwy-tz-mst"; */
-"jwy-tz-mst.placeholder" = "Nachricht hier eingeben";
+"jwy-tz-mst.placeholder" = "ارسل رساله";
 
 /* Class = "UITextField"; placeholder = "Phone"; ObjectID = "mLf-D6-QBs"; */
-"mLf-D6-QBs.placeholder" = "Telefon";
+"mLf-D6-QBs.placeholder" = "الهاتف";
 
 /* Class = "UITextField"; placeholder = "Enter your email"; ObjectID = "mQm-wh-tLS"; */
-"mQm-wh-tLS.placeholder" = "Fügen Sie Ihre E-Mail hinzu";
+"mQm-wh-tLS.placeholder" = "البريد الاكترونى";
 
-/* Class = "UILabel"; text = "Change Language To :"; ObjectID = "mp5-4j-Rv1"; */
-"mp5-4j-Rv1.text" = "Change Lang :";
+/* Class = "UILabel"; text = "Change Language :"; ObjectID = "mp5-4j-Rv1"; */
+"mp5-4j-Rv1.text" = "تغيير اللغة :";
 
 /* Class = "UILabel"; text = "Download"; ObjectID = "myE-RQ-qvW"; */
-"myE-RQ-qvW.text" = "Herunterladen";
+"myE-RQ-qvW.text" = "تحميل";
 
 /* Class = "UITextField"; text = "First Questtion"; ObjectID = "nCm-TY-Uqt"; */
-"nCm-TY-Uqt.text" = "First Questtion";
+"nCm-TY-Uqt.text" = "السؤال الاول";
 
 /* Class = "UILabel"; text = "Select Speciality"; ObjectID = "nMR-sx-Yjz"; */
-"nMR-sx-Yjz.text" = "Spezialität auswählen";
+"nMR-sx-Yjz.text" = "اختر التخصص";
 
 /* Class = "UILabel"; text = "Ahmed Mohamed"; ObjectID = "ndm-Ao-V54"; */
 "ndm-Ao-V54.text" = "Ahmed Mohamed";
 
 /* Class = "UINavigationItem"; title = "FAQ"; ObjectID = "oA8-yI-Cjd"; */
-"oA8-yI-Cjd.title" = "FAQ";
+"oA8-yI-Cjd.title" = "الاسئلة الشائعة";
 
 /* Class = "UILabel"; text = "123456"; ObjectID = "okD-jV-w4P"; */
 "okD-jV-w4P.text" = "123456";
 
 /* Class = "UILabel"; text = "Conversation Link : https://www.google.com"; ObjectID = "p7M-9T-0Vc"; */
-"p7M-9T-0Vc.text" = "Konversationslink : https://www.google.com";
+"p7M-9T-0Vc.text" = "رابط المحادثه";
 
 /* Class = "UILabel"; text = "Request  Consultation"; ObjectID = "pb9-SL-NfX"; */
-"pb9-SL-NfX.text" = "Konsultation anfordern";
+"pb9-SL-NfX.text" = "طلب استشاره";
 
 /* Class = "UIButton"; normalTitle = "Log Out"; ObjectID = "phx-sd-Qsw"; */
-"phx-sd-Qsw.normalTitle" = "Ausloggen";
+"phx-sd-Qsw.normalTitle" = "خروج";
 
 /* Class = "UIButton"; normalTitle = "Did Accept Print"; ObjectID = "qAv-am-fiU"; */
 "qAv-am-fiU.normalTitle" = "Did Accept Print";
 
 /* Class = "UIButton"; normalTitle = "Send"; ObjectID = "qCK-ch-c6Z"; */
-"qCK-ch-c6Z.normalTitle" = "Senden";
+"qCK-ch-c6Z.normalTitle" = "ارسال";
 
-/* Class = "UILabel"; text = "Complaint Tybe"; ObjectID = "qGN-Mc-ei2"; */
-"qGN-Mc-ei2.text" = "Beschwerde Typ";
+/* Class = "UILabel"; text = "Complaint Message"; ObjectID = "qGN-Mc-ei2"; */
+"qGN-Mc-ei2.text" = "الشكوي الحاليه";
 
 /* Class = "UILabel"; text = "Add your photo"; ObjectID = "quR-dQ-KQR"; */
-"quR-dQ-KQR.text" = "'Fügen Sie Ihr Foto hinzu";
+"quR-dQ-KQR.text" = "اضافة صورة";
 
 /* Class = "UILabel"; text = "OR"; ObjectID = "qwf-Aa-egY"; */
-"qwf-Aa-egY.text" = "oder";
+"qwf-Aa-egY.text" = "او";
 
 /* Class = "UIButton"; normalTitle = "Register"; ObjectID = "rdR-C3-hLX"; */
-"rdR-C3-hLX.normalTitle" = "Registrieren";
+"rdR-C3-hLX.normalTitle" = "التسجيل";
 
-/* Class = "UILabel"; text = "German"; ObjectID = "sM6-g4-Xmn"; */
-"sM6-g4-Xmn.text" = "ENG";
+/* Class = "UILabel"; text = "De"; ObjectID = "sM6-g4-Xmn"; */
+"sM6-g4-Xmn.text" = "De";
 
-/* Class = "UITextField"; placeholder = "Select Tybe"; ObjectID = "sVx-WN-ZVq"; */
-"sVx-WN-ZVq.placeholder" = "Art auswählen";
+/* Class = "UITextField"; placeholder = "Select Type"; ObjectID = "sVx-WN-ZVq"; */
+"sVx-WN-ZVq.placeholder" = "اختر نوع الشكوي";
 
 /* Class = "UILabel"; text = "FAQ"; ObjectID = "se3-bx-iGo"; */
-"se3-bx-iGo.text" = "FAQ";
+"se3-bx-iGo.text" = "الاسئلة الشائعة";
 
 /* Class = "UIButton"; normalTitle = "Make a complaint"; ObjectID = "tHl-Ro-WUa"; */
-"tHl-Ro-WUa.normalTitle" = "Eine Beschwerde einreichen";
+"tHl-Ro-WUa.normalTitle" = "ارسال شكوى";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "tcm-9K-GbW"; */
-"tcm-9K-GbW.normalTitle" = "Einreichen";
+"tcm-9K-GbW.normalTitle" = "تم";
 
 /* Class = "UILabel"; text = "Consultation Price"; ObjectID = "tp2-RD-fK8"; */
-"tp2-RD-fK8.text" = "Beratungspreis";
+"tp2-RD-fK8.text" = "سعر الاستشاره";
 
 /* Class = "UILabel"; text = "This is the medical report based on online conversation"; ObjectID = "trb-qN-boL"; */
-"trb-qN-boL.text" = "Dies ist der ärztliche Bericht für den Fall";
+"trb-qN-boL.text" = "تقرير الحالة بنائا علي المحادثة";
 
 /* Class = "UILabel"; text = "This is the medical report for case  "; ObjectID = "txa-UU-bDI"; */
-"txa-UU-bDI.text" = "Dies ist der ärztliche Bericht für den Fall  ";
+"txa-UU-bDI.text" = "  تقرير حالتك";
 
 /* Class = "UILabel"; text = "Date :"; ObjectID = "u1Z-0S-a9n"; */
-"u1Z-0S-a9n.text" = "Datum :";
+"u1Z-0S-a9n.text" = "التاريخ :";
 
 /* Class = "UILabel"; text = "Dr :"; ObjectID = "u6v-Cb-28t"; */
-"u6v-Cb-28t.text" = "DR :";
+"u6v-Cb-28t.text" = "د :";
 
 /* Class = "UILabel"; text = "Conversations"; ObjectID = "uUb-Ea-Dh3"; */
-"uUb-Ea-Dh3.text" = "Konversation";
+"uUb-Ea-Dh3.text" = "محادثه";
 
 /* Class = "UILabel"; text = "Rate :"; ObjectID = "uh7-Er-6Tc"; */
-"uh7-Er-6Tc.text" = "Bewertung :";
+"uh7-Er-6Tc.text" = "التقييم :";
 
 /* Class = "UITextField"; placeholder = "Enter your mobile number"; ObjectID = "vQw-Xc-nJ1"; */
-"vQw-Xc-nJ1.placeholder" = "Fügen Sie Ihr Telefon hinzu";
+"vQw-Xc-nJ1.placeholder" = "ادخل رقم الهاتف";
 
 /* Class = "UILabel"; text = "Conversation hour rate :"; ObjectID = "w1F-lM-nwb"; */
-"w1F-lM-nwb.text" = "Gesprächsstundensatz :";
+"w1F-lM-nwb.text" = "سعر المحادثه :";
 
 /* Class = "UINavigationItem"; title = "Complaint Details"; ObjectID = "wMR-pE-aFX"; */
-"wMR-pE-aFX.title" = "Complaint Details";
+"wMR-pE-aFX.title" = "تفاصيل الشكوى";
 
 /* Class = "UILabel"; text = "Bank Name : "; ObjectID = "wNO-mx-4mR"; */
 "wNO-mx-4mR.text" = "Bank Name : ";
 
 /* Class = "UILabel"; text = "ended"; ObjectID = "wmx-Xc-te6"; */
-"wmx-Xc-te6.text" = "beendet";
+"wmx-Xc-te6.text" = "انتهت";
 
 /* Class = "UIButton"; normalTitle = "Register Now"; ObjectID = "xbM-9n-LfP"; */
-"xbM-9n-LfP.normalTitle" = "Jetzt Registrieren";
+"xbM-9n-LfP.normalTitle" = "سجل الان";
 
 /* Class = "UILabel"; text = "Name"; ObjectID = "xd3-oh-0ML"; */
-"xd3-oh-0ML.text" = "Name";
+"xd3-oh-0ML.text" = "الاسم";
 
 /* Class = "UILabel"; text = "Be A Doctor"; ObjectID = "yjQ-aa-kXn"; */
-"yjQ-aa-kXn.text" = "Sei ein Arzt";
+"yjQ-aa-kXn.text" = "كن طبيب";
 
 /* Class = "UILabel"; text = "open"; ObjectID = "z2s-7h-j3z"; */
-"z2s-7h-j3z.text" = "öffnen";
+"z2s-7h-j3z.text" = "فتح";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "z8b-je-bP4"; */
-"z8b-je-bP4.normalTitle" = "Einreichen";
+"z8b-je-bP4.normalTitle" = "تم";
 
-/* Class = "UILabel"; text = "LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel"; ObjectID = "z8t-3x-pmF"; */
-"z8t-3x-pmF.text" = "LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel";
+/* Class = "UILabel"; text = "Orem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever"; ObjectID = "z8t-3x-pmF"; */
+"z8t-3x-pmF.text" = "Orem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever";
 
 /* Class = "UILabel"; text = "Upload photos of the medical consultation"; ObjectID = "zhF-B8-ML7"; */
-"zhF-B8-ML7.text" = "Fotos der ärztlichen Konsultation hochladen";
+"zhF-B8-ML7.text" = "اختيار صور للاستشاره الطبيه";

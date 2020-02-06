@@ -20,15 +20,9 @@ class PaymentViewController: UIViewController , UIImagePickerControllerDelegate 
     @IBOutlet weak var Price: UILabel!
     @IBOutlet weak var bankDetailsView: UIView!{
         didSet{
-            bankDetailsView.layer.cornerRadius = 10
-            bankDetailsView.layer.borderColor = UIColor.darkGray.cgColor
-            bankDetailsView.layer.borderWidth = 1.5
-            bankDetailsView.clipsToBounds = true
+            Rounded.roundedCornerView(view: bankDetailsView, borderColor: UIColor.darkGray.cgColor, radius: 10, borderWidth: 1.5)
         }
     }
-    @IBOutlet weak var accountNumber: UILabel!
-    @IBOutlet weak var accountName: UILabel!
-    @IBOutlet weak var bankName: UILabel!
     @IBOutlet weak var bankTransfer: UITextField!{
         didSet{
             Rounded.roundedCornerTextField(textField: bankTransfer, borderColor: UIColor.darkGray.cgColor, radius: 10 , borderWidth: 1.5)
@@ -49,6 +43,9 @@ class PaymentViewController: UIViewController , UIImagePickerControllerDelegate 
             Rounded.roundButton(button: completeBut, radius: completeBut.bounds.height/2)
         }
     }
+    @IBOutlet weak var accountNumber: UILabel!
+    @IBOutlet weak var accountName: UILabel!
+    @IBOutlet weak var bankName: UILabel!
     
     //MARK:- Variables
     

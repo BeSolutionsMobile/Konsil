@@ -42,6 +42,8 @@
 		815A17E223A68D3C001DDBEE /* BecomeADoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17E123A68D3C001DDBEE /* BecomeADoctorViewController.swift */; };
 		8166544F23D9CECC00739768 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166544E23D9CECB00739768 /* Upload.swift */; };
 		8166545123D9E19F00739768 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8166545023D9E19F00739768 /* GoogleService-Info.plist */; };
+		8174D77023EAE0FE0022B9E7 /* APIClint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174D76F23EAE0FE0022B9E7 /* APIClint.swift */; };
+		817834AA23E9CC5A009A4B9C /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817834A923E9CC5A009A4B9C /* Register.swift */; };
 		81849F1D23A8DC26004A59D8 /* RequestConsultationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F1C23A8DC26004A59D8 /* RequestConsultationViewController.swift */; };
 		81849F1F23A8EE6E004A59D8 /* RequestPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F1E23A8EE6E004A59D8 /* RequestPopupViewController.swift */; };
 		81849F2123A906C1004A59D8 /* ConsultationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F2023A906C1004A59D8 /* ConsultationDetailsViewController.swift */; };
@@ -53,6 +55,8 @@
 		8189E68523E09646009DA8E0 /* ConsultationFilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8189E68423E09646009DA8E0 /* ConsultationFilesViewController.swift */; };
 		8189E68723E097D8009DA8E0 /* FilesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8189E68623E097D8009DA8E0 /* FilesTableViewCell.swift */; };
 		8189E68B23E18D01009DA8E0 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8189E68A23E18D01009DA8E0 /* PaymentViewController.swift */; };
+		81B7072A23E9AD5A00333AD9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B7072923E9AD5A00333AD9 /* Constants.swift */; };
+		81B7072C23E9B0C000333AD9 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B7072B23E9B0C000333AD9 /* APIRouter.swift */; };
 		81B7615523D49E4C00859320 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81B7615723D49E4C00859320 /* Localizable.strings */; };
 		81BB8ADB23D99C3D00C57648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB8ADA23D99C3D00C57648 /* AppDelegate.swift */; };
 		81D8FB1D23A82A5100585CA8 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8FB1C23A82A5100585CA8 /* MainNavigationController.swift */; };
@@ -142,6 +146,8 @@
 		815A17E123A68D3C001DDBEE /* BecomeADoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BecomeADoctorViewController.swift; sourceTree = "<group>"; };
 		8166544E23D9CECB00739768 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		8166545023D9E19F00739768 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8174D76F23EAE0FE0022B9E7 /* APIClint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClint.swift; sourceTree = "<group>"; };
+		817834A923E9CC5A009A4B9C /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		81849F1C23A8DC26004A59D8 /* RequestConsultationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConsultationViewController.swift; sourceTree = "<group>"; };
 		81849F1E23A8EE6E004A59D8 /* RequestPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPopupViewController.swift; sourceTree = "<group>"; };
 		81849F2023A906C1004A59D8 /* ConsultationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationDetailsViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +159,11 @@
 		8189E68423E09646009DA8E0 /* ConsultationFilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationFilesViewController.swift; sourceTree = "<group>"; };
 		8189E68623E097D8009DA8E0 /* FilesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesTableViewCell.swift; sourceTree = "<group>"; };
 		8189E68A23E18D01009DA8E0 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		81B7071B23E9705100333AD9 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		81B7071C23E9705200333AD9 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		81B7071D23E9705300333AD9 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		81B7072923E9AD5A00333AD9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		81B7072B23E9B0C000333AD9 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		81B7615623D49E4C00859320 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		81B7615823D49E5500859320 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		81BB8ADA23D99C3D00C57648 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -237,6 +248,7 @@
 		04F1A60C23A641B200293AA2 /* Konsil */ = {
 			isa = PBXGroup;
 			children = (
+				81B7071E23E9A98800333AD9 /* Network Layer */,
 				815A17CD23A65A26001DDBEE /* Utitlites */,
 				815A17C123A658FC001DDBEE /* Senarios */,
 				813D444623D0869200330645 /* Supportive Files */,
@@ -310,6 +322,7 @@
 		810DAB0923A7C6F900B8AF20 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				817834AC23E9CCCA009A4B9C /* Model */,
 				810DAB0A23A7C70400B8AF20 /* Controller */,
 			);
 			path = Register;
@@ -480,6 +493,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		817834AC23E9CCCA009A4B9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				817834A923E9CC5A009A4B9C /* Register.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		81849F1A23A8DBEC004A59D8 /* Consultation */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,6 +574,16 @@
 				8189E68A23E18D01009DA8E0 /* PaymentViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		81B7071E23E9A98800333AD9 /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				81B7072923E9AD5A00333AD9 /* Constants.swift */,
+				81B7072B23E9B0C000333AD9 /* APIRouter.swift */,
+				8174D76F23EAE0FE0022B9E7 /* APIClint.swift */,
+			);
+			path = "Network Layer";
 			sourceTree = "<group>";
 		};
 		81ECE99B23AA6DB500E63105 /* View */ = {
@@ -672,6 +703,7 @@
 				en,
 				Base,
 				de,
+				ar,
 			);
 			mainGroup = 04F1A60123A641B200293AA2;
 			productRefGroup = 04F1A60B23A641B200293AA2 /* Products */;
@@ -839,11 +871,13 @@
 				81849F2A23A92EDB004A59D8 /* MessagesTableViewCell.swift in Sources */,
 				8189E68523E09646009DA8E0 /* ConsultationFilesViewController.swift in Sources */,
 				8166544F23D9CECC00739768 /* Upload.swift in Sources */,
+				8174D77023EAE0FE0022B9E7 /* APIClint.swift in Sources */,
 				81849F3023AA3FCA004A59D8 /* PeriodsTableViewCell.swift in Sources */,
 				810DAB0823A7BC8F00B8AF20 /* LogInViewController.swift in Sources */,
 				810DAB0D23A7C71F00B8AF20 /* RegisterViewController.swift in Sources */,
 				81ECE9A323AB7D4E00E63105 /* ComplaintTableViewCell.swift in Sources */,
 				815A17DE23A67C80001DDBEE /* SideMenuViewController.swift in Sources */,
+				817834AA23E9CC5A009A4B9C /* Register.swift in Sources */,
 				81ECE8C623BE36BF0048C0D9 /* Chat.swift in Sources */,
 				81849F3223AA3FFA004A59D8 /* DoctorConversationViewController.swift in Sources */,
 				81ECE9AD23ABB1D700E63105 /* ProfileInfoViewController.swift in Sources */,
@@ -880,8 +914,10 @@
 				8114567C23BCE8F3005A4B93 /* Walkthrough1ViewController.swift in Sources */,
 				815A17E223A68D3C001DDBEE /* BecomeADoctorViewController.swift in Sources */,
 				81849F1F23A8EE6E004A59D8 /* RequestPopupViewController.swift in Sources */,
+				81B7072C23E9B0C000333AD9 /* APIRouter.swift in Sources */,
 				8114568023BCE915005A4B93 /* Walkthrough3ViewController.swift in Sources */,
 				815A17D423A65A26001DDBEE /* Alert.swift in Sources */,
+				81B7072A23E9AD5A00333AD9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -922,6 +958,7 @@
 			children = (
 				04F1A61423A641B200293AA2 /* Base */,
 				81CC1BF623CF140C00B92D68 /* de */,
+				81B7071B23E9705100333AD9 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -931,6 +968,7 @@
 			children = (
 				04F1A61923A641B300293AA2 /* Base */,
 				81CC1BF723CF140D00B92D68 /* de */,
+				81B7071C23E9705200333AD9 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -940,6 +978,7 @@
 			children = (
 				81B7615623D49E4C00859320 /* en */,
 				81B7615823D49E5500859320 /* de */,
+				81B7071D23E9705300333AD9 /* ar */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1068,8 +1107,9 @@
 			baseConfigurationReference = 0584A6B0DD8383A620F23BA5 /* Pods-Konsil.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Konsil/Konsil.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KA6LDR462G;
+				DEVELOPMENT_TEAM = GPMFK5M647;
 				INFOPLIST_FILE = Konsil/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1087,8 +1127,9 @@
 			baseConfigurationReference = 6ABFC6927A6C4E48E90D8C84 /* Pods-Konsil.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Konsil/Konsil.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KA6LDR462G;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Konsil/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

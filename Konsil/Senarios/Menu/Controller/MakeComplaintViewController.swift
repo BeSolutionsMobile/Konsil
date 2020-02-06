@@ -9,7 +9,7 @@
 import UIKit
 import SideMenu
 
-class MakeComplaintViewController: UIViewController , UITextViewDelegate {
+class MakeComplaintViewController: UIViewController {
     
     @IBOutlet weak var selectTybeTF: UITextField!{
         didSet{
@@ -19,9 +19,7 @@ class MakeComplaintViewController: UIViewController , UITextViewDelegate {
     }
     @IBOutlet weak var complaintMessageTV: UITextView!{
         didSet{
-            complaintMessageTV.layer.cornerRadius = 7
-            complaintMessageTV.layer.borderColor = UIColor.gray.cgColor
-            complaintMessageTV.layer.borderWidth = 1.5
+            Rounded.roundedCornerTextView(textView: complaintMessageTV, borderColor: UIColor.gray.cgColor, radius: 7, borderWidth: 1.5)
             complaintMessageTV.delegate = self
             complaintMessageTV.text = "Enter Complaint Details Here".localized
         }
@@ -43,10 +41,6 @@ class MakeComplaintViewController: UIViewController , UITextViewDelegate {
     @IBAction func submitPressed(_ sender: UIButton) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "ComplaintDetails") as! ComplaintDetailsViewController
         self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        complaintMessageTV.text = ""
     }
     
     func openPickerView(){

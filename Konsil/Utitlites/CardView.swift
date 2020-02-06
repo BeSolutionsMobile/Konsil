@@ -103,6 +103,13 @@ struct Rounded {
         textView.clipsToBounds = true
     }
     
+    static func roundedCornerView(view: UIView ,borderColor: CGColor ,radius: CGFloat ,borderWidth: CGFloat? = 1.5){
+        view.layer.cornerRadius = radius
+        view.layer.borderColor = borderColor
+        view.layer.borderWidth = borderWidth ?? 1.5
+        view.clipsToBounds = true
+    }
+
     static func roundedImage(imageView: UIImageView ,radius: CGFloat ,borderColor: CGColor ,borderWidth: CGFloat){
         imageView.layer.cornerRadius = radius
         imageView.layer.masksToBounds = true
@@ -117,8 +124,6 @@ struct Rounded {
         }
     }
 }
-
-
 
 struct EmptyTableView {
     static func emptyDataWithImage(TabelView: UITableView , Image: UIImage ,View: UIView ,MessageText: String) {

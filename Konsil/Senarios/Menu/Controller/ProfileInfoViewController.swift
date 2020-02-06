@@ -13,34 +13,32 @@ class ProfileInfoViewController: UIViewController {
     //MARK:- IBOutlets
     @IBOutlet weak var name: DesignableUITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.name, borderColor: #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1), radius: self.name.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.name, borderColor: CGColor.kBlue, radius: self.name.frame.height/2)
         }
     }
     @IBOutlet weak var email: DesignableUITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.email, borderColor: #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1), radius: self.email.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.email, borderColor: CGColor.kBlue, radius: self.email.frame.height/2)
         }
     }
     @IBOutlet weak var password: DesignableUITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.password, borderColor: #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1), radius: self.password.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.password, borderColor: CGColor.kBlue, radius: self.password.frame.height/2)
         }
     }
     @IBOutlet weak var phone: DesignableUITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.phone, borderColor: #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1), radius: self.phone.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.phone, borderColor: CGColor.kBlue, radius: self.phone.frame.height/2)
         }
     }
     @IBOutlet weak var photo: DesignableUITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.photo, borderColor: #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1), radius: self.photo.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.photo, borderColor: CGColor.kBlue, radius: self.photo.frame.height/2)
         }
     }
     @IBOutlet weak var patientHistoryTV: UITextView!{
         didSet{
-            patientHistoryTV.layer.cornerRadius = 10
-            patientHistoryTV.layer.borderColor = #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1)
-            patientHistoryTV.layer.borderWidth = 1.5
+            Rounded.roundedCornerTextView(textView: patientHistoryTV, borderColor: CGColor.kBlue, radius: 10, borderWidth: 1.5)
             patientHistoryTV.delegate = self
             patientHistoryTV.text = "Enter Patient History Here".localized
         }
@@ -84,15 +82,11 @@ class ProfileInfoViewController: UIViewController {
     }
     
     //MARK:- Methodes
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        self.patientHistoryTV.text = ""
-    }
-    
-    
+ 
 }
 
 //MARK:- Image Picker Delegates
-extension ProfileInfoViewController: UIImagePickerControllerDelegate , UINavigationControllerDelegate, UITextViewDelegate {
+extension ProfileInfoViewController: UIImagePickerControllerDelegate , UINavigationControllerDelegate{
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         FirebaseUploader.uploadToFirebase(viewController: self, imagePicker: imagePicker, didFinishPickingMediaWithInfo: info) { (uploaded) in

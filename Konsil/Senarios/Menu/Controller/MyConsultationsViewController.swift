@@ -20,7 +20,9 @@ class MyConsultationsViewController: UIViewController {
     var deg = ["Professor" , "Specialist"  , "Professor" , "Advisory" , "Specialist" , "Advisory" , "Professor" , "Advisory"]
     var images = ["3" , "4"  , "5" , "6" , "7" , "8" , "9" , "10"]
     var prie = ["350" , "400"  , "540" , "300" , "270" , "340" , "400" , "450"]
-    var tybes = ["Online Conversation" , "Consultation"  , "Consultation" , "Consultation" , "Online Conversation" , "Online Conversation" , "Online Conversation" , "Consultation"]
+    var tybes = ["Online Conversation".localized , "Consultation".localized   , "Consultation".localized  , "Consultation".localized  , "Online Conversation".localized  , "Online Conversation".localized  , "Online Conversation".localized  , "Consultation".localized ]
+    
+    //MARK:- ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +47,7 @@ extension MyConsultationsViewController: UITableViewDelegate , UITableViewDataSo
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tybes[indexPath.row] == "Consultation" {
+        if tybes[indexPath.row] == "Consultation".localized {
             if let vc = storyboard?.instantiateViewController(withIdentifier: "consultationDetails") as? ConsultationDetailsViewController {
                 vc.modalPresentationStyle = .fullScreen
                 self.navigationController?.pushViewController(vc, animated: true)
@@ -56,7 +58,6 @@ extension MyConsultationsViewController: UITableViewDelegate , UITableViewDataSo
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }
-        
     }
     
     func viewDidPressed() {

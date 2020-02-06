@@ -11,9 +11,7 @@ import SideMenu
 class BecomeADoctorViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate{
     @IBOutlet weak var imageBackView: UIView!{
         didSet{
-            imageBackView.layer.cornerRadius = imageBackView.frame.width/2
-            imageBackView.layer.borderColor = UIColor.gray.cgColor
-            imageBackView.layer.borderWidth = 3
+            Rounded.roundedCornerView(view: imageBackView, borderColor: UIColor.gray.cgColor, radius: imageBackView.frame.width/2, borderWidth: 3)
         }
     }
     @IBOutlet weak var addImage: UIImageView!{
@@ -23,22 +21,22 @@ class BecomeADoctorViewController: UIViewController , UIImagePickerControllerDel
     }
     @IBOutlet weak var addName: UITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.addName, borderColor: #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1) , radius: self.addName.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.addName, borderColor: CGColor.kBlue , radius: self.addName.frame.height/2)
         }
     }
     @IBOutlet weak var addEmail: UITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.addEmail, borderColor: #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1) , radius: self.addEmail.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.addEmail, borderColor: CGColor.kBlue , radius: self.addEmail.frame.height/2)
         }
     }
     @IBOutlet weak var addPassword: UITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.addPassword, borderColor: #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1) , radius: self.addPassword.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.addPassword, borderColor: CGColor.kBlue , radius: self.addPassword.frame.height/2)
         }
     }
     @IBOutlet weak var addPhone: UITextField!{
         didSet{
-            Rounded.roundedCornerTextField(textField: self.addPhone, borderColor: #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1) , radius: self.addPhone.frame.height/2)
+            Rounded.roundedCornerTextField(textField: self.addPhone, borderColor: CGColor.kBlue , radius: self.addPhone.frame.height/2)
         }
     }
     @IBOutlet weak var submitBut: UIButton!{

@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  Konsil
+
+  Created by Ali Mohamed on 1/19/20.
+  Copyright © 2020 begroup. All rights reserved.
+*/
+"Lang" = "ar";
+"rightArrow" = "leftArrow";
+"leftArrow" = "rightArrow";
+"Surgery" = "جراحه";
+"Dental" = "اسنان";
+"Bones" = "عظام";
+"Heart and blood vesselss" = "قلب واوعيه دمويه";
+"Pediatrics" = "طب اطفال";
+"Neurology" = "مخ واعصاب";
+"Open" = "مفتوح";
+"Closed" = "مغلق";
+"Please accept our terms and conditions then try again" = "برجاء الموافقه علي الشروط و الاحكام";
+"Patient History" = "تاريخ المريض";
+"Enter Patient History Here" = "ادخل هنا";
+"Enter Complaint Details Here" = "تفاصيل الشكوي";
+"Enter Consultation Details Here" = "ادخل تفاصيل الاستشارة";
+"Disruptive behavior"  = "سلوك مزعج";
+"Prescribing Wrong Medicine" = "وصف دواء خاطئ";
+"Wrong Diagnosis" = "تشخيص خاطئ";
+"No Response From Doctor" = "لا يوجد رد";
+"Image Uploaded Successfully" = "تم رفع الصورة بنجاح";
+"Failed To Upload Image" = "خطاء في الرفع";
+"Done" = "تم";
+"OK" = "حسنا";
+"Error" = "خطاء";
+"Online Conversation" = "محادثة";
+"Consultation" = "استشارة";

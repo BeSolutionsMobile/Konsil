@@ -19,13 +19,21 @@ class ConsultationMessagesViewController: UIViewController {
     @IBOutlet weak var sendBut: UIButton!{
         didSet{
             self.sendBut.layer.cornerRadius = self.sendBut.frame.height/2
-            self.sendBut.layer.maskedCorners = [.layerMaxXMaxYCorner , .layerMaxXMinYCorner]
+            if "Lang".localized == "ar" {
+                self.sendBut.layer.maskedCorners = [.layerMinXMinYCorner , .layerMinXMaxYCorner]
+            } else {
+                self.sendBut.layer.maskedCorners = [.layerMaxXMaxYCorner , .layerMaxXMinYCorner]
+            }
         }
     }
     @IBOutlet weak var messageTF: UITextField!{
         didSet{
             Rounded.roundedCornerTextField(textField: self.messageTF, borderColor: UIColor.gray.cgColor, radius: self.messageTF.frame.height/2 , borderWidth: 1.5)
-            self.messageTF.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+            if "Lang".localized == "ar" {
+                self.messageTF.layer.maskedCorners = [.layerMaxXMaxYCorner , .layerMaxXMinYCorner]
+            } else {
+                self.messageTF.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+            }
         }
     }
     @IBOutlet weak var messagesTableView: UITableView!
@@ -35,10 +43,12 @@ class ConsultationMessagesViewController: UIViewController {
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        rightBackBut()
         
+        rightBackBut()
         messagesTableView.setContentOffset(CGPoint(x: 0, y: CGFloat.greatestFiniteMagnitude + 30), animated: false)
     }
+    
+    //MARK:- ViewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         DispatchQueue.main.asyncAfter(deadline: .now()+1) { [weak self] in
@@ -46,6 +56,7 @@ class ConsultationMessagesViewController: UIViewController {
         }
     }
     
+    //MARK:- IBAcotions
     @IBAction func requestOnlineConversationPressed(_ sender: UIButton) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "DoctorConversation") as? DoctorConversationViewController {
             self.navigationController?.pushViewController(vc, animated: true)
@@ -72,7 +83,6 @@ extension ConsultationMessagesViewController: UITableViewDelegate , UITableViewD
     //MARK:- cellForRowAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessagesTableViewCell
-        
         cell.message.text = "chat"
         cell.name.text = "chat"
         return cell

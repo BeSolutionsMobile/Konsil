@@ -17,17 +17,14 @@ class SideMenuViewController: UIViewController {
     }
     @IBOutlet weak var mainView: UIView!{
         didSet{
-            mainView.layer.cornerRadius = 30
-            mainView.layer.borderWidth = 3
-            mainView.layer.borderColor = #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1)
-            mainView.clipsToBounds = true
+            Rounded.roundedCornerView(view: mainView, borderColor: CGColor.kBlue, radius: 30, borderWidth: 3)
             mainView.layer.maskedCorners = [.layerMaxXMinYCorner , .layerMaxXMaxYCorner]
         }
     }
     @IBOutlet var sideMenuBut: [UIButton]!
     @IBOutlet weak var ProfileImage: UIImageView!{
         didSet{
-            Rounded.roundedImage(imageView: ProfileImage, radius: ProfileImage.frame.width/2, borderColor: #colorLiteral(red: 0.01960784314, green: 0.4549019608, blue: 0.5764705882, alpha: 1), borderWidth: 3)
+            Rounded.roundedImage(imageView: ProfileImage, radius: ProfileImage.frame.width/2, borderColor: CGColor.kBlue, borderWidth: 3)
         }
     }
     @IBOutlet weak var imageBackView: UIView!{
@@ -49,7 +46,7 @@ class SideMenuViewController: UIViewController {
     
     //MARK:- IB Actions
     @IBAction func changeLanguage(_ sender: UIButton) {
-        MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "de" : "en" )
+        MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en" )
         MOLH.reset()
         //        if #available(iOS 13.0, *) {
         //            let delegate = UIApplication.shared.delegate as? AppDelegate

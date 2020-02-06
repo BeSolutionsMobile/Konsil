@@ -24,13 +24,13 @@ class RequestConsultationViewController: UIViewController {
     @IBOutlet weak var titleTF: UITextField!{
         didSet{
             Rounded.roundedCornerTextField(textField: self.titleTF, borderColor: UIColor.gray.cgColor, radius: 10)
-            self.titleTF.clipsToBounds = true
         }
     }
     @IBOutlet weak var detailsTV: UITextView!{
         didSet{
             Rounded.roundedCornerTextView(textView: detailsTV, borderColor: UIColor.gray.cgColor, radius: 10, borderWidth: 1.5)
-            self.detailsTV.delegate = self
+            detailsTV.delegate = self
+            detailsTV.text = "Enter Consultation Details Here".localized
         }
     }
     @IBOutlet weak var textViewHieghtConstraint: NSLayoutConstraint!
@@ -77,7 +77,7 @@ class RequestConsultationViewController: UIViewController {
 }
 
 //MARK:- ImagePicker / DocumnetPicker SetUp
-extension RequestConsultationViewController: OpalImagePickerControllerDelegate , UITextViewDelegate , UIDocumentPickerDelegate{
+extension RequestConsultationViewController: OpalImagePickerControllerDelegate , UIDocumentPickerDelegate{
     
     //MARK:- Image Picker
     func imagePicker(_ picker: OpalImagePickerController, didFinishPickingImages images: [UIImage]) {
@@ -99,10 +99,5 @@ extension RequestConsultationViewController: OpalImagePickerControllerDelegate ,
                 animation.play()
             }
         }
-    }
-    
-    // Clear TextView Text at Start
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        detailsTV.text = ""
     }
 }

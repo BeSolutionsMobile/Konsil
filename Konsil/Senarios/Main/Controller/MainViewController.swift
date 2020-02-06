@@ -71,20 +71,41 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
         
         
         cell.imageSize.constant = self.view.frame.width/2 - 60
-        if indexPath.row == 0 {
-            Rounded.topLeft(view: cell.backView)
+        if "Lang".localized == "ar"{
+            
+            if indexPath.row == 1 {
+                Rounded.topLeft(view: cell.backView)
+            } else {
+                Rounded.normalView(view: cell.backView)
+            }
+            if indexPath.row == 0 {
+                Rounded.topRight(view: cell.backView)
+            }
+            if indexPath.row == (catImage?.count ?? 1000)-2{
+                Rounded.botRight(view: cell.backView)
+            }
+            if indexPath.row == (catImage?.count ?? 1000)-1{
+                Rounded.botLeft(view: cell.backView)
+            }
+            
         } else {
-            Rounded.normalView(view: cell.backView)
+            
+            if indexPath.row == 0 {
+                Rounded.topLeft(view: cell.backView)
+            } else {
+                Rounded.normalView(view: cell.backView)
+            }
+            if indexPath.row == 1 {
+                Rounded.topRight(view: cell.backView)
+            }
+            if indexPath.row == (catImage?.count ?? 1000)-1{
+                Rounded.botRight(view: cell.backView)
+            }
+            if indexPath.row == (catImage?.count ?? 1000)-2{
+                Rounded.botLeft(view: cell.backView)
+            }
         }
-        if indexPath.row == 1 {
-            Rounded.topRight(view: cell.backView)
-        }
-        if indexPath.row == (catImage?.count ?? 1000)-1{
-            Rounded.botRight(view: cell.backView)
-        }
-        if indexPath.row == (catImage?.count ?? 1000)-2{
-            Rounded.botLeft(view: cell.backView)
-        }
+        
         return cell
     }
     

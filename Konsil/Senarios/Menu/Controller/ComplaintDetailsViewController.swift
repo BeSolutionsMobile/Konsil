@@ -10,18 +10,27 @@ import UIKit
 
 class ComplaintDetailsViewController: UIViewController {
 
+    //MARK:- IBOutlets
     @IBOutlet weak var compliantStatus: UILabel!
     @IBOutlet weak var sendBut: UIButton!{
         didSet{
             self.sendBut.layer.cornerRadius = 10
-            self.sendBut.layer.maskedCorners = [.layerMaxXMaxYCorner , .layerMaxXMinYCorner]
+            if "Lang".localized == "ar"{
+                self.sendBut.layer.maskedCorners = [.layerMinXMinYCorner , .layerMinXMaxYCorner]
+            } else {
+                self.sendBut.layer.maskedCorners = [.layerMaxXMaxYCorner , .layerMaxXMinYCorner]
+            }
         }
     }
     @IBOutlet weak var messageTF: UITextField!{
         didSet{
             Rounded.roundedCornerTextField(textField: self.messageTF, borderColor: UIColor.gray.cgColor, radius: 10  , borderWidth: 1.5)
-            self.messageTF.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
             self.messageTF.delegate = self
+            if "Lang".localized == "ar" {
+                self.messageTF.layer.maskedCorners = [.layerMaxXMaxYCorner , .layerMaxXMinYCorner]
+            } else {
+                self.messageTF.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+            }
         }
     }
     @IBOutlet weak var complaintTableView: UITableView!{
@@ -32,15 +41,19 @@ class ComplaintDetailsViewController: UIViewController {
     }
     @IBOutlet weak var backView: UIView!
     
-    
+    //MARK:- Variables
+
     var Chats = 0
     
+    //MARK:- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
         checkTableView()
     }
     
+    //MARK:- IBActions
+
     @IBAction func sendButtonPressed(_ sender: UIButton) {
         if messageTF.text != "" && messageTF.text != nil {
             Chats += 1

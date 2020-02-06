@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
     
     var window: UIWindow?
     
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         MOLH.shared.activate(true)
@@ -76,5 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
         let stry = UIStoryboard(name: "Main", bundle: nil)
         rootviewcontroller.rootViewController = stry.instantiateViewController(withIdentifier: "MainNavigation")
     }
+    
+    
 }
 

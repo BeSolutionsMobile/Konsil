@@ -10,6 +10,7 @@ import UIKit
 import FirebaseStorage
 class ConsultationFinalReportViewController: UIViewController {
     
+    //MARK:- IBOutlets
     @IBOutlet weak var dateOfReport: UILabel!
     @IBOutlet weak var consultationStatus: UILabel!
     @IBOutlet weak var requestChat: UIButton!{
@@ -24,11 +25,13 @@ class ConsultationFinalReportViewController: UIViewController {
         }
     }
     
+    //MARK:- View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
     }
     
+    //MARK:- IBOutlets
     @IBAction func downloadFilesPressed(_ sender: UIButton) {
         downloadFileFromFirebase()
     }
@@ -45,6 +48,7 @@ class ConsultationFinalReportViewController: UIViewController {
         }
     }
     
+    //MARK:- Variables
     func downloadFileFromFirebase(){
         let storageRef = Storage.storage().reference().child("Ali")
         let url = storageRef.child("o3KNDjONzCg1u1w8vdGH")

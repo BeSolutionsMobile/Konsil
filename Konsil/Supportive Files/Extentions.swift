@@ -24,7 +24,8 @@ extension UIViewController: UITextFieldDelegate{
     func rightBackBut() {
         navigationItem.hidesBackButton = true
         let rightBack = UIBarButtonItem(title: "", style: .done,target: self, action: #selector(backPressed))
-        rightBack.image = UIImage(named: "rightArrow")
+        
+        rightBack.image = UIImage(named: "rightArrow".localized)
         navigationItem.rightBarButtonItem = rightBack
         let menuBut = UIBarButtonItem(title: "", style: .done,target: self, action: #selector(showMenu))
         menuBut.image = UIImage(named: "menuButton")
@@ -113,5 +114,36 @@ extension UIViewController: UITextFieldDelegate{
 extension String {
     var localized : String {
         return NSLocalizedString(self, comment: "")
+    }
+}
+extension UITextField {
+  func isError(baseColor: CGColor, numberOfShakes shakes: Float, revert: Bool) {
+    let animation: CABasicAnimation = CABasicAnimation(keyPath: "shadowColor")
+    animation.fromValue = baseColor
+    animation.toValue = UIColor.red.cgColor
+    animation.duration = 0.4
+    if revert { animation.autoreverses = true } else { animation.autoreverses = false }
+    self.layer.add(animation, forKey: "")
+     
+    let shake: CABasicAnimation = CABasicAnimation(keyPath: "position")
+    shake.duration = 0.07
+    shake.repeatCount = shakes
+    if revert { shake.autoreverses = true } else { shake.autoreverses = false }
+    shake.fromValue = NSValue(cgPoint: CGPoint(x: self.center.x - 10, y: self.center.y))
+    shake.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + 10, y: self.center.y))
+    self.layer.add(shake, forKey: "position")
+    self.layer.borderColor = CGColor.kRed
+  }
+}
+
+extension CGColor {
+    static var kRed = UIColor(red: 0.867, green: 0.206, blue: 0.159, alpha: 1).cgColor
+    static var kBlue = UIColor(red: 0.020, green: 0.455, blue: 0.576, alpha: 1).cgColor
+    static var kGray = UIColor(red: 0.196, green: 0.196, blue: 0.196, alpha: 1).cgColor
+}
+
+extension UIViewController: UITextViewDelegate {
+    public func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.text = ""
     }
 }
