@@ -15,7 +15,8 @@ import BiometricAuthentication
 class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
     
     var window: UIWindow?
-    
+    static var token:String?
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         MOLH.shared.activate(true)
@@ -23,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
         
         FirebaseApp.configure()
         
+        retriveToken()
+
         let didLunchedBefore = UserDefaults.standard.bool(forKey: Key.launchedBefore)
         if !didLunchedBefore {
             UserDefaults.standard.set(true, forKey: Key.launchedBefore)
@@ -76,6 +79,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
         rootviewcontroller.rootViewController = stry.instantiateViewController(withIdentifier: "MainNavigation")
     }
     
-    
+    func retriveToken() {
+        InstanceID.instanceID().instanceID { (result, error) in
+            if let error = error {
+                print("Error fetching remote instange ID: \(error)")
+            } else if let result = result {
+                AppDelegate.token = result.token
+                print("Remote instance ID token: \(result.token)")
+            }
+        }
+    }
 }
 

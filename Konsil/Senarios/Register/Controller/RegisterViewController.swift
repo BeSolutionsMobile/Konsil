@@ -92,7 +92,8 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerPressed(_ sender: UIButton) {
-        
+        guard let dID = AppDelegate.token else { return }
+        print(dID)
         //        if checkBox.on == true {
         //            DispatchQueue.main.async { [weak self] in
         //                APIClient.register(name: self?.name.text ?? "", email: self?.email.text ?? "", password: self?.password.text ?? "", phone: self?.phone.text ?? "", image_url: "", platform: 3, lang: "Lang".localized, mobile_tokken: "NNNNN") { (Result) in
