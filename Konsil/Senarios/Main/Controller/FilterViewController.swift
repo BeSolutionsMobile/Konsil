@@ -9,7 +9,9 @@
 import UIKit
 import BEMCheckBox
 import Cosmos
-
+protocol FilterDoctorsDelegate {
+    func updateData(degree: [Int] ,rate: Int)
+}
 class FilterViewController: UIViewController {
     @IBOutlet weak var filterBackGround: UIImageView!{
         didSet{
@@ -34,6 +36,8 @@ class FilterViewController: UIViewController {
     }
     @IBOutlet weak var filterBackView: UIView!
     
+    var delegate: FilterDoctorsDelegate?
+
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +50,9 @@ class FilterViewController: UIViewController {
     }
     
     @IBAction func submitPressed(_ sender: UIButton) {
+        let rate = Int(filterRate.rating)
+        let degree = getSelectedDegree()
+        delegate?.updateData(degree: degree, rate: rate)
         self.view.backgroundColor = .clear
         self.dismiss(animated: false, completion: nil)
     }
@@ -70,4 +77,15 @@ class FilterViewController: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     
+    func getSelectedDegree() -> [Int] {
+        var degree: [Int]?
+        for i in filterOptions.indices {
+            if filterOptions[i].on == true {
+                if degree?.append(i+1) == nil {
+                    degree = [i+1]
+                }
+            }
+        }
+        return degree ?? []
+    }
 }

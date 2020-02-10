@@ -14,12 +14,13 @@ target 'Konsil' do
   pod 'BEMCheckBox'
   pod 'BiometricAuthentication'
   pod 'OpalImagePicker'
-  pod 'Firebase/Core'
-  pod 'Firebase/Storage'
-  pod 'Firebase/Firestore'
   pod 'NVActivityIndicatorView'
   pod 'lottie-ios'
   pod 'MOLH'
+  pod 'PayPal-iOS-SDK'
+  pod 'Firebase/Core'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Firestore'
   
   target 'KonsilTests' do
     inherit! :search_paths

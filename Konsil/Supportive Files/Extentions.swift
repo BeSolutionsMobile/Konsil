@@ -20,6 +20,10 @@ extension UIViewController: UITextFieldDelegate{
         }
     }
     
+    func stringToDouble(_ string: String) -> Double {
+        guard let double = Double(string) else { return 0}
+        return double
+    }
     //MARK:- Navigation Bar Buttonsa
     func rightBackBut() {
         navigationItem.hidesBackButton = true

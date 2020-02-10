@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MOLH
 @IBDesignable
 class DesignableUITextField: UITextField {
 
@@ -90,8 +90,7 @@ class DesignableUITextField: UITextField {
     
 }
 
-class RegisterTextField: UITextField {
-        
+class RegisterTextField: MOLHTextField {
     let padding = UIEdgeInsets(top: 0, left: 30 , bottom: 0, right: 30 )
 
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
@@ -107,7 +106,7 @@ class RegisterTextField: UITextField {
     }
 }
 class MessageTextField: UITextField {
-        
+    
     let padding = UIEdgeInsets(top: 0, left: 10 , bottom: 0, right: 10)
 
     override open func textRect(forBounds bounds: CGRect) -> CGRect {

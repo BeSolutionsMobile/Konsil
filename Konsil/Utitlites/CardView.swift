@@ -78,7 +78,7 @@ struct Rounded {
     }
     
     static func normalView(view: UIView){
-        view.clipsToBounds = true
+        view.layer.maskedCorners = []
         view.layer.borderWidth = 2
         view.layer.borderColor = UIColor.gray.cgColor
     }

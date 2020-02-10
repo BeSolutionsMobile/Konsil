@@ -31,3 +31,9 @@
 "rightArrow" = "rightArrow";
 "Online Conversation" = "Online-Gespräch";
 "Consultation" = "Beratung";
+"email already exists" = "E-Mail ist bereits vorhanden";
+"something went wrong" = "Etwas ist schief gelaufen";
+
+"Failed" = "Gescheitert";
+"Network connection error" = "Netzwerkverbindungsfehler";
+

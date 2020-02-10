@@ -8,6 +8,8 @@
 
 import UIKit
 import BEMCheckBox
+import MOLH
+
 class RegisterViewController: UIViewController {
     
     //MARK:- IBOutlets
@@ -16,27 +18,31 @@ class RegisterViewController: UIViewController {
             backButton.setImage(UIImage(named: "leftArrow".localized), for: .normal)
         }
     }
-    @IBOutlet weak var name: DesignableUITextField!{
+    @IBOutlet weak var name: RegisterTextField!{
         didSet{
             Rounded.roundedCornerTextField(textField: self.name, borderColor: UIColor.gray.cgColor, radius: self.name.frame.height/2)
+            name.forceSwitchingRegardlessOfTag = true
             self.name.delegate = self
         }
     }
-    @IBOutlet weak var phone: DesignableUITextField!{
+    @IBOutlet weak var phone: RegisterTextField!{
         didSet{
             Rounded.roundedCornerTextField(textField: self.phone, borderColor: UIColor.gray.cgColor, radius: self.phone.frame.height/2)
+            phone.forceSwitchingRegardlessOfTag = true
             self.phone.delegate = self
         }
     }
-    @IBOutlet weak var email: DesignableUITextField!{
+    @IBOutlet weak var email: RegisterTextField!{
         didSet{
             Rounded.roundedCornerTextField(textField: self.email, borderColor: UIColor.gray.cgColor, radius: self.email.frame.height/2)
+            email.forceSwitchingRegardlessOfTag = true
             self.email.delegate = self
         }
     }
-    @IBOutlet weak var password: DesignableUITextField!{
+    @IBOutlet weak var password: RegisterTextField!{
         didSet{
             Rounded.roundedCornerTextField(textField: self.password, borderColor: UIColor.gray.cgColor, radius: self.password.frame.height/2)
+            password.forceSwitchingRegardlessOfTag = true
             self.password.delegate = self
         }
     }
@@ -69,6 +75,7 @@ class RegisterViewController: UIViewController {
                 NSLayoutConstraint.activate([widthConstraint])
             }
         }
+        
     }
     @IBOutlet weak var backView: UIView!
     @IBOutlet var constraints: [NSLayoutConstraint]!
@@ -93,34 +100,38 @@ class RegisterViewController: UIViewController {
     
     @IBAction func registerPressed(_ sender: UIButton) {
         guard let dID = AppDelegate.token else { return }
-        print(dID)
-        //        if checkBox.on == true {
-        //            DispatchQueue.main.async { [weak self] in
-        //                APIClient.register(name: self?.name.text ?? "", email: self?.email.text ?? "", password: self?.password.text ?? "", phone: self?.phone.text ?? "", image_url: "", platform: 3, lang: "Lang".localized, mobile_tokken: "NNNNN") { (Result) in
-        //                    switch Result {
-        //                    case.success(let response):
-        //                        print(response)
-        //                    case .failure(let error):
-        //                        print("error duo")
-        //                        print(error.localizedDescription)
-        //                    }
-        //                }
-        //            }
-        //        } else {
-        //            Alert.show("Error", massege: "Please accept our terms and conditions then try again".localized, context: self)
-        //        }
-        
         if checkBox.on == true {
             let validate = validateAllFields()
-            if validate == true {
-                print("good")
-            } else {
-                print("No")
+            let validatedMail = isValidEmail(email.text ?? "")
+            if validate == true , validatedMail == true{
+                DispatchQueue.main.async { [weak self] in
+                    APIClient.register(name: self?.name.text ?? "", email: self?.email.text ?? "", password: self?.password.text ?? "", phone: self?.phone.text ?? "", image_url: "", platform: 3, lang: "Lang".localized, mobile_tokken: dID) {  (Result ,Status)  in
+                        switch Result {
+                        case.success(let response):
+                            print(response)
+                            if Status >= 200 && Status < 300 {
+                                self?.backView.isHidden = false
+                                self?.backView.isUserInteractionEnabled = true
+                                self?.BlurView(view: self!.animationView)
+                            }
+                        case .failure(let error):
+//                            Alert.show("Error".localized, massege: "Network connection error".localized, context: self!)
+                            print(error.localizedDescription)
+                        }
+                        switch Status {
+                        case 402:
+                            Alert.show("", massege: "email already exists".localized, context: self!)
+                        case 500:
+                            Alert.show("Failed".localized, massege: "something went wrong".localized, context: self!)
+                        default:
+                            break
+                        }
+                    }
+                }
             }
         } else {
             Alert.show("Error".localized, massege: "Please accept our terms and conditions then try again".localized, context: self)
         }
-        
     }
     
     // Check All TextFields
@@ -163,14 +174,12 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func acceptAllTermsAndConditions(_ sender: BEMCheckBox) {
-        
     }
     @IBAction func registerWithTwitter(_ sender: UIButton) {
     }
     
     @IBAction func registerWithGoogle(_ sender: UIButton) {
     }
-    
     @IBAction func registerWithFacebook(_ sender: UIButton) {
     }
     

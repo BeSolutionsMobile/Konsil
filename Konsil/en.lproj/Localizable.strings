@@ -5,30 +5,55 @@
   Created by Ali Mohamed on 1/19/20.
   Copyright © 2020 begroup. All rights reserved.
 */
+// System
 "Lang" = "en";
+"rightArrow" = "rightArrow";
+"leftArrow" = "leftArrow";
+
+
+// Specaialites
 "Surgery" = "Surgery";
 "Dental" = "Dental";
 "Bones" = "Bones";
 "Heart and blood vesselss" = "Heart and blood vesselss";
 "Pediatrics" = "Pediatrics";
 "Neurology" = "Neurology";
-"Open" = "Open";
-"Closed" = "Closed";
+
+
+// -------------------------------
+// Alerts
+"Done" = "Done";
+"OK" = "OK";
+"Error" = "Error";
+"Failed" = "Failed";
+"Image Uploaded Successfully" = "Image Uploaded Successfully";
+"Failed To Upload Image" = "Failed To Upload Image";
+
+
+// Network Messages
+
+"email already exists" = "email already exists";
+"something went wrong" = "something went wrong";
+"Network connection error" = "Network connection error";
+
+
+//---------------------------
+
+
 "Please accept our terms and conditions then try again" = "Please accept our terms and conditions then try again";
 "Patient History" = "Patient History";
 "Enter Patient History Here" = "Enter Patient History Here";
 "Enter Complaint Details Here" = "Enter Complaint Details Here";
 "Enter Consultation Details Here" = "Enter Consultation Details Here";
+
 "Disruptive behavior"  = "Disruptive behavior";
 "Prescribing Wrong Medicine" = "Prescribing Wrong Medicine";
 "Wrong Diagnosis" =  "Wrong Diagnosis";
 "No Response From Doctor" = "No Response From Doctor";
-"Image Uploaded Successfully" = "Image Uploaded Successfully";
-"Failed To Upload Image" = "Failed To Upload Image";
-"Done" = "Done";
-"OK" = "OK";
-"Error" = "Error";
-"rightArrow" = "rightArrow";
-"leftArrow" = "leftArrow";
+
+
 "Online Conversation" = "Online Conversation";
 "Consultation" = "Consultation";
+"Open" = "Open";
+"Closed" = "Closed";
+

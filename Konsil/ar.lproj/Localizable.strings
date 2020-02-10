@@ -32,3 +32,7 @@
 "Error" = "خطاء";
 "Online Conversation" = "محادثة";
 "Consultation" = "استشارة";
+"email already exists" = "البريد الالكتروني موجود بالفعل";
+"something went wrong" = "هناك خطأ ما";
+"Failed" = "فشل";
+"Network connection error" = "خطأ في اتصال الشبكة";

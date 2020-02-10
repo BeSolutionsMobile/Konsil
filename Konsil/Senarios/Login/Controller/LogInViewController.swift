@@ -79,11 +79,29 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        let isBiometricAuthEnabled = allowBiometricAuth.on ? true : false
-        UserDefaults.standard.set(isBiometricAuthEnabled, forKey: Key.prefereBiometricAuth)
-        backView.isHidden = false
-        backView.isUserInteractionEnabled = true
-        BlurView(view: animationView)
+        if let email = emailTF.text , let password = passwordTF.text , let token = AppDelegate.token {
+            DispatchQueue.main.async { [weak self] in
+                APIClient.login(email: email, password: password , mobile_tokken: token) { (Result,state) in
+                    switch Result {
+                    case .success(let response):
+                        UserDefaults.standard.set(response.token as String, forKey: Key.authorizationToken)
+                        let isBiometricAuthEnabled = (self?.allowBiometricAuth.on)! ? true : false
+                        UserDefaults.standard.set(isBiometricAuthEnabled, forKey: Key.prefereBiometricAuth)
+                        self?.backView.isHidden = false
+                        self?.backView.isUserInteractionEnabled = true
+                        self?.BlurView(view: self!.animationView)
+                    case .failure(let error):
+                        print(state)
+                        print(error.localizedDescription)
+                        
+                    }
+                }
+            }
+        } else if emailTF.text == nil {
+            
+        } else if passwordTF.text == nil {
+            
+        }
     }
     
     @IBAction func biometricAuthChecked(_ sender: BEMCheckBox) {

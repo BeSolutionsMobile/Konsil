@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
         
         MOLH.shared.activate(true)
         MOLHLanguage.setDefaultLanguage("en")
-        
         FirebaseApp.configure()
         
         retriveToken()
@@ -36,6 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
                 window?.rootViewController = vc
             }
         }
+        
+        PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: " abc " ,PayPalEnvironmentSandbox: " xyz "] )
+
         
         return true
     }
@@ -79,13 +81,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
         rootviewcontroller.rootViewController = stry.instantiateViewController(withIdentifier: "MainNavigation")
     }
     
+    // Get Device Token
     func retriveToken() {
         InstanceID.instanceID().instanceID { (result, error) in
             if let error = error {
                 print("Error fetching remote instange ID: \(error)")
             } else if let result = result {
                 AppDelegate.token = result.token
-                print("Remote instance ID token: \(result.token)")
+//                print("Remote instance ID token: \(result.token)")
             }
         }
     }

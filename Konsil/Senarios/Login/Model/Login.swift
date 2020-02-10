@@ -1,23 +1,24 @@
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
-//   let register = try? newJSONDecoder().decode(Register.self, from: jsonData)
+//   let login = try? newJSONDecoder().decode(Login.self, from: jsonData)
 
 import Foundation
 
-// MARK: - Register
-struct Register: Codable {
+// MARK: - Login
+struct Login: Codable {
     let token: String
-    let userInfo: User
+    let userInfo: UserInfo
 }
 
 // MARK: - UserInfo
-struct User: Codable {
+struct UserInfo: Codable {
     let id: Int
     let name, code, email, mobile_token: String
-    let user_type_id, phone, lang: String
-    let image_url: String?
-    
+    let user_type_id: String
+    let image_url: String
+    let phone, lang: String
+
     enum CodingKeys: String, CodingKey {
         case id, name, code, email
         case mobile_token

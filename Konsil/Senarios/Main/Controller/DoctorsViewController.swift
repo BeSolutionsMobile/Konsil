@@ -14,14 +14,17 @@ class DoctorsViewController: UIViewController {
     
     @IBOutlet weak var doctorTableView: UITableView!
     
-    var name = ["Ahmed Khalil" , "Mahmoud Saber" , "Nour" , "Wael Mansour" , "Mahmoud Samir" , "Nermeen Fouad" , "Ramy El Badry" , "Naser Ali" , "Ali Essa" , "Adham Samir"]
-    var deg = ["Specialist" , "Advisory" , "Professor" , "Specialist"  , "Professor" , "Advisory" , "Specialist" , "Advisory" , "Professor" , "Advisory"]
-    var images = ["1" , "2" , "3" , "4"  , "5" , "6" , "7" , "8" , "9" , "10"]
-    var rate = [4 , 3.5 , 4.5 ,2.5 ,4 , 3 , 4 , 3.5 , 3, 2.5]
+    var doctors: [Doctor]?
+    var specialityID: Int?
+    
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getSpecialites()
     }
     
     
@@ -29,7 +32,25 @@ class DoctorsViewController: UIViewController {
     @IBAction func filterButPressed(_ sender: UIButton) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Filter") as? FilterViewController {
             vc.modalPresentationStyle = .overFullScreen
+            vc.delegate = self
             self.present(vc, animated: false, completion: nil)
+        }
+    }
+    
+    func getSpecialites() {
+        if let speciality_id = specialityID {
+            APIClient.specialityDoctors(speciality_id: speciality_id) { (Result, status) in
+                DispatchQueue.main.async { [weak self] in
+                    switch Result {
+                    case .success(let response):
+                        self?.doctors = response.doctors
+                        self?.doctorTableView.reloadData()
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                    print("Status: ",status)
+                }
+            }
         }
     }
 }
@@ -38,16 +59,18 @@ class DoctorsViewController: UIViewController {
 //MARK:- TableView SetUp
 extension DoctorsViewController: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return name.count
+        return doctors?.count ?? 0
     }
     
     //MARK:- cellForRow
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DoctorsCell", for: indexPath) as! DoctorsTableViewCell
-        cell.drName.text = name[indexPath.row]
-        cell.drDegree.text = deg[indexPath.row]
-        cell.drRating.rating = rate[indexPath.row]
-        cell.drImage.image = UIImage(named: images[indexPath.row])
+        if let doctor = doctors?[indexPath.row] {
+            cell.drName.text = doctor.name
+            cell.drDegree.text = doctor.degree
+            cell.drRating.rating = stringToDouble(doctor.rate)
+            cell.drImage.sd_setHighlightedImage(with: URL(string: doctor.image_url), options: .delayPlaceholder)
+        }
         return cell
     }
     
@@ -61,5 +84,25 @@ extension DoctorsViewController: UITableViewDelegate , UITableViewDataSource {
     //MARK:- heightForRow
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
+    }
+}
+
+//MARK:- FilterData
+extension DoctorsViewController: FilterDoctorsDelegate {
+    func updateData(degree: [Int], rate: Int) {
+        if let specialityID = specialityID {
+            DispatchQueue.main.async { [weak self] in
+                APIClient.filterDoctors(speciality_id: specialityID, degree_id: degree, rate: rate) { (result, status) in
+                    switch result {
+                    case .success(let response):
+                        print(response)
+                        self?.doctors = response.doctors
+                        self?.doctorTableView.reloadData()
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
     }
 }

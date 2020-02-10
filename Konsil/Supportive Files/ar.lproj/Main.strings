@@ -72,7 +72,7 @@
 "7SR-pl-IdH.normalTitle" = "اكمال الطلب";
 
 /* Class = "UILabel"; text = " Allow Biometric Authentication      "; ObjectID = "7zG-Xc-eOc"; */
-"7zG-Xc-eOc.text" = " Allow Biometric Authentication      ";
+"7zG-Xc-eOc.text" = " السماح بالمصادقة البيومترية";
 
 /* Class = "UILabel"; text = "Degree :"; ObjectID = "80i-5c-i8N"; */
 "80i-5c-i8N.text" = "الدرجه :";
