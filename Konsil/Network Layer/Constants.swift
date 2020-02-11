@@ -11,7 +11,7 @@ import Foundation
 struct K {
     
     struct Server {
-        static let baseURL = "https://www.konsilmed.com/api"
+        static let baseURL = "https://www.konsilmed.be4maps.com/api"
     }
     
     struct Register {
@@ -25,6 +25,45 @@ struct K {
         static let platform = "platform"
     }
     
+    struct Login {
+        static let email = "email"
+        static let password = "password"
+        static let mobile_token = "mobile_token"
+    }
+    struct AllSpecialities {
+    }
+    
+    struct SpecialityDoctors {
+        static let speciality_id = "speciality_id"
+    }
+    
+    struct FilterDoctors {
+        static let speciality_id = "speciality_id"
+        static let degree_id = "degree_id"
+        static let rate = "rate"
+    }
+    
+    struct DoctorDetails {
+        static let doctor_id = "doctor_id"
+    }
+    
+    struct ChangeLanguage {
+        static let lang = "lang"
+    }
+    
+    struct ChangeUserInfo {
+        static let name = "name"
+        static let email = "email"
+        static let phone = "phone"
+        static let password = "password"
+        static let image_url = "image_url"
+    }
+    
+    struct FAQ {
+    }
+        
+    
+    //-----------------------------------------------
     enum HTTPHeaderField: String {
         case authentication = "Authorization"
         case contentType = "Content-Type"
