@@ -90,6 +90,7 @@
 		81FA8DF823F0694C006B3345 /* Specialities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA8DF723F0694C006B3345 /* Specialities.swift */; };
 		81FA8DFA23F15E53006B3345 /* SpecialityDoctors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA8DF923F15E53006B3345 /* SpecialityDoctors.swift */; };
 		81FA8DFC23F18722006B3345 /* FilteredDoctors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA8DFB23F18722006B3345 /* FilteredDoctors.swift */; };
+		81FA8DFF23F2B72B006B3345 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA8DFE23F2B72B006B3345 /* Language.swift */; };
 		81FD1A2123E1D1C900CED21A /* CheckMark.json in Resources */ = {isa = PBXBuildFile; fileRef = 81FD1A2023E1D1C900CED21A /* CheckMark.json */; };
 		86F76E2B6E4AAAC00731A7DD /* Pods_Konsil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5498410C12A18BA165BBD8 /* Pods_Konsil.framework */; };
 		A24C53A55E89008207606FE2 /* Pods_KonsilTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF321DEC7C3E10728BC0195 /* Pods_KonsilTests.framework */; };
@@ -214,6 +215,7 @@
 		81FA8DF723F0694C006B3345 /* Specialities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specialities.swift; sourceTree = "<group>"; };
 		81FA8DF923F15E53006B3345 /* SpecialityDoctors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialityDoctors.swift; sourceTree = "<group>"; };
 		81FA8DFB23F18722006B3345 /* FilteredDoctors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredDoctors.swift; sourceTree = "<group>"; };
+		81FA8DFE23F2B72B006B3345 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		81FD1A2023E1D1C900CED21A /* CheckMark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CheckMark.json; sourceTree = "<group>"; };
 		9660C97503DD3F09A20047CD /* Pods-Konsil-KonsilUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Konsil-KonsilUITests.debug.xcconfig"; path = "Target Support Files/Pods-Konsil-KonsilUITests/Pods-Konsil-KonsilUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ACF321DEC7C3E10728BC0195 /* Pods_KonsilTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KonsilTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -533,6 +535,7 @@
 		815A17DA23A67C4D001DDBEE /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				81FA8DFD23F2B715006B3345 /* Model */,
 				81ECE99B23AA6DB500E63105 /* View */,
 				815A17DB23A67C57001DDBEE /* Controller */,
 			);
@@ -655,6 +658,14 @@
 				81ECE9AA23AB9AC000E63105 /* MyConsultationsTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		81FA8DFD23F2B715006B3345 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				81FA8DFE23F2B72B006B3345 /* Language.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		83F1D4D0EBB35EECC0C2F1F6 /* Pods */ = {
@@ -972,6 +983,7 @@
 				8189E68723E097D8009DA8E0 /* FilesTableViewCell.swift in Sources */,
 				81FA8DF823F0694C006B3345 /* Specialities.swift in Sources */,
 				813761D423CB24D300BC90B1 /* FingerPrintViewController.swift in Sources */,
+				81FA8DFF23F2B72B006B3345 /* Language.swift in Sources */,
 				8114567E23BCE904005A4B93 /* Walkthrough2ViewController.swift in Sources */,
 				81D8FB1D23A82A5100585CA8 /* MainNavigationController.swift in Sources */,
 				81ECE9A023AB6C8400E63105 /* SectionHeaderView.swift in Sources */,

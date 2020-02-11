@@ -79,28 +79,56 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        if let email = emailTF.text , let password = passwordTF.text , let token = AppDelegate.token {
+        if let email = emailTF.text , let password = passwordTF.text , let token = AppDelegate.token , emailTF.text != "" , passwordTF.text != "" {
             DispatchQueue.main.async { [weak self] in
                 APIClient.login(email: email, password: password , mobile_tokken: token) { (Result,state) in
                     switch Result {
                     case .success(let response):
-                        UserDefaults.standard.set(response.token as String, forKey: Key.authorizationToken)
-                        let isBiometricAuthEnabled = (self?.allowBiometricAuth.on)! ? true : false
-                        UserDefaults.standard.set(isBiometricAuthEnabled, forKey: Key.prefereBiometricAuth)
-                        self?.backView.isHidden = false
-                        self?.backView.isUserInteractionEnabled = true
-                        self?.BlurView(view: self!.animationView)
+                        if state >= 200 , state < 300 {
+                            Shared.user = response.userInfo
+                            UserDefaults.standard.set(response.token as String, forKey: Key.authorizationToken)
+                            let isBiometricAuthEnabled = (self?.allowBiometricAuth.on)! ? true : false
+                            UserDefaults.standard.set(isBiometricAuthEnabled, forKey: Key.prefereBiometricAuth)
+                            self?.backView.isHidden = false
+                            self?.backView.isUserInteractionEnabled = true
+                            self?.BlurView(view: self!.animationView)
+                        }
                     case .failure(let error):
                         print(state)
                         print(error.localizedDescription)
                         
                     }
+                    switch state  {
+                    case 406:
+                        fallthrough
+                    case 401:
+                        Alert.show("Failed".localized, massege: "Email or Password is incorrect".localized, context: self!)
+                    case 405:
+                        Alert.show("Failed".localized, massege: "Email does not exist".localized, context: self!)
+                    default:
+                        break
+                    }
                 }
             }
-        } else if emailTF.text == nil {
-            
-        } else if passwordTF.text == nil {
-            
+        } else {
+            if emailTF.text == "" {
+                emailTF.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
+            }
+            if passwordTF.text == "" {
+                passwordTF.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
+            }
+        }
+    }
+    
+    @IBAction func textDidChange(_ sender: UITextField) {
+        if sender.layer.borderColor != UIColor.gray.cgColor {
+            sender.layer.borderColor = UIColor.gray.cgColor
+        }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.layer.borderColor != UIColor.gray.cgColor {
+            textField.layer.borderColor = UIColor.gray.cgColor
         }
     }
     

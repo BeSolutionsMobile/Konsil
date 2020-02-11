@@ -121,10 +121,10 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
             if indexPath.row == 1 {
                 Rounded.topRight(view: cell.backView)
             }
-            if indexPath.row == (catImage?.count ?? 1000)-1{
+            if indexPath.row == (specialities?.count ?? 1000)-1{
                 Rounded.botRight(view: cell.backView)
             }
-            if indexPath.row == (catImage?.count ?? 1000)-2{
+            if indexPath.row == (specialities?.count ?? 1000)-2{
                 Rounded.botLeft(view: cell.backView)
             }
         }

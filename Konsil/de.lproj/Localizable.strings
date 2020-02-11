@@ -5,35 +5,54 @@
   Created by Ali Mohamed on 1/19/20.
   Copyright © 2020 begroup. All rights reserved.
 */
+
+// System
 "Lang" = "de";
+"rightArrow" = "rightArrow";
+"leftArrow" = "leftArrow";
+
+
+// Specaialites
 "Surgery" = "Chirurgie";
 "Dental" = "Dental";
 "Bones" = "Knochen";
 "Heart and blood vesselss" = "Herz und Blutgefäße";
 "Pediatrics" = "Pädiatrie";
 "Neurology" = "Neurologie";
-"Open" = "öffnen";
-"Closed" = "geschlossen";
+
+
+// -------------------------------
+// Alerts
+"Done" = "Erledigt";
+"OK" = "in Ordnung";
+"Error" = "Error";
+"Failed" = "Gescheitert";
+"Image Uploaded Successfully" = "Bild erfolgreich hochgeladen";
+"Failed To Upload Image" = "Bild konnte nicht hochgeladen werden";
+
+// Network Messages
+
+"email already exists" = "E-Mail ist bereits vorhanden";
+"something went wrong" = "Etwas ist schief gelaufen";
+"Network connection error" = "Netzwerkverbindungsfehler";
+"Email or Password is incorrect" = "Email oder Passwort ist falsch";
+//---------------------------
+
+
+
 "Please accept our terms and conditions then try again" = "Bitte akzeptieren Sie unsere Allgemeinen Geschäftsbedingungen und versuchen Sie es erneut";
 "Patient History" = "Anamnese";
 "Enter Patient History Here" = "Geben Sie hier die Anamnese ein";
 "Enter Complaint Details Here" = "Geben Sie hier die Beschwerdedetails ein";
 "Enter Consultation Details Here" = "Geben Sie hier die Beratungsdetails ein";
+
 "Disruptive behavior"  = "Störendes Verhalten";
 "Prescribing Wrong Medicine" = "Prescriping Wrong Medicine";
 "Wrong Diagnosis" =  "Falsche Diagnose";
 "No Response From Doctor" = "Keine Antwort vom Arzt";
-"Image Uploaded Successfully" = "Bild erfolgreich hochgeladen";
-"Failed To Upload Image" = "Bild konnte nicht hochgeladen werden";
-"Done" = "Erledigt";
-"OK" = "in Ordnung";
-"Error" = "Error";
-"rightArrow" = "rightArrow";
+
+
 "Online Conversation" = "Online-Gespräch";
 "Consultation" = "Beratung";
-"email already exists" = "E-Mail ist bereits vorhanden";
-"something went wrong" = "Etwas ist schief gelaufen";
-
-"Failed" = "Gescheitert";
-"Network connection error" = "Netzwerkverbindungsfehler";
-
+"Open" = "öffnen";
+"Closed" = "geschlossen";

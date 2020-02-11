@@ -5,6 +5,7 @@
   Created by Ali Mohamed on 1/19/20.
   Copyright © 2020 begroup. All rights reserved.
 */
+
 // System
 "Lang" = "en";
 "rightArrow" = "rightArrow";
@@ -32,10 +33,11 @@
 
 // Network Messages
 
-"email already exists" = "email already exists";
-"something went wrong" = "something went wrong";
+"email already exists" = "Email already exists";
+"something went wrong" = "Something went wrong";
 "Network connection error" = "Network connection error";
-
+"Email or Password is incorrect" = "Email or Password is incorrect";
+"Email does not exist" = "Email does not exist";
 
 //---------------------------
 
@@ -56,4 +58,3 @@
 "Consultation" = "Consultation";
 "Open" = "Open";
 "Closed" = "Closed";
-

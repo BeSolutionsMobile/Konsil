@@ -24,9 +24,11 @@ class FingerPrintViewController: UIViewController {
         let animationView = Shared.showLottie(view: backView, fileName: "Unlock", contentMode: .scaleAspectFit)
         animationView.animationSpeed = 1.5
         
-        animationView.play { (finished) in
+        animationView.play {[weak self] (finished) in
             if finished == true {
-                self.dismiss(animated: true, completion: nil)
+                let vc = self?.storyboard?.instantiateViewController(withIdentifier: "MainNavigation") as! MainNavigationController
+                vc.modalPresentationStyle = .fullScreen
+                self?.present(vc, animated: true, completion: nil)
             }
         }
     }

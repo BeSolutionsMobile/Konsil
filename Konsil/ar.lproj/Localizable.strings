@@ -5,34 +5,54 @@
   Created by Ali Mohamed on 1/19/20.
   Copyright © 2020 begroup. All rights reserved.
 */
+
+// System
 "Lang" = "ar";
 "rightArrow" = "leftArrow";
 "leftArrow" = "rightArrow";
+
+// Specaialites
 "Surgery" = "جراحه";
 "Dental" = "اسنان";
 "Bones" = "عظام";
 "Heart and blood vesselss" = "قلب واوعيه دمويه";
 "Pediatrics" = "طب اطفال";
 "Neurology" = "مخ واعصاب";
-"Open" = "مفتوح";
-"Closed" = "مغلق";
+
+// -------------------------------
+// Alerts
+"Done" = "تم";
+"OK" = "حسنا";
+"Error" = "خطاء";
+"Failed" = "فشل";
+"Image Uploaded Successfully" = "تم رفع الصورة بنجاح";
+"Failed To Upload Image" = "خطاء في الرفع";
+
+
+// Network Messages
+
+"email already exists" = "البريد الالكتروني موجود بالفعل";
+"something went wrong" = "هناك خطأ ما";
+"Network connection error" = "خطأ في اتصال الشبكة";
+"Email or Password is incorrect" = "البريد الالكتروني او كلمة المرور غير صحيحة";
+"Email does not exist" = "البريد الإلكتروني غير موجود";
+
+//---------------------------
+
+
 "Please accept our terms and conditions then try again" = "برجاء الموافقه علي الشروط و الاحكام";
 "Patient History" = "تاريخ المريض";
 "Enter Patient History Here" = "ادخل هنا";
 "Enter Complaint Details Here" = "تفاصيل الشكوي";
 "Enter Consultation Details Here" = "ادخل تفاصيل الاستشارة";
+
 "Disruptive behavior"  = "سلوك مزعج";
 "Prescribing Wrong Medicine" = "وصف دواء خاطئ";
 "Wrong Diagnosis" = "تشخيص خاطئ";
 "No Response From Doctor" = "لا يوجد رد";
-"Image Uploaded Successfully" = "تم رفع الصورة بنجاح";
-"Failed To Upload Image" = "خطاء في الرفع";
-"Done" = "تم";
-"OK" = "حسنا";
-"Error" = "خطاء";
+
+"Open" = "مفتوح";
+"Closed" = "مغلق";
 "Online Conversation" = "محادثة";
 "Consultation" = "استشارة";
-"email already exists" = "البريد الالكتروني موجود بالفعل";
-"something went wrong" = "هناك خطأ ما";
-"Failed" = "فشل";
-"Network connection error" = "خطأ في اتصال الشبكة";
+

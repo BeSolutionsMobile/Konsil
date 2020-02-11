@@ -12,9 +12,12 @@ class Shared {
         }
     }
     
+    static var user: User?
+    
     static func settings(view: UIView) -> SideMenuSettings {
         let presentationStyle = SideMenuPresentationStyle.menuSlideIn
         presentationStyle.backgroundColor = .white
+        
         var settings = SideMenuSettings()
         settings.presentationStyle = presentationStyle
         settings.statusBarEndAlpha = 0

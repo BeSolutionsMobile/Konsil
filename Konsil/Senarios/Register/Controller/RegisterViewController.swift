@@ -108,14 +108,14 @@ class RegisterViewController: UIViewController {
                     APIClient.register(name: self?.name.text ?? "", email: self?.email.text ?? "", password: self?.password.text ?? "", phone: self?.phone.text ?? "", image_url: "", platform: 3, lang: "Lang".localized, mobile_tokken: dID) {  (Result ,Status)  in
                         switch Result {
                         case.success(let response):
-                            print(response)
                             if Status >= 200 && Status < 300 {
+                                Shared.user = response.userInfo
+                                UserDefaults.standard.set(response.token as String, forKey: Key.authorizationToken)
                                 self?.backView.isHidden = false
                                 self?.backView.isUserInteractionEnabled = true
                                 self?.BlurView(view: self!.animationView)
                             }
                         case .failure(let error):
-//                            Alert.show("Error".localized, massege: "Network connection error".localized, context: self!)
                             print(error.localizedDescription)
                         }
                         switch Status {

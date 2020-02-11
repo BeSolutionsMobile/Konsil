@@ -73,6 +73,7 @@ class ProfileInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
+        updateView()
     }
     
     @IBAction func uploadProfileImage(_ sender: UIButton) {
@@ -82,7 +83,14 @@ class ProfileInfoViewController: UIViewController {
     }
     
     //MARK:- Methodes
- 
+    func updateView(){
+        if let user = Shared.user , Shared.user != nil {
+            name.text = user.name
+            email.text = user.email
+            password.text = "password"
+            phone.text = user.phone
+        }
+    }
 }
 
 //MARK:- Image Picker Delegates

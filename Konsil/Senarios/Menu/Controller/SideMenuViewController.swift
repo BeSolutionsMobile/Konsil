@@ -41,19 +41,24 @@ class SideMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        updateView()
     }
     
     //MARK:- IB Actions
     @IBAction func changeLanguage(_ sender: UIButton) {
         MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en" )
-        MOLH.reset()
-        //        if #available(iOS 13.0, *) {
-        //            let delegate = UIApplication.shared.delegate as? AppDelegate
-        ////            delegate!.swichRoot()
-        //        } else {
-        //            MOLH.reset()
-        //        }
+        DispatchQueue.main.async {
+            APIClient.changeLanguage(lang:MOLHLanguage.currentAppleLanguage()) { (Result, Status) in
+                switch Result {
+                case .success(let response):
+                    print(response)
+                    MOLH.reset()
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+        
     }
     
     @IBAction func sideMenuButtonPressed(_ sender: UIButton) {
@@ -85,6 +90,13 @@ class SideMenuViewController: UIViewController {
             
         default:
             break
+        }
+    }
+    
+    func updateView(){
+        if let user = Shared.user , Shared.user != nil {
+            name.text = user.name
+            ProfileImage.sd_setImage(with: URL(string: user.image_url ?? ""), placeholderImage: UIImage(named: ""), options: .delayPlaceholder)
         }
     }
     

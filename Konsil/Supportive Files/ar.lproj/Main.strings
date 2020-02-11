@@ -477,7 +477,7 @@
 "rdR-C3-hLX.normalTitle" = "التسجيل";
 
 /* Class = "UILabel"; text = "De"; ObjectID = "sM6-g4-Xmn"; */
-"sM6-g4-Xmn.text" = "De";
+"sM6-g4-Xmn.text" = "En";
 
 /* Class = "UITextField"; placeholder = "Select Type"; ObjectID = "sVx-WN-ZVq"; */
 "sVx-WN-ZVq.placeholder" = "اختر نوع الشكوي";
@@ -543,7 +543,7 @@
 "z8b-je-bP4.normalTitle" = "تم";
 
 /* Class = "UILabel"; text = "Orem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever"; ObjectID = "z8t-3x-pmF"; */
-"z8t-3x-pmF.text" = "Orem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever";
+"z8t-3x-pmF.text" = "Dr. Nour El Din Mostafa Center Is One Of The Largest Dental Clinics All Over The World Constructed In Egypt On An Area Over 2000 M2, Having More Than 20 Dental Clinics And 250 Employees";
 
 /* Class = "UILabel"; text = "Upload photos of the medical consultation"; ObjectID = "zhF-B8-ML7"; */
 "zhF-B8-ML7.text" = "اختيار صور للاستشاره الطبيه";
