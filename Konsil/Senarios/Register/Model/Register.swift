@@ -17,12 +17,4 @@ struct User: Codable {
     let name, code, email, mobile_token: String
     let user_type_id, phone, lang: String
     let image_url: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case id, name, code, email
-        case mobile_token
-        case user_type_id
-        case image_url
-        case phone, lang
-    }
 }

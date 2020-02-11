@@ -8,12 +8,12 @@
 
 import UIKit
 protocol DropDownDelegate {
-    func updateView(label: UILabel , textField: DesignableUITextField)
+    func updateView(label: UILabel , textField: DesignableUITextField ,text: String)
 }
 
 class FAQTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var labelText: UILabel!
+    @IBOutlet weak var answerText: UILabel!
     @IBOutlet weak var dropDown: DesignableUITextField!{
         didSet{
             self.dropDown.layer.cornerRadius = 7
@@ -24,12 +24,15 @@ class FAQTableViewCell: UITableViewCell {
             self.dropDown.rightImage = #imageLiteral(resourceName: "Plus")
         }
     }
+    var answer: String?
    
     var delegate: DropDownDelegate?
     
    
     @IBAction func drop4(_ sender: UIButton) {
-        delegate?.updateView(label: labelText, textField: dropDown)
+        if answer != nil {
+            delegate?.updateView(label: answerText, textField: dropDown ,text: answer ?? "No Answer")
+        }
     }
    
 }

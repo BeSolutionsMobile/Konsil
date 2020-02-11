@@ -43,6 +43,7 @@ class DoctorsViewController: UIViewController {
                 DispatchQueue.main.async { [weak self] in
                     switch Result {
                     case .success(let response):
+                        print(response)
                         self?.doctors = response.doctors
                         self?.doctorTableView.reloadData()
                     case .failure(let error):
@@ -77,6 +78,7 @@ extension DoctorsViewController: UITableViewDelegate , UITableViewDataSource {
     //MARK:- didSelectRow
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "DoctorInfo") as? DoctorsInfoViewController {
+            vc.doctorID = doctors?[indexPath.row].id
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

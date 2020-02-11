@@ -81,6 +81,14 @@ class ProfileInfoViewController: UIViewController {
         self.present(imagePicker, animated: true, completion: nil)
         
     }
+//    func changePersonalInfo() {
+//        if let user = Shared.user , Shared.user != nil {
+//            if name.text != user.name || email.text {
+//                
+//            }
+//        }
+//    }
+    
     
     //MARK:- Methodes
     func updateView(){

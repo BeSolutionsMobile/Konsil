@@ -91,6 +91,9 @@
 		81FA8E0A23F2BECC006B3345 /* APIClint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA8E0723F2BECA006B3345 /* APIClint.swift */; };
 		81FA8E0B23F2BECC006B3345 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA8E0823F2BECB006B3345 /* APIRouter.swift */; };
 		81FA8E0C23F2BECC006B3345 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA8E0923F2BECC006B3345 /* Constants.swift */; };
+		81FA8E0E23F2C3F0006B3345 /* FAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA8E0D23F2C3F0006B3345 /* FAQ.swift */; };
+		81FA8E1123F2DC77006B3345 /* DoctorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA8E1023F2DC77006B3345 /* DoctorInfo.swift */; };
+		81FA8E1323F2FBB3006B3345 /* ChangeUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA8E1223F2FBB3006B3345 /* ChangeUserInfo.swift */; };
 		81FD1A2123E1D1C900CED21A /* CheckMark.json in Resources */ = {isa = PBXBuildFile; fileRef = 81FD1A2023E1D1C900CED21A /* CheckMark.json */; };
 		86F76E2B6E4AAAC00731A7DD /* Pods_Konsil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5498410C12A18BA165BBD8 /* Pods_Konsil.framework */; };
 		A24C53A55E89008207606FE2 /* Pods_KonsilTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF321DEC7C3E10728BC0195 /* Pods_KonsilTests.framework */; };
@@ -216,6 +219,9 @@
 		81FA8E0723F2BECA006B3345 /* APIClint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClint.swift; sourceTree = "<group>"; };
 		81FA8E0823F2BECB006B3345 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		81FA8E0923F2BECC006B3345 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		81FA8E0D23F2C3F0006B3345 /* FAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQ.swift; sourceTree = "<group>"; };
+		81FA8E1023F2DC77006B3345 /* DoctorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorInfo.swift; sourceTree = "<group>"; };
+		81FA8E1223F2FBB3006B3345 /* ChangeUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserInfo.swift; sourceTree = "<group>"; };
 		81FD1A2023E1D1C900CED21A /* CheckMark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CheckMark.json; sourceTree = "<group>"; };
 		9660C97503DD3F09A20047CD /* Pods-Konsil-KonsilUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Konsil-KonsilUITests.debug.xcconfig"; path = "Target Support Files/Pods-Konsil-KonsilUITests/Pods-Konsil-KonsilUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ACF321DEC7C3E10728BC0195 /* Pods_KonsilTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KonsilTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -337,6 +343,7 @@
 		810DAB0023A7A84E00B8AF20 /* Doctors */ = {
 			isa = PBXGroup;
 			children = (
+				81FA8E0F23F2DC67006B3345 /* Model */,
 				810DAB0423A7BC5100B8AF20 /* Controller */,
 			);
 			path = Doctors;
@@ -653,6 +660,8 @@
 			isa = PBXGroup;
 			children = (
 				81FA8DFE23F2B72B006B3345 /* Language.swift */,
+				81FA8E0D23F2C3F0006B3345 /* FAQ.swift */,
+				81FA8E1223F2FBB3006B3345 /* ChangeUserInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -660,11 +669,19 @@
 		81FA8E0023F2BE80006B3345 /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
-				81FA8E0723F2BECA006B3345 /* APIClint.swift */,
-				81FA8E0823F2BECB006B3345 /* APIRouter.swift */,
 				81FA8E0923F2BECC006B3345 /* Constants.swift */,
+				81FA8E0823F2BECB006B3345 /* APIRouter.swift */,
+				81FA8E0723F2BECA006B3345 /* APIClint.swift */,
 			);
 			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		81FA8E0F23F2DC67006B3345 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				81FA8E1023F2DC77006B3345 /* DoctorInfo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		83F1D4D0EBB35EECC0C2F1F6 /* Pods */ = {
@@ -942,12 +959,14 @@
 				81849F2A23A92EDB004A59D8 /* MessagesTableViewCell.swift in Sources */,
 				8189E68523E09646009DA8E0 /* ConsultationFilesViewController.swift in Sources */,
 				8166544F23D9CECC00739768 /* Upload.swift in Sources */,
+				81FA8E0E23F2C3F0006B3345 /* FAQ.swift in Sources */,
 				816592D823F02D0100595B6A /* Login.swift in Sources */,
 				81849F3023AA3FCA004A59D8 /* PeriodsTableViewCell.swift in Sources */,
 				810DAB0823A7BC8F00B8AF20 /* LogInViewController.swift in Sources */,
 				81FA8DFA23F15E53006B3345 /* SpecialityDoctors.swift in Sources */,
 				810DAB0D23A7C71F00B8AF20 /* RegisterViewController.swift in Sources */,
 				81ECE9A323AB7D4E00E63105 /* ComplaintTableViewCell.swift in Sources */,
+				81FA8E1123F2DC77006B3345 /* DoctorInfo.swift in Sources */,
 				815A17DE23A67C80001DDBEE /* SideMenuViewController.swift in Sources */,
 				817834AA23E9CC5A009A4B9C /* Register.swift in Sources */,
 				81ECE8C623BE36BF0048C0D9 /* Chat.swift in Sources */,
@@ -988,6 +1007,7 @@
 				81D8FB1D23A82A5100585CA8 /* MainNavigationController.swift in Sources */,
 				81ECE9A023AB6C8400E63105 /* SectionHeaderView.swift in Sources */,
 				81ECE99823AA652C00E63105 /* ConversationReportViewController.swift in Sources */,
+				81FA8E1323F2FBB3006B3345 /* ChangeUserInfo.swift in Sources */,
 				8114567C23BCE8F3005A4B93 /* Walkthrough1ViewController.swift in Sources */,
 				815A17E223A68D3C001DDBEE /* BecomeADoctorViewController.swift in Sources */,
 				81849F1F23A8EE6E004A59D8 /* RequestPopupViewController.swift in Sources */,

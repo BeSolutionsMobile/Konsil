@@ -3297,8 +3297,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="answerText" destination="aW9-cA-JOf" id="Gq2-5t-oX3"/>
                                             <outlet property="dropDown" destination="nCm-TY-Uqt" id="G3g-4u-m2e"/>
-                                            <outlet property="labelText" destination="aW9-cA-JOf" id="Gq2-5t-oX3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -4288,12 +4288,15 @@
                     </view>
                     <navigationItem key="navigationItem" title="Doctor Info" id="02c-N2-GFV"/>
                     <connections>
+                        <outlet property="consultationPrice" destination="6Kq-ZE-LkE" id="Kgv-5b-XxV"/>
+                        <outlet property="conversation" destination="I6L-4y-YV0" id="x5e-L5-50v"/>
                         <outlet property="details" destination="z8t-3x-pmF" id="BYI-Vk-0aI"/>
                         <outlet property="doctorImage" destination="8h0-yl-TRE" id="lBQ-uj-SVu"/>
                         <outlet property="doctorName" destination="CE1-OJ-oIq" id="zWK-6W-h0F"/>
                         <outlet property="doctorRate" destination="tLF-Xm-Lqh" id="WMC-cQ-sVO"/>
                         <outlet property="doctorSpeciality" destination="aZP-ou-N0A" id="YBR-lU-Yb5"/>
                         <outlet property="imageBackGroundView" destination="CET-kK-ljL" id="R1N-pj-UP2"/>
+                        <outlet property="patients" destination="LAc-bc-9XR" id="rvO-ho-Dc8"/>
                         <outlet property="requestConsultarionBack" destination="pb9-SL-NfX" id="n4j-bv-vdc"/>
                         <outlet property="requestConversationBack" destination="3ap-3v-FnW" id="qcT-dN-HBB"/>
                         <outlet property="tableView" destination="5mk-bP-jAZ" id="Att-Lm-dxD"/>

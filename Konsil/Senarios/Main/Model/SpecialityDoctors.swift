@@ -25,9 +25,5 @@ struct Doctor: Codable {
     let image_url: String
     let rate: String
 
-    enum CodingKeys: String, CodingKey {
-        case id, degree, name
-        case image_url
-        case rate
-    }
 }
+

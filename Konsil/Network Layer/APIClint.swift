@@ -31,12 +31,13 @@ class APIClient {
     
     static func register(name: String , email: String, password: String, phone: String, image_url: String, platform: Int, lang: String, mobile_tokken: String, completion: @escaping(Result<Register,AFError> , Int)->Void) {
         performRequest(route: APIRouter.Register(name: name, phone: phone, email: email, password: password, platform: platform, image_url: image_url, lang: lang, mobile_token: mobile_tokken), completion: completion)
-        
     }
     
     static func login(email: String, password: String, mobile_tokken: String, completion: @escaping(Result<Login,AFError>, Int)->Void) {
         performRequest(route: APIRouter.Login(email: email, password: password, mobile_token: mobile_tokken), completion: completion)
     }
+    
+    
     
     static func allSpeciailies(completion: @escaping(Result<Specialiteis,AFError>, Int)->Void){
         performRequest(route: APIRouter.AllSpecialities, completion: completion)
@@ -49,8 +50,24 @@ class APIClient {
     static func filterDoctors(speciality_id: Int ,degree_id: [Int] ,rate: Int ,completion: @escaping(Result<FilteredDoctors,AFError>, Int)->Void){
         performRequest(route: APIRouter.FilterDoctors(speciality_id: speciality_id, degree_id: degree_id, rate: rate), completion: completion)
     }
-
+    
+    static func doctorDetails(doctor_id: Int ,completion: @escaping(Result<DoctorInfo,AFError>, Int)->Void){
+        performRequest(route: APIRouter.DoctorDetails(doctor_id: doctor_id), completion: completion)
+    }
+    
+    
+    
+    
     static func changeLanguage(lang: String ,completion: @escaping(Result<Language,AFError>, Int)->Void){
         performRequest(route: APIRouter.ChangeLanguage(lang: lang), completion: completion)
     }
+    
+    static func getFAQ(completion: @escaping(Result<FAQ,AFError>, Int)->Void){
+           performRequest(route: APIRouter.FAQ, completion: completion)
+    }
+    
+    static func register(name: String , email: String, password: String, phone: String, image_url: String, completion: @escaping(Result<ChangeUserInfo,AFError> , Int)->Void) {
+        performRequest(route: APIRouter.changePersonalInfo(name: name, phone: phone, email: email, password: password, image_url: image_url), completion: completion)
+    }
+    
 }

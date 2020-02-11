@@ -61,7 +61,15 @@ struct K {
     
     struct FAQ {
     }
-        
+    
+    struct ChangePersonalInfo{
+        static let name = "name"
+        static let phone = "phone"
+        static let email = "eamil"
+        static let password = "password"
+        static let image_url = "image_url"
+
+    }
     
     //-----------------------------------------------
     enum HTTPHeaderField: String {

@@ -17,7 +17,6 @@ class DoctorsInfoViewController: UIViewController {
             Rounded.roundedCornerView(view: tableView, borderColor: UIColor.gray.cgColor, radius: 10, borderWidth: 2)
         }
     }
-    
     @IBOutlet weak var imageBackGroundView: UIView!{
         didSet{
             Rounded.roundedCornerView(view: imageBackGroundView, borderColor: UIColor.gray.cgColor, radius: imageBackGroundView.frame.height/2, borderWidth: 2)
@@ -31,6 +30,7 @@ class DoctorsInfoViewController: UIViewController {
     @IBOutlet weak var doctorName: UILabel!
     @IBOutlet weak var doctorSpeciality: UILabel!
     @IBOutlet weak var details: UILabel!
+    
     @IBOutlet weak var requestConsultarionBack: UILabel!{
         didSet{
             self.requestConsultarionBack.layer.cornerRadius = 15
@@ -55,11 +55,48 @@ class DoctorsInfoViewController: UIViewController {
         }
     }
     @IBOutlet weak var doctorRate: CosmosView!
+    @IBOutlet weak var patients: UILabel!
+    @IBOutlet weak var consultationPrice: UILabel!
+    @IBOutlet weak var conversation: UILabel!
     
+    var doctorID: Int?
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getDoctorData()
+    }
+    func getDoctorData(){
+        if let id = doctorID {
+            DispatchQueue.main.async { [weak self] in
+                APIClient.doctorDetails(doctor_id: 28) { (Result, Status) in
+                    switch Result {
+                    case .success(let response):
+                        print(response)
+                        self?.updateView(doctor: response.doctor)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                    print(Status)
+                }
+            }
+        }
+    }
+    
+    func updateView(doctor: DoctorData){
+        doctorImage.sd_setImage(with: URL(string: doctor.image_url ), placeholderImage: UIImage(named: ""), options: .delayPlaceholder)
+        doctorName.text = doctor.name
+        let rate = stringToDouble(doctor.rate)
+        doctorRate.rating = rate
+        doctorSpeciality.text = doctor.job_title
+        details.text = doctor.bio
+        consultationPrice.text = doctor.consultation_price
+        conversation.text = String(doctor.total_conversation)
+        patients.text = String(doctor.total_consultation)
     }
     
     @IBAction func requestConsultationPressed(_ sender: UIButton) {

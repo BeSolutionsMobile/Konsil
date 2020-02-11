@@ -19,7 +19,8 @@ enum APIRouter: URLRequestConvertible {
     case FilterDoctors(speciality_id: Int ,degree_id: [Int] ,rate: Int)
     case DoctorDetails(doctor_id: Int)
     case ChangeLanguage(lang: String)
-
+    case FAQ
+    case changePersonalInfo(name: String ,phone: String ,email: String , password: String ,image_url: String )
     //MARK:- HTTP Method
     private var method: HTTPMethod {
         switch self {
@@ -30,12 +31,16 @@ enum APIRouter: URLRequestConvertible {
         case .AllSpecialities:
             return .get
         case .SpecialityDoctors:
-            return .get
+            return .post
         case .FilterDoctors:
             return .post
         case .DoctorDetails:
-            return .get
+            return .post
         case .ChangeLanguage:
+            return .post
+        case .FAQ:
+            return .get
+        case .changePersonalInfo:
             return .post
         }
     }
@@ -57,6 +62,10 @@ enum APIRouter: URLRequestConvertible {
             return "/doctor-details"
         case .ChangeLanguage:
             return "/change-lang"
+        case .FAQ:
+            return "/faq"
+        case .changePersonalInfo:
+            return "/update-user-info"
         }
     }
     
@@ -77,6 +86,10 @@ enum APIRouter: URLRequestConvertible {
             return [K.DoctorDetails.doctor_id: doctor_id]
         case .ChangeLanguage(let lang):
             return [K.ChangeLanguage.lang: lang]
+        case .FAQ:
+            return nil
+        case .changePersonalInfo(let name, let phone, let email, let password, let image_url):
+            return [K.ChangeUserInfo.name: name ,K.ChangeUserInfo.phone: phone ,K.ChangeUserInfo.password: password ,K.ChangeUserInfo.email: email ,K.ChangeUserInfo.image_url: image_url]
         }
     }
     
