@@ -85,6 +85,7 @@ class LogInViewController: UIViewController {
                     switch Result {
                     case .success(let response):
                         if state >= 200 , state < 300 {
+                            print(response.token)
                             Shared.user = response.userInfo
                             UserDefaults.standard.set(response.token as String, forKey: Key.authorizationToken)
                             let isBiometricAuthEnabled = (self?.allowBiometricAuth.on)! ? true : false
