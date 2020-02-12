@@ -68,12 +68,13 @@ class ProfileInfoViewController: UIViewController {
     //MARK:- Variables
     
     let imagePicker = UIImagePickerController()
-    
+    var image = ""
     //MARK:- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
         updateView()
+        
     }
     
     @IBAction func uploadProfileImage(_ sender: UIButton) {
@@ -81,13 +82,20 @@ class ProfileInfoViewController: UIViewController {
         self.present(imagePicker, animated: true, completion: nil)
         
     }
-//    func changePersonalInfo() {
-//        if let user = Shared.user , Shared.user != nil {
-//            if name.text != user.name || email.text {
-//                
-//            }
-//        }
-//    }
+    func changePersonalInfo() {
+        if let user = Shared.user , Shared.user != nil , name.text!.count >= 3 , phone.text!.count >= 10 {
+            if name.text != user.name || email.text != user.email || phone.text != user.phone {
+                APIClient.changePersonalInfo(name: name.text ?? "", email: email.text ?? "", password: password.text ?? "", phone: phone.text ?? "", image_url: user.image_url ?? "") { (Result, Status) in
+                    switch Result {
+                    case .success(let response):
+                        print(response)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
+    }
     
     
     //MARK:- Methodes
@@ -105,11 +113,12 @@ class ProfileInfoViewController: UIViewController {
 extension ProfileInfoViewController: UIImagePickerControllerDelegate , UINavigationControllerDelegate{
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        FirebaseUploader.uploadToFirebase(viewController: self, imagePicker: imagePicker, didFinishPickingMediaWithInfo: info) { (uploaded) in
+        FirebaseUploader.uploadToFirebase(viewController: self, imagePicker: imagePicker, didFinishPickingMediaWithInfo: info) { [weak self] (uploaded ,url) in
             if uploaded {
+                self?.image = url
                 if let asset = info[UIImagePickerController.InfoKey.phAsset] as? PHAsset{
                     if let fileName = asset.value(forKey: "filename") as? String{
-                        self.photo.text = fileName
+                        self?.photo.text = fileName
                     }
                 }
             }

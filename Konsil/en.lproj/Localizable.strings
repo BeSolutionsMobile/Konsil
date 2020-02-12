@@ -29,6 +29,8 @@
 "Failed" = "Failed";
 "Image Uploaded Successfully" = "Image Uploaded Successfully";
 "Failed To Upload Image" = "Failed To Upload Image";
+"uploading" = "uploading";
+"please wait" = "please wait";
 
 
 // Network Messages

@@ -66,14 +66,17 @@ class DoctorsInfoViewController: UIViewController {
         rightBackBut()
     }
     
+    //MARK:- ViewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getDoctorData()
     }
+    
+    //Get Data From 
     func getDoctorData(){
         if let id = doctorID {
             DispatchQueue.main.async { [weak self] in
-                APIClient.doctorDetails(doctor_id: 28) { (Result, Status) in
+                APIClient.doctorDetails(doctor_id: id) { (Result, Status) in
                     switch Result {
                     case .success(let response):
                         print(response)
@@ -88,7 +91,7 @@ class DoctorsInfoViewController: UIViewController {
     }
     
     func updateView(doctor: DoctorData){
-        doctorImage.sd_setImage(with: URL(string: doctor.image_url ), placeholderImage: UIImage(named: ""), options: .delayPlaceholder)
+        doctorImage.sd_setImage(with: URL(string: doctor.image_url ), placeholderImage: UIImage(named: "imagePlaceHolder"), options: .delayPlaceholder)
         doctorName.text = doctor.name
         let rate = stringToDouble(doctor.rate)
         doctorRate.rating = rate

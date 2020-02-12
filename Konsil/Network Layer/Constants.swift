@@ -71,6 +71,22 @@ struct K {
 
     }
     
+    struct AddConsultation {
+        static let title = "title"
+        static let details = "details"
+        static let doctor_id = "doctor_id"
+        static let images = "images"
+        static let files = "files"
+    }
+    
+    struct ConsultationFiles {
+        static let consultation_id = "consultation_id"
+    }
+    
+    struct DownloadReport {
+        static let consultation_id = "consultation_id"
+    }
+    
     //-----------------------------------------------
     enum HTTPHeaderField: String {
         case authentication = "Authorization"
@@ -82,6 +98,5 @@ struct K {
     enum ContentType: String {
         case json = "application/json"
     }
-
     
 }

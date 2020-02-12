@@ -10,8 +10,9 @@ import UIKit
 
 class PayPalViewController: UIViewController , PayPalPaymentDelegate {
     
-    var paypalConfig = PayPalConfiguration()
+    @IBOutlet weak var paymentAmount: UILabel!
     
+    var paypalConfig = PayPalConfiguration()
     var environment: String = PayPalEnvironmentSandbox {
         willSet(newEnvironment) {
             if (newEnvironment != environment) {
@@ -25,24 +26,25 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
             paypalConfig.acceptCreditCards = acceptCreditCards
         }
     }
-    
+    var doctor = ""
+    var price = ""
     //MARK:- ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        paymentAmount.text = price + " $"
         paypalConfig.acceptCreditCards = acceptCreditCards
-        paypalConfig.merchantName = "Be Solutions"
+        paypalConfig.merchantName = "Konsil_med"
         paypalConfig.merchantPrivacyPolicyURL = URL(string: "www.google.com")
         paypalConfig.merchantUserAgreementURL = URL(string: "www.google.com")
-        paypalConfig.languageOrLocale = NSLocale.preferredLanguages[0] as! String
+        paypalConfig.languageOrLocale = NSLocale.preferredLanguages[0]
         paypalConfig.payPalShippingAddressOption = .payPal
         
         PayPalMobile.preconnect(withEnvironment: environment)
     }
     
-    @IBAction func payWithPayPal(sender: UIButton) {
-            let item = PayPalItem(name: "Doctor Consultation", withQuantity: 1, withPrice: NSDecimalNumber(string: "10"), withCurrency: "USD", withSku: "Doctor-Ali")
+    @IBAction func payWithPayPal(_ sender: UIButton) {
+            let item = PayPalItem(name: doctor, withQuantity: 1, withPrice: NSDecimalNumber(string: price), withCurrency: "USD", withSku: "doctor")
             let items = [item]
             let subtotle = PayPalItem.totalPrice(forItems: items)
             let total = subtotle.decimalValue
@@ -51,6 +53,7 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
 
             if payment.processable {
                 let paymentVC = PayPalPaymentViewController(payment: payment , configuration: paypalConfig , delegate: self)
+                paymentVC?.modalPresentationStyle = .fullScreen
                 present(paymentVC!, animated: true, completion: nil)
             } else {
                 print("Cannot process payment")

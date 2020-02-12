@@ -70,7 +70,7 @@ extension DoctorsViewController: UITableViewDelegate , UITableViewDataSource {
             cell.drName.text = doctor.name
             cell.drDegree.text = doctor.degree
             cell.drRating.rating = stringToDouble(doctor.rate)
-            cell.drImage.sd_setHighlightedImage(with: URL(string: doctor.image_url), options: .delayPlaceholder)
+            cell.drImage.sd_setImage(with: URL(string: doctor.image_url), placeholderImage: UIImage(named: "imagePlaceHolder"))
         }
         return cell
     }
@@ -92,6 +92,7 @@ extension DoctorsViewController: UITableViewDelegate , UITableViewDataSource {
 //MARK:- FilterData
 extension DoctorsViewController: FilterDoctorsDelegate {
     func updateData(degree: [Int], rate: Int) {
+        print(degree)
         if let specialityID = specialityID {
             DispatchQueue.main.async { [weak self] in
                 APIClient.filterDoctors(speciality_id: specialityID, degree_id: degree, rate: rate) { (result, status) in

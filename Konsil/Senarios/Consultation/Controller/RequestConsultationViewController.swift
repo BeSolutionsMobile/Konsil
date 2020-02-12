@@ -38,6 +38,10 @@ class RequestConsultationViewController: UIViewController {
     //MARK:- Variables
     var imagePicker = OpalImagePickerController()
     let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypePDF as String], in: .import)
+    var files: [String] = []
+    var images: [String] = ["","",""]
+    var imageUploaded = false
+    var filesUploaded = false
     
     //MARK:- ViewDidLoad
     override func viewDidLoad() {
@@ -46,11 +50,9 @@ class RequestConsultationViewController: UIViewController {
         //        textViewHieghtConstraint.constant = self.view.frame.height/5
     }
     
+    //MARK:- IBActions
     @IBAction func completeRequestPressed(_ sender: UIButton) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "Payment") as? PaymentViewController {
-            vc.modalPresentationStyle = .fullScreen
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+        addConsultation()
     }
     
     @IBAction func uploadImage(_ sender: UIButton) {
@@ -63,6 +65,41 @@ class RequestConsultationViewController: UIViewController {
         documentPicker.delegate = self
         documentPicker.allowsMultipleSelection = false
         self.present(documentPicker, animated: true, completion: nil)
+    }
+    //MARK:- Methodes
+    
+    func addConsultation() {
+        if let title = titleTF.text , let details = detailsTV.text ,imageUploaded == true , filesUploaded == true {
+            print("Requesting")
+            DispatchQueue.main.async { [weak self] in
+                APIClient.addConsultation(title: title, details: details, doctor_id: 26, images: self?.images ?? [], files: self?.files ?? []) { (Result , Status) in
+                    switch Result {
+                    case .success(let response):
+                        print(response)
+                        if Status >= 200 && Status < 300 {
+                            if let vc = self?.storyboard?.instantiateViewController(withIdentifier: "PayPalVC") as? PayPalViewController {
+                                vc.modalPresentationStyle = .fullScreen
+                                vc.doctor = "Consultation"
+                                vc.price = "2.5"
+                                self?.navigationController?.pushViewController(vc, animated: true)
+                            }
+                        }
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                   print(Status)
+                }
+            }
+        } else {
+            print("no")
+            if titleTF.text == "" || detailsTV.text == "" {
+                print("1")
+                Alert.show("Error".localized, massege: "All Fields Are Required".localized, context: self)
+            } else if imageUploaded == false && filesUploaded == false {
+                print("2")
+                Alert.show("Error".localized, massege: "Please upload images and files of the medical consultaion".localized, context: self)
+            }
+        }
     }
     
     func imagePickerSettings() {
@@ -82,9 +119,11 @@ extension RequestConsultationViewController: OpalImagePickerControllerDelegate ,
     //MARK:- Image Picker
     func imagePicker(_ picker: OpalImagePickerController, didFinishPickingImages images: [UIImage]) {
         for i in images.indices {
-            FirebaseUploader.uploadImagesToFirebase(viewController: self, imagePicker: imagePicker, pickedImage: images[i]) { (uploaded) in
+            FirebaseUploader.uploadImagesToFirebase(viewController: self, imagePicker: imagePicker, pickedImage: images[i]) {[weak self] (uploaded, imagesURL) in
                 if uploaded == true {
-                    let animation = Shared.showLottie(view: self.imageCheckView, fileName: "CheckMark", contentMode: .scaleAspectFit)
+                    self?.imageUploaded = true
+                    self?.images = imagesURL
+                    let animation = Shared.showLottie(view: self!.imageCheckView, fileName: "CheckMark", contentMode: .scaleAspectFit)
                     animation.play()
                 }
             }
@@ -93,9 +132,11 @@ extension RequestConsultationViewController: OpalImagePickerControllerDelegate ,
     
     //MARK:- Document Picker
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        FirebaseUploader.uploadFileToFirebase(viewController: self, documentPicker: documentPicker, urls: urls, uid: "Ali") { (uploaded) in
-            if uploaded == true {
-                let animation = Shared.showLottie(view: self.fileCheckView, fileName: "CheckMark", contentMode: .scaleAspectFit)
+        FirebaseUploader.uploadFileToFirebase(viewController: self, documentPicker: documentPicker, urls: urls, uid: "Ali") { [weak self] (Finished, filesURL) in
+            if Finished {
+                self?.filesUploaded = true
+                self?.files = filesURL
+                let animation = Shared.showLottie(view: self!.fileCheckView, fileName: "CheckMark", contentMode: .scaleAspectFit)
                 animation.play()
             }
         }

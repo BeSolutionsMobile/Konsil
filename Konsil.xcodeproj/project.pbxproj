@@ -52,6 +52,8 @@
 		816592D823F02D0100595B6A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816592D723F02D0100595B6A /* Login.swift */; };
 		8166544F23D9CECC00739768 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166544E23D9CECB00739768 /* Upload.swift */; };
 		8166545123D9E19F00739768 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8166545023D9E19F00739768 /* GoogleService-Info.plist */; };
+		816E93E223F3FE460033C30F /* AddConsultation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816E93E123F3FE460033C30F /* AddConsultation.swift */; };
+		816E93E423F3FF370033C30F /* ConsultationFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816E93E323F3FF370033C30F /* ConsultationFiles.swift */; };
 		817834AA23E9CC5A009A4B9C /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817834A923E9CC5A009A4B9C /* Register.swift */; };
 		81849F1D23A8DC26004A59D8 /* RequestConsultationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F1C23A8DC26004A59D8 /* RequestConsultationViewController.swift */; };
 		81849F1F23A8EE6E004A59D8 /* RequestPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F1E23A8EE6E004A59D8 /* RequestPopupViewController.swift */; };
@@ -174,6 +176,8 @@
 		816592D723F02D0100595B6A /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		8166544E23D9CECB00739768 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		8166545023D9E19F00739768 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		816E93E123F3FE460033C30F /* AddConsultation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddConsultation.swift; sourceTree = "<group>"; };
+		816E93E323F3FF370033C30F /* ConsultationFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationFiles.swift; sourceTree = "<group>"; };
 		817834A923E9CC5A009A4B9C /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		81849F1C23A8DC26004A59D8 /* RequestConsultationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConsultationViewController.swift; sourceTree = "<group>"; };
 		81849F1E23A8EE6E004A59D8 /* RequestPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPopupViewController.swift; sourceTree = "<group>"; };
@@ -560,6 +564,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		816E93E023F3FE330033C30F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				816E93E123F3FE460033C30F /* AddConsultation.swift */,
+				816E93E323F3FF370033C30F /* ConsultationFiles.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		817834AC23E9CCCA009A4B9C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -571,6 +584,7 @@
 		81849F1A23A8DBEC004A59D8 /* Consultation */ = {
 			isa = PBXGroup;
 			children = (
+				816E93E023F3FE330033C30F /* Model */,
 				81849F2823A92E50004A59D8 /* View */,
 				81849F1B23A8DC06004A59D8 /* Controller */,
 			);
@@ -984,12 +998,14 @@
 				815A17C023A658F7001DDBEE /* MainViewController.swift in Sources */,
 				813761FC23CB551200BC90B1 /* Keys.swift in Sources */,
 				81ECE99A23AA6D8800E63105 /* FAQvViewController.swift in Sources */,
+				816E93E223F3FE460033C30F /* AddConsultation.swift in Sources */,
 				81BB8ADB23D99C3D00C57648 /* AppDelegate.swift in Sources */,
 				81849F2123A906C1004A59D8 /* ConsultationDetailsViewController.swift in Sources */,
 				81849F1D23A8DC26004A59D8 /* RequestConsultationViewController.swift in Sources */,
 				81ECE99423AA650500E63105 /* ConversationDetailsViewController.swift in Sources */,
 				81ECE99623AA652100E63105 /* conversationInfoViewController.swift in Sources */,
 				815A17CA23A6596F001DDBEE /* MainCategoriesCollectionViewCell.swift in Sources */,
+				816E93E423F3FF370033C30F /* ConsultationFiles.swift in Sources */,
 				810DAAFF23A782A700B8AF20 /* DoctorsTableViewCell.swift in Sources */,
 				815A17CC23A65981001DDBEE /* Categories.swift in Sources */,
 				81FA8E0A23F2BECC006B3345 /* APIClint.swift in Sources */,

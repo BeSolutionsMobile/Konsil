@@ -21,6 +21,10 @@ enum APIRouter: URLRequestConvertible {
     case ChangeLanguage(lang: String)
     case FAQ
     case changePersonalInfo(name: String ,phone: String ,email: String , password: String ,image_url: String )
+    case AddConsultation(title: String ,details: String ,doctor_id: Int ,images: [String] ,files: [String])
+    case ConsultationFiles(consultation_id: Int)
+    case DownloadReport(consultation_id: Int)
+
     //MARK:- HTTP Method
     private var method: HTTPMethod {
         switch self {
@@ -42,6 +46,12 @@ enum APIRouter: URLRequestConvertible {
             return .get
         case .changePersonalInfo:
             return .post
+        case .AddConsultation:
+            return .post
+        case .ConsultationFiles:
+            return .get
+        case .DownloadReport:
+            return .get
         }
     }
     
@@ -66,6 +76,12 @@ enum APIRouter: URLRequestConvertible {
             return "/faq"
         case .changePersonalInfo:
             return "/update-user-info"
+        case .AddConsultation:
+            return "/add-consultation"
+        case .ConsultationFiles:
+            return "/consultation-files"
+        case .DownloadReport:
+            return "/download-report"
         }
     }
     
@@ -90,6 +106,12 @@ enum APIRouter: URLRequestConvertible {
             return nil
         case .changePersonalInfo(let name, let phone, let email, let password, let image_url):
             return [K.ChangeUserInfo.name: name ,K.ChangeUserInfo.phone: phone ,K.ChangeUserInfo.password: password ,K.ChangeUserInfo.email: email ,K.ChangeUserInfo.image_url: image_url]
+        case .AddConsultation(let title, let details, let doctor_id, let images, let files):
+            return [K.AddConsultation.title: title ,K.AddConsultation.details: details ,K.AddConsultation.doctor_id: doctor_id , K.AddConsultation.images: images ,K.AddConsultation.files: files]
+        case .ConsultationFiles(let consultation_id):
+            return [K.ConsultationFiles.consultation_id: consultation_id]
+        case .DownloadReport(let consultation_id):
+            return [K.DownloadReport.consultation_id: consultation_id]
         }
     }
     
@@ -122,6 +144,7 @@ enum APIRouter: URLRequestConvertible {
         Vparameters = parameters!
         encodedURLRequest = try URLEncoding.queryString.encode(urlRequest, with: Vparameters)
       }
+        print(encodedURLRequest)
       return encodedURLRequest!
       }
 }

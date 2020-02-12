@@ -96,7 +96,8 @@ class SideMenuViewController: UIViewController {
     func updateView(){
         if let user = Shared.user , Shared.user != nil {
             name.text = user.name
-            ProfileImage.sd_setImage(with: URL(string: user.image_url ?? ""), placeholderImage: UIImage(named: ""), options: .delayPlaceholder)
+            ProfileImage.sd_setImage(with: URL(string: user.image_url ?? ""), placeholderImage: UIImage(named: "sd_setImage"), options: .delayPlaceholder)
+            
         }
     }
     

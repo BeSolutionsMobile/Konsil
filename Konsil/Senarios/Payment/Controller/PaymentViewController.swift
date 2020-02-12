@@ -50,7 +50,7 @@ class PaymentViewController: UIViewController , UIImagePickerControllerDelegate 
     //MARK:- Variables
     
     let imagePicker = UIImagePickerController()
-    
+    var imageURL = ""
     //MARK:- viewDidLoad
     
     override func viewDidLoad() {
@@ -93,11 +93,12 @@ class PaymentViewController: UIViewController , UIImagePickerControllerDelegate 
     //MARK:- ImagePicker
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        FirebaseUploader.uploadToFirebase(viewController: self, imagePicker: imagePicker, didFinishPickingMediaWithInfo: info) { (uploaded) in
+        FirebaseUploader.uploadToFirebase(viewController: self, imagePicker: imagePicker, didFinishPickingMediaWithInfo: info) {[weak self] (uploaded , url) in
             if uploaded == true {
-                Alert.show("", massege: "Image Uploaded Successfully".localized, context: self)
+                Alert.show("", massege: "Image Uploaded Successfully".localized, context: self!)
+                self?.imageURL = url
             } else {
-                Alert.show("", massege: "Failed To Upload Image", context: self)
+                Alert.show("", massege: "Failed To Upload Image", context: self!)
             }
         }
     }

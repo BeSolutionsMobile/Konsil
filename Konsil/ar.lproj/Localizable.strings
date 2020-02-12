@@ -27,6 +27,8 @@
 "Failed" = "فشل";
 "Image Uploaded Successfully" = "تم رفع الصورة بنجاح";
 "Failed To Upload Image" = "خطاء في الرفع";
+"uploading" = "جاري الرفع";
+"please wait" = "برجاء الانتظار";
 
 
 // Network Messages

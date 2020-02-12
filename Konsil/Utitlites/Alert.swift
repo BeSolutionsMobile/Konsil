@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 class Alert {
-
+    
     static func show(_ title:String, massege:String , context:UIViewController) {
-       
-      let alert = UIAlertController(title: title, message: massege, preferredStyle: .alert)
-      // alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+        
+        let alert = UIAlertController(title: title, message: massege, preferredStyle: .alert)
+        // alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "OK".localized, style: .cancel, handler: nil))
-      context.present(alert, animated: true)
-   }
-
+        context.present(alert, animated: true)
+    }
+    
 }

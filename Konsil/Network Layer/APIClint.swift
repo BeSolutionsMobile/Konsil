@@ -66,8 +66,23 @@ class APIClient {
            performRequest(route: APIRouter.FAQ, completion: completion)
     }
     
-    static func register(name: String , email: String, password: String, phone: String, image_url: String, completion: @escaping(Result<ChangeUserInfo,AFError> , Int)->Void) {
+    static func changePersonalInfo(name: String , email: String, password: String, phone: String, image_url: String, completion: @escaping(Result<ChangeUserInfo,AFError> , Int)->Void) {
         performRequest(route: APIRouter.changePersonalInfo(name: name, phone: phone, email: email, password: password, image_url: image_url), completion: completion)
     }
     
+    static func addConsultation(title:String ,details: String ,doctor_id: Int ,images: [String] ,files: [String] ,completion: @escaping(Result<AddConsultation,AFError> , Int)->Void) {
+        performRequest(route: APIRouter.AddConsultation(title: title, details: details, doctor_id: doctor_id, images: images, files: files), completion: completion)
+    }
+    
+    static func addConsultation2(title:String ,details: String ,doctor_id: Int ,images: [String] ,files: [String] ,completion: @escaping(Result<String,AFError>)->Void) {
+        performRequestSimple(route: APIRouter.AddConsultation(title: title, details: details, doctor_id: doctor_id, images: images, files: files), completion: completion)
+    }
+    
+    static func downloadReport(consultation_id: Int ,completion: @escaping(Result<GetConsultationFiles,AFError> , Int)->Void) {
+        performRequest(route: APIRouter.ConsultationFiles(consultation_id: consultation_id), completion: completion)
+    }
+    
+    static func consultationFiles(consultation_id: Int ,completion: @escaping(Result<GetConsultationFiles,AFError> , Int)->Void) {
+        performRequest(route: APIRouter.ConsultationFiles(consultation_id: consultation_id), completion: completion)
+    }
 }

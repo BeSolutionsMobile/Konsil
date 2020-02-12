@@ -11,6 +11,8 @@ import OpalImagePicker
 
 class FirebaseUploader
 {
+    static var files: [String]?
+    static var images: [String]?
     static var imageURl: String?
     static func randomString(length: Int) -> String {
         
@@ -27,7 +29,7 @@ class FirebaseUploader
         
         return randomString
     }
-    static func uploadToFirebase(viewController:UIViewController ,imagePicker:UIImagePickerController , didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any], completion: ((_ success: Bool) -> Void)?)
+    static func uploadToFirebase(viewController:UIViewController ,imagePicker:UIImagePickerController , didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any], completion: ((_ success: Bool ,_ imageURL: String) -> Void)?)
     {
         
         //to upload image to firebase storage
@@ -54,7 +56,7 @@ class FirebaseUploader
                             // Here you can get the download URL for 'simpleImage.jpg'
                             print(url?.absoluteString ?? "link")
                             imageURl = url?.absoluteString ?? "link"
-                            completion?(true) ?? nil
+                            completion?(true, imageURl ?? "") ?? nil
                         }
                     }
                 }
@@ -66,15 +68,12 @@ class FirebaseUploader
                 let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
                     / Double(snapshot.progress!.totalUnitCount)
                 
-                alert = UIAlertController(title: "uploading", message: "please wait", preferredStyle: UIAlertController.Style.alert)
-                
+                alert = UIAlertController(title: "uploading".localized, message: "please wait".localized, preferredStyle: UIAlertController.Style.alert)
                 viewController.present(alert!, animated: true, completion: nil)
-                
                 print(percentComplete)
             }
             
             uploadImageTask.observe(.success) { snapshot in
-                
                 print("done")
                 viewController.dismiss(animated: true, completion: nil)
             }
@@ -86,7 +85,7 @@ class FirebaseUploader
     }
     
     //MARK:- Upload Using Opal ImagePicker
-    static func uploadImagesToFirebase(viewController:UIViewController ,imagePicker: OpalImagePickerController , pickedImage: UIImage , completion: ((_ success: Bool) -> Void)?)
+    static func uploadImagesToFirebase(viewController:UIViewController ,imagePicker: OpalImagePickerController , pickedImage: UIImage , completion: ((_ success: Bool, _ images: [String]) -> Void)?)
     {
         
         //to upload image to firebase storage
@@ -108,7 +107,12 @@ class FirebaseUploader
                     } else {
                         print(url?.absoluteString ?? "link")
                         imageURl = url?.absoluteString ?? "link"
-                        completion?(true) ?? nil
+                        if images?.count == nil {
+                            images = [(imageURl ?? "")]
+                        } else {
+                            images?.append(imageURl ?? "")
+                        }
+                        completion?(true , images ?? []) ?? nil
                     }
                 }
             }
@@ -120,7 +124,7 @@ class FirebaseUploader
             let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
                 / Double(snapshot.progress!.totalUnitCount)
             
-            alert = UIAlertController(title: "uploading", message: "please wait", preferredStyle: UIAlertController.Style.alert)
+            alert = UIAlertController(title: "uploading".localized, message: "please wait".localized, preferredStyle: UIAlertController.Style.alert)
             
             viewController.present(alert!, animated: true, completion: nil)
             
@@ -139,7 +143,7 @@ class FirebaseUploader
     
     
     //MARK:- File Upload
-    static func uploadFileToFirebase(viewController: UIViewController , documentPicker: UIDocumentPickerViewController , urls: [URL] , uid: String , completion: ((_ success: Bool) -> Void)?)
+    static func uploadFileToFirebase(viewController: UIViewController , documentPicker: UIDocumentPickerViewController , urls: [URL] , uid: String , completion: ((_ success: Bool , _ files: [String]) -> Void)?)
     {
         
         //to upload image to firebase storage
@@ -158,8 +162,13 @@ class FirebaseUploader
                         if error != nil {
                             print("Download Link Error \(error?.localizedDescription ?? "er")")
                         } else {
-                            print(url?.absoluteString ?? "url")
-                            completion?(true) ?? nil
+                            if files?.count == nil {
+                                files = [(url?.absoluteString ?? "")]
+                            } else {
+                                files?.append((url?.absoluteString ?? ""))
+                            }
+                            print(files ?? [])
+                            completion?(true ,files ?? []) ?? nil
                         }
                     }
                 }
@@ -168,7 +177,7 @@ class FirebaseUploader
             
             uploadFileTask.observe(.progress) { snapshot in
                 
-                alert = UIAlertController(title: "uploading", message: "please wait", preferredStyle: UIAlertController.Style.alert)
+                alert = UIAlertController(title: "uploading".localized , message: "please wait".localized , preferredStyle: UIAlertController.Style.alert)
                 viewController.present(alert!, animated: true, completion: nil)
                 
                 var percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
