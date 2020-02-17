@@ -44,6 +44,12 @@ class ConsultationFilesViewController: UIViewController {
         self.present(documentPicker, animated: true, completion: nil)
     }
     
+//    func getData(){
+//        DispatchQueue.main.async { [weak self] in
+//            
+//        }
+//    }
+    
 
 }
 
@@ -94,6 +100,6 @@ extension ConsultationFilesViewController: UITableViewDelegate , UITableViewData
 //MARK:- DocumentPicker SetUp
 extension ConsultationFilesViewController: UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        FirebaseUploader.uploadFileToFirebase(viewController: self, documentPicker: documentPicker, urls: urls, uid: "Ali", completion: nil)
+        FirebaseUploader.uploadFileToFirebase(viewController: self, documentPicker: documentPicker, urls: urls , completion: nil)
     }
 }

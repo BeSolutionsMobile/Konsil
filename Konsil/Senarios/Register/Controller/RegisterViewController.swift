@@ -143,7 +143,7 @@ class RegisterViewController: UIViewController {
             if phone.text!.count < 10 {
                 phone.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
             }
-            if password.text!.count < 6 {
+            if password.text!.count < 8 {
                 password.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
             }
             if let mail = email.text {

@@ -132,7 +132,7 @@ extension RequestConsultationViewController: OpalImagePickerControllerDelegate ,
     
     //MARK:- Document Picker
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        FirebaseUploader.uploadFileToFirebase(viewController: self, documentPicker: documentPicker, urls: urls, uid: "Ali") { [weak self] (Finished, filesURL) in
+        FirebaseUploader.uploadFileToFirebase(viewController: self, documentPicker: documentPicker, urls: urls) { [weak self] (Finished, filesURL) in
             if Finished {
                 self?.filesUploaded = true
                 self?.files = filesURL

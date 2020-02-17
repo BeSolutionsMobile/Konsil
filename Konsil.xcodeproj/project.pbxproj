@@ -52,6 +52,7 @@
 		816592D823F02D0100595B6A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816592D723F02D0100595B6A /* Login.swift */; };
 		8166544F23D9CECC00739768 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166544E23D9CECB00739768 /* Upload.swift */; };
 		8166545123D9E19F00739768 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8166545023D9E19F00739768 /* GoogleService-Info.plist */; };
+		8168100C23F993B600B5C89D /* DownloadReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8168100B23F993B600B5C89D /* DownloadReport.swift */; };
 		816E93E223F3FE460033C30F /* AddConsultation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816E93E123F3FE460033C30F /* AddConsultation.swift */; };
 		816E93E423F3FF370033C30F /* ConsultationFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816E93E323F3FF370033C30F /* ConsultationFiles.swift */; };
 		817834AA23E9CC5A009A4B9C /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817834A923E9CC5A009A4B9C /* Register.swift */; };
@@ -63,6 +64,8 @@
 		81849F2A23A92EDB004A59D8 /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F2923A92EDB004A59D8 /* MessagesTableViewCell.swift */; };
 		81849F3023AA3FCA004A59D8 /* PeriodsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F2F23AA3FCA004A59D8 /* PeriodsTableViewCell.swift */; };
 		81849F3223AA3FFA004A59D8 /* DoctorConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F3123AA3FFA004A59D8 /* DoctorConversationViewController.swift */; };
+		81862C6D23FAA62F002F3D81 /* GetAppointments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81862C6C23FAA62F002F3D81 /* GetAppointments.swift */; };
+		81862C6F23FAA855002F3D81 /* ReserveConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81862C6E23FAA855002F3D81 /* ReserveConversation.swift */; };
 		8189E68523E09646009DA8E0 /* ConsultationFilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8189E68423E09646009DA8E0 /* ConsultationFilesViewController.swift */; };
 		8189E68723E097D8009DA8E0 /* FilesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8189E68623E097D8009DA8E0 /* FilesTableViewCell.swift */; };
 		8189E68B23E18D01009DA8E0 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8189E68A23E18D01009DA8E0 /* PaymentViewController.swift */; };
@@ -176,6 +179,7 @@
 		816592D723F02D0100595B6A /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		8166544E23D9CECB00739768 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		8166545023D9E19F00739768 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8168100B23F993B600B5C89D /* DownloadReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadReport.swift; sourceTree = "<group>"; };
 		816E93E123F3FE460033C30F /* AddConsultation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddConsultation.swift; sourceTree = "<group>"; };
 		816E93E323F3FF370033C30F /* ConsultationFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationFiles.swift; sourceTree = "<group>"; };
 		817834A923E9CC5A009A4B9C /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
@@ -187,6 +191,8 @@
 		81849F2923A92EDB004A59D8 /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
 		81849F2F23AA3FCA004A59D8 /* PeriodsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodsTableViewCell.swift; sourceTree = "<group>"; };
 		81849F3123AA3FFA004A59D8 /* DoctorConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorConversationViewController.swift; sourceTree = "<group>"; };
+		81862C6C23FAA62F002F3D81 /* GetAppointments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppointments.swift; sourceTree = "<group>"; };
+		81862C6E23FAA855002F3D81 /* ReserveConversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveConversation.swift; sourceTree = "<group>"; };
 		8189E68423E09646009DA8E0 /* ConsultationFilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationFilesViewController.swift; sourceTree = "<group>"; };
 		8189E68623E097D8009DA8E0 /* FilesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesTableViewCell.swift; sourceTree = "<group>"; };
 		8189E68A23E18D01009DA8E0 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
@@ -569,6 +575,7 @@
 			children = (
 				816E93E123F3FE460033C30F /* AddConsultation.swift */,
 				816E93E323F3FF370033C30F /* ConsultationFiles.swift */,
+				8168100B23F993B600B5C89D /* DownloadReport.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -616,6 +623,7 @@
 		81849F2B23AA3F0D004A59D8 /* Conversation */ = {
 			isa = PBXGroup;
 			children = (
+				81862C6B23FAA617002F3D81 /* Model */,
 				81849F2E23AA3F45004A59D8 /* View */,
 				81849F2C23AA3F36004A59D8 /* Controller */,
 			);
@@ -639,6 +647,15 @@
 				81849F2F23AA3FCA004A59D8 /* PeriodsTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		81862C6B23FAA617002F3D81 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				81862C6C23FAA62F002F3D81 /* GetAppointments.swift */,
+				81862C6E23FAA855002F3D81 /* ReserveConversation.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8189E68823E18CDF009DA8E0 /* Payment */ = {
@@ -985,9 +1002,12 @@
 				817834AA23E9CC5A009A4B9C /* Register.swift in Sources */,
 				81ECE8C623BE36BF0048C0D9 /* Chat.swift in Sources */,
 				81849F3223AA3FFA004A59D8 /* DoctorConversationViewController.swift in Sources */,
+				8168100C23F993B600B5C89D /* DownloadReport.swift in Sources */,
 				81FA8E0C23F2BECC006B3345 /* Constants.swift in Sources */,
+				81862C6D23FAA62F002F3D81 /* GetAppointments.swift in Sources */,
 				81ECE9AD23ABB1D700E63105 /* ProfileInfoViewController.swift in Sources */,
 				81849F2523A929C3004A59D8 /* ConsultationFinalReportViewController.swift in Sources */,
+				81862C6F23FAA855002F3D81 /* ReserveConversation.swift in Sources */,
 				810DAAFD23A7829400B8AF20 /* DoctorsViewController.swift in Sources */,
 				8189E68B23E18D01009DA8E0 /* PaymentViewController.swift in Sources */,
 				815A17D723A65A26001DDBEE /* Maps.swift in Sources */,
@@ -1223,6 +1243,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GPMFK5M647;
 				INFOPLIST_FILE = Konsil/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1246,6 +1267,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Konsil/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

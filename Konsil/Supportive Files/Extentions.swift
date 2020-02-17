@@ -151,3 +151,14 @@ extension UIViewController: UITextViewDelegate {
         textView.text = ""
     }
 }
+
+extension NSAttributedString {
+    static func withMultibleTexts(text1: String ,text2: String ,text3: String ,text4: String) -> NSMutableAttributedString{
+        let text = NSMutableAttributedString()
+        text.append(NSAttributedString(string: text1 + " "))
+        text.append(NSAttributedString(string: text2 + " "))
+        text.append(NSAttributedString(string: text3 + " "))
+        text.append(NSAttributedString(string: text4 + " "))
+        return text
+    }
+}

@@ -31,6 +31,8 @@
 "Failed To Upload Image" = "Failed To Upload Image";
 "uploading" = "uploading";
 "please wait" = "please wait";
+"Please Try Again" = "Please Try Again";
+"please select an appointment" = "please select an appointment";
 
 
 // Network Messages
@@ -60,3 +62,5 @@
 "Consultation" = "Consultation";
 "Open" = "Open";
 "Closed" = "Closed";
+"From" = "From";
+"to" = "to";

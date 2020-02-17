@@ -68,7 +68,7 @@ class ProfileInfoViewController: UIViewController {
     //MARK:- Variables
     
     let imagePicker = UIImagePickerController()
-    var image = ""
+    var image: String?
     //MARK:- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,30 +83,71 @@ class ProfileInfoViewController: UIViewController {
         
     }
     func changePersonalInfo() {
-        if let user = Shared.user , Shared.user != nil , name.text!.count >= 3 , phone.text!.count >= 10 {
-            if name.text != user.name || email.text != user.email || phone.text != user.phone {
-                APIClient.changePersonalInfo(name: name.text ?? "", email: email.text ?? "", password: password.text ?? "", phone: phone.text ?? "", image_url: user.image_url ?? "") { (Result, Status) in
+        print("1 ")
+        if let user = Shared.user , name.text!.count >= 3 , password.text!.count >= 8 , phone.text!.count >= 10 {
+            if name.text != user.name || email.text != user.email || phone.text != user.phone || image != user.image_url {
+                APIClient.changePersonalInfo(name: name.text ?? "", email: email.text ?? "", password: password.text ?? "", phone: phone.text ?? "", image_url: image ?? "" ) { (Result, Status) in
                     switch Result {
                     case .success(let response):
-                        print(response)
+                        if response.status == 200 {
+                            Shared.user = response.userInfo
+                        }
                     case .failure(let error):
                         print(error.localizedDescription)
+                        Alert.show("Error".localized, massege: "Please Try Again".localized, context: self)
                     }
                 }
+            }
+        } else {
+            if let mail = email.text {
+                let valied = isValidEmail(mail)
+                if valied == false {
+                    email.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
+                }
+            }
+            if name.text!.count < 3  {
+                name.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
+            }
+            if phone.text!.count < 10 {
+                phone.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
+            }
+            if password.text!.count < 8 {
+                password.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
             }
         }
     }
     
+    @IBAction func submitChanges(_ sender: UIButton) {
+        changePersonalInfo()
+    }
     
     //MARK:- Methodes
     func updateView(){
         if let user = Shared.user , Shared.user != nil {
             name.text = user.name
             email.text = user.email
-            password.text = "password"
+            password.text = ""
             phone.text = user.phone
+            image = user.image_url
         }
     }
+    
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
+    @IBAction func textDidChange(_ sender: UITextField) {
+           if sender.layer.borderColor != UIColor.gray.cgColor {
+               sender.layer.borderColor = UIColor.gray.cgColor
+           }
+       }
+       
+       func textFieldDidBeginEditing(_ textField: UITextField) {
+           if textField.layer.borderColor != UIColor.gray.cgColor {
+               textField.layer.borderColor = UIColor.gray.cgColor
+           }
+       }
 }
 
 //MARK:- Image Picker Delegates

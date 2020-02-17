@@ -60,6 +60,7 @@ class DoctorsInfoViewController: UIViewController {
     @IBOutlet weak var conversation: UILabel!
     
     var doctorID: Int?
+    var doctorDetails: DoctorData?
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,8 +80,8 @@ class DoctorsInfoViewController: UIViewController {
                 APIClient.doctorDetails(doctor_id: id) { (Result, Status) in
                     switch Result {
                     case .success(let response):
-                        print(response)
                         self?.updateView(doctor: response.doctor)
+                        self?.doctorDetails = response.doctor
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
@@ -103,13 +104,22 @@ class DoctorsInfoViewController: UIViewController {
     }
     
     @IBAction func requestConsultationPressed(_ sender: UIButton) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "ConsultationRequest") as? RequestConsultationViewController {
-            self.navigationController?.pushViewController(vc, animated: true)
+        if doctorDetails != nil {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "ConsultationRequest") as? RequestConsultationViewController {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        } else {
+            Alert.show("".localized, massege: "Failed", context: self)
         }
     }
     @IBAction func requestOnlineConversationPressed(_ sender: UIButton) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "DoctorConversation") as? DoctorConversationViewController {
-            self.navigationController?.pushViewController(vc, animated: true)
+        if doctorDetails != nil {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "DoctorConversation") as? DoctorConversationViewController {
+                vc.doctorDetails = doctorDetails
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        } else {
+            Alert.show("".localized, massege: "Failed", context: self)
         }
     }
 }

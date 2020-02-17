@@ -78,11 +78,19 @@ class APIClient {
         performRequestSimple(route: APIRouter.AddConsultation(title: title, details: details, doctor_id: doctor_id, images: images, files: files), completion: completion)
     }
     
-    static func downloadReport(consultation_id: Int ,completion: @escaping(Result<GetConsultationFiles,AFError> , Int)->Void) {
-        performRequest(route: APIRouter.ConsultationFiles(consultation_id: consultation_id), completion: completion)
+    static func downloadReport(consultation_id: Int ,completion: @escaping(Result<DownloadReport,AFError> , Int )->Void) {
+        performRequest(route: APIRouter.DownloadReport(consultation_id: consultation_id), completion: completion)
     }
     
     static func consultationFiles(consultation_id: Int ,completion: @escaping(Result<GetConsultationFiles,AFError> , Int)->Void) {
         performRequest(route: APIRouter.ConsultationFiles(consultation_id: consultation_id), completion: completion)
+    }
+    
+    static func getAppointments(doctor_id: Int ,date:String ,completion: @escaping(Result<GetAppointments,AFError> , Int)->Void){
+        performRequest(route: APIRouter.GetAppointments(doctor_id: doctor_id, date: date), completion: completion)
+    }
+    
+    static func reserveConversation(doctor_id: Int , appointment_id: Int ,completion: @escaping(Result<ReserverConversation,AFError> , Int)->Void ) {
+        performRequest(route: APIRouter.ReserveConversation(doctor_id: doctor_id, appointment_id: appointment_id), completion: completion)
     }
 }

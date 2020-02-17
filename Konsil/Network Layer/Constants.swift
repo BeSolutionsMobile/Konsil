@@ -87,6 +87,16 @@ struct K {
         static let consultation_id = "consultation_id"
     }
     
+    struct GetApppointments {
+        static let doctor_id = "doctor_id"
+        static let date = "date"
+    }
+    
+    struct ReserveConsultation {
+        static let doctor_id = "doctor_id"
+        static let appointment_id = "appointment_id"
+    }
+    
     //-----------------------------------------------
     enum HTTPHeaderField: String {
         case authentication = "Authorization"

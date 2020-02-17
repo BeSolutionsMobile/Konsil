@@ -13,7 +13,6 @@ class PeriodsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var checkBox: BEMCheckBox!
     @IBOutlet weak var period: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

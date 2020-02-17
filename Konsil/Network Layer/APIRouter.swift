@@ -24,7 +24,9 @@ enum APIRouter: URLRequestConvertible {
     case AddConsultation(title: String ,details: String ,doctor_id: Int ,images: [String] ,files: [String])
     case ConsultationFiles(consultation_id: Int)
     case DownloadReport(consultation_id: Int)
-
+    case GetAppointments(doctor_id: Int ,date: String)
+    case ReserveConversation(doctor_id: Int ,appointment_id: Int)
+    
     //MARK:- HTTP Method
     private var method: HTTPMethod {
         switch self {
@@ -52,6 +54,10 @@ enum APIRouter: URLRequestConvertible {
             return .get
         case .DownloadReport:
             return .get
+        case .GetAppointments:
+            return .post
+        case .ReserveConversation:
+            return.post
         }
     }
     
@@ -82,6 +88,10 @@ enum APIRouter: URLRequestConvertible {
             return "/consultation-files"
         case .DownloadReport:
             return "/download-report"
+        case .GetAppointments:
+            return "/get-date"
+        case .ReserveConversation:
+            return "/reserve-conversation"
         }
     }
     
@@ -112,40 +122,44 @@ enum APIRouter: URLRequestConvertible {
             return [K.ConsultationFiles.consultation_id: consultation_id]
         case .DownloadReport(let consultation_id):
             return [K.DownloadReport.consultation_id: consultation_id]
+        case .GetAppointments(let doctor_id, let date):
+            return [K.GetApppointments.doctor_id: doctor_id , K.GetApppointments.date: date]
+        case .ReserveConversation(let doctor_id, let appointment_id):
+            return [K.ReserveConsultation.doctor_id: doctor_id , K.ReserveConsultation.appointment_id: appointment_id]
         }
     }
     
     // MARK: - URLRequestConvertible
     func asURLRequest() throws -> URLRequest {
-       
-      let url = try K.Server.baseURL.asURL()
-       
-      var urlRequest = URLRequest(url: url.appendingPathComponent(path))
-       
-      // HTTP Method
-      urlRequest.httpMethod = method.rawValue
-       
-      // Common Headers
+        
+        let url = try K.Server.baseURL.asURL()
+        
+        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
+        
+        // HTTP Method
+        urlRequest.httpMethod = method.rawValue
+        
+        // Common Headers
         urlRequest.setValue(K.ContentType.json.rawValue, forHTTPHeaderField: K.HTTPHeaderField.acceptType.rawValue)
         urlRequest.setValue(K.ContentType.json.rawValue, forHTTPHeaderField: K.HTTPHeaderField.contentType.rawValue)
         if let authToken = UserDefaults.standard.string(forKey: Key.authorizationToken) {
             urlRequest.setValue("Bearer " + authToken ,forHTTPHeaderField: K.HTTPHeaderField.authentication.rawValue)
         }
-      // Parameters
-      var encodedURLRequest:URLRequest? = nil
-       
-      var Vparameters: [String: Any]
-       
-      if(parameters == nil)
-      {
-        encodedURLRequest = try URLEncoding.queryString.encode(urlRequest, with: nil)
-      }else
-      {
-        Vparameters = parameters!
-        encodedURLRequest = try URLEncoding.queryString.encode(urlRequest, with: Vparameters)
-      }
+        // Parameters
+        var encodedURLRequest:URLRequest? = nil
+        
+        var Vparameters: [String: Any]
+        
+        if(parameters == nil)
+        {
+            encodedURLRequest = try URLEncoding.queryString.encode(urlRequest, with: nil)
+        }else
+        {
+            Vparameters = parameters!
+            encodedURLRequest = try URLEncoding.queryString.encode(urlRequest, with: Vparameters)
+        }
         print(encodedURLRequest)
-      return encodedURLRequest!
-      }
+        return encodedURLRequest!
+    }
 }
 

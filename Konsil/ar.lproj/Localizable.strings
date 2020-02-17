@@ -29,6 +29,8 @@
 "Failed To Upload Image" = "خطاء في الرفع";
 "uploading" = "جاري الرفع";
 "please wait" = "برجاء الانتظار";
+"Please Try Again" = "برجاء المحاولة مرة اخري";
+"please select an appointment" = "يرجى تحديد موعد";
 
 
 // Network Messages
@@ -57,4 +59,5 @@
 "Closed" = "مغلق";
 "Online Conversation" = "محادثة";
 "Consultation" = "استشارة";
-
+"From" = "من";
+"to" = "الي";

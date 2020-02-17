@@ -31,6 +31,9 @@
 "Failed To Upload Image" = "Bild konnte nicht hochgeladen werden";
 "uploading" = "Hochladen";
 "please wait" = "Warten Sie mal";
+"Please Try Again" = "Bitte versuchen Sie es erneut";
+"please select an appointment" = "Bitte wählen Sie einen Termin";
+
 
 
 // Network Messages

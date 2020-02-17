@@ -65,11 +65,14 @@ class ConsultationMessagesViewController: UIViewController {
     
     @IBAction func sendMessagePressed(_ sender: UIButton) {
         if messageTF.text != "" && messageTF.text != nil {
-            
             Chats += 1
             messagesTableView.reloadData()
             checkTable()
         }
+    }
+    
+    func sendMessage(){
+        
     }
 }
 

@@ -10,7 +10,9 @@ import UIKit
 import BEMCheckBox
 import BiometricAuthentication
 import Network
-class LogInViewController: UIViewController {
+import NVActivityIndicatorView
+
+class LogInViewController: UIViewController ,NVActivityIndicatorViewable {
     
     //MARK:- IBOutlets
     @IBOutlet weak var allowBiometricAuth: BEMCheckBox!{

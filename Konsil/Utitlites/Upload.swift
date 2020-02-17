@@ -11,6 +11,7 @@ import OpalImagePicker
 
 class FirebaseUploader
 {
+    static var uid = Shared.user?.id
     static var files: [String]?
     static var images: [String]?
     static var imageURl: String?
@@ -39,47 +40,49 @@ class FirebaseUploader
             var imageData = Data()
             imageData = image.jpegData(compressionQuality: 0.3)!
             
-            
-            let storeRef = Storage.storage().reference().child("images/" + randomString(length: 20))
-            
-            let uploadImageTask = storeRef.putData(imageData, metadata: nil) { metadata, error in
-                if (error != nil) {
-                    
-                    print("errorrrrrr")
-                    
-                } else {
-                    
-                    storeRef.downloadURL { url, error in
-                        if let error = error {
-                            print(error)
-                        } else {
-                            // Here you can get the download URL for 'simpleImage.jpg'
-                            print(url?.absoluteString ?? "link")
-                            imageURl = url?.absoluteString ?? "link"
-                            completion?(true, imageURl ?? "") ?? nil
+            if let uuid = uid {
+                
+                let storeRef = Storage.storage().reference().child("\(uuid)/" + randomString(length: 20))
+                
+                let uploadImageTask = storeRef.putData(imageData, metadata: nil) { metadata, error in
+                    if (error != nil) {
+                        
+                        print("errorrrrrr")
+                        
+                    } else {
+                        
+                        storeRef.downloadURL { url, error in
+                            if let error = error {
+                                print(error)
+                            } else {
+                                // Here you can get the download URL for 'simpleImage.jpg'
+                                print(url?.absoluteString ?? "link")
+                                imageURl = url?.absoluteString ?? "link"
+                                completion?(true, imageURl ?? "") ?? nil
+                            }
                         }
                     }
                 }
-            }
-            
-            var alert:UIAlertController?
-            
-            uploadImageTask.observe(.progress) { snapshot in
-                let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
-                    / Double(snapshot.progress!.totalUnitCount)
                 
-                alert = UIAlertController(title: "uploading".localized, message: "please wait".localized, preferredStyle: UIAlertController.Style.alert)
-                viewController.present(alert!, animated: true, completion: nil)
-                print(percentComplete)
+                var alert:UIAlertController?
+                
+                uploadImageTask.observe(.progress) { snapshot in
+                    let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
+                        / Double(snapshot.progress!.totalUnitCount)
+                    
+                    alert = UIAlertController(title: "uploading".localized, message: "please wait".localized, preferredStyle: UIAlertController.Style.alert)
+                    viewController.present(alert!, animated: true, completion: nil)
+                    print(percentComplete)
+                }
+                
+                uploadImageTask.observe(.success) { snapshot in
+                    print("done")
+                    viewController.dismiss(animated: true, completion: nil)
+                }
+                
+                //dismiss(animated: true, completion: nil)
+                imagePicker.dismiss(animated: true, completion: nil)
             }
-            
-            uploadImageTask.observe(.success) { snapshot in
-                print("done")
-                viewController.dismiss(animated: true, completion: nil)
-            }
-            
-            //dismiss(animated: true, completion: nil)
-            imagePicker.dismiss(animated: true, completion: nil)
         }
         
     }
@@ -94,66 +97,64 @@ class FirebaseUploader
         var imageData = Data()
         imageData = image.jpegData(compressionQuality: 0.3)!
         
-        let storeRef = Storage.storage().reference().child("images/" + randomString(length: 20))
-        
-        let uploadImageTask = storeRef.putData(imageData, metadata: nil) { metadata, error in
-            if (error != nil) {
-                print("errorrrrrr")
-            } else {
-                
-                storeRef.downloadURL { url, error in
-                    if let error = error {
-                        print(error)
-                    } else {
-                        print(url?.absoluteString ?? "link")
-                        imageURl = url?.absoluteString ?? "link"
-                        if images?.count == nil {
-                            images = [(imageURl ?? "")]
+        if let uuid = uid {
+            let storeRef = Storage.storage().reference().child("\(uuid)/" + randomString(length: 20))
+            
+            let uploadImageTask = storeRef.putData(imageData, metadata: nil) { metadata, error in
+                if (error != nil) {
+                    print("errorrrrrr")
+                } else {
+                    
+                    storeRef.downloadURL { url, error in
+                        if let error = error {
+                            print(error)
                         } else {
-                            images?.append(imageURl ?? "")
+                            print(url?.absoluteString ?? "link")
+                            imageURl = url?.absoluteString ?? "link"
+                            if images?.count == nil {
+                                images = [(imageURl ?? "")]
+                            } else {
+                                images?.append(imageURl ?? "")
+                            }
+                            completion?(true , images ?? []) ?? nil
                         }
-                        completion?(true , images ?? []) ?? nil
                     }
                 }
             }
+            
+            var alert:UIAlertController?
+            
+            uploadImageTask.observe(.progress) { snapshot in
+                let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
+                    / Double(snapshot.progress!.totalUnitCount)
+                
+                alert = UIAlertController(title: "uploading".localized, message: "please wait".localized, preferredStyle: UIAlertController.Style.alert)
+                
+                viewController.present(alert!, animated: true, completion: nil)
+                
+                print(percentComplete)
+            }
+            
+            uploadImageTask.observe(.success) { snapshot in
+                
+                print("done")
+                viewController.dismiss(animated: true, completion: nil)
+            }
+            
+            //dismiss(animated: true, completion: nil)
+            imagePicker.dismiss(animated: true, completion: nil)
         }
-        
-        var alert:UIAlertController?
-        
-        uploadImageTask.observe(.progress) { snapshot in
-            let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
-                / Double(snapshot.progress!.totalUnitCount)
-            
-            alert = UIAlertController(title: "uploading".localized, message: "please wait".localized, preferredStyle: UIAlertController.Style.alert)
-            
-            viewController.present(alert!, animated: true, completion: nil)
-            
-            print(percentComplete)
-        }
-        
-        uploadImageTask.observe(.success) { snapshot in
-            
-            print("done")
-            viewController.dismiss(animated: true, completion: nil)
-        }
-        
-        //dismiss(animated: true, completion: nil)
-        imagePicker.dismiss(animated: true, completion: nil)
     }
     
     
     //MARK:- File Upload
-    static func uploadFileToFirebase(viewController: UIViewController , documentPicker: UIDocumentPickerViewController , urls: [URL] , uid: String , completion: ((_ success: Bool , _ files: [String]) -> Void)?)
+    static func uploadFileToFirebase(viewController: UIViewController , documentPicker: UIDocumentPickerViewController , urls: [URL] , completion: ((_ success: Bool , _ files: [String]) -> Void)?)
     {
         
         //to upload image to firebase storage
         
-        var _: String?
-        
-        if let file = urls.first {
-            
-            let storeRef = Storage.storage().reference().child("\(uid)/" + randomString(length: 20))
-            
+        if let file = urls.first , let uuid = uid{
+            let storeRef = Storage.storage().reference().child("\(uuid)/" + randomString(length: 20))
             let uploadFileTask = storeRef.putFile(from: file, metadata: nil) { (meta, error) in
                 if error != nil {
                     print(error?.localizedDescription ?? "erro")
@@ -173,13 +174,11 @@ class FirebaseUploader
                     }
                 }
             }
-            var alert:UIAlertController?
             
+            var alert:UIAlertController?
             uploadFileTask.observe(.progress) { snapshot in
-                
                 alert = UIAlertController(title: "uploading".localized , message: "please wait".localized , preferredStyle: UIAlertController.Style.alert)
                 viewController.present(alert!, animated: true, completion: nil)
-                
                 var percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
                     / Double(snapshot.progress!.totalUnitCount){
                     didSet{
@@ -188,16 +187,12 @@ class FirebaseUploader
                 }
                 print(percentComplete)
             }
-            
             uploadFileTask.observe(.success) { snapshot in
                 print("done")
                 viewController.dismiss(animated: true, completion: nil)
             }
-            
-            //dismiss(animated: true, completion: nil)
             documentPicker.dismiss(animated: true, completion: nil)
         }
-        
     }
     
 }
