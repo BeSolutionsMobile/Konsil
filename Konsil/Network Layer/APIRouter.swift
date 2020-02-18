@@ -10,8 +10,6 @@ import Alamofire
 
 enum APIRouter: URLRequestConvertible {
     
-    
-    
     case Register(name: String ,phone: String ,email: String , password: String ,platform: Int ,image_url: String ,lang: String ,mobile_token: String)
     case Login(email: String ,password: String ,mobile_token: String)
     case AllSpecialities
@@ -26,6 +24,9 @@ enum APIRouter: URLRequestConvertible {
     case DownloadReport(consultation_id: Int)
     case GetAppointments(doctor_id: Int ,date: String)
     case ReserveConversation(doctor_id: Int ,appointment_id: Int)
+    case ComplaintTypes
+    case MakeComplaint(type_id: Int ,complaint: String)
+    case MyConsultations
     
     //MARK:- HTTP Method
     private var method: HTTPMethod {
@@ -57,7 +58,13 @@ enum APIRouter: URLRequestConvertible {
         case .GetAppointments:
             return .post
         case .ReserveConversation:
-            return.post
+            return .post
+        case .ComplaintTypes:
+            return .get
+        case .MakeComplaint:
+            return .post
+        case .MyConsultations:
+            return .get
         }
     }
     
@@ -92,6 +99,12 @@ enum APIRouter: URLRequestConvertible {
             return "/get-date"
         case .ReserveConversation:
             return "/reserve-conversation"
+        case .ComplaintTypes:
+            return "/get-complaint-type"
+        case .MakeComplaint:
+            return "/make-complaint"
+        case .MyConsultations:
+            return "/my-consultations"
         }
     }
     
@@ -126,6 +139,12 @@ enum APIRouter: URLRequestConvertible {
             return [K.GetApppointments.doctor_id: doctor_id , K.GetApppointments.date: date]
         case .ReserveConversation(let doctor_id, let appointment_id):
             return [K.ReserveConsultation.doctor_id: doctor_id , K.ReserveConsultation.appointment_id: appointment_id]
+        case .ComplaintTypes:
+            return nil
+        case .MakeComplaint(let type_id, let complaint):
+            return [K.MakeComplaint.type_id: type_id , K.MakeComplaint.Complaint: complaint]
+        case .MyConsultations:
+            return nil
         }
     }
     

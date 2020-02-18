@@ -93,4 +93,16 @@ class APIClient {
     static func reserveConversation(doctor_id: Int , appointment_id: Int ,completion: @escaping(Result<ReserverConversation,AFError> , Int)->Void ) {
         performRequest(route: APIRouter.ReserveConversation(doctor_id: doctor_id, appointment_id: appointment_id), completion: completion)
     }
+    
+    static func getComplaintTypes(completion: @escaping(Result<ComplaintTypes,AFError> , Int)-> Void){
+        performRequest(route: APIRouter.ComplaintTypes, completion: completion)
+    }
+    
+    static func makeComplaint(type_id: Int, complaint: String , completion: @escaping(Result<MakeComplaint,AFError>, Int)-> Void) {
+        performRequest(route: APIRouter.MakeComplaint(type_id: type_id, complaint: complaint), completion: completion)
+    }
+    
+    static func getMyConsultations(completion: @escaping (Result<MyConsultations,AFError> , Int )-> Void){
+        performRequest(route: APIRouter.MyConsultations, completion: completion)
+    }
 }

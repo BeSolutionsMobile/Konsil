@@ -66,6 +66,9 @@
 		81849F3223AA3FFA004A59D8 /* DoctorConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F3123AA3FFA004A59D8 /* DoctorConversationViewController.swift */; };
 		81862C6D23FAA62F002F3D81 /* GetAppointments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81862C6C23FAA62F002F3D81 /* GetAppointments.swift */; };
 		81862C6F23FAA855002F3D81 /* ReserveConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81862C6E23FAA855002F3D81 /* ReserveConversation.swift */; };
+		81862C7123FC296E002F3D81 /* ComplaintTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81862C7023FC296E002F3D81 /* ComplaintTypes.swift */; };
+		81862C7323FC2BCD002F3D81 /* MakeComplaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81862C7223FC2BCD002F3D81 /* MakeComplaint.swift */; };
+		81862C7523FC4623002F3D81 /* MyConsultations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81862C7423FC4622002F3D81 /* MyConsultations.swift */; };
 		8189E68523E09646009DA8E0 /* ConsultationFilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8189E68423E09646009DA8E0 /* ConsultationFilesViewController.swift */; };
 		8189E68723E097D8009DA8E0 /* FilesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8189E68623E097D8009DA8E0 /* FilesTableViewCell.swift */; };
 		8189E68B23E18D01009DA8E0 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8189E68A23E18D01009DA8E0 /* PaymentViewController.swift */; };
@@ -193,6 +196,9 @@
 		81849F3123AA3FFA004A59D8 /* DoctorConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorConversationViewController.swift; sourceTree = "<group>"; };
 		81862C6C23FAA62F002F3D81 /* GetAppointments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppointments.swift; sourceTree = "<group>"; };
 		81862C6E23FAA855002F3D81 /* ReserveConversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveConversation.swift; sourceTree = "<group>"; };
+		81862C7023FC296E002F3D81 /* ComplaintTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintTypes.swift; sourceTree = "<group>"; };
+		81862C7223FC2BCD002F3D81 /* MakeComplaint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeComplaint.swift; sourceTree = "<group>"; };
+		81862C7423FC4622002F3D81 /* MyConsultations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultations.swift; sourceTree = "<group>"; };
 		8189E68423E09646009DA8E0 /* ConsultationFilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationFilesViewController.swift; sourceTree = "<group>"; };
 		8189E68623E097D8009DA8E0 /* FilesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesTableViewCell.swift; sourceTree = "<group>"; };
 		8189E68A23E18D01009DA8E0 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
@@ -693,6 +699,9 @@
 				81FA8DFE23F2B72B006B3345 /* Language.swift */,
 				81FA8E0D23F2C3F0006B3345 /* FAQ.swift */,
 				81FA8E1223F2FBB3006B3345 /* ChangeUserInfo.swift */,
+				81862C7023FC296E002F3D81 /* ComplaintTypes.swift */,
+				81862C7223FC2BCD002F3D81 /* MakeComplaint.swift */,
+				81862C7423FC4622002F3D81 /* MyConsultations.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1001,10 +1010,12 @@
 				815A17DE23A67C80001DDBEE /* SideMenuViewController.swift in Sources */,
 				817834AA23E9CC5A009A4B9C /* Register.swift in Sources */,
 				81ECE8C623BE36BF0048C0D9 /* Chat.swift in Sources */,
+				81862C7323FC2BCD002F3D81 /* MakeComplaint.swift in Sources */,
 				81849F3223AA3FFA004A59D8 /* DoctorConversationViewController.swift in Sources */,
 				8168100C23F993B600B5C89D /* DownloadReport.swift in Sources */,
 				81FA8E0C23F2BECC006B3345 /* Constants.swift in Sources */,
 				81862C6D23FAA62F002F3D81 /* GetAppointments.swift in Sources */,
+				81862C7123FC296E002F3D81 /* ComplaintTypes.swift in Sources */,
 				81ECE9AD23ABB1D700E63105 /* ProfileInfoViewController.swift in Sources */,
 				81849F2523A929C3004A59D8 /* ConsultationFinalReportViewController.swift in Sources */,
 				81862C6F23FAA855002F3D81 /* ReserveConversation.swift in Sources */,
@@ -1016,6 +1027,7 @@
 				8165928C23EC4F1A00595B6A /* PayPalViewController.swift in Sources */,
 				8122162423B0D56D009E111B /* Extentions.swift in Sources */,
 				815A17C023A658F7001DDBEE /* MainViewController.swift in Sources */,
+				81862C7523FC4623002F3D81 /* MyConsultations.swift in Sources */,
 				813761FC23CB551200BC90B1 /* Keys.swift in Sources */,
 				81ECE99A23AA6D8800E63105 /* FAQvViewController.swift in Sources */,
 				816E93E223F3FE460033C30F /* AddConsultation.swift in Sources */,

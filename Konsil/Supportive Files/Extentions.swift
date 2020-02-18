@@ -120,6 +120,7 @@ extension String {
         return NSLocalizedString(self, comment: "")
     }
 }
+
 extension UITextField {
   func isError(baseColor: CGColor, numberOfShakes shakes: Float, revert: Bool) {
     let animation: CABasicAnimation = CABasicAnimation(keyPath: "shadowColor")
@@ -138,17 +139,25 @@ extension UITextField {
     self.layer.add(shake, forKey: "position")
     self.layer.borderColor = CGColor.kRed
   }
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
 }
 
 extension CGColor {
     static var kRed = UIColor(red: 0.867, green: 0.206, blue: 0.159, alpha: 1).cgColor
     static var kBlue = UIColor(red: 0.020, green: 0.455, blue: 0.576, alpha: 1).cgColor
     static var kGray = UIColor(red: 0.196, green: 0.196, blue: 0.196, alpha: 1).cgColor
+    static var kTrans = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
 }
 
 extension UIViewController: UITextViewDelegate {
     public func textViewDidBeginEditing(_ textView: UITextView) {
-        textView.text = ""
+        if textView.text == "Enter Patient History Here".localized || textView.text == "Enter Complaint Details Here".localized || textView.text == "Enter Consultation Details Here".localized {
+            textView.text = ""
+        }
     }
 }
 

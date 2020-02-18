@@ -97,6 +97,18 @@ struct K {
         static let appointment_id = "appointment_id"
     }
     
+    struct ComplaintTypes {
+    }
+    
+    struct MakeComplaint {
+        static let type_id = "type_id"
+        static let Complaint = "complaint"
+    }
+    
+    struct MyConsultations {
+    }
+    
+    
     //-----------------------------------------------
     enum HTTPHeaderField: String {
         case authentication = "Authorization"

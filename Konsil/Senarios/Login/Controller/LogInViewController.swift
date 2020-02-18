@@ -81,7 +81,8 @@ class LogInViewController: UIViewController ,NVActivityIndicatorViewable {
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        if let email = emailTF.text , let password = passwordTF.text , let token = AppDelegate.token , emailTF.text != "" , passwordTF.text != "" {
+        if let email = emailTF.text , let password = passwordTF.text , let token = AppDelegate.token , emailTF.text != "" , passwordTF.text != "" , emailTF.isValidEmail(emailTF.text ?? "") {
+            self.startAnimating(CGSize(width: 80, height: 80), type: .circleStrokeSpin ,padding: 20 , backgroundColor: CGColor.kTrans)
             DispatchQueue.main.async { [weak self] in
                 APIClient.login(email: email, password: password , mobile_tokken: token) { (Result,state) in
                     switch Result {
@@ -97,6 +98,7 @@ class LogInViewController: UIViewController ,NVActivityIndicatorViewable {
                             self?.BlurView(view: self!.animationView)
                         }
                     case .failure(let error):
+                        self?.stopAnimating()
                         print(state)
                         print(error.localizedDescription)
                         
@@ -114,7 +116,10 @@ class LogInViewController: UIViewController ,NVActivityIndicatorViewable {
                 }
             }
         } else {
+            self.stopAnimating(NVActivityIndicatorView.DEFAULT_FADE_OUT_ANIMATION)
             if emailTF.text == "" {
+                emailTF.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
+            }else if emailTF.isValidEmail(emailTF.text ?? "" ) == false {
                 emailTF.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
             }
             if passwordTF.text == "" {
@@ -149,6 +154,9 @@ class LogInViewController: UIViewController ,NVActivityIndicatorViewable {
     
     //MARK:- Make Blur View For Animation
     func BlurView(view: UIView){
+        if self.isAnimating {
+            self.stopAnimating()
+        }
         let blur = UIBlurEffect(style: .light)
         let blurView = UIVisualEffectView(effect: blur)
         blurView.frame = view.bounds

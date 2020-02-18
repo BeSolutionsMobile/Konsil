@@ -30,17 +30,18 @@ class MakeComplaintViewController: UIViewController {
         }
     }
     
-    let complaintTypes = ["Disruptive behavior" , "Prescribing Wrong Medicine" , "Wrong Diagnosis" , "No Response From Doctor" ]
+    var complaints: [Complaint]?
+    var selectedComplaintID: Int?
     //MARK:- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
         openPickerView()
+        getComplaintTypes()
     }
     
     @IBAction func submitPressed(_ sender: UIButton) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ComplaintDetails") as! ComplaintDetailsViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+        makeComplaint()
     }
     
     func openPickerView(){
@@ -48,6 +49,45 @@ class MakeComplaintViewController: UIViewController {
         pickerView.delegate = self
         pickerView.dataSource = self
         selectTybeTF.inputView = pickerView
+    }
+    
+    func getComplaintTypes() {
+        DispatchQueue.global().async { [weak self] in
+            APIClient.getComplaintTypes { (Result, Status) in
+                switch Result {
+                case .success(let response):
+                    print(response)
+                    if Status == 200 {
+                        self?.complaints = response.data
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    func makeComplaint(){
+        if selectedComplaintID != nil {
+            DispatchQueue.main.async { [weak self] in
+                APIClient.makeComplaint(type_id: self?.selectedComplaintID ?? 0, complaint: self?.complaintMessageTV.text ?? "") { (Result, Status) in
+                    switch Result {
+                    case .success(let response):
+                        print(response)
+                        if Status == 200 {
+                            let vc = self!.storyboard?.instantiateViewController(withIdentifier: "ComplaintDetails") as! ComplaintDetailsViewController
+                            self?.navigationController?.pushViewController(vc, animated: true)
+                        }
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                        Alert.show("Failed".localized, massege: "Please Try Again".localized, context: self!)
+                    }
+                    print(Status)
+                }
+            }
+        } else {
+            Alert.show("Error".localized, massege: "All Fields Are Required".localized, context: self )
+        }
     }
     
 }
@@ -58,15 +98,16 @@ extension MakeComplaintViewController: UIPickerViewDataSource , UIPickerViewDele
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 3
+        return complaints?.count ?? 0
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return complaintTypes[row].localized
+        return complaints?[row].title ?? ""
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectTybeTF.text = complaintTypes[row]
+        selectTybeTF.text = complaints?[row].title
+        selectedComplaintID = complaints?[row].id
         self.view.endEditing(true)
     }
 }

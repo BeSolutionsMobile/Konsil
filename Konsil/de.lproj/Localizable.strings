@@ -23,6 +23,7 @@
 
 // -------------------------------
 // Alerts
+
 "Done" = "Erledigt";
 "OK" = "in Ordnung";
 "Error" = "Error";
@@ -33,7 +34,7 @@
 "please wait" = "Warten Sie mal";
 "Please Try Again" = "Bitte versuchen Sie es erneut";
 "please select an appointment" = "Bitte wählen Sie einen Termin";
-
+"All Fields Are Required" = "Alle Felder sind erforderlich";
 
 
 // Network Messages

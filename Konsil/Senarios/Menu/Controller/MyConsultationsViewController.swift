@@ -23,27 +23,54 @@ class MyConsultationsViewController: UIViewController {
     var tybes = ["Online Conversation".localized , "Consultation".localized   , "Consultation".localized  , "Consultation".localized  , "Online Conversation".localized  , "Online Conversation".localized  , "Online Conversation".localized  , "Consultation".localized ]
     
     //MARK:- ViewDidLoad
-    
+    var consultations: [MyConsultation]?
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
+        getMyconsultations()
     }
     
+    
+    func getMyconsultations(){
+        DispatchQueue.main.async { [weak self] in
+            APIClient.getMyConsultations { (Result, Status) in
+                switch Result {
+                case .success(let response):
+                    print(response)
+                    if Status == 200 {
+                        self?.consultations = response.data
+                        self?.myConsultationTableView.reloadData()
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
 }
 
 //MARK:- tableView Setup
 extension MyConsultationsViewController: UITableViewDelegate , UITableViewDataSource , ConsultationDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return consultations?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyConsultationsCell", for: indexPath) as! MyConsultationsTableViewCell
-        cell.doctorName.text = name[indexPath.row]
-        cell.price.text = prie[indexPath.row]
-        cell.doctorImage.image = UIImage(named: images[indexPath.row])
-        cell.tybe.text = tybes[indexPath.row]
-        cell.delegate = self
+        if let consultation = consultations?[indexPath.row] {
+            cell.doctorName.text = consultation.name
+            cell.price.text = consultation.price
+            cell.doctorImage.sd_setImage(with: URL(string: consultation.image), placeholderImage: UIImage(named: "imagePlaceholder"))
+            switch consultation.type {
+            case "1": cell.tybe.text = "Consultation".localized
+            case "2": cell.tybe.text = "OnlineConversation".localized
+            default:
+                break
+            }
+            cell.tybe.text = consultation.type
+            cell.delegate = self
+        }
+        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

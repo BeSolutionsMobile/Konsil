@@ -102,7 +102,7 @@ class RegisterViewController: UIViewController {
         guard let dID = AppDelegate.token else { return }
         if checkBox.on == true {
             let validate = validateAllFields()
-            let validatedMail = isValidEmail(email.text ?? "")
+            let validatedMail = email.isValidEmail(email.text ?? "")
             if validate == true , validatedMail == true{
                 DispatchQueue.main.async { [weak self] in
                     APIClient.register(name: self?.name.text ?? "", email: self?.email.text ?? "", password: self?.password.text ?? "", phone: self?.phone.text ?? "", image_url: "", platform: 3, lang: "Lang".localized, mobile_tokken: dID) {  (Result ,Status)  in
@@ -147,7 +147,7 @@ class RegisterViewController: UIViewController {
                 password.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
             }
             if let mail = email.text {
-                let valied = isValidEmail(mail)
+                let valied = email.isValidEmail(mail)
                 if valied == false {
                     email.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
                 }
@@ -167,11 +167,7 @@ class RegisterViewController: UIViewController {
     }
     
     // Check Email Validation
-    func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
-    }
+    
     
     @IBAction func acceptAllTermsAndConditions(_ sender: BEMCheckBox) {
     }
