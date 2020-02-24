@@ -10,6 +10,7 @@ import UIKit
 import MOLH
 import Firebase
 import BiometricAuthentication
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
@@ -23,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
         MOLHLanguage.setDefaultLanguage("en")
         FirebaseApp.configure()
         
+        IQKeyboardManager.shared.enable = true
+
         retriveToken()
 
         let didLunchedBefore = UserDefaults.standard.bool(forKey: Key.launchedBefore)

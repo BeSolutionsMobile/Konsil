@@ -83,10 +83,11 @@ class ProfileInfoViewController: UIViewController {
         
     }
     func changePersonalInfo() {
-        print("1 ")
         if let user = Shared.user , name.text!.count >= 3 , password.text!.count >= 8 , phone.text!.count >= 10 {
-            if name.text != user.name || email.text != user.email || phone.text != user.phone || image != user.image_url {
-                APIClient.changePersonalInfo(name: name.text ?? "", email: email.text ?? "", password: password.text ?? "", phone: phone.text ?? "", image_url: image ?? "" ) { (Result, Status) in
+            print(2)
+            if name.text != user.name || email.text != user.email || phone.text != user.phone || image != user.image_url || image == nil{
+                print(3)
+                APIClient.changePersonalInfo(name: name.text ?? "", email: email.text ?? "", password: password.text ?? "", phone: phone.text ?? "", image_url: image ?? user.image_url ?? "" ) { (Result, Status) in
                     switch Result {
                     case .success(let response):
                         if response.status == 200 {

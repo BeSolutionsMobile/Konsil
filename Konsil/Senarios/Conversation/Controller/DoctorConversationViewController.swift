@@ -124,7 +124,7 @@ class DoctorConversationViewController: UIViewController {
     
     func updateView(){
         if let doctor = doctorDetails {
-            doctorImage.sd_setImage(with: URL(string: doctor.image_url ), placeholderImage: UIImage(named: "imagePlaceholder"))
+            doctorImage.sd_setImage(with: URL(string: doctor.image_url ), placeholderImage: UIImage(named: "doctorPlaceholder"))
             doctorName.text = doctor.name
             doctorSpeciality.text = doctor.specialist
             //            hourPrice.text = doctor.

@@ -9,6 +9,7 @@
 import UIKit
 import BEMCheckBox
 import MOLH
+import NVActivityIndicatorView
 
 class RegisterViewController: UIViewController {
     
@@ -16,6 +17,22 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!{
         didSet{
             backButton.setImage(UIImage(named: "leftArrow".localized), for: .normal)
+        }
+    }
+    
+    @IBOutlet weak var twitter: UIButton!{
+        didSet{
+            Rounded.roundButton(button: twitter, radius: twitter.frame.size.height/2)
+        }
+    }
+    @IBOutlet weak var facebook: UIButton!{
+        didSet{
+            Rounded.roundButton(button: facebook, radius: facebook.frame.size.height/2)
+        }
+    }
+    @IBOutlet weak var google: UIButton!{
+        didSet{
+            Rounded.roundButton(button: google, radius: google.frame.size.height/2)
         }
     }
     @IBOutlet weak var name: RegisterTextField!{
@@ -56,7 +73,7 @@ class RegisterViewController: UIViewController {
             self.checkBox.boxType = .square
         }
     }
-    @IBOutlet weak var animationView: UIView!{
+    @IBOutlet weak var animationView: NVActivityIndicatorView!{
         didSet{
             self.animationView.layer.cornerRadius = 10
             self.animationView.clipsToBounds = true
@@ -104,6 +121,7 @@ class RegisterViewController: UIViewController {
             let validate = validateAllFields()
             let validatedMail = email.isValidEmail(email.text ?? "")
             if validate == true , validatedMail == true{
+                self.startAnimation()
                 DispatchQueue.main.async { [weak self] in
                     APIClient.register(name: self?.name.text ?? "", email: self?.email.text ?? "", password: self?.password.text ?? "", phone: self?.phone.text ?? "", image_url: "", platform: 3, lang: "Lang".localized, mobile_tokken: dID) {  (Result ,Status)  in
                         switch Result {
@@ -116,6 +134,7 @@ class RegisterViewController: UIViewController {
                                 self?.BlurView(view: self!.animationView)
                             }
                         case .failure(let error):
+                            self?.stopAnimation()
                             print(error.localizedDescription)
                         }
                         switch Status {
@@ -130,6 +149,7 @@ class RegisterViewController: UIViewController {
                 }
             }
         } else {
+            self.stopAnimation()
             Alert.show("Error".localized, massege: "Please accept our terms and conditions then try again".localized, context: self)
         }
     }
@@ -168,6 +188,19 @@ class RegisterViewController: UIViewController {
     
     // Check Email Validation
     
+    func startAnimation(){
+           backView.isUserInteractionEnabled = true
+           backView.isHidden = false
+           animationView.type = .circleStrokeSpin
+           animationView.padding = 25
+           animationView.startAnimating()
+       }
+       
+       func stopAnimation(){
+           animationView.stopAnimating()
+           backView.isHidden = true
+           backView.isUserInteractionEnabled = false
+       }
     
     @IBAction func acceptAllTermsAndConditions(_ sender: BEMCheckBox) {
     }
@@ -206,6 +239,9 @@ class RegisterViewController: UIViewController {
     
     //MARK:- Make Blury Background For The Animation
     func BlurView(view: UIView){
+        if animationView.isAnimating {
+            animationView.stopAnimating()
+        }
         let blur = UIBlurEffect(style: .light)
         let blurView = UIVisualEffectView(effect: blur)
         blurView.frame = view.bounds

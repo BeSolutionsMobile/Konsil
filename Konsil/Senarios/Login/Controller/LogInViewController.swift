@@ -9,10 +9,9 @@
 import UIKit
 import BEMCheckBox
 import BiometricAuthentication
-import Network
 import NVActivityIndicatorView
 
-class LogInViewController: UIViewController ,NVActivityIndicatorViewable {
+class LogInViewController: UIViewController {
     
     //MARK:- IBOutlets
     @IBOutlet weak var allowBiometricAuth: BEMCheckBox!{
@@ -52,10 +51,25 @@ class LogInViewController: UIViewController ,NVActivityIndicatorViewable {
             Rounded.roundedDots(Dots: redDot)
         }
     }
-    @IBOutlet weak var animationView: UIView!{
+    @IBOutlet weak var animationView: NVActivityIndicatorView!{
         didSet{
             self.animationView.layer.cornerRadius = 10
             self.animationView.clipsToBounds = true
+        }
+    }
+    @IBOutlet weak var twitter: UIButton!{
+        didSet{
+            Rounded.roundButton(button: self.twitter, radius: self.twitter.frame.size.height/2)
+        }
+    }
+    @IBOutlet weak var gmail: UIButton!{
+        didSet{
+            Rounded.roundButton(button: self.gmail, radius: self.gmail.frame.size.height/2)
+        }
+    }
+    @IBOutlet weak var facebook: UIButton!{
+        didSet{
+            Rounded.roundButton(button: self.facebook, radius: self.facebook.frame.size.height/2)
         }
     }
     @IBOutlet weak var backView: UIView!
@@ -82,7 +96,7 @@ class LogInViewController: UIViewController ,NVActivityIndicatorViewable {
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         if let email = emailTF.text , let password = passwordTF.text , let token = AppDelegate.token , emailTF.text != "" , passwordTF.text != "" , emailTF.isValidEmail(emailTF.text ?? "") {
-            self.startAnimating(CGSize(width: 80, height: 80), type: .circleStrokeSpin ,padding: 20 , backgroundColor: CGColor.kTrans)
+            startAnimation()
             DispatchQueue.main.async { [weak self] in
                 APIClient.login(email: email, password: password , mobile_tokken: token) { (Result,state) in
                     switch Result {
@@ -98,7 +112,7 @@ class LogInViewController: UIViewController ,NVActivityIndicatorViewable {
                             self?.BlurView(view: self!.animationView)
                         }
                     case .failure(let error):
-                        self?.stopAnimating()
+                        self?.stopAnimation()
                         print(state)
                         print(error.localizedDescription)
                         
@@ -116,7 +130,8 @@ class LogInViewController: UIViewController ,NVActivityIndicatorViewable {
                 }
             }
         } else {
-            self.stopAnimating(NVActivityIndicatorView.DEFAULT_FADE_OUT_ANIMATION)
+            self.stopAnimation()
+//            stopAnimating(NVActivityIndicatorView.DEFAULT_FADE_OUT_ANIMATION)
             if emailTF.text == "" {
                 emailTF.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
             }else if emailTF.isValidEmail(emailTF.text ?? "" ) == false {
@@ -126,6 +141,20 @@ class LogInViewController: UIViewController ,NVActivityIndicatorViewable {
                 passwordTF.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
             }
         }
+    }
+    
+    func startAnimation(){
+        backView.isUserInteractionEnabled = true
+        backView.isHidden = false
+        animationView.type = .circleStrokeSpin
+        animationView.padding = 25
+        animationView.startAnimating()
+    }
+    
+    func stopAnimation(){
+        animationView.stopAnimating()
+        backView.isHidden = true
+        backView.isUserInteractionEnabled = false
     }
     
     @IBAction func textDidChange(_ sender: UITextField) {
@@ -169,8 +198,8 @@ class LogInViewController: UIViewController ,NVActivityIndicatorViewable {
     
     //MARK:- Make Blur View For Animation
     func BlurView(view: UIView){
-        if self.isAnimating {
-            self.stopAnimating()
+        if animationView.isAnimating {
+            animationView.stopAnimating()
         }
         let blur = UIBlurEffect(style: .light)
         let blurView = UIVisualEffectView(effect: blur)

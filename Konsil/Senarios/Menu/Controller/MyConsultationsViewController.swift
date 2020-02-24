@@ -61,7 +61,7 @@ extension MyConsultationsViewController: UITableViewDelegate , UITableViewDataSo
             cell.status.text = "!!!"
             cell.doctorName.text = consultation.name
             cell.price.text = consultation.price
-            cell.doctorImage.sd_setImage(with: URL(string: consultation.image), placeholderImage: UIImage(named: "imagePlaceHolder"))
+            cell.doctorImage.sd_setImage(with: URL(string: consultation.image), placeholderImage: UIImage(named: "doctorPlaceholderimage"))
             if consultation.type == "1" {
                 cell.tybe.text = "Consultation".localized
             } else if consultation.type == "2" {

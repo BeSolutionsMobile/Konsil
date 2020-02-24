@@ -84,7 +84,7 @@
                                                 <color key="textColor" name="IconsColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vgx-HL-mi8">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vgx-HL-mi8">
                                                 <rect key="frame" x="30" y="369" width="354" height="78"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cs9-9a-7VH" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
@@ -128,6 +128,9 @@
                                                         </connections>
                                                     </textField>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="78" id="PB2-xl-4YB"/>
+                                                </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1AP-8y-5Yb">
                                                 <rect key="frame" x="90.333333333333329" y="554" width="233.33333333333337" height="34"/>
@@ -261,11 +264,27 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
-                                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0cf-Jq-bor">
-                                                <rect key="frame" x="0.0" y="596" width="414" height="842"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pkv-oJ-nwv">
+                                                <rect key="frame" x="30.000000000000004" y="180" width="36.333333333333343" height="125"/>
                                                 <subviews>
-                                                    <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4hc-b8-bq5">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter" translatesAutoresizingMaskIntoConstraints="NO" id="BIb-Fl-LAV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="36.333333333333336" height="36.333333333333336"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="BIb-Fl-LAV" secondAttribute="height" id="ytG-c8-4HJ"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google" translatesAutoresizingMaskIntoConstraints="NO" id="dUC-22-Qc1">
+                                                        <rect key="frame" x="0.0" y="44.333333333333343" width="36.333333333333336" height="36.333333333333343"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Facebook" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cyH-aU-Z8v">
+                                                        <rect key="frame" x="0.0" y="88.666666666666686" width="36.333333333333336" height="36.333333333333343"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0cf-Jq-bor">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                                <subviews>
+                                                    <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hc-b8-bq5" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
                                                         <rect key="frame" x="147" y="361" width="120" height="120"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -276,24 +295,11 @@
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" name="transperantColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="4hc-b8-bq5" firstAttribute="centerY" secondItem="0cf-Jq-bor" secondAttribute="centerY" id="oqQ-IS-9GD"/>
+                                                    <constraint firstItem="4hc-b8-bq5" firstAttribute="centerX" secondItem="0cf-Jq-bor" secondAttribute="centerX" id="sL7-Vf-ZlD"/>
+                                                </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pkv-oJ-nwv">
-                                                <rect key="frame" x="40" y="180" width="36.333333333333343" height="125"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter" translatesAutoresizingMaskIntoConstraints="NO" id="BIb-Fl-LAV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="36.333333333333336" height="36.333333333333336"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="BIb-Fl-LAV" secondAttribute="height" id="ytG-c8-4HJ"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="92047_plus_512x512" translatesAutoresizingMaskIntoConstraints="NO" id="dUC-22-Qc1">
-                                                        <rect key="frame" x="0.0" y="44.333333333333343" width="36.333333333333336" height="36.333333333333343"/>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Facebook" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cyH-aU-Z8v">
-                                                        <rect key="frame" x="0.0" y="88.666666666666686" width="36.333333333333336" height="36.333333333333343"/>
-                                                    </imageView>
-                                                </subviews>
-                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" name="KosilBackGround"/>
                                         <constraints>
@@ -301,6 +307,7 @@
                                             <constraint firstItem="iNo-ie-dJr" firstAttribute="centerX" secondItem="UEf-9w-sa1" secondAttribute="centerX" id="2AQ-5K-CWa"/>
                                             <constraint firstItem="SyW-XY-1Tn" firstAttribute="leading" secondItem="qwf-Aa-egY" secondAttribute="trailing" constant="20" id="73S-Kh-AMP"/>
                                             <constraint firstItem="Ls1-72-ed8" firstAttribute="centerX" secondItem="UEf-9w-sa1" secondAttribute="centerX" id="8PP-zC-6UU"/>
+                                            <constraint firstAttribute="bottom" secondItem="0cf-Jq-bor" secondAttribute="bottom" id="99S-es-aA6"/>
                                             <constraint firstItem="BBi-K3-JYt" firstAttribute="centerX" secondItem="UEf-9w-sa1" secondAttribute="centerX" id="9bZ-Mk-mZR"/>
                                             <constraint firstItem="vgx-HL-mi8" firstAttribute="top" secondItem="qwf-Aa-egY" secondAttribute="bottom" constant="20" id="AOk-V5-nZj"/>
                                             <constraint firstItem="vgx-HL-mi8" firstAttribute="leading" secondItem="UEf-9w-sa1" secondAttribute="leading" constant="30" id="EHj-0V-VLB"/>
@@ -311,15 +318,18 @@
                                             <constraint firstItem="pkv-oJ-nwv" firstAttribute="centerY" secondItem="iNo-ie-dJr" secondAttribute="centerY" id="WhO-a6-Jdu"/>
                                             <constraint firstAttribute="trailing" secondItem="iNo-ie-dJr" secondAttribute="trailing" constant="30" id="X1N-DW-wlv"/>
                                             <constraint firstItem="SyW-XY-1Tn" firstAttribute="top" secondItem="iNo-ie-dJr" secondAttribute="bottom" constant="25" id="YKX-Gb-lxO"/>
+                                            <constraint firstItem="0cf-Jq-bor" firstAttribute="leading" secondItem="UEf-9w-sa1" secondAttribute="leading" id="YQc-UQ-hPt"/>
                                             <constraint firstItem="rfb-Bt-ORM" firstAttribute="top" secondItem="UEf-9w-sa1" secondAttribute="top" constant="10" id="cqp-yO-rfP"/>
                                             <constraint firstItem="BBi-K3-JYt" firstAttribute="top" secondItem="Ls1-72-ed8" secondAttribute="bottom" constant="20" id="dl8-t3-rYe"/>
                                             <constraint firstItem="qwf-Aa-egY" firstAttribute="centerX" secondItem="UEf-9w-sa1" secondAttribute="centerX" id="e7W-fK-OqV"/>
                                             <constraint firstAttribute="trailing" secondItem="vgx-HL-mi8" secondAttribute="trailing" constant="30" id="fWt-Gv-k6A"/>
                                             <constraint firstItem="1AP-8y-5Yb" firstAttribute="centerX" secondItem="UEf-9w-sa1" secondAttribute="centerX" id="ggg-q9-WUX"/>
-                                            <constraint firstItem="pkv-oJ-nwv" firstAttribute="leading" secondItem="UEf-9w-sa1" secondAttribute="leading" constant="40" id="j1u-Nn-QYW"/>
+                                            <constraint firstItem="pkv-oJ-nwv" firstAttribute="leading" secondItem="UEf-9w-sa1" secondAttribute="leading" constant="30" id="j1u-Nn-QYW"/>
                                             <constraint firstItem="qwf-Aa-egY" firstAttribute="top" secondItem="iNo-ie-dJr" secondAttribute="bottom" constant="20" id="jwm-fm-exX"/>
+                                            <constraint firstAttribute="trailing" secondItem="0cf-Jq-bor" secondAttribute="trailing" id="kLi-Ie-qEf"/>
                                             <constraint firstItem="iNo-ie-dJr" firstAttribute="height" secondItem="pkv-oJ-nwv" secondAttribute="height" id="pzE-rz-5lv"/>
                                             <constraint firstItem="iNo-ie-dJr" firstAttribute="leading" secondItem="UEf-9w-sa1" secondAttribute="leading" constant="30" id="vBr-yJ-OiY"/>
+                                            <constraint firstItem="0cf-Jq-bor" firstAttribute="top" secondItem="UEf-9w-sa1" secondAttribute="top" id="wKK-Dj-QPs"/>
                                             <constraint firstItem="rfb-Bt-ORM" firstAttribute="centerX" secondItem="UEf-9w-sa1" secondAttribute="centerX" id="zei-N0-eEY"/>
                                         </constraints>
                                     </view>
@@ -354,9 +364,12 @@
                         <outlet property="animationView" destination="4hc-b8-bq5" id="qJb-vq-A4K"/>
                         <outlet property="backView" destination="0cf-Jq-bor" id="q88-TS-sf0"/>
                         <outlet property="emailTF" destination="cs9-9a-7VH" id="VFx-Of-xJq"/>
+                        <outlet property="facebook" destination="doM-1i-f1I" id="IWD-Fd-ItZ"/>
+                        <outlet property="gmail" destination="u3P-tH-Qwd" id="hdb-2r-rUq"/>
                         <outlet property="logInButton" destination="Ls1-72-ed8" id="CcA-H5-XD7"/>
                         <outlet property="passwordTF" destination="MOF-NQ-Uea" id="G22-ie-8du"/>
                         <outlet property="socialStackView" destination="iNo-ie-dJr" id="dnX-Lv-qfY"/>
+                        <outlet property="twitter" destination="RD6-im-Zde" id="aVF-oJ-ge9"/>
                         <outletCollection property="redDot" destination="vOd-bX-f7p" collectionClass="NSMutableArray" id="eE7-aU-59x"/>
                         <outletCollection property="redDot" destination="ZKg-yV-nmm" collectionClass="NSMutableArray" id="HFU-CE-U94"/>
                         <outletCollection property="redDot" destination="6aj-d4-VXe" collectionClass="NSMutableArray" id="qZB-R7-fBi"/>
@@ -408,7 +421,7 @@
                                                     <constraint firstAttribute="width" constant="150" id="x6f-gx-Tmw"/>
                                                 </constraints>
                                             </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="x23-aN-W00">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="x23-aN-W00">
                                                 <rect key="frame" x="30" y="180" width="354" height="166"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Kkr-KY-kSr" customClass="RegisterTextField" customModule="Konsil" customModuleProvider="target">
@@ -492,11 +505,12 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEW-10-4D7">
                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="35"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" red="0.1474072337" green="0.5992842317" blue="0.83486717939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="vg1-XJ-Sll"/>
                                                         </constraints>
-                                                        <state key="normal" backgroundImage="Twitter">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title="Register With Twitter">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -505,8 +519,9 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jeg-Qk-eu4">
                                                         <rect key="frame" x="0.0" y="45" width="354" height="35"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" backgroundImage="Google">
+                                                        <color key="backgroundColor" red="0.54489314560000002" green="0.1719349027" blue="0.093287952239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title="Register With Google">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -515,8 +530,9 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OaI-sJ-2pr">
                                                         <rect key="frame" x="0.0" y="90" width="354" height="35"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" backgroundImage="Facebook">
+                                                        <color key="backgroundColor" red="0.1114023998" green="0.25751450660000003" blue="0.39241906999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title="Register With Facebook">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -630,9 +646,27 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cCu-8u-tza">
+                                                <rect key="frame" x="30.000000000000004" y="506.66666666666663" width="36.333333333333343" height="125"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter" translatesAutoresizingMaskIntoConstraints="NO" id="leU-yg-1uB">
+                                                        <rect key="frame" x="0.0" y="0.0" width="36.333333333333336" height="36.333333333333336"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="leU-yg-1uB" secondAttribute="height" id="ZjU-0X-dEK"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google" translatesAutoresizingMaskIntoConstraints="NO" id="jPD-qB-Vx3">
+                                                        <rect key="frame" x="0.0" y="44.333333333333371" width="36.333333333333336" height="36.333333333333343"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Facebook" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8EC-jp-h3g">
+                                                        <rect key="frame" x="0.0" y="88.666666666666742" width="36.333333333333336" height="36.333333333333343"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" name="KosilBackGround"/>
                                         <constraints>
+                                            <constraint firstItem="cCu-8u-tza" firstAttribute="centerY" secondItem="awB-Ho-8cr" secondAttribute="centerY" id="1RS-Gw-XQ9"/>
                                             <constraint firstItem="xHc-hA-bEx" firstAttribute="top" secondItem="rdR-C3-hLX" secondAttribute="bottom" constant="26" id="8IB-Bs-Ocl"/>
                                             <constraint firstItem="x23-aN-W00" firstAttribute="top" secondItem="M7P-M4-nQK" secondAttribute="bottom" constant="20" id="BWI-7k-chN"/>
                                             <constraint firstItem="M7P-M4-nQK" firstAttribute="centerX" secondItem="3ZB-Ej-Evu" secondAttribute="centerX" id="BuH-Ba-gHO"/>
@@ -644,9 +678,11 @@
                                             <constraint firstAttribute="trailing" secondItem="awB-Ho-8cr" secondAttribute="trailing" constant="30" id="RBk-hf-nXF"/>
                                             <constraint firstItem="x23-aN-W00" firstAttribute="leading" secondItem="3ZB-Ej-Evu" secondAttribute="leading" constant="30" id="T5V-j7-8Gu"/>
                                             <constraint firstItem="rdR-C3-hLX" firstAttribute="top" secondItem="hHg-4f-JC7" secondAttribute="bottom" constant="20" id="WFe-sm-HDI"/>
+                                            <constraint firstItem="awB-Ho-8cr" firstAttribute="height" secondItem="cCu-8u-tza" secondAttribute="height" id="XYy-tZ-tdU"/>
                                             <constraint firstItem="hHg-4f-JC7" firstAttribute="top" secondItem="x23-aN-W00" secondAttribute="bottom" constant="20" id="Xte-mc-biT"/>
                                             <constraint firstItem="rdR-C3-hLX" firstAttribute="centerX" secondItem="3ZB-Ej-Evu" secondAttribute="centerX" id="Z9k-pD-iko"/>
                                             <constraint firstItem="hHg-4f-JC7" firstAttribute="leading" secondItem="8CE-RY-hzq" secondAttribute="trailing" constant="8" id="bWG-B8-WfM"/>
+                                            <constraint firstItem="cCu-8u-tza" firstAttribute="leading" secondItem="3ZB-Ej-Evu" secondAttribute="leading" constant="30" id="be3-ul-cua"/>
                                             <constraint firstItem="awB-Ho-8cr" firstAttribute="centerX" secondItem="3ZB-Ej-Evu" secondAttribute="centerX" id="cRT-wY-KUV"/>
                                             <constraint firstItem="s1P-qN-KSt" firstAttribute="leading" secondItem="3ZB-Ej-Evu" secondAttribute="leading" constant="20" id="dAd-4S-ajA"/>
                                             <constraint firstItem="M7P-M4-nQK" firstAttribute="top" secondItem="3ZB-Ej-Evu" secondAttribute="top" constant="10" id="dz1-VH-Y8x"/>
@@ -673,8 +709,8 @@
                             <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XiP-0g-4FN">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N14-of-Y25">
-                                        <rect key="frame" x="142.66666666666666" y="263.66666666666669" width="128.99999999999997" height="129"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N14-of-Y25" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                        <rect key="frame" x="142.66666666666666" y="383.66666666666669" width="128.99999999999997" height="129.00000000000006"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="129" id="FnT-QJ-Lhq"/>
@@ -685,7 +721,7 @@
                                 <color key="backgroundColor" name="transperantColor"/>
                                 <constraints>
                                     <constraint firstItem="N14-of-Y25" firstAttribute="centerX" secondItem="XiP-0g-4FN" secondAttribute="centerX" id="B3p-OY-6VB"/>
-                                    <constraint firstItem="N14-of-Y25" firstAttribute="centerY" secondItem="XiP-0g-4FN" secondAttribute="centerY" constant="-120" id="ypD-rt-Dmz"/>
+                                    <constraint firstItem="N14-of-Y25" firstAttribute="centerY" secondItem="XiP-0g-4FN" secondAttribute="centerY" id="ypD-rt-Dmz"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -709,11 +745,14 @@
                         <outlet property="backView" destination="XiP-0g-4FN" id="W1C-WE-hKw"/>
                         <outlet property="checkBox" destination="8CE-RY-hzq" id="Wr4-NH-Zrx"/>
                         <outlet property="email" destination="crY-pX-NIp" id="khV-xR-RYj"/>
+                        <outlet property="facebook" destination="OaI-sJ-2pr" id="xxq-5y-PK4"/>
+                        <outlet property="google" destination="Jeg-Qk-eu4" id="gR4-yZ-3xr"/>
                         <outlet property="name" destination="Kkr-KY-kSr" id="WfA-6C-3BU"/>
                         <outlet property="password" destination="gHr-3J-Ll2" id="5Cb-2b-vZQ"/>
                         <outlet property="phone" destination="mLf-D6-QBs" id="Ykp-13-3WY"/>
                         <outlet property="registerButton" destination="rdR-C3-hLX" id="Tf3-Fv-bYd"/>
                         <outlet property="socialStackView" destination="awB-Ho-8cr" id="pfT-9r-lxC"/>
+                        <outlet property="twitter" destination="rEW-10-4D7" id="ThQ-49-uMS"/>
                         <outletCollection property="redDot" destination="JgC-QI-3dl" collectionClass="NSMutableArray" id="gsH-p4-c7N"/>
                         <outletCollection property="redDot" destination="czo-W0-p1g" collectionClass="NSMutableArray" id="g5c-Py-vo9"/>
                         <outletCollection property="constraints" destination="RBk-hf-nXF" collectionClass="NSMutableArray" id="CCF-AE-q4m"/>
@@ -2611,16 +2650,16 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="S1H-Ui-OvG">
-                                <rect key="frame" x="30" y="187" width="354" height="43"/>
+                                <rect key="frame" x="30" y="187" width="354" height="21.666666666666657"/>
                                 <subviews>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversation Link :" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHd-Lj-oWK">
-                                        <rect key="frame" x="0.0" y="0.0" width="175.66666666666666" height="21.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="349" height="21.666666666666668"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <color key="textColor" name="IconsColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://www.google.comhttps://www.google.comhttps://www.google.comhttps://www.google.com" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7M-9T-0Vc">
-                                        <rect key="frame" x="180.66666666666663" y="0.0" width="173.33333333333337" height="43"/>
+                                        <rect key="frame" x="354" y="0.0" width="0.0" height="21.666666666666668"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2790,7 +2829,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyConsultationsCell" rowHeight="119" id="0Nq-4e-6hj" customClass="MyConsultationsTableViewCell" customModule="Konsil" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyConsultationsCell" rowHeight="119" id="0Nq-4e-6hj" customClass="MyConsultationsTableViewCell" customModule="Konsil" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="119"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Nq-4e-6hj" id="ptw-AJ-UgS">
@@ -2932,7 +2971,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Uoq-tq-oY0">
                                                         <rect key="frame" x="50" y="50" width="314" height="260"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Change name" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aex-c3-nEp" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Change name" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aex-c3-nEp" customClass="PersonalInfoTextField" customModule="Konsil" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="36"/>
                                                                 <color key="backgroundColor" name="KosilBackGround"/>
                                                                 <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -2950,7 +2989,7 @@
                                                                     <outlet property="delegate" destination="chV-OY-X0v" id="tUm-mr-2g7"/>
                                                                 </connections>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Change e-mail" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YRQ-3I-hbr" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Change e-mail" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YRQ-3I-hbr" customClass="PersonalInfoTextField" customModule="Konsil" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="56" width="314" height="36"/>
                                                                 <color key="backgroundColor" name="KosilBackGround"/>
                                                                 <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -2964,7 +3003,7 @@
                                                                     <action selector="textDidChange:" destination="chV-OY-X0v" eventType="editingChanged" id="zHj-bU-GWk"/>
                                                                 </connections>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" placeholder="Change" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HwV-La-9qL" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" placeholder="Change" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HwV-La-9qL" customClass="PersonalInfoTextField" customModule="Konsil" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="112" width="314" height="36"/>
                                                                 <color key="backgroundColor" name="KosilBackGround"/>
                                                                 <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -2978,7 +3017,7 @@
                                                                     <action selector="textDidChange:" destination="chV-OY-X0v" eventType="editingChanged" id="hVs-MM-0nr"/>
                                                                 </connections>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0123456789" borderStyle="roundedRect" placeholder="Add phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zmj-ws-KSJ" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0123456789" borderStyle="roundedRect" placeholder="Add phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zmj-ws-KSJ" customClass="PersonalInfoTextField" customModule="Konsil" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="168" width="314" height="36"/>
                                                                 <color key="backgroundColor" name="KosilBackGround"/>
                                                                 <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -2992,7 +3031,7 @@
                                                                     <action selector="textDidChange:" destination="chV-OY-X0v" eventType="editingChanged" id="QDO-fA-gQC"/>
                                                                 </connections>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add photo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GbI-Sj-YYR" customClass="DesignableUITextField" customModule="Konsil" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add photo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GbI-Sj-YYR" customClass="PersonalInfoTextField" customModule="Konsil" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="224" width="314" height="36"/>
                                                                 <color key="backgroundColor" name="KosilBackGround"/>
                                                                 <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -3746,13 +3785,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5u-q9-LKf">
-                                <rect key="frame" x="30" y="64" width="122" height="22"/>
+                                <rect key="frame" x="30" y="64" width="137" height="26"/>
                                 <state key="normal" title="  Doctors List" image="files">
                                     <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eM-ec-uwy">
-                                <rect key="frame" x="317" y="64" width="67" height="22"/>
+                                <rect key="frame" x="300" y="64" width="84" height="30"/>
                                 <state key="normal" title="  Filter" image="filter">
                                     <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 </state>
@@ -3761,7 +3800,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mUS-7w-C0b">
-                                <rect key="frame" x="10" y="106" width="394" height="756"/>
+                                <rect key="frame" x="10" y="110" width="394" height="752"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DoctorsCell" rowHeight="120" id="aON-sm-kRC" customClass="DoctorsTableViewCell" customModule="Konsil" customModuleProvider="target">
@@ -4978,12 +5017,10 @@
     </scenes>
     <resources>
         <image name="11" width="28" height="21"/>
-        <image name="92047_plus_512x512" width="512" height="512"/>
         <image name="Document" width="20" height="24"/>
         <image name="Download" width="53" height="33"/>
         <image name="Facebook" width="170.66667175292969" height="170.66667175292969"/>
         <image name="FilterBackGround" width="286" height="321"/>
-        <image name="Google" width="256" height="256"/>
         <image name="Group 351" width="360" height="132"/>
         <image name="Group 352" width="360" height="288"/>
         <image name="Group 353" width="360" height="640"/>
@@ -5013,6 +5050,7 @@
         <image name="filter" width="17" height="15"/>
         <image name="fingerPrint" width="128" height="128"/>
         <image name="german" width="666.66668701171875" height="666.66668701171875"/>
+        <image name="google" width="41" height="41"/>
         <image name="imagePlaceHolder" width="36" height="36"/>
         <image name="konsil" width="1708" height="1825"/>
         <image name="mail" width="19" height="12"/>
@@ -5040,7 +5078,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="17b-r7-4N0"/>
+        <segue reference="fAW-jg-GNb"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

@@ -72,7 +72,7 @@ extension DoctorsViewController: UITableViewDelegate , UITableViewDataSource {
             cell.drName.text = doctor.name
             cell.drDegree.text = doctor.degree
             cell.drRating.rating = stringToDouble(doctor.rate)
-            cell.drImage.sd_setImage(with: URL(string: doctor.image_url), placeholderImage: UIImage(named: "imagePlaceHolder"))
+            cell.drImage.sd_setImage(with: URL(string: doctor.image_url), placeholderImage: UIImage(named: "doctorPlaceholder"))
         }
         return cell
     }
