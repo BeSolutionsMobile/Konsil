@@ -62,6 +62,10 @@ class ConsultationFinalReportViewController: UIViewController {
                     self.presentActivityViewController(withUrl: url!)
                 }
             }
+        } else {
+            if reportFile == nil {
+                Alert.show("Error".localized, massege: "no file was found", context: self)
+            }
         }
     }
     

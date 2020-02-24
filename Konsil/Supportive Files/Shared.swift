@@ -22,6 +22,7 @@ class Shared {
         settings.presentationStyle = presentationStyle
         settings.statusBarEndAlpha = 0
         settings.allowPushOfSameClassTwice = false
+        settings.dismissOnPresent = true
         switch currentDevice {
         case .pad:
             settings.menuWidth = 350

@@ -429,7 +429,7 @@
 "mQm-wh-tLS.placeholder" = "البريد الاكترونى";
 
 /* Class = "UILabel"; text = "Change Language :"; ObjectID = "mp5-4j-Rv1"; */
-"mp5-4j-Rv1.text" = "تغيير اللغة :";
+"mp5-4j-Rv1.text" = "Change Language";
 
 /* Class = "UILabel"; text = "Download"; ObjectID = "myE-RQ-qvW"; */
 "myE-RQ-qvW.text" = "تحميل";

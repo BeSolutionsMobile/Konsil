@@ -16,7 +16,7 @@ class DoctorsViewController: UIViewController {
     
     var doctors: [Doctor]?
     var specialityID: Int?
-    
+    var degrees: [Degree]?
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +33,7 @@ class DoctorsViewController: UIViewController {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Filter") as? FilterViewController {
             vc.modalPresentationStyle = .overFullScreen
             vc.delegate = self
+            vc.degrees = self.degrees
             self.present(vc, animated: false, completion: nil)
         }
     }
@@ -45,6 +46,7 @@ class DoctorsViewController: UIViewController {
                     case .success(let response):
                         print(response)
                         self?.doctors = response.doctors
+                        self?.degrees = response.degrees
                         self?.doctorTableView.reloadData()
                     case .failure(let error):
                         print(error.localizedDescription)

@@ -76,11 +76,13 @@ class RequestConsultationViewController: UIViewController {
                     switch Result {
                     case .success(let response):
                         print(response)
-                        if Status >= 200 && Status < 300 {
+                        if response.status == 200 {
                             if let vc = self?.storyboard?.instantiateViewController(withIdentifier: "PayPalVC") as? PayPalViewController {
                                 vc.modalPresentationStyle = .fullScreen
                                 vc.doctor = "Consultation"
                                 vc.price = "2.5"
+                                vc.id = response.id
+                                vc.type = 1
                                 self?.navigationController?.pushViewController(vc, animated: true)
                             }
                         }

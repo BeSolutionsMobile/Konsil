@@ -13,6 +13,7 @@ import BEMCheckBox
 class DoctorConversationViewController: UIViewController {
     
     //MARK:- IBOutlets
+    @IBOutlet weak var chooseDate: UITextField!
     @IBOutlet weak var doctorName: UILabel!
     @IBOutlet weak var doctorSpeciality: UILabel!
     @IBOutlet weak var doctorRate: CosmosView!
@@ -35,20 +36,25 @@ class DoctorConversationViewController: UIViewController {
     }
     @IBOutlet weak var backView: UIView!
     
+    //MARK:- Variables
+    
+    var datePicker = UIDatePicker()
     var currentIndex:IndexPath?
     var previousIndex:IndexPath?
     var new = 0
     var periods: [String]?
     var doctorDetails: DoctorData?
-    var appointments: [Appointments]?
+    var appointments: [Appointment]?
+    
+    
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
-        getAppointments()
+        getAppointments(date: getCurrentDate())
         updateView()
+        openDatePicker(for: chooseDate)
     }
-    
     
     //MARK:- Complete Request
     @IBAction func completeRequestPressed(_ sender: UIButton) {
@@ -57,7 +63,7 @@ class DoctorConversationViewController: UIViewController {
     
     // Reserve Conversation Appointment
     func reserveConversation() {
-        if appointments?.count != nil , currentIndex != nil , doctorDetails?.id != nil{
+        if appointments?.count != 0 , currentIndex != nil , doctorDetails?.id != nil{
             if let appointment = appointments?[currentIndex!.row]{
                 DispatchQueue.main.async { [weak self] in
                     APIClient.reserveConversation(doctor_id: (self?.doctorDetails!.id)!, appointment_id: appointment.id) { (Result, Status) in
@@ -65,8 +71,12 @@ class DoctorConversationViewController: UIViewController {
                         case .success(let response):
                             print(response)
                             if Status == 200 {
-                                let vc = self?.storyboard?.instantiateViewController(withIdentifier: "Payment") as! PaymentViewController
-                                self?.navigationController?.pushViewController(vc, animated: true)
+                                if let vc = self?.storyboard?.instantiateViewController(withIdentifier: "PayPalVC") as? PayPalViewController {
+                                    vc.modalPresentationStyle = .fullScreen
+                                    vc.doctor = "Online Conversation"
+                                    vc.price = "2.5"
+                                    self?.navigationController?.pushViewController(vc, animated: true)
+                                }
                             }
                         case .failure(let error):
                             print(error.localizedDescription)
@@ -82,20 +92,20 @@ class DoctorConversationViewController: UIViewController {
         }
     }
     
-    func getAppointments(){
+    //MARK:- Get Appointments
+    func getAppointments(date: String){
         if let doctor = doctorDetails {
             DispatchQueue.main.async {
                 [weak self] in
-                APIClient.getAppointments(doctor_id: doctor.id, date: "2020-02-13") { (Result , Status) in
+                APIClient.getAppointments(doctor_id: doctor.id, date: date) { (Result , Status) in
                     switch Result {
                     case .success(let response):
                         print(response)
                         self?.appointments = response.data
-                        self?.periodesTableView.reloadData()
-                        self?.checkData()
+                        self?.checkData(self?.appointments ?? [])
                     case.failure(let error):
                         print(error.localizedDescription)
-                        self?.checkData()
+                        self?.checkData(self?.appointments ?? [])
                     }
                     print(Status)
                 }
@@ -103,6 +113,14 @@ class DoctorConversationViewController: UIViewController {
         }
     }
     
+    func getCurrentDate()-> String{
+        let date = Date()
+        let dateformatter = DateFormatter()
+        dateformatter.dateStyle = .short
+        dateformatter.dateFormat = "yyyy-MM-dd"
+        let currentDate = dateformatter.string(from: date)
+        return currentDate
+    }
     
     func updateView(){
         if let doctor = doctorDetails {
@@ -115,11 +133,32 @@ class DoctorConversationViewController: UIViewController {
     }
     
     
+    //MARK:- Open Date Picker From
+    func openDatePicker(for textField: UITextField) {
+        datePicker.datePickerMode = .date
+        textField.inputView = datePicker
+        let toolbaar = UIToolbar()
+        toolbaar.sizeToFit()
+        let doneBut = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action:#selector(doneClicked))
+        toolbaar.setItems([doneBut], animated: true)
+        textField.inputAccessoryView = toolbaar
+    }
+    
+    @objc func doneClicked() {
+        let dateformatter = DateFormatter()
+        dateformatter.dateStyle = .short
+        dateformatter.dateFormat = "yyyy-MM-dd"
+        chooseDate.text = dateformatter.string(from: datePicker.date)
+        getAppointments(date: chooseDate.text!)
+        self.view.endEditing(true)
+    }
+    
+    
     //MARK:- Check if tableView is empty and add animationview
-    func checkData(){
+    func checkData(_ array: [Appointment]){
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             [weak self] in
-            self?.checkTableViewData(tableView: self!.periodesTableView, view: self!.backView, animationWidth: self!.backView.bounds.width+50, animationHeight: self!.backView.bounds.height+50, animationName: "NoData" , scale: .scaleAspectFit)
+            self?.checkAppointments(appointments: self?.appointments ?? [], tableView: self!.periodesTableView, view: self!.backView, animationWidth: self!.backView.bounds.width+50, animationHeight: self!.backView.bounds.height+50, animationName: "NoData" , scale: .scaleAspectFit)
         }
     }
     
@@ -135,14 +174,9 @@ extension DoctorConversationViewController: UITableViewDataSource , UITableViewD
     //MARK:- cellForRowAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "periodCell", for: indexPath) as! PeriodsTableViewCell
-        if appointments!.count >= indexPath.row+2 {
-            if let from = appointments?[indexPath.row].time ,let to = appointments?[indexPath.row + 1].time {
-                cell.period.attributedText = NSAttributedString.withMultibleTexts(text1: "From".localized, text2: from, text3: "to".localized, text4: to)
-            }
-        } else {
-            if let from = appointments?[indexPath.row].time {
-                cell.period.text = "From".localized + " " + from
-            }
+        if let from = appointments?[indexPath.row].from , let to = appointments?[indexPath.row].to {
+            cell.period.attributedText = NSAttributedString.withMultibleTexts(text1: "From".localized + " ", text2: from, text3: "to".localized + " ", text4: to)
+            
         }
         return cell
     }

@@ -7,12 +7,7 @@ import Foundation
 
 // MARK: - ReserverConversation
 struct ReserverConversation: Codable {
-    let status: Int
-    let data: ConversationInfo
-}
-
-// MARK: - DataClass
-struct ConversationInfo: Codable {
-    let id: Int
-    let doctor, date, conversation_link, status: String
+    let status ,id: Int
+    let message: String
+    
 }

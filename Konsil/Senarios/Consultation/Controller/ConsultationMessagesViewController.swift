@@ -38,12 +38,14 @@ class ConsultationMessagesViewController: UIViewController {
     }
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var backView: UIView!
+    var consultation_id: Int?
     var Chats = 0
+    var messages: [MessageInfo]?
     
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        getChatMessages()
         rightBackBut()
         messagesTableView.setContentOffset(CGPoint(x: 0, y: CGFloat.greatestFiniteMagnitude + 30), animated: false)
     }
@@ -64,15 +66,64 @@ class ConsultationMessagesViewController: UIViewController {
     }
     
     @IBAction func sendMessagePressed(_ sender: UIButton) {
-        if messageTF.text != "" && messageTF.text != nil {
-            Chats += 1
-            messagesTableView.reloadData()
-            checkTable()
-        }
+        sendMessage()
     }
     
     func sendMessage(){
+        if consultation_id != nil , messageTF.text != ""{
+            sendBut.isEnabled = false
+            let user = Shared.user
+            let message = MessageInfo(id: consultation_id!, name: user?.name ?? "", user_image: user?.image_url ?? "", message: messageTF.text ?? "")
+            DispatchQueue.main.async { [weak self] in
+                APIClient.sendMessage(consultation_id: self?.consultation_id ?? 0 , message: self?.messageTF.text ?? "") { (Result, Status) in
+                    switch Result {
+                    case .success(let response):
+                        print(response)
+                        self?.sendBut.isEnabled = true
+                        if response.status == 200 {
+                            self?.messages?.append(message)
+                            self?.reloadTableView()
+                            self?.checkTable()
+                        }
+                    case .failure(let error):
+                        self?.sendBut.isEnabled = true
+                        print(error.localizedDescription)
+                        Alert.show("Failed".localized, massege: "Message was not sent", context: self!)
+                    }
+                }
+            }
+        }
+    }
+    
+    func reloadTableView(){
+        messagesTableView.reloadData()
+        guard let count = messages?.count else { return }
+        let indexpath = IndexPath(row: count - 1, section: 0)
+        if messages?.count != 0 {
+            DispatchQueue.main.async { [weak self] in
+                self?.messagesTableView.scrollToRow(at: indexpath, at: .bottom, animated: true)
+            }
+        }
         
+    }
+    
+    func getChatMessages(){
+        consultation_id = ConsultationDetailsViewController.consultation_id
+        if consultation_id != nil {
+            DispatchQueue.main.async { [weak self] in
+                APIClient.getChatMessages(consultaion_id: (self?.consultation_id)!) { (Result, Status) in
+                    switch Result {
+                    case .success(let response):
+                        print(response)
+                        self?.messages = response.messages
+                        self?.reloadTableView()
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                        Alert.show("Error".localized, massege: "Can't Load Messages", context: self!)
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -80,14 +131,17 @@ class ConsultationMessagesViewController: UIViewController {
 extension ConsultationMessagesViewController: UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Chats
+        return messages?.count ?? 0
     }
     
     //MARK:- cellForRowAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessagesTableViewCell
-        cell.message.text = "chat"
-        cell.name.text = "chat"
+        if let message = messages?[indexPath.row]{
+            cell.cellImage.sd_setImage(with: URL(string: message.user_image), placeholderImage: UIImage(named: "imagePlaceHolder"))
+            cell.message.text = message.message
+            cell.name.text = message.name
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

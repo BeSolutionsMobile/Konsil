@@ -8,11 +8,11 @@ import Foundation
 // MARK: - GetAppointments
 struct GetAppointments: Codable {
     let status: Int
-    let data: [Appointments]
+    let data: [Appointment]
 }
 
 // MARK: - Datum
-struct Appointments: Codable {
+struct Appointment: Codable {
     let id: Int
-    let time: String
+    let from, to: String
 }

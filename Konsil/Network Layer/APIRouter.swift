@@ -27,6 +27,11 @@ enum APIRouter: URLRequestConvertible {
     case ComplaintTypes
     case MakeComplaint(type_id: Int ,complaint: String)
     case MyConsultations
+    case GetChatMessages(consultation_id: Int )
+    case SendMessage(consultation_id: Int ,message: String)
+    case ComfirmConsultaiton(consultation_id: Int, payment_status: Int)
+    case ComfirmConversation(consultation_id: Int, payment_status: Int)
+    
     
     //MARK:- HTTP Method
     private var method: HTTPMethod {
@@ -54,7 +59,7 @@ enum APIRouter: URLRequestConvertible {
         case .ConsultationFiles:
             return .get
         case .DownloadReport:
-            return .get
+            return .post
         case .GetAppointments:
             return .post
         case .ReserveConversation:
@@ -65,6 +70,14 @@ enum APIRouter: URLRequestConvertible {
             return .post
         case .MyConsultations:
             return .get
+        case .GetChatMessages:
+            return .post
+        case .SendMessage:
+            return .post
+        case .ComfirmConsultaiton:
+            return .post
+        case .ComfirmConversation:
+            return .post
         }
     }
     
@@ -105,6 +118,14 @@ enum APIRouter: URLRequestConvertible {
             return "/make-complaint"
         case .MyConsultations:
             return "/my-consultations"
+        case .GetChatMessages:
+            return "/chat-messages"
+        case .SendMessage:
+            return "/send-message"
+        case .ComfirmConsultaiton:
+            return "/confirm-consultation"
+        case .ComfirmConversation:
+            return "/confirm-reservation"
         }
     }
     
@@ -145,6 +166,14 @@ enum APIRouter: URLRequestConvertible {
             return [K.MakeComplaint.type_id: type_id , K.MakeComplaint.Complaint: complaint]
         case .MyConsultations:
             return nil
+        case .GetChatMessages(let consultation_id):
+            return [K.GetChatMessages.consultation_id: consultation_id]
+        case .SendMessage(let consultation_id, let message):
+            return [K.SendMessage.consultation_id: consultation_id , K.SendMessage.message: message]
+        case .ComfirmConsultaiton(let consultation_id, let payment_status):
+            return [K.ComfirmConsultation.consultation_id: consultation_id, K.ComfirmConsultation.payment_status: payment_status]
+        case .ComfirmConversation(let consultation_id, let payment_status):
+            return [K.ComfirmConversation.consultation_id: consultation_id, K.ComfirmConversation.payment_status: payment_status]
         }
     }
     

@@ -105,4 +105,21 @@ class APIClient {
     static func getMyConsultations(completion: @escaping (Result<MyConsultations,AFError> , Int )-> Void){
         performRequest(route: APIRouter.MyConsultations, completion: completion)
     }
+    
+    static func getChatMessages(consultaion_id: Int, completion: @escaping (Result<GetChatMessages,AFError> , Int )-> Void){
+        performRequest(route: APIRouter.GetChatMessages(consultation_id: consultaion_id), completion: completion)
+    }
+    
+    static func sendMessage(consultation_id: Int, message: String, completion: @escaping (Result<SendMessage,AFError> , Int )-> Void){
+        performRequest(route: APIRouter.SendMessage(consultation_id: consultation_id, message: message), completion: completion)
+    }
+
+    static func comfirmConsultation(consultation_id: Int, payment_status: Int, completion: @escaping (Result<ComfirmConsultation,AFError> , Int )-> Void) {
+        performRequest(route: APIRouter.ComfirmConsultaiton(consultation_id: consultation_id, payment_status: payment_status), completion: completion )
+        
+    }
+    
+    static func comfirmConversation(consultation_id: Int, payment_status: Int, completion: @escaping (Result<ComfirmConversation,AFError> , Int )-> Void) {
+        performRequest(route: APIRouter.ComfirmConversation(consultation_id: consultation_id, payment_status: payment_status), completion: completion)
+    }
 }

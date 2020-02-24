@@ -7,17 +7,6 @@ import Foundation
 
 // MARK: - AddConsultation
 struct AddConsultation: Codable {
-    let status: Int
-    let message: Message
-}
-
-// MARK: - Message
-struct Message: Codable {
-    let title, details: String
-    let patient_id: Int
-    let doctor_id: String
-    let status_id, type: Int
-    let updated_at, created_at: String
-    let id: Int
-
+    let status ,id: Int
+    let message: String
 }

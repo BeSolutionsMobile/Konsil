@@ -9,10 +9,13 @@
 import UIKit
 import BEMCheckBox
 import Cosmos
+
 protocol FilterDoctorsDelegate {
     func updateData(degree: [Int] ,rate: Int)
 }
+
 class FilterViewController: UIViewController {
+    @IBOutlet weak var degreesCollectionView: UICollectionView!
     @IBOutlet weak var filterBackGround: UIImageView!{
         didSet{
             Rounded.roundedImage(imageView: self.filterBackGround, radius: 15, borderColor: UIColor.gray.cgColor, borderWidth: 2)
@@ -21,11 +24,6 @@ class FilterViewController: UIViewController {
     @IBOutlet weak var logoBackGround: UIImageView!{
         didSet{
             Rounded.roundedImage(imageView: self.logoBackGround, radius: self.logoBackGround.frame.width/2, borderColor: UIColor.gray.cgColor, borderWidth: 2)
-        }
-    }
-    @IBOutlet var filterOptions: [BEMCheckBox]!{
-        didSet{
-            checkStyle(BECheckBoxItmeArray: self.filterOptions)
         }
     }
     @IBOutlet weak var filterRate: CosmosView!
@@ -37,7 +35,8 @@ class FilterViewController: UIViewController {
     @IBOutlet weak var filterBackView: UIView!
     
     var delegate: FilterDoctorsDelegate?
-
+    var degrees: [Degree]?
+    var selectedDegrees: [Int]?
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,17 +50,10 @@ class FilterViewController: UIViewController {
     
     @IBAction func submitPressed(_ sender: UIButton) {
         let rate = Int(filterRate.rating)
-        let degree = getSelectedDegree()
-        delegate?.updateData(degree: degree, rate: rate)
+        let degree = selectedDegrees
+        delegate?.updateData(degree: degree ?? [], rate: rate)
         self.view.backgroundColor = .clear
         self.dismiss(animated: false, completion: nil)
-    }
-    
-    func checkStyle(BECheckBoxItmeArray: [BEMCheckBox]){
-        for i in BECheckBoxItmeArray.indices{
-            BECheckBoxItmeArray[i].onAnimationType = .bounce
-            BECheckBoxItmeArray[i].offAnimationType = .bounce
-        }
     }
     
     func addTapRecognizer() {
@@ -77,15 +69,36 @@ class FilterViewController: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     
-    func getSelectedDegree() -> [Int] {
-        var degree: [Int]?
-        for i in filterOptions.indices {
-            if filterOptions[i].on == true {
-                if degree?.append(i+1) == nil {
-                    degree = [i+1]
-                }
-            }
-        }
-        return degree ?? []
+}
+
+extension FilterViewController: UICollectionViewDataSource , UICollectionViewDelegate , UICollectionViewDelegateFlowLayout, SelectDegreeDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return degrees?.count ?? 0
     }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DegreeCell", for: indexPath) as! DegreesCollectionViewCell
+        if let degree = degrees?[indexPath.row] {
+            cell.degreeTitle.text = degree.degree
+            cell.id = degree.id
+            cell.delegate = self
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 120, height: 22)
+    }
+    
+    func toggleCheck(id: Int, checkBox: BEMCheckBox, status: Bool) {
+        if status == true {
+            if selectedDegrees?.append(id) == nil {
+                selectedDegrees = [id]
+            }
+        } else {
+            selectedDegrees?.removeAll {$0 == id }
+        }
+    }
+    
 }

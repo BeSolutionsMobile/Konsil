@@ -11,6 +11,14 @@ import UIKit
 class PayPalViewController: UIViewController , PayPalPaymentDelegate {
     
     @IBOutlet weak var paymentAmount: UILabel!
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var animationView: UIView!{
+        didSet{
+            self.animationView.layer.cornerRadius = 10
+            self.animationView.clipsToBounds = true
+        }
+    }
+    
     
     var paypalConfig = PayPalConfiguration()
     var environment: String = PayPalEnvironmentSandbox {
@@ -20,16 +28,17 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
             }
         }
     }
-    
     var acceptCreditCards: Bool = true {
         didSet{
             paypalConfig.acceptCreditCards = acceptCreditCards
         }
     }
+    var type: Int?
     var doctor = ""
     var price = ""
-    //MARK:- ViewDidLoad
+    var id: Int?
     
+    //MARK:- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         paymentAmount.text = price + " $"
@@ -44,13 +53,14 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
     }
     
     @IBAction func payWithPayPal(_ sender: UIButton) {
+        if id != nil {
             let item = PayPalItem(name: doctor, withQuantity: 1, withPrice: NSDecimalNumber(string: price), withCurrency: "USD", withSku: "doctor")
             let items = [item]
             let subtotle = PayPalItem.totalPrice(forItems: items)
             let total = subtotle.decimalValue
             let payment = PayPalPayment(amount: NSDecimalNumber(decimal: total), currencyCode: "USD", shortDescription: "Consultation Payent", intent: .sale)
             payment.items = items
-
+            
             if payment.processable {
                 let paymentVC = PayPalPaymentViewController(payment: payment , configuration: paypalConfig , delegate: self)
                 paymentVC?.modalPresentationStyle = .fullScreen
@@ -58,8 +68,10 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
             } else {
                 print("Cannot process payment")
             }
-            
+        }else {
+            print("id is empty")
         }
+    }
     
     func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController) {
         paymentViewController.dismiss(animated: true, completion: nil)
@@ -67,9 +79,51 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
     
     func payPalPaymentViewController(_ paymentViewController: PayPalPaymentViewController, didComplete completedPayment: PayPalPayment) {
         print(completedPayment.confirmation)
+        //        let profe = completedPayment.confirmation["response"]
+        
         paymentViewController.dismiss(animated: true, completion: nil)
+        
+        if let id = id {
+            DispatchQueue.main.async { [weak self] in
+                if self?.type == 1 {
+                    APIClient.comfirmConsultation(consultation_id: id, payment_status: 1) { (Result, Status) in
+                        switch Result {
+                        case .success(let response):
+                            print(response)
+                            if response.stats == 200 {
+                                self?.showSuccess()
+                            }
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                        }
+                    }
+                } else if self?.type == 2 {
+                    
+                }
+            }
+            
+        }
+    }
+    func showSuccess(){
+        backView.isHidden = false
+        backView.isUserInteractionEnabled = true
+        BlurView(view: animationView)
     }
     
-    
-    
+    func BlurView(view: UIView){
+        let blur = UIBlurEffect(style: .light)
+        let blurView = UIVisualEffectView(effect: blur)
+        blurView.frame = view.bounds
+        view.addSubview(blurView)
+        view.isHidden = false
+        let animation = Shared.showLottie(view: blurView.contentView, fileName: "success", contentMode: .scaleAspectFit)
+        blurView.contentView.addSubview(animation)
+        view.addSubview(blurView)
+        animation.play { (finished) in
+            if finished == true {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "Main") as! MainViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
 }

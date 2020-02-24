@@ -97,6 +97,16 @@ struct K {
         static let appointment_id = "appointment_id"
     }
     
+    struct ComfirmConsultation {
+        static let consultation_id = "consultation_id"
+        static let payment_status = "payment_status"
+    }
+    
+    struct ComfirmConversation {
+        static let consultation_id = "consultation_id"
+        static let payment_status = "payment_status"
+    }
+    
     struct ComplaintTypes {
     }
     
@@ -106,6 +116,15 @@ struct K {
     }
     
     struct MyConsultations {
+    }
+    
+    struct GetChatMessages {
+        static let consultation_id = "consultation_id"
+    }
+    
+    struct SendMessage {
+        static let consultation_id = "consultation_id"
+        static let message = "message"
     }
     
     

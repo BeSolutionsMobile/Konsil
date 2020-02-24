@@ -58,30 +58,31 @@ extension MyConsultationsViewController: UITableViewDelegate , UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyConsultationsCell", for: indexPath) as! MyConsultationsTableViewCell
         if let consultation = consultations?[indexPath.row] {
+            cell.status.text = "!!!"
             cell.doctorName.text = consultation.name
             cell.price.text = consultation.price
-            cell.doctorImage.sd_setImage(with: URL(string: consultation.image), placeholderImage: UIImage(named: "imagePlaceholder"))
-            switch consultation.type {
-            case "1": cell.tybe.text = "Consultation".localized
-            case "2": cell.tybe.text = "OnlineConversation".localized
-            default:
-                break
+            cell.doctorImage.sd_setImage(with: URL(string: consultation.image), placeholderImage: UIImage(named: "imagePlaceHolder"))
+            if consultation.type == "1" {
+                cell.tybe.text = "Consultation".localized
+            } else if consultation.type == "2" {
+                cell.tybe.text = "OnlineConversation".localized
             }
-            cell.tybe.text = consultation.type
             cell.delegate = self
         }
         
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tybes[indexPath.row] == "Consultation".localized {
+        if consultations?[indexPath.row].type == "1" {
             if let vc = storyboard?.instantiateViewController(withIdentifier: "consultationDetails") as? ConsultationDetailsViewController {
                 vc.modalPresentationStyle = .fullScreen
+                ConsultationDetailsViewController.consultation_id = consultations?[indexPath.row].id
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         } else {
             if let vc = storyboard?.instantiateViewController(withIdentifier: "ConversationDetails") as? ConversationDetailsViewController {
                 vc.modalPresentationStyle = .fullScreen
+                ConversationDetailsViewController.conversation_id = consultations?[indexPath.row].id
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }

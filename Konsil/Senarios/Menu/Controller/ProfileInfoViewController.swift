@@ -90,6 +90,7 @@ class ProfileInfoViewController: UIViewController {
                     switch Result {
                     case .success(let response):
                         if response.status == 200 {
+                            print(response)
                             Shared.user = response.userInfo
                         }
                     case .failure(let error):
@@ -152,11 +153,11 @@ extension ProfileInfoViewController: UIImagePickerControllerDelegate , UINavigat
         FirebaseUploader.uploadToFirebase(viewController: self, imagePicker: imagePicker, didFinishPickingMediaWithInfo: info) { [weak self] (uploaded ,url) in
             if uploaded {
                 self?.image = url
-                if let asset = info[UIImagePickerController.InfoKey.phAsset] as? PHAsset{
-                    if let fileName = asset.value(forKey: "filename") as? String{
-                        self?.photo.text = fileName
-                    }
-                }
+//                if let asset = info[UIImagePickerController.InfoKey.phAsset] as? PHAsset{
+//                    if let fileName = asset.value(forKey: "filename") as? String{
+//                        self?.photo.text = fileName
+//                    }
+//                }
             }
         }
     }

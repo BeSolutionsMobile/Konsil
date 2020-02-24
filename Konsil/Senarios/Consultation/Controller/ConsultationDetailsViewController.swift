@@ -18,6 +18,7 @@ class ConsultationDetailsViewController: UIViewController {
     @IBOutlet weak var backGroundView: UIView!
     weak var currentViewController : UIViewController?
     
+    static var consultation_id: Int?
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()

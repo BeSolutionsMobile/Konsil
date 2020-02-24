@@ -8,7 +8,7 @@ import Foundation
 // MARK: - DownloadReport
 struct DownloadReport: Codable {
     let status: Int
-    let report: Report
+    let report: Report?
 }
 
 // MARK: - Consultation

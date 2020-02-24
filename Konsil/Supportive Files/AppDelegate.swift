@@ -38,7 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
         
         PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: "AdQh917Bn6uR8ZhbXDksThG5AA1aaOSYeTBhfemfhKzXHYkeIhb1txnp4d2h_5aTOAVS5sFGClz4dTs9" ,PayPalEnvironmentSandbox: "AdQh917Bn6uR8ZhbXDksThG5AA1aaOSYeTBhfemfhKzXHYkeIhb1txnp4d2h_5aTOAVS5sFGClz4dTs9"] )
 
-        
         return true
     }
     

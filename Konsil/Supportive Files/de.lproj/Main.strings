@@ -413,7 +413,7 @@
 "mQm-wh-tLS.placeholder" = "Fügen Sie Ihre E-Mail hinzu";
 
 /* Class = "UILabel"; text = "Change Language To :"; ObjectID = "mp5-4j-Rv1"; */
-"mp5-4j-Rv1.text" = "Change Lang :";
+"mp5-4j-Rv1.text" = "Change Language";
 
 /* Class = "UILabel"; text = "Download"; ObjectID = "myE-RQ-qvW"; */
 "myE-RQ-qvW.text" = "Herunterladen";

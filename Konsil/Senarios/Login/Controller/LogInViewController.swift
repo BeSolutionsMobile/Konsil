@@ -141,8 +141,23 @@ class LogInViewController: UIViewController ,NVActivityIndicatorViewable {
     }
     
     @IBAction func biometricAuthChecked(_ sender: BEMCheckBox) {
-        let isBiometricAuthEnabled = allowBiometricAuth.on ? true : false
-        UserDefaults.standard.set(isBiometricAuthEnabled, forKey: Key.prefereBiometricAuth)
+        if BioMetricAuthenticator.shared.faceIDAvailable() {
+            let isBiometricAuthEnabled = allowBiometricAuth.on ? true : false
+            UserDefaults.standard.set(isBiometricAuthEnabled, forKey: Key.prefereBiometricAuth)
+            print("FID Available")
+        } else {
+            print("FiD Not Available")
+        }
+        
+        if BioMetricAuthenticator.shared.touchIDAvailable(){
+            let isBiometricAuthEnabled = allowBiometricAuth.on ? true : false
+            UserDefaults.standard.set(isBiometricAuthEnabled, forKey: Key.prefereBiometricAuth)
+            print("Touch ID Available")
+        } else {
+            print("Touch Not Available")
+        }
+        
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

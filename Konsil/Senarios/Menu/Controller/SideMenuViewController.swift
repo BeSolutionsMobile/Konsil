@@ -8,6 +8,7 @@
 
 import UIKit
 import MOLH
+
 class SideMenuViewController: UIViewController {
     
     @IBOutlet weak var logOut: UIButton!{
@@ -32,7 +33,6 @@ class SideMenuViewController: UIViewController {
             imageBackView.layer.cornerRadius = imageBackView.frame.width/2
         }
     }
-    @IBOutlet weak var language: UILabel!
     @IBOutlet weak var name: UILabel!
     
     var segue = ["PersonalInfo" , "MyConsultation" , "FAQView" , "MyComplaints" , "Policy" ,"Become A Doctor"]
@@ -46,15 +46,12 @@ class SideMenuViewController: UIViewController {
     
     //MARK:- IB Actions
     @IBAction func changeLanguage(_ sender: UIButton) {
-        MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en" )
-        DispatchQueue.main.async {
-            APIClient.changeLanguage(lang:MOLHLanguage.currentAppleLanguage()) { (Result, Status) in
-                switch Result {
-                case .success(let response):
-                    print(response)
-                    MOLH.reset()
-                case .failure(let error):
-                    print(error.localizedDescription)
+        if let presenter = self.presentingViewController {
+            presenter.dismiss(animated: true) {
+                if let vc = self.storyboard?.instantiateViewController(withIdentifier: "ChangeLanguage") as? LanguagesViewController {
+                    vc.modalPresentationStyle = .overFullScreen
+                    presenter.present(vc, animated: false , completion: nil)
+                    
                 }
             }
         }

@@ -7,13 +7,13 @@
 //
 
 import UIKit
+import BiometricAuthentication
 
 class FingerPrintViewController: UIViewController {
     
     @IBOutlet weak var fingerPrintImage: UIImageView!
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var skipBut: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +29,16 @@ class FingerPrintViewController: UIViewController {
                 let vc = self?.storyboard?.instantiateViewController(withIdentifier: "MainNavigation") as! MainNavigationController
                 vc.modalPresentationStyle = .fullScreen
                 self?.present(vc, animated: true, completion: nil)
+            }
+        }
+    }
+    func bio(){
+        BioMetricAuthenticator.authenticateWithBioMetrics(reason: "") { (Result) in
+            switch Result {
+            case .success(_):
+                print("Success")
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }

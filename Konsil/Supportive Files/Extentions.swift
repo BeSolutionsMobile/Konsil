@@ -41,12 +41,12 @@ extension UIViewController: UITextFieldDelegate{
     }
     //MARK:- Menu Button Action
     @objc func showMenu(){
-            if let vc = storyboard?.instantiateViewController(withIdentifier: "SideMenu") as? SideMenuNavigationController {
-                vc.modalPresentationStyle = .overFullScreen
-                vc.settings = Shared.settings(view: self.view)
-                self.present(vc, animated: true, completion: nil)
-            }
-    
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "SideMenu") as? SideMenuNavigationController {
+            vc.modalPresentationStyle = .overFullScreen
+            vc.settings = Shared.settings(view: self.view)
+            self.present(vc, animated: true, completion: nil)
+        }
+        
         
     }
     
@@ -66,13 +66,33 @@ extension UIViewController: UITextFieldDelegate{
         let animationView = UIView()
         animationView.frame = CGRect(x: (view.frame.width/2) - (animationWidth/2), y: (view.frame.height/2) - (animationHeight/2), width: animationWidth, height: animationHeight)
         animationView.tag = 999
-        if tableView.numberOfRows(inSection: 0) == 0 {
+        if tableView.numberOfRows(inSection: 0) != 0 {
+            view.viewWithTag(999)?.removeFromSuperview()
+        } else {
             let animation = Shared.showLottie(view: animationView, fileName: animationName, contentMode: scale)
             animationView.addSubview(animation)
             view.addSubview(animationView)
             animation.play()
+        }
+    }
+    
+    func checkAppointments(appointments: [Appointment] ,tableView: UITableView , view: UIView , animationWidth: CGFloat , animationHeight: CGFloat , animationName: String , scale: UIView.ContentMode? = .scaleToFill){
+        let animationView = UIView()
+        animationView.frame = CGRect(x: (view.frame.width/2) - (animationWidth/2), y: (view.frame.height/2) - (animationHeight/2), width: animationWidth, height: animationHeight)
+        animationView.tag = 999
+        if appointments.count == 0 {
+            tableView.reloadData()
+            print("1")
+            let animation = Shared.showLottie(view: animationView, fileName: animationName, contentMode: scale)
+            if view.viewWithTag(999) == nil {
+                animationView.addSubview(animation)
+                view.addSubview(animationView)
+            }
+            animation.play()
         } else {
+            print("2")
             view.viewWithTag(999)?.removeFromSuperview()
+            tableView.reloadData()
         }
     }
     
@@ -122,23 +142,23 @@ extension String {
 }
 
 extension UITextField {
-  func isError(baseColor: CGColor, numberOfShakes shakes: Float, revert: Bool) {
-    let animation: CABasicAnimation = CABasicAnimation(keyPath: "shadowColor")
-    animation.fromValue = baseColor
-    animation.toValue = UIColor.red.cgColor
-    animation.duration = 0.4
-    if revert { animation.autoreverses = true } else { animation.autoreverses = false }
-    self.layer.add(animation, forKey: "")
-     
-    let shake: CABasicAnimation = CABasicAnimation(keyPath: "position")
-    shake.duration = 0.07
-    shake.repeatCount = shakes
-    if revert { shake.autoreverses = true } else { shake.autoreverses = false }
-    shake.fromValue = NSValue(cgPoint: CGPoint(x: self.center.x - 10, y: self.center.y))
-    shake.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + 10, y: self.center.y))
-    self.layer.add(shake, forKey: "position")
-    self.layer.borderColor = CGColor.kRed
-  }
+    func isError(baseColor: CGColor, numberOfShakes shakes: Float, revert: Bool) {
+        let animation: CABasicAnimation = CABasicAnimation(keyPath: "shadowColor")
+        animation.fromValue = baseColor
+        animation.toValue = UIColor.red.cgColor
+        animation.duration = 0.4
+        if revert { animation.autoreverses = true } else { animation.autoreverses = false }
+        self.layer.add(animation, forKey: "")
+        
+        let shake: CABasicAnimation = CABasicAnimation(keyPath: "position")
+        shake.duration = 0.07
+        shake.repeatCount = shakes
+        if revert { shake.autoreverses = true } else { shake.autoreverses = false }
+        shake.fromValue = NSValue(cgPoint: CGPoint(x: self.center.x - 10, y: self.center.y))
+        shake.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + 10, y: self.center.y))
+        self.layer.add(shake, forKey: "position")
+        self.layer.borderColor = CGColor.kRed
+    }
     func isValidEmail(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)

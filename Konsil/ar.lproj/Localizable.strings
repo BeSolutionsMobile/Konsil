@@ -1,15 +1,16 @@
 /* 
-  Localizable.strings
-  Konsil
-
-  Created by Ali Mohamed on 1/19/20.
-  Copyright © 2020 begroup. All rights reserved.
-*/
+ Localizable.strings
+ Konsil
+ 
+ Created by Ali Mohamed on 1/19/20.
+ Copyright © 2020 begroup. All rights reserved.
+ */
 
 // System
 "Lang" = "ar";
 "rightArrow" = "leftArrow";
 "leftArrow" = "rightArrow";
+"Select Language" = "اختر اللغة";
 
 // Specaialites
 "Surgery" = "جراحه";
