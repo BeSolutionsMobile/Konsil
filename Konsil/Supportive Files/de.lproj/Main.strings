@@ -531,3 +531,23 @@
 
 /* Class = "UILabel"; text = "Upload photos of the medical consultation"; ObjectID = "zhF-B8-ML7"; */
 "zhF-B8-ML7.text" = "Fotos der ärztlichen Konsultation hochladen";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "RD6-im-Zde"; */
+"RD6-im-Zde.normalTitle" = "Mit Twitter einloggen";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "u3P-tH-Qwd"; */
+"u3P-tH-Qwd.normalTitle" = "Mit Facebook einloggen";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "RD6-im-Zde"; */
+"doM-1i-f1I.normalTitle" = "Mit Google einloggen";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "rEW-10-4D7"; */
+"rEW-10-4D7.normalTitle" = "Registrieren Sie sich bei Twitter";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "Jeg-Qk-eu4"; */
+"Jeg-Qk-eu4.normalTitle" = "Registrieren Sie sich bei Facebook";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "OaI-sJ-2pr"; */
+"OaI-sJ-2pr.normalTitle" = "Registrieren Sie sich bei Google";
+
+se"GoB-fD-7Xy.placeholder" = "Tippen Sie auf, um den gewünschten Tag auszuwählen";

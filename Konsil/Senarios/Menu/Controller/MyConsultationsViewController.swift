@@ -16,11 +16,6 @@ class MyConsultationsViewController: UIViewController {
             self.myConsultationTableView.estimatedRowHeight = 110
         }
     }
-    var name = ["Nour" , "Wael Mansour" , "Mahmoud Samir" , "Nermeen Fouad" , "Ramy El Badry" , "Naser Ali" , "Ali Essa" , "Adham Samir"]
-    var deg = ["Professor" , "Specialist"  , "Professor" , "Advisory" , "Specialist" , "Advisory" , "Professor" , "Advisory"]
-    var images = ["3" , "4"  , "5" , "6" , "7" , "8" , "9" , "10"]
-    var prie = ["350" , "400"  , "540" , "300" , "270" , "340" , "400" , "450"]
-    var tybes = ["Online Conversation".localized , "Consultation".localized   , "Consultation".localized  , "Consultation".localized  , "Online Conversation".localized  , "Online Conversation".localized  , "Online Conversation".localized  , "Consultation".localized ]
     
     //MARK:- ViewDidLoad
     var consultations: [MyConsultation]?
@@ -58,10 +53,10 @@ extension MyConsultationsViewController: UITableViewDelegate , UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyConsultationsCell", for: indexPath) as! MyConsultationsTableViewCell
         if let consultation = consultations?[indexPath.row] {
-            cell.status.text = "!!!"
+            cell.status.text = consultation.status
             cell.doctorName.text = consultation.name
             cell.price.text = consultation.price
-            cell.doctorImage.sd_setImage(with: URL(string: consultation.image), placeholderImage: UIImage(named: "doctorPlaceholderimage"))
+            cell.doctorImage.sd_setImage(with: URL(string: consultation.image), placeholderImage: UIImage(named: "doctorPlaceholder"))
             if consultation.type == "1" {
                 cell.tybe.text = "Consultation".localized
             } else if consultation.type == "2" {

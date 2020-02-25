@@ -84,10 +84,13 @@ extension UIViewController: UITextFieldDelegate{
             tableView.reloadData()
             print("1")
             let animation = Shared.showLottie(view: animationView, fileName: animationName, contentMode: scale)
-            if view.viewWithTag(999) == nil {
-                animationView.addSubview(animation)
-                view.addSubview(animationView)
+            if view.viewWithTag(999)
+                != nil {
+                view.viewWithTag(999)?.removeFromSuperview()
+
             }
+            animationView.addSubview(animation)
+            view.addSubview(animationView)
             animation.play()
         } else {
             print("2")

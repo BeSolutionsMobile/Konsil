@@ -547,3 +547,24 @@
 
 /* Class = "UILabel"; text = "Upload photos of the medical consultation"; ObjectID = "zhF-B8-ML7"; */
 "zhF-B8-ML7.text" = "اختيار صور للاستشاره الطبيه";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "RD6-im-Zde"; */
+"RD6-im-Zde.normalTitle" = "الدخول بواسطة تويتر";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "u3P-tH-Qwd"; */
+"u3P-tH-Qwd.normalTitle" = "الدخول بواسطة فيسبوك";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "RD6-im-Zde"; */
+"doM-1i-f1I.normalTitle" = "الدخول بواسطة جوجل";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "rEW-10-4D7"; */
+"rEW-10-4D7.normalTitle" = "التسجيل بواسطة تويتر";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "Jeg-Qk-eu4"; */
+"Jeg-Qk-eu4.normalTitle" = "التسجيل بواسطة فيسبوك";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "OaI-sJ-2pr"; */
+"OaI-sJ-2pr.normalTitle" = "التسجيل بواسطة جوجل";
+
+/* Class = "UITextField"; placeholder = "Enter your mobile number"; ObjectID = "GoB-fD-7Xy"; */
+"GoB-fD-7Xy.placeholder" = "اضغط لاختيار اليوم المرغوب";

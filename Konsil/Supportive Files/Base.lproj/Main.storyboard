@@ -27,7 +27,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iNo-ie-dJr">
                                                 <rect key="frame" x="30" y="180" width="354" height="125"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RD6-im-Zde">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RD6-im-Zde" propertyAccessControl="localizable">
                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="35"/>
                                                         <color key="backgroundColor" red="0.16164767739999999" green="0.64918559789999997" blue="0.89467728140000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -505,7 +505,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEW-10-4D7">
                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="35"/>
-                                                        <color key="backgroundColor" red="0.1474072337" green="0.5992842317" blue="0.83486717939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.1596695185" green="0.64976745840000005" blue="0.89446759220000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="vg1-XJ-Sll"/>
                                                         </constraints>
@@ -519,7 +519,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jeg-Qk-eu4">
                                                         <rect key="frame" x="0.0" y="45" width="354" height="35"/>
-                                                        <color key="backgroundColor" red="0.54489314560000002" green="0.1719349027" blue="0.093287952239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.81394296880000006" green="0.29997739200000001" blue="0.16338518260000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <state key="normal" title="Register With Google">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -530,7 +530,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OaI-sJ-2pr">
                                                         <rect key="frame" x="0.0" y="90" width="354" height="35"/>
-                                                        <color key="backgroundColor" red="0.1114023998" green="0.25751450660000003" blue="0.39241906999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.13619324560000001" green="0.32005661730000001" blue="0.49256145950000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <state key="normal" title="Register With Facebook">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2321,7 +2321,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="312.66666666666669"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="periodCell" id="r2P-VO-Pro" customClass="PeriodsTableViewCell" customModule="Konsil" customModuleProvider="target">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="periodCell" id="r2P-VO-Pro" customClass="PeriodsTableViewCell" customModule="Konsil" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="374" height="44.333332061767578"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r2P-VO-Pro" id="1Ne-GC-GAa">
@@ -2389,13 +2389,22 @@
                                                             <outlet property="delegate" destination="fjF-b0-y0J" id="3jq-zJ-NYL"/>
                                                         </connections>
                                                     </tableView>
+                                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="1WN-pN-PQF">
+                                                        <rect key="frame" x="162" y="131.33333333333331" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="EDa-5i-pSp"/>
+                                                            <constraint firstAttribute="height" constant="50" id="M9M-bT-WI7"/>
+                                                        </constraints>
+                                                    </activityIndicatorView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="gi4-cd-DHw" secondAttribute="bottom" id="8Lv-oL-O2m"/>
                                                     <constraint firstAttribute="trailing" secondItem="gi4-cd-DHw" secondAttribute="trailing" id="OJf-tb-dZ5"/>
+                                                    <constraint firstItem="1WN-pN-PQF" firstAttribute="centerX" secondItem="BB1-BD-9ZO" secondAttribute="centerX" id="UOE-vX-5zq"/>
                                                     <constraint firstItem="gi4-cd-DHw" firstAttribute="top" secondItem="BB1-BD-9ZO" secondAttribute="top" id="cwY-vp-1xY"/>
                                                     <constraint firstItem="gi4-cd-DHw" firstAttribute="leading" secondItem="BB1-BD-9ZO" secondAttribute="leading" id="dWX-We-tpY"/>
+                                                    <constraint firstItem="1WN-pN-PQF" firstAttribute="centerY" secondItem="BB1-BD-9ZO" secondAttribute="centerY" id="g0X-65-bKP"/>
                                                 </constraints>
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="tap To choose desired day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GoB-fD-7Xy">
@@ -2461,6 +2470,7 @@
                         <outlet property="hourPrice" destination="fTJ-CT-GOz" id="hgW-pt-N9q"/>
                         <outlet property="imageBackView" destination="K3G-L2-2iv" id="DLc-6j-GkR"/>
                         <outlet property="periodesTableView" destination="gi4-cd-DHw" id="eai-JX-GL9"/>
+                        <outlet property="spinner" destination="1WN-pN-PQF" id="dHb-pQ-nWM"/>
                         <outlet property="submitBut" destination="YHi-gn-4IZ" id="8uf-2X-bvX"/>
                     </connections>
                 </viewController>
@@ -2650,16 +2660,16 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="S1H-Ui-OvG">
-                                <rect key="frame" x="30" y="187" width="354" height="21.666666666666657"/>
+                                <rect key="frame" x="30" y="187" width="354" height="43"/>
                                 <subviews>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversation Link :" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHd-Lj-oWK">
-                                        <rect key="frame" x="0.0" y="0.0" width="349" height="21.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="175.66666666666666" height="21.666666666666668"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <color key="textColor" name="IconsColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://www.google.comhttps://www.google.comhttps://www.google.comhttps://www.google.com" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7M-9T-0Vc">
-                                        <rect key="frame" x="354" y="0.0" width="0.0" height="21.666666666666668"/>
+                                        <rect key="frame" x="180.66666666666663" y="0.0" width="173.33333333333337" height="43"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -3803,7 +3813,7 @@
                                 <rect key="frame" x="10" y="110" width="394" height="752"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DoctorsCell" rowHeight="120" id="aON-sm-kRC" customClass="DoctorsTableViewCell" customModule="Konsil" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DoctorsCell" rowHeight="120" id="aON-sm-kRC" customClass="DoctorsTableViewCell" customModule="Konsil" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="394" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aON-sm-kRC" id="nXe-an-3gt">

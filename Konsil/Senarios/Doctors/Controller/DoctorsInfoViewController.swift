@@ -92,7 +92,7 @@ class DoctorsInfoViewController: UIViewController {
     }
     
     func updateView(doctor: DoctorData){
-        doctorImage.sd_setImage(with: URL(string: doctor.image_url ), placeholderImage: UIImage(named: "doctorPlaceholder"), options: .delayPlaceholder)
+        doctorImage.sd_setImage(with: URL(string: doctor.image_url ), placeholderImage: UIImage(named: "doctorPlaceholder"))
         doctorName.text = doctor.name
         let rate = stringToDouble(doctor.rate)
         doctorRate.rating = rate

@@ -35,6 +35,16 @@ class DoctorConversationViewController: UIViewController {
         }
     }
     @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!{
+        didSet{
+            spinner.color = .black
+            if #available(iOS 13.0, *) {
+                spinner.style = .large
+            } else {
+                spinner.transform = CGAffineTransform.init(scaleX: 2, y: 2 )
+            }
+        }
+    }
     
     //MARK:- Variables
     
@@ -95,9 +105,15 @@ class DoctorConversationViewController: UIViewController {
     //MARK:- Get Appointments
     func getAppointments(date: String){
         if let doctor = doctorDetails {
+            backView.viewWithTag(999)?.removeFromSuperview()
+            spinner.startAnimating()
+            
             DispatchQueue.main.async {
                 [weak self] in
                 APIClient.getAppointments(doctor_id: doctor.id, date: date) { (Result , Status) in
+                    
+                    self?.spinner.stopAnimating()
+                    
                     switch Result {
                     case .success(let response):
                         print(response)
@@ -156,7 +172,7 @@ class DoctorConversationViewController: UIViewController {
     
     //MARK:- Check if tableView is empty and add animationview
     func checkData(_ array: [Appointment]){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
             [weak self] in
             self?.checkAppointments(appointments: self?.appointments ?? [], tableView: self!.periodesTableView, view: self!.backView, animationWidth: self!.backView.bounds.width+50, animationHeight: self!.backView.bounds.height+50, animationName: "NoData" , scale: .scaleAspectFit)
         }
