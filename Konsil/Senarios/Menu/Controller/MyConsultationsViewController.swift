@@ -25,6 +25,9 @@ class MyConsultationsViewController: UIViewController {
         getMyconsultations()
     }
     
+    func checkTableViewData(){
+        EmptyTableView.emptyData(TabelView: myConsultationTableView, View: self.view, MessageText: "You have no consultations")
+    }
     
     func getMyconsultations(){
         DispatchQueue.main.async { [weak self] in
@@ -35,9 +38,11 @@ class MyConsultationsViewController: UIViewController {
                     if Status == 200 {
                         self?.consultations = response.data
                         self?.myConsultationTableView.reloadData()
+                        self?.checkTableViewData()
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
+                    self?.checkTableViewData()
                 }
             }
         }

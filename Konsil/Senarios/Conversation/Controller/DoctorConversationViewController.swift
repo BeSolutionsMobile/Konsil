@@ -85,6 +85,8 @@ class DoctorConversationViewController: UIViewController {
                                     vc.modalPresentationStyle = .fullScreen
                                     vc.doctor = "Online Conversation"
                                     vc.price = "2.5"
+                                    vc.id = response.id
+                                    vc.type = 2
                                     self?.navigationController?.pushViewController(vc, animated: true)
                                 }
                             }

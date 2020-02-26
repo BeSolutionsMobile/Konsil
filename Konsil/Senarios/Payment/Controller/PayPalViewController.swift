@@ -41,6 +41,12 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
     //MARK:- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = nil
+        rightBackBut()
+        setUpPayPal()
+    }
+    
+    func setUpPayPal(){
         paymentAmount.text = price + " $"
         paypalConfig.acceptCreditCards = acceptCreditCards
         paypalConfig.merchantName = "Konsil_med"
@@ -91,6 +97,7 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
                         case .success(let response):
                             print(response)
                             if response.stats == 200 {
+                                self?.id = nil
                                 self?.showSuccess()
                             }
                         case .failure(let error):
@@ -98,7 +105,18 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
                         }
                     }
                 } else if self?.type == 2 {
-                    
+                    APIClient.comfirmConversation(consultation_id: id, payment_status: 1) { (Result, status) in
+                        switch Result {
+                        case .success(let response):
+                            print(response)
+                            if response.stats == 200 {
+                                self?.id = nil
+                                self?.showSuccess()
+                            }
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                        }
+                    }
                 }
             }
             

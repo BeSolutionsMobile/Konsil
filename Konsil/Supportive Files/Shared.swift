@@ -2,6 +2,7 @@ import SideMenu
 import Lottie
 class Shared {
     static let currentDevice = UIDevice.current.userInterfaceIdiom
+    
     static var BiometricAuthEnabled:Bool = false{
         didSet{
             if self.BiometricAuthEnabled == true {

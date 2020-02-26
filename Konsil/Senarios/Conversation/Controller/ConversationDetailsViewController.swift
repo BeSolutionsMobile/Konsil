@@ -12,10 +12,7 @@ class ConversationDetailsViewController: UIViewController {
     
     @IBOutlet weak var segmantedController: UISegmentedControl!{
         didSet{
-            let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black , NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .semibold)]
-            let selectedTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white , NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .semibold)]
-            segmantedController.setTitleTextAttributes(titleTextAttributes, for: .normal)
-            segmantedController.setTitleTextAttributes(selectedTitleTextAttributes, for: .selected)
+            customizeSigmanted(for: segmantedController)
         }
     }
     @IBOutlet weak var contentView: UIView!
@@ -82,5 +79,27 @@ class ConversationDetailsViewController: UIViewController {
         self.currentViewController?.view.translatesAutoresizingMaskIntoConstraints = false
         self.addChild(self.currentViewController!)
         self.addSubview(subView: self.currentViewController!.view, toView: self.contentView)
+    }
+    
+    func customizeSigmanted(for segmantController: UISegmentedControl) {
+        if #available(iOS 13.0, *) {
+            let titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .semibold)]
+            
+            let selectedTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white , NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .semibold)]
+            
+            segmantController.setTitleTextAttributes(titleTextAttributes, for: .normal)
+            segmantController.setTitleTextAttributes(selectedTitleTextAttributes, for: .selected)
+            
+            let divider = UIImage(named: "SegmantSeparator")
+            segmantController.setDividerImage(divider, forLeftSegmentState: [.normal , .selected], rightSegmentState: [.normal , .selected], barMetrics: .default)
+        } else {
+            segmantController.tintColor = UIColor(red: 0.867, green: 0.206, blue: 0.159, alpha: 1)
+            let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGray ,NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .semibold)]
+            
+            let selectedTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white , NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .semibold)]
+            
+            segmantController.setTitleTextAttributes(titleTextAttributes, for: .normal)
+            segmantController.setTitleTextAttributes(selectedTitleTextAttributes, for: .selected)
+        }
     }
 }

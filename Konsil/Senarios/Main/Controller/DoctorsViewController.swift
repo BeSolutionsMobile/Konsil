@@ -48,13 +48,18 @@ class DoctorsViewController: UIViewController {
                         self?.doctors = response.doctors
                         self?.degrees = response.degrees
                         self?.doctorTableView.reloadData()
+                        self?.checkTableViewData()
                     case .failure(let error):
+                        self?.checkTableViewData()
                         print(error.localizedDescription)
                     }
                     print("Status: ",status)
                 }
             }
         }
+    }
+    func checkTableViewData(){
+        EmptyTableView.emptyDataWithImage(TabelView: doctorTableView, Image: UIImage(named: "Doctors")!, View: self.view, MessageText: "no doctors available")
     }
 }
 

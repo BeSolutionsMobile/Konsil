@@ -100,7 +100,6 @@ class ConsultationDetailsViewController: UIViewController {
             let divider = UIImage(named: "SegmantSeparator")
             segmantController.setDividerImage(divider, forLeftSegmentState: [.normal , .selected], rightSegmentState: [.normal , .selected], barMetrics: .default)
         } else {
-//            segmantController.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
             segmantController.tintColor = UIColor(red: 0.867, green: 0.206, blue: 0.159, alpha: 1)
             let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGray ,NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .semibold)]
             
