@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
     
     var window: UIWindow?
     static var token:String?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         MOLH.shared.activate(true)
@@ -25,9 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
         FirebaseApp.configure()
         
         IQKeyboardManager.shared.enable = true
-
+        
         retriveToken()
-
+        
         let didLunchedBefore = UserDefaults.standard.bool(forKey: Key.launchedBefore)
         if !didLunchedBefore {
             UserDefaults.standard.set(true, forKey: Key.launchedBefore)
@@ -40,7 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
         }
         
         PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: "AdQh917Bn6uR8ZhbXDksThG5AA1aaOSYeTBhfemfhKzXHYkeIhb1txnp4d2h_5aTOAVS5sFGClz4dTs9" ,PayPalEnvironmentSandbox: "AdQh917Bn6uR8ZhbXDksThG5AA1aaOSYeTBhfemfhKzXHYkeIhb1txnp4d2h_5aTOAVS5sFGClz4dTs9"] )
-
+        
+        checkBioAuth()
+        
         return true
     }
     
@@ -61,21 +63,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         
-        let biometricAuth = UserDefaults.standard.bool(forKey: Key.prefereBiometricAuth)
-        if biometricAuth {
-            let topController = self.window?.rootViewController?.topViewController()
-            
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            if let fingerPrintVC = storyBoard.instantiateViewController(withIdentifier: "Lock") as? FingerPrintViewController {
-                fingerPrintVC.modalPresentationStyle = .overFullScreen
-                topController?.present(fingerPrintVC, animated: true, completion: nil)
-            }
-        }
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        UserDefaults.standard.set(false, forKey: Key.prefereBiometricAuth)
+        
+        UserDefaults.standard.set(false, forKey: Key.loged)
     }
     
     func reset() {
@@ -91,9 +84,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
                 print("Error fetching remote instange ID: \(error)")
             } else if let result = result {
                 AppDelegate.token = result.token
-//                print("Remote instance ID token: \(result.token)")
+                //                print("Remote instance ID token: \(result.token)")
             }
         }
     }
+    
+    
+    
+    func checkBioAuth(){
+        let biometricAuth = UserDefaults.standard.bool(forKey: Key.prefereBiometricAuth)
+        print(biometricAuth)
+        if biometricAuth {
+            let storboard = UIStoryboard(name: "Main", bundle: nil)
+            if let vc = storboard.instantiateViewController(withIdentifier: "Lock") as? FingerPrintViewController {
+                window?.makeKeyAndVisible()
+                window?.rootViewController = vc
+            }
+        }
+    }
+
+//    func checkBioAuth(){
+//        let biometricAuth = UserDefaults.standard.bool(forKey: Key.prefereBiometricAuth)
+//        print(biometricAuth)
+//        if biometricAuth {
+//            let topController = self.window?.rootViewController?.topViewController()
+//
+//            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//            if let fingerPrintVC = storyBoard.instantiateViewController(withIdentifier: "Lock") as? FingerPrintViewController {
+//                fingerPrintVC.modalPresentationStyle = .overFullScreen
+//                topController?.present(fingerPrintVC, animated: true, completion: nil)
+//            }
+//        }
+//    }
+
 }
 

@@ -10,11 +10,6 @@ import UIKit
 
 class ConsultationMessagesViewController: UIViewController {
     
-    @IBOutlet weak var requestChat: UIButton!{
-        didSet{
-            self.requestChat.layer.cornerRadius = self.requestChat.frame.height/2
-        }
-    }
     @IBOutlet weak var consultationStatus: UILabel!
     @IBOutlet weak var sendBut: UIButton!{
         didSet{
@@ -59,12 +54,6 @@ class ConsultationMessagesViewController: UIViewController {
     }
     
     //MARK:- IBAcotions
-    @IBAction func requestOnlineConversationPressed(_ sender: UIButton) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "DoctorConversation") as? DoctorConversationViewController {
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-    }
-    
     @IBAction func sendMessagePressed(_ sender: UIButton) {
         sendMessage()
     }

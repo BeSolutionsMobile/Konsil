@@ -102,11 +102,7 @@ class LogInViewController: UIViewController {
                     switch Result {
                     case .success(let response):
                         if state >= 200 , state < 300 {
-                            print(response.token)
-                            Shared.user = response.userInfo
-                            UserDefaults.standard.set(response.token as String, forKey: Key.authorizationToken)
-                            let isBiometricAuthEnabled = (self?.allowBiometricAuth.on)! ? true : false
-                            UserDefaults.standard.set(isBiometricAuthEnabled, forKey: Key.prefereBiometricAuth)
+                            self?.setupBioAuth(response: response)
                             self?.backView.isHidden = false
                             self?.backView.isUserInteractionEnabled = true
                             self?.BlurView(view: self!.animationView)
@@ -131,7 +127,6 @@ class LogInViewController: UIViewController {
             }
         } else {
             self.stopAnimation()
-//            stopAnimating(NVActivityIndicatorView.DEFAULT_FADE_OUT_ANIMATION)
             if emailTF.text == "" {
                 emailTF.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
             }else if emailTF.isValidEmail(emailTF.text ?? "" ) == false {
@@ -141,6 +136,20 @@ class LogInViewController: UIViewController {
                 passwordTF.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
             }
         }
+    }
+    
+    func setupBioAuth(response: Login){
+        print("Auth========")
+        let bioStatus = UserDefaults.standard.bool(forKey: Key.prefereBiometricAuth)
+        if bioStatus == true {
+            if let mail = emailTF.text , let pass = passwordTF.text {
+                UserDefaults.standard.set([mail , pass], forKey: Key.authData)
+            }
+        }
+        Shared.user = response.userInfo
+        UserDefaults.standard.set(response.token as String, forKey: Key.authorizationToken)
+        UserDefaults.standard.set(true, forKey: Key.loged)
+        print(UserDefaults.standard.bool(forKey: Key.prefereBiometricAuth))
     }
     
     func startAnimation(){
@@ -173,20 +182,16 @@ class LogInViewController: UIViewController {
         if BioMetricAuthenticator.shared.faceIDAvailable() {
             let isBiometricAuthEnabled = allowBiometricAuth.on ? true : false
             UserDefaults.standard.set(isBiometricAuthEnabled, forKey: Key.prefereBiometricAuth)
-            print("FID Available")
-        } else {
-            print("FiD Not Available")
-        }
-        
-        if BioMetricAuthenticator.shared.touchIDAvailable(){
+        } else if BioMetricAuthenticator.shared.touchIDAvailable(){
             let isBiometricAuthEnabled = allowBiometricAuth.on ? true : false
             UserDefaults.standard.set(isBiometricAuthEnabled, forKey: Key.prefereBiometricAuth)
             print("Touch ID Available")
         } else {
-            print("Touch Not Available")
+            allowBiometricAuth.on = false
+            let isBiometricAuthEnabled = allowBiometricAuth.on ? true : true
+            UserDefaults.standard.set(isBiometricAuthEnabled, forKey: Key.prefereBiometricAuth)
+            Alert.show("Touch/Face ID not configured".localized, massege: "You Can't Use This Feature Right Now".localized, context: self)
         }
-        
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -335,7 +335,7 @@
 "bJk-Bz-lzm.text" = "chat message asdasdasdasdasd";
 
 /* Class = "UILabel"; text = "Dr :"; ObjectID = "bhN-UB-oAO"; */
-"bhN-UB-oAO.text" = "Dr :";
+"bhN-UB-oAO.text" = "Dr.";
 
 /* Class = "UISegmentedControl"; btv-Lp-dQI.segmentTitles[0] = "Info"; ObjectID = "btv-Lp-dQI"; */
 "btv-Lp-dQI.segmentTitles[0]" = "Die Info";

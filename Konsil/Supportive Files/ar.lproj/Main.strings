@@ -111,7 +111,7 @@
 "Csh-Ec-haE.text" = "Dr Ibrahiem asdasdasd asdasdasdasd";
 
 /* Class = "UILabel"; text = "Welcome to Konsil"; ObjectID = "Cx0-PD-hNv"; */
-"Cx0-PD-hNv.text" = "مرحبا فى كونسيل";
+"Cx0-PD-hNv.text" = "مرحبا فى كونسيل ميد";
 
 /* Class = "UILabel"; text = "Complaint status :"; ObjectID = "D36-iM-lYz"; */
 "D36-iM-lYz.text" = "حالة الشكوي :";
@@ -342,7 +342,7 @@
 "bJk-Bz-lzm.text" = "chat message asdasdasdasdasd";
 
 /* Class = "UILabel"; text = "Dr :"; ObjectID = "bhN-UB-oAO"; */
-"bhN-UB-oAO.text" = "د :";
+"bhN-UB-oAO.text" = "د.";
 
 /* Class = "UISegmentedControl"; btv-Lp-dQI.segmentTitles[0] = "Info"; ObjectID = "btv-Lp-dQI"; */
 "btv-Lp-dQI.segmentTitles[0]" = "معلومات";

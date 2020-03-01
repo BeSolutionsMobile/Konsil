@@ -35,6 +35,8 @@
 "Please Try Again" = "Bitte versuchen Sie es erneut";
 "please select an appointment" = "Bitte wählen Sie einen Termin";
 "All Fields Are Required" = "Alle Felder sind erforderlich";
+"You Can't Use This Feature Right Now" = "Sie können diese Funktion derzeit nicht verwenden";
+"Touch/Face ID not configured" = "Touch / Face ID nicht konfiguriert";
 
 
 // Network Messages

@@ -13,12 +13,6 @@ class ConsultationFinalReportViewController: UIViewController {
     //MARK:- IBOutlets
     @IBOutlet weak var dateOfReport: UILabel!
     @IBOutlet weak var consultationStatus: UILabel!
-    @IBOutlet weak var requestChat: UIButton!{
-        didSet{
-            self.requestChat.layer.cornerRadius
-                = self.requestChat.frame.height/2
-        }
-    }
     @IBOutlet weak var makeComplaint: UIButton!{
         didSet{
             self.makeComplaint.layer.cornerRadius = self.makeComplaint.frame.height/2
@@ -36,12 +30,6 @@ class ConsultationFinalReportViewController: UIViewController {
     //MARK:- IBOutlets
     @IBAction func downloadFilesPressed(_ sender: UIButton) {
         downloadFileFromFirebase()
-    }
-    
-    @IBAction func requestOnlineChatPressed(_ sender: UIButton) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "DoctorConversation") as? DoctorConversationViewController {
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
     }
     
     @IBAction func makeComplaintPressed(_ sender: UIButton) {

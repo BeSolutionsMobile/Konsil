@@ -127,6 +127,7 @@ class RegisterViewController: UIViewController {
                         switch Result {
                         case.success(let response):
                             if Status >= 200 && Status < 300 {
+                                UserDefaults.standard.set(true, forKey: Key.loged)
                                 Shared.user = response.userInfo
                                 UserDefaults.standard.set(response.token as String, forKey: Key.authorizationToken)
                                 self?.backView.isHidden = false

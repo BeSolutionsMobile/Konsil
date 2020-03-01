@@ -58,10 +58,14 @@ extension MyConsultationsViewController: UITableViewDelegate , UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyConsultationsCell", for: indexPath) as! MyConsultationsTableViewCell
         if let consultation = consultations?[indexPath.row] {
-            cell.status.text = consultation.status
             cell.doctorName.text = consultation.name
             cell.price.text = consultation.price
             cell.doctorImage.sd_setImage(with: URL(string: consultation.image), placeholderImage: UIImage(named: "doctorPlaceholder"))
+            if consultation.status == "Your Request Sent" {
+                cell.status.text = "Sent"
+            } else {
+                cell.status.text = consultation.status
+            }
             if consultation.type == "1" {
                 cell.tybe.text = "Consultation".localized
             } else if consultation.type == "2" {

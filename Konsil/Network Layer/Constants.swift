@@ -127,6 +127,9 @@ struct K {
         static let message = "message"
     }
     
+    struct GetConversationDetails {
+        static let conversation_id = "conversation_id"
+    }
     
     //-----------------------------------------------
     enum HTTPHeaderField: String {

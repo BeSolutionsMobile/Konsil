@@ -14,11 +14,6 @@ class ConsultationFilesViewController: UIViewController {
     
     //MARK:- IBOutlets
     @IBOutlet weak var filesTableView: UITableView!
-    @IBOutlet weak var requestConversation: UIButton!{
-        didSet{
-            Rounded.roundButton(button: requestConversation, radius: requestConversation.bounds.height/2)
-        }
-    }
     @IBOutlet weak var ConsultationStatus: UILabel!
     
     //MARK:- Variables
@@ -43,13 +38,6 @@ class ConsultationFilesViewController: UIViewController {
         documentPicker.allowsMultipleSelection = false
         self.present(documentPicker, animated: true, completion: nil)
     }
-    
-//    func getData(){
-//        DispatchQueue.main.async { [weak self] in
-//            
-//        }
-//    }
-    
 
 }
 
@@ -65,7 +53,6 @@ extension ConsultationFilesViewController: UITableViewDelegate , UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FilesCell", for: indexPath) as! FilesTableViewCell
         cell.fileName.text = filesArray[indexPath.row]
-            
         return cell
     }
     

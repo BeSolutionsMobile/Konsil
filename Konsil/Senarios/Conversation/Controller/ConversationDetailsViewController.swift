@@ -19,6 +19,7 @@ class ConversationDetailsViewController: UIViewController {
     
     weak var currentViewController : UIViewController?
     static var conversation_id: Int?
+    
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()

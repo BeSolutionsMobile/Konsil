@@ -55,6 +55,7 @@
 		8166545123D9E19F00739768 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8166545023D9E19F00739768 /* GoogleService-Info.plist */; };
 		8168100C23F993B600B5C89D /* DownloadReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8168100B23F993B600B5C89D /* DownloadReport.swift */; };
 		816D8C65240698AB002E442F /* Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D8C64240698AB002E442F /* Rounded.swift */; };
+		816D8C672406CE7C002E442F /* GetConversationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D8C662406CE7C002E442F /* GetConversationDetails.swift */; };
 		816E93E223F3FE460033C30F /* AddConsultation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816E93E123F3FE460033C30F /* AddConsultation.swift */; };
 		816E93E423F3FF370033C30F /* ConsultationFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816E93E323F3FF370033C30F /* ConsultationFiles.swift */; };
 		817834AA23E9CC5A009A4B9C /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817834A923E9CC5A009A4B9C /* Register.swift */; };
@@ -192,6 +193,7 @@
 		8166545023D9E19F00739768 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8168100B23F993B600B5C89D /* DownloadReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadReport.swift; sourceTree = "<group>"; };
 		816D8C64240698AB002E442F /* Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rounded.swift; sourceTree = "<group>"; };
+		816D8C662406CE7C002E442F /* GetConversationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetConversationDetails.swift; sourceTree = "<group>"; };
 		816E93E123F3FE460033C30F /* AddConsultation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddConsultation.swift; sourceTree = "<group>"; };
 		816E93E323F3FF370033C30F /* ConsultationFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationFiles.swift; sourceTree = "<group>"; };
 		817834A923E9CC5A009A4B9C /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
@@ -681,6 +683,7 @@
 				81862C6C23FAA62F002F3D81 /* GetAppointments.swift */,
 				81862C6E23FAA855002F3D81 /* ReserveConversation.swift */,
 				81BF938923FEDC2E0079435C /* ComfirmConversation.swift */,
+				816D8C662406CE7C002E442F /* GetConversationDetails.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1014,6 +1017,7 @@
 			files = (
 				81EED28623A69A7B00A4C4DB /* MakeComplaintViewController.swift in Sources */,
 				815A17E023A682B8001DDBEE /* Shared.swift in Sources */,
+				816D8C672406CE7C002E442F /* GetConversationDetails.swift in Sources */,
 				815A17D623A65A26001DDBEE /* DesignableUITextField.swift in Sources */,
 				81BF938A23FEDC2E0079435C /* ComfirmConversation.swift in Sources */,
 				8182882523FD820500271CCF /* DegreesCollectionViewCell.swift in Sources */,

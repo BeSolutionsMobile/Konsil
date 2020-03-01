@@ -34,6 +34,8 @@
 "Please Try Again" = "Please Try Again";
 "please select an appointment" = "please select an appointment";
 "All Fields Are Required" = "All Fields Are Required";
+"You Can't Use This Feature Right Now" = "You Can't Use This Feature Right Now";
+"Touch/Face ID not configured" ="Touch/Face ID not configured";
 
 
 // Network Messages

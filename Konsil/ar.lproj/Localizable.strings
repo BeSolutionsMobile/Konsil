@@ -24,7 +24,7 @@
 // Alerts
 "Done" = "تم";
 "OK" = "حسنا";
-"Error" = "خطاء";
+"Error" = "خطاء";   
 "Failed" = "فشل";
 "Image Uploaded Successfully" = "تم رفع الصورة بنجاح";
 "Failed To Upload Image" = "خطاء في الرفع";
@@ -33,6 +33,8 @@
 "Please Try Again" = "برجاء المحاولة مرة اخري";
 "please select an appointment" = "يرجى تحديد موعد";
 "All Fields Are Required" = "جميع الحقول مطلوبة";
+"You Can't Use This Feature Right Now" = "لا يمكنك استخدام هذه الخاصية الآن";
+"Touch/Face ID not configured" = "لا يوجد بصمة مسجلة علي هذا الجهاز";
 
 // Network Messages
 
@@ -62,3 +64,4 @@
 "Consultation" = "استشارة";
 "From" = "من";
 "to" = "الي";
+

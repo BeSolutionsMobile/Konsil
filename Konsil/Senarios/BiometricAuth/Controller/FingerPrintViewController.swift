@@ -16,7 +16,7 @@ class FingerPrintViewController: UIViewController {
     @IBOutlet weak var skipBut: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loginRequset()
     }
     
     @IBAction func skip(_ sender: UIButton) {
@@ -39,6 +39,15 @@ class FingerPrintViewController: UIViewController {
                 print("Success")
             case .failure(let error):
                 print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func loginRequset(){
+        
+        if let loginData = UserDefaults.standard.array(forKey: Key.authData) ,let tokken = AppDelegate.token {
+            APIClient.login(email: "", password: "", mobile_tokken: tokken) { (Result, Status) in
+                
             }
         }
     }

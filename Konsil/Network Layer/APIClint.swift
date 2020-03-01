@@ -122,4 +122,9 @@ class APIClient {
     static func comfirmConversation(consultation_id: Int, payment_status: Int, completion: @escaping (Result<ComfirmConversation,AFError> , Int )-> Void) {
         performRequest(route: APIRouter.ComfirmConversation(consultation_id: consultation_id, payment_status: payment_status), completion: completion)
     }
+    
+    static func getConversationDetails(conversation_id: Int, completion: @escaping (Result<GetConversationDetails,AFError> , Int )-> Void) {
+        performRequest(route: APIRouter.GetConversationDetails(conversation_id: conversation_id ), completion: completion)
+    }
+    
 }

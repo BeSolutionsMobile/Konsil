@@ -31,7 +31,7 @@ enum APIRouter: URLRequestConvertible {
     case SendMessage(consultation_id: Int ,message: String)
     case ComfirmConsultaiton(consultation_id: Int, payment_status: Int)
     case ComfirmConversation(consultation_id: Int, payment_status: Int)
-    
+    case GetConversationDetails(conversation_id: Int)
     
     //MARK:- HTTP Method
     private var method: HTTPMethod {
@@ -77,6 +77,8 @@ enum APIRouter: URLRequestConvertible {
         case .ComfirmConsultaiton:
             return .post
         case .ComfirmConversation:
+            return .post
+        case .GetConversationDetails:
             return .post
         }
     }
@@ -126,6 +128,8 @@ enum APIRouter: URLRequestConvertible {
             return "/confirm-consultation"
         case .ComfirmConversation:
             return "/confirm-reservation"
+        case .GetConversationDetails:
+            return "/my-conversation-details"
         }
     }
     
@@ -174,6 +178,8 @@ enum APIRouter: URLRequestConvertible {
             return [K.ComfirmConsultation.consultation_id: consultation_id, K.ComfirmConsultation.payment_status: payment_status]
         case .ComfirmConversation(let consultation_id, let payment_status):
             return [K.ComfirmConversation.consultation_id: consultation_id, K.ComfirmConversation.payment_status: payment_status]
+        case .GetConversationDetails(let conversation_id):
+            return [K.GetConversationDetails.conversation_id: conversation_id]
         }
     }
     
