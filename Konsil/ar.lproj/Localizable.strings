@@ -35,6 +35,8 @@
 "All Fields Are Required" = "جميع الحقول مطلوبة";
 "You Can't Use This Feature Right Now" = "لا يمكنك استخدام هذه الخاصية الآن";
 "Touch/Face ID not configured" = "لا يوجد بصمة مسجلة علي هذا الجهاز";
+"NoTouchID" = "لا يوجد بصمات أو وجه مسجل في هذا الجهاز";
+
 
 // Network Messages
 

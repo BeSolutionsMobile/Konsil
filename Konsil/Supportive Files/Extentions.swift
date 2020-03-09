@@ -41,13 +41,19 @@ extension UIViewController: UITextFieldDelegate{
     }
     //MARK:- Menu Button Action
     @objc func showMenu(){
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "SideMenu") as? SideMenuNavigationController {
-            vc.modalPresentationStyle = .overFullScreen
-            vc.settings = Shared.settings(view: self.view)
-            self.present(vc, animated: true, completion: nil)
+        if "Lang".localized == "ar" {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "RightSideMenuNav") as? SideMenuNavigationController {
+                vc.modalPresentationStyle = .overFullScreen
+                vc.settings = Shared.settings(view: self.view)
+                self.present(vc, animated: true, completion: nil)
+            }
+        } else {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "SideMenu") as? SideMenuNavigationController {
+                vc.modalPresentationStyle = .overFullScreen
+                vc.settings = Shared.settings(view: self.view)
+                self.present(vc, animated: true, completion: nil)
+            }
         }
-        
-        
     }
     
     //MARK:- Segue Fade Transition

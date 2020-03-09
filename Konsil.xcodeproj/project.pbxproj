@@ -12,6 +12,7 @@
 		04F1A61A23A641B300293AA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F1A61823A641B300293AA2 /* LaunchScreen.storyboard */; };
 		04F1A62523A641B300293AA2 /* KonsilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1A62423A641B300293AA2 /* KonsilTests.swift */; };
 		04F1A63023A641B300293AA2 /* KonsilUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1A62F23A641B300293AA2 /* KonsilUITests.swift */; };
+		81002D90240C041F00D4AEF2 /* RightSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81002D8F240C041F00D4AEF2 /* RightSideMenuViewController.swift */; };
 		810DAAFD23A7829400B8AF20 /* DoctorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DAAFC23A7829400B8AF20 /* DoctorsViewController.swift */; };
 		810DAAFF23A782A700B8AF20 /* DoctorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DAAFE23A782A700B8AF20 /* DoctorsTableViewCell.swift */; };
 		810DAB0223A7A86C00B8AF20 /* DoctorsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DAB0123A7A86C00B8AF20 /* DoctorsInfoViewController.swift */; };
@@ -37,7 +38,7 @@
 		815A17D523A65A26001DDBEE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17CF23A65A26001DDBEE /* CardView.swift */; };
 		815A17D623A65A26001DDBEE /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17D023A65A26001DDBEE /* DesignableUITextField.swift */; };
 		815A17D723A65A26001DDBEE /* Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17D123A65A26001DDBEE /* Maps.swift */; };
-		815A17DE23A67C80001DDBEE /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17DD23A67C80001DDBEE /* SideMenuViewController.swift */; };
+		815A17DE23A67C80001DDBEE /* LeftSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17DD23A67C80001DDBEE /* LeftSideMenuViewController.swift */; };
 		815A17E023A682B8001DDBEE /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17DF23A682B8001DDBEE /* Shared.swift */; };
 		815A17E223A68D3C001DDBEE /* BecomeADoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17E123A68D3C001DDBEE /* BecomeADoctorViewController.swift */; };
 		8165928223EC46F700595B6A /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8165927923EC46F700595B6A /* CoreMedia.framework */; };
@@ -149,6 +150,7 @@
 		4B17A8B8875BF43C008499FF /* Pods_Konsil_KonsilUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Konsil_KonsilUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ABFC6927A6C4E48E90D8C84 /* Pods-Konsil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Konsil.release.xcconfig"; path = "Target Support Files/Pods-Konsil/Pods-Konsil.release.xcconfig"; sourceTree = "<group>"; };
 		777D5F7FC7D620E22EB7E0FC /* Pods-KonsilTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KonsilTests.release.xcconfig"; path = "Target Support Files/Pods-KonsilTests/Pods-KonsilTests.release.xcconfig"; sourceTree = "<group>"; };
+		81002D8F240C041F00D4AEF2 /* RightSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightSideMenuViewController.swift; sourceTree = "<group>"; };
 		810DAAFC23A7829400B8AF20 /* DoctorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsViewController.swift; sourceTree = "<group>"; };
 		810DAAFE23A782A700B8AF20 /* DoctorsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsTableViewCell.swift; sourceTree = "<group>"; };
 		810DAB0123A7A86C00B8AF20 /* DoctorsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsInfoViewController.swift; sourceTree = "<group>"; };
@@ -174,7 +176,7 @@
 		815A17CF23A65A26001DDBEE /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		815A17D023A65A26001DDBEE /* DesignableUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 		815A17D123A65A26001DDBEE /* Maps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maps.swift; sourceTree = "<group>"; };
-		815A17DD23A67C80001DDBEE /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		815A17DD23A67C80001DDBEE /* LeftSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenuViewController.swift; sourceTree = "<group>"; };
 		815A17DF23A682B8001DDBEE /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		815A17E123A68D3C001DDBEE /* BecomeADoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BecomeADoctorViewController.swift; sourceTree = "<group>"; };
 		8165927923EC46F700595B6A /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -575,7 +577,8 @@
 		815A17DB23A67C57001DDBEE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				815A17DD23A67C80001DDBEE /* SideMenuViewController.swift */,
+				815A17DD23A67C80001DDBEE /* LeftSideMenuViewController.swift */,
+				81002D8F240C041F00D4AEF2 /* RightSideMenuViewController.swift */,
 				815A17E123A68D3C001DDBEE /* BecomeADoctorViewController.swift */,
 				81ECE99923AA6D8800E63105 /* FAQvViewController.swift */,
 				81EED28523A69A7B00A4C4DB /* MakeComplaintViewController.swift */,
@@ -1034,7 +1037,7 @@
 				810DAB0D23A7C71F00B8AF20 /* RegisterViewController.swift in Sources */,
 				81ECE9A323AB7D4E00E63105 /* ComplaintTableViewCell.swift in Sources */,
 				81FA8E1123F2DC77006B3345 /* DoctorInfo.swift in Sources */,
-				815A17DE23A67C80001DDBEE /* SideMenuViewController.swift in Sources */,
+				815A17DE23A67C80001DDBEE /* LeftSideMenuViewController.swift in Sources */,
 				817834AA23E9CC5A009A4B9C /* Register.swift in Sources */,
 				81ECE8C623BE36BF0048C0D9 /* Chat.swift in Sources */,
 				81862C7323FC2BCD002F3D81 /* MakeComplaint.swift in Sources */,
@@ -1091,6 +1094,7 @@
 				8114567C23BCE8F3005A4B93 /* Walkthrough1ViewController.swift in Sources */,
 				815A17E223A68D3C001DDBEE /* BecomeADoctorViewController.swift in Sources */,
 				81849F1F23A8EE6E004A59D8 /* RequestPopupViewController.swift in Sources */,
+				81002D90240C041F00D4AEF2 /* RightSideMenuViewController.swift in Sources */,
 				8114568023BCE915005A4B93 /* Walkthrough3ViewController.swift in Sources */,
 				815A17D423A65A26001DDBEE /* Alert.swift in Sources */,
 			);

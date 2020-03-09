@@ -19,4 +19,14 @@ class Alert {
         context.present(alert, animated: true)
     }
     
+    static func backToLogin(_ title:String, massege:String , context:UIViewController) {
+        let alert = UIAlertController(title: title, message: massege, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Back To Login", style: .cancel, handler: { (action) in
+            if let vc = context.storyboard?.instantiateViewController(withIdentifier: "LogIn") as? LogInViewController {
+                context.present(vc, animated: true, completion: nil)
+            }
+        }))
+        context.present(alert, animated: true)
+
+    }
 }

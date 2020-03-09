@@ -37,6 +37,7 @@
 "All Fields Are Required" = "Alle Felder sind erforderlich";
 "You Can't Use This Feature Right Now" = "Sie können diese Funktion derzeit nicht verwenden";
 "Touch/Face ID not configured" = "Touch / Face ID nicht konfiguriert";
+"NoTouchID" = "In diesem Gerät sind keine Fingerabdrücke oder Gesichter registriert";
 
 
 // Network Messages

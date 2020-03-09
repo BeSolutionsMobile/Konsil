@@ -9,7 +9,7 @@
 import UIKit
 import MOLH
 
-class SideMenuViewController: UIViewController {
+class LeftSideMenuViewController: UIViewController {
     
     @IBOutlet weak var logOut: UIButton!{
         didSet{
