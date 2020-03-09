@@ -69,7 +69,7 @@ class RequestConsultationViewController: UIViewController {
     //MARK:- Methodes
     
     func addConsultation() {
-        if let title = titleTF.text , let details = detailsTV.text {
+        if let title = titleTF.text , let details = detailsTV.text ,imageUploaded == true , filesUploaded == true, titleTF.text != "" {
             print("Requesting")
             
             DispatchQueue.main.async { [weak self] in
