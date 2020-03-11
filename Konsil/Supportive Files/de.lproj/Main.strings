@@ -9,7 +9,7 @@
 "0EA-Rb-dqm.text" = "Grad";
 
 /* Class = "UILabel"; text = "Consultation Amount :"; ObjectID = "0Td-18-pOd"; */
-"0Td-18-pOd.text" = "Beratungsbetrag :";
+"0Td-18-pOd.text" = "Konversation Preis :";
 
 /* Class = "UILabel"; text = "Ahmed Fathi"; ObjectID = "0wA-bZ-pLR"; */
 "0wA-bZ-pLR.text" = "Ahmed Fathi";
@@ -57,7 +57,7 @@
 "5bc-J5-awr.text" = "Ibrahiem Mohamed";
 
 /* Class = "UILabel"; text = "Consultation title"; ObjectID = "63G-uh-qT7"; */
-"63G-uh-qT7.text" = "Beratungstitel";
+"63G-uh-qT7.text" = "Beratung Titel";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "6Kq-ZE-LkE"; */
 "6Kq-ZE-LkE.text" = "Label";
@@ -75,7 +75,7 @@
 "7zG-Xc-eOc.text" = " Erlaube biometrische Authentifizierung";
 
 /* Class = "UILabel"; text = "Degree :"; ObjectID = "80i-5c-i8N"; */
-"80i-5c-i8N.text" = "Grad :";
+"80i-5c-i8N.text" = "Sprache :";
 
 /* Class = "UINavigationItem"; title = "Consultation Request"; ObjectID = "9wQ-Az-Uk8"; */
 "9wQ-Az-Uk8.title" = "Rückfrage";
@@ -120,7 +120,7 @@
 "Die-hv-Aff.text" = "Prof";
 
 /* Class = "UILabel"; text = "Consultation details"; ObjectID = "DsO-Dm-1L8"; */
-"DsO-Dm-1L8.text" = "Einzelheiten zur Konsultation";
+"DsO-Dm-1L8.text" = "Aktuelle beschwerden";
 
 /* Class = "UIButton"; normalTitle = "Send"; ObjectID = "Edi-KE-bhx"; */
 "Edi-KE-bhx.normalTitle" = "Senden";
@@ -334,9 +334,6 @@
 /* Class = "UILabel"; text = "chat message asdasdasdasdasd"; ObjectID = "bJk-Bz-lzm"; */
 "bJk-Bz-lzm.text" = "chat message asdasdasdasdasd";
 
-/* Class = "UILabel"; text = "Dr :"; ObjectID = "bhN-UB-oAO"; */
-"bhN-UB-oAO.text" = "Dr.";
-
 /* Class = "UISegmentedControl"; btv-Lp-dQI.segmentTitles[0] = "Info"; ObjectID = "btv-Lp-dQI"; */
 "btv-Lp-dQI.segmentTitles[0]" = "Die Info";
 
@@ -391,9 +388,6 @@
 /* Class = "UINavigationItem"; title = "Be A Doctor"; ObjectID = "gpk-x9-suS"; */
 "gpk-x9-suS.title" = "Sei ein Arzt";
 
-/* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "hHg-4f-JC7"; */
-"hHg-4f-JC7.text" = "Akzeptieren Sie alle Geschäftsbedingungen";
-
 /* Class = "UILabel"; text = "Counseling status :"; ObjectID = "hTW-la-ZLz"; */
 "hTW-la-ZLz.text" = "Beratungsstatus :";
 
@@ -440,7 +434,7 @@
 "pb9-SL-NfX.text" = "Konsultation anfordern";
 
 /* Class = "UIButton"; normalTitle = "Log Out"; ObjectID = "phx-sd-Qsw"; */
-"phx-sd-Qsw.normalTitle" = "Ausloggen";
+"phx-sd-Qsw.normalTitle" = "Abmelden";
 
 /* Class = "UIButton"; normalTitle = "Did Accept Print"; ObjectID = "qAv-am-fiU"; */
 "qAv-am-fiU.normalTitle" = "Did Accept Print";
@@ -467,7 +461,7 @@
 "sVx-WN-ZVq.placeholder" = "Art auswählen";
 
 /* Class = "UILabel"; text = "FAQ"; ObjectID = "se3-bx-iGo"; */
-"se3-bx-iGo.text" = "FAQ";
+"se3-bx-iGo.text" = "Häufige fragen";
 
 /* Class = "UIButton"; normalTitle = "Make a complaint"; ObjectID = "tHl-Ro-WUa"; */
 "tHl-Ro-WUa.normalTitle" = "Eine Beschwerde einreichen";
@@ -500,7 +494,7 @@
 "vQw-Xc-nJ1.placeholder" = "Fügen Sie Ihr Telefon hinzu";
 
 /* Class = "UILabel"; text = "Conversation hour rate :"; ObjectID = "w1F-lM-nwb"; */
-"w1F-lM-nwb.text" = "Gesprächsstundensatz :";
+"w1F-lM-nwb.text" = "Konversation Preis :";
 
 /* Class = "UINavigationItem"; title = "Complaint Details"; ObjectID = "wMR-pE-aFX"; */
 "wMR-pE-aFX.title" = "Complaint Details";
@@ -550,4 +544,20 @@
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "OaI-sJ-2pr"; */
 "OaI-sJ-2pr.normalTitle" = "Registrieren Sie sich bei Google";
 
-se"GoB-fD-7Xy.placeholder" = "Tippen Sie auf, um den gewünschten Tag auszuwählen";
+/* Class = "UILabel"; text = ""; ObjectID = "7xR-LQ-5Qg"; */
+"7xR-LQ-5Qg.text" = "Ich akzeptiere alle";
+
+/* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "hHg-4f-JC7"; */
+"hHg-4f-JC7.text" = "und ";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "Jeg-Qk-eu4"; */
+"UXq-0F-7x2.normalTitle" = "Datenschutz Erklärungenen";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "xDC-Pk-GF9"; */
+"xDC-Pk-GF9.normalTitle" = "AGB";
+
+/* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "Jgt-Kl-gbn"; */
+"Jgt-Kl-gbn.text" = "Vordiagnosen";
+
+/* Class = "UITextField"; placeholder = "Enter consultation title"; ObjectID = "XEE-QJ-0nC"; */
+"XEE-QJ-0nC.placeholder" = "Geben Sie den Beratungstitel ein";

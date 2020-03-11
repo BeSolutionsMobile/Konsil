@@ -9,10 +9,7 @@
 "0EA-Rb-dqm.text" = "الدرجه";
 
 /* Class = "UILabel"; text = "Consultation Amount :"; ObjectID = "0Td-18-pOd"; */
-"0Td-18-pOd.text" = "تكلفة الاستشارة :";
-
-/* Class = "UILabel"; text = "Ahmed Fathi"; ObjectID = "0wA-bZ-pLR"; */
-"0wA-bZ-pLR.text" = "Ahmed Fathi";
+"0Td-18-pOd.text" = "سعر الاستشارة :";
 
 /* Class = "UILabel"; text = "messs"; ObjectID = "2MZ-pO-idE"; */
 "2MZ-pO-idE.text" = "messs";
@@ -44,17 +41,11 @@
 /* Class = "UILabel"; text = "1/12/2020"; ObjectID = "4uj-kR-Sv4"; */
 "4uj-kR-Sv4.text" = "1/12/2020";
 
-/* Class = "UILabel"; text = "Dental Specialist"; ObjectID = "51H-ty-5r6"; */
-"51H-ty-5r6.text" = "Dental Specialist";
-
-/* Class = "UINavigationItem"; title = "Personal Info"; ObjectID = "5VC-zC-gcZ"; */
-"5VC-zC-gcZ.title" = "البيانات الشخصيه";
+/* Class = "UINavigationItem"; title = "Personal Info"; ObjectID = "4ki-BC-IZ6"; */
+"4ki-BC-IZ6f.title" = "البيانات الشخصيه";
 
 /* Class = "UILabel"; text = "Label Label Label Label Label "; ObjectID = "5aV-6j-45q"; */
 "5aV-6j-45q.text" = "Label Label Label Label Label ";
-
-/* Class = "UILabel"; text = "Ibrahiem Mohamed"; ObjectID = "5bc-J5-awr"; */
-"5bc-J5-awr.text" = "Ibrahiem Mohamed";
 
 /* Class = "UILabel"; text = "Consultation title"; ObjectID = "63G-uh-qT7"; */
 "63G-uh-qT7.text" = "عنوان الاستشاره";
@@ -75,7 +66,7 @@
 "7zG-Xc-eOc.text" = " السماح بالمصادقة البيومترية";
 
 /* Class = "UILabel"; text = "Degree :"; ObjectID = "80i-5c-i8N"; */
-"80i-5c-i8N.text" = "الدرجه :";
+"80i-5c-i8N.text" = "اللغة :";
 
 /* Class = "UINavigationItem"; title = "Consultation Request"; ObjectID = "9wQ-Az-Uk8"; */
 "9wQ-Az-Uk8.title" = "طلب استشار";
@@ -263,8 +254,8 @@
 /* Class = "UILabel"; text = "Patients"; ObjectID = "T5V-P9-Zpy"; */
 "T5V-P9-Zpy.text" = "المرضى";
 
-/* Class = "UILabel"; text = "Policy"; ObjectID = "TLn-lG-aeg"; */
-"TLn-lG-aeg.text" = "السياسه";
+/* Class = "UILabel"; text = "Policy"; ObjectID = "NOz-qp-RFx"; */
+"NOz-qp-RFx.text" = "السياسه";
 
 /* Class = "UINavigationItem"; title = "Online Conversation Details"; ObjectID = "TlA-TU-dmx"; */
 "TlA-TU-dmx.title" = "تفاصيل المحادثه";
@@ -299,8 +290,8 @@
 /* Class = "UIButton"; normalTitle = "View"; ObjectID = "YSr-i4-Smy"; */
 "YSr-i4-Smy.normalTitle" = "عرض";
 
-/* Class = "UILabel"; text = "Personal info"; ObjectID = "YaF-yM-6ak"; */
-"YaF-yM-6ak.text" = "البيانات الشخصيه";
+/* Class = "UILabel"; text = "Personal info"; ObjectID = "4ki-BC-IZ6"; */
+"4ki-BC-IZ6.text" = "البيانات الشخصيه";
 
 /* Class = "UILabel"; text = "Cpc - analydois"; ObjectID = "ZC5-lk-aeO"; */
 "ZC5-lk-aeO.text" = "Cpc - analysis";
@@ -340,9 +331,6 @@
 
 /* Class = "UILabel"; text = "chat message asdasdasdasdasd"; ObjectID = "bJk-Bz-lzm"; */
 "bJk-Bz-lzm.text" = "chat message asdasdasdasdasd";
-
-/* Class = "UILabel"; text = "Dr :"; ObjectID = "bhN-UB-oAO"; */
-"bhN-UB-oAO.text" = "د.";
 
 /* Class = "UISegmentedControl"; btv-Lp-dQI.segmentTitles[0] = "Info"; ObjectID = "btv-Lp-dQI"; */
 "btv-Lp-dQI.segmentTitles[0]" = "معلومات";
@@ -392,8 +380,8 @@
 /* Class = "UILabel"; text = "Degree"; ObjectID = "ft8-NH-siY"; */
 "ft8-NH-siY.text" = "الدرجه";
 
-/* Class = "UILabel"; text = "My Consultations"; ObjectID = "fyb-A0-Lt1"; */
-"fyb-A0-Lt1.text" = "استشاراتى";
+/* Class = "UILabel"; text = "My Consultations"; ObjectID = "66x-lY-lk6"; */
+"66x-lY-lk6.text" = "استشاراتى";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "gHr-3J-Ll2"; */
 "gHr-3J-Ll2.placeholder" = "كلمة المرور";
@@ -455,8 +443,8 @@
 /* Class = "UILabel"; text = "Request  Consultation"; ObjectID = "pb9-SL-NfX"; */
 "pb9-SL-NfX.text" = "طلب استشاره";
 
-/* Class = "UIButton"; normalTitle = "Log Out"; ObjectID = "phx-sd-Qsw"; */
-"phx-sd-Qsw.normalTitle" = "خروج";
+/* Class = "UIButton"; normalTitle = "Log Out"; ObjectID = "OMu-Jl-YfI"; */
+"OMu-Jl-YfI.normalTitle" = "خروج";
 
 /* Class = "UIButton"; normalTitle = "Did Accept Print"; ObjectID = "qAv-am-fiU"; */
 "qAv-am-fiU.normalTitle" = "Did Accept Print";
@@ -482,8 +470,8 @@
 /* Class = "UITextField"; placeholder = "Select Type"; ObjectID = "sVx-WN-ZVq"; */
 "sVx-WN-ZVq.placeholder" = "اختر نوع الشكوي";
 
-/* Class = "UILabel"; text = "FAQ"; ObjectID = "se3-bx-iGo"; */
-"se3-bx-iGo.text" = "الاسئلة الشائعة";
+/* Class = "UILabel"; text = "FAQ"; ObjectID = "bZU-k6-nKt"; */
+"bZU-k6-nKt.text" = "الاسئلة الشائعة";
 
 /* Class = "UIButton"; normalTitle = "Make a complaint"; ObjectID = "tHl-Ro-WUa"; */
 "tHl-Ro-WUa.normalTitle" = "ارسال شكوى";
@@ -568,3 +556,15 @@
 
 /* Class = "UITextField"; placeholder = "Enter your mobile number"; ObjectID = "GoB-fD-7Xy"; */
 "GoB-fD-7Xy.placeholder" = "اضغط لاختيار اليوم المرغوب";
+
+/* Class = "UILabel"; text = ""; ObjectID = "7xR-LQ-5Qg"; */
+"7xR-LQ-5Qg.text" = "أوافق علي جميع ";
+
+/* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "hHg-4f-JC7"; */
+"hHg-4f-JC7.text" = " و ";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "Jeg-Qk-eu4"; */
+"UXq-0F-7x2.normalTitle" = "سياسة الخصوصية";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "xDC-Pk-GF9"; */
+"xDC-Pk-GF9.normalTitle" = "الشروط و الاحكام ";

@@ -38,8 +38,8 @@ class RequestConsultationViewController: UIViewController {
     //MARK:- Variables
     var imagePicker = OpalImagePickerController()
     let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypePDF as String], in: .import)
-    var files: [String] = []
-    var images: [String] = ["","",""]
+    var files: [String]?
+    var images: [String]?
     var imageUploaded = false
     var filesUploaded = false
     
@@ -69,11 +69,11 @@ class RequestConsultationViewController: UIViewController {
     //MARK:- Methodes
     
     func addConsultation() {
-        if let title = titleTF.text , let details = detailsTV.text ,imageUploaded == true , filesUploaded == true, titleTF.text != "" {
+        if let title = titleTF.text, let details = detailsTV.text, titleTF.text != "" {
             print("Requesting")
             
             DispatchQueue.main.async { [weak self] in
-                APIClient.addConsultation(title: title, details: details, doctor_id: 26, images: self?.images ?? [], files: self?.files ?? []) { (Result , Status) in
+                APIClient.addConsultation(title: title, details: details, doctor_id: 26, images: self?.images ?? ["noImages"], files: self?.files ?? ["noFiles"]) { (Result , Status) in
                     switch Result {
                     case .success(let response):
                         print(response)

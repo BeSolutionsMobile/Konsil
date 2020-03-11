@@ -26,7 +26,7 @@ class MyConsultationsViewController: UIViewController {
     }
     
     func checkTableViewData(){
-        EmptyTableView.emptyData(TabelView: myConsultationTableView, View: self.view, MessageText: "You have no consultations")
+        EmptyTableView.emptyData(TabelView: myConsultationTableView, View: self.view, MessageText: "You have no conversations".localized)
     }
     
     func getMyconsultations(){
@@ -69,7 +69,7 @@ extension MyConsultationsViewController: UITableViewDelegate , UITableViewDataSo
             if consultation.type == "1" {
                 cell.tybe.text = "Consultation".localized
             } else if consultation.type == "2" {
-                cell.tybe.text = "OnlineConversation".localized
+                cell.tybe.text = "Online Conversation".localized
             }
             cell.delegate = self
         }

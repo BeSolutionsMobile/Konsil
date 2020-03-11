@@ -62,7 +62,8 @@
 "No Response From Doctor" = "Keine Antwort vom Arzt";
 
 
-"Online Conversation" = "Online-Gespräch";
-"Consultation" = "Beratung";
+"Online Conversation" = "Online-Konversation";
+"Consultation" = "Konsultation";
 "Open" = "öffnen";
 "Closed" = "geschlossen";
+"You have no conversations" = "Sie haben keine Konversation";

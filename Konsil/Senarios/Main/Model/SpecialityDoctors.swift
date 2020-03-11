@@ -21,7 +21,7 @@ struct Degree: Codable {
 // MARK: - Doctor
 struct Doctor: Codable {
     let id: Int
-    let degree, name: String
+    let degree, name ,lang: String
     let image_url: String
     let rate: String
 
