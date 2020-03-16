@@ -12,6 +12,7 @@ struct Key {
     static let prefereBiometricAuth = "prefereBiometricAuth"
     static let launchedBefore = "launchedBefore"
     static let authorizationToken = "AuthKey"
-    static let authData = "AuthData"
+    static let mail = "mail"
+    static let pass = "pass"
     static let loged = "loginStatus"
 }

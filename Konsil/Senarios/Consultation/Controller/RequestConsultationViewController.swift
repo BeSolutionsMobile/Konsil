@@ -90,7 +90,7 @@ class RequestConsultationViewController: UIViewController {
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
-                   print(Status)
+                    print(Status)
                 }
             }
         } else {

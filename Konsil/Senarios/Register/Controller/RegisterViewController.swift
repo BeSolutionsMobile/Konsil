@@ -155,6 +155,15 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    @IBAction func termsOfUse(_ sender: UIButton) {
+         
+    }
+    
+    @IBAction func privacyPolicy(_ sender: UIButton) {
+        guard let policyURL = URL(string: "https://www.konsilmed.com/privacy") else {return}
+        UIApplication.shared.open(policyURL)
+    }
+    
     // Check All TextFields
     func validateAllFields() ->Bool {
         if name.text!.count < 3 || email.text!.isEmpty || phone.text!.count < 10 || password.text!.count < 6 {

@@ -19,6 +19,8 @@ class ConsultationDetailsViewController: UIViewController {
     weak var currentViewController : UIViewController?
     
     static var consultation_id: Int?
+    static var status: String?
+    
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()

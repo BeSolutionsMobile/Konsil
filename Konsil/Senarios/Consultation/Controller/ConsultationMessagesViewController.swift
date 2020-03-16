@@ -43,14 +43,15 @@ class ConsultationMessagesViewController: UIViewController {
         getChatMessages()
         rightBackBut()
         messagesTableView.setContentOffset(CGPoint(x: 0, y: CGFloat.greatestFiniteMagnitude + 30), animated: false)
+        if let status = ConsultationDetailsViewController.status {
+            consultationStatus.text = status
+        }
     }
     
     //MARK:- ViewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        DispatchQueue.main.asyncAfter(deadline: .now()+1) { [weak self] in
-            self?.checkTable()
-        }
+        getChatMessages()
     }
     
     //MARK:- IBAcotions

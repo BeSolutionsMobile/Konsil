@@ -23,6 +23,7 @@
 
 // -------------------------------
 // Alerts
+"LogIn" = "LogIn";
 "Done" = "Done";
 "OK" = "OK";
 "Error" = "Error";
@@ -37,6 +38,7 @@
 "You Can't Use This Feature Right Now" = "You Can't Use This Feature Right Now";
 "Touch/Face ID not configured" = "Touch/Face ID not configured";
 "NoTouchID" = "No fingerprints or face is registered in this device";
+"Touch/Face ID Do Not Match" = "Touch/Face ID Do Not Match";
 
 // Network Messages
 

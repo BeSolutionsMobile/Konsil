@@ -37,6 +37,8 @@ class FingerPrintViewController: UIViewController {
     }
     
     func success(){
+        tryAgian.isEnabled = false
+        loginBut.isEnabled = false
         fingerPrintImage.image = nil
         let animationView = Shared.showLottie(view: backView, fileName: "Unlock", contentMode: .scaleAspectFit)
         animationView.animationSpeed = 1.5
@@ -86,7 +88,7 @@ class FingerPrintViewController: UIViewController {
                     
                 // show error for any other reason
                 default:
-                    Alert.backToLogin("Failed".localized, massege: "", context: self)
+                    Alert.backToLogin("Failed".localized, massege: "Touch/Face ID Do Not Match".localized, context: self)
                 }
             }
         }
@@ -94,8 +96,8 @@ class FingerPrintViewController: UIViewController {
     
     func loginRequset(){
         
-        if let loginData = UserDefaults.standard.array(forKey: Key.authData) ,let tokken = AppDelegate.token {
-            APIClient.login(email: "a@b.com", password: "12345678", mobile_tokken: tokken) { (Result, Status) in
+        if let mail = UserDefaults.standard.string(forKey: Key.mail) ,let pass = UserDefaults.standard.string(forKey: Key.pass ) ,let tokken = AppDelegate.token {
+            APIClient.login(email: mail, password: pass, mobile_tokken: tokken) { (Result, Status) in
                 switch Result {
                 case .success(let response):
                     if Status >= 200 , Status < 300 {
@@ -104,7 +106,7 @@ class FingerPrintViewController: UIViewController {
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
-                    Alert.show("Failed".localized, massege: "", context: self)
+                    Alert.backToLogin("Failed".localized, massege: "Please Try Again".localized, context: self)
                 }
             }
         }

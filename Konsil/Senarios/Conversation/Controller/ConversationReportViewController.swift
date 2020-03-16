@@ -20,10 +20,13 @@ class ConversationReportViewController: UIViewController {
     @IBOutlet weak var dateOfReport: UILabel!
     
     var reportFile: Report?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
-
+        if let status = ConversationDetailsViewController.status {
+            conversationStatus.text = status
+        }
     }
     
     @IBAction func downloadPressed(_ sender: UIButton) {

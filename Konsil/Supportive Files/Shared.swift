@@ -28,7 +28,7 @@ class Shared {
         case .pad:
             settings.menuWidth = 350
         case .phone:
-            settings.menuWidth = view.frame.width-view.frame.width*(1/3)
+            settings.menuWidth = view.frame.width-view.frame.width*(1/4)
         default:
             break
         }

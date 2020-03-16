@@ -139,11 +139,11 @@ class LogInViewController: UIViewController {
     }
     
     func setupBioAuth(response: Login){
-        print("Auth========")
         let bioStatus = UserDefaults.standard.bool(forKey: Key.prefereBiometricAuth)
         if bioStatus == true {
-            if let mail = emailTF.text , let pass = passwordTF.text {
-                UserDefaults.standard.set([mail , pass], forKey: Key.authData)
+            if let mail = emailTF.text ,let pass = passwordTF.text {
+                UserDefaults.standard.set(mail, forKey: Key.mail)
+                UserDefaults.standard.set(pass, forKey: Key.pass)
             }
         }
         Shared.user = response.userInfo

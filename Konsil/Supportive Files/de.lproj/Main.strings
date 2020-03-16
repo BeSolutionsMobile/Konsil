@@ -48,14 +48,13 @@
 "51H-ty-5r6.text" = "Dental Specialist";
 
 /* Class = "UINavigationItem"; title = "Personal Info"; ObjectID = "5VC-zC-gcZ"; */
-"5VC-zC-gcZ.title" = "persönliche Informationen";
+"5VC-zC-gcZ.title" = "persönliche info";
 
 /* Class = "UILabel"; text = "Label Label Label Label Label "; ObjectID = "5aV-6j-45q"; */
 "5aV-6j-45q.text" = "Label Label Label Label Label ";
 
 /* Class = "UILabel"; text = "Ibrahiem Mohamed"; ObjectID = "5bc-J5-awr"; */
 "5bc-J5-awr.text" = "Ibrahiem Mohamed";
-
 /* Class = "UILabel"; text = "Consultation title"; ObjectID = "63G-uh-qT7"; */
 "63G-uh-qT7.text" = "Beratung Titel";
 
@@ -293,7 +292,7 @@
 "YSr-i4-Smy.normalTitle" = "Aussicht";
 
 /* Class = "UILabel"; text = "Personal info"; ObjectID = "YaF-yM-6ak"; */
-"YaF-yM-6ak.text" = "Persönliche Angaben";
+"YaF-yM-6ak.text" = "Persönliche info";
 
 /* Class = "UILabel"; text = "Cpc - analysis"; ObjectID = "ZC5-lk-aeO"; */
 "ZC5-lk-aeO.text" = "Cpc - analysis";
@@ -407,7 +406,7 @@
 "mQm-wh-tLS.placeholder" = "Fügen Sie Ihre E-Mail hinzu";
 
 /* Class = "UILabel"; text = "Change Language To :"; ObjectID = "mp5-4j-Rv1"; */
-"mp5-4j-Rv1.text" = "Change Language";
+"mp5-4j-Rv1.text" = "Sprache ändern";
 
 /* Class = "UILabel"; text = "Download"; ObjectID = "myE-RQ-qvW"; */
 "myE-RQ-qvW.text" = "Herunterladen";
@@ -437,7 +436,7 @@
 "phx-sd-Qsw.normalTitle" = "Abmelden";
 
 /* Class = "UIButton"; normalTitle = "Did Accept Print"; ObjectID = "qAv-am-fiU"; */
-"qAv-am-fiU.normalTitle" = "Did Accept Print";
+"qAv-am-fiU.normalTitle" = "wiederholen";
 
 /* Class = "UIButton"; normalTitle = "Send"; ObjectID = "qCK-ch-c6Z"; */
 "qCK-ch-c6Z.normalTitle" = "Senden";
@@ -561,3 +560,12 @@
 
 /* Class = "UITextField"; placeholder = "Enter consultation title"; ObjectID = "XEE-QJ-0nC"; */
 "XEE-QJ-0nC.placeholder" = "Geben Sie den Beratungstitel ein";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "JNK-9A-ej3"; */
+"JNK-9A-ej3.normalTitle" = "Login mit E-Mail";
+
+/* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "MeV-Ck-jtc"; */
+"MeV-Ck-jtc.text" = "Nutzungsbedingungen";
+
+/* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "yjQ-aa-kXn"; */
+"yjQ-aa-kXn.text" = "behandlung in deutschland";

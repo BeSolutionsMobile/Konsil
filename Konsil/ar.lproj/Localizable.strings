@@ -22,6 +22,8 @@
 
 // -------------------------------
 // Alerts
+
+"LogIn" = "تسجيل الدخول";
 "Done" = "تم";
 "OK" = "حسنا";
 "Error" = "خطاء";   
@@ -36,7 +38,7 @@
 "You Can't Use This Feature Right Now" = "لا يمكنك استخدام هذه الخاصية الآن";
 "Touch/Face ID not configured" = "لا يوجد بصمة مسجلة علي هذا الجهاز";
 "NoTouchID" = "لا يوجد بصمات أو وجه مسجل في هذا الجهاز";
-
+"Touch/Face ID Do Not Match" = "لا يوجد تطابق في البصمة";
 
 // Network Messages
 

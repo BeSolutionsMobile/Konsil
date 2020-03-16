@@ -24,6 +24,7 @@
 // -------------------------------
 // Alerts
 
+"LogIn" = "Anmeldung";
 "Done" = "Erledigt";
 "OK" = "in Ordnung";
 "Error" = "Error";
@@ -36,9 +37,9 @@
 "please select an appointment" = "Bitte wählen Sie einen Termin";
 "All Fields Are Required" = "Alle Felder sind erforderlich";
 "You Can't Use This Feature Right Now" = "Sie können diese Funktion derzeit nicht verwenden";
-"Touch/Face ID not configured" = "Touch / Face ID nicht konfiguriert";
+"Touch/Face ID not configured" = "Touch/Face ID nicht konfiguriert";
 "NoTouchID" = "In diesem Gerät sind keine Fingerabdrücke oder Gesichter registriert";
-
+"Touch/Face ID Do Not Match" = "Touch/Face ID stimmen nicht überein";
 
 // Network Messages
 

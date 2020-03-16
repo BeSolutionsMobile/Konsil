@@ -255,7 +255,7 @@
 "T5V-P9-Zpy.text" = "المرضى";
 
 /* Class = "UILabel"; text = "Policy"; ObjectID = "NOz-qp-RFx"; */
-"NOz-qp-RFx.text" = "السياسه";
+"NOz-qp-RFx.text" = "سياسة الخصوصية";
 
 /* Class = "UINavigationItem"; title = "Online Conversation Details"; ObjectID = "TlA-TU-dmx"; */
 "TlA-TU-dmx.title" = "تفاصيل المحادثه";
@@ -417,7 +417,7 @@
 "mQm-wh-tLS.placeholder" = "البريد الاكترونى";
 
 /* Class = "UILabel"; text = "Change Language :"; ObjectID = "mp5-4j-Rv1"; */
-"mp5-4j-Rv1.text" = "Change Language";
+"mp5-4j-Rv1.text" = "تغيير اللغة";
 
 /* Class = "UILabel"; text = "Download"; ObjectID = "myE-RQ-qvW"; */
 "myE-RQ-qvW.text" = "تحميل";
@@ -447,7 +447,7 @@
 "OMu-Jl-YfI.normalTitle" = "خروج";
 
 /* Class = "UIButton"; normalTitle = "Did Accept Print"; ObjectID = "qAv-am-fiU"; */
-"qAv-am-fiU.normalTitle" = "Did Accept Print";
+"qAv-am-fiU.normalTitle" = "اضغط للمحاولة مرة اخري";
 
 /* Class = "UIButton"; normalTitle = "Send"; ObjectID = "qCK-ch-c6Z"; */
 "qCK-ch-c6Z.normalTitle" = "ارسال";
@@ -568,3 +568,12 @@
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "xDC-Pk-GF9"; */
 "xDC-Pk-GF9.normalTitle" = "الشروط و الاحكام ";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "JNK-9A-ej3"; */
+"JNK-9A-ej3.normalTitle" = "الدخول بواسطة البريد";
+
+/* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "DBs-eh-0Sd"; */
+"DBs-eh-0Sd.text" = "شروط الاستخدام";
+
+/* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "1yJ-nf-c65"; */
+"1yJ-nf-c65.text" = "العلاج في ألمانيا";

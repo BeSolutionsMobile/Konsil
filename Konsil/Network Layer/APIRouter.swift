@@ -57,7 +57,7 @@ enum APIRouter: URLRequestConvertible {
         case .AddConsultation:
             return .post
         case .ConsultationFiles:
-            return .get
+            return .post 
         case .DownloadReport:
             return .post
         case .GetAppointments:

@@ -25,6 +25,9 @@ class ConsultationFinalReportViewController: UIViewController {
         super.viewDidLoad()
         rightBackBut()
         getData()
+        if let status = ConsultationDetailsViewController.status {
+            consultationStatus.text = status
+        }
     }
     
     //MARK:- IBOutlets

@@ -81,12 +81,14 @@ extension MyConsultationsViewController: UITableViewDelegate , UITableViewDataSo
             if let vc = storyboard?.instantiateViewController(withIdentifier: "consultationDetails") as? ConsultationDetailsViewController {
                 vc.modalPresentationStyle = .fullScreen
                 ConsultationDetailsViewController.consultation_id = consultations?[indexPath.row].id
+                ConsultationDetailsViewController.status = consultations?[indexPath.row].status
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         } else {
             if let vc = storyboard?.instantiateViewController(withIdentifier: "ConversationDetails") as? ConversationDetailsViewController {
                 vc.modalPresentationStyle = .fullScreen
                 ConversationDetailsViewController.conversation_id = consultations?[indexPath.row].id
+                ConversationDetailsViewController.status = consultations?[indexPath.row].status
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }

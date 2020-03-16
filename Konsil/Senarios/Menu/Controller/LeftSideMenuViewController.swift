@@ -35,7 +35,7 @@ class LeftSideMenuViewController: UIViewController {
     }
     @IBOutlet weak var name: UILabel!
     
-    var segue = ["PersonalInfo" , "MyConsultation" , "FAQView" , "MyComplaints" , "Policy" ,"Become A Doctor"]
+    var segue = ["PersonalInfo" , "MyConsultation" , "FAQView"]
     
     //MARK:- viewDidLoad
     
@@ -76,15 +76,17 @@ class LeftSideMenuViewController: UIViewController {
         case 3:
             //            guard let vc = storyboard?.instantiateViewController(withIdentifier: segue[sender.tag]) else { return }
             //            self.navigationController?.pushViewController(vc, animated: true)
+            guard let policyURL = URL(string: "https://www.konsilmed.com/privacy") else {return}
+            UIApplication.shared.open(policyURL)
             break
         case 4:
-            //            guard let vc = storyboard?.instantiateViewController(withIdentifier: segue[sender.tag]) else { return }
-            //            self.navigationController?.pushViewController(vc, animated: true)
+            guard let termsOfUseURL = URL(string: "") else {return}
+            UIApplication.shared.open(termsOfUseURL)
             break
         case 5:
-            guard let vc = storyboard?.instantiateViewController(withIdentifier: segue[sender.tag]) else { return }
-            self.navigationController?.pushViewController(vc, animated: true)
-            
+            guard let treatmentInGermanyURL = URL(string: "https://www.konsilmed.com/treatment-in-germany") else {return}
+            UIApplication.shared.open(treatmentInGermanyURL)
+            break
         default:
             break
         }
