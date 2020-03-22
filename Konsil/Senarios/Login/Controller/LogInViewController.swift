@@ -10,70 +10,32 @@ import UIKit
 import BEMCheckBox
 import BiometricAuthentication
 import NVActivityIndicatorView
+import FBSDKLoginKit
 
 class LogInViewController: UIViewController {
     
     //MARK:- IBOutlets
-    @IBOutlet weak var allowBiometricAuth: BEMCheckBox!{
-        didSet{
-            self.allowBiometricAuth.boxType = .square
-        }
-    }
-    @IBOutlet weak var logInButton: UIButton!{
-        didSet{
-            self.logInButton.layer.cornerRadius = self.logInButton.frame.height/2
-        }
-    }
-    @IBOutlet weak var passwordTF: UITextField!{
-        didSet{
-            Rounded.roundedCornerTextField(textField: self.passwordTF, borderColor: UIColor.gray.cgColor, radius: self.passwordTF.frame.height/2)
-            self.passwordTF.delegate = self
-        }
-    }
-    @IBOutlet weak var emailTF: UITextField!{
-        didSet{
-            Rounded.roundedCornerTextField(textField: self.emailTF, borderColor: UIColor.gray.cgColor, radius: self.emailTF.frame.height/2)
-            self.emailTF.delegate = self
-        }
-    }
-    @IBOutlet weak var socialStackView: UIStackView!{
-        didSet{
-            if Shared.currentDevice == .pad {
-                NSLayoutConstraint.deactivate(constraints)
-                let widthConstraint = self.socialStackView.widthAnchor.constraint(equalToConstant: 400)
-                NSLayoutConstraint.activate([widthConstraint])
-            }
-        }
-    }
+    @IBOutlet weak var allowBiometricAuth: BEMCheckBox!{ didSet{ self.allowBiometricAuth.boxType = .square }}
+    @IBOutlet weak var logInButton: UIButton!{ didSet{ self.logInButton.layer.cornerRadius = self.logInButton.frame.height/2 }}
+    @IBOutlet weak var passwordTF: UITextField!{ didSet{ Rounded.roundedCornerTextField(textField: self.passwordTF, borderColor: UIColor.gray.cgColor, radius: self.passwordTF.frame.height/2)
+        self.passwordTF.delegate = self }}
+    @IBOutlet weak var emailTF: UITextField!{ didSet{ Rounded.roundedCornerTextField(textField: self.emailTF, borderColor: UIColor.gray.cgColor, radius: self.emailTF.frame.height/2)
+        self.emailTF.delegate = self }}
+    @IBOutlet weak var socialStackView: UIStackView!{ didSet{
+        if Shared.currentDevice == .pad {
+            NSLayoutConstraint.deactivate(constraints)
+            let widthConstraint = self.socialStackView.widthAnchor.constraint(equalToConstant: 400)
+            NSLayoutConstraint.activate([widthConstraint]) }}}
     @IBOutlet var constraints: [NSLayoutConstraint]!
-    @IBOutlet var redDot: [UIView]!{
-        didSet{
-            Rounded.roundedDots(Dots: redDot)
-        }
-    }
-    @IBOutlet weak var animationView: NVActivityIndicatorView!{
-        didSet{
-            self.animationView.layer.cornerRadius = 10
-            self.animationView.clipsToBounds = true
-        }
-    }
-    @IBOutlet weak var twitter: UIButton!{
-        didSet{
-            Rounded.roundButton(button: self.twitter, radius: self.twitter.frame.size.height/2)
-        }
-    }
-    @IBOutlet weak var gmail: UIButton!{
-        didSet{
-            Rounded.roundButton(button: self.gmail, radius: self.gmail.frame.size.height/2)
-        }
-    }
-    @IBOutlet weak var facebook: UIButton!{
-        didSet{
-            Rounded.roundButton(button: self.facebook, radius: self.facebook.frame.size.height/2)
-        }
-    }
+    @IBOutlet var redDot: [UIView]!{ didSet{ Rounded.roundedDots(Dots: redDot) }}
+    @IBOutlet weak var animationView: NVActivityIndicatorView!{ didSet{ self.animationView.layer.cornerRadius = 10
+        self.animationView.clipsToBounds = true }}
+    @IBOutlet weak var twitter: UIButton!{ didSet{ Rounded.roundButton(button: self.twitter, radius: self.twitter.frame.size.height/2) }}
+    @IBOutlet weak var gmail: UIButton!{ didSet{ Rounded.roundButton(button: self.gmail, radius: self.gmail.frame.size.height/2) }}
+    @IBOutlet weak var facebook: UIButton!{ didSet{ Rounded.roundButton(button: self.facebook, radius: self.facebook.frame.size.height/2) }}
     @IBOutlet weak var backView: UIView!
     
+    let manger = LoginManager()
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,10 +47,24 @@ class LogInViewController: UIViewController {
     @IBAction func logInWithGoogle(_ sender: UIButton) {
     }
     @IBAction func logInWithFacebook(_ sender: UIButton) {
+        let permisions = ["email"]
+        manger.logIn(permissions: permisions, from: self) {[weak self] (result, error) in
+            if error != nil {
+                Alert.show("Error".localized, massege: "sssdsd", context: self!)
+                return
+            }
+            if result != nil {
+                if result?.isCancelled ?? true {
+                } else {
+                    self?.fetchProfile()
+                }
+            }
+        }
     }
     @IBAction func registerPressed(_ sender: UIButton) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Register") as? RegisterViewController {
             vc.modalPresentationStyle = .fullScreen
+            biometricStatus()
             present(vc, animated: true, completion: nil)
         }
     }
@@ -101,7 +77,7 @@ class LogInViewController: UIViewController {
                     switch Result {
                     case .success(let response):
                         if state >= 200 , state < 300 {
-                            self?.setupBioAuth(response: response)
+                            self?.setupBioAuth(response: response ,password: password)
                             self?.backView.isHidden = false
                             self?.backView.isUserInteractionEnabled = true
                             self?.BlurView(view: self!.animationView)
@@ -137,13 +113,12 @@ class LogInViewController: UIViewController {
         }
     }
     
-    func setupBioAuth(response: Login){
+    func setupBioAuth(response: Login ,password: String){
+        biometricStatus()
         let bioStatus = UserDefaults.standard.bool(forKey: Key.prefereBiometricAuth)
         if bioStatus == true {
-            if let mail = emailTF.text ,let pass = passwordTF.text {
-                UserDefaults.standard.set(mail, forKey: Key.mail)
-                UserDefaults.standard.set(pass, forKey: Key.pass)
-            }
+            UserDefaults.standard.set(response.userInfo.email, forKey: Key.mail)
+            UserDefaults.standard.set(password, forKey: Key.pass)
         }
         Shared.user = response.userInfo
         UserDefaults.standard.set(response.token as String, forKey: Key.authorizationToken)
@@ -165,39 +140,22 @@ class LogInViewController: UIViewController {
         backView.isUserInteractionEnabled = false
     }
     
-    @IBAction func textDidChange(_ sender: UITextField) {
-        if sender.layer.borderColor != UIColor.gray.cgColor {
-            sender.layer.borderColor = UIColor.gray.cgColor
-        }
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField.layer.borderColor != UIColor.gray.cgColor {
-            textField.layer.borderColor = UIColor.gray.cgColor
-        }
-    }
-    
     @IBAction func biometricAuthChecked(_ sender: BEMCheckBox) {
         if BioMetricAuthenticator.shared.faceIDAvailable() {
-            let isBiometricAuthEnabled = allowBiometricAuth.on ? true : false
-            UserDefaults.standard.set(isBiometricAuthEnabled, forKey: Key.prefereBiometricAuth)
+            biometricStatus()
         } else if BioMetricAuthenticator.shared.touchIDAvailable(){
-            let isBiometricAuthEnabled = allowBiometricAuth.on ? true : false
-            UserDefaults.standard.set(isBiometricAuthEnabled, forKey: Key.prefereBiometricAuth)
+            biometricStatus()
             print("Touch ID Available")
         } else {
             allowBiometricAuth.on = false
-            let isBiometricAuthEnabled = allowBiometricAuth.on ? true : true
-            UserDefaults.standard.set(isBiometricAuthEnabled, forKey: Key.prefereBiometricAuth)
+            biometricStatus()
             Alert.show("Touch/Face ID not configured".localized, massege: "You Can't Use This Feature Right Now".localized, context: self)
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "GoToMain" {
-            let vc = segue.destination as! MainNavigationController
-            vc.modalPresentationStyle = .fullScreen
-        }
+    func biometricStatus(){
+        let isBiometricAuthEnabled = allowBiometricAuth.on ? true : false
+        UserDefaults.standard.set(isBiometricAuthEnabled, forKey: Key.prefereBiometricAuth)
     }
     
     //MARK:- Make Blur View For Animation
@@ -220,13 +178,101 @@ class LogInViewController: UIViewController {
         }
     }
     
-    //MARK:- Chaneg Status Bar To Dark
-    //    override var preferredStatusBarStyle: UIStatusBarStyle {
-    //        if #available(iOS 13.0, *) {
-    //            return .darkContent
-    //        } else {
-    //
-    //        }
-    //    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GoToMain" {
+            let vc = segue.destination as! MainNavigationController
+            vc.modalPresentationStyle = .fullScreen
+        }
+    }
+    
+    @IBAction func textDidChange(_ sender: UITextField) {
+        if sender.layer.borderColor != UIColor.gray.cgColor {
+            sender.layer.borderColor = UIColor.gray.cgColor
+        }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.layer.borderColor != UIColor.gray.cgColor {
+            textField.layer.borderColor = UIColor.gray.cgColor
+        }
+    }
+}
+
+//MARK:- Facebook Login
+extension LogInViewController {
+    func fetchProfile(){
+        let prametters = ["fields":"email, first_name, last_name ,picture.type(large)"]
+        GraphRequest(graphPath: "me", parameters: prametters).start {[weak self] (connection, result, error) in
+            if error != nil {
+                print(error?.localizedDescription)
+                self?.stopAnimation()
+                return
+            }
+            if let userData = result as? Dictionary<String, Any> {
+                if let email = userData["email"] as? String , let first_name = userData["first_name"] as? String ,let last_name = userData["last_name"] as? String , let id = userData["id"] as? String {
+                    
+                    let fullName = first_name + " " + last_name
+                    var image: String?
+                    
+                    if let picture = userData["picture"] as? Dictionary<String, Any> , let data = picture["data"] as? Dictionary<String, Any> {
+                        image = data["url"] as? String
+                    }
+                    self?.loginToKonsilAPI(email: email, password: id, name: fullName ,image: image ?? "no Image")
+                }
+            }
+        }
+    }
+    
+    //MARK:- Login To Konsil
+    func loginToKonsilAPI(email: String ,password: String ,name: String ,image: String){
+        if let token = AppDelegate.token {
+            startAnimation()
+            DispatchQueue.main.async { [weak self] in
+                APIClient.login(email: email, password: password, mobile_tokken: token) { (result, status) in
+                    print(status)
+                    switch result {
+                    case .success(let response):
+                        print(response)
+                        if status == 200 {
+                            self?.setupBioAuth(response: response, password: password)
+                            self?.backView.isHidden = false
+                            self?.backView.isUserInteractionEnabled = true
+                            self?.BlurView(view: self!.animationView)
+                        }
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                        self?.registerToKonsilAPI(email: email, password: password, image: image, name: name)
+                    }
+                }
+            }
+        }
+    }
+    
+    //MARK:- Register To Konsil
+    func registerToKonsilAPI(email: String ,password: String ,image: String ,name: String){
+        if let token = AppDelegate.token {
+            let lang = "Lang".localized
+            DispatchQueue.main.async {[weak self] in
+                APIClient.register(name: name, email: email, password: password, phone: "", image_url: image, platform: 3, lang: lang, mobile_tokken: token) { (result, status) in
+                    print(status)
+                    self?.stopAnimation()
+                    switch result {
+                    case .success(let response):
+                        print(response)
+                        if status == 200 {
+                            self?.backView.isHidden = false
+                            self?.backView.isUserInteractionEnabled = true
+                            Shared.user = response.userInfo
+                            UserDefaults.standard.set(response.token as String, forKey: Key.authorizationToken)
+                            UserDefaults.standard.set(true, forKey: Key.loged)
+                            self?.BlurView(view: self!.animationView)
+                        }
+                    case.failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
+    }
     
 }

@@ -529,10 +529,10 @@
 "RD6-im-Zde.normalTitle" = "Mit Twitter einloggen";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "u3P-tH-Qwd"; */
-"u3P-tH-Qwd.normalTitle" = "Mit Facebook einloggen";
+"u3P-tH-Qwd.normalTitle" = "Mit Google einloggen";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "RD6-im-Zde"; */
-"doM-1i-f1I.normalTitle" = "Mit Google einloggen";
+"doM-1i-f1I.normalTitle" = "Mit Facebook einloggen";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "rEW-10-4D7"; */
 "rEW-10-4D7.normalTitle" = "Registrieren Sie sich bei Twitter";

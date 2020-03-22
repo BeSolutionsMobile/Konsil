@@ -169,6 +169,16 @@ PODS:
   - BoringSSL-GRPC/Interface (0.0.3)
   - CardIO (5.4.1)
   - Cosmos (19.0.3)
+  - FBSDKCoreKit (6.2.0):
+    - FBSDKCoreKit/Basics (= 6.2.0)
+    - FBSDKCoreKit/Core (= 6.2.0)
+  - FBSDKCoreKit/Basics (6.2.0)
+  - FBSDKCoreKit/Core (6.2.0):
+    - FBSDKCoreKit/Basics
+  - FBSDKLoginKit (6.2.0):
+    - FBSDKLoginKit/Login (= 6.2.0)
+  - FBSDKLoginKit/Login (6.2.0):
+    - FBSDKCoreKit (~> 6.2.0)
   - Firebase/Core (6.14.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 6.1.7)
@@ -298,6 +308,7 @@ DEPENDENCIES:
   - BEMCheckBox
   - BiometricAuthentication
   - Cosmos (~> 19.0)
+  - FBSDKLoginKit
   - Firebase/Core
   - Firebase/Firestore
   - Firebase/Storage
@@ -320,6 +331,8 @@ SPEC REPOS:
     - BoringSSL-GRPC
     - CardIO
     - Cosmos
+    - FBSDKCoreKit
+    - FBSDKLoginKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuthInterop
@@ -356,6 +369,8 @@ SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   Cosmos: a6fb17284281fa12cf4c85c2efecd440a215ec44
+  FBSDKCoreKit: a7bb9f5ac56c1e11d5f8ae0b90a3610f8744b43a
+  FBSDKLoginKit: 5877adb09cc249870c352d92ecc3246cb925c771
   Firebase: 0219bb4782eb1406f1b9b0628a2e625484ce910d
   FirebaseAnalytics: f68b9f3f1241385129ae0a83b63627fc420c05e5
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
@@ -384,6 +399,6 @@ SPEC CHECKSUMS:
   SideMenu: 928a015669c3afc201e1fe3a87f1b0bc8993a664
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 46cff0d07cf8214a7b71d40a29d7dcf5f56e12ef
+PODFILE CHECKSUM: fc56643c9c03bbdbd6105134df631ab1637e66fa
 
 COCOAPODS: 1.9.0.beta.3

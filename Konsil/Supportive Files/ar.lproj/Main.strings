@@ -540,10 +540,10 @@
 "RD6-im-Zde.normalTitle" = "الدخول بواسطة تويتر";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "u3P-tH-Qwd"; */
-"u3P-tH-Qwd.normalTitle" = "الدخول بواسطة فيسبوك";
+"u3P-tH-Qwd.normalTitle" = "دخول بواسطة جوجل";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "RD6-im-Zde"; */
-"doM-1i-f1I.normalTitle" = "الدخول بواسطة جوجل";
+"doM-1i-f1I.normalTitle" = "الدخول بواسطة فيسبوك";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "rEW-10-4D7"; */
 "rEW-10-4D7.normalTitle" = "التسجيل بواسطة تويتر";

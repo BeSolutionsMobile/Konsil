@@ -10,6 +10,7 @@ import UIKit
 import BEMCheckBox
 import MOLH
 import NVActivityIndicatorView
+import FBSDKLoginKit
 
 class RegisterViewController: UIViewController {
     
@@ -97,6 +98,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var backView: UIView!
     @IBOutlet var constraints: [NSLayoutConstraint]!
     
+    let facebookManger = LoginManager()
     
     //MARK:- viewDidLoad
     override func viewDidLoad() {
@@ -156,7 +158,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func termsOfUse(_ sender: UIButton) {
-         
+        
     }
     
     @IBAction func privacyPolicy(_ sender: UIButton) {
@@ -199,27 +201,39 @@ class RegisterViewController: UIViewController {
     // Check Email Validation
     
     func startAnimation(){
-           backView.isUserInteractionEnabled = true
-           backView.isHidden = false
-           animationView.type = .circleStrokeSpin
-           animationView.padding = 25
-           animationView.startAnimating()
-       }
-       
-       func stopAnimation(){
-           animationView.stopAnimating()
-           backView.isHidden = true
-           backView.isUserInteractionEnabled = false
-       }
+        backView.isUserInteractionEnabled = true
+        backView.isHidden = false
+        animationView.type = .circleStrokeSpin
+        animationView.padding = 25
+        animationView.startAnimating()
+    }
+    
+    func stopAnimation(){
+        animationView.stopAnimating()
+        backView.isHidden = true
+        backView.isUserInteractionEnabled = false
+    }
     
     @IBAction func acceptAllTermsAndConditions(_ sender: BEMCheckBox) {
     }
     @IBAction func registerWithTwitter(_ sender: UIButton) {
     }
-    
     @IBAction func registerWithGoogle(_ sender: UIButton) {
     }
     @IBAction func registerWithFacebook(_ sender: UIButton) {
+        let permisions = ["email"]
+        facebookManger.logIn(permissions: permisions, from: self) {[weak self] (result, error) in
+            if error != nil {
+                Alert.show("Error".localized, massege: "sssdsd", context: self!)
+                return
+            }
+            if result != nil {
+                if result?.isCancelled ?? true {
+                } else {
+                    self?.fetchProfile()
+                }
+            }
+        }
     }
     
     // MARK:- Revert TextField's Border Color To Normal When Selected Or Text Changed
@@ -265,7 +279,85 @@ class RegisterViewController: UIViewController {
                 self.performSegue(withIdentifier: "GoToMain", sender: self)
             }
         }
-        
+    }
+}
+
+//MARK:- Facebook Login
+extension RegisterViewController {
+    func fetchProfile(){
+        let prametters = ["fields":"email, first_name, last_name ,picture.type(large)"]
+        GraphRequest(graphPath: "me", parameters: prametters).start {[weak self] (connection, result, error) in
+            if error != nil {
+                print(error?.localizedDescription)
+                self?.stopAnimation()
+                return
+            }
+            if let userData = result as? Dictionary<String, Any> {
+                if let email = userData["email"] as? String , let first_name = userData["first_name"] as? String ,let last_name = userData["last_name"] as? String , let id = userData["id"] as? String {
+                    
+                    let fullName = first_name + " " + last_name
+                    var image: String?
+                    
+                    if let picture = userData["picture"] as? Dictionary<String, Any> , let data = picture["data"] as? Dictionary<String, Any> {
+                        image = data["url"] as? String
+                    }
+                    self?.registerToKonsilAPI(email: email, password: id, image: image ?? "no Image", name: fullName)
+                }
+            }
+        }
     }
     
+    //MARK:- Register To Konsil
+    func registerToKonsilAPI(email: String ,password: String ,image: String ,name: String){
+        if let token = AppDelegate.token {
+            let lang = "Lang".localized
+            self.startAnimation()
+            DispatchQueue.main.async {[weak self] in
+                APIClient.register(name: name, email: email, password: password, phone: "", image_url: image, platform: 3, lang: lang, mobile_tokken: token) { (result, status) in
+                    print(status)
+                    switch result {
+                    case .success(let response):
+                        print(response)
+                        if status == 200 {
+                            UserDefaults.standard.set(true, forKey: Key.loged)
+                            Shared.user = response.userInfo
+                            UserDefaults.standard.set(response.token as String, forKey: Key.authorizationToken)
+                            self?.backView.isHidden = false
+                            self?.backView.isUserInteractionEnabled = true
+                            self?.BlurView(view: self!.animationView)
+                        }
+                    case.failure(let error):
+                        print(error.localizedDescription)
+                        self?.loginToKonsilAPI(email: email, password: password, name: name, image: image)
+                    }
+                }
+            }
+        }
+    }
+    
+    //MARK:- Login To Konsil
+    func loginToKonsilAPI(email: String ,password: String ,name: String ,image: String){
+        if let token = AppDelegate.token {
+            DispatchQueue.main.async { [weak self] in
+                APIClient.login(email: email, password: password, mobile_tokken: token) { (result, status) in
+                    print(status)
+                    switch result {
+                    case .success(let response):
+                        print(response)
+                        self?.stopAnimation()
+                        if status == 200 {
+                            UserDefaults.standard.set(true, forKey: Key.loged)
+                            Shared.user = response.userInfo
+                            UserDefaults.standard.set(response.token as String, forKey: Key.authorizationToken)
+                            self?.backView.isHidden = false
+                            self?.backView.isUserInteractionEnabled = true
+                            self?.BlurView(view: self!.animationView)
+                        }
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
+    }
 }

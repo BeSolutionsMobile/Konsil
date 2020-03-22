@@ -22,7 +22,7 @@ target 'Konsil' do
   pod 'Firebase/Storage'
   pod 'Firebase/Firestore'
   pod 'IQKeyboardManagerSwift', '6.3.0'
-  
+  pod 'FBSDKLoginKit'
   
   target 'KonsilTests' do
     inherit! :search_paths

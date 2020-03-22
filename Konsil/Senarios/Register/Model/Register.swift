@@ -15,6 +15,6 @@ struct Register: Codable {
 struct User: Codable {
     let id: Int
     let name, code, email, mobile_token: String
-    let user_type_id, phone, lang: String
-    let image_url: String?
+    let user_type_id, lang: String
+    let image_url ,phone: String?
 }
