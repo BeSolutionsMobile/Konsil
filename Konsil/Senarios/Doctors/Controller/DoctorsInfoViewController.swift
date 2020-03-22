@@ -30,7 +30,7 @@ class DoctorsInfoViewController: UIViewController {
     @IBOutlet weak var doctorName: UILabel!
     @IBOutlet weak var doctorSpeciality: UILabel!
     @IBOutlet weak var details: UILabel!
-    
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var requestConsultarionBack: UILabel!{
         didSet{
             self.requestConsultarionBack.layer.cornerRadius = 15
@@ -92,7 +92,11 @@ class DoctorsInfoViewController: UIViewController {
     }
     
     func updateView(doctor: DoctorData){
-        doctorImage.sd_setImage(with: URL(string: doctor.image_url ), placeholderImage: UIImage(named: "doctorPlaceholder"))
+//        doctorImage.sd_setImage(with: URL(string: doctor.image_url ), placeholderImage: UIImage(named: "doctorPlaceholder"))
+        doctorImage.sd_setImage(with: URL(string: doctor.image_url), placeholderImage: nil, options: .retryFailed) { (image, error, type, url) in
+            self.indicator.stopAnimating()
+            
+        }
         doctorName.text = doctor.name
         let rate = stringToDouble(doctor.rate)
         doctorRate.rating = rate

@@ -268,7 +268,7 @@
 "TlA-TU-dmx.title" = "Online-Konversationsdetails";
 
 /* Class = "UINavigationItem"; title = "Doctors Filters"; ObjectID = "Vte-H0-vYm"; */
-"Vte-H0-vYm.title" = "Ärzte Filter";
+"Vte-H0-vYm.title" = "";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "YBe-aD-Z0K"; */
 "YBe-aD-Z0K.text" = "Label";

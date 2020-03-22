@@ -50,10 +50,10 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
         paymentAmount.text = price + " $"
         paypalConfig.acceptCreditCards = acceptCreditCards
         paypalConfig.merchantName = "Konsil_med"
-        paypalConfig.merchantPrivacyPolicyURL = URL(string: "www.google.com")
+        paypalConfig.merchantPrivacyPolicyURL = URL(string: "https://www.konsilmed.com/privacy")
         paypalConfig.merchantUserAgreementURL = URL(string: "www.google.com")
         paypalConfig.languageOrLocale = NSLocale.preferredLanguages[0]
-        paypalConfig.payPalShippingAddressOption = .payPal
+        paypalConfig.payPalShippingAddressOption = .none
         
         PayPalMobile.preconnect(withEnvironment: environment)
     }
@@ -64,7 +64,7 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
             let items = [item]
             let subtotle = PayPalItem.totalPrice(forItems: items)
             let total = subtotle.decimalValue
-            let payment = PayPalPayment(amount: NSDecimalNumber(decimal: total), currencyCode: "USD", shortDescription: "Consultation Payent", intent: .sale)
+            let payment = PayPalPayment(amount: NSDecimalNumber(decimal: total), currencyCode: "USD", shortDescription: paymentType(), intent: .sale)
             payment.items = items
             
             if payment.processable {
@@ -72,7 +72,7 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
                 paymentVC?.modalPresentationStyle = .fullScreen
                 present(paymentVC!, animated: true, completion: nil)
             } else {
-                print("Cannot process payment")
+                Alert.show("Error".localized, massege: "PayPal Error: Can't Proceed To Payment Please Try Again", context: self)
             }
         }else {
             print("id is empty")
@@ -143,5 +143,14 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }
+    }
+    
+    func paymentType()-> String{
+        if type == 1 {
+            return "Consultation Payment"
+        } else if type == 2 {
+            return "Conversation Payment"
+        }
+        return ""
     }
 }

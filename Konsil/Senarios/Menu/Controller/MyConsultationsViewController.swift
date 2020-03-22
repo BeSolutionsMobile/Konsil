@@ -10,6 +10,7 @@ import UIKit
 
 class MyConsultationsViewController: UIViewController {
     
+  
     @IBOutlet weak var myConsultationTableView: UITableView!{
         didSet {
             self.myConsultationTableView.rowHeight = UITableView.automaticDimension
@@ -60,7 +61,11 @@ extension MyConsultationsViewController: UITableViewDelegate , UITableViewDataSo
         if let consultation = consultations?[indexPath.row] {
             cell.doctorName.text = consultation.name
             cell.price.text = consultation.price
-            cell.doctorImage.sd_setImage(with: URL(string: consultation.image), placeholderImage: UIImage(named: "doctorPlaceholder"))
+//            cell.doctorImage.sd_setImage(with: URL(string: consultation.image), placeholderImage: UIImage(named: "doctorPlaceholder"))
+            cell.doctorImage.sd_setImage(with: URL(string: consultation.image), placeholderImage: UIImage(named: "doctorPlaceholder"), options: .retryFailed) { (image, error, type, url) in
+                cell.indicator.stopAnimating()
+                
+            }
             if consultation.status == "Your Request Sent" {
                 cell.status.text = "Sent"
             } else {

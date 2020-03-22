@@ -57,7 +57,7 @@
 
 //PlaceHolders
 
-"Enter Patient History Here" = "Enter Patient History Here";
+"Enter Patient History Here" = "Please write your medical history";
 "Enter Complaint Details Here" = "Enter Complaint Details Here";
 "Enter Consultation Details Here" = "Enter Consultation Details Here";
 

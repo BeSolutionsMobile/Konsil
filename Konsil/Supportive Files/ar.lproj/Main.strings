@@ -261,7 +261,7 @@
 "TlA-TU-dmx.title" = "تفاصيل المحادثه";
 
 /* Class = "UINavigationItem"; title = "Doctors Filters"; ObjectID = "Vte-H0-vYm"; */
-"Vte-H0-vYm.title" = "تصنيف الاطباء";
+"Vte-H0-vYm.title" = "";
 
 /* Class = "UINavigationItem"; title = "Consultation Details"; ObjectID = "Wl8-ix-O5h"; */
 "Wl8-ix-O5h.title" = "تقاصيل الاستشاره";
@@ -416,8 +416,8 @@
 /* Class = "UITextField"; placeholder = "Enter your email"; ObjectID = "mQm-wh-tLS"; */
 "mQm-wh-tLS.placeholder" = "البريد الاكترونى";
 
-/* Class = "UILabel"; text = "Change Language :"; ObjectID = "mp5-4j-Rv1"; */
-"mp5-4j-Rv1.text" = "تغيير اللغة";
+/* Class = "UILabel"; text = "Change Language :"; ObjectID = "BXy-yr-pq4"; */
+"BXy-yr-pq4.text" = "تغيير اللغة";
 
 /* Class = "UILabel"; text = "Download"; ObjectID = "myE-RQ-qvW"; */
 "myE-RQ-qvW.text" = "تحميل";

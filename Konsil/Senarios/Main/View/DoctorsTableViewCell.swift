@@ -19,6 +19,7 @@ class DoctorsTableViewCell: UITableViewCell {
     @IBOutlet weak var drDegree: UILabel!
     @IBOutlet weak var drRating: CosmosView!
     @IBOutlet weak var languages: UILabel!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

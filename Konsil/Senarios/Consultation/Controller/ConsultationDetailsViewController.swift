@@ -92,9 +92,9 @@ class ConsultationDetailsViewController: UIViewController {
     //MARK:- Customize Segmant Controller
     func customizeSigmanted(for segmantController: UISegmentedControl) {
         if #available(iOS 13.0, *) {
-            let titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .semibold)]
+            let titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .semibold)]
             
-            let selectedTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white , NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .semibold)]
+            let selectedTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white , NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .semibold)]
             
             segmantController.setTitleTextAttributes(titleTextAttributes, for: .normal)
             segmantController.setTitleTextAttributes(selectedTitleTextAttributes, for: .selected)
@@ -103,9 +103,9 @@ class ConsultationDetailsViewController: UIViewController {
             segmantController.setDividerImage(divider, forLeftSegmentState: [.normal , .selected], rightSegmentState: [.normal , .selected], barMetrics: .default)
         } else {
             segmantController.tintColor = UIColor(red: 0.867, green: 0.206, blue: 0.159, alpha: 1)
-            let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGray ,NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .semibold)]
+            let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGray ,NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .semibold)]
             
-            let selectedTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white , NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .semibold)]
+            let selectedTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white , NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .semibold)]
             
             segmantController.setTitleTextAttributes(titleTextAttributes, for: .normal)
             segmantController.setTitleTextAttributes(selectedTitleTextAttributes, for: .selected)

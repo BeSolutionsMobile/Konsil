@@ -95,7 +95,11 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCell", for: indexPath) as! MainCategoriesCollectionViewCell
         if let spec = specialities?[indexPath.row] {
-            cell.catImage.sd_setImage(with: URL(string: spec.image_url), placeholderImage: UIImage(named: "doctorPlaceholder"))
+            cell.catImage.sd_setImage(with: URL(string: spec.image_url), placeholderImage: nil, options: .retryFailed) { (image, error, type, url) in
+                if image != nil {
+                    cell.indicator.stopAnimating()
+                }
+            }
             cell.catName.text = spec.title
         }
         

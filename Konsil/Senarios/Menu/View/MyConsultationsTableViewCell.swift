@@ -14,6 +14,7 @@ protocol ConsultationDelegate {
 
 class MyConsultationsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var tybe: UILabel!
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var price: UILabel!

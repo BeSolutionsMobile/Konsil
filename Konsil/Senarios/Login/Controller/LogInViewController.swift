@@ -79,7 +79,6 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    
     //MARK:- IBActions
     @IBAction func logInWithTwitter(_ sender: UIButton) {
     }

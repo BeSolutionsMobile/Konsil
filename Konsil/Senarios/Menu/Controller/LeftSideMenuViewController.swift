@@ -11,6 +11,7 @@ import MOLH
 
 class LeftSideMenuViewController: UIViewController {
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var logOut: UIButton!{
         didSet{
             Rounded.roundButton(button: self.logOut, radius: self.logOut.frame.height/2)
@@ -95,7 +96,11 @@ class LeftSideMenuViewController: UIViewController {
     func updateView(){
         if let user = Shared.user , Shared.user != nil {
             name.text = user.name
-            ProfileImage.sd_setImage(with: URL(string: user.image_url ?? ""), placeholderImage: UIImage(named: "userPlaceholder"))
+//            ProfileImage.sd_setImage(with: URL(string: user.image_url ?? ""), placeholderImage: UIImage(named: "userPlaceholder"))
+            ProfileImage.sd_setImage(with: URL(string: user.image_url ?? ""), placeholderImage: UIImage(named: "userPlaceholder"), options: .retryFailed) { (image, error, type, url) in
+                self.indicator.stopAnimating()
+                
+            }
             
         }
     }

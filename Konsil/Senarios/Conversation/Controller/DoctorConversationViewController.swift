@@ -13,6 +13,7 @@ import BEMCheckBox
 class DoctorConversationViewController: UIViewController {
     
     //MARK:- IBOutlets
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var chooseDate: UITextField!
     @IBOutlet weak var doctorName: UILabel!
     @IBOutlet weak var doctorSpeciality: UILabel!
@@ -142,7 +143,11 @@ class DoctorConversationViewController: UIViewController {
     
     func updateView(){
         if let doctor = doctorDetails {
-            doctorImage.sd_setImage(with: URL(string: doctor.image_url ), placeholderImage: UIImage(named: "doctorPlaceholder"))
+//            doctorImage.sd_setImage(with: URL(string: doctor.image_url ), placeholderImage: UIImage(named: "doctorPlaceholder"))
+            doctorImage.sd_setImage(with: URL(string: doctor.image_url), placeholderImage: nil, options: .retryFailed) { (image, error, type, url) in
+                self.indicator.stopAnimating()
+                
+            }
             doctorName.text = doctor.name
             doctorSpeciality.text = doctor.specialist
             //            hourPrice.text = doctor.

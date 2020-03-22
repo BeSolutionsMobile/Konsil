@@ -13,6 +13,7 @@ class MainCategoriesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var catName: UILabel!
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var imageSize: NSLayoutConstraint!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     
 }
