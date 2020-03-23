@@ -83,6 +83,7 @@
 		81BB8ADB23D99C3D00C57648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB8ADA23D99C3D00C57648 /* AppDelegate.swift */; };
 		81BF938823FEDBEE0079435C /* ComfirmCounsultation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BF938723FEDBEE0079435C /* ComfirmCounsultation.swift */; };
 		81BF938A23FEDC2E0079435C /* ComfirmConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BF938923FEDC2E0079435C /* ComfirmConversation.swift */; };
+		81CAC04F2427CF850083BE4E /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81CAC04E2427CF850083BE4E /* credentials.plist */; };
 		81D8FB1D23A82A5100585CA8 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8FB1C23A82A5100585CA8 /* MainNavigationController.swift */; };
 		81D8FB1F23A8301A00585CA8 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8FB1E23A8301A00585CA8 /* FilterViewController.swift */; };
 		81ECE8C023BCF4970048C0D9 /* Report.json in Resources */ = {isa = PBXBuildFile; fileRef = 81ECE8BF23BCF4970048C0D9 /* Report.json */; };
@@ -227,6 +228,7 @@
 		81BB8ADA23D99C3D00C57648 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81BF938723FEDBEE0079435C /* ComfirmCounsultation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComfirmCounsultation.swift; sourceTree = "<group>"; };
 		81BF938923FEDC2E0079435C /* ComfirmConversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComfirmConversation.swift; sourceTree = "<group>"; };
+		81CAC04E2427CF850083BE4E /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		81CC1BF623CF140C00B92D68 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		81CC1BF723CF140D00B92D68 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		81D8FB1C23A82A5100585CA8 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 				813D444623D0869200330645 /* Supportive Files */,
 				04F1A61B23A641B300293AA2 /* Info.plist */,
 				8166545023D9E19F00739768 /* GoogleService-Info.plist */,
+				81CAC04E2427CF850083BE4E /* credentials.plist */,
 				81B7615723D49E4C00859320 /* Localizable.strings */,
 			);
 			path = Konsil;
@@ -779,6 +782,7 @@
 				04F1A60723A641B200293AA2 /* Frameworks */,
 				04F1A60823A641B200293AA2 /* Resources */,
 				F5DD269261BE52DC0DF86E44 /* [CP] Embed Pods Frameworks */,
+				4A12F850A030F376FFED3147 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -817,6 +821,7 @@
 				04F1A62823A641B300293AA2 /* Frameworks */,
 				04F1A62923A641B300293AA2 /* Resources */,
 				EC2B88C5F9D8C7C0C0AC2C57 /* [CP] Embed Pods Frameworks */,
+				C1E3B16D1D8F460966FF5C1C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -894,6 +899,7 @@
 				81FD1A2123E1D1C900CED21A /* CheckMark.json in Resources */,
 				8114569023BCEC21005A4B93 /* RedLifeline.json in Resources */,
 				81ECE9A123AB6C8400E63105 /* SectionHeaderView.xib in Resources */,
+				81CAC04F2427CF850083BE4E /* credentials.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -956,6 +962,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A12F850A030F376FFED3147 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Konsil/Pods-Konsil-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Konsil/Pods-Konsil-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Konsil/Pods-Konsil-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1E3B16D1D8F460966FF5C1C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Konsil-KonsilUITests/Pods-Konsil-KonsilUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Konsil-KonsilUITests/Pods-Konsil-KonsilUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Konsil-KonsilUITests/Pods-Konsil-KonsilUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E4B3E880A3C90318AE6EBB25 /* [CP] Check Pods Manifest.lock */ = {

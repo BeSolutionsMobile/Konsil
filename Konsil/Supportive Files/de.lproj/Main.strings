@@ -538,10 +538,10 @@
 "rEW-10-4D7.normalTitle" = "Registrieren Sie sich bei Twitter";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "Jeg-Qk-eu4"; */
-"Jeg-Qk-eu4.normalTitle" = "Registrieren Sie sich bei Facebook";
+"Jeg-Qk-eu4.normalTitle" = "Registrieren Sie sich bei Google";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "OaI-sJ-2pr"; */
-"OaI-sJ-2pr.normalTitle" = "Registrieren Sie sich bei Google";
+"OaI-sJ-2pr.normalTitle" = "Registrieren Sie sich bei Facebook";
 
 /* Class = "UILabel"; text = ""; ObjectID = "7xR-LQ-5Qg"; */
 "7xR-LQ-5Qg.text" = "Ich akzeptiere alle";

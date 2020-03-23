@@ -91,13 +91,12 @@ class DoctorsInfoViewController: UIViewController {
         }
     }
     
+    //MARK:- Update View Form Model
     func updateView(doctor: DoctorData){
-//        doctorImage.sd_setImage(with: URL(string: doctor.image_url ), placeholderImage: UIImage(named: "doctorPlaceholder"))
-        doctorImage.sd_setImage(with: URL(string: doctor.image_url), placeholderImage: nil, options: .retryFailed) { (image, error, type, url) in
+        doctorImage.sd_setImage(with: URL(string: doctor.image_url), placeholderImage: UIImage(named: "doctorPlaceholder"), options: .retryFailed) { (image, error, type, url) in
             self.indicator.stopAnimating()
-            
         }
-        doctorName.text = doctor.name
+        doctorName.text = doctor.degree + " " + doctor.name
         let rate = stringToDouble(doctor.rate)
         doctorRate.rating = rate
         doctorSpeciality.text = doctor.job_title

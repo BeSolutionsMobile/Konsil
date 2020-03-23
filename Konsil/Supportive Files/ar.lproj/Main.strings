@@ -549,10 +549,10 @@
 "rEW-10-4D7.normalTitle" = "التسجيل بواسطة تويتر";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "Jeg-Qk-eu4"; */
-"Jeg-Qk-eu4.normalTitle" = "التسجيل بواسطة فيسبوك";
+"Jeg-Qk-eu4.normalTitle" = "التسجيل بواسطة جوجل";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "OaI-sJ-2pr"; */
-"OaI-sJ-2pr.normalTitle" = "التسجيل بواسطة جوجل";
+"OaI-sJ-2pr.normalTitle" = "التسجيل بواسطة فيسبوك";
 
 /* Class = "UITextField"; placeholder = "Enter your mobile number"; ObjectID = "GoB-fD-7Xy"; */
 "GoB-fD-7Xy.placeholder" = "اضغط لاختيار اليوم المرغوب";

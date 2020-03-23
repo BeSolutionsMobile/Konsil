@@ -11,6 +11,7 @@ import BEMCheckBox
 import BiometricAuthentication
 import NVActivityIndicatorView
 import FBSDKLoginKit
+import GoogleSignIn
 
 class LogInViewController: UIViewController {
     
@@ -35,20 +36,24 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var facebook: UIButton!{ didSet{ Rounded.roundButton(button: self.facebook, radius: self.facebook.frame.size.height/2) }}
     @IBOutlet weak var backView: UIView!
     
-    let manger = LoginManager()
+    let facebookManger = LoginManager()
+    let googleManger = GIDSignIn.sharedInstance()
+    
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupGoogleSginIn()
     }
     
     //MARK:- IBActions
     @IBAction func logInWithTwitter(_ sender: UIButton) {
     }
     @IBAction func logInWithGoogle(_ sender: UIButton) {
+        googleManger?.signIn()
     }
     @IBAction func logInWithFacebook(_ sender: UIButton) {
         let permisions = ["email"]
-        manger.logIn(permissions: permisions, from: self) {[weak self] (result, error) in
+        facebookManger.logIn(permissions: permisions, from: self) {[weak self] (result, error) in
             if error != nil {
                 Alert.show("Error".localized, massege: "sssdsd", context: self!)
                 return
@@ -274,5 +279,40 @@ extension LogInViewController {
             }
         }
     }
+}
+
+//MARK:- Google Sgin In
+extension LogInViewController: GIDSignInDelegate {
     
+    func setupGoogleSginIn() {
+        GIDSignIn.sharedInstance().clientID = "30414761383-5g2d3tsuof784onfl67el1bhsrhk0ni2.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+                print("The user has not signed in before or they have since signed out.")
+            } else {
+                print("\(error.localizedDescription)")
+            }
+            return
+        }
+
+        let userId = user.userID      // For client-side use only!
+        let fullName = user.profile.name
+        let email = user.profile.email
+        loginToKonsilAPI(email: email ?? "", password: userId ?? "", name: fullName ?? "", image: "no Image")
+        
+    }
+    
+    @available(iOS 9.0, *)
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url)
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
+              withError error: Error!) {
+    }
 }
