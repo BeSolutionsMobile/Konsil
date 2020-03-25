@@ -36,6 +36,7 @@ class RequestConsultationViewController: UIViewController {
     @IBOutlet weak var textViewHieghtConstraint: NSLayoutConstraint!
     
     //MARK:- Variables
+    var doctor: DoctorData?
     var imagePicker = OpalImagePickerController()
     let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypePDF as String], in: .import)
     var files: [String]?
@@ -70,27 +71,29 @@ class RequestConsultationViewController: UIViewController {
     
     func addConsultation() {
         if let title = titleTF.text, let details = detailsTV.text, titleTF.text != "" {
-            print("Requesting")
-            
-            DispatchQueue.main.async { [weak self] in
-                APIClient.addConsultation(title: title, details: details, doctor_id: 26, images: self?.images ?? ["noImages"], files: self?.files ?? ["noFiles"]) { (Result , Status) in
-                    switch Result {
-                    case .success(let response):
-                        print(response)
-                        if response.status == 200 {
-                            if let vc = self?.storyboard?.instantiateViewController(withIdentifier: "PayPalVC") as? PayPalViewController {
-                                vc.modalPresentationStyle = .fullScreen
-                                vc.doctor = "Consultation"
-                                vc.price = "2.5"
-                                vc.id = response.id
-                                vc.type = 1
-                                self?.navigationController?.pushViewController(vc, animated: true)
+            if let doctor = doctor , doctor.consultation_price != nil{
+                self.startAnimating()
+                DispatchQueue.main.async { [weak self] in
+                    APIClient.addConsultation(title: title, details: details, doctor_id: doctor.id, images: self?.images ?? ["noImages"], files: self?.files ?? ["noFiles"]) { (Result , Status) in
+                        self?.stopAnimating()
+                        switch Result {
+                        case .success(let response):
+                            print(response)
+                            if response.status == 200 {
+                                if let vc = self?.storyboard?.instantiateViewController(withIdentifier: "PayPalVC") as? PayPalViewController {
+                                    vc.modalPresentationStyle = .fullScreen
+                                    vc.doctor = doctor.name
+                                    vc.price = doctor.consultation_price ?? "0"
+                                    vc.id = response.id
+                                    vc.type = 1
+                                    self?.navigationController?.pushViewController(vc, animated: true)
+                                }
                             }
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                            Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
                         }
-                    case .failure(let error):
-                        print(error.localizedDescription)
                     }
-                    print(Status)
                 }
             }
         } else {

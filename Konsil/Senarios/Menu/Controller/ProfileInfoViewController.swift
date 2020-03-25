@@ -69,6 +69,8 @@ class ProfileInfoViewController: UIViewController {
     
     let imagePicker = UIImagePickerController()
     var image: String?
+    let loggedWithSocial = UserDefaults.standard.bool(forKey: Key.social)
+    
     //MARK:- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,21 +84,27 @@ class ProfileInfoViewController: UIViewController {
         self.present(imagePicker, animated: true, completion: nil)
         
     }
+    
     func changePersonalInfo() {
         if let user = Shared.user , name.text!.count >= 3 , password.text!.count >= 8 , phone.text!.count >= 10 {
-            print(2)
             if name.text != user.name || email.text != user.email || phone.text != user.phone || image != user.image_url || image == nil{
-                print(3)
-                APIClient.changePersonalInfo(name: name.text ?? "", email: email.text ?? "", password: password.text ?? "", phone: phone.text ?? "", image_url: image ?? user.image_url ?? "" ) { (Result, Status) in
-                    switch Result {
-                    case .success(let response):
-                        if response.status == 200 {
-                            print(response)
-                            Shared.user = response.userInfo
+                DispatchQueue.main.async { [weak self] in
+                    APIClient.changePersonalInfo(name: self?.name.text ?? "", email: self?.email.text ?? "", password: self?.password.text ?? "", phone: self?.phone.text ?? "", image_url: self?.image ?? user.image_url ?? "", medical_history: "" ) { (Result, Status) in
+                        print(Status)
+                        switch Result {
+                        case .success(let response):
+                            if response.status == 200 {
+                                print(response)
+                                Shared.user = response.userInfo
+                            }
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                            if Status == 402 {
+                                Alert.show("Failed".localized, massege: "email already exists".localized, context: self!)
+                            } else {
+                                Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
+                            }
                         }
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                        Alert.show("Error".localized, massege: "Please Try Again".localized, context: self)
                     }
                 }
             }
@@ -119,8 +127,71 @@ class ProfileInfoViewController: UIViewController {
         }
     }
     
+    func changeProfileInfoSocial() {
+        if let user = Shared.user , name.text!.count >= 3 , phone.text!.count >= 10 {
+            if name.text != user.name || phone.text != user.phone || image != user.image_url || image == nil {
+                DispatchQueue.main.async { [weak self] in
+                    APIClient.changePersonalInfo(name: self?.name.text ?? "", email: self?.email.text ?? "", password: self?.password.text ?? "", phone: self?.phone.text ?? "", image_url: self?.image ?? user.image_url ?? "", medical_history: "" ) { (Result, Status) in
+                        print(Status)
+                        switch Result {
+                        case .success(let response):
+                            if response.status == 200 {
+                                print(response)
+                                Shared.user = response.userInfo
+                            }
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                            if Status == 402 {
+                                Alert.show("Failed".localized, massege: "email already exists".localized, context: self!)
+                            } else {
+                                Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
+                            }
+                        }
+                    }
+                }
+            }
+        } else {
+            if let mail = email.text {
+                let valied = email.isValidEmail(mail)
+                if valied == false {
+                    email.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
+                }
+            }
+            if name.text!.count < 3  {
+                name.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
+            }
+            if phone.text!.count < 10 {
+                phone.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
+            }
+            if password.text!.count < 8 {
+                password.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
+            }
+        }
+    }
+    
+    func changePersonalInfo2() {
+        if let user = Shared.user , name.text!.count >= 3 , password.text!.count >= 8 , phone.text!.count >= 10 {
+            if name.text != user.name || email.text != user.email || phone.text != user.phone || image != user.image_url || image == nil{
+                DispatchQueue.main.async { [weak self] in
+                    APIClient.changePersonalInfo2(name: self?.name.text ?? "", email: self?.email.text ?? "", password: self?.password.text ?? "", phone: self?.phone.text ?? "", image_url: self?.image ?? user.image_url ?? "", medical_history: "My History" ) { (Result) in
+                        switch Result {
+                        case .success(let response):
+                            print(response)
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                            
+                        }
+                    }
+                }
+            }
+        }}
+    
     @IBAction func submitChanges(_ sender: UIButton) {
-        changePersonalInfo()
+        if loggedWithSocial {
+            changeProfileInfoSocial()
+        } else {
+            changePersonalInfo()
+        }
     }
     
     //MARK:- Methodes
@@ -129,22 +200,27 @@ class ProfileInfoViewController: UIViewController {
             name.text = user.name
             email.text = user.email
             password.text = ""
+            if loggedWithSocial ,let pass = UserDefaults.standard.string(forKey: Key.pass) {
+                password.text = pass
+                password.isEnabled = false
+                email.isEnabled = false
+            }
             phone.text = user.phone
             image = user.image_url
         }
     }
     
     @IBAction func textDidChange(_ sender: UITextField) {
-           if sender.layer.borderColor != UIColor.gray.cgColor {
-               sender.layer.borderColor = UIColor.gray.cgColor
-           }
-       }
-       
-       func textFieldDidBeginEditing(_ textField: UITextField) {
-           if textField.layer.borderColor != UIColor.gray.cgColor {
-               textField.layer.borderColor = UIColor.gray.cgColor
-           }
-       }
+        if sender.layer.borderColor != UIColor.gray.cgColor {
+            sender.layer.borderColor = UIColor.gray.cgColor
+        }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.layer.borderColor != UIColor.gray.cgColor {
+            textField.layer.borderColor = UIColor.gray.cgColor
+        }
+    }
 }
 
 //MARK:- Image Picker Delegates
@@ -154,11 +230,11 @@ extension ProfileInfoViewController: UIImagePickerControllerDelegate , UINavigat
         FirebaseUploader.uploadToFirebase(viewController: self, imagePicker: imagePicker, didFinishPickingMediaWithInfo: info) { [weak self] (uploaded ,url) in
             if uploaded {
                 self?.image = url
-//                if let asset = info[UIImagePickerController.InfoKey.phAsset] as? PHAsset{
-//                    if let fileName = asset.value(forKey: "filename") as? String{
-//                        self?.photo.text = fileName
-//                    }
-//                }
+                if let asset = info[UIImagePickerController.InfoKey.phAsset] as? PHAsset{
+                    if let fileName = asset.value(forKey: "filename") as? String{
+                        self?.photo.text = fileName
+                    }
+                }
             }
         }
     }

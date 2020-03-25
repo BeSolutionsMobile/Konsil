@@ -53,13 +53,12 @@ class DoctorsViewController: UIViewController {
                         self?.checkTableViewData()
                         print(error.localizedDescription)
                     }
-                    print("Status: ",status)
                 }
             }
         }
     }
     func checkTableViewData(){
-        EmptyTableView.emptyDataWithImage(TabelView: doctorTableView, Image: UIImage(named: "Doctors")!, View: self.view, MessageText: "no doctors available")
+        EmptyTableView.emptyDataWithImage(TabelView: doctorTableView, Image: UIImage(named: "Doctors")!, View: self.view, MessageText: "no doctors available".localized)
     }
 }
 
@@ -78,7 +77,6 @@ extension DoctorsViewController: UITableViewDelegate , UITableViewDataSource {
             cell.drDegree.text = doctor.degree
             cell.drRating.rating = stringToDouble(doctor.rate)
             cell.languages.text = doctor.lang
-//            cell.drImage.sd_setImage(with: URL(string: doctor.image_url), placeholderImage: UIImage(named: "doctorPlaceholder"))
             cell.drImage.sd_setImage(with: URL(string: doctor.image_url), placeholderImage: UIImage(named: "doctorPlaceholder"), options: .retryFailed) { (image, error, type, url) in
                 cell.indicator.stopAnimating()
             }
@@ -104,7 +102,6 @@ extension DoctorsViewController: UITableViewDelegate , UITableViewDataSource {
 //MARK:- FilterData
 extension DoctorsViewController: FilterDoctorsDelegate {
     func updateData(degree: [Int], rate: Int) {
-        print(degree)
         if let specialityID = specialityID {
             DispatchQueue.main.async { [weak self] in
                 APIClient.filterDoctors(speciality_id: specialityID, degree_id: degree, rate: rate) { (result, status) in

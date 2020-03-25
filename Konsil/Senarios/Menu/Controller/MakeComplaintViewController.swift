@@ -62,6 +62,7 @@ class MakeComplaintViewController: UIViewController {
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
+                    Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
                 }
             }
         }
@@ -80,9 +81,8 @@ class MakeComplaintViewController: UIViewController {
                         }
                     case .failure(let error):
                         print(error.localizedDescription)
-                        Alert.show("Failed".localized, massege: "Please Try Again".localized, context: self!)
+                        Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
                     }
-                    print(Status)
                 }
             }
         } else {

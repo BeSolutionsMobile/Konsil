@@ -42,6 +42,7 @@ class MainViewController: UIViewController {
                     self?.categoriesCollectionView.reloadData()
                 case .failure(let error):
                     print(error.localizedDescription)
+//                    Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
                 }
             }
         }
@@ -60,7 +61,6 @@ class MainViewController: UIViewController {
                         }
                     case .failure(let error ):
                         print(error.localizedDescription)
-                        print("error")
                     }
                 }
             }

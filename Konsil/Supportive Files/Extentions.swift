@@ -2,9 +2,10 @@ import UIKit
 import SideMenu
 import Lottie
 import Network
+import NVActivityIndicatorView
 
 //MARK:- navigationBar Buttons
-extension UIViewController: UITextFieldDelegate{
+extension UIViewController: UITextFieldDelegate ,NVActivityIndicatorViewable{
     func topViewController() -> UIViewController! {
         if self.isKind(of: UITabBarController.self) {
             let tabbarController =  self as! UITabBarController
@@ -181,7 +182,6 @@ extension CGColor {
     static var kGray = UIColor(red: 0.196, green: 0.196, blue: 0.196, alpha: 1).cgColor
     static var kTrans = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
 }
-
 extension UIViewController: UITextViewDelegate {
     public func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == "Enter Patient History Here".localized || textView.text == "Enter Complaint Details Here".localized || textView.text == "Enter Consultation Details Here".localized {

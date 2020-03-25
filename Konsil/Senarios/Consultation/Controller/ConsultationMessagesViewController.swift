@@ -78,7 +78,7 @@ class ConsultationMessagesViewController: UIViewController {
                     case .failure(let error):
                         self?.sendBut.isEnabled = true
                         print(error.localizedDescription)
-                        Alert.show("Failed".localized, massege: "Message was not sent", context: self!)
+                        Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
                     }
                 }
             }
@@ -109,7 +109,7 @@ class ConsultationMessagesViewController: UIViewController {
                         self?.reloadTableView()
                     case .failure(let error):
                         print(error.localizedDescription)
-                        Alert.show("Error".localized, massege: "Can't Load Messages", context: self!)
+                        Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
                     }
                 }
             }

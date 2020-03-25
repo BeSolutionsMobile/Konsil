@@ -62,7 +62,7 @@
 	<key>LSSupportsOpeningDocumentsInPlace</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Allow Camera Usage Permision To Enable PayPal Pay With Card</string>
+	<string>Allow Camera Usage Permision To Enable PayPal Card Scan</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>This app requires Face ID permission to authenticate using Face recognition</string>
 	<key>NSPhotoLibraryUsageDescription</key>

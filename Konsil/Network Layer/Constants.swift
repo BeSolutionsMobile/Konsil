@@ -51,24 +51,13 @@ struct K {
         static let lang = "lang"
     }
     
-    struct ChangeUserInfo {
-        static let name = "name"
-        static let email = "email"
-        static let phone = "phone"
-        static let password = "password"
-        static let image_url = "image_url"
-    }
-    
-    struct FAQ {
-    }
-    
     struct ChangePersonalInfo{
         static let name = "name"
         static let phone = "phone"
         static let email = "eamil"
         static let password = "password"
         static let image_url = "image_url"
-
+        static let medical_history = "medical_history"
     }
     
     struct AddConsultation {

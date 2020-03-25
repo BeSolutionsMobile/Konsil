@@ -18,6 +18,6 @@ struct DoctorData: Codable {
     let total_consultation, total_conversation: Int
     let degree, specialist: String
     let image_url, rate: String
-    let bio ,job_title ,consultation_price: String?
+    let bio ,job_title ,consultation_price ,conversation_price : String?
 
 }

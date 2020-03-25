@@ -84,8 +84,8 @@ class DoctorsInfoViewController: UIViewController {
                         self?.doctorDetails = response.doctor
                     case .failure(let error):
                         print(error.localizedDescription)
+                        Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
                     }
-                    print(Status)
                 }
             }
         }
@@ -100,7 +100,8 @@ class DoctorsInfoViewController: UIViewController {
         let rate = stringToDouble(doctor.rate)
         doctorRate.rating = rate
         doctorSpeciality.text = doctor.job_title
-        details.text = doctor.bio
+//        details.text = doctor.bio
+        details.text = "ka;lsdhfa'lskdfjlasdk ;'jasdfkjasdfkh lkhnsdlkfh 'ahks kasdlfkh askldhfa;lsdf laskdh fas;ldkh flas fklhasld fhkasld fkhas'l fhlaskldkfhasldkfh alksdf asdlkfh lskdfhlaks hlask hflkas hf'ashfa;kl shflas hdfl;kashd fklh asd;fj asklfj askdlf ja;d jfaks;d fjas;kdfh jas;kd fas;kdf"
         consultationPrice.text = doctor.consultation_price
         conversation.text = String(doctor.total_conversation)
         patients.text = String(doctor.total_consultation)
@@ -109,6 +110,7 @@ class DoctorsInfoViewController: UIViewController {
     @IBAction func requestConsultationPressed(_ sender: UIButton) {
         if doctorDetails != nil {
             if let vc = storyboard?.instantiateViewController(withIdentifier: "ConsultationRequest") as? RequestConsultationViewController {
+                vc.doctor = doctorDetails
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         } else {

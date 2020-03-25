@@ -18,7 +18,7 @@ enum APIRouter: URLRequestConvertible {
     case DoctorDetails(doctor_id: Int)
     case ChangeLanguage(lang: String)
     case FAQ
-    case changePersonalInfo(name: String ,phone: String ,email: String , password: String ,image_url: String )
+    case changePersonalInfo(name: String ,phone: String ,email: String , password: String ,image_url: String ,medical_histroy: String)
     case AddConsultation(title: String ,details: String ,doctor_id: Int ,images: [String] ,files: [String])
     case ConsultationFiles(consultation_id: Int)
     case DownloadReport(consultation_id: Int)
@@ -152,8 +152,8 @@ enum APIRouter: URLRequestConvertible {
             return [K.ChangeLanguage.lang: lang]
         case .FAQ:
             return nil
-        case .changePersonalInfo(let name, let phone, let email, let password, let image_url):
-            return [K.ChangeUserInfo.name: name ,K.ChangeUserInfo.phone: phone ,K.ChangeUserInfo.password: password ,K.ChangeUserInfo.email: email ,K.ChangeUserInfo.image_url: image_url]
+        case .changePersonalInfo(let name, let phone, let email, let password, let image_url ,let medical_history):
+            return [K.ChangePersonalInfo.name: name ,K.ChangePersonalInfo.phone: phone ,K.ChangePersonalInfo.password: password ,K.ChangePersonalInfo.email: email ,K.ChangePersonalInfo.image_url: image_url ,K.ChangePersonalInfo.medical_history: medical_history]
         case .AddConsultation(let title, let details, let doctor_id, let images, let files):
             return [K.AddConsultation.title: title ,K.AddConsultation.details: details ,K.AddConsultation.doctor_id: doctor_id , K.AddConsultation.images: images ,K.AddConsultation.files: files]
         case .ConsultationFiles(let consultation_id):

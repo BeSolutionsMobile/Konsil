@@ -27,7 +27,7 @@ class MyConsultationsViewController: UIViewController {
     }
     
     func checkTableViewData(){
-        EmptyTableView.emptyData(TabelView: myConsultationTableView, View: self.view, MessageText: "You have no conversations".localized)
+        EmptyTableView.emptyData(TabelView: myConsultationTableView, View: self.view, MessageText: "no consltations".localized)
     }
     
     func getMyconsultations(){

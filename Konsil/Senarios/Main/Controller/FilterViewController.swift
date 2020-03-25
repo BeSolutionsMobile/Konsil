@@ -87,9 +87,9 @@ extension FilterViewController: UICollectionViewDataSource , UICollectionViewDel
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        r
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.view.frame.size.width - 40, height: 30)
+    }
     
     func toggleCheck(id: Int, checkBox: BEMCheckBox, status: Bool) {
         if status == true {

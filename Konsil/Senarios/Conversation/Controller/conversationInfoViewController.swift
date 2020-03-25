@@ -40,6 +40,7 @@ class conversationInfoViewController: UIViewController {
                         }
                     case .failure(let error):
                         print(error.localizedDescription)
+                        Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
                     }
                 }
             }

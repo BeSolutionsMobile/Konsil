@@ -81,7 +81,7 @@ class LeftSideMenuViewController: UIViewController {
             UIApplication.shared.open(policyURL)
             break
         case 4:
-            guard let termsOfUseURL = URL(string: "") else {return}
+            guard let termsOfUseURL = URL(string: "https://www.konsilmed.com/terms") else {return}
             UIApplication.shared.open(termsOfUseURL)
             break
         case 5:

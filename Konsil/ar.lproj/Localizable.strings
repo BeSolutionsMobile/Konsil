@@ -39,6 +39,11 @@
 "Touch/Face ID not configured" = "لا يوجد بصمة مسجلة علي هذا الجهاز";
 "NoTouchID" = "لا يوجد بصمات أو وجه مسجل في هذا الجهاز";
 "Touch/Face ID Do Not Match" = "لا يوجد تطابق في البصمة";
+"This appointment is not available ,please choose another appointment and try again" = "هذا الموعد غير متاح ، يرجى اختيار موعد آخر والمحاولة مرة أخرى";
+"Please check your network connection and try again" = " . الرجاء التحقق من اتصال الشبكة وإعادة المحاولة";
+"no doctors available" = "لا يوجد أطباء متاحون";
+"Yor report is not yet ready" = "تقريرك ليس جاهز للتنزيل";
+"no consltations" = "ليس لديك اي استشارات حاليا"
 
 // Network Messages
 

@@ -52,7 +52,7 @@ class ConversationReportViewController: UIViewController {
             }
         } else {
             if reportFile == nil {
-                Alert.show("Error".localized, massege: "no file was found", context: self)
+                Alert.show("", massege: "Yor report is not yet ready".localized, context: self)
             }
         }
     }
@@ -74,6 +74,7 @@ class ConversationReportViewController: UIViewController {
                     print(response)
                 case .failure(let error):
                     print(error.localizedDescription)
+                    Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
                 }
             }
         }

@@ -39,6 +39,11 @@
 "Touch/Face ID not configured" = "Touch/Face ID not configured";
 "NoTouchID" = "No fingerprints or face is registered in this device";
 "Touch/Face ID Do Not Match" = "Touch/Face ID Do Not Match";
+"This appointment is not available ,please choose another appointment and try again" = "This appointment is not available ,please choose another appointment and try again";
+"Please check your network connection and try again" = "Please check your network connection and try again. ";
+"no doctors available" = "no doctors available";
+"Yor report is not yet ready" = "Yor report is not yet ready to download";
+"no consltations" = "You don't have consultations right now";
 
 // Network Messages
 

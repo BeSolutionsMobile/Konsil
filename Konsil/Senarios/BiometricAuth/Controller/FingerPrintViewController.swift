@@ -10,7 +10,7 @@ import UIKit
 import BiometricAuthentication
 import NVActivityIndicatorView
 
-class FingerPrintViewController: UIViewController, NVActivityIndicatorViewable {
+class FingerPrintViewController: UIViewController {
     
     @IBOutlet weak var tryAgian: UIButton!
     @IBOutlet weak var loginBut: UIButton!{
@@ -45,6 +45,7 @@ class FingerPrintViewController: UIViewController, NVActivityIndicatorViewable {
     
     @IBAction func backToLogin(_ sender: Any) {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "LogIn") as? LogInViewController {
+            vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
         }
     }
@@ -119,7 +120,16 @@ class FingerPrintViewController: UIViewController, NVActivityIndicatorViewable {
                         }
                     case .failure(let error):
                         print(error.localizedDescription)
-                        Alert.backToLogin("Failed".localized, massege: "Please Try Again".localized, context: self!)
+                        switch Status {
+                        case 406:
+                            fallthrough
+                        case 401:
+                            Alert.show("Failed".localized, massege: "Email or Password is incorrect".localized, context: self!)
+                        case 405:
+                            Alert.show("Failed".localized, massege: "Email does not exist".localized, context: self!)
+                        default:
+                            Alert.backToLogin("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
+                        }
                     }
                 }
             }

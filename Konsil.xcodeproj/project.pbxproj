@@ -483,6 +483,7 @@
 		813D444623D0869200330645 /* Supportive Files */ = {
 			isa = PBXGroup;
 			children = (
+				81BB8ADA23D99C3D00C57648 /* AppDelegate.swift */,
 				8114568123BCEBD3005A4B93 /* Animations */,
 				04F1A61323A641B200293AA2 /* Main.storyboard */,
 				04F1A61823A641B300293AA2 /* LaunchScreen.storyboard */,
@@ -491,7 +492,6 @@
 				81ECE8C523BE36BF0048C0D9 /* Chat.swift */,
 				815A17DF23A682B8001DDBEE /* Shared.swift */,
 				8122162323B0D56D009E111B /* Extentions.swift */,
-				81BB8ADA23D99C3D00C57648 /* AppDelegate.swift */,
 				8165928D23EC668A00595B6A /* Konsil-Bridging-Header.h */,
 			);
 			path = "Supportive Files";

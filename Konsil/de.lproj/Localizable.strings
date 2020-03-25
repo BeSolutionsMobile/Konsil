@@ -40,6 +40,11 @@
 "Touch/Face ID not configured" = "Touch/Face ID nicht konfiguriert";
 "NoTouchID" = "In diesem Gerät sind keine Fingerabdrücke oder Gesichter registriert";
 "Touch/Face ID Do Not Match" = "Touch/Face ID stimmen nicht überein";
+"This appointment is not available ,please choose another appointment and try again" = "Dieser Termin ist nicht verfügbar. Bitte wählen Sie einen anderen Termin und versuchen Sie es erneut.";
+"Please check your network connection and try again" = "Bitte überprüfen Sie Ihre Netzwerkverbindung und versuchen Sie es erneut.";
+"no doctors available" = "Keine Ärzte verfügbar";
+"Yor report is not yet ready" = "Ihr Bericht kann nicht heruntergeladen werden";
+"no consltations" = "Sie haben derzeit keine Konsultationen";
 
 // Network Messages
 

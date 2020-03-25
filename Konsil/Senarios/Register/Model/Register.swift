@@ -17,4 +17,5 @@ struct User: Codable {
     let name, code, email, mobile_token: String
     let user_type_id, lang: String
     let image_url ,phone: String?
+    let medical_history: String?
 }

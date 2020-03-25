@@ -15,4 +15,5 @@ struct Key {
     static let mail = "mail"
     static let pass = "pass"
     static let loged = "loginStatus"
+    static let social = "social"
 }

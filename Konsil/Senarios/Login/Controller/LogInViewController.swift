@@ -81,7 +81,8 @@ class LogInViewController: UIViewController {
                 APIClient.login(email: email, password: password , mobile_tokken: token) { (Result,state) in
                     switch Result {
                     case .success(let response):
-                        if state >= 200 , state < 300 {
+                        if state == 200 {
+                            UserDefaults.standard.set(false, forKey: Key.social)
                             self?.setupBioAuth(response: response ,password: password)
                             self?.backView.isHidden = false
                             self?.backView.isUserInteractionEnabled = true
@@ -89,19 +90,18 @@ class LogInViewController: UIViewController {
                         }
                     case .failure(let error):
                         self?.stopAnimation()
-                        print(state)
                         print(error.localizedDescription)
                         
-                    }
-                    switch state  {
-                    case 406:
-                        fallthrough
-                    case 401:
-                        Alert.show("Failed".localized, massege: "Email or Password is incorrect".localized, context: self!)
-                    case 405:
-                        Alert.show("Failed".localized, massege: "Email does not exist".localized, context: self!)
-                    default:
-                        break
+                        switch state  {
+                        case 406:
+                            fallthrough
+                        case 401:
+                            Alert.show("Failed".localized, massege: "Email or Password is incorrect".localized, context: self!)
+                        case 405:
+                            Alert.show("Failed".localized, massege: "Email does not exist".localized, context: self!)
+                        default:
+                            Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
+                        }
                     }
                 }
             }
@@ -239,6 +239,8 @@ extension LogInViewController {
                     case .success(let response):
                         print(response)
                         if status == 200 {
+                            UserDefaults.standard.set(true, forKey: Key.social)
+                            UserDefaults.standard.set(password, forKey: Key.pass)
                             self?.setupBioAuth(response: response, password: password)
                             self?.backView.isHidden = false
                             self?.backView.isUserInteractionEnabled = true
@@ -265,6 +267,8 @@ extension LogInViewController {
                     case .success(let response):
                         print(response)
                         if status == 200 {
+                            UserDefaults.standard.set(true, forKey: Key.social)
+                            UserDefaults.standard.set(password, forKey: Key.pass)
                             self?.backView.isHidden = false
                             self?.backView.isUserInteractionEnabled = true
                             Shared.user = response.userInfo
@@ -274,6 +278,14 @@ extension LogInViewController {
                         }
                     case.failure(let error):
                         print(error.localizedDescription)
+                        switch status {
+                        case 402:
+                            Alert.show("Failed".localized, massege: "email already exists".localized, context: self!)
+                        case 500:
+                            Alert.show("Failed".localized, massege: "something went wrong".localized, context: self!)
+                        default:
+                            Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
+                        }
                     }
                 }
             }
@@ -299,7 +311,7 @@ extension LogInViewController: GIDSignInDelegate {
             }
             return
         }
-
+        
         let userId = user.userID      // For client-side use only!
         let fullName = user.profile.name
         let email = user.profile.email

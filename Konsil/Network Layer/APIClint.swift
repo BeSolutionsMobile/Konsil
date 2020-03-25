@@ -66,8 +66,12 @@ class APIClient {
            performRequest(route: APIRouter.FAQ, completion: completion)
     }
     
-    static func changePersonalInfo(name: String , email: String, password: String, phone: String, image_url: String, completion: @escaping(Result<ChangeUserInfo,AFError> , Int)->Void) {
-        performRequest(route: APIRouter.changePersonalInfo(name: name, phone: phone, email: email, password: password, image_url: image_url), completion: completion)
+    static func changePersonalInfo(name: String , email: String, password: String, phone: String, image_url: String , medical_history: String, completion: @escaping(Result<ChangeUserInfo,AFError> , Int)->Void) {
+        performRequest(route: APIRouter.changePersonalInfo(name: name, phone: phone, email: email, password: password, image_url: image_url, medical_histroy: medical_history), completion: completion)
+    }
+    
+    static func changePersonalInfo2(name: String , email: String, password: String, phone: String, image_url: String ,medical_history: String , completion: @escaping(Result<String,AFError>)->Void) {
+        performRequestSimple(route: APIRouter.changePersonalInfo(name: name, phone: phone, email: email, password: password, image_url: image_url, medical_histroy: medical_history), completion: completion)
     }
     
     static func addConsultation(title:String ,details: String ,doctor_id: Int ,images: [String] ,files: [String] ,completion: @escaping(Result<AddConsultation,AFError> , Int)->Void) {

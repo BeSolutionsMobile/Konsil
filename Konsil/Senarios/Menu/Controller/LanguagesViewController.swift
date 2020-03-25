@@ -10,7 +10,7 @@ import UIKit
 import MOLH
 
 class LanguagesViewController: UIViewController {
-
+    
     @IBOutlet weak var backView: CardView!{
         didSet{
             self.backView.clipsToBounds = false
@@ -43,7 +43,7 @@ class LanguagesViewController: UIViewController {
     @IBAction func english(_ sender: UIButton) {
         if MOLHLanguage.currentAppleLanguage() != "en" {
             MOLH.setLanguageTo("en")
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
                 APIClient.changeLanguage(lang:MOLHLanguage.currentAppleLanguage()) { (Result, Status) in
                     switch Result {
                     case .success(let response):
@@ -51,6 +51,7 @@ class LanguagesViewController: UIViewController {
                         MOLH.reset()
                     case .failure(let error):
                         print(error.localizedDescription)
+                        Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
                     }
                 }
             }
@@ -60,7 +61,7 @@ class LanguagesViewController: UIViewController {
     @IBAction func german(_ sender: UIButton) {
         if MOLHLanguage.currentAppleLanguage() != "de" {
             MOLH.setLanguageTo("de")
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
                 APIClient.changeLanguage(lang:MOLHLanguage.currentAppleLanguage()) { (Result, Status) in
                     switch Result {
                     case .success(let response):
@@ -68,6 +69,7 @@ class LanguagesViewController: UIViewController {
                         MOLH.reset()
                     case .failure(let error):
                         print(error.localizedDescription)
+                        Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
                     }
                 }
             }
@@ -85,8 +87,7 @@ class LanguagesViewController: UIViewController {
                         MOLH.reset()
                     case .failure(let error):
                         print(error.localizedDescription)
-                        Alert.show("", massege: "Failed".localized, context: self!)
-                    }
+                        Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)                    }
                 }
             }
         }

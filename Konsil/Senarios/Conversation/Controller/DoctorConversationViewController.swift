@@ -67,6 +67,13 @@ class DoctorConversationViewController: UIViewController {
         openDatePicker(for: chooseDate)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if chooseDate.text?.count != 0 {
+            getAppointments(date: chooseDate.text ?? "")
+        }
+    }
+    
     //MARK:- Complete Request
     @IBAction func completeRequestPressed(_ sender: UIButton) {
         reserveConversation()
@@ -74,7 +81,7 @@ class DoctorConversationViewController: UIViewController {
     
     // Reserve Conversation Appointment
     func reserveConversation() {
-        if appointments?.count != 0 , currentIndex != nil , doctorDetails?.id != nil{
+        if appointments?.count != 0 , currentIndex != nil , doctorDetails?.id != nil ,doctorDetails?.conversation_price != nil {
             if let appointment = appointments?[currentIndex!.row]{
                 DispatchQueue.main.async { [weak self] in
                     APIClient.reserveConversation(doctor_id: (self?.doctorDetails!.id)!, appointment_id: appointment.id) { (Result, Status) in
@@ -84,8 +91,8 @@ class DoctorConversationViewController: UIViewController {
                             if Status == 200 {
                                 if let vc = self?.storyboard?.instantiateViewController(withIdentifier: "PayPalVC") as? PayPalViewController {
                                     vc.modalPresentationStyle = .fullScreen
-                                    vc.doctor = "Online Conversation"
-                                    vc.price = "2.5"
+                                    vc.doctor = self?.doctorDetails?.name ?? "Online Conversation"
+                                    vc.price = self?.doctorDetails?.conversation_price ?? "0"
                                     vc.id = response.id
                                     vc.type = 2
                                     self?.navigationController?.pushViewController(vc, animated: true)
@@ -94,6 +101,18 @@ class DoctorConversationViewController: UIViewController {
                         case .failure(let error):
                             print(error.localizedDescription)
                             Alert.show("Failed".localized, massege: "Please Try Again".localized, context: self!)
+                            switch Status {
+                            case 402:
+                                break
+                            case 406:
+                                fallthrough
+                            case 407:
+                                fallthrough
+                            case 409:
+                                Alert.show("Failed".localized, massege: "This appointment is not available ,please choose another appointment and try again".localized, context: self!)
+                            default:
+                                Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
+                            }
                         }
                         print(Status)
                     }
@@ -108,6 +127,7 @@ class DoctorConversationViewController: UIViewController {
     //MARK:- Get Appointments
     func getAppointments(date: String){
         if let doctor = doctorDetails {
+            
             backView.viewWithTag(999)?.removeFromSuperview()
             spinner.startAnimating()
             
@@ -125,8 +145,8 @@ class DoctorConversationViewController: UIViewController {
                     case.failure(let error):
                         print(error.localizedDescription)
                         self?.checkData(self?.appointments ?? [])
+                        Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
                     }
-                    print(Status)
                 }
             }
         }
@@ -138,19 +158,19 @@ class DoctorConversationViewController: UIViewController {
         dateformatter.dateStyle = .short
         dateformatter.dateFormat = "yyyy-MM-dd"
         let currentDate = dateformatter.string(from: date)
+        chooseDate.text = currentDate
         return currentDate
     }
     
     func updateView(){
         if let doctor = doctorDetails {
-//            doctorImage.sd_setImage(with: URL(string: doctor.image_url ), placeholderImage: UIImage(named: "doctorPlaceholder"))
-            doctorImage.sd_setImage(with: URL(string: doctor.image_url), placeholderImage: nil, options: .retryFailed) { (image, error, type, url) in
+            doctorImage.sd_setImage(with: URL(string: doctor.image_url), placeholderImage: UIImage(named: "doctorPlaceholder"), options: .retryFailed) { (image, error, type, url) in
                 self.indicator.stopAnimating()
                 
             }
             doctorName.text = doctor.name
             doctorSpeciality.text = doctor.specialist
-            //            hourPrice.text = doctor.
+            hourPrice.text = (doctor.conversation_price ?? "no available") + " $ "
             doctorRate.rating = stringToDouble(doctor.rate)
         }
     }

@@ -130,7 +130,8 @@ class RegisterViewController: UIViewController {
                     APIClient.register(name: self?.name.text ?? "", email: self?.email.text ?? "", password: self?.password.text ?? "", phone: self?.phone.text ?? "", image_url: "", platform: 3, lang: "Lang".localized, mobile_tokken: dID) {  (Result ,Status)  in
                         switch Result {
                         case.success(let response):
-                            if Status >= 200 && Status < 300 {
+                            if Status == 200 {
+                                UserDefaults.standard.set(false, forKey: Key.social)
                                 UserDefaults.standard.set(true, forKey: Key.loged)
                                 Shared.user = response.userInfo
                                 UserDefaults.standard.set(response.token as String, forKey: Key.authorizationToken)
@@ -144,11 +145,11 @@ class RegisterViewController: UIViewController {
                         }
                         switch Status {
                         case 402:
-                            Alert.show("", massege: "email already exists".localized, context: self!)
+                            Alert.show("Failed".localized, massege: "email already exists".localized, context: self!)
                         case 500:
                             Alert.show("Failed".localized, massege: "something went wrong".localized, context: self!)
                         default:
-                            break
+                            Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
                         }
                     }
                 }
@@ -344,6 +345,8 @@ extension RegisterViewController {
                     case .success(let response):
                         print(response)
                         if status == 200 {
+                            UserDefaults.standard.set(password, forKey: Key.pass)
+                            UserDefaults.standard.set(true, forKey: Key.social)
                             UserDefaults.standard.set(true, forKey: Key.loged)
                             Shared.user = response.userInfo
                             UserDefaults.standard.set(response.token as String, forKey: Key.authorizationToken)
@@ -371,6 +374,8 @@ extension RegisterViewController {
                     case .success(let response):
                         print(response)
                         if status == 200 {
+                            UserDefaults.standard.set(password, forKey: Key.pass)
+                            UserDefaults.standard.set(true, forKey: Key.social)
                             UserDefaults.standard.set(true, forKey: Key.loged)
                             Shared.user = response.userInfo
                             UserDefaults.standard.set(response.token as String, forKey: Key.authorizationToken)
@@ -380,6 +385,15 @@ extension RegisterViewController {
                         }
                     case .failure(let error):
                         print(error.localizedDescription)
+                        switch status  {
+                        case 406:
+                            fallthrough
+                        case 401:
+                            Alert.show("Failed".localized, massege: "Email or Password is incorrect".localized, context: self!)
+                        case 405:
+                            Alert.show("Failed".localized, massege: "Email does not exist".localized, context: self!)
+                        default:
+                            Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)                        }
                     }
                 }
             }
