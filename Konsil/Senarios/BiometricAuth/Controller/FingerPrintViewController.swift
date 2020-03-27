@@ -128,7 +128,7 @@ class FingerPrintViewController: UIViewController {
                         case 405:
                             Alert.show("Failed".localized, massege: "Email does not exist".localized, context: self!)
                         default:
-                            Alert.backToLogin("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
+                            break
                         }
                     }
                 }

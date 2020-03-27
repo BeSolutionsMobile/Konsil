@@ -97,7 +97,7 @@ class FirebaseUploader
         imageData = image.jpegData(compressionQuality: 0.3)!
         
         if let uuid = uid {
-            let storeRef = Storage.storage().reference().child("\(uuid)/" + randomString(length: 20))
+            let storeRef = Storage.storage().reference().child("\(uuid)/" + randomString(length: 20) + ".jpg")
             
             let uploadImageTask = storeRef.putData(imageData, metadata: nil) { metadata, error in
                 if (error != nil) {

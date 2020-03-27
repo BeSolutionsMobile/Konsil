@@ -10,7 +10,7 @@ import UIKit
 
 class conversationInfoViewController: UIViewController {
 
-    @IBOutlet weak var link: UILabel!
+    @IBOutlet weak var link: UITextView!
     @IBOutlet weak var duration: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var name: UILabel!
@@ -47,10 +47,12 @@ class conversationInfoViewController: UIViewController {
         }
     }
     
+    
     func updateView(){
         if let conversation = conversationDetails {
             let details = conversation.data
             link.text = details.conversation_link
+            link.dataDetectorTypes = .link
             name.text = details.doctor
             conversationStatus.text = details.status
             date.text = details.date

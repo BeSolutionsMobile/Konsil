@@ -33,7 +33,6 @@
 		8148C476240326DF00F48560 /* LanguagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8148C475240326DF00F48560 /* LanguagesViewController.swift */; };
 		815A17C023A658F7001DDBEE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17BF23A658F7001DDBEE /* MainViewController.swift */; };
 		815A17CA23A6596F001DDBEE /* MainCategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17C923A6596F001DDBEE /* MainCategoriesCollectionViewCell.swift */; };
-		815A17CC23A65981001DDBEE /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17CB23A65981001DDBEE /* Categories.swift */; };
 		815A17D423A65A26001DDBEE /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17CE23A65A26001DDBEE /* Alert.swift */; };
 		815A17D523A65A26001DDBEE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17CF23A65A26001DDBEE /* CardView.swift */; };
 		815A17D623A65A26001DDBEE /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815A17D023A65A26001DDBEE /* DesignableUITextField.swift */; };
@@ -88,7 +87,6 @@
 		81D8FB1F23A8301A00585CA8 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8FB1E23A8301A00585CA8 /* FilterViewController.swift */; };
 		81ECE8C023BCF4970048C0D9 /* Report.json in Resources */ = {isa = PBXBuildFile; fileRef = 81ECE8BF23BCF4970048C0D9 /* Report.json */; };
 		81ECE8C423BE35CE0048C0D9 /* Chat.json in Resources */ = {isa = PBXBuildFile; fileRef = 81ECE8C323BE35CE0048C0D9 /* Chat.json */; };
-		81ECE8C623BE36BF0048C0D9 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECE8C523BE36BF0048C0D9 /* Chat.swift */; };
 		81ECE99423AA650500E63105 /* ConversationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECE99323AA650500E63105 /* ConversationDetailsViewController.swift */; };
 		81ECE99623AA652100E63105 /* conversationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECE99523AA652100E63105 /* conversationInfoViewController.swift */; };
 		81ECE99823AA652C00E63105 /* ConversationReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECE99723AA652C00E63105 /* ConversationReportViewController.swift */; };
@@ -173,7 +171,6 @@
 		8148C475240326DF00F48560 /* LanguagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewController.swift; sourceTree = "<group>"; };
 		815A17BF23A658F7001DDBEE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		815A17C923A6596F001DDBEE /* MainCategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
-		815A17CB23A65981001DDBEE /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		815A17CE23A65A26001DDBEE /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		815A17CF23A65A26001DDBEE /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		815A17D023A65A26001DDBEE /* DesignableUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
@@ -235,7 +232,6 @@
 		81D8FB1E23A8301A00585CA8 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		81ECE8BF23BCF4970048C0D9 /* Report.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Report.json; sourceTree = "<group>"; };
 		81ECE8C323BE35CE0048C0D9 /* Chat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Chat.json; sourceTree = "<group>"; };
-		81ECE8C523BE36BF0048C0D9 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		81ECE99323AA650500E63105 /* ConversationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationDetailsViewController.swift; sourceTree = "<group>"; };
 		81ECE99523AA652100E63105 /* conversationInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = conversationInfoViewController.swift; sourceTree = "<group>"; };
 		81ECE99723AA652C00E63105 /* ConversationReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationReportViewController.swift; sourceTree = "<group>"; };
@@ -483,16 +479,15 @@
 		813D444623D0869200330645 /* Supportive Files */ = {
 			isa = PBXGroup;
 			children = (
-				81BB8ADA23D99C3D00C57648 /* AppDelegate.swift */,
 				8114568123BCEBD3005A4B93 /* Animations */,
+				81BB8ADA23D99C3D00C57648 /* AppDelegate.swift */,
 				04F1A61323A641B200293AA2 /* Main.storyboard */,
 				04F1A61823A641B300293AA2 /* LaunchScreen.storyboard */,
-				04F1A61623A641B300293AA2 /* Assets.xcassets */,
-				813761FB23CB551200BC90B1 /* Keys.swift */,
-				81ECE8C523BE36BF0048C0D9 /* Chat.swift */,
-				815A17DF23A682B8001DDBEE /* Shared.swift */,
-				8122162323B0D56D009E111B /* Extentions.swift */,
 				8165928D23EC668A00595B6A /* Konsil-Bridging-Header.h */,
+				8122162323B0D56D009E111B /* Extentions.swift */,
+				813761FB23CB551200BC90B1 /* Keys.swift */,
+				815A17DF23A682B8001DDBEE /* Shared.swift */,
+				04F1A61623A641B300293AA2 /* Assets.xcassets */,
 			);
 			path = "Supportive Files";
 			sourceTree = "<group>";
@@ -548,7 +543,6 @@
 		815A17C723A65939001DDBEE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				815A17CB23A65981001DDBEE /* Categories.swift */,
 				81FA8DF723F0694C006B3345 /* Specialities.swift */,
 				81FA8DF923F15E53006B3345 /* SpecialityDoctors.swift */,
 				81FA8DFB23F18722006B3345 /* FilteredDoctors.swift */,
@@ -1082,7 +1076,6 @@
 				81FA8E1123F2DC77006B3345 /* DoctorInfo.swift in Sources */,
 				815A17DE23A67C80001DDBEE /* LeftSideMenuViewController.swift in Sources */,
 				817834AA23E9CC5A009A4B9C /* Register.swift in Sources */,
-				81ECE8C623BE36BF0048C0D9 /* Chat.swift in Sources */,
 				81862C7323FC2BCD002F3D81 /* MakeComplaint.swift in Sources */,
 				81849F3223AA3FFA004A59D8 /* DoctorConversationViewController.swift in Sources */,
 				8168100C23F993B600B5C89D /* DownloadReport.swift in Sources */,
@@ -1117,7 +1110,6 @@
 				815A17CA23A6596F001DDBEE /* MainCategoriesCollectionViewCell.swift in Sources */,
 				816E93E423F3FF370033C30F /* ConsultationFiles.swift in Sources */,
 				810DAAFF23A782A700B8AF20 /* DoctorsTableViewCell.swift in Sources */,
-				815A17CC23A65981001DDBEE /* Categories.swift in Sources */,
 				81FA8E0A23F2BECC006B3345 /* APIClint.swift in Sources */,
 				81FA8DFC23F18722006B3345 /* FilteredDoctors.swift in Sources */,
 				81ECE9AB23AB9AC000E63105 /* MyConsultationsTableViewCell.swift in Sources */,

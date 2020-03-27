@@ -76,8 +76,10 @@ class DoctorsInfoViewController: UIViewController {
     //Get Data From 
     func getDoctorData(){
         if let id = doctorID {
+            self.startAnimating()
             DispatchQueue.main.async { [weak self] in
                 APIClient.doctorDetails(doctor_id: id) { (Result, Status) in
+                    self?.stopAnimating()
                     switch Result {
                     case .success(let response):
                         self?.updateView(doctor: response.doctor)
@@ -100,9 +102,8 @@ class DoctorsInfoViewController: UIViewController {
         let rate = stringToDouble(doctor.rate)
         doctorRate.rating = rate
         doctorSpeciality.text = doctor.job_title
-//        details.text = doctor.bio
-        details.text = "ka;lsdhfa'lskdfjlasdk ;'jasdfkjasdfkh lkhnsdlkfh 'ahks kasdlfkh askldhfa;lsdf laskdh fas;ldkh flas fklhasld fhkasld fkhas'l fhlaskldkfhasldkfh alksdf asdlkfh lskdfhlaks hlask hflkas hf'ashfa;kl shflas hdfl;kashd fklh asd;fj asklfj askdlf ja;d jfaks;d fjas;kdfh jas;kd fas;kdf"
-        consultationPrice.text = doctor.consultation_price
+        details.text = doctor.bio
+        consultationPrice.text = "€" + doctor.consultation_price
         conversation.text = String(doctor.total_conversation)
         patients.text = String(doctor.total_consultation)
     }

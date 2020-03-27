@@ -259,7 +259,7 @@
 "SB3-Oy-DQc.text" = "Master Card";
 
 /* Class = "UILabel"; text = "Patients"; ObjectID = "T5V-P9-Zpy"; */
-"T5V-P9-Zpy.text" = "Patienten";
+"T5V-P9-Zpy.text" = "Beratung";
 
 /* Class = "UILabel"; text = "Policy"; ObjectID = "TLn-lG-aeg"; */
 "TLn-lG-aeg.text" = "Politik";
@@ -569,3 +569,15 @@
 
 /* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "yjQ-aa-kXn"; */
 "yjQ-aa-kXn.text" = "behandlung in deutschland";
+
+/* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "R5E-yk-LDG"; */
+"R5E-yk-LDG.text" = "Betrag";
+
+/* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "40c-QG-e3b"; */
+"40c-QG-e3b.text" = "Arztes";
+
+/* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "R5E-yk-LDG"; */
+"R5E-yk-LDG.text" = "Art";
+
+/* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "R5E-yk-LDG"; */
+"R5E-yk-LDG.text" = "Wähle deine Zahlungs methode";

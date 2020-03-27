@@ -252,7 +252,7 @@
 "SB3-Oy-DQc.text" = "Master Card";
 
 /* Class = "UILabel"; text = "Patients"; ObjectID = "T5V-P9-Zpy"; */
-"T5V-P9-Zpy.text" = "المرضى";
+"T5V-P9-Zpy.text" = "الاستشارات";
 
 /* Class = "UILabel"; text = "Policy"; ObjectID = "NOz-qp-RFx"; */
 "NOz-qp-RFx.text" = "سياسة الخصوصية";
@@ -495,7 +495,7 @@
 "u6v-Cb-28t.text" = "د :";
 
 /* Class = "UILabel"; text = "Conversations"; ObjectID = "uUb-Ea-Dh3"; */
-"uUb-Ea-Dh3.text" = "محادثه";
+"uUb-Ea-Dh3.text" = "المحادثات";
 
 /* Class = "UILabel"; text = "Rate :"; ObjectID = "uh7-Er-6Tc"; */
 "uh7-Er-6Tc.text" = "التقييم :";
@@ -577,3 +577,17 @@
 
 /* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "1yJ-nf-c65"; */
 "1yJ-nf-c65.text" = "العلاج في ألمانيا";
+
+
+/* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "R5E-yk-LDG"; */
+"R5E-yk-LDG.text" = "المبلغ :";
+
+/* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "40c-QG-e3b"; */
+"40c-QG-e3b.text" = "اسم الطبيب :";
+
+/* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "R5E-yk-LDG"; */
+"R5E-yk-LDG.text" = "النوع :";
+
+/* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "R5E-yk-LDG"; */
+"R5E-yk-LDG.text" = "اختر طريقة الدفع :";
+

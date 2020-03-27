@@ -8,6 +8,7 @@
 
 import UIKit
 import MOLH
+import SafariServices
 
 class LeftSideMenuViewController: UIViewController {
     
@@ -78,15 +79,18 @@ class LeftSideMenuViewController: UIViewController {
             //            guard let vc = storyboard?.instantiateViewController(withIdentifier: segue[sender.tag]) else { return }
             //            self.navigationController?.pushViewController(vc, animated: true)
             guard let policyURL = URL(string: "https://www.konsilmed.com/privacy") else {return}
-            UIApplication.shared.open(policyURL)
+            let safariVC = SFSafariViewController(url: policyURL)
+            self.present(safariVC, animated: true, completion: nil)
             break
         case 4:
             guard let termsOfUseURL = URL(string: "https://www.konsilmed.com/terms") else {return}
-            UIApplication.shared.open(termsOfUseURL)
+            let safariVC = SFSafariViewController(url: termsOfUseURL)
+            self.present(safariVC, animated: true, completion: nil)
             break
         case 5:
             guard let treatmentInGermanyURL = URL(string: "https://www.konsilmed.com/treatment-in-germany") else {return}
-            UIApplication.shared.open(treatmentInGermanyURL)
+            let safariVC = SFSafariViewController(url: treatmentInGermanyURL)
+            self.present(safariVC, animated: true, completion: nil)
             break
         default:
             break
@@ -96,12 +100,9 @@ class LeftSideMenuViewController: UIViewController {
     func updateView(){
         if let user = Shared.user , Shared.user != nil {
             name.text = user.name
-//            ProfileImage.sd_setImage(with: URL(string: user.image_url ?? ""), placeholderImage: UIImage(named: "userPlaceholder"))
             ProfileImage.sd_setImage(with: URL(string: user.image_url ?? ""), placeholderImage: UIImage(named: "userPlaceholder"), options: .retryFailed) { (image, error, type, url) in
                 self.indicator.stopAnimating()
-                
             }
-            
         }
     }
     

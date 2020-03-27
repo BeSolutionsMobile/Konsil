@@ -16,10 +16,5 @@ struct Speciality: Codable {
     let id: Int
     let image_url: String
     let title: String
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case image_url
-        case title
-    }
 }
+

@@ -15,21 +15,19 @@ class Walkthrough1ViewController: UIViewController {
             Rounded.roundedDots(Dots: redDots)
         }
     }
-    @IBOutlet weak var animationView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpAnimations()
         swipToSigue()
     }
     
-    func setUpAnimations(){
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
-            let animation = Shared.showLottie(view: self.animationView, fileName: Animations.lifeLine)
-            animation.animationSpeed = 0.7
-            animation.play()
-        }
-    }
+//    func setUpAnimations(){
+//        DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+//            let animation = Shared.showLottie(view: self.animationView, fileName: Animations.lifeLine)
+//            animation.animationSpeed = 0.7
+//            animation.play()
+//        }
+//    }
     
     func swipToSigue(){
         let swipeToLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction))

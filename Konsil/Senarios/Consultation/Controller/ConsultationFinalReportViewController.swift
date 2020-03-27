@@ -69,8 +69,10 @@ class ConsultationFinalReportViewController: UIViewController {
     }
     
     func getData(){
+        self.startAnimating()
         DispatchQueue.main.async { [weak self] in
             APIClient.downloadReport(consultation_id: 66) { (Result , Status) in
+                self?.stopAnimating()
                 switch Result {
                 case .success(let response):
                     self?.reportFile = response.report

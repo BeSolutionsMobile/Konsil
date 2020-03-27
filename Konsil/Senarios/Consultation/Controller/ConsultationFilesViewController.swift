@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseStorage
 import MobileCoreServices
+import SafariServices
 
 class ConsultationFilesViewController: UIViewController {
     
@@ -46,8 +47,10 @@ class ConsultationFilesViewController: UIViewController {
     func getFiels(){
         consultation_id = ConsultationDetailsViewController.consultation_id
         if let id = consultation_id {
+            self.startAnimating()
             DispatchQueue.main.async { [weak self] in
                 APIClient.consultationFiles(consultation_id: id) { (result, status) in
+                    self?.stopAnimating()
                     switch result {
                     case .success(let response):
                         print(response)
@@ -61,48 +64,6 @@ class ConsultationFilesViewController: UIViewController {
             }
         }
     }
-    
-//    func downloadFileFromFirebase(from url: String) {
-//        let url = Storage.storage().reference(forURL: url)
-//        let dir = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first
-//        let localDir = dir?.appendingPathComponent("Report")
-//        url.write(toFile: localDir!) { (url, error) in
-//            if error != nil {
-//                Alert.show("Failed".localized, massege: "Please Try Again".localized, context: self)
-//                print(error?.localizedDescription ?? "")
-//            }else {
-//                self.presentActivityViewController(withUrl: url!)
-//            }
-//        }
-//    }
-//    func downloadFileFromFirebase() {
-//        let url = Storage.storage().reference(forURL: "")
-//        let dir = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first
-//        let localDir = dir?.appendingPathComponent("Report")
-//        url.write(toFile: localDir!) { (url, error) in
-//            if error != nil {
-//                print(error?.localizedDescription ?? "")
-//            }else {
-//                self.presentActivityViewController(withUrl: url!)
-//            }
-//        }
-//    }
-    
-//    func ss (){
-//        let storageRef = Storage.storage().reference().child("Ali")
-//               let url = storageRef.child(filesArray[indexPath.row])
-//
-//               let dir = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first
-//               let localDir = dir?.appendingPathComponent("\(filesArray[indexPath.row]).txt")
-//               url.write(toFile: localDir!) { (url, error) in
-//                   if error != nil {
-//                       print(error?.localizedDescription ?? "Error But No Description")
-//                   }else {
-//                       self.presentActivityViewController(withUrl: url!)
-//                   }
-//               }
-//    }
-    
 }
 
 //MARK:- TableView Set Up
@@ -124,10 +85,11 @@ extension ConsultationFilesViewController: UITableViewDelegate , UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("!")
+//        let url = files?.files[indexPath.row].addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         if let fileURL = URL(string: files?.files[indexPath.row] ?? "") {
-            print(fileURL)
-            UIApplication.shared.open(fileURL)
+//            let safariVC = SFSafariViewController(url: fileURL)
+//            self.present(safariVC, animated: true, completion: nil)
+            UIApplication.shared.open(fileURL as URL, options: [:], completionHandler: nil)
         }
     }
     

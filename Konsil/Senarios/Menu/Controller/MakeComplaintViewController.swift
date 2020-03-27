@@ -22,6 +22,7 @@ class MakeComplaintViewController: UIViewController {
             Rounded.roundedCornerTextView(textView: complaintMessageTV, borderColor: UIColor.gray.cgColor, radius: 7, borderWidth: 1.5)
             complaintMessageTV.delegate = self
             complaintMessageTV.text = "Enter Complaint Details Here".localized
+
         }
     }
     @IBOutlet weak var submitBut: UIButton!{

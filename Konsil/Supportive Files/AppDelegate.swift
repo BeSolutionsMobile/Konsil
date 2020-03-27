@@ -84,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
                 print("Error fetching remote instange ID: \(error)")
             } else if let result = result {
                 AppDelegate.token = result.token
-                //                print("Remote instance ID token: \(result.token)")
+                print("Remote instance ID token: \(result.token)")
             }
         }
     }

@@ -70,6 +70,7 @@ class ConsultationMessagesViewController: UIViewController {
                     case .success(let response):
                         print(response)
                         self?.sendBut.isEnabled = true
+                        self?.messageTF.text = ""
                         if response.status == 200 {
                             self?.messages?.append(message)
                             self?.reloadTableView()
@@ -128,7 +129,7 @@ extension ConsultationMessagesViewController: UITableViewDelegate , UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessagesTableViewCell
         if let message = messages?[indexPath.row]{
-            cell.cellImage.sd_setImage(with: URL(string: message.user_image), placeholderImage: UIImage(named: "userPlaceholder"))
+            cell.cellImage.sd_setImage(with: URL(string: message.user_image ?? ""), placeholderImage: UIImage(named: "userPlaceholder"))
             cell.message.text = message.message
             cell.name.text = message.name
         }

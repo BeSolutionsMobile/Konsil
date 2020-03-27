@@ -12,6 +12,7 @@ import MOLH
 import NVActivityIndicatorView
 import FBSDKLoginKit
 import GoogleSignIn
+import SafariServices
 
 class RegisterViewController: UIViewController {
     
@@ -121,52 +122,59 @@ class RegisterViewController: UIViewController {
     
     @IBAction func registerPressed(_ sender: UIButton) {
         guard let dID = AppDelegate.token else { return }
-        if checkBox.on == true {
-            let validate = validateAllFields()
-            let validatedMail = email.isValidEmail(email.text ?? "")
-            if validate == true , validatedMail == true{
-                self.startAnimation()
-                DispatchQueue.main.async { [weak self] in
-                    APIClient.register(name: self?.name.text ?? "", email: self?.email.text ?? "", password: self?.password.text ?? "", phone: self?.phone.text ?? "", image_url: "", platform: 3, lang: "Lang".localized, mobile_tokken: dID) {  (Result ,Status)  in
-                        switch Result {
-                        case.success(let response):
-                            if Status == 200 {
-                                UserDefaults.standard.set(false, forKey: Key.social)
-                                UserDefaults.standard.set(true, forKey: Key.loged)
-                                Shared.user = response.userInfo
-                                UserDefaults.standard.set(response.token as String, forKey: Key.authorizationToken)
-                                self?.backView.isHidden = false
-                                self?.backView.isUserInteractionEnabled = true
-                                self?.BlurView(view: self!.animationView)
-                            }
-                        case .failure(let error):
-                            self?.stopAnimation()
-                            print(error.localizedDescription)
+        let validate = validateAllFields()
+        let validatedMail = email.isValidEmail(email.text ?? "")
+        if validate == true , validatedMail ,checkBox.on {
+            self.startAnimation()
+            DispatchQueue.main.async { [weak self] in
+                APIClient.register(name: self?.name.text ?? "", email: self?.email.text ?? "", password: self?.password.text ?? "", phone: self?.phone.text ?? "", image_url: "", platform: 3, lang: "Lang".localized, mobile_tokken: dID) {  (Result ,Status)  in
+                    switch Result {
+                    case.success(let response):
+                        if Status == 200 {
+                            UserDefaults.standard.set(false, forKey: Key.social)
+                            UserDefaults.standard.set(true, forKey: Key.loged)
+                            Shared.user = response.userInfo
+                            UserDefaults.standard.set(response.token as String, forKey: Key.authorizationToken)
+                            self?.backView.isHidden = false
+                            self?.backView.isUserInteractionEnabled = true
+                            self?.BlurView(view: self!.animationView)
                         }
-                        switch Status {
-                        case 402:
-                            Alert.show("Failed".localized, massege: "email already exists".localized, context: self!)
-                        case 500:
-                            Alert.show("Failed".localized, massege: "something went wrong".localized, context: self!)
-                        default:
-                            Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
-                        }
+                    case .failure(let error):
+                        self?.stopAnimation()
+                        print(error.localizedDescription)
+                    }
+                    switch Status {
+                    case 402:
+                        Alert.show("Failed".localized, massege: "email already exists".localized, context: self!)
+                    case 500:
+                        Alert.show("Failed".localized, massege: "something went wrong".localized, context: self!)
+                    default:
+                        break
                     }
                 }
             }
-        } else {
-            self.stopAnimation()
-            Alert.show("Error".localized, massege: "Please accept our terms and conditions then try again".localized, context: self)
+        }else {
+            if !checkBox.on {
+                Alert.show("Error".localized, massege: "Please accept our terms and conditions then try again".localized, context: self)
+                
+            }
         }
-    }
-    
-    @IBAction func termsOfUse(_ sender: UIButton) {
         
     }
     
+    @IBAction func termsOfUse(_ sender: UIButton) {
+        let path = "https://www.konsilmed.com/terms"
+        guard let terms = URL(string: path) else {return}
+        let safariVC = SFSafariViewController(url: terms)
+        self.present(safariVC, animated: true, completion: nil)
+    }
+    
     @IBAction func privacyPolicy(_ sender: UIButton) {
-        guard let policyURL = URL(string: "https://www.konsilmed.com/privacy") else {return}
-        UIApplication.shared.open(policyURL)
+        let path = "https://www.konsilmed.com/privacy"
+        guard let policyURL = URL(string: path) else {return}
+        let safariVC = SFSafariViewController(url: policyURL)
+        self.present(safariVC, animated: true, completion: nil)
+        
     }
     
     // Check All TextFields
@@ -233,7 +241,7 @@ class RegisterViewController: UIViewController {
             let permisions = ["email"]
             facebookManger.logIn(permissions: permisions, from: self) {[weak self] (result, error) in
                 if error != nil {
-                    Alert.show("Error".localized, massege: "sssdsd", context: self!)
+                    Alert.show("Error".localized, massege: error?.localizedDescription ?? "", context: self!)
                     return
                 }
                 if result != nil {
@@ -247,20 +255,7 @@ class RegisterViewController: UIViewController {
         } else {
             Alert.show("Error".localized, massege: "Please accept our terms and conditions then try again".localized, context: self)
         }
-        let permisions = ["email"]
-        facebookManger.logIn(permissions: permisions, from: self) {[weak self] (result, error) in
-            if error != nil {
-                Alert.show("Error".localized, massege: "sssdsd", context: self!)
-                return
-            }
-            if result != nil {
-                if result?.isCancelled ?? true {
-                } else {
-                    self?.fetchProfile()
-                    self?.startAnimation()
-                }
-            }
-        }
+        
     }
     
     // MARK:- Revert TextField's Border Color To Normal When Selected Or Text Changed
@@ -393,7 +388,8 @@ extension RegisterViewController {
                         case 405:
                             Alert.show("Failed".localized, massege: "Email does not exist".localized, context: self!)
                         default:
-                            Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)                        }
+                           break
+                        }
                     }
                 }
             }

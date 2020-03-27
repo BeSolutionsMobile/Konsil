@@ -11,7 +11,7 @@ import Foundation
 struct K {
     
     struct Server {
-        static let baseURL = "https://www.konsilmed.be4maps.com/api"
+        static let baseURL = "https://www.konsilmed.com/api"
     }
     
     struct Register {
@@ -54,7 +54,7 @@ struct K {
     struct ChangePersonalInfo{
         static let name = "name"
         static let phone = "phone"
-        static let email = "eamil"
+        static let email = "email"
         static let password = "password"
         static let image_url = "image_url"
         static let medical_history = "medical_history"

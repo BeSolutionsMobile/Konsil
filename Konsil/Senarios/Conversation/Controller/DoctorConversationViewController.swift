@@ -62,9 +62,9 @@ class DoctorConversationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
-        getAppointments(date: getCurrentDate())
         updateView()
         openDatePicker(for: chooseDate)
+        getCurrentDate()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -111,7 +111,7 @@ class DoctorConversationViewController: UIViewController {
                             case 409:
                                 Alert.show("Failed".localized, massege: "This appointment is not available ,please choose another appointment and try again".localized, context: self!)
                             default:
-                                Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
+                                break
                             }
                         }
                         print(Status)
@@ -170,7 +170,7 @@ class DoctorConversationViewController: UIViewController {
             }
             doctorName.text = doctor.name
             doctorSpeciality.text = doctor.specialist
-            hourPrice.text = (doctor.conversation_price ?? "no available") + " $ "
+            hourPrice.text = "€" + (doctor.conversation_price ?? "no available") 
             doctorRate.rating = stringToDouble(doctor.rate)
         }
     }

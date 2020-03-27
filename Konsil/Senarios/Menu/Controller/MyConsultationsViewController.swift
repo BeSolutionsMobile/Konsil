@@ -31,8 +31,10 @@ class MyConsultationsViewController: UIViewController {
     }
     
     func getMyconsultations(){
+        self.startAnimating()
         DispatchQueue.main.async { [weak self] in
             APIClient.getMyConsultations { (Result, Status) in
+                self?.stopAnimating()
                 switch Result {
                 case .success(let response):
                     print(response)

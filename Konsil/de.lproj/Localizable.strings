@@ -45,6 +45,7 @@
 "no doctors available" = "Keine Ärzte verfügbar";
 "Yor report is not yet ready" = "Ihr Bericht kann nicht heruntergeladen werden";
 "no consltations" = "Sie haben derzeit keine Konsultationen";
+"Personal info changed successfully" = "Persönliche Daten wurden erfolgreich geändert";
 
 // Network Messages
 

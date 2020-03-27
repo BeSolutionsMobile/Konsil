@@ -15,6 +15,6 @@ struct GetChatMessages: Codable {
 struct MessageInfo: Codable {
     let id: Int
     let name: String
-    let user_image: String
+    let user_image: String?
     let message: String
 }

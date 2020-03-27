@@ -100,7 +100,7 @@ class LogInViewController: UIViewController {
                         case 405:
                             Alert.show("Failed".localized, massege: "Email does not exist".localized, context: self!)
                         default:
-                            Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
+                            break
                         }
                     }
                 }
@@ -284,7 +284,7 @@ extension LogInViewController {
                         case 500:
                             Alert.show("Failed".localized, massege: "something went wrong".localized, context: self!)
                         default:
-                            Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
+                            break
                         }
                     }
                 }

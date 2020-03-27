@@ -197,6 +197,7 @@ enum APIRouter: URLRequestConvertible {
         urlRequest.setValue(K.ContentType.json.rawValue, forHTTPHeaderField: K.HTTPHeaderField.acceptType.rawValue)
         urlRequest.setValue(K.ContentType.json.rawValue, forHTTPHeaderField: K.HTTPHeaderField.contentType.rawValue)
         if let authToken = UserDefaults.standard.string(forKey: Key.authorizationToken) {
+//            print("new token" + authToken)
             urlRequest.setValue("Bearer " + authToken ,forHTTPHeaderField: K.HTTPHeaderField.authentication.rawValue)
         }
         // Parameters

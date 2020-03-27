@@ -17,32 +17,27 @@ class MainViewController: UIViewController {
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     
     //MARK:- Variables
-    var catImage: [String]?
-    var catName: [String]?
     var specialities: [Speciality]?
+    
     //MARK:- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        catImage = Categories.catImage
-        catName = Categories.catName
         auth()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         getAllSpecialities()
     }
     
     // Get Specialities From API
     func getAllSpecialities(){
         DispatchQueue.main.async {
+            self.startAnimating()
             APIClient.allSpeciailies { [weak self] (Result, status) in
+                self?.stopAnimating()
                 switch Result {
                 case .success(let response):
                     self?.specialities = response.data
                     self?.categoriesCollectionView.reloadData()
                 case .failure(let error):
                     print(error.localizedDescription)
-//                    Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
                 }
             }
         }
@@ -95,7 +90,9 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCell", for: indexPath) as! MainCategoriesCollectionViewCell
         if let spec = specialities?[indexPath.row] {
-            cell.catImage.sd_setImage(with: URL(string: spec.image_url), placeholderImage: nil, options: .retryFailed) { (image, error, type, url) in
+            //Replace space in url with %
+            let url = spec.image_url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            cell.catImage.sd_setImage(with: URL(string: url ?? ""), placeholderImage: nil, options: .retryFailed) { (image, error, type, url) in
                 if image != nil {
                     cell.indicator.stopAnimating()
                 }
@@ -103,7 +100,7 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
             cell.catName.text = spec.title
         }
         
-        cell.imageSize.constant = self.view.frame.width/2 - 120
+        cell.imageSize.constant = self.view.frame.width/2 - 100
         
         // Round Cell Corners
         if "Lang".localized == "ar"{
@@ -113,14 +110,20 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
             }
             else if indexPath.row == 0 {
                 Rounded.topRight(view: cell.backView)
-            }
-            else if indexPath.row == (specialities?.count ?? 1000)-2{
-                Rounded.botRight(view: cell.backView)
-            }
-            else if indexPath.row == (specialities?.count ?? 1000)-1{
-                Rounded.botLeft(view: cell.backView)
             } else {
                 Rounded.normalView(view: cell.backView)
+            }
+            if specialities?.count ?? 0 % 2 == 0 {
+                if indexPath.row == (specialities?.count ?? 1000)-1{
+                    Rounded.botRight(view: cell.backView)
+                }
+                if indexPath.row == (specialities?.count ?? 1000)-2{
+                    Rounded.botLeft(view: cell.backView)
+                }
+            } else {
+                if indexPath.row == (specialities?.count ?? 1000)-1{
+                    Rounded.botRight(view: cell.backView)
+                }
             }
             
         } else {
@@ -133,11 +136,17 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
             if indexPath.row == 1 {
                 Rounded.topRight(view: cell.backView)
             }
-            if indexPath.row == (specialities?.count ?? 1000)-1{
-                Rounded.botRight(view: cell.backView)
-            }
-            if indexPath.row == (specialities?.count ?? 1000)-2{
-                Rounded.botLeft(view: cell.backView)
+            if (specialities?.count ?? 0) % 2 == 0 {
+                if indexPath.row == (specialities?.count ?? 1000)-2{
+                    Rounded.botRight(view: cell.backView)
+                }
+                if indexPath.row == (specialities?.count ?? 1000)-1{
+                    Rounded.botLeft(view: cell.backView)
+                }
+            } else {
+                if indexPath.row == (specialities?.count ?? 1000)-1{
+                    Rounded.botLeft(view: cell.backView)
+                }
             }
         }
         
@@ -152,7 +161,7 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellSize = CGSize(width: self.view.frame.width/2 - 35, height: self.view.frame.width/2 - 40)
+        let cellSize = CGSize(width: self.view.frame.width/2 - 35, height: self.view.frame.width/2 - 20)
         return cellSize
     }
 }

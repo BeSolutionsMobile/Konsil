@@ -87,22 +87,20 @@ class ProfileInfoViewController: UIViewController {
     
     func changePersonalInfo() {
         if let user = Shared.user , name.text!.count >= 3 , password.text!.count >= 8 , phone.text!.count >= 10 {
-            if name.text != user.name || email.text != user.email || phone.text != user.phone || image != user.image_url || image == nil{
+            if name.text != user.name || email.text != user.email || phone.text != user.phone || image != user.image_url || image == nil || patientHistoryTV.text != user.medical_history {
                 DispatchQueue.main.async { [weak self] in
-                    APIClient.changePersonalInfo(name: self?.name.text ?? "", email: self?.email.text ?? "", password: self?.password.text ?? "", phone: self?.phone.text ?? "", image_url: self?.image ?? user.image_url ?? "", medical_history: "" ) { (Result, Status) in
+                    APIClient.changePersonalInfo(name: self?.name.text ?? "", email: self?.email.text ?? "", password: self?.password.text ?? "", phone: self?.phone.text ?? "", image_url: self?.image ?? user.image_url ?? "", medical_history: self?.patientHistoryTV.text ?? "No Medical History Added" ) { (Result, Status) in
                         print(Status)
                         switch Result {
                         case .success(let response):
                             if response.status == 200 {
-                                print(response)
                                 Shared.user = response.userInfo
+                                Alert.show("Done".localized, massege: "Personal info changed successfully".localized, context: self!)
                             }
                         case .failure(let error):
                             print(error.localizedDescription)
                             if Status == 402 {
                                 Alert.show("Failed".localized, massege: "email already exists".localized, context: self!)
-                            } else {
-                                Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
                             }
                         }
                     }
@@ -129,22 +127,17 @@ class ProfileInfoViewController: UIViewController {
     
     func changeProfileInfoSocial() {
         if let user = Shared.user , name.text!.count >= 3 , phone.text!.count >= 10 {
-            if name.text != user.name || phone.text != user.phone || image != user.image_url || image == nil {
+            if name.text != user.name || phone.text != user.phone || image != user.image_url || image == nil || patientHistoryTV.text != user.medical_history {
                 DispatchQueue.main.async { [weak self] in
-                    APIClient.changePersonalInfo(name: self?.name.text ?? "", email: self?.email.text ?? "", password: self?.password.text ?? "", phone: self?.phone.text ?? "", image_url: self?.image ?? user.image_url ?? "", medical_history: "" ) { (Result, Status) in
-                        print(Status)
+                    APIClient.changePersonalInfo(name: self?.name.text ?? "", email: self?.email.text ?? "", password: self?.password.text ?? "", phone: self?.phone.text ?? "", image_url: self?.image ?? user.image_url ?? "", medical_history: self?.patientHistoryTV.text ?? "No Medical History Added" ) { (Result, Status) in
                         switch Result {
                         case .success(let response):
-                            if response.status == 200 {
-                                print(response)
-                                Shared.user = response.userInfo
-                            }
+                            Shared.user = response.userInfo
+                            Alert.show("Done".localized, massege: "Personal info changed successfully".localized, context: self!)
                         case .failure(let error):
                             print(error.localizedDescription)
                             if Status == 402 {
                                 Alert.show("Failed".localized, massege: "email already exists".localized, context: self!)
-                            } else {
-                                Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
                             }
                         }
                     }
@@ -169,23 +162,6 @@ class ProfileInfoViewController: UIViewController {
         }
     }
     
-    func changePersonalInfo2() {
-        if let user = Shared.user , name.text!.count >= 3 , password.text!.count >= 8 , phone.text!.count >= 10 {
-            if name.text != user.name || email.text != user.email || phone.text != user.phone || image != user.image_url || image == nil{
-                DispatchQueue.main.async { [weak self] in
-                    APIClient.changePersonalInfo2(name: self?.name.text ?? "", email: self?.email.text ?? "", password: self?.password.text ?? "", phone: self?.phone.text ?? "", image_url: self?.image ?? user.image_url ?? "", medical_history: "My History" ) { (Result) in
-                        switch Result {
-                        case .success(let response):
-                            print(response)
-                        case .failure(let error):
-                            print(error.localizedDescription)
-                            
-                        }
-                    }
-                }
-            }
-        }}
-    
     @IBAction func submitChanges(_ sender: UIButton) {
         if loggedWithSocial {
             changeProfileInfoSocial()
@@ -207,6 +183,9 @@ class ProfileInfoViewController: UIViewController {
             }
             phone.text = user.phone
             image = user.image_url
+            if user.medical_history != "" , user.medical_history != nil {
+                patientHistoryTV.text = user.medical_history
+            }
         }
     }
     

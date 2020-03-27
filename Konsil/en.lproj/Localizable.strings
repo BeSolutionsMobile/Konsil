@@ -44,6 +44,7 @@
 "no doctors available" = "no doctors available";
 "Yor report is not yet ready" = "Yor report is not yet ready to download";
 "no consltations" = "You don't have consultations right now";
+"Personal info changed successfully" = "Personal info changed successfully";
 
 // Network Messages
 

@@ -10,6 +10,8 @@ import UIKit
 
 class PayPalViewController: UIViewController , PayPalPaymentDelegate {
     
+    @IBOutlet weak var consultationType: UILabel!
+    @IBOutlet weak var doctorName: UILabel!
     @IBOutlet weak var paymentAmount: UILabel!
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var animationView: UIView!{
@@ -18,7 +20,11 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
             self.animationView.clipsToBounds = true
         }
     }
-    
+    @IBOutlet weak var paypalButton: UIButton!{
+        didSet{
+            Rounded.roundButton(button: self.paypalButton, radius: 10)
+        }
+    }
     
     var paypalConfig = PayPalConfiguration()
     var environment: String = PayPalEnvironmentSandbox {
@@ -33,6 +39,7 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
             paypalConfig.acceptCreditCards = acceptCreditCards
         }
     }
+    
     var type: Int?
     var doctor = ""
     var price = ""
@@ -44,14 +51,25 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
         self.navigationItem.rightBarButtonItem = nil
         rightBackBut()
         setUpPayPal()
+        updateView()
+    }
+    
+    func updateView(){
+        if type == 1 {
+            consultationType.text = "Consultation".localized
+        } else if type == 2 {
+            consultationType.text = "Online Conversation".localized
+        }
+        doctorName.text = doctor
+        paymentAmount.text = "€" + price 
     }
     
     func setUpPayPal(){
-        paymentAmount.text = price + " $"
+        paymentAmount.text = "€" + price
         paypalConfig.acceptCreditCards = acceptCreditCards
         paypalConfig.merchantName = "Konsil_med"
         paypalConfig.merchantPrivacyPolicyURL = URL(string: "https://www.konsilmed.com/privacy")
-        paypalConfig.merchantUserAgreementURL = URL(string: "www.google.com")
+        paypalConfig.merchantUserAgreementURL = URL(string: "https://www.konsilmed.com/terms")
         paypalConfig.languageOrLocale = NSLocale.preferredLanguages[0]
         paypalConfig.payPalShippingAddressOption = .none
         
@@ -60,11 +78,11 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
     
     @IBAction func payWithPayPal(_ sender: UIButton) {
         if id != nil {
-            let item = PayPalItem(name: doctor, withQuantity: 1, withPrice: NSDecimalNumber(string: price), withCurrency: "USD", withSku: "doctor")
+            let item = PayPalItem(name: doctor, withQuantity: 1, withPrice: NSDecimalNumber(string: price), withCurrency: "EUR", withSku: nil)
             let items = [item]
             let subtotle = PayPalItem.totalPrice(forItems: items)
             let total = subtotle.decimalValue
-            let payment = PayPalPayment(amount: NSDecimalNumber(decimal: total), currencyCode: "USD", shortDescription: paymentType(), intent: .sale)
+            let payment = PayPalPayment(amount: NSDecimalNumber(decimal: total), currencyCode: "EUR", shortDescription: paymentType(), intent: .sale)
             payment.items = items
             
             if payment.processable {

@@ -40,8 +40,10 @@ class DoctorsViewController: UIViewController {
     
     func getSpecialites() {
         if let speciality_id = specialityID {
+            self.startAnimating()
+            DispatchQueue.main.async { [weak self] in
             APIClient.specialityDoctors(speciality_id: speciality_id) { (Result, status) in
-                DispatchQueue.main.async { [weak self] in
+                    self?.stopAnimating()
                     switch Result {
                     case .success(let response):
                         print(response)
@@ -103,8 +105,10 @@ extension DoctorsViewController: UITableViewDelegate , UITableViewDataSource {
 extension DoctorsViewController: FilterDoctorsDelegate {
     func updateData(degree: [Int], rate: Int) {
         if let specialityID = specialityID {
+            self.startAnimating()
             DispatchQueue.main.async { [weak self] in
                 APIClient.filterDoctors(speciality_id: specialityID, degree_id: degree, rate: rate) { (result, status) in
+                    self?.stopAnimating()
                     switch result {
                     case .success(let response):
                         print(response)
