@@ -58,6 +58,7 @@
 		816D8C672406CE7C002E442F /* GetConversationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D8C662406CE7C002E442F /* GetConversationDetails.swift */; };
 		816E93E223F3FE460033C30F /* AddConsultation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816E93E123F3FE460033C30F /* AddConsultation.swift */; };
 		816E93E423F3FF370033C30F /* ConsultationFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816E93E323F3FF370033C30F /* ConsultationFiles.swift */; };
+		81748EB42432159F00513AD5 /* anim.gif in Resources */ = {isa = PBXBuildFile; fileRef = 81748EB32432159E00513AD5 /* anim.gif */; };
 		817834AA23E9CC5A009A4B9C /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817834A923E9CC5A009A4B9C /* Register.swift */; };
 		8182882523FD820500271CCF /* DegreesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8182882423FD820500271CCF /* DegreesCollectionViewCell.swift */; };
 		8182882723FD982900271CCF /* SendMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8182882623FD982900271CCF /* SendMessage.swift */; };
@@ -197,6 +198,7 @@
 		816D8C662406CE7C002E442F /* GetConversationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetConversationDetails.swift; sourceTree = "<group>"; };
 		816E93E123F3FE460033C30F /* AddConsultation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddConsultation.swift; sourceTree = "<group>"; };
 		816E93E323F3FF370033C30F /* ConsultationFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationFiles.swift; sourceTree = "<group>"; };
+		81748EB32432159E00513AD5 /* anim.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = anim.gif; sourceTree = "<group>"; };
 		817834A923E9CC5A009A4B9C /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		8182882423FD820500271CCF /* DegreesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreesCollectionViewCell.swift; sourceTree = "<group>"; };
 		8182882623FD982900271CCF /* SendMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessage.swift; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 		8114568123BCEBD3005A4B93 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				81748EB32432159E00513AD5 /* anim.gif */,
 				813761D523CB2DCF00BC90B1 /* Unlock.json */,
 				81ECE8BF23BCF4970048C0D9 /* Report.json */,
 				8114568423BCEC01005A4B93 /* Doctor.json */,
@@ -894,6 +897,7 @@
 				8114569023BCEC21005A4B93 /* RedLifeline.json in Resources */,
 				81ECE9A123AB6C8400E63105 /* SectionHeaderView.xib in Resources */,
 				81CAC04F2427CF850083BE4E /* credentials.plist in Resources */,
+				81748EB42432159F00513AD5 /* anim.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,14 +15,14 @@
             <objects>
                 <viewController storyboardIdentifier="LogIn" id="BYZ-38-t0r" customClass="LogInViewController" customModule="Konsil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7sH-ku-nyw">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UEf-9w-sa1">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iNo-ie-dJr">
                                                 <rect key="frame" x="30" y="220" width="354" height="125"/>
@@ -154,10 +154,10 @@
                                                 </subviews>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="konsil" translatesAutoresizingMaskIntoConstraints="NO" id="rfb-Bt-ORM">
-                                                <rect key="frame" x="132" y="50" width="150" height="150.00000000000045"/>
+                                                <rect key="frame" x="-18" y="50" width="450" height="150.00000000000045"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="Pf8-DH-ALy"/>
-                                                    <constraint firstAttribute="width" constant="150" id="h82-XQ-rVH"/>
+                                                    <constraint firstAttribute="width" constant="450" id="h82-XQ-rVH"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BBi-K3-JYt">
@@ -282,10 +282,10 @@
                                                 </subviews>
                                             </stackView>
                                             <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0cf-Jq-bor">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                                 <subviews>
                                                     <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hc-b8-bq5" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                                                        <rect key="frame" x="147" y="361" width="120" height="120"/>
+                                                        <rect key="frame" x="147" y="388" width="120" height="120"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -301,7 +301,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" name="KosilBackGround"/>
+                                        <color key="backgroundColor" red="0.98697894809999998" green="0.98702615500000002" blue="0.99978774790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="iNo-ie-dJr" firstAttribute="top" secondItem="rfb-Bt-ORM" secondAttribute="bottom" constant="20" id="1RN-oI-Eew"/>
                                             <constraint firstItem="iNo-ie-dJr" firstAttribute="centerX" secondItem="UEf-9w-sa1" secondAttribute="centerX" id="2AQ-5K-CWa"/>
@@ -346,7 +346,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="MC4-uL-E85"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" name="KosilBackGround"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7sH-ku-nyw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="CHU-WH-kdS"/>
                             <constraint firstItem="7sH-ku-nyw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kcp-EB-PTA"/>
@@ -367,6 +367,7 @@
                         <outlet property="facebook" destination="doM-1i-f1I" id="IWD-Fd-ItZ"/>
                         <outlet property="gmail" destination="u3P-tH-Qwd" id="hdb-2r-rUq"/>
                         <outlet property="logInButton" destination="Ls1-72-ed8" id="CcA-H5-XD7"/>
+                        <outlet property="logoiImageView" destination="rfb-Bt-ORM" id="bPf-Hi-U6e"/>
                         <outlet property="passwordTF" destination="MOF-NQ-Uea" id="G22-ie-8du"/>
                         <outlet property="socialStackView" destination="iNo-ie-dJr" id="dnX-Lv-qfY"/>
                         <outlet property="twitter" destination="RD6-im-Zde" id="aVF-oJ-ge9"/>
@@ -399,6 +400,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ZB-Ej-Evu">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                         <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="konsil" translatesAutoresizingMaskIntoConstraints="NO" id="M7P-M4-nQK">
+                                                <rect key="frame" x="-18" y="10" width="450" height="150.00000000000045"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="w61-fF-run"/>
+                                                    <constraint firstAttribute="width" constant="450" id="x6f-gx-Tmw"/>
+                                                </constraints>
+                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1P-qN-KSt">
                                                 <rect key="frame" x="20" y="20" width="40" height="40"/>
                                                 <constraints>
@@ -412,16 +421,8 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="backButPressed:" destination="c2I-bw-5uM" eventType="touchUpInside" id="5wR-6K-TDd"/>
-                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="BackToLogin" id="j1U-yJ-jcd"/>
                                                 </connections>
                                             </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="konsil" translatesAutoresizingMaskIntoConstraints="NO" id="M7P-M4-nQK">
-                                                <rect key="frame" x="132" y="10" width="150" height="150.00000000000045"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="w61-fF-run"/>
-                                                    <constraint firstAttribute="width" constant="150" id="x6f-gx-Tmw"/>
-                                                </constraints>
-                                            </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="x23-aN-W00">
                                                 <rect key="frame" x="30" y="180" width="354" height="166"/>
                                                 <subviews>
@@ -699,7 +700,7 @@
                                                 </connections>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" name="KosilBackGround"/>
+                                        <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="cCu-8u-tza" firstAttribute="centerY" secondItem="awB-Ho-8cr" secondAttribute="centerY" id="1RS-Gw-XQ9"/>
                                             <constraint firstItem="U37-qa-wce" firstAttribute="top" secondItem="x23-aN-W00" secondAttribute="bottom" constant="15" id="5MD-4n-a4y"/>
@@ -760,7 +761,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" name="KosilBackGround"/>
+                        <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="XiP-0g-4FN" firstAttribute="top" secondItem="khC-7O-uZf" secondAttribute="top" id="6K4-6X-ZW4"/>
                             <constraint firstItem="lNO-Jj-xmh" firstAttribute="top" secondItem="VOu-Zx-EsN" secondAttribute="top" id="6kh-0d-KVL"/>
@@ -782,6 +783,7 @@
                         <outlet property="email" destination="crY-pX-NIp" id="khV-xR-RYj"/>
                         <outlet property="facebook" destination="OaI-sJ-2pr" id="xxq-5y-PK4"/>
                         <outlet property="google" destination="Jeg-Qk-eu4" id="gR4-yZ-3xr"/>
+                        <outlet property="logoImagrView" destination="M7P-M4-nQK" id="e39-oy-b49"/>
                         <outlet property="name" destination="Kkr-KY-kSr" id="WfA-6C-3BU"/>
                         <outlet property="password" destination="gHr-3J-Ll2" id="5Cb-2b-vZQ"/>
                         <outlet property="phone" destination="mLf-D6-QBs" id="Ykp-13-3WY"/>
@@ -5575,7 +5577,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="17b-r7-4N0"/>
+        <segue reference="fAW-jg-GNb"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

@@ -110,6 +110,7 @@ class LeftSideMenuViewController: UIViewController {
     @IBAction func logOut(_ sender: UIButton) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "LogIn") as? LogInViewController {
             vc.modalPresentationStyle = .fullScreen
+            vc.fromIntor = true
             UserDefaults.standard.set(false, forKey: Key.loged)
             self.present(vc, animated: true, completion: nil)
             

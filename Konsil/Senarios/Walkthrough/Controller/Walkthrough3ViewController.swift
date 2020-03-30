@@ -31,6 +31,7 @@ class Walkthrough3ViewController: UIViewController {
     @IBAction func skipPressed(_ sender: UIButton) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "LogIn") as? LogInViewController {
             vc.modalPresentationStyle = .fullScreen
+            vc.fromIntor = true
             present(vc, animated: true, completion: nil)
         }
     }
@@ -38,6 +39,7 @@ class Walkthrough3ViewController: UIViewController {
     @IBAction func startPressed(_ sender: UIButton) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "LogIn") as? LogInViewController {
             vc.modalPresentationStyle = .fullScreen
+            vc.fromIntor = true
             present(vc, animated: true, completion: nil)
         }
     }

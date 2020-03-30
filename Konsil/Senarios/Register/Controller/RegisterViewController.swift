@@ -13,6 +13,7 @@ import NVActivityIndicatorView
 import FBSDKLoginKit
 import GoogleSignIn
 import SafariServices
+import SwiftyGif
 
 class RegisterViewController: UIViewController {
     
@@ -99,6 +100,8 @@ class RegisterViewController: UIViewController {
     }
     @IBOutlet weak var backView: UIView!
     @IBOutlet var constraints: [NSLayoutConstraint]!
+    @IBOutlet weak var logoImagrView: UIImageView!
+    
     
     let facebookManger = LoginManager()
     let googleManger = GIDSignIn.sharedInstance()
@@ -107,17 +110,12 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGoogleSginIn()
+        logoGifImageSetUp()
     }
     
-    //MARK:- Change Status Bar To Dark
-    //    override var preferredStatusBarStyle: UIStatusBarStyle {
-    //        return .darkContent
-    //    }
-    
     //MARK:- IBActions
-    
     @IBAction func backButPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "BackToLogin", sender: self)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func registerPressed(_ sender: UIButton) {
@@ -277,9 +275,6 @@ class RegisterViewController: UIViewController {
         if segue.identifier == "GoToMain" {
             let vc = segue.destination as! MainNavigationController
             vc.modalPresentationStyle = .fullScreen
-        } else if segue.identifier == "BackToLogin" {
-            let vc = segue.destination as! LogInViewController
-            vc.modalPresentationStyle = .fullScreen
         }
     }
     
@@ -433,4 +428,22 @@ extension RegisterViewController: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
               withError error: Error!) {
     }
+}
+
+//MARK:- GIF Image
+extension RegisterViewController: SwiftyGifDelegate {
+    func logoGifImageSetUp(){
+        logoImagrView.delegate = self
+        do {
+            let gif = try UIImage(gifName: "anim.gif")
+            logoImagrView.setGifImage(gif)
+        } catch  {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func gifDidLoop(sender: UIImageView) {
+        sender.stopAnimatingGif()
+    }
+
 }

@@ -12,6 +12,7 @@ import BiometricAuthentication
 import NVActivityIndicatorView
 import FBSDKLoginKit
 import GoogleSignIn
+import SwiftyGif
 
 class LogInViewController: UIViewController {
     
@@ -35,15 +36,20 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var gmail: UIButton!{ didSet{ Rounded.roundButton(button: self.gmail, radius: self.gmail.frame.size.height/2) }}
     @IBOutlet weak var facebook: UIButton!{ didSet{ Rounded.roundButton(button: self.facebook, radius: self.facebook.frame.size.height/2) }}
     @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var logoiImageView: UIImageView!
     
     let facebookManger = LoginManager()
     let googleManger = GIDSignIn.sharedInstance()
+    var fromIntor = false
     
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGoogleSginIn()
+        logoGIFImageSetup()
     }
+    
+    
     
     //MARK:- IBActions
     @IBAction func logInWithTwitter(_ sender: UIButton) {
@@ -326,5 +332,26 @@ extension LogInViewController: GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
               withError error: Error!) {
+    }
+}
+
+//MARK:- GIF Image
+extension LogInViewController: SwiftyGifDelegate {
+    func logoGIFImageSetup(){
+        if !fromIntor {
+            logoiImageView.contentMode = .scaleAspectFill
+            logoiImageView.delegate = self
+            do {
+                let gif = try UIImage(gifName: "anim.gif")
+                self.logoiImageView.setGifImage(gif)
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    func gifDidLoop(sender: UIImageView) {
+        print("gifDidLoop")
+        sender.stopAnimatingGif()
     }
 }
