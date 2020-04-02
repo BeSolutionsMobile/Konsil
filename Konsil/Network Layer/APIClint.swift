@@ -102,8 +102,8 @@ class APIClient {
         performRequest(route: APIRouter.ComplaintTypes, completion: completion)
     }
     
-    static func makeComplaint(type_id: Int, complaint: String , completion: @escaping(Result<MakeComplaint,AFError>, Int)-> Void) {
-        performRequest(route: APIRouter.MakeComplaint(type_id: type_id, complaint: complaint), completion: completion)
+    static func makeComplaint(type_id: Int, complaint: String ,consultation_id: Int , completion: @escaping(Result<MakeComplaint,AFError>, Int)-> Void) {
+        performRequest(route: APIRouter.MakeComplaint(type_id: type_id, complaint: complaint, consultation_id: consultation_id), completion: completion)
     }
     
     static func getMyConsultations(completion: @escaping (Result<MyConsultations,AFError> , Int )-> Void){

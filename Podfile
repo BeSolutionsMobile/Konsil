@@ -25,6 +25,8 @@ target 'Konsil' do
   pod 'FBSDKLoginKit'
   pod 'GoogleSignIn'
   pod 'SwiftyGif'
+  pod "ExpandableLabel"
+
 
   
   target 'KonsilTests' do

@@ -35,6 +35,9 @@ class ConversationReportViewController: UIViewController {
     
     @IBAction func makeComplaintPressed(_ sender: UIButton) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "Make A Complaint") as! MakeComplaintViewController
+        if let consultationID = ConversationDetailsViewController.conversation_id {
+            vc.consultationID = consultationID
+        }
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -102,6 +102,7 @@ struct K {
     struct MakeComplaint {
         static let type_id = "type_id"
         static let Complaint = "complaint"
+        static let consultation_id = "consultation_id"
     }
     
     struct MyConsultations {

@@ -25,7 +25,7 @@ enum APIRouter: URLRequestConvertible {
     case GetAppointments(doctor_id: Int ,date: String)
     case ReserveConversation(doctor_id: Int ,appointment_id: Int)
     case ComplaintTypes
-    case MakeComplaint(type_id: Int ,complaint: String)
+    case MakeComplaint(type_id: Int ,complaint: String ,consultation_id: Int)
     case MyConsultations
     case GetChatMessages(consultation_id: Int )
     case SendMessage(consultation_id: Int ,message: String)
@@ -166,8 +166,8 @@ enum APIRouter: URLRequestConvertible {
             return [K.ReserveConsultation.doctor_id: doctor_id , K.ReserveConsultation.appointment_id: appointment_id]
         case .ComplaintTypes:
             return nil
-        case .MakeComplaint(let type_id, let complaint):
-            return [K.MakeComplaint.type_id: type_id , K.MakeComplaint.Complaint: complaint]
+        case .MakeComplaint(let type_id, let complaint ,let consultation_id):
+            return [K.MakeComplaint.type_id: type_id , K.MakeComplaint.Complaint: complaint ,K.MakeComplaint.consultation_id: consultation_id]
         case .MyConsultations:
             return nil
         case .GetChatMessages(let consultation_id):

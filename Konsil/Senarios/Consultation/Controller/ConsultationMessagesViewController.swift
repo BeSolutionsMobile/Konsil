@@ -56,7 +56,16 @@ class ConsultationMessagesViewController: UIViewController {
     
     //MARK:- IBAcotions
     @IBAction func sendMessagePressed(_ sender: UIButton) {
-        sendMessage()
+        if let status = ConsultationDetailsViewController.status {
+            if status == "closed" {
+                sendBut.isEnabled = false
+            } else {
+                sendBut.isEnabled = true
+                sendMessage()
+            }
+        } else {
+            sendMessage()
+        }
     }
     
     func sendMessage(){

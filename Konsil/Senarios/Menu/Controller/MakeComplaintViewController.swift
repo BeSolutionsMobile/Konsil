@@ -33,6 +33,8 @@ class MakeComplaintViewController: UIViewController {
     
     var complaints: [Complaint]?
     var selectedComplaintID: Int?
+    var consultationID: Int?
+    
     //MARK:- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +74,7 @@ class MakeComplaintViewController: UIViewController {
     func makeComplaint(){
         if selectedComplaintID != nil {
             DispatchQueue.main.async { [weak self] in
-                APIClient.makeComplaint(type_id: self?.selectedComplaintID ?? 0, complaint: self?.complaintMessageTV.text ?? "") { (Result, Status) in
+                APIClient.makeComplaint(type_id: self?.selectedComplaintID ?? 0, complaint: self?.complaintMessageTV.text ?? "", consultation_id: self?.consultationID ?? 0) { (Result, Status) in
                     switch Result {
                     case .success(let response):
                         print(response)

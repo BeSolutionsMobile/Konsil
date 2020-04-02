@@ -20,6 +20,7 @@ class ConsultationFinalReportViewController: UIViewController {
     }
     
     var reportFile: Report?
+    
     //MARK:- View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,9 @@ class ConsultationFinalReportViewController: UIViewController {
     
     @IBAction func makeComplaintPressed(_ sender: UIButton) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Make A Complaint") as? MakeComplaintViewController {
+            if let consultationID = ConsultationDetailsViewController.consultation_id {
+                vc.consultationID = consultationID
+            }
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

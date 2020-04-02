@@ -9,6 +9,7 @@
 import UIKit
 import Cosmos
 import SideMenu
+import ExpandableLabel
 
 class DoctorsInfoViewController: UIViewController {
     
@@ -29,7 +30,7 @@ class DoctorsInfoViewController: UIViewController {
     }
     @IBOutlet weak var doctorName: UILabel!
     @IBOutlet weak var doctorSpeciality: UILabel!
-    @IBOutlet weak var details: UILabel!
+    @IBOutlet weak var details: ExpandableLabel!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var requestConsultarionBack: UILabel!{
         didSet{
@@ -61,10 +62,12 @@ class DoctorsInfoViewController: UIViewController {
     
     var doctorID: Int?
     var doctorDetails: DoctorData?
+    
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         rightBackBut()
+        expandableLabel()
     }
     
     //MARK:- ViewWillAppear
@@ -127,5 +130,13 @@ class DoctorsInfoViewController: UIViewController {
         } else {
             Alert.show("".localized, massege: "Failed", context: self)
         }
+    }
+}
+
+extension DoctorsInfoViewController {
+    func expandableLabel(){
+        details.numberOfLines = 3
+        details.collapsed = true
+        details.collapsedAttributedLink = NSMutableAttributedString(string: "show more".localized, attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemBlue, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .semibold)])        
     }
 }

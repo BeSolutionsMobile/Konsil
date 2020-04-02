@@ -483,10 +483,10 @@
 			isa = PBXGroup;
 			children = (
 				8114568123BCEBD3005A4B93 /* Animations */,
-				81BB8ADA23D99C3D00C57648 /* AppDelegate.swift */,
 				04F1A61323A641B200293AA2 /* Main.storyboard */,
 				04F1A61823A641B300293AA2 /* LaunchScreen.storyboard */,
 				8165928D23EC668A00595B6A /* Konsil-Bridging-Header.h */,
+				81BB8ADA23D99C3D00C57648 /* AppDelegate.swift */,
 				8122162323B0D56D009E111B /* Extentions.swift */,
 				813761FB23CB551200BC90B1 /* Keys.swift */,
 				815A17DF23A682B8001DDBEE /* Shared.swift */,
