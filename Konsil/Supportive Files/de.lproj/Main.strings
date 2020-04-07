@@ -352,7 +352,7 @@
 "d5J-iS-DZU.text" = "Label";
 
 /* Class = "UILabel"; text = "Choose file to upload "; ObjectID = "d9e-or-EzU"; */
-"d9e-or-EzU.text" = "Wählen Sie eine Datei aus, um sie hochzuladen ";
+"d9e-or-EzU.text" = "Daten hochladen";
 
 /* Class = "UILabel"; text = "Please select from the available periods"; ObjectID = "dGM-rE-iFv"; */
 "dGM-rE-iFv.text" = "Bitte wählen Sie aus den verfügbaren Zeiträumen";
@@ -571,13 +571,16 @@
 "yjQ-aa-kXn.text" = "behandlung in deutschland";
 
 /* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "R5E-yk-LDG"; */
-"R5E-yk-LDG.text" = "Betrag";
+"R5E-yk-LDG.text" = "Betrag :";
 
 /* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "40c-QG-e3b"; */
-"40c-QG-e3b.text" = "Arztes";
+"40c-QG-e3b.text" = "Arztes :";
 
 /* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "R5E-yk-LDG"; */
-"R5E-yk-LDG.text" = "Art";
+"eH7-aM-XuH.text" = "Art :";
 
 /* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "R5E-yk-LDG"; */
-"R5E-yk-LDG.text" = "Wähle deine Zahlungs methode";
+"Tov-4J-Jh9.text" = "Wähle deine Zahlungs methode :";
+
+/* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "R5E-yk-LDG"; */
+"drN-Ni-fZF.text" = "Bilder hochladen";

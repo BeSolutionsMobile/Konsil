@@ -131,4 +131,8 @@ class APIClient {
         performRequest(route: APIRouter.GetConversationDetails(conversation_id: conversation_id ), completion: completion)
     }
     
+    static func uploadConsultationFiles(consultationID: Int ,images: [String] ,files: [String] ,completion: @escaping (Result<String,AFError>,Int)->Void) {
+        performRequest(route: APIRouter.UploadConsultationFiles(consultationID: consultationID, images: images, files: files), completion: completion)
+    }
+    
 }

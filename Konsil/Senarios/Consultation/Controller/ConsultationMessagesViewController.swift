@@ -57,7 +57,7 @@ class ConsultationMessagesViewController: UIViewController {
     //MARK:- IBAcotions
     @IBAction func sendMessagePressed(_ sender: UIButton) {
         if let status = ConsultationDetailsViewController.status {
-            if status == "closed" {
+            if status == "closed".localized {
                 sendBut.isEnabled = false
             } else {
                 sendBut.isEnabled = true
@@ -77,7 +77,6 @@ class ConsultationMessagesViewController: UIViewController {
                 APIClient.sendMessage(consultation_id: self?.consultation_id ?? 0 , message: self?.messageTF.text ?? "") { (Result, Status) in
                     switch Result {
                     case .success(let response):
-                        print(response)
                         self?.sendBut.isEnabled = true
                         self?.messageTF.text = ""
                         if response.status == 200 {
@@ -117,6 +116,7 @@ class ConsultationMessagesViewController: UIViewController {
                         print(response)
                         self?.messages = response.messages
                         self?.reloadTableView()
+                        self?.checkTable()
                     case .failure(let error):
                         print(error.localizedDescription)
                         Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)

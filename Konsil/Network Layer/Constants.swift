@@ -121,7 +121,14 @@ struct K {
         static let conversation_id = "conversation_id"
     }
     
+    struct UploadConsultationFiles {
+        static let consultation_id = "consultation_id"
+        static let images = "images"
+        static let files = "files"
+    }
+    
     //-----------------------------------------------
+    
     enum HTTPHeaderField: String {
         case authentication = "Authorization"
         case contentType = "Content-Type"

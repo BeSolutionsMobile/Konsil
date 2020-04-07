@@ -32,6 +32,7 @@ enum APIRouter: URLRequestConvertible {
     case ComfirmConsultaiton(consultation_id: Int, payment_status: Int)
     case ComfirmConversation(consultation_id: Int, payment_status: Int)
     case GetConversationDetails(conversation_id: Int)
+    case UploadConsultationFiles(consultationID: Int ,images: [String] ,files: [String])
     
     //MARK:- HTTP Method
     private var method: HTTPMethod {
@@ -79,6 +80,8 @@ enum APIRouter: URLRequestConvertible {
         case .ComfirmConversation:
             return .post
         case .GetConversationDetails:
+            return .post
+        case .UploadConsultationFiles:
             return .post
         }
     }
@@ -130,6 +133,8 @@ enum APIRouter: URLRequestConvertible {
             return "/confirm-reservation"
         case .GetConversationDetails:
             return "/my-conversation-details"
+        case .UploadConsultationFiles:
+            return "/upload-consultation-files"
         }
     }
     
@@ -180,6 +185,8 @@ enum APIRouter: URLRequestConvertible {
             return [K.ComfirmConversation.consultation_id: consultation_id, K.ComfirmConversation.payment_status: payment_status]
         case .GetConversationDetails(let conversation_id):
             return [K.GetConversationDetails.conversation_id: conversation_id]
+        case .UploadConsultationFiles(let consultationID, let images, let files):
+            return [K.UploadConsultationFiles.consultation_id: consultationID ,K.UploadConsultationFiles.images: images ,K.UploadConsultationFiles.files: files]
         }
     }
     

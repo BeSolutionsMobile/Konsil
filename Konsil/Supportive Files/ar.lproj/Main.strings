@@ -354,7 +354,7 @@
 "d5J-iS-DZU.text" = "Label";
 
 /* Class = "UILabel"; text = "Choose file to upload "; ObjectID = "d9e-or-EzU"; */
-"d9e-or-EzU.text" = "اختر الملف";
+"d9e-or-EzU.text" = "رفع ملف";
 
 /* Class = "UILabel"; text = "Please select from the available periods"; ObjectID = "dGM-rE-iFv"; */
 "dGM-rE-iFv.text" = "رجاء الاختيار من المواعيد المتاحه";
@@ -586,8 +586,10 @@
 "40c-QG-e3b.text" = "اسم الطبيب :";
 
 /* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "R5E-yk-LDG"; */
-"R5E-yk-LDG.text" = "النوع :";
+"eH7-aM-XuH.text" = "النوع :";
 
 /* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "R5E-yk-LDG"; */
-"R5E-yk-LDG.text" = "اختر طريقة الدفع :";
+"Tov-4J-Jh9.text" = "اختر طريقة الدفع :";
 
+/* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "R5E-yk-LDG"; */
+"drN-Ni-fZF.text" = "ارفع صورة";

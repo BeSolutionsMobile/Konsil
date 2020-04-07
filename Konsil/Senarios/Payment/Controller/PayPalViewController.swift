@@ -27,7 +27,7 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
     }
     
     var paypalConfig = PayPalConfiguration()
-    var environment: String = PayPalEnvironmentProduction    {
+    var environment: String = PayPalEnvironmentSandbox {
         willSet(newEnvironment) {
             if (newEnvironment != environment) {
                 PayPalMobile.preconnect(withEnvironment: newEnvironment)

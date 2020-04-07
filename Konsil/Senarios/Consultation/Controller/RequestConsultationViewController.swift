@@ -125,13 +125,17 @@ extension RequestConsultationViewController: OpalImagePickerControllerDelegate ,
     //MARK:- Image Picker
     func imagePicker(_ picker: OpalImagePickerController, didFinishPickingImages images: [UIImage]) {
         for i in images.indices {
-            FirebaseUploader.uploadImagesToFirebase(viewController: self, imagePicker: imagePicker, pickedImage: images[i]) {[weak self] (uploaded, imagesURL) in
-                if uploaded == true {
-                    self?.imageUploaded = true
-                    self?.images = imagesURL
-                    let animation = Shared.showLottie(view: self!.imageCheckView, fileName: "CheckMark", contentMode: .scaleAspectFit)
-                    animation.play()
+            if i == images.count - 1 {
+                FirebaseUploader.uploadImagesToFirebase(viewController: self, imagePicker: imagePicker, pickedImage: images[i]) {[weak self] (uploaded, imagesURL) in
+                    if uploaded == true {
+                        self?.imageUploaded = true
+                        self?.images = imagesURL
+                        let animation = Shared.showLottie(view: self!.imageCheckView, fileName: "CheckMark", contentMode: .scaleAspectFit)
+                        animation.play()
+                    }
                 }
+            } else {
+                FirebaseUploader.uploadImagesToFirebase(viewController: self, imagePicker: imagePicker, pickedImage: images[i] ,completion: nil)
             }
         }
     }
