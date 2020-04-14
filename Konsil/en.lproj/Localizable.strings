@@ -46,6 +46,13 @@
 "no consltations" = "You don't have consultations right now";
 "Personal info changed successfully" = "Personal info changed successfully";
 
+"Pay" = "Pay";
+"Payment failed" = "Payment failed";
+"Payment canceled" = "Payment canceled";
+"Payment succeeded" = "Payment succeeded";
+"Payment Failed Please Try Again" = "Payment Faield Please Try Again";
+"Payment process completed successfully" = "Payment process completed successfully";
+
 // Network Messages
 
 "email already exists" = "Email already exists";

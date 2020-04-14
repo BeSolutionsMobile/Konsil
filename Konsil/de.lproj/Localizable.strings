@@ -47,6 +47,13 @@
 "no consltations" = "Sie haben derzeit keine Konsultationen";
 "Personal info changed successfully" = "Persönliche Daten wurden erfolgreich geändert";
 
+"Pay" = "Zahlen";
+"Payment failed" = "Bezahlung fehlgeschlagen";
+"Payment canceled" = "Payment canceled";
+"Payment succeeded" = "Zahlung erfolgreich abgeschlossen";
+"Payment Failed Please Try Again" = "Zahlung fehlgeschlagen Bitte versuchen Sie es erneut";
+"Payment process completed successfully" = "Zahlungsvorgang erfolgreich abgeschlossen";
+
 // Network Messages
 
 "email already exists" = "E-Mail ist bereits vorhanden";

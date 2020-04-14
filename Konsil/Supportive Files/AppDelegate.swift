@@ -104,20 +104,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
             }
         }
     }
-    
-    //    func checkBioAuth(){
-    //        let biometricAuth = UserDefaults.standard.bool(forKey: Key.prefereBiometricAuth)
-    //        print(biometricAuth)
-    //        if biometricAuth {
-    //            let topController = self.window?.rootViewController?.topViewController()
-    //
-    //            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-    //            if let fingerPrintVC = storyBoard.instantiateViewController(withIdentifier: "Lock") as? FingerPrintViewController {
-    //                fingerPrintVC.modalPresentationStyle = .overFullScreen
-    //                topController?.present(fingerPrintVC, animated: true, completion: nil)
-    //            }
-    //        }
-    //    }
-    
 }
 

@@ -127,6 +127,9 @@ struct K {
         static let files = "files"
     }
     
+    struct GetStripeToken {
+        static let amount = "amount"
+    }
     //-----------------------------------------------
     
     enum HTTPHeaderField: String {

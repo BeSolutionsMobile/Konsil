@@ -135,4 +135,8 @@ class APIClient {
         performRequest(route: APIRouter.UploadConsultationFiles(consultationID: consultationID, images: images, files: files), completion: completion)
     }
     
+    static func getStripeToken(amount: Double ,completion: @escaping(Result<StripeToken,AFError>,Int)->Void){
+        performRequest(route: APIRouter.GetStripeToken(amount: amount), completion: completion)
+    }
+    
 }

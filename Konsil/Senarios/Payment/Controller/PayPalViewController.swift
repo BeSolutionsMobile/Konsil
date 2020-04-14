@@ -96,6 +96,15 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
         }
     }
     
+    @IBAction func payWithStripe(_ sender: UIButton) {
+        if let amount = Double(price) ,let vc = storyboard?.instantiateViewController(withIdentifier: "Stripe") as? StripeViewController {
+            vc.amount = amount
+            vc.id = id
+            vc.type = type
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController) {
         paymentViewController.dismiss(animated: true, completion: nil)
     }

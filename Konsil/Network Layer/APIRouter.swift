@@ -33,6 +33,7 @@ enum APIRouter: URLRequestConvertible {
     case ComfirmConversation(consultation_id: Int, payment_status: Int)
     case GetConversationDetails(conversation_id: Int)
     case UploadConsultationFiles(consultationID: Int ,images: [String] ,files: [String])
+    case GetStripeToken(amount: Double)
     
     //MARK:- HTTP Method
     private var method: HTTPMethod {
@@ -82,6 +83,8 @@ enum APIRouter: URLRequestConvertible {
         case .GetConversationDetails:
             return .post
         case .UploadConsultationFiles:
+            return .post
+        case .GetStripeToken:
             return .post
         }
     }
@@ -135,6 +138,8 @@ enum APIRouter: URLRequestConvertible {
             return "/my-conversation-details"
         case .UploadConsultationFiles:
             return "/upload-consultation-files"
+        case .GetStripeToken(let amount):
+            return "/stripe-token"
         }
     }
     
@@ -187,6 +192,8 @@ enum APIRouter: URLRequestConvertible {
             return [K.GetConversationDetails.conversation_id: conversation_id]
         case .UploadConsultationFiles(let consultationID, let images, let files):
             return [K.UploadConsultationFiles.consultation_id: consultationID ,K.UploadConsultationFiles.images: images ,K.UploadConsultationFiles.files: files]
+        case .GetStripeToken(let amount):
+            return [K.GetStripeToken.amount: amount]
         }
     }
     

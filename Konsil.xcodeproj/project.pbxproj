@@ -64,6 +64,7 @@
 		8182882723FD982900271CCF /* SendMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8182882623FD982900271CCF /* SendMessage.swift */; };
 		8182882923FD988900271CCF /* GetChatMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8182882823FD988900271CCF /* GetChatMessages.swift */; };
 		81847FB62445D77600BB5EAC /* StripeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81847FB52445D77600BB5EAC /* StripeViewController.swift */; };
+		81847FB92445DE3800BB5EAC /* StripeToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81847FB82445DE3800BB5EAC /* StripeToken.swift */; };
 		81849F1D23A8DC26004A59D8 /* RequestConsultationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F1C23A8DC26004A59D8 /* RequestConsultationViewController.swift */; };
 		81849F1F23A8EE6E004A59D8 /* RequestPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F1E23A8EE6E004A59D8 /* RequestPopupViewController.swift */; };
 		81849F2123A906C1004A59D8 /* ConsultationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81849F2023A906C1004A59D8 /* ConsultationDetailsViewController.swift */; };
@@ -205,6 +206,7 @@
 		8182882623FD982900271CCF /* SendMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessage.swift; sourceTree = "<group>"; };
 		8182882823FD988900271CCF /* GetChatMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetChatMessages.swift; sourceTree = "<group>"; };
 		81847FB52445D77600BB5EAC /* StripeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeViewController.swift; sourceTree = "<group>"; };
+		81847FB82445DE3800BB5EAC /* StripeToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeToken.swift; sourceTree = "<group>"; };
 		81849F1C23A8DC26004A59D8 /* RequestConsultationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConsultationViewController.swift; sourceTree = "<group>"; };
 		81849F1E23A8EE6E004A59D8 /* RequestPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPopupViewController.swift; sourceTree = "<group>"; };
 		81849F2023A906C1004A59D8 /* ConsultationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationDetailsViewController.swift; sourceTree = "<group>"; };
@@ -624,6 +626,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		81847FB72445DE1900BB5EAC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				81847FB82445DE3800BB5EAC /* StripeToken.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		81849F1A23A8DBEC004A59D8 /* Consultation */ = {
 			isa = PBXGroup;
 			children = (
@@ -699,6 +709,7 @@
 		8189E68823E18CDF009DA8E0 /* Payment */ = {
 			isa = PBXGroup;
 			children = (
+				81847FB72445DE1900BB5EAC /* Model */,
 				8189E68923E18CE5009DA8E0 /* Controller */,
 			);
 			path = Payment;
@@ -1079,6 +1090,7 @@
 				810DAB0823A7BC8F00B8AF20 /* LogInViewController.swift in Sources */,
 				81FA8DFA23F15E53006B3345 /* SpecialityDoctors.swift in Sources */,
 				810DAB0D23A7C71F00B8AF20 /* RegisterViewController.swift in Sources */,
+				81847FB92445DE3800BB5EAC /* StripeToken.swift in Sources */,
 				81ECE9A323AB7D4E00E63105 /* ComplaintTableViewCell.swift in Sources */,
 				81FA8E1123F2DC77006B3345 /* DoctorInfo.swift in Sources */,
 				815A17DE23A67C80001DDBEE /* LeftSideMenuViewController.swift in Sources */,

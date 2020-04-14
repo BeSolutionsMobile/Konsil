@@ -45,6 +45,13 @@
 "Yor report is not yet ready" = "التقرير الخاص بك غير جاهز للتنزيل حاليا";
 "no consltations" = "ليس لديك اي استشارات حاليا";
 
+"Pay" = "دفع";
+"Payment failed" = "عملية الدفع فشلت";
+"Payment canceled" = "تم إلغاء الدفع";
+"Payment succeeded" = "تم الدفع بنجاح";
+"Payment Failed Please Try Again" = "فشل في عملية الدفع يرجى المحاولة مرة أخرى";
+"Payment process completed successfully" = "اكتملت عملية الدفع بنجاح";
+
 // Network Messages
 
 "email already exists" = "البريد الالكتروني موجود بالفعل";

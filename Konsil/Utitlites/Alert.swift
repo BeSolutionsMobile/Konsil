@@ -29,4 +29,12 @@ class Alert {
         context.present(alert, animated: true)
 
     }
+    
+    static func showWithAction(_ title:String, massege:String , context:UIViewController , completion: @escaping (UIAlertAction)->Void ) {
+        let alert = UIAlertController(title: title, message: massege, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK".localized, style: .cancel, handler: { (action) in
+            completion(action)
+        }))
+        context.present(alert, animated: true)
+    }
 }
