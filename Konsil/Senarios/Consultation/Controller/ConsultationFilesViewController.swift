@@ -11,6 +11,7 @@ import FirebaseStorage
 import MobileCoreServices
 import SafariServices
 import OpalImagePicker
+import Photos
 
 class ConsultationFilesViewController: UIViewController {
     
@@ -23,7 +24,7 @@ class ConsultationFilesViewController: UIViewController {
     let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypePDF as String], in: .import)
     let imagePicker = OpalImagePickerController()
     var consultation_id: Int?
-    var consultationFiles: ConsultationFiles?
+    var consultationFiles: [ConsultationFiles]?
     var status: String?
     
     //MARK:- viewDidLoad
@@ -67,12 +68,14 @@ class ConsultationFilesViewController: UIViewController {
     
     func getFiels(){
         if let id = consultation_id {
-            self.startAnimating()
+            if !self.isAnimating {
+                self.startAnimating()
+            }
             DispatchQueue.main.async { [weak self] in
                 APIClient.consultationFiles(consultation_id: id) { (result, status) in
-                    self?.stopAnimating()
                     switch result {
                     case .success(let response):
+                        self?.stopAnimating()
                         print(response)
                         self?.consultationFiles = response.consultation
                         self?.filesTableView.reloadData()
@@ -86,11 +89,10 @@ class ConsultationFilesViewController: UIViewController {
     }
     
     func uploadConsultationFiles(files: [String] ,images: [String]){
-        if status != "closed".localized ,let id = consultation_id{
+        if status != "Closed".localized ,let id = consultation_id{
             self.startAnimating()
             DispatchQueue.global().async { [weak self] in
                 APIClient.uploadConsultationFiles(consultationID: id, images: images, files: files) { (result, status) in
-                    self?.stopAnimating()
                     switch result {
                     case .success(let response):
                         print(response)
@@ -99,10 +101,13 @@ class ConsultationFilesViewController: UIViewController {
                         switch status {
                         case 402:
                             Alert.show("Failed", massege: "Consultation can not be found", context: self! )
+                            self?.stopAnimating()
                         case 403:
                             Alert.show("Failed", massege: "Consultation is closed by the doctor", context: self! )
+                            self?.stopAnimating()
                         case 404:
                             Alert.show("Failed", massege: "Consultation Not Found", context: self! )
+                            self?.stopAnimating()
                         case 200:
                             self?.getFiels()
                         default:
@@ -121,13 +126,13 @@ extension ConsultationFilesViewController: UITableViewDelegate , UITableViewData
     
     //MARK:- TabelView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return consultationFiles?.files.count ?? 0
+        return consultationFiles?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FilesCell", for: indexPath) as! FilesTableViewCell
-        if let file = consultationFiles?.files[indexPath.row] {
-            cell.fileName.text = file
+        if let file = consultationFiles?[indexPath.row]{
+            cell.fileName.text = file.name
         }
         return cell
     }
@@ -135,7 +140,7 @@ extension ConsultationFilesViewController: UITableViewDelegate , UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         //        let url = files?.files[indexPath.row].addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        if let fileURL = URL(string: consultationFiles?.files[indexPath.row] ?? "") {
+        if let fileURL = URL(string: consultationFiles?[indexPath.row].url ?? "") {
             //            let safariVC = SFSafariViewController(url: fileURL)
             //            self.present(safariVC, animated: true, completion: nil)
             UIApplication.shared.open(fileURL as URL, options: [:], completionHandler: nil)
@@ -162,20 +167,21 @@ extension ConsultationFilesViewController: UIDocumentPickerDelegate {
 }
 
 extension ConsultationFilesViewController: OpalImagePickerControllerDelegate {
-    func imagePicker(_ picker: OpalImagePickerController, didFinishPickingImages images: [UIImage]) {
-        for i in images.indices {
-            if i == images.count - 1 {
-                FirebaseUploader.uploadImagesToFirebase(viewController: self, imagePicker: imagePicker, pickedImage: images[i]) { (uploaded, imagesURL) in
-                    if uploaded {
-                        if imagesURL != [] {
-                            self.uploadConsultationFiles(files: ["noFiles"], images: imagesURL)
-                        }
+    internal func imagePicker(_ picker: OpalImagePickerController, didFinishPickingAssets assets: [PHAsset]) {
+        var count = 0
+        for i in assets.indices {
+            print("Finsihed \(i)")
+            FirebaseUploader.uploadImagesToFirebase(viewController: self, imagePicker: imagePicker, pickedImage: assets[i] ) { (uploaded, imagesURL) in
+                if uploaded {
+                    count += 1
+                    print(count)
+                    if count == assets.count ,imagesURL != [] {
+                        self.uploadConsultationFiles(files: ["noFiles"], images: imagesURL)
                     }
                 }
-            } else {
-                FirebaseUploader.uploadImagesToFirebase(viewController: self, imagePicker: imagePicker, pickedImage: images[i], completion: nil)
             }
-            
         }
     }
 }
+
+

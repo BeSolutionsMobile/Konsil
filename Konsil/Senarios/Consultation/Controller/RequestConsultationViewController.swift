@@ -10,6 +10,7 @@ import UIKit
 import SideMenu
 import OpalImagePicker
 import MobileCoreServices
+import Photos
 
 class RequestConsultationViewController: UIViewController {
     
@@ -123,10 +124,10 @@ class RequestConsultationViewController: UIViewController {
 extension RequestConsultationViewController: OpalImagePickerControllerDelegate , UIDocumentPickerDelegate{
     
     //MARK:- Image Picker
-    func imagePicker(_ picker: OpalImagePickerController, didFinishPickingImages images: [UIImage]) {
-        for i in images.indices {
-            if i == images.count - 1 {
-                FirebaseUploader.uploadImagesToFirebase(viewController: self, imagePicker: imagePicker, pickedImage: images[i]) {[weak self] (uploaded, imagesURL) in
+    func imagePicker(_ picker: OpalImagePickerController, didFinishPickingAssets assets: [PHAsset]) {
+        for i in assets.indices {
+            if i == assets.count - 1 {
+                FirebaseUploader.uploadImagesToFirebase(viewController: self, imagePicker: imagePicker, pickedImage: assets[i]) {[weak self] (uploaded, imagesURL) in
                     if uploaded == true {
                         self?.imageUploaded = true
                         self?.images = imagesURL
@@ -135,9 +136,12 @@ extension RequestConsultationViewController: OpalImagePickerControllerDelegate ,
                     }
                 }
             } else {
-                FirebaseUploader.uploadImagesToFirebase(viewController: self, imagePicker: imagePicker, pickedImage: images[i] ,completion: nil)
+                FirebaseUploader.uploadImagesToFirebase(viewController: self, imagePicker: imagePicker, pickedImage: assets[i] ,completion: nil)
             }
         }
+    }
+    func imagePicker(_ picker: OpalImagePickerController, didFinishPickingImages images: [UIImage]) {
+        
     }
     
     //MARK:- Document Picker

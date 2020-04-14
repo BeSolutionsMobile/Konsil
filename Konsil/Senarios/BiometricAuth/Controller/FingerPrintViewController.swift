@@ -117,6 +117,7 @@ class FingerPrintViewController: UIViewController {
                         if Status == 200 {
                             Shared.user = response.userInfo
                             self?.success()
+                            print(response.token)
                         }
                     case .failure(let error):
                         print(error.localizedDescription)

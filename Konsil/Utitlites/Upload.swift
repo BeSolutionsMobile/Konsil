@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 import OpalImagePicker
+import Photos
 
 class FirebaseUploader
 {
@@ -86,15 +87,34 @@ class FirebaseUploader
         
     }
     
+    static func getAssetThumbnail(asset: PHAsset) -> UIImage {
+        let manager = PHImageManager.default()
+        let option = PHImageRequestOptions()
+        var thumbnail = UIImage()
+        option.isSynchronous = true
+        
+        manager.requestImage(for: asset, targetSize: .zero, contentMode: .aspectFit, options: option){(result, info)->Void in
+            thumbnail = result!
+        }
+        //        manager.requestImage(for: asset, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+        //            thumbnail = result!
+        //        })
+        return thumbnail
+    }
+    
     //MARK:- Upload Using Opal ImagePicker
-    static func uploadImagesToFirebase(viewController:UIViewController ,imagePicker: OpalImagePickerController , pickedImage: UIImage , completion: ((_ success: Bool, _ images: [String]) -> Void)?)
+    static func uploadImagesToFirebase(viewController:UIViewController ,imagePicker: OpalImagePickerController , pickedImage: PHAsset , completion: ((_ success: Bool, _ images: [String]) -> Void)?)
     {
         
         //to upload image to firebase storage
-        let image = pickedImage
+        let image = getAssetThumbnail(asset: pickedImage)
+        var imageName = ""
+        if let assetName = pickedImage.value(forKey: "filename") as? String {
+            imageName = assetName
+        }
         
         var imageData = Data()
-        imageData = image.jpegData(compressionQuality: 0.3)!
+        imageData = image.jpegData(compressionQuality: 0.5)!
         
         if let uuid = uid {
             let storeRef = Storage.storage().reference().child("\(uuid)/" + randomString(length: 20) + ".jpg")
@@ -110,11 +130,15 @@ class FirebaseUploader
                         } else {
                             print(url?.absoluteString ?? "link")
                             imageURl = url?.absoluteString ?? "link"
-                            if images?.count == nil {
-                                images = [(imageURl ?? "")]
-                            } else {
-                                images?.append(imageURl ?? "")
+                            if let image = imageURl {
+                                let imageWithName = image + "&name=" + imageName
+                                if images?.count == nil {
+                                    images = [(imageWithName)]
+                                } else {
+                                    images?.append(imageWithName)
+                                }
                             }
+                            
                             completion?(true , images ?? []) ?? nil
                         }
                     }
@@ -178,12 +202,8 @@ class FirebaseUploader
             uploadFileTask.observe(.progress) { snapshot in
                 alert = UIAlertController(title: "uploading".localized , message: "please wait".localized , preferredStyle: UIAlertController.Style.alert)
                 viewController.present(alert!, animated: true, completion: nil)
-                var percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
-                    / Double(snapshot.progress!.totalUnitCount){
-                    didSet{
-                        alert?.message = "please wait \(percentComplete)"
-                    }
-                }
+                let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
+                    / Double(snapshot.progress!.totalUnitCount)
                 print(percentComplete)
             }
             uploadFileTask.observe(.success) { snapshot in

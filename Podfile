@@ -26,6 +26,8 @@ target 'Konsil' do
   pod 'GoogleSignIn'
   pod 'SwiftyGif'
   pod "ExpandableLabel"
+  pod 'Stripe'
+
 
 
   

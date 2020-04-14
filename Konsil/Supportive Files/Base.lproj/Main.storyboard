@@ -3567,68 +3567,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qlh-Rh-0vA">
-                                <rect key="frame" x="72" y="422.33333333333331" width="270" height="75"/>
-                                <color key="backgroundColor" red="0.1058823529" green="0.16078431369999999" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfZ-zl-Hvm">
+                                <rect key="frame" x="0.0" y="239" width="414" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your payment method :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tov-4J-Jh9">
+                                        <rect key="frame" x="20" y="148.66666666666669" width="278.33333333333331" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <color key="textColor" name="IconsColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paypal" translatesAutoresizingMaskIntoConstraints="NO" id="2F9-Ua-m12">
+                                        <rect key="frame" x="30" y="221.66666666666669" width="354" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="K8s-0F-FBx"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qlh-Rh-0vA">
+                                        <rect key="frame" x="30" y="271.66666666666669" width="354" height="60"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.96888393159999997" green="0.92540192600000004" blue="0.09391892701" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="payWithPayPal:" destination="UF4-og-ZeC" eventType="touchUpInside" id="Yvt-H4-9FU"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="payment-btn" translatesAutoresizingMaskIntoConstraints="NO" id="4Av-Uy-476">
+                                        <rect key="frame" x="30" y="311.66666666666663" width="354" height="166"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDd-97-7VW">
+                                        <rect key="frame" x="30" y="311.66666666666663" width="354" height="166"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="96J-Rq-t8c"/>
-                                    <constraint firstAttribute="width" constant="270" id="RMM-IA-D3S"/>
+                                    <constraint firstItem="2F9-Ua-m12" firstAttribute="top" secondItem="Tov-4J-Jh9" secondAttribute="bottom" constant="50" id="2Dv-wK-eHy"/>
+                                    <constraint firstItem="Qlh-Rh-0vA" firstAttribute="centerY" secondItem="2F9-Ua-m12" secondAttribute="centerY" constant="50" id="2MY-2P-sYp"/>
+                                    <constraint firstItem="IDd-97-7VW" firstAttribute="width" secondItem="4Av-Uy-476" secondAttribute="width" id="92e-R0-RrB"/>
+                                    <constraint firstAttribute="trailing" secondItem="2F9-Ua-m12" secondAttribute="trailing" constant="30" id="JhC-4K-Mlq"/>
+                                    <constraint firstItem="4Av-Uy-476" firstAttribute="top" secondItem="2F9-Ua-m12" secondAttribute="bottom" constant="30" id="K1L-2s-gEd"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Av-Uy-476" secondAttribute="trailing" constant="30" id="OfK-eB-YX3"/>
+                                    <constraint firstItem="IDd-97-7VW" firstAttribute="centerY" secondItem="4Av-Uy-476" secondAttribute="centerY" id="Rox-JG-1eT"/>
+                                    <constraint firstItem="Qlh-Rh-0vA" firstAttribute="height" secondItem="2F9-Ua-m12" secondAttribute="height" id="SxC-mN-9DB"/>
+                                    <constraint firstItem="IDd-97-7VW" firstAttribute="centerX" secondItem="4Av-Uy-476" secondAttribute="centerX" id="ZrR-oM-gel"/>
+                                    <constraint firstItem="Qlh-Rh-0vA" firstAttribute="centerX" secondItem="2F9-Ua-m12" secondAttribute="centerX" id="a5c-1V-sJk"/>
+                                    <constraint firstItem="IDd-97-7VW" firstAttribute="height" secondItem="4Av-Uy-476" secondAttribute="height" id="b08-Kl-gk3"/>
+                                    <constraint firstItem="4Av-Uy-476" firstAttribute="leading" secondItem="bfZ-zl-Hvm" secondAttribute="leading" constant="30" id="dhC-ed-8ZZ"/>
+                                    <constraint firstItem="Tov-4J-Jh9" firstAttribute="leading" secondItem="bfZ-zl-Hvm" secondAttribute="leading" constant="20" id="doN-D9-2Aq"/>
+                                    <constraint firstItem="Qlh-Rh-0vA" firstAttribute="width" secondItem="2F9-Ua-m12" secondAttribute="width" id="mOH-bP-oeS"/>
+                                    <constraint firstItem="Qlh-Rh-0vA" firstAttribute="centerY" secondItem="bfZ-zl-Hvm" secondAttribute="centerY" id="wbk-de-dlh"/>
+                                    <constraint firstItem="2F9-Ua-m12" firstAttribute="leading" secondItem="bfZ-zl-Hvm" secondAttribute="leading" constant="30" id="yCH-D2-ybb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                <state key="normal" title="PayPal">
-                                    <color key="titleColor" red="0.96888393159999997" green="0.92540192600000004" blue="0.09391892701" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="payWithPayPal:" destination="UF4-og-ZeC" eventType="touchUpInside" id="Yvt-H4-9FU"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doctor :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40c-QG-e3b">
-                                <rect key="frame" x="20" y="168" width="72.666666666666671" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <color key="textColor" name="IconsColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKY-WV-KWF">
-                                <rect key="frame" x="102.66666666666667" y="180" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <color key="textColor" name="KonsilDrakGray"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eH7-aM-XuH">
-                                <rect key="frame" x="20" y="222" width="59" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <color key="textColor" name="IconsColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFT-ql-YSR">
-                                <rect key="frame" x="89" y="234" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <color key="textColor" name="KonsilDrakGray"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ِAmount :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5E-yk-LDG">
-                                <rect key="frame" x="20" y="114" width="83" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <color key="textColor" name="IconsColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8O-st-Xeg">
-                                <rect key="frame" x="113" y="126" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <color key="textColor" name="KonsilDrakGray"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your payment method :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tov-4J-Jh9">
-                                <rect key="frame" x="20" y="346" width="313" height="26.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
-                                <color key="textColor" name="IconsColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                             <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZX-Tv-hhl">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="52"/>
                                 <subviews>
                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2o-xw-Xxq">
-                                        <rect key="frame" x="147" y="246" width="120" height="120"/>
+                                        <rect key="frame" x="147" y="-154" width="120" height="120"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="SdV-EE-HUD"/>
@@ -3642,29 +3638,65 @@
                                     <constraint firstItem="P2o-xw-Xxq" firstAttribute="centerX" secondItem="dZX-Tv-hhl" secondAttribute="centerX" id="sBG-5s-P8V"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doctor :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40c-QG-e3b">
+                                <rect key="frame" x="12" y="155.66666666666666" width="67.666666666666671" height="21.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" name="IconsColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKY-WV-KWF">
+                                <rect key="frame" x="89.666666666666671" y="166.66666666666666" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" name="KonsilDrakGray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eH7-aM-XuH">
+                                <rect key="frame" x="12" y="197.33333333333334" width="56" height="21.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" name="IconsColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFT-ql-YSR">
+                                <rect key="frame" x="78" y="208.33333333333334" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" name="KonsilDrakGray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5E-yk-LDG">
+                                <rect key="frame" x="12" y="114" width="76.666666666666671" height="21.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" name="IconsColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8O-st-Xeg">
+                                <rect key="frame" x="98.666666666666671" y="125" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" name="KonsilDrakGray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" name="KosilBackGround"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Tov-4J-Jh9" firstAttribute="leading" secondItem="aXP-u1-lVx" secondAttribute="leading" constant="20" id="1dl-l4-YG6"/>
-                            <constraint firstItem="Qlh-Rh-0vA" firstAttribute="top" secondItem="Tov-4J-Jh9" secondAttribute="bottom" constant="50" id="2dI-iA-4cv"/>
-                            <constraint firstItem="wFT-ql-YSR" firstAttribute="leading" secondItem="eH7-aM-XuH" secondAttribute="trailing" constant="10" id="CDq-LM-kbd"/>
-                            <constraint firstItem="Qlh-Rh-0vA" firstAttribute="centerX" secondItem="7aG-Qf-ELM" secondAttribute="centerX" id="Dga-1O-zjO"/>
+                            <constraint firstItem="aXP-u1-lVx" firstAttribute="bottom" secondItem="bfZ-zl-Hvm" secondAttribute="bottom" constant="20" id="0ha-re-Pxc"/>
+                            <constraint firstItem="R5E-yk-LDG" firstAttribute="leading" secondItem="7aG-Qf-ELM" secondAttribute="leading" constant="12" id="2G4-Xg-kag"/>
+                            <constraint firstItem="40c-QG-e3b" firstAttribute="leading" secondItem="7aG-Qf-ELM" secondAttribute="leading" constant="12" id="3f9-UI-Rdy"/>
+                            <constraint firstItem="bfZ-zl-Hvm" firstAttribute="top" secondItem="eH7-aM-XuH" secondAttribute="bottom" constant="20" id="5tq-fu-goG"/>
+                            <constraint firstItem="wFT-ql-YSR" firstAttribute="centerY" secondItem="eH7-aM-XuH" secondAttribute="centerY" id="C0v-vH-1Mw"/>
+                            <constraint firstItem="C8O-st-Xeg" firstAttribute="centerY" secondItem="R5E-yk-LDG" secondAttribute="centerY" id="FUh-S7-zql"/>
+                            <constraint firstItem="40c-QG-e3b" firstAttribute="top" secondItem="R5E-yk-LDG" secondAttribute="bottom" constant="20" id="JC7-wj-LZz"/>
+                            <constraint firstItem="wFT-ql-YSR" firstAttribute="leading" secondItem="eH7-aM-XuH" secondAttribute="trailing" constant="10" id="JWa-xm-i1F"/>
                             <constraint firstItem="dZX-Tv-hhl" firstAttribute="trailing" secondItem="aXP-u1-lVx" secondAttribute="trailing" id="PHJ-fF-jY3"/>
-                            <constraint firstItem="40c-QG-e3b" firstAttribute="top" secondItem="R5E-yk-LDG" secondAttribute="bottom" constant="30" id="QXF-Qc-vyZ"/>
-                            <constraint firstItem="eH7-aM-XuH" firstAttribute="leading" secondItem="7aG-Qf-ELM" secondAttribute="leading" constant="20" id="Vol-yz-5QF"/>
-                            <constraint firstItem="xKY-WV-KWF" firstAttribute="centerY" secondItem="40c-QG-e3b" secondAttribute="centerY" id="VxS-7o-xGH"/>
-                            <constraint firstItem="R5E-yk-LDG" firstAttribute="top" secondItem="aXP-u1-lVx" secondAttribute="top" constant="70" id="WhD-dP-RAa"/>
-                            <constraint firstItem="Tov-4J-Jh9" firstAttribute="top" secondItem="eH7-aM-XuH" secondAttribute="bottom" constant="100" id="XsM-mU-9R6"/>
+                            <constraint firstItem="eH7-aM-XuH" firstAttribute="leading" secondItem="7aG-Qf-ELM" secondAttribute="leading" constant="12" id="UZE-J9-bYI"/>
+                            <constraint firstItem="bfZ-zl-Hvm" firstAttribute="leading" secondItem="aXP-u1-lVx" secondAttribute="leading" id="Vkg-8l-kQc"/>
+                            <constraint firstItem="eH7-aM-XuH" firstAttribute="top" secondItem="40c-QG-e3b" secondAttribute="bottom" constant="20" id="WEN-sH-EBs"/>
+                            <constraint firstItem="xKY-WV-KWF" firstAttribute="leading" secondItem="40c-QG-e3b" secondAttribute="trailing" constant="10" id="b4P-dV-8PB"/>
+                            <constraint firstItem="C8O-st-Xeg" firstAttribute="leading" secondItem="R5E-yk-LDG" secondAttribute="trailing" constant="10" id="c15-cH-qkb"/>
                             <constraint firstItem="dZX-Tv-hhl" firstAttribute="top" secondItem="aXP-u1-lVx" secondAttribute="top" id="f9s-nF-nFZ"/>
-                            <constraint firstItem="wFT-ql-YSR" firstAttribute="centerY" secondItem="eH7-aM-XuH" secondAttribute="centerY" id="gMn-yW-3i9"/>
-                            <constraint firstItem="R5E-yk-LDG" firstAttribute="leading" secondItem="7aG-Qf-ELM" secondAttribute="leading" constant="20" id="gyK-8B-gjP"/>
-                            <constraint firstItem="C8O-st-Xeg" firstAttribute="leading" secondItem="R5E-yk-LDG" secondAttribute="trailing" constant="10" id="hLj-TO-UQB"/>
-                            <constraint firstItem="C8O-st-Xeg" firstAttribute="centerY" secondItem="R5E-yk-LDG" secondAttribute="centerY" id="hMu-gS-Fhk"/>
-                            <constraint firstItem="eH7-aM-XuH" firstAttribute="top" secondItem="40c-QG-e3b" secondAttribute="bottom" constant="30" id="mhP-NB-0BN"/>
+                            <constraint firstItem="aXP-u1-lVx" firstAttribute="trailing" secondItem="bfZ-zl-Hvm" secondAttribute="trailing" id="ffr-0l-pTy"/>
+                            <constraint firstItem="R5E-yk-LDG" firstAttribute="top" secondItem="aXP-u1-lVx" secondAttribute="top" constant="70" id="hvi-dc-s03"/>
+                            <constraint firstItem="xKY-WV-KWF" firstAttribute="centerY" secondItem="40c-QG-e3b" secondAttribute="centerY" id="qMX-Ok-1Rb"/>
                             <constraint firstItem="dZX-Tv-hhl" firstAttribute="leading" secondItem="aXP-u1-lVx" secondAttribute="leading" id="qwm-v6-LdD"/>
-                            <constraint firstItem="40c-QG-e3b" firstAttribute="leading" secondItem="aXP-u1-lVx" secondAttribute="leading" constant="20" id="r7K-Y4-66r"/>
-                            <constraint firstAttribute="bottom" secondItem="dZX-Tv-hhl" secondAttribute="bottom" id="sKt-HX-mUJ"/>
-                            <constraint firstItem="xKY-WV-KWF" firstAttribute="leading" secondItem="40c-QG-e3b" secondAttribute="trailing" constant="10" id="tci-Oo-BKs"/>
+                            <constraint firstAttribute="bottom" secondItem="dZX-Tv-hhl" secondAttribute="bottom" constant="800" id="sKt-HX-mUJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aXP-u1-lVx"/>
                     </view>
@@ -5592,6 +5624,8 @@
         <image name="leftArrow" width="21" height="21"/>
         <image name="mail" width="19" height="12"/>
         <image name="menuButton" width="31" height="17"/>
+        <image name="payment-btn" width="333.33334350585938" height="83.333335876464844"/>
+        <image name="paypal" width="167" height="24"/>
         <image name="personalInfo" width="32" height="32"/>
         <image name="saudi" width="213.33332824707031" height="213.33332824707031"/>
         <image name="uplado" width="52" height="36"/>
@@ -5607,7 +5641,7 @@
             <color red="0.19599999487400055" green="0.19599999487400055" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="KonsilRed">
-            <color red="0.8666666666666667" green="0.20784313725490194" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.86699998378753662" green="0.20800000429153442" blue="0.16099999845027924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="KosilBackGround">
             <color red="0.87800002098083496" green="0.92199999094009399" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
