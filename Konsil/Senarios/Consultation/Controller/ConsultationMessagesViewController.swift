@@ -40,7 +40,6 @@ class ConsultationMessagesViewController: UIViewController {
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        getChatMessages()
         rightBackBut()
         messagesTableView.setContentOffset(CGPoint(x: 0, y: CGFloat.greatestFiniteMagnitude + 30), animated: false)
         if let status = ConsultationDetailsViewController.status {

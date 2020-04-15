@@ -80,7 +80,6 @@
 		81862C7523FC4623002F3D81 /* MyConsultations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81862C7423FC4622002F3D81 /* MyConsultations.swift */; };
 		8189E68523E09646009DA8E0 /* ConsultationFilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8189E68423E09646009DA8E0 /* ConsultationFilesViewController.swift */; };
 		8189E68723E097D8009DA8E0 /* FilesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8189E68623E097D8009DA8E0 /* FilesTableViewCell.swift */; };
-		8189E68B23E18D01009DA8E0 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8189E68A23E18D01009DA8E0 /* PaymentViewController.swift */; };
 		81B7615523D49E4C00859320 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81B7615723D49E4C00859320 /* Localizable.strings */; };
 		81BB8ADB23D99C3D00C57648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB8ADA23D99C3D00C57648 /* AppDelegate.swift */; };
 		81BF938823FEDBEE0079435C /* ComfirmCounsultation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BF938723FEDBEE0079435C /* ComfirmCounsultation.swift */; };
@@ -222,7 +221,6 @@
 		81862C7423FC4622002F3D81 /* MyConsultations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultations.swift; sourceTree = "<group>"; };
 		8189E68423E09646009DA8E0 /* ConsultationFilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationFilesViewController.swift; sourceTree = "<group>"; };
 		8189E68623E097D8009DA8E0 /* FilesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesTableViewCell.swift; sourceTree = "<group>"; };
-		8189E68A23E18D01009DA8E0 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		81B7071B23E9705100333AD9 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		81B7071C23E9705200333AD9 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		81B7071D23E9705300333AD9 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -718,7 +716,6 @@
 		8189E68923E18CE5009DA8E0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8189E68A23E18D01009DA8E0 /* PaymentViewController.swift */,
 				8165928B23EC4F1A00595B6A /* PayPalViewController.swift */,
 				81847FB52445D77600BB5EAC /* StripeViewController.swift */,
 			);
@@ -1107,7 +1104,6 @@
 				81862C6F23FAA855002F3D81 /* ReserveConversation.swift in Sources */,
 				8148C476240326DF00F48560 /* LanguagesViewController.swift in Sources */,
 				810DAAFD23A7829400B8AF20 /* DoctorsViewController.swift in Sources */,
-				8189E68B23E18D01009DA8E0 /* PaymentViewController.swift in Sources */,
 				815A17D723A65A26001DDBEE /* Maps.swift in Sources */,
 				81BF938823FEDBEE0079435C /* ComfirmCounsultation.swift in Sources */,
 				81849F2723A929DD004A59D8 /* ConsultationMessagesViewController.swift in Sources */,
