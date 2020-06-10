@@ -70,6 +70,8 @@
 	<string>This app requires Face ID permission to authenticate using Face recognition</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Konsil needs permision to access your photos</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>Konsil needs permision to access documents</string>
 	<key>UIFileSharingEnabled</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
