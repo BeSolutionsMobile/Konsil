@@ -317,7 +317,7 @@ PODS:
   - SDWebImage (5.4.0):
     - SDWebImage/Core (= 5.4.0)
   - SDWebImage/Core (5.4.0)
-  - SideMenu (6.4.7)
+  - SideMenu (6.4.8)
   - Stripe (19.0.1)
   - SwiftyGif (5.2.0)
   - SwiftyJSON (4.3.0)
@@ -429,11 +429,11 @@ SPEC CHECKSUMS:
   OpalImagePicker: 40e9d4c27018538a704d8da34b2ff3a2a54a3dc8
   PayPal-iOS-SDK: 10654cd111e911a9807bddb96fae81aacb8e9915
   SDWebImage: 5bf6aec6481ae2a062bdc59f9d6c1d1e552090e0
-  SideMenu: 928a015669c3afc201e1fe3a87f1b0bc8993a664
+  SideMenu: 4a891be552d30bb6fa87ad404d62e485f8450c34
   Stripe: 03313f9520a0786e2c00d9a7a2672c11e08821af
   SwiftyGif: b85c6b33a9411859d9e1db998b6a8214aea942df
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
 PODFILE CHECKSUM: addf9f603b2c2f63b970c2ed9ccbe4797fd828f6
 
-COCOAPODS: 1.9.0.beta.3
+COCOAPODS: 1.9.1

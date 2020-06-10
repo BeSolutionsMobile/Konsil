@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
         IQKeyboardManager.shared.enable = true
         
         retriveToken()
-        Stripe.setDefaultPublishableKey("pk_test_qvhgvLjl4eJlGqmVmCaijyDb00iQmgmMy8")
+        Stripe.setDefaultPublishableKey("pk_live_naoQPab0j0XZPhG3cmryN3Qk003AB10ONp")
         
         let didLunchedBefore = UserDefaults.standard.bool(forKey: Key.launchedBefore)
         if !didLunchedBefore {
