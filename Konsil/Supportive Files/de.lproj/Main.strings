@@ -584,3 +584,6 @@
 
 /* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "R5E-yk-LDG"; */
 "drN-Ni-fZF.text" = "Bilder hochladen";
+
+/* Class = "UINavigationItem"; title = "Doctor Info"; ObjectID = "zMt-YJ-8TS"; */
+"zMt-YJ-8TS.title" = "Zahlung";

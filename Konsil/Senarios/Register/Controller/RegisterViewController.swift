@@ -11,7 +11,7 @@ import BEMCheckBox
 import MOLH
 import NVActivityIndicatorView
 import FBSDKLoginKit
-import GoogleSignIn
+//import GoogleSignIn
 import SafariServices
 import SwiftyGif
 
@@ -104,12 +104,12 @@ class RegisterViewController: UIViewController {
     
     
     let facebookManger = LoginManager()
-    let googleManger = GIDSignIn.sharedInstance()
+//    let googleManger = GIDSignIn.sharedInstance()
     
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupGoogleSginIn()
+//        setupGoogleSginIn()
         logoGifImageSetUp()
     }
     
@@ -229,7 +229,7 @@ class RegisterViewController: UIViewController {
     }
     @IBAction func registerWithGoogle(_ sender: UIButton) {
         if checkBox.on {
-            googleManger?.signIn()
+//            googleManger?.signIn()
         } else {
             Alert.show("Error".localized, massege: "Please accept our terms and conditions then try again".localized, context: self)
         }
@@ -392,43 +392,43 @@ extension RegisterViewController {
     }
 }
 
-//MARK:- Google Sgin In
-extension RegisterViewController: GIDSignInDelegate {
-    
-    func setupGoogleSginIn(){
-        GIDSignIn.sharedInstance().clientID = "30414761383-5g2d3tsuof784onfl67el1bhsrhk0ni2.apps.googleusercontent.com"
-        GIDSignIn.sharedInstance().delegate = self
-        
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-        //        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let error = error {
-            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
-                print("The user has not signed in before or they have since signed out.")
-            } else {
-                print("\(error.localizedDescription)")
-            }
-            return
-        }
-        // Perform any operations on signed in user here.
-        let userId = user.userID      // For client-side use only!
-        let fullName = user.profile.name
-        let email = user.profile.email
-        startAnimation()
-        registerToKonsilAPI(email: email ?? "", password: userId ?? "", image: "no Image", name: fullName ?? "")
-    }
-    
-    @available(iOS 9.0, *)
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
-        return GIDSignIn.sharedInstance().handle(url)
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
-              withError error: Error!) {
-    }
-}
+////MARK:- Google Sgin In
+//extension RegisterViewController: GIDSignInDelegate {
+//
+//    func setupGoogleSginIn(){
+//        GIDSignIn.sharedInstance().clientID = "30414761383-5g2d3tsuof784onfl67el1bhsrhk0ni2.apps.googleusercontent.com"
+//        GIDSignIn.sharedInstance().delegate = self
+//
+//        GIDSignIn.sharedInstance()?.presentingViewController = self
+//        //        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+//    }
+//
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+//        if let error = error {
+//            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+//                print("The user has not signed in before or they have since signed out.")
+//            } else {
+//                print("\(error.localizedDescription)")
+//            }
+//            return
+//        }
+//        // Perform any operations on signed in user here.
+//        let userId = user.userID      // For client-side use only!
+//        let fullName = user.profile.name
+//        let email = user.profile.email
+//        startAnimation()
+//        registerToKonsilAPI(email: email ?? "", password: userId ?? "", image: "no Image", name: fullName ?? "")
+//    }
+//
+//    @available(iOS 9.0, *)
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+//        return GIDSignIn.sharedInstance().handle(url)
+//    }
+//
+//    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
+//              withError error: Error!) {
+//    }
+//}
 
 //MARK:- GIF Image
 extension RegisterViewController: SwiftyGifDelegate {

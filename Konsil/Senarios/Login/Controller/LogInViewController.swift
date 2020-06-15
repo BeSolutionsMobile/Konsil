@@ -11,7 +11,6 @@ import BEMCheckBox
 import BiometricAuthentication
 import NVActivityIndicatorView
 import FBSDKLoginKit
-import GoogleSignIn
 import SwiftyGif
 
 class LogInViewController: UIViewController {
@@ -39,13 +38,13 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var logoiImageView: UIImageView!
     
     let facebookManger = LoginManager()
-    let googleManger = GIDSignIn.sharedInstance()
+//    let googleManger = GIDSignIn.sharedInstance()
     var fromIntor = false
     
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupGoogleSginIn()
+//        setupGoogleSginIn()
         logoGIFImageSetup()
     }
     
@@ -55,7 +54,7 @@ class LogInViewController: UIViewController {
     @IBAction func logInWithTwitter(_ sender: UIButton) {
     }
     @IBAction func logInWithGoogle(_ sender: UIButton) {
-        googleManger?.signIn()
+//        googleManger?.signIn()
     }
     @IBAction func logInWithFacebook(_ sender: UIButton) {
         let permisions = ["email"]
@@ -299,42 +298,42 @@ extension LogInViewController {
     }
 }
 
-//MARK:- Google Sgin In
-extension LogInViewController: GIDSignInDelegate {
-    
-    func setupGoogleSginIn() {
-        GIDSignIn.sharedInstance().clientID = "30414761383-5g2d3tsuof784onfl67el1bhsrhk0ni2.apps.googleusercontent.com"
-        GIDSignIn.sharedInstance().delegate = self        
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let error = error {
-            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
-                print("The user has not signed in before or they have since signed out.")
-            } else {
-                print("\(error.localizedDescription)")
-            }
-            return
-        }
-        
-        let userId = user.userID      // For client-side use only!
-        let fullName = user.profile.name
-        let email = user.profile.email
-        loginToKonsilAPI(email: email ?? "", password: userId ?? "", name: fullName ?? "", image: "no Image")
-        
-    }
-    
-    @available(iOS 9.0, *)
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
-        return GIDSignIn.sharedInstance().handle(url)
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
-              withError error: Error!) {
-    }
-}
-
+////MARK:- Google Sgin In
+//extension LogInViewController: GIDSignInDelegate {
+//
+//    func setupGoogleSginIn() {
+//        GIDSignIn.sharedInstance().clientID = "30414761383-5g2d3tsuof784onfl67el1bhsrhk0ni2.apps.googleusercontent.com"
+//        GIDSignIn.sharedInstance().delegate = self
+//        GIDSignIn.sharedInstance()?.presentingViewController = self
+//    }
+//
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+//        if let error = error {
+//            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+//                print("The user has not signed in before or they have since signed out.")
+//            } else {
+//                print("\(error.localizedDescription)")
+//            }
+//            return
+//        }
+//
+//        let userId = user.userID      // For client-side use only!
+//        let fullName = user.profile.name
+//        let email = user.profile.email
+//        loginToKonsilAPI(email: email ?? "", password: userId ?? "", name: fullName ?? "", image: "no Image")
+//
+//    }
+//
+//    @available(iOS 9.0, *)
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+//        return GIDSignIn.sharedInstance().handle(url)
+//    }
+//
+//    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
+//              withError error: Error!) {
+//    }
+//}
+//
 //MARK:- GIF Image
 extension LogInViewController: SwiftyGifDelegate {
     func logoGIFImageSetup(){
@@ -349,7 +348,7 @@ extension LogInViewController: SwiftyGifDelegate {
             }
         }
     }
-    
+
     func gifDidLoop(sender: UIImageView) {
         print("gifDidLoop")
         sender.stopAnimatingGif()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PayPalViewController: UIViewController , PayPalPaymentDelegate {
+class PayPalViewController: UIViewController {
     
     @IBOutlet weak var consultationType: UILabel!
     @IBOutlet weak var doctorName: UILabel!
@@ -26,19 +26,19 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
         }
     }
     
-    var paypalConfig = PayPalConfiguration()
-    var environment: String = PayPalEnvironmentProduction {
-        willSet(newEnvironment) {
-            if (newEnvironment != environment) {
-                PayPalMobile.preconnect(withEnvironment: newEnvironment)
-            }
-        }
-    }
-    var acceptCreditCards: Bool = true {
-        didSet{
-            paypalConfig.acceptCreditCards = acceptCreditCards
-        }
-    }
+//    var paypalConfig = PayPalConfiguration()
+//    var environment: String = PayPalEnvironmentProduction {
+//        willSet(newEnvironment) {
+//            if (newEnvironment != environment) {
+//                PayPalMobile.preconnect(withEnvironment: newEnvironment)
+//            }
+//        }
+//    }
+//    var acceptCreditCards: Bool = true {
+//        didSet{
+//            paypalConfig.acceptCreditCards = acceptCreditCards
+//        }
+//    }
     
     var type: Int?
     var doctor = ""
@@ -50,7 +50,7 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = nil
         rightBackBut()
-        setUpPayPal()
+//        setUpPayPal()
         updateView()
     }
     
@@ -64,36 +64,36 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
         paymentAmount.text = "€" + price 
     }
     
-    func setUpPayPal(){
-        paymentAmount.text = "€" + price
-        paypalConfig.acceptCreditCards = acceptCreditCards
-        paypalConfig.merchantName = "Konsil_med"
-        paypalConfig.merchantPrivacyPolicyURL = URL(string: "https://www.konsilmed.com/privacy")
-        paypalConfig.merchantUserAgreementURL = URL(string: "https://www.konsilmed.com/terms")
-        paypalConfig.languageOrLocale = NSLocale.preferredLanguages[0]
-        paypalConfig.payPalShippingAddressOption = .none
-        PayPalMobile.preconnect(withEnvironment: environment)
-    }
+//    func setUpPayPal(){
+//        paymentAmount.text = "€" + price
+//        paypalConfig.acceptCreditCards = acceptCreditCards
+//        paypalConfig.merchantName = "Konsil_med"
+//        paypalConfig.merchantPrivacyPolicyURL = URL(string: "https://www.konsilmed.com/privacy")
+//        paypalConfig.merchantUserAgreementURL = URL(string: "https://www.konsilmed.com/terms")
+//        paypalConfig.languageOrLocale = NSLocale.preferredLanguages[0]
+//        paypalConfig.payPalShippingAddressOption = .none
+//        PayPalMobile.preconnect(withEnvironment: environment)
+//    }
     
     @IBAction func payWithPayPal(_ sender: UIButton) {
-        if id != nil {
-            let item = PayPalItem(name: doctor, withQuantity: 1, withPrice: NSDecimalNumber(string: price), withCurrency: "EUR", withSku: nil)
-            let items = [item]
-            let subtotle = PayPalItem.totalPrice(forItems: items)
-            let total = subtotle.decimalValue
-            let payment = PayPalPayment(amount: NSDecimalNumber(decimal: total), currencyCode: "EUR", shortDescription: paymentType(), intent: .sale)
-            payment.items = items
-            
-            if payment.processable {
-                let paymentVC = PayPalPaymentViewController(payment: payment , configuration: paypalConfig , delegate: self)
-                paymentVC?.modalPresentationStyle = .fullScreen
-                present(paymentVC!, animated: true, completion: nil)
-            } else {
-                Alert.show("Error".localized, massege: "PayPal Error: Can't Proceed To Payment Please Try Again", context: self)
-            }
-        }else {
-            print("id is empty")
-        }
+//        if id != nil {
+//            let item = PayPalItem(name: doctor, withQuantity: 1, withPrice: NSDecimalNumber(string: price), withCurrency: "EUR", withSku: nil)
+//            let items = [item]
+//            let subtotle = PayPalItem.totalPrice(forItems: items)
+//            let total = subtotle.decimalValue
+//            let payment = PayPalPayment(amount: NSDecimalNumber(decimal: total), currencyCode: "EUR", shortDescription: paymentType(), intent: .sale)
+//            payment.items = items
+//
+//            if payment.processable {
+//                let paymentVC = PayPalPaymentViewController(payment: payment , configuration: paypalConfig , delegate: self)
+//                paymentVC?.modalPresentationStyle = .fullScreen
+//                present(paymentVC!, animated: true, completion: nil)
+//            } else {
+//                Alert.show("Error".localized, massege: "PayPal Error: Can't Proceed To Payment Please Try Again", context: self)
+//            }
+//        }else {
+//            print("id is empty")
+//        }
     }
     
     @IBAction func payWithStripe(_ sender: UIButton) {
@@ -105,51 +105,51 @@ class PayPalViewController: UIViewController , PayPalPaymentDelegate {
         }
     }
     
-    func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController) {
-        paymentViewController.dismiss(animated: true, completion: nil)
-    }
-    
-    func payPalPaymentViewController(_ paymentViewController: PayPalPaymentViewController, didComplete completedPayment: PayPalPayment) {
-        print(completedPayment.confirmation)
-        //        let profe = completedPayment.confirmation["response"]
-        
-        paymentViewController.dismiss(animated: true, completion: nil)
-        
-        if let id = id {
-            DispatchQueue.main.async { [weak self] in
-                if self?.type == 1 {
-                    APIClient.comfirmConsultation(consultation_id: id, payment_status: 1) { (Result, Status) in
-                        switch Result {
-                        case .success(let response):
-                            print(response)
-                            if response.stats == 200 {
-                                self?.id = nil
-                                self?.showSuccess()
-                            }
-                        case .failure(let error):
-                            print(error.localizedDescription)
-                            Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
-                        }
-                    }
-                } else if self?.type == 2 {
-                    APIClient.comfirmConversation(consultation_id: id, payment_status: 1) { (Result, status) in
-                        switch Result {
-                        case .success(let response):
-                            print(response)
-                            if response.stats == 200 {
-                                self?.id = nil
-                                self?.showSuccess()
-                            }
-                        case .failure(let error):
-                            print(error.localizedDescription)
-                            Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
-                        }
-                    }
-                }
-            }
-            
-        }
-    }
+//    func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController) {
+//        paymentViewController.dismiss(animated: true, completion: nil)
+//    }
+//
+//    func payPalPaymentViewController(_ paymentViewController: PayPalPaymentViewController, didComplete completedPayment: PayPalPayment) {
+//        print(completedPayment.confirmation)
+//        //        let profe = completedPayment.confirmation["response"]
+//
+//        paymentViewController.dismiss(animated: true, completion: nil)
+//
+//        if let id = id {
+//            DispatchQueue.main.async { [weak self] in
+//                if self?.type == 1 {
+//                    APIClient.comfirmConsultation(consultation_id: id, payment_status: 1) { (Result, Status) in
+//                        switch Result {
+//                        case .success(let response):
+//                            print(response)
+//                            if response.stats == 200 {
+//                                self?.id = nil
+//                                self?.showSuccess()
+//                            }
+//                        case .failure(let error):
+//                            print(error.localizedDescription)
+//                            Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
+//                        }
+//                    }
+//                } else if self?.type == 2 {
+//                    APIClient.comfirmConversation(consultation_id: id, payment_status: 1) { (Result, status) in
+//                        switch Result {
+//                        case .success(let response):
+//                            print(response)
+//                            if response.stats == 200 {
+//                                self?.id = nil
+//                                self?.showSuccess()
+//                            }
+//                        case .failure(le?t error):
+//                            print(error.localizedDescription)
+//                            Alert.show("Error".localized, massege: "Please check your network connection and try again".localized, context: self!)
+//                        }
+//                    }
+//                }
+//            }
+//
+//        }
+//    }
     func showSuccess(){
         backView.isHidden = false
         backView.isUserInteractionEnabled = true

@@ -49,13 +49,13 @@
 		8165928823EC46F700595B6A /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8165927F23EC46F700595B6A /* SafariServices.framework */; };
 		8165928923EC46F700595B6A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8165928023EC46F700595B6A /* Accelerate.framework */; };
 		8165928A23EC46F700595B6A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8165928123EC46F700595B6A /* CoreLocation.framework */; };
-		8165928C23EC4F1A00595B6A /* PayPalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8165928B23EC4F1A00595B6A /* PayPalViewController.swift */; };
 		816592D823F02D0100595B6A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816592D723F02D0100595B6A /* Login.swift */; };
 		8166544F23D9CECC00739768 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166544E23D9CECB00739768 /* Upload.swift */; };
 		8166545123D9E19F00739768 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8166545023D9E19F00739768 /* GoogleService-Info.plist */; };
 		8168100C23F993B600B5C89D /* DownloadReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8168100B23F993B600B5C89D /* DownloadReport.swift */; };
 		816D8C65240698AB002E442F /* Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D8C64240698AB002E442F /* Rounded.swift */; };
 		816D8C672406CE7C002E442F /* GetConversationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D8C662406CE7C002E442F /* GetConversationDetails.swift */; };
+		816E07EB24978E240012E033 /* PayPalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816E07EA24978E240012E033 /* PayPalViewController.swift */; };
 		816E93E223F3FE460033C30F /* AddConsultation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816E93E123F3FE460033C30F /* AddConsultation.swift */; };
 		816E93E423F3FF370033C30F /* ConsultationFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816E93E323F3FF370033C30F /* ConsultationFiles.swift */; };
 		81748EB42432159F00513AD5 /* anim.gif in Resources */ = {isa = PBXBuildFile; fileRef = 81748EB32432159E00513AD5 /* anim.gif */; };
@@ -189,7 +189,6 @@
 		8165927F23EC46F700595B6A /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		8165928023EC46F700595B6A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		8165928123EC46F700595B6A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		8165928B23EC4F1A00595B6A /* PayPalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalViewController.swift; sourceTree = "<group>"; };
 		8165928D23EC668A00595B6A /* Konsil-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Konsil-Bridging-Header.h"; sourceTree = "<group>"; };
 		816592D723F02D0100595B6A /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		8166544E23D9CECB00739768 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
@@ -197,6 +196,7 @@
 		8168100B23F993B600B5C89D /* DownloadReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadReport.swift; sourceTree = "<group>"; };
 		816D8C64240698AB002E442F /* Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rounded.swift; sourceTree = "<group>"; };
 		816D8C662406CE7C002E442F /* GetConversationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetConversationDetails.swift; sourceTree = "<group>"; };
+		816E07EA24978E240012E033 /* PayPalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayPalViewController.swift; sourceTree = "<group>"; };
 		816E93E123F3FE460033C30F /* AddConsultation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddConsultation.swift; sourceTree = "<group>"; };
 		816E93E323F3FF370033C30F /* ConsultationFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationFiles.swift; sourceTree = "<group>"; };
 		81748EB32432159E00513AD5 /* anim.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = anim.gif; sourceTree = "<group>"; };
@@ -716,8 +716,8 @@
 		8189E68923E18CE5009DA8E0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8165928B23EC4F1A00595B6A /* PayPalViewController.swift */,
 				81847FB52445D77600BB5EAC /* StripeViewController.swift */,
+				816E07EA24978E240012E033 /* PayPalViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1109,7 +1109,6 @@
 				81849F2723A929DD004A59D8 /* ConsultationMessagesViewController.swift in Sources */,
 				81847FB62445D77600BB5EAC /* StripeViewController.swift in Sources */,
 				81ECE9A923AB9AA000E63105 /* MyConsultationsViewController.swift in Sources */,
-				8165928C23EC4F1A00595B6A /* PayPalViewController.swift in Sources */,
 				8122162423B0D56D009E111B /* Extentions.swift in Sources */,
 				815A17C023A658F7001DDBEE /* MainViewController.swift in Sources */,
 				81862C7523FC4623002F3D81 /* MyConsultations.swift in Sources */,
@@ -1138,6 +1137,7 @@
 				813761D423CB24D300BC90B1 /* FingerPrintViewController.swift in Sources */,
 				81FA8DFF23F2B72B006B3345 /* Language.swift in Sources */,
 				8114567E23BCE904005A4B93 /* Walkthrough2ViewController.swift in Sources */,
+				816E07EB24978E240012E033 /* PayPalViewController.swift in Sources */,
 				81D8FB1D23A82A5100585CA8 /* MainNavigationController.swift in Sources */,
 				81ECE9A023AB6C8400E63105 /* SectionHeaderView.swift in Sources */,
 				81ECE99823AA652C00E63105 /* ConversationReportViewController.swift in Sources */,
