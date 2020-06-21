@@ -58,6 +58,7 @@ class FirebaseUploader
                             } else {
                                 // Here you can get the download URL for 'simpleImage.jpg'
                                 imageURl = url?.absoluteString ?? "link"
+                                print(imageURl)
                                 completion?(true, url?.absoluteString ?? "") ?? nil
                             }
                         }

@@ -12,6 +12,7 @@ import BiometricAuthentication
 import NVActivityIndicatorView
 import FBSDKLoginKit
 import SwiftyGif
+import AuthenticationServices
 
 class LogInViewController: UIViewController {
     
@@ -36,25 +37,47 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var facebook: UIButton!{ didSet{ Rounded.roundButton(button: self.facebook, radius: self.facebook.frame.size.height/2) }}
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var logoiImageView: UIImageView!
+    @IBOutlet weak var socialButtonStack: UIStackView!
+    
     
     let facebookManger = LoginManager()
-//    let googleManger = GIDSignIn.sharedInstance()
+    //    let googleManger = GIDSignIn.sharedInstance()
     var fromIntor = false
     
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupGoogleSginIn()
+        //        setupGoogleSginIn()
         logoGIFImageSetup()
+        addSignWithAppleButton()
     }
     
+    func addSignWithAppleButton(){
+        if #available(iOS 13.0, *) {
+            let appleButton = ASAuthorizationAppleIDButton()
+            appleButton.cornerRadius = facebook.frame.size.height/2
+            appleButton.addTarget(self, action: #selector(appleAuthprizationIDButtonPressed), for: .touchUpInside)
+            socialButtonStack.addArrangedSubview(appleButton)
+        }
+    }
     
+    @available(iOS 13.0, *)
+       @objc func appleAuthprizationIDButtonPressed(){
+           
+           let request = ASAuthorizationAppleIDProvider().createRequest()
+           request.requestedScopes = [.fullName, .email]
+           
+           let controller = ASAuthorizationController(authorizationRequests: [request])
+           controller.delegate = self
+           controller.presentationContextProvider = self
+           controller.performRequests()
+       }
     
     //MARK:- IBActions
     @IBAction func logInWithTwitter(_ sender: UIButton) {
     }
     @IBAction func logInWithGoogle(_ sender: UIButton) {
-//        googleManger?.signIn()
+        //        googleManger?.signIn()
     }
     @IBAction func logInWithFacebook(_ sender: UIButton) {
         let permisions = ["email"]
@@ -88,6 +111,7 @@ class LogInViewController: UIViewController {
                     case .success(let response):
                         if state == 200 {
                             UserDefaults.standard.set(false, forKey: Key.social)
+                            Shared.user = response.userInfo
                             self?.setupBioAuth(response: response ,password: password)
                             self?.backView.isHidden = false
                             self?.backView.isUserInteractionEnabled = true
@@ -250,6 +274,7 @@ extension LogInViewController {
                             self?.backView.isHidden = false
                             self?.backView.isUserInteractionEnabled = true
                             self?.BlurView(view: self!.animationView)
+                            Shared.user = response.userInfo
                         }
                     case .failure(let error):
                         print(error.localizedDescription)
@@ -348,9 +373,41 @@ extension LogInViewController: SwiftyGifDelegate {
             }
         }
     }
-
+    
     func gifDidLoop(sender: UIImageView) {
         print("gifDidLoop")
         sender.stopAnimatingGif()
     }
 }
+
+
+@available(iOS 13.0, *)
+extension LogInViewController: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return view.window!
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let user = authorization.credential as? ASAuthorizationAppleIDCredential {
+            if let email = user.email {
+                var firstName = "User Name"
+                var lastName = ""
+                if let fullName = user.fullName {
+                    firstName = fullName.givenName ?? "user"
+                    lastName = fullName.familyName ?? ""
+                }
+                let id = user.user
+                let userFullName = firstName + " " + lastName
+//                loginToApi(email: email, password: id, name: userFullName)
+                loginToKonsilAPI(email: email ?? "", password: id ?? "", name: userFullName ?? "", image: "no Image")
+                
+            }
+        }
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        Alert.show("خطاء", massege: error.localizedDescription, context: self)
+    }
+}
+

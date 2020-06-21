@@ -147,7 +147,7 @@
 "HfP-Ql-oio.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Change"; ObjectID = "HwV-La-9qL"; */
-"HwV-La-9qL.placeholder" = "تغيير كلمة المرور";
+"HwV-La-9qL.placeholder" = "أدخل كلمة المرور";
 
 /* Class = "UITextField"; text = "Change Password"; ObjectID = "HwV-La-9qL"; */
 "HwV-La-9qL.text" = "تغيير كلمة المرور";
@@ -552,7 +552,7 @@
 "Jeg-Qk-eu4.normalTitle" = "التسجيل بواسطة جوجل";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "OaI-sJ-2pr"; */
-"OaI-sJ-2pr.normalTitle" = "التسجيل بواسطة فيسبوك";
+"OaI-sJ-2pr.normalTitle" = "الدخول بواسطة فيسبوك";
 
 /* Class = "UITextField"; placeholder = "Enter your mobile number"; ObjectID = "GoB-fD-7Xy"; */
 "GoB-fD-7Xy.placeholder" = "اضغط لاختيار اليوم المرغوب";
@@ -586,8 +586,7 @@
 "40c-QG-e3b.text" = "اسم الطبيب :";
 
 /* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "R5E-yk-LDG"; */
-"eH7-aM-XuH.text" = "النوع :";
-
+"eH7-aM-XuH.text" = "
 /* Class = "UILabel"; text = "Accept All Terms And Condtiotions"; ObjectID = "R5E-yk-LDG"; */
 "Tov-4J-Jh9.text" = "اختر طريقة الدفع :";
 

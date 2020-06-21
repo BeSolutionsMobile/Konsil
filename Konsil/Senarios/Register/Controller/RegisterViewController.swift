@@ -14,6 +14,7 @@ import FBSDKLoginKit
 //import GoogleSignIn
 import SafariServices
 import SwiftyGif
+import AuthenticationServices
 
 class RegisterViewController: UIViewController {
     
@@ -88,6 +89,7 @@ class RegisterViewController: UIViewController {
             Rounded.roundedDots(Dots: redDot)
         }
     }
+    @IBOutlet weak var socialStack: UIStackView!
     @IBOutlet weak var socialStackView: UIStackView!{
         didSet{
             if Shared.currentDevice == .pad {
@@ -104,15 +106,36 @@ class RegisterViewController: UIViewController {
     
     
     let facebookManger = LoginManager()
-//    let googleManger = GIDSignIn.sharedInstance()
+    //    let googleManger = GIDSignIn.sharedInstance()
     
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupGoogleSginIn()
+        //        setupGoogleSginIn()
         logoGifImageSetUp()
+        addSignWithAppleButton()
     }
     
+    func addSignWithAppleButton(){
+        if #available(iOS 13.0, *) {
+            let appleButton = ASAuthorizationAppleIDButton()
+            appleButton.cornerRadius = facebook.frame.size.height/2
+            appleButton.addTarget(self, action: #selector(appleAuthprizationIDButtonPressed), for: .touchUpInside)
+            socialStack.addArrangedSubview(appleButton)
+        }
+    }
+    
+    @available(iOS 13.0, *)
+    @objc func appleAuthprizationIDButtonPressed(){
+        
+        let request = ASAuthorizationAppleIDProvider().createRequest()
+        request.requestedScopes = [.fullName, .email]
+        
+        let controller = ASAuthorizationController(authorizationRequests: [request])
+        controller.delegate = self
+        controller.presentationContextProvider = self
+        controller.performRequests()
+    }
     //MARK:- IBActions
     @IBAction func backButPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
@@ -229,7 +252,7 @@ class RegisterViewController: UIViewController {
     }
     @IBAction func registerWithGoogle(_ sender: UIButton) {
         if checkBox.on {
-//            googleManger?.signIn()
+            //            googleManger?.signIn()
         } else {
             Alert.show("Error".localized, massege: "Please accept our terms and conditions then try again".localized, context: self)
         }
@@ -383,7 +406,7 @@ extension RegisterViewController {
                         case 405:
                             Alert.show("Failed".localized, massege: "Email does not exist".localized, context: self!)
                         default:
-                           break
+                            break
                         }
                     }
                 }
@@ -445,5 +468,36 @@ extension RegisterViewController: SwiftyGifDelegate {
     func gifDidLoop(sender: UIImageView) {
         sender.stopAnimatingGif()
     }
-
+    
 }
+
+@available(iOS 13.0, *)
+extension RegisterViewController: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return view.window!
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let user = authorization.credential as? ASAuthorizationAppleIDCredential {
+            if let email = user.email {
+                var firstName = "User Name"
+                var lastName = ""
+                if let fullName = user.fullName {
+                    firstName = fullName.givenName ?? "user"
+                    lastName = fullName.familyName ?? ""
+                }
+                let id = user.user
+                let userFullName = firstName + " " + lastName
+                
+                startAnimation()
+                registerToKonsilAPI(email: email , password: id , image: "no Image", name: userFullName )
+            }
+        }
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        Alert.show("خطاء", massege: error.localizedDescription, context: self)
+    }
+}
+

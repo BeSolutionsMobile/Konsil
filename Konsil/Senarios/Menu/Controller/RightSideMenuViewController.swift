@@ -93,9 +93,12 @@ class RightSideMenuViewController: UIViewController {
     }
     
     func updateView(){
+        
+        print(Shared.user)
         if let user = Shared.user , Shared.user != nil {
             name.text = user.name
             //           ProfileImage.sd_setImage(with: URL(string: user.image_url ?? ""), placeholderImage: UIImage(named: "userPlaceholder"))
+            print(user.image_url)
             ProfileImage.sd_setImage(with: URL(string: user.image_url ?? ""), placeholderImage: UIImage(named: "userPlaceholder"), options: .retryFailed) { (image, error, type, url) in
                 self.indicator.stopAnimating()
             }

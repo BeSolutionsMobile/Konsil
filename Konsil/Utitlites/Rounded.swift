@@ -1,3 +1,5 @@
+import UIKit
+
 struct Rounded {
     static func topLeft(view: UIView){
         view.layer.cornerRadius = 20

@@ -2,12 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<string>com.BeGroup.KonsilM</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -66,12 +68,12 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Allow Camera Usage Permision To Enable PayPal Card Scan</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>Konsil needs permision to access documents</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>This app requires Face ID permission to authenticate using Face recognition</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Konsil needs permision to access your photos</string>
-	<key>NSDocumentsFolderUsageDescription</key>
-	<string>Konsil needs permision to access documents</string>
 	<key>UIFileSharingEnabled</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

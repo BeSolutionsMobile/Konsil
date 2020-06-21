@@ -18,6 +18,7 @@
 		810DAB0223A7A86C00B8AF20 /* DoctorsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DAB0123A7A86C00B8AF20 /* DoctorsInfoViewController.swift */; };
 		810DAB0823A7BC8F00B8AF20 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DAB0723A7BC8F00B8AF20 /* LogInViewController.swift */; };
 		810DAB0D23A7C71F00B8AF20 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DAB0C23A7C71F00B8AF20 /* RegisterViewController.swift */; };
+		8114040B24A0095400E41837 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8114040A24A0095400E41837 /* GoogleService-Info.plist */; };
 		8114567C23BCE8F3005A4B93 /* Walkthrough1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8114567B23BCE8F3005A4B93 /* Walkthrough1ViewController.swift */; };
 		8114567E23BCE904005A4B93 /* Walkthrough2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8114567D23BCE904005A4B93 /* Walkthrough2ViewController.swift */; };
 		8114568023BCE915005A4B93 /* Walkthrough3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8114567F23BCE915005A4B93 /* Walkthrough3ViewController.swift */; };
@@ -51,7 +52,6 @@
 		8165928A23EC46F700595B6A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8165928123EC46F700595B6A /* CoreLocation.framework */; };
 		816592D823F02D0100595B6A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816592D723F02D0100595B6A /* Login.swift */; };
 		8166544F23D9CECC00739768 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166544E23D9CECB00739768 /* Upload.swift */; };
-		8166545123D9E19F00739768 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8166545023D9E19F00739768 /* GoogleService-Info.plist */; };
 		8168100C23F993B600B5C89D /* DownloadReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8168100B23F993B600B5C89D /* DownloadReport.swift */; };
 		816D8C65240698AB002E442F /* Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D8C64240698AB002E442F /* Rounded.swift */; };
 		816D8C672406CE7C002E442F /* GetConversationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D8C662406CE7C002E442F /* GetConversationDetails.swift */; };
@@ -158,6 +158,7 @@
 		810DAB0123A7A86C00B8AF20 /* DoctorsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsInfoViewController.swift; sourceTree = "<group>"; };
 		810DAB0723A7BC8F00B8AF20 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		810DAB0C23A7C71F00B8AF20 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		8114040A24A0095400E41837 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8114567B23BCE8F3005A4B93 /* Walkthrough1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walkthrough1ViewController.swift; sourceTree = "<group>"; };
 		8114567D23BCE904005A4B93 /* Walkthrough2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walkthrough2ViewController.swift; sourceTree = "<group>"; };
 		8114567F23BCE915005A4B93 /* Walkthrough3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walkthrough3ViewController.swift; sourceTree = "<group>"; };
@@ -189,10 +190,8 @@
 		8165927F23EC46F700595B6A /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		8165928023EC46F700595B6A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		8165928123EC46F700595B6A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		8165928D23EC668A00595B6A /* Konsil-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Konsil-Bridging-Header.h"; sourceTree = "<group>"; };
 		816592D723F02D0100595B6A /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		8166544E23D9CECB00739768 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
-		8166545023D9E19F00739768 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8168100B23F993B600B5C89D /* DownloadReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadReport.swift; sourceTree = "<group>"; };
 		816D8C64240698AB002E442F /* Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rounded.swift; sourceTree = "<group>"; };
 		816D8C662406CE7C002E442F /* GetConversationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetConversationDetails.swift; sourceTree = "<group>"; };
@@ -335,7 +334,7 @@
 				815A17C123A658FC001DDBEE /* Senarios */,
 				813D444623D0869200330645 /* Supportive Files */,
 				04F1A61B23A641B300293AA2 /* Info.plist */,
-				8166545023D9E19F00739768 /* GoogleService-Info.plist */,
+				8114040A24A0095400E41837 /* GoogleService-Info.plist */,
 				81CAC04E2427CF850083BE4E /* credentials.plist */,
 				81B7615723D49E4C00859320 /* Localizable.strings */,
 			);
@@ -487,7 +486,6 @@
 				8114568123BCEBD3005A4B93 /* Animations */,
 				04F1A61323A641B200293AA2 /* Main.storyboard */,
 				04F1A61823A641B300293AA2 /* LaunchScreen.storyboard */,
-				8165928D23EC668A00595B6A /* Konsil-Bridging-Header.h */,
 				81BB8ADA23D99C3D00C57648 /* AppDelegate.swift */,
 				8122162323B0D56D009E111B /* Extentions.swift */,
 				813761FB23CB551200BC90B1 /* Keys.swift */,
@@ -853,7 +851,7 @@
 				TargetAttributes = {
 					04F1A60923A641B200293AA2 = {
 						CreatedOnToolsVersion = 11.3;
-						LastSwiftMigration = 1130;
+						LastSwiftMigration = 1140;
 					};
 					04F1A61F23A641B300293AA2 = {
 						CreatedOnToolsVersion = 11.3;
@@ -895,6 +893,7 @@
 				04F1A61A23A641B300293AA2 /* LaunchScreen.storyboard in Resources */,
 				81ECE8C423BE35CE0048C0D9 /* Chat.json in Resources */,
 				04F1A61723A641B300293AA2 /* Assets.xcassets in Resources */,
+				8114040B24A0095400E41837 /* GoogleService-Info.plist in Resources */,
 				81ECE8C023BCF4970048C0D9 /* Report.json in Resources */,
 				8114568B23BCEC03005A4B93 /* FingureSuccess.json in Resources */,
 				8114568923BCEC03005A4B93 /* Doctor.json in Resources */,
@@ -903,7 +902,6 @@
 				04F1A61523A641B200293AA2 /* Main.storyboard in Resources */,
 				8114569123BCEC21005A4B93 /* NoData.json in Resources */,
 				81B7615523D49E4C00859320 /* Localizable.strings in Resources */,
-				8166545123D9E19F00739768 /* GoogleService-Info.plist in Resources */,
 				81FD1A2123E1D1C900CED21A /* CheckMark.json in Resources */,
 				8114569023BCEC21005A4B93 /* RedLifeline.json in Resources */,
 				81ECE9A123AB6C8400E63105 /* SectionHeaderView.xib in Resources */,
@@ -1342,14 +1340,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GPMFK5M647;
 				INFOPLIST_FILE = Konsil/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.begroup.Konsil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Konsil/Supportive Files/Konsil-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1362,19 +1361,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Konsil/KonsilRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GPMFK5M647;
+				DEVELOPMENT_TEAM = SKDU2T2KT7;
 				INFOPLIST_FILE = Konsil/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.begroup.Konsil;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BeGroup.KonsilM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Konsil/Supportive Files/Konsil-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

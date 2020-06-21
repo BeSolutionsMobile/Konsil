@@ -43,6 +43,8 @@ class LeftSideMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(Shared.user)
+
         updateView()
     }
     

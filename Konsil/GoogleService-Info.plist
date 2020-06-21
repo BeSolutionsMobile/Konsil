@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>575287328824-hkhcirph7cvs7hfb2jkdlkb716iesh7p.apps.googleusercontent.com</string>
+	<string>575287328824-5j7b0mvnvikk4d1t24n10ohel6sc6lob.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.575287328824-hkhcirph7cvs7hfb2jkdlkb716iesh7p</string>
+	<string>com.googleusercontent.apps.575287328824-5j7b0mvnvikk4d1t24n10ohel6sc6lob</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>575287328824-p59sbfpsr30l5flhh5v56o2ueuet8h0v.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBBfNBxAsCdStGpRj_dkCY1pthWiwlOcAE</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.begroup.Konsil</string>
+	<string>com.BeGroup.KonsilM</string>
 	<key>PROJECT_ID</key>
 	<string>konsil</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:575287328824:ios:67fedf51eadf2c50ebe6cd</string>
+	<string>1:575287328824:ios:08024214ac8f106debe6cd</string>
 	<key>DATABASE_URL</key>
 	<string>https://konsil.firebaseio.com</string>
 </dict>

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class NetworkError {
     static func createErrorView(view: UIView ,message: String){
