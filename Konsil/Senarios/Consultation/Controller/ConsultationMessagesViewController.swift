@@ -137,7 +137,8 @@ extension ConsultationMessagesViewController: UITableViewDelegate , UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessagesTableViewCell
         if let message = messages?[indexPath.row]{
-            cell.cellImage.sd_setImage(with: URL(string: message.user_image ?? ""), placeholderImage: UIImage(named: "userPlaceholder"))
+            let image = message.user_image?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+            cell.cellImage.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: "userPlaceholder"))
             cell.message.text = message.message
             cell.name.text = message.name
         }

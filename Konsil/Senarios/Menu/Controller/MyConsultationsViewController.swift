@@ -63,8 +63,9 @@ extension MyConsultationsViewController: UITableViewDelegate , UITableViewDataSo
         if let consultation = consultations?[indexPath.row] {
             cell.doctorName.text = consultation.name
             cell.price.text = consultation.price
-//            cell.doctorImage.sd_setImage(with: URL(string: consultation.image), placeholderImage: UIImage(named: "doctorPlaceholder"))
-            cell.doctorImage.sd_setImage(with: URL(string: consultation.image), placeholderImage: UIImage(named: "doctorPlaceholder"), options: .retryFailed) { (image, error, type, url) in
+            
+            let image = consultation.image.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+            cell.doctorImage.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: "doctorPlaceholder"), options: .retryFailed) { (image, error, type, url) in
                 cell.indicator.stopAnimating()
                 
             }

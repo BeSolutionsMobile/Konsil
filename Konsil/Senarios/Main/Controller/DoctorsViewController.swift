@@ -79,7 +79,8 @@ extension DoctorsViewController: UITableViewDelegate , UITableViewDataSource {
             cell.drDegree.text = doctor.degree
             cell.drRating.rating = stringToDouble(doctor.rate)
             cell.languages.text = doctor.lang
-            cell.drImage.sd_setImage(with: URL(string: doctor.image_url), placeholderImage: UIImage(named: "doctorPlaceholder"), options: .retryFailed) { (image, error, type, url) in
+            let image = doctor.image_url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+            cell.drImage.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: "doctorPlaceholder"), options: .retryFailed) { (image, error, type, url) in
                 cell.indicator.stopAnimating()
             }
         }

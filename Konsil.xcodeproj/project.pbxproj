@@ -158,6 +158,7 @@
 		810DAB0123A7A86C00B8AF20 /* DoctorsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsInfoViewController.swift; sourceTree = "<group>"; };
 		810DAB0723A7BC8F00B8AF20 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		810DAB0C23A7C71F00B8AF20 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		8111ED0324B7580C008B71DE /* KonsilRelease.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = KonsilRelease.entitlements; sourceTree = "<group>"; };
 		8114040A24A0095400E41837 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8114567B23BCE8F3005A4B93 /* Walkthrough1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walkthrough1ViewController.swift; sourceTree = "<group>"; };
 		8114567D23BCE904005A4B93 /* Walkthrough2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walkthrough2ViewController.swift; sourceTree = "<group>"; };
@@ -329,6 +330,7 @@
 		04F1A60C23A641B200293AA2 /* Konsil */ = {
 			isa = PBXGroup;
 			children = (
+				8111ED0324B7580C008B71DE /* KonsilRelease.entitlements */,
 				81FA8E0023F2BE80006B3345 /* Network Layer */,
 				815A17CD23A65A26001DDBEE /* Utitlites */,
 				815A17C123A658FC001DDBEE /* Senarios */,
@@ -788,7 +790,6 @@
 				04F1A60723A641B200293AA2 /* Frameworks */,
 				04F1A60823A641B200293AA2 /* Resources */,
 				F5DD269261BE52DC0DF86E44 /* [CP] Embed Pods Frameworks */,
-				4A12F850A030F376FFED3147 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -827,7 +828,6 @@
 				04F1A62823A641B300293AA2 /* Frameworks */,
 				04F1A62923A641B300293AA2 /* Resources */,
 				EC2B88C5F9D8C7C0C0AC2C57 /* [CP] Embed Pods Frameworks */,
-				C1E3B16D1D8F460966FF5C1C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -969,40 +969,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4A12F850A030F376FFED3147 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Konsil/Pods-Konsil-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Konsil/Pods-Konsil-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Konsil/Pods-Konsil-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C1E3B16D1D8F460966FF5C1C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Konsil-KonsilUITests/Pods-Konsil-KonsilUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Konsil-KonsilUITests/Pods-Konsil-KonsilUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Konsil-KonsilUITests/Pods-Konsil-KonsilUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E4B3E880A3C90318AE6EBB25 /* [CP] Check Pods Manifest.lock */ = {

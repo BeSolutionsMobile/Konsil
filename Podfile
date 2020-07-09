@@ -22,6 +22,7 @@ target 'Konsil' do
   pod 'Firebase/Core'
   pod 'Firebase/Storage'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Messaging'
   pod 'IQKeyboardManagerSwift', '6.3.0'
   pod 'FBSDKLoginKit'
   pod 'SwiftyGif'

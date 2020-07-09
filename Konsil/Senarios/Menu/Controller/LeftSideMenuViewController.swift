@@ -102,7 +102,8 @@ class LeftSideMenuViewController: UIViewController {
     func updateView(){
         if let user = Shared.user , Shared.user != nil {
             name.text = user.name
-            ProfileImage.sd_setImage(with: URL(string: user.image_url ?? ""), placeholderImage: UIImage(named: "userPlaceholder"), options: .retryFailed) { (image, error, type, url) in
+            let image = user.image_url?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+            ProfileImage.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: "userPlaceholder"), options: .retryFailed) { (image, error, type, url) in
                 self.indicator.stopAnimating()
             }
         }

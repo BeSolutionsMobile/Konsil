@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>AppAuth.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>BEMCheckBox.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -25,11 +20,6 @@
 			<false/>
 		</dict>
 		<key>BoringSSL-GRPC.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>CardIO.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -64,6 +54,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FirebaseAnalyticsInterop.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FirebaseAuthInterop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -89,17 +84,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FirebaseInstallations.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FirebaseInstanceID.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>FirebaseStorage.xcscheme</key>
+		<key>FirebaseMessaging.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>GTMAppAuth.xcscheme</key>
+		<key>FirebaseStorage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -120,11 +120,6 @@
 			<false/>
 		</dict>
 		<key>GoogleDataTransportCCTSupport.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>GoogleSignIn.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -159,11 +154,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>PayPal-iOS-SDK.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Konsil-KonsilUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -175,6 +165,16 @@
 			<false/>
 		</dict>
 		<key>Pods-KonsilTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PromisesObjC.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Protobuf.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

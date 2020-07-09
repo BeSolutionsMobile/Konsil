@@ -164,7 +164,8 @@ class DoctorConversationViewController: UIViewController {
     
     func updateView(){
         if let doctor = doctorDetails {
-            doctorImage.sd_setImage(with: URL(string: doctor.image_url), placeholderImage: UIImage(named: "doctorPlaceholder"), options: .retryFailed) { (image, error, type, url) in
+            let image = doctor.image_url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+            doctorImage.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: "doctorPlaceholder"), options: .retryFailed) { (image, error, type, url) in
                 self.indicator.stopAnimating()
                 
             }
